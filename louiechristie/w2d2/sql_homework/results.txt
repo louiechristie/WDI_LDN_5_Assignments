@@ -96,10 +96,45 @@ select count(user_id) from wishlists inner join users on wishlists.user_id = use
 4
 
 15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
+
+select name, count(name) from products inner join wishlists on products.id = wishlists.product_id order by count(name) desc;
+-
+
 16. Selects the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
+
+-
+
 17. Inserts a user with the name "Jonathan Anderson" into the users table. Ensure the created_at column is set to the current time.
+
+INSERT INTO users (name, created_at)
+VALUES ('Jonathon Anderson', CURRENT_TIMESTAMP);
+
+25|2014-04-08 19:59:21|Jonathon Anderson
+
 18. Selects the id of the user with the name "Jonathan Anderson"?  Ensure the created_at column is set to the current time.
+
+select id, created_at from users where name = 'Jonathan Anderson';
+
+25|2014-04-08 19:59:21
+
 19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
+
+INSERT INTO wishlists (created_at, user_id, product_id)
+
+-
+
 20. Updates the name of the "Jonathan Anderson" user to be "Jon Anderson".
+
+UPDATE users
+SET name='Jon Anderson'
+WHERE name='Jonathan Anderson';
+
 21. Deletes the user with the name "Jon Anderson".
+
+DELETE FROM users
+WHERE name="Jon Anderson";
+
 22. Deletes the wishlist item for the user you just deleted.
+-
+
+todo 15,16,19,22
