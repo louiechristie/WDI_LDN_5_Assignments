@@ -96,9 +96,8 @@ Set of 12 Mason Jars|2
 insert into users (created_at, name ) values (  datetime(CURRENT_TIMESTAMP,'localtime') , "Jonathan Anderson");
 
 18. Selects the id of the user with the name "Jonathan Anderson"?  Ensure the created_at column is set to the current time.
-select id from users where name = "Jonathan Anderson";
+select id, created_at from users where name = "Jonathan Anderson";
 25
-
 
 
 19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
