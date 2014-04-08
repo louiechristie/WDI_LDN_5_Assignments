@@ -71,9 +71,13 @@
 
 11. Selects the names of all users whose names start with the letter "S".
 
+	select name from users where name = “S%”
+
+
+
 12. Selects the number of users whose first names are "Jonathan".
 
-	select count(name) from users where name='Jonathan';
+	select count(name) from users where name='Jonathan%’;
 		
 		0
 
