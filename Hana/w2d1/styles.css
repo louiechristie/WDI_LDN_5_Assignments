@@ -3,9 +3,9 @@ background-color: #C0C0C0;
 }
 
 img.top_logo{
-  
-  margin-right: auto;
-  margin-left: auto;
+ width:185px;
+ display: inline-block
+ margin-top:25px;
 }
 
 header{
@@ -15,10 +15,10 @@ margin-left: auto;
 }
 
 .sidebar, .blog_post{
-
   display:inline-block;
   position:relative;
-  margin: 5px;
+  margin-left: 10px;
+  margin-top:80px;
   float: left;
 
 }
@@ -29,6 +29,7 @@ margin-left: auto;
   margin-left: auto;
   padding: 20px;
   width: 600px;
+  float:left;
  
 }
 
@@ -44,5 +45,5 @@ margin-left: auto;
 
 .bottom_bit{
   
-}
+  }
 
