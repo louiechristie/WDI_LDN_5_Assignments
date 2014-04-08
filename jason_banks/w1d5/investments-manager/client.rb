@@ -22,9 +22,13 @@ class Client
     investments_start_balance
   end
 
-  def calc_current_balance
+  def calc_opening_balance_after_investments
     opening_balance_after_investments = opening_balance - calc_investments_start_balance
-    current_balance = opening_balance_after_investments + calc_investments_balance
+    opening_balance_after_investments
+  end
+
+  def calc_current_balance
+    current_balance = calc_opening_balance_after_investments + calc_investments_balance
     unless current_balance < 0
       current_balance
     else
@@ -35,7 +39,7 @@ class Client
   def balance_check(stock_symbol, additional_units)
     stock_price = YahooFinance::get_standard_quotes(stock_symbol)[stock_symbol].lastTrade
     proposal = stock_price * additional_units
-    proposal > calc_current_balance ? false : true
+    proposal > calc_opening_balance_after_investments ? false : true
   end
 
   def to_s
