@@ -1,0 +1,68 @@
+1. select name from products where on_sale is 'f';
+
+Teddy Bear
+Cat Ears
+Card Against Humanity
+Set of 12 Mason Jars
+
+2. select name from products where price < 20;
+
+Teddy Bear
+The Ruby Programming Language
+Silicon Valley Monopoly
+Set of 12 Mason Jars
+
+
+3. select name, price from products where price = (select max(price) from products);
+
+Cat Ears|99.99
+
+4.select name, max(price) 
+  from products
+  where price < (select max(price) from products);
+
+Brown Leather Boots|82.0
+
+5. select name, price from products where price = (select min(price) from products);
+
+Set of 12 Mason Jars|6.22
+
+6.select name, price from products order by price desc;
+
+Cat Ears|99.99|99.99
+Brown Leather Boots|82.0|82.0
+Lonely Pillow|78.82|78.82
+Card Against Humanity|25.0|25.0
+Hoodie|25.0|25.0
+Set of silverware|22.99|22.99
+The Ruby Programming Language|19.99|19.99
+Teddy Bear|17.99|17.99
+Silicon Valley Monopoly|10.99|10.99
+Set of 12 Mason Jars|6.22|6.22
+
+
+7. select avg(price) from products;
+38.899
+
+8. select sum(price) from products;
+388.99
+
+9.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
