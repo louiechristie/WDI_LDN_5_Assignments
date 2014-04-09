@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Calculator</title>
+    <link rel='stylesheet' href='/style.css'>
+  </head>
+
+  <body>
+    <header>
+      <h1>My awesome calculator</h1>
+      <nav>
+        <ul>
+          <li><a href='/basic'>Basic Calculator</a></li>
+          <li><a href='/advanced'>Advanced Calculator</a></li>
+          <li><a href='/funky'>Funky Calculator</a></li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>sub navigation goes here....</p>
+    </footer>
+  </body>
+</html>
