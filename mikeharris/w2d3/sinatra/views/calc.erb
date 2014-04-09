@@ -1,0 +1,26 @@
+
+
+        <form action='/calc' method='get'>
+          <table>
+            <tr>
+              <td>First</td> <td><input type='text' name='first'></td>
+            </tr>
+            <tr>
+              <td>Operator</td><td><input type='text' name='operator'></td>
+            </tr>
+            <tr>  
+              <td>Second</td><td><input type='text' name='second'></td>
+            </tr>
+            <tr>
+            <td></td><td><button>calculate!</button></td>
+            </tr>
+            <table>
+        </form>
+        <br />
+
+        <% if @result %>
+
+        <% @result %>
+          <p class='result'> The result of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %> </p>
+        <% end %>
+

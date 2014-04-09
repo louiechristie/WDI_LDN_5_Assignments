@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+
+}
+
+main {
+  width: 500px;
+  margin: 50px auto;
+}
+h1, h2 , h3{
+  
+  width: 500px;
+  border-radius: 20px;
+  
+  text-align: center;
+  background: gray;
+  padding: 10px 0;
+
+}
+
+.stocktitle {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+}
+
+
+.result {
+
+ width: 250px;
+ height: 250px;
+ padding: 85px 50px;
+ border: 1px solid red;
+ border-radius: 250px;
+ background: red;
+ text-align: center;
+ margin: 30px auto;
+ font-size: 50px;
+ color: white;
+}
+
+
+input, button{
+  display: block;
+  margin: 30px auto;
+  padding: 10px 30px;
+  width: 500px;
+  border-radius: 25px;
+
+}
