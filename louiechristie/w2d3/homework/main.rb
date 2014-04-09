@@ -2,6 +2,10 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
+def two_decimals(number)
+  sprintf "%.2f", number
+end
+
 get '/' do
   erb :home
 end
@@ -59,6 +63,41 @@ get '/mortgage' do
   erb :mortgage
 end
 
-def two_decimals(number)
-  sprintf "%.2f", number
+get '/trip' do
+  if params[:distance] && params[:mpg] && params[:cpg] && params[:speed]
+    @distance = params[:distance].to_f
+    @mpg = params[:mpg].to_f
+    @cpg = params[:cpg].to_f
+    @speed = params[:speed].to_f
+
+    if @speed >= 60
+      reduce = 2 * (@speed - 60)
+      @mpg = @mpg - reduce
+    end
+    @hours = @distance / @speed
+    @cost =  (@distance / @mpg) * @cpg
+   
+  end
+  erb :trip
+end
+
+get '/bmi' do
+  if params[:height1] && params[:h_unit1] && params[:height2] && params[:h_unit2] && params[:weight] && params[:w_unit]
+    @height1 = params[:height1].to_f
+    @h_unit1 = params[:h_unit1].to_f
+    @height2 = params[:height2].to_f
+    @h_unit2 = params[:h_unit2].to_f
+    @weight = params[:weight].to_f
+    @w_unit = params[:w_unit].to_f
+
+    @height1 = 0.3048 * @height1 if @h_unit1 == "feet" 
+    @height2 = 2.54 * @height2 if @h_unit2 == "inches"
+
+    @height1 = @height1 + (0.01 * @height2) 
+
+    @weight = @weight * 6.35029 if @w_unit == "stone"
+
+    @result = @weight/((@height1)**2)
+  end
+  erb :bmi
 end
