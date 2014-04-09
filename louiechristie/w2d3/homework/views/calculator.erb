@@ -1,12 +1,15 @@
+<h1>Calculator</h1>
+
 <form action='/calculator' method='get'>
-  first: <input type='text' name='first'>
-  operator: <select name='operator'>
-  <option value="+">+</option>
-  <option value="-">-</option>
-  <option value="*">*</option>
-  <option value="/">/</option>
-  second: <input type='text' name='second'>
-  <button>calculate!</button>
+  <p>First number: <input type='text' name='first'></p>
+  <p>operator: <select name='operator'>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select></p>
+  <p>Second number: <input type='text' name='second'></p>
+  <button>Calculate</button>
 </form>
 
   <% if @result %>

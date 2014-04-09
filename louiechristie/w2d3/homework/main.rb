@@ -8,29 +8,10 @@ end
 
 post '/navigate' do
   case params[:destination].downcase
-  when 'sports' then redirect to('/sports')
-  when 'weather' then redirect to('/weather')
-  when 'gossip' then redirect to('/gossip')
-  when 'celebrity' then redirect to('/celebrity')
   when 'calculator' then redirect to('/calculator')
+  when 'power' then redirect to('/power')
   else redirect to('/')
   end
-end
-
-get '/sports' do
-  erb :sports
-end
-
-get '/weather' do
-  erb :weather
-end
-
-get '/gossip' do
-  erb :gossip
-end
-
-get '/celebrity' do
-  erb :celebrity
 end
 
 get '/calculator' do
@@ -46,4 +27,14 @@ get '/calculator' do
   end
 
   erb :calculator
+end
+
+get '/power' do
+  if params[:number] && params[:power]
+    @number = params[:number].to_f
+    @power = params[:power].to_f
+    @p_result = (@number ** @power)
+  end
+
+  erb :power
 end
