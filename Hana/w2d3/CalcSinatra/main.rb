@@ -20,7 +20,7 @@ post '/navigate' do
 end
 
 get '/math' do
-  case params[:destination].downcase
+  case params[:type_of_math]
   when 'basic' then redirect to('/basic')
   when 'advanced' then redirect to('/advanced')
     else  
@@ -31,11 +31,50 @@ get '/math' do
 end
 
 get '/basic' do
-  
+  @operation = params[:operation].to_f
+  @first_digit = params[:first_digit].to_f
+  @second_digit = params[:second_digit].to_f
+  if @first_digit.to_f.to_s != @first_digit
+     @error = "You must enter a number."
+    erb :home
+  elsif @second_digit.to_f.to_s != @second_digit
+     @error = "You must enter a number."
+    erb :home
+  else
+    case @operation
+    when "addition"
+      @result = @first_digit + @second_digit
+    when "subtraction"
+      @result = @first_digit - @second_digit
+    when "multiplication"
+      @result = @first_digit * @second_digit
+    when "division"
+      @result = @first_digit / @second_digit
+    end
+    @message = "The answer is #{@result}."
+  end
+  erb :basic 
 end
 
 get '/advanced' do
-  
+ @operation = params[:operation].to_f
+  @first_digit = params[:first_digit].to_f
+  @second_digit = params[:second_digit].to_f
+  if @first_digit.to_f.to_s != @first_digit
+     @error = "You must enter a number."
+    erb :home
+  elsif @second_digit.to_f.to_s != @second_digit
+     @error = "You must enter a number."
+    erb :home
+  else
+    case @operation
+    when "power"
+      @result = @first_digit ** @second_digit
+    when "square"
+      @result = Math.sqrt(@first_digit)
+    end
+  end
+  erb :advanced
 end
 
 
