@@ -1,9 +1,8 @@
-<h1>Find a Number to a Power</h1>
+<h1>Find Square Root of a Number</h1>
 
 
-<form action='/power' method='get'>
+<form action='/root' method='get'>
   Number: <input type='text' name='number'>
-  to power of: <input type='text' name='power'>
   <button class="btn btn-success">Calculate</button>
 </form>
 
@@ -12,5 +11,5 @@
       <header>
         <h1>Result of Calculation</h1>
       </header>
-      <p>The result of <%=@number %> to the power of <%=@power%> is <%=@result %> </p>
+      <p>The square root of <%=@number %> is <%=@result %> </p>
   <% end %>

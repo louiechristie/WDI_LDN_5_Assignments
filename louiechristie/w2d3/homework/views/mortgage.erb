@@ -1,0 +1,21 @@
+<h1>Calculate Mortgage Payments</h1>
+
+
+<form action='/mortgage' method='get'>
+  <p>Principal: £<input type='text' name='principal'></p>
+  <p>Yearly interest rate in %: <input type='text' name='interest_rate'></p>
+  <p>Number of monthly payments: <input type='number_of_payments' name='number_of_payments'></p>
+  <button class="btn btn-success">Calculate</button>
+</form>
+
+  <% if @result %>
+    <section>
+      <header>
+        <h1>Monthly Mortgage Calculation</h1>
+      </header>
+      <p>Principal: £<%=two_decimals(@principal) %> </p>
+      <p>Yearly interest rate in %: <%=two_decimals(@interest_rate) %></p>
+      <p>Number of monthly payments: <%=two_decimals(@number_of_payments) %></p>
+
+      <p>The result is £<%= two_decimals(@result) %> per month</p>
+  <% end %>
