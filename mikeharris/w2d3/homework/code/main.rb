@@ -120,6 +120,13 @@ end
 
 get '/Pieceofstring' do
 
+  @string_length=params[:string_length].to_f
+
+  if @string_length
+    @string_actual = @string_length + rand(100)
+  end
+
+erb :pieceofstring
 
 
 end

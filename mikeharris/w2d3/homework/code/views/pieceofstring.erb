@@ -1,0 +1,26 @@
+<h2>How long is a piece of string?</h2>
+
+<form action='/Pieceofstring' method='get'>
+
+    <table>
+      <tr>
+        <td>How long is a piece of string? (cm)</td><td><input type='text' name='string_length'></td>
+      </tr>
+    </table>
+</form>
+
+<% if @string_length && @string_length > 0 %>
+
+  <section>
+    <h3>String Length</h3>
+
+    <div class="Trip result">
+      <p>Sorry - a piece of string is not <%= @string_length %>cm long</p>
+      <p>It is actually <%= @string_actual %> cm long</p>
+
+  </div>
+  
+
+  </section>
+
+  <% end %>

@@ -2,11 +2,14 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
+     <link rel='stylesheet' href='/reset.css'>
     <link rel='stylesheet' href='/style.css'>
     <title>My website</title>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1>Calc it</h1>
+    <main>
+    <h1>Calc It</h1>
     <nav>
       <ul>
         <li><a href='/'>Home</a></li>
@@ -14,8 +17,13 @@
         <li><a href='/Maths'>Maths</a></li>
         <li><a href='/Trip'>Trip</a></li>
         <li><a href='/Mortgage'>Mortgage</a></li>
+        <li><a href='/Pieceofstring'>String</a></li>
       </ul>
     </nav>
+
+
     <%= yield %>
+
+    <main>
   </body>
 </html>
