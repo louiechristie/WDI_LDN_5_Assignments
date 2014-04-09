@@ -10,7 +10,7 @@ post '/navigate' do
   case params[:destination].downcase
   when 'basic' then redirect to('/basic')
   when 'advanced' then redirect to('/advanced')
-  when 'funky' then redirect to('/funky')
+  when 'trip' then redirect to('/trip')
   # when 'celebrity' then redirect to('/celebrity')
   else redirect to('/')
   end
@@ -50,8 +50,16 @@ get '/advanced' do
   erb :advanced
 end
 
-get '/funky' do
-  erb :funky
+get '/trip' do
+
+  @distance = params[:distance].to_f
+  @speed = params[:speed].to_f
+  @mpg = [5, params[:mpg].to_f - (@speed - 60) * 2].min.to_f if params[:mpg]
+  @price = params[:price].to_f
+  @time = (@distance.to_f / @speed).round(1)
+  @cost = (@distance / @mpg * @price).round(0) if params[:mpg]
+  erb :trip
+
 end
 
 # get '/celebrity' do
