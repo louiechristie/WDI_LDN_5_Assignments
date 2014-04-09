@@ -4,6 +4,23 @@
     <meta charset='utf-8'>
     <title>Calculator</title>
     <link rel='stylesheet' href='/style.css'>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script>
+  $(function() {
+    var availableTags = [
+      "Basic Calculator",
+      "Advanced Calculator",
+      "Trip Calculator",
+      "BMI Calculator",
+      "Mortgage Calculator",
+      "Personality Calculator"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
   </head>
 
   <body>

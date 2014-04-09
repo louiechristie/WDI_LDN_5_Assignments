@@ -8,12 +8,12 @@ end
 
 post '/navigate' do
   case params[:destination].downcase
-  when 'basic' then redirect to('/basic')
-  when 'advanced' then redirect to('/advanced')
-  when 'trip' then redirect to('/trip')
-  when 'bmi' then redirect to('/bmi_choice')
-  when 'mortgage' then redirect to('/mortgage')
-  when 'personality' then redirect to('/personality')
+  when 'basic calculator' then redirect to('/basic')
+  when 'advanced calculator' then redirect to('/advanced')
+  when 'trip calculator' then redirect to('/trip')
+  when 'bmi calculator' then redirect to('/bmi_choice')
+  when 'mortgage calculator' then redirect to('/mortgage')
+  when 'personality calculator' then redirect to('/personality')
   else redirect to('/')
   end
 end
