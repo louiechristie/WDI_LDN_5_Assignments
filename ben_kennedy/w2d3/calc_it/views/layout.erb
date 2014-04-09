@@ -8,20 +8,23 @@
 
   <body>
     <header>
-      <h1>My awesome calculator</h1>
+      <h1>Super Calculator!</h1>
       <nav>
         <ul>
           <li><a href='/basic'>Basic Calculator</a></li>
           <li><a href='/advanced'>Advanced Calculator</a></li>
           <li><a href='/trip'>Trip Calculator</a></li>
-          <li><a href='/trip'>BMI Calculator</a></li>
-          <li><a href='/trip'>Mortgage Calculator</a></li>
+          <li><a href='/bmi_choice'>BMI Calculator</a></li>
+          <li><a href='/mortgage'>Mortgage Calculator</a></li>
+          <li><a href='/personality'>Personality Calculator</a></li>
         </ul>
       </nav>
     </header>
+    <section class="main">
     <%= yield %>
+    </section>
     <footer>
-      <p>sub navigation goes here....</p>
+      
     </footer>
   </body>
 </html>

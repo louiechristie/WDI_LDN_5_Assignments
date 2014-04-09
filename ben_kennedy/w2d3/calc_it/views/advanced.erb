@@ -7,18 +7,20 @@
     <input type='text' name='number1'>
     To the: 
     <input type='text' name='number2'>
-    Power
+    Power <br/>
     <button>Calculate!</button>
   </form>
+  <% if @result1 %>
+      <p><%= @number1 %> raised to the <%= @number2 %> power is <%= @result1 %></p>
+  <% end %>
+
+  
     <h2>Get the square root of a number</h2>
   <form action='/advanced' method='get'>
     The square root of: <input type='text' name='number3'>
     <button>Calculate!</button>
   </form>
   
-  <% if @result1 %>
-    <p><%= @number1 %> raised to the <%= @number2 %> power is <%= @result1 %></p>
-  <% end %>
   <% if @result2 %>
     <p>The square root of <%= @number3 %> is <%= @result2 %></p>
   <% end %>

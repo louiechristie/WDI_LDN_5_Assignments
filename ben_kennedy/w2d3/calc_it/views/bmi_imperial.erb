@@ -1,0 +1,19 @@
+<section>
+  <header>
+    <h1>Let's see if you are a fatso:</h1>
+  </header>
+  <form action='/bmi_imperial' method='get'>
+    How tall are you in inches?
+    <input type='text' name='height'>
+    
+    How much do you weight in pounds?
+    <input type='text' name='weight'>
+    
+    <button>Calculate!</button>
+  </form>
+
+  <% if @bmi %>
+    <p>Your BMI is <%= @bmi %>.</p>
+  <% end %>
+
+</section>
