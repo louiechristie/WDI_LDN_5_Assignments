@@ -72,7 +72,7 @@ sqlite> select count(*) from wishlists join products on products.id = wishlists.
 sqlite> select count(*) from wishlists join users on users.id = wishlists.user_id where users.name = 'Paul Varga';
 5
 
-15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
+15. Selects the count and name of all products on the wishlist, ordered by count in descending order. (NOTE: Needed help and could not translate it into 16.)
 sqlite> select name,count(*) AS products_count from products where products.id In (select product_id from wishlists) group by name order by products_count desc;
 Brown Leather Boots|1
 Card Against Humanity|1
@@ -87,11 +87,7 @@ sqlite>
 
 
 16. Selects the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
-select products.name, count(wishlists.product_id) from wishlists join products on products.id = wishlists.product_id where products.on_sale ='f' group by wishlists.product_id order by count(wishlists.product_id) desc;
-Card Against Humanity|16
-Cat Ears|15
-Teddy Bear|6
-Set of 12 Mason Jars|2
+???
 
 17. Inserts a user with the name "Jonathan Anderson" into the users table. Ensure the created_at column is set to the current time.
 insert into users (created_at, name) values (datetime(CURRENT_TIMESTAMP,'localtime'), 'Jonathan Anderson');
