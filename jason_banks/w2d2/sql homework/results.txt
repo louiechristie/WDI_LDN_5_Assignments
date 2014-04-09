@@ -19,10 +19,17 @@
     sqlite> select name, MAX(price) from products;
     Cat Ears|99.99
 
+    Pavling: select name, price from products order by price desc limit 1;
+
 4. Selects the name and price of the second most expensive product.
 
     sqlite> select name, max(price) from products where price < (select max(price) from products);
     Brown Leather Boots|82.0
+
+    Pavling: select name, price from products order by price desc limit 1, 1;
+    --> limit 1, 1 ==> limit by skipping 1, giving 1 response
+    --> limit 3, 1 ==> limit by skipping 3, giving 1 response
+    --> Pavling's avoids certain issues in Postgres, but might be bad if there are multiple products with the most expensive price
 
 5. Selects the name and price of the least expensive product.
 
@@ -47,6 +54,8 @@
 
     sqlite> select avg(price) from products;
     38.899
+
+    Pavling: notes this gives the mean, but would not work if you wanted the median or mode
 
 8. Selects the sum of the price of all products.
 
@@ -78,6 +87,9 @@
 
     sqlite> select count(wishlists.user_id) from users join wishlists on users.id = wishlists.user_id join products on wishlists.product_id = products.id where products.name = 'Teddy Bear';
     6
+
+    Pavling: there are different types of joins: inner/outer, left/right, full -- think of a 2-circle venn diagram
+    http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
 
 14. Selects the count of items on the wishlish of the user with your name.
 
