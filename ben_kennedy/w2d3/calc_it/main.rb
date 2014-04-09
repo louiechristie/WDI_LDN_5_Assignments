@@ -36,6 +36,17 @@ get '/basic' do
 end
 
 get '/advanced' do
+  
+  @number1 = params[:number1]
+  @number2 = params[:number2]
+  @number3 = params[:number3]
+  
+  if @number1 && @number2
+    @result1 = @number1.to_f ** @number2.to_f
+  end
+  if @number3
+    @result2 = Math.sqrt(@number3.to_f).round(2)
+  end     
   erb :advanced
 end
 
