@@ -92,14 +92,14 @@ ul a {
   text-decoration: none;
 }
 
+ul a:hover {
+  color: #daa;
+}
+
 .author {
   border-top: 2px dotted #000;
   border-bottom: 2px solid #000;
   margin: 0 15px;
-}
-
-.author p {
-  margin: 0px;
 }
 
 footer {

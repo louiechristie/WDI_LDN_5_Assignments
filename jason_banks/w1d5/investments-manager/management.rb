@@ -120,10 +120,11 @@ class Management
       stock_symbol_original
     else
       stock = YahooFinance::get_standard_quotes(stock_symbol)[stock_symbol]
-      while stock == nil && stock.lastTrade > 0
+      while stock == nil || stock.lastTrade <= 0
         puts "\nYou have entered an invalid stock symbol or #{stock_symbol} is worthless."
         print "\nRe-enter the stock symbol: "
         stock_symbol = gets.chomp.upcase
+        stock = YahooFinance::get_standard_quotes(stock_symbol)[stock_symbol]
       end
       stock_symbol
     end
@@ -166,7 +167,7 @@ class Management
       if client.balance_check(stock_symbol, additional_units)
         stock.buy_more_units(additional_units)
       else
-        puts "\n#{client.name}'s account cannot afford to make this investment at this time.\n"
+        puts "\n#{client.name}'s account cannot afford to make this investment at this time without selling some stock.\n\n"
       end
       puts client.to_s
     else
