@@ -12,16 +12,34 @@ get '/basic' do
   @operator = params[:operator]
 
   @result = case @operator
-                    when "+" then @first + @second
-                    when "-" then @first - @second
-                    when "*" then @first * @second
-                    when "/" then @first / @second
-                  end
+            when "+" then @first + @second
+            when "-" then @first - @second
+            when "*" then @first * @second
+            when "/" then @first / @second
+            end
 
-  erb :calc
+  erb :basic
 end
 
 get '/advanced' do
+
+  @first = params[:first].to_f
+  @second = params[:second].to_f
+  @square = params[:square].to_f
+
+  if params[:first]
+    @result_power = @first**@second
+  elsif params[:square] && @square >= 0
+    @result_root = Math.sqrt(@square)
+  elsif params[:square] && @square < 0
+    @result_root = "unable to determine the square root of a negative number"      
+  else
+    @result_power = nil
+    @result_root = nil
+  end
+ 
+
+  erb :advanced
 
 end
 

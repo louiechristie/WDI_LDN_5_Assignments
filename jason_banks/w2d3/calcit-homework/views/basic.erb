@@ -1,0 +1,28 @@
+
+<% if @result %>
+  <section>
+    <h1>Results</h1>
+    <p>
+      The result of <%=@first%> <%=@operator%> <%=@second%> is <%= @result %>. 
+      <% if @result % 2 == 0 && @result != 0 %>
+      Even steven.
+      <% elsif @result.is_a? Fixnum %>
+      The odds are good, but the goods are odd.
+      <% else %>
+      <% end %>
+    </p>
+  </section>
+<% end %>
+
+<form action='/basic' method='get'>
+  First: <input type='number' name='first'>
+  Operator: <select name='operator'>
+  <option value="+"> </option>
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+  Second: <input type='number' name='second'>
+  <button>Calculate!</button>
+
+</form>

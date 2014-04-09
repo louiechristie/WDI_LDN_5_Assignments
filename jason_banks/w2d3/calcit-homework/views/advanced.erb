@@ -1,0 +1,19 @@
+<h1>Power</h1>
+<form action='/advanced' method='get'>
+  First: <input type='number' name='first'>
+  Second: <input type='number' name='second'>
+  <button>Calculate!</button>
+</form>
+
+<h1>Square Root</h1>
+<form action='/advanced' method='get'>
+  Square: <input type='number' name='square'>
+  <button>Calculate!</button>
+</form>
+
+<% if @result_power %>
+  <h2>Result: <%= @result_power %>.</h2>
+<% elsif @result_root %>
+  <h2>Root: <%= @result_root %>.</h2>
+<% else %>  
+<% end %>
