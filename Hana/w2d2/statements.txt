@@ -47,7 +47,27 @@ Set of 12 Mason Jars|6.22|6.22
 8. select sum(price) from products;
 388.99
 
-9.
+9. select sum(price) from products where (price < 20);
+55.19
+
+10. SELECT id FROM users WHERE name="Hana Kim";
+4
+
+11. select name from users where name like "S%";
+Sam Hill
+Scott Gammon
+
+12. SELECT count(*) FROM users where name like "Jonathan";
+0
+
+13. SELECT count(*) FROM wishlists WHERE product_id = (SELECT id FROM products WHERE name="Teddy Bear");
+6
+
+14.  select count(*) from wishlists where user_id=(select id from users where name="Hana Kim");
+4
+
+15. 
+
 
 
 
