@@ -10,13 +10,16 @@ h1 {
 }
 
 h2 {
-     margin-top: 50px;
+     margin-top: 25px;
      margin-bottom: 25px;
   font-size: 30px;
   text-align: center;
   
 }
 
+.active {
+  background: gray;
+}
 h3 {
  margin-bottom: 25px;
   font-size: 20px;
@@ -42,6 +45,7 @@ button, select {
   width: 100%;
   text-align: center;
   padding: 10px;
+  font-size: 20px;
 }
 
 .btn  {
@@ -58,7 +62,7 @@ tr {
 }
 
 li {
-  float:left;
+  display: inline-block;
 }
 
 a {
@@ -69,6 +73,7 @@ a {
   width: 200px;
   margin: 5px 10px;
   text-align: center;
+  color: black;
 }
 
 a:hover {
