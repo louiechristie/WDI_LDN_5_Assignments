@@ -20,12 +20,13 @@ header h1 {
 
 .efbhf {
   max-width: 960px;
-  margin: 100px 100px 100px 100px;
   clear: both;
+  margin: 100px 100px 100px 100px;
+
 }
 
 #main {
-  max-width: 60%;
+  max-width: 67%;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 150px;
