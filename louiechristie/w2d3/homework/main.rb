@@ -92,7 +92,6 @@ get '/bmi' do
 
     @height1 = 0.3048 * @height1 if @h_unit1 == "feet" 
     @height2 = 2.54 * @height2 if @h_unit2 == "inches"
-
     @height1 = @height1 + (0.01 * @height2) 
 
     @weight = @weight * 6.35029 if @w_unit == "stone"
@@ -100,4 +99,9 @@ get '/bmi' do
     @result = @weight/((@height1)**2)
   end
   erb :bmi
+end
+
+get '/time' do
+    @result = Time.now.getutc
+  erb :time
 end
