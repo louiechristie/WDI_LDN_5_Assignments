@@ -1,0 +1,14 @@
+<div>
+  <h1>Mortgage Payments</h1>
+  <form action="/mortgage" method="get">
+    Principal: <input type="number" step="any" name="principal">
+    Annual Interest Rate (%): <input type="number" step="any" name="interest">
+    Number of payments (months): <input type="number" name="number">
+    <button>Calculate!</button>
+  </form>
+
+  <% if @result %>
+  <p>Your monthly mortgage payment is <%= @result.round(2) %>. Don't fret--debt makes the world go round.</p>
+  <% end %>
+</div>
+
