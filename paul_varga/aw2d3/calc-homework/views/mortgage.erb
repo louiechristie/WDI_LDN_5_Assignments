@@ -1,0 +1,15 @@
+<form action='/mortgage' method='get'>
+  principal: <input type='text' name='principal'>
+  yearly_interest_rate: <input type='text' name='yearly_interest_rate'>
+  number_of_years: <input type='text' name='number_of_years'>
+  <button>calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Results of Calculation</h1>
+    </header> 
+    <p>Your monthly payment is <%= @result %> for the next <%= @number_of_years / 12 %> years.</p>
+  </section>
+<% end %>

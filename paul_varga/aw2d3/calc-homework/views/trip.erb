@@ -1,0 +1,25 @@
+<form action='/trip' method='get'>
+  distance (miles): <input type='text' name='distance'>
+  fuel efficiency (mpg): <input type='text' name='fuel_efficiency'>
+  cost per gallon (GBP): <input type='text' name='cost_per_gallon'>
+  speed (mph): <input type='text' name='speed'>
+  <button>calculate!</button>
+</form>
+
+<% if @duration %>
+  <section>
+    <header>
+      <h1>Duration of the trip</h1>
+    </header> 
+    <p>The duration of your trip is <%= @duration %>.</p>
+  </section>
+<% end %>
+
+<% if @cost %>
+  <section>
+    <header>
+      <h1>Costs of the trip</h1>
+    </header> 
+    <p>The trip will cost you GBP <%= @cost %>.</p>
+  </section>
+<% end %>

@@ -1,0 +1,19 @@
+<form action='/timealive' method='get'>
+  Year you are born: <input type='text' name='year_of_birth'>
+  Month you are born: <input type='text' name='month_of_birth'>
+  Day you are born: <input type='text' name='day_of_birth'>
+
+  Current year we are in: <input type='text' name='current_year'>
+  Current month we are in: <input type='text' name='current_month'>
+  Today's day: <input type='text' name='current_day'>
+  <button>calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Duration of the trip</h1>
+    </header> 
+    <p>Congrats, you are now alive for <%= @result %> days.</p>
+  </section>
+<% end %>

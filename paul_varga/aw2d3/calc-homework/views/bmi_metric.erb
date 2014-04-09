@@ -1,0 +1,14 @@
+<form action='/bmi_metric' method='get'>
+  weight (kg): <input type='text' name='weight'>
+  height (m): <input type='text' name='height'>
+  <button>calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Results of Calculation</h1>
+    </header> 
+    <p>Your Body Mass Index is <%= @result %>.</p>
+  </section>
+<% end %>
