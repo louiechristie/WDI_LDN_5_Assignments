@@ -1,4 +1,20 @@
 bmi
-<%
-<form action='/calc' method='get'>
-    First: <input type='text' name='first'></br> %>
+
+<form action='/bmi' method='get'>
+  Units: <select name="units">
+    <option value="empirical">Empirical</option> 
+    <option value="metric">Metric</option>
+  </select> </br>
+  <input type='text' placeholder='Weight' name='weight'></br> 
+  <input type='text' placeholder='Height' name='height'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

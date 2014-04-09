@@ -24,12 +24,34 @@ get '/math' do
   case params[:destination].downcase
   when 'basic' then redirect to('/basic')
   when 'advanced' then redirect to('/advanced')
-
-
+    else  
+    @error = "Invalid Page Selected"
+    erb :home
+  end
   erb :math
 end
 
 get '/bmi' do
+    @weight = params[:weight].to_f
+    @height = params[:height].to_f
+    @units = params[:units]
+   
+  if @weight <= 0
+    @result = 0
+    @message = "You must enter a positive weight."
+  elsif @height <= 0
+    @result = 0
+    @message = "You must enter a positive height."
+  else
+     case @units
+      when "empirical"
+        @result = ((@weight) / (@height) ** 2 ) * 703
+        @message = "Your BMI is #{@result.round(1)}."
+      when " metric"
+        @result = (@weight) / (@height) ** 2
+        @message = "Your BMI is #{@result.round(1)}."
+     end
+  end
   erb :bmi
 end
 
