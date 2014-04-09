@@ -1,20 +1,21 @@
 <form action='/simple' method='get'>
-  first: <input type='text' name='first'>
-  operator: <select name='operator'>
+  <p>You can use this great calculator for simple maths:</p>
+  First Number: <input type='text' name='first'>
+  Operator: <select name='operator'>
   <option value='+'>+</option>
   <option value='-'>-</option>
   <option value='*'>*</option>
   <option value='/'>/</option>
-  second: <input type='text' name='second'>
-  <button>calculate!</button>
+  Second Number: <input type='text' name='second'>
+  <button>Calculate!</button>
 </form>
 
 <% if @result %>
   <section>
     <header>
-      <h1>Results of Calculation</h1>
+      <h3>Results of Calculation</h3>
     </header> 
-    <p>The results of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %> .</p>
+    <p>The results of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>.</p>
   </section>
 <% end %>
 

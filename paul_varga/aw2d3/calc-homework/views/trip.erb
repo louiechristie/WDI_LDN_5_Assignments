@@ -1,9 +1,12 @@
 <form action='/trip' method='get'>
-  distance (miles): <input type='text' name='distance'>
-  fuel efficiency (mpg): <input type='text' name='fuel_efficiency'>
-  cost per gallon (GBP): <input type='text' name='cost_per_gallon'>
-  speed (mph): <input type='text' name='speed'>
-  <button>calculate!</button>
+  <p>Your next trip is starting soon. Let's see your duration and costs.</p>
+  <ul>
+    <li>Please enter the distance (miles): <input type='text' name='distance'></li>
+    <li>Please enter the fuel efficiency (mpg) of your car: <input type='text' name='fuel_efficiency'></li>
+    <li>Please enter the cost per gallon (GBP): <input type='text' name='cost_per_gallon'></li>
+    <li>Please enter the speed (mph) you estimate: <input type='text' name='speed'></li>
+  </ul>
+  <button>Calculate!</button>
 </form>
 
 <% if @duration %>
@@ -11,7 +14,7 @@
     <header>
       <h1>Duration of the trip</h1>
     </header> 
-    <p>The duration of your trip is <%= @duration %>.</p>
+    <p>The duration of your trip is <%= @duration %> hours.</p>
   </section>
 <% end %>
 

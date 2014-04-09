@@ -26,10 +26,10 @@ get '/simple' do
   @operator = params[:operator]
 
   @result = case @operator
-  when '+' then @first + @second
-  when '-' then @first - @second
-  when '*' then @first * @second
-  when '/' then @first / @second
+  when '+' then (@first + @second).round(2)
+  when '-' then (@first - @second).round(2)
+  when '*' then (@first * @second).round(2)
+  when '/' then (@first / @second).round(2)
   end
 
   erb :simple
@@ -113,8 +113,8 @@ get '/timealive' do
   @current_month = params[:current_month].to_f
   @current_day = params[:current_day].to_f
 
-  @result = ((@current_year - @year_of_birth)*365)
-  + (((@current_month - @month_of_birth)*30).abs)
+  @result = (((@current_year - @year_of_birth)-1)*365.25)
+  + (((@current_month - @month_of_birth)*30.25).abs)
   + ((@current_day - @day_of_birth).abs)
 
   erb :timealive

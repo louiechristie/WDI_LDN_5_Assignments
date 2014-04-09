@@ -1,18 +1,20 @@
 <form action='/timealive' method='get'>
-  Year you are born: <input type='text' name='year_of_birth'>
-  Month you are born: <input type='text' name='month_of_birth'>
-  Day you are born: <input type='text' name='day_of_birth'>
-
-  Current year we are in: <input type='text' name='current_year'>
-  Current month we are in: <input type='text' name='current_month'>
-  Today's day: <input type='text' name='current_day'>
-  <button>calculate!</button>
+  <p>Lets see how many days you have already spent on planet earth.</p>
+  <ul>
+    <li>Enter the year you are born: <input type='text' name='year_of_birth'></li>
+    <li>Enter the month you are born: <input type='text' name='month_of_birth'></li>
+    <li>Enter the day you are born: <input type='text' name='day_of_birth'></li>
+    <li>What´s the current year: <input type='text' name='current_year'></li>
+    <li>What´s the current month: <input type='text' name='current_month'></li>
+    <li>What´s today´s day: <input type='text' name='current_day'></li>
+  </ul>  
+  <button>Calculate!</button>
 </form>
 
 <% if @result %>
   <section>
     <header>
-      <h1>Duration of the trip</h1>
+      <h1>Your time is on planet earth since birth:</h1>
     </header> 
     <p>Congrats, you are now alive for <%= @result %> days.</p>
   </section>

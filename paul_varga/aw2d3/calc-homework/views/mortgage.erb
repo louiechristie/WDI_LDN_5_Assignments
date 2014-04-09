@@ -1,15 +1,18 @@
 <form action='/mortgage' method='get'>
-  principal: <input type='text' name='principal'>
-  yearly_interest_rate: <input type='text' name='yearly_interest_rate'>
-  number_of_years: <input type='text' name='number_of_years'>
-  <button>calculate!</button>
+  <p>Let‘s see how paying back your mortgage is going...</p>
+  <ul>
+    <li>Please enter your principal: <input type='text' name='principal'></li>
+    <li>Please enter your interest rate (per year) with out a percentage sign: <input type='text' name='yearly_interest_rate'></li>
+    <li>Please enter the number of years you want for payback: <input type='text' name='number_of_years'></li>
+  </ul>
+  <button>Calculate!</button>
 </form>
 
 <% if @result %>
   <section>
     <header>
-      <h1>Results of Calculation</h1>
+      <h3>Results of Calculation</h3>
     </header> 
-    <p>Your monthly payment is <%= @result %> for the next <%= @number_of_years / 12 %> years.</p>
+    <p>Your monthly payment is GBP <%= @result %>.</p>
   </section>
 <% end %>
