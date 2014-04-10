@@ -15,29 +15,6 @@ after do
 
 end
 
-# get '/home' do
-
-#   item = params[:item]
-#   description = params[:description]
-#   delete = params[:delete]
-
-#   if item && item > ""
-#     add_sql = "insert into todos (item, description) values (#{sql_string(item)}, #{sql_string(description)})"
-#     @db.exec(add_sql)
-#   end
-
-#   if delete && delete > ""
-#     del_sql = "delete from todos where id = #{delete}"
-#     @db.exec(del_sql)
-#   end
-
-#   show_sql = "select * from todos"
-#   @todos = @db.exec(show_sql)
-
-
-#   erb :home
-
-# end
 
 
 
@@ -67,21 +44,40 @@ end
 get '/show/:id' do
   id = params[:id]
   show_sql = "select * from todos where id = #{id}"
-
-  @todo = db.exec(show_sql)
+  @todo = @db.exec(show_sql)
 
   erb :show
 end
 
 get '/edit/:id' do
+  id = params[:id]
+  edit_sql = "select * from todos where id = #{id}"
+  @todo = @db.exec(edit_sql)
+
   erb :edit
 end
 
 post '/update/:id' do
+  item = params[:item]
+  description = params[:description]
+  id = params[:id]
+  binding.pry
+
+  update_sql = "update todos set item = '#{item}', description = '#{description}' where id = #{id}"
+  @db.exec(update_sql)
+
   redirect to("/show/#{params[:id]}")
 end
 
 get '/delete/:id' do
+
+  item = params[:item]
+  description = params[:description]
+  id = params[:id]
+
+  del_sql = "delete from todos where id = #{id}"
+  @db.exec(del_sql)
+
   redirect to('/')
 end
 

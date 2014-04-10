@@ -1,36 +1,8 @@
-  <h2>Edit the item below:</h2>
-
-
-<table>
-      <thead>
-        <tr>
-          <td>Item</td>
-          <td>Description</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @todos.each do |todo| %>
-        <tr>
-          <td class="item"><%= todo['item'] %></td>
-          <td><%= todo['description'] %></td>
-          <td>
-            <form action='/edit/:id' method ='get'>
-            <button type="submit" name="edit" value="todo['id']">Edit</button>
-            </form>
-          </td>
-          <td>
-            <form action='/delete/:id' method='get'>
-            <button type="submit" name="delete" value="todo['id']">Delete</button>
-            </form>
-          </td>
-        </tr>     
-        <% end %>
-      </tbody>
-    </table>
-
-
-<form action="/update/:id" method="post">
-  Item: <input type="text" name="item" autofocus>
-  Description: <input type="text" name="description">
-  <button>Submit</button>
-</form>
+<h2>Edit the item below:</h2>
+<% @todo.each do |todo| %>
+  <form action="/update/<%= todo['id'] %>" method="post">
+    Item: <input type="text" name="item" value="<%= todo['item'] %>" autofocus>
+    Description: <input type="text" name="description" value="<%= todo['description'] %>" autofocus>
+    <button>Submit</button>
+  </form>
+<% end %>

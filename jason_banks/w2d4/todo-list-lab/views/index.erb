@@ -2,30 +2,27 @@
 <br />
 
 <% if @todos.any? %>
-  <form action="/show/:id" method="get">
-    <h2>Things to do!</h2>
-    <table>
-      <thead>
-        <tr>
-          <td>Item</td>
-          <td>Description</td>
-          <td>Detail</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @todos.each do |todo| %>
-        <tr>
-          <td class="item"><%= todo['item'] %></td>
-          <td><%= todo['description'] %></td>
-          <td><input type="radio" name="id" value="<%= todo['id'] %>"></td>
-        </tr>     
-        <% end %>
-        <tr>
-          <td><button>Submit</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
+  <h2>Things to do!</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Item</td>
+        <td>Description</td>
+        <td>Detail</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @todos.each do |todo| %>
+        <form action="/show/<%= todo['id'] %>" method="get">
+          <tr>
+            <td class="item"><%= todo['item'] %></td>
+            <td><%= todo['description'] %></td>
+            <td><button type="submit" name="id" value="<%= todo['id'] %>">Select</button></td>
+          </tr>     
+        </form>
+     <% end %>
+    </tbody>
+  </table>
 <% end %>
 
 
