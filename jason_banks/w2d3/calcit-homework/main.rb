@@ -52,7 +52,10 @@ get '/mortgage' do
   interest_sub_calc = (1 + interest)**number
   numerator = interest * interest_sub_calc
   denominator = interest_sub_calc - 1
-  @result = principal * (numerator / denominator)
+
+  if principal > 0
+    @result = principal * (numerator / denominator)
+  end
 
   erb :mortgage
 
@@ -80,11 +83,19 @@ end
 
 get '/trip' do
 
-  distance
-  mpg
-  cost
-  mph
+  distance = params[:distance].to_f
+  mpg = params[:mpg].to_f
+  cost_of_gas = params[:cost_of_gas].to_f
+  mph = params[:mph].to_f
 
+  if mph > 60
+    mpg = mpg - (2 * (mph - 60))
+  end
+
+  if distance > 0
+    @time = (distance / mph).round(2)
+    @cost = ((distance / mpg) * cost_of_gas).round(2)
+  end
 
   erb :trip
 

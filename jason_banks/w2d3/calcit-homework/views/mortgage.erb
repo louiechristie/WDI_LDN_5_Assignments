@@ -1,10 +1,29 @@
 <div>
   <h1>Mortgage Payments</h1>
   <form action="/mortgage" method="get">
-    Principal: <input type="number" step="any" name="principal">
-    Annual Interest Rate (%): <input type="number" step="any" name="interest">
-    Number of payments (months): <input type="number" name="number">
-    <button>Calculate!</button>
+    <table>
+      <thead>
+        <tr>
+        </tr>
+      <tbody>
+        <tr>
+          <td>Principal: </td>
+          <td><input type="number" step="any" name="principal"></td>
+        </tr>
+        <tr>
+          <td>Annual Interest Rate (%): </td>
+          <td><input type="number" step="any" name="interest"></td>
+        </tr>
+        <tr>
+          <td>Number of payments (months): </td>
+          <td><input type="number" name="number"></td>
+        </tr>
+        <tr>
+          <td><button>Calculate!</button></td>
+        </tr>
+      </tbody>
+    </table>
+
   </form>
 
   <% if @result %>

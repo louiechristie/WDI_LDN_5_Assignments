@@ -1,13 +1,34 @@
 <h1>Trip: Time and Cost</h1>
 <form action='/trip' method='get'>
-  Distance (mi): <input type="number" step="any" name="distance">
-  Fuel Efficiency of your vehicle (mpg): <input type="number" step="any" name="mpg">
-  Cost of Gas (per gallon): $<input type="number" step="any" name="cost_of_gas">
-  Average traveling speed (mph): <input type="number" step="any" name="mph">
-  <button>Calculate!</button>
+  <table>
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Distance (mi): </td>
+        <td><input type="number" step="any" name="distance"></td>
+      </tr>
+      <tr>
+        <td>Fuel Efficiency of your vehicle (mpg): </td>
+        <td><input type="number" step="any" name="mpg"></td>
+      </tr>
+        <td>Cost of Gas ($ per gallon): </td>
+        <td><input type="number" step="any" name="cost_of_gas"></td>
+      </tr>
+      <tr>
+        <td>Average traveling speed (mph): </td>
+        <td><input type="number" step="any" name="mph"></td>
+      </tr>
+      <tr>
+        <td><button>Calculate!</button></td>
+      </tr>
+    </tbody>
+  </table>
 </form>
 
-<% if @result %>
-<p>Your trip will take <%= @time %>hours and gas will cost you $<%= @cost %>.</p>
+<% if @time %>
+<p>Your trip will take <%= @time %> hours and gas will cost you $<%= sprintf("%.2f", @cost) %>.</p>
 <p>Oh the places you'll go!</p>
 <% end %>

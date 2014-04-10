@@ -12,7 +12,7 @@
 </form>
 
 <% if @metric_result || @imperial_result%>
-  <br>
+  <br />
     <% if @metric_result %>
       <p>Your BMI is <%= @metric_result.round(2) %>.
     <% elsif @imperial_result %>
