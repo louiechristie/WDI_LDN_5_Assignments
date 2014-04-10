@@ -1,10 +1,11 @@
+  <h2>Edit the item below:</h2>
+
+
 <table>
       <thead>
         <tr>
           <td>Item</td>
           <td>Description</td>
-          <td>Edit</td>
-          <td>Delete</td>
         </tr>
       </thead>
       <tbody>
@@ -26,3 +27,10 @@
         <% end %>
       </tbody>
     </table>
+
+
+<form action="/update/:id" method="post">
+  Item: <input type="text" name="item" autofocus>
+  Description: <input type="text" name="description">
+  <button>Submit</button>
+</form>
