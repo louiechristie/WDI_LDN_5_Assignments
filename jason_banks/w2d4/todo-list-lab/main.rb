@@ -15,9 +15,6 @@ after do
 
 end
 
-
-
-
 get '/' do
   list_sql = "select * from todos"
   @todos = @db.exec(list_sql)
@@ -34,10 +31,9 @@ post '/create' do
   item = params[:item]
   description = params[:description]
 
-  # if item && item > ""
   add_sql = "insert into todos (item, description) values (#{sql_string(item)}, #{sql_string(description)})"
   @db.exec(add_sql)
-  # end
+
   redirect to('/')
 end
 
@@ -61,9 +57,8 @@ post '/update/:id' do
   item = params[:item]
   description = params[:description]
   id = params[:id]
-  binding.pry
 
-  update_sql = "update todos set item = '#{item}', description = '#{description}' where id = #{id}"
+  update_sql = "update todos set item = #{sql_string(item)}, description = #{sql_string(description)} where id = #{id}"
   @db.exec(update_sql)
 
   redirect to("/show/#{params[:id]}")
