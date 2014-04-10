@@ -1,0 +1,23 @@
+<h1>Calculate Trip</h1>
+
+<form action='/trip' method='get'>
+  <p>Distance, how far will you drive?: <input type='text' name='distance'></p>
+  <p>MPG, fuel efficiency of the car?: <input type='text' name='mpg'></p>
+  <p>$PG, how much does gas cost per gallon?: <input type='text' name='cpg'></p>
+  <p>Speed, how fast will you drive?: <input type='text' name='speed'></p>
+  <button class="btn btn-success">Calculate</button>
+</form>
+
+  <% if @hours && @cost %>
+    <section>
+      <header>
+        <h1>Trip Calculation</h1>
+      </header>
+      <p>Distance, how far will you drive: £<%=two_decimals(@distance) %> </p>
+      <p>MPG, fuel efficiency of the car: <%=two_decimals(@mpg) %></p>
+      <p>$PG, how much does gas cost per gallon: $<%=two_decimals(@cpg) %></p>
+      <p>Speed, how fast will you drive: <%=two_decimals(@speed) %></p>
+
+      <p>Your trip will take <%= two_decimals(@hours)%> hours and cost  £<%= two_decimals(@cost)%></p>
+
+  <% end %>
