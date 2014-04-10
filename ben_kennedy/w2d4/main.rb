@@ -37,13 +37,11 @@ end
 
 get '/show/:id' do 
 
-erb :wip
+erb :show
 end
 
 get '/edit/:id' do 
-
   @edit = params[:edit]
-
   sql_select = "select * from list"
   @task_list = @db.exec(sql_select).to_a  
   erb :edit
@@ -64,6 +62,10 @@ erb :home
 end
 
 get '/delete/:id' do 
-
-erb :wip
+  @delete = params[:delete]
+  delete_sql = "delete from list where id = '#{@delete}'"
+  @db.exec(delete_sql)
+  sql_select = "select * from list"
+  @task_list = @db.exec(sql_select).to_a  
+  erb :home
 end
