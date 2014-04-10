@@ -1,0 +1,44 @@
+<h2>Please enter your todo item:</h2>
+
+
+<form action='/' method 'get'>
+<table>
+  <tr>
+  <td>Input title</td><td><input type='text' name='title' autofocus></td>
+</tr>
+<tr>
+  <td>Input description</td><td><textarea rows=3  cols=20  name='todo' ></textarea></td>
+  </tr>
+  <tr><td></td><td>  <button>Submit</button></td>
+</table>
+
+
+</form>
+
+<% if @todolist %>
+
+<h2> Your current to do list is: </h2>
+<table class="todo_table">
+    <tr>
+      <td>Title</td><td>What do you have to do</td><td>Delete</td><td>Edit</td>
+    </tr>
+    <% @todolist.each do |item| %>
+        
+        <tr>
+          <td> <%= item['title'] %></td>
+          <td> <%= item['todo'] %></td>
+          <td> <a href="/delete/<%= item['id'] %>">Delete</td>
+          <td> <a href="/edit/<%= item['id'] %>">Edit</td>
+        </tr>
+
+
+  <% end %>
+    </taable>
+
+<% end %>
+
+
+
+
+
+

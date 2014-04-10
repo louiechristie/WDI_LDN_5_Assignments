@@ -1,0 +1,25 @@
+
+
+<h2>Item to edit</h2>
+
+<p>The title was:</p>
+
+
+
+
+<form action='/change' method 'get'>
+
+<table class="edit">
+  <tr style="display:none">
+  <td>Edit title</td></td><td><textarea rows=3  cols=20  name='id' ><%= @entry_to_edit["id"] %></textarea></td>
+</tr>
+  <tr>
+  <td>Edit title</td></td><td><textarea rows=3  cols=20  name='todo' ><%= @entry_to_edit["title"] %></textarea></td>
+</tr>
+<tr>
+  <td>Edit description</td></td><td><textarea rows=3  cols=20  name='todo' ><%= @entry_to_edit["todo"] %></textarea></td>
+  </tr>
+  <tr><td></td><td>  <button>Submit</button></td>
+
+  </table>
+  </form>
