@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='/reset.css'>
+    <link rel='stylesheet' href='/style.css'>
+    <title>ToDo</title>
+  </head>
+  <body>
+    <header><h1>Scott's To DO Tracker</h1></header>
+    <nav>
+        <h4>Please Enter Due Date in DDMMYY format</h4>
+    </nav>
+<p>
+
+
+
+</p>
+    <form action='/create' method='post'>
+      <input type= 'text' name= "item" autofocus>
+      completeness: <select name= 'completeness'>
+        <option value="0">complete</option>
+        <option value="1">incomplete</option>
+    </select>
+      <input type= 'text' name= "duedate" autofocus>
+        <button>Enter a TO DO Item</button>
+    </form>
+
+    <table>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item["item"] %></td>
+        <td><%= item["completeness"] == '0' ? "Completed" : "Incomplete" %></td>
+        <td><%= item["duedate"].gsub(/(.{2})/, '\1/').chop %></td>
+        <td>
+          <a href="/delete/<%= item["id"] %>">Delete</a>
+        </td>
+        <td>
+          <a href="/update/<%= item["id"] %>">Update</a>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </body>
+</html>
