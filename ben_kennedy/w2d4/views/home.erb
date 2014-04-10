@@ -1,0 +1,34 @@
+<h1>Task Manager</h1>
+
+<a href="/new">Add a task</a>
+
+<section>
+  <h2>Current To Dos:</h2>  
+    <table>
+      <tr>
+        <td>Task Name</td>
+        <td>Task Description</td>
+        <td></td>
+        <td></td>
+        </tr>
+      <% @task_list.each do |task| %>
+      <tr>
+        <td><%= task["task_name"] %></td>
+        <td><%= task["description"] %></td>
+        <td>
+          <form action='/edit/:<%= task["id"] %>' method='get'>
+            <button name='edit' type='submit' value='<%= task["id"] %>' >EDIT</button>
+          </form>
+        </td>
+        <td>
+          <form action='/' method='get'>
+            <button name='action' type='submit' value='<%= task["id"] %>' >DELETE</button>          
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  
+</section>   
+
+
