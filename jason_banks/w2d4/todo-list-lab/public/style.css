@@ -4,19 +4,43 @@ body {
   margin: 0 auto;
 }
 
+header {
+  margin: 40px auto;
+  position: relative;
+}
+
 h1 {
   font-family: 'Londrina Outline', cursive;
   font-size: 60px;
   color: #5729e8;
   text-align: center;
+  clear: both;
 }
 
-/*img {
+.ebthf {
+  margin-bottom: 150px;
+}
+
+.container {
+  width: 200px;
+  height: 120px;
+}
+
+.container img {
+  width: 30%;
+  height: auto;
   float: right;
-}*/
+  position: absolute;
+  right: 0px;
+  top: 35px;
+}
 
 a {
   text-decoration: none;
+}
+
+h2 {
+  text-align: center;
 }
 
 input {
@@ -29,4 +53,10 @@ td {
 
 td.item {
   background-color: #98fffc;
+}
+
+footer {
+  height: 50px;
+  bottom: 50px;
+  text-align: center;
 }
