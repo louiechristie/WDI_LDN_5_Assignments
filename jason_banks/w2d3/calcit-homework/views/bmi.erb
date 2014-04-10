@@ -1,0 +1,25 @@
+<h1>Body Mass Index</h1>
+<p>You're beautiful just the way you are.  But still, it is supposedly good to have all of the "<a href="http://www.npr.org/templates/story/story.php?storyId=106268439" target="_blank">facts</a>".</p>
+<form action='/bmi' method='get'>
+  <h2>Imperial</h2>
+  Mass (lbs): <input type="number" step="any" name="imperial_mass">
+  Height (in): <input type="number" step="any" name="imperial_height">
+  <button>Calculate!</button>
+  <h2>Metric</h2>
+  Mass (kg): <input type="number" step="any" name="metric_mass">
+  Height (m): <input type="number" step="any" name="metric_height">
+  <button>Calculate!</button>
+</form>
+
+<% if @metric_result || @imperial_result%>
+  <br />
+    <% if @metric_result %>
+      <p>Your BMI is <%= @metric_result.round(2) %>.
+    <% elsif @imperial_result %>
+      <p> Your BMI is <%= @imperial_result.round(2) %>.
+    <% end %>
+    Cheers to your continuing and/or improving good health!</p>
+  <% else %>
+<% end %>
+
+  
