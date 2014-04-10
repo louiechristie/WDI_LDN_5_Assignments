@@ -15,28 +15,6 @@
 
 </form>
 
-<% if @todolist %>
-
-<h2> Your current to do list is: </h2>
-<table class="todo_table">
-    <tr>
-      <td>Title</td><td>What do you have to do</td><td>Delete</td><td>Edit</td>
-    </tr>
-    <% @todolist.each do |item| %>
-        
-        <tr>
-          <td> <%= item['title'] %></td>
-          <td> <%= item['todo'] %></td>
-          <td> <a href="/delete/<%= item['id'] %>">Delete</td>
-          <td> <a href="/edit/<%= item['id'] %>">Edit</td>
-        </tr>
-
-
-  <% end %>
-    </taable>
-
-<% end %>
-
 
 
 

@@ -7,14 +7,11 @@
 
 
 
-<form action='/change' method 'get'>
+<form action='/update/<%= @entry_to_edit["id"] %>' method='post'>
 
 <table class="edit">
-  <tr style="display:none">
-  <td>Edit title</td></td><td><textarea rows=3  cols=20  name='id' ><%= @entry_to_edit["id"] %></textarea></td>
-</tr>
-  <tr>
-  <td>Edit title</td></td><td><textarea rows=3  cols=20  name='todo' ><%= @entry_to_edit["title"] %></textarea></td>
+ <tr>
+  <td>Edit title</td></td><td><textarea rows=3  cols=20  name='title' ><%= @entry_to_edit["title"] %></textarea></td>
 </tr>
 <tr>
   <td>Edit description</td></td><td><textarea rows=3  cols=20  name='todo' ><%= @entry_to_edit["todo"] %></textarea></td>

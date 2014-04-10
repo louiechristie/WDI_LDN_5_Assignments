@@ -14,43 +14,48 @@ end
 
 
 get '/'  do
+    redirect '/show'
+end
+
+get '/new'  do
+ erb :new 
+end
+
+post '/create'  do
     @title = params[:title]
     @todo = params[:todo]
-
-    sql_all = "select * from todo"
-    @todolist = @db.exec(sql_all)
-
-    if @title && @title > "" 
-      sql = "insert into todo (title, todo) values('#{@title}', '#{@todo}')"
-      @db.exec(sql)
-      @todolist = @db.exec(sql_all)
-      
-
-    end
-
-  erb :todo 
-
+    
+    sql = "insert into todo (title, todo) values('#{@title}', '#{@todo}')"
+    @db.exec(sql)
+    
+ redirect '/show'
 end
 
 
-get '/delete/:x'  do 
+get '/show' do
+  sql="select * from todo"
+  @todolist = @db.exec(sql)
 
-     @id_to_del = params[:x]
-     sql = "delete FROM todo where id = '#{@id_to_del}'"
+  erb :show
+end
+
+get '/delete/:id'  do 
+     @id = params[:id]
+     sql = "delete FROM todo where id = '#{@id}'"
      @db.exec(sql)
       
-redirect to '/'
+redirect to '/show'
 
 end
 
-get '/edit/:x'  do 
+get '/edit/:id'  do 
 
-     @id_to_edit = params[:x]
+     @id = params[:id]
      sql = "select * from todo"
      @todolist = @db.exec(sql)
 
      @todolist.each do |item|
-        if item["id"] == @id_to_edit
+        if item["id"] == @id
               @entry_to_edit = item
         end
      end 
@@ -60,7 +65,7 @@ get '/edit/:x'  do
 
 end
 
-get '/change' do
+post '/update/:id' do
    @id = params[:id]
    @title = params[:title]
    @todo = params[:todo]
