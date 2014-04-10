@@ -1,0 +1,41 @@
+<h2>Advanced Maths</h2>
+
+<form action='/Maths/Advanced' method='get'>
+
+    <table>
+      <tr>
+        <td>Input first number</td><td><input type='text' name='maths_adv_first'></td>
+      </tr>
+      <tr>
+        <td>Select Operator</td><td><select name="maths_adv_op">
+                                      <option value="power">Power</option>
+                                      <option value="sqrt">Squre Root</option>
+                                    
+                                    </select></td>
+      </tr>
+      <tr>
+        <td>If power input second number</td><td><input type='text' name='maths_adv_second'></td>
+      </tr>
+      <tr>
+      <tr>
+        <td></td><td><button>Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+<% if @maths_adv_first && @maths_adv_first != 0  %>
+<section>
+    <h3>Advanced Calculation Answer</h3>
+
+    <div class="adv result">
+      <% if @maths_adv_op == "power" %>
+          <p><%= @maths_adv_first %> to the power of <%= @maths_adv_second %> equals <%= @maths_adv_result %> </p>
+      <% else %>
+          <p> square root of <%= @maths_adv_first %> equals <%= @maths_adv_result %> </p>
+      <% end %>
+    </div>
+
+  </section>
+
+
+<% end %>
