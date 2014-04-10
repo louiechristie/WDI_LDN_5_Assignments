@@ -1,0 +1,11 @@
+<h1>View List</h1>
+
+<div>
+ 	<% @todos.each do |todo| %>
+ 		<%=todo['id'] %>
+ 		<h3><%=todo['title'] %></h3>
+		<a href ='/edit/<%=todo['id'] %>'>Edit</a>
+		<a href ='/delete/<%=todo['id'] %>'>Delete</a>
+ 	<% end %>
+</div>
+ -->
