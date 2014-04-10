@@ -14,5 +14,9 @@
 
   <% if @bmi %>
     <p>Your BMI is <%= @bmi %>.</p>
+    <% if @bmi > 30 %>
+      <img src="http://resources2.news.com.au/images/2010/09/09/1225916/776414-fatso-the-wombat.jpg">
+      <p>Fatso the wombat says: "You're Fat!"</p>
+    <% end %>   
   <% end %>
 </section>
