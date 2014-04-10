@@ -45,15 +45,14 @@ end
 
 get '/mortgage' do
 
-principal = params[:principal].to_f
-interest = params[:interest].to_f / 12 / 100
-number = params[:number].to_f
+  principal = params[:principal].to_f
+  interest = params[:interest].to_f / 12 / 100
+  number = params[:number].to_f
 
-interest_sub_calc = (1 + interest)**number
-numerator = interest * interest_sub_calc
-denominator = interest_sub_calc - 1
-@result = principal * (numerator / denominator)
-
+  interest_sub_calc = (1 + interest)**number
+  numerator = interest * interest_sub_calc
+  denominator = interest_sub_calc - 1
+  @result = principal * (numerator / denominator)
 
   erb :mortgage
 
@@ -61,9 +60,33 @@ end
 
 get '/bmi' do
 
+  @imperial_mass = params[:imperial_mass].to_f
+  imperial_height = params[:imperial_height].to_f
+
+  @metric_mass = params[:metric_mass].to_f
+  metric_height = params[:metric_height].to_f
+
+  if params[:metric_mass] && params[:imperial_mass].empty?
+    @metric_result = @metric_mass / (metric_height**2)
+  elsif params[:imperial_mass] && params[:metric_mass].empty?
+    @imperial_result = (@imperial_mass / (imperial_height**2)) * 703
+  else
+    @nothing = true
+  end
+
+  erb :bmi
+
 end
 
 get '/trip' do
+
+  distance
+  mpg
+  cost
+  mph
+
+
+  erb :trip
 
 end
 

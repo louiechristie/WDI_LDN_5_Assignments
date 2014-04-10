@@ -1,6 +1,8 @@
 body {
-  background: pink;
+  background-color: #66ccff;
   font-family: Arial;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 /*button {
@@ -15,4 +17,35 @@ body {
 
 a {
   text-decoration: none;
+  color: #fff;
+}
+
+p a {
+  color: #000;
+}
+
+p a:hover {
+  color: #fff;
+}
+
+li {
+  list-style: none;
+  line-height: 1.4;
+}
+
+div {
+  margin-bottom: 50px;
+}
+
+footer {
+  height: 40px;
+  background-color: #3366cc;
+  padding: 1px 0 10px 0;
+}
+
+
+
+footer li {
+  display: inline;
+  margin: 0 10px;
 }
