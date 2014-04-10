@@ -1,0 +1,35 @@
+<h2>Mortgage Calculator</h2>
+
+ 
+<form action='/Mortgage' method='get'>
+
+    <table>
+      <tr>
+        <td>Input the mortgage principal</td><td><input type='text' name='mort_prin'></td>
+      </tr>
+      <tr>
+        <td>Yearly interest rate (7% = 7)</td><td><input type='text' name='mort_rate'></td>
+      </tr>
+      <tr>
+        <td>Input number of years</td><td><input type='text' name='mort_years'></td>
+      </tr>
+      <tr>
+        <td></td><td><button>Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+
+<% if @mort_prin && @mort_prin > 0 %>
+
+  <section>
+    <h3>Your Mortgage Repayments</h3>
+
+    <div class="Trip result">
+      <p>You wil have £<%= @mort_nos_payments %> payments of <%= @mort_monthly_payment %></p>
+  </div>  
+
+  </section>
+
+<% end %>
+

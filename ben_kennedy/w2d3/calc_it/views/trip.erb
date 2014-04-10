@@ -1,0 +1,24 @@
+<section>
+  <header>
+    <h1>Let's calculate the cost of a trip</h1>
+  </header>
+  <form action='/trip' method='get'>
+    How far will you travel in miles?
+    <input type='text' name='distance'>
+
+    How fast will you travel in MPH?
+    <input type='text' name='speed'>
+
+    What is the fuel efficiency of your car in MPG?
+    <input type='text' name='mpg'>
+    
+    What is the cost of petrol in $ per gallon?
+    <input type='text' name='price'>  
+    
+    <button>Calculate!</button>
+  </form>
+
+  <% if @time and @cost %>
+    <p>Your trip will take <%= @time %> hours and will cost $<%= @cost %></p>
+  <% end %>
+</section>

@@ -1,0 +1,13 @@
+<h2>Simple Calculator</h2>
+<form action='/simple' method='get'>
+    First: <input type='text' name='first'>
+    Operator: <select name='operator'><option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="/">/</option></select>
+    Second: <input type='text' name='second'>
+    <button>Calculate!</button>
+  </form>
+
+<% if @result %>
+	<section>
+  		<p>The answer to <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>.</p>
+  	</section>
+<% end %>

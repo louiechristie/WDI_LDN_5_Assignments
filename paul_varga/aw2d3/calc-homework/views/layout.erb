@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='/style.css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <title>CalcIt</title>
+  </head>
+  <body>
+    <header>
+      <nav class= "navigation">
+        <ul>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/simple'>Simple Maths</a></li>
+          <li><a href='/advanced'>Advanced Maths</a></li>
+          <li><a href='/mortgage'>Mortgage</a></li>
+          <li><a href='/bmi'>Body Mass Index</a></li>
+          <li><a href='/trip'>Trip Calculator</a></li>
+          <li><a href='/timealive'>Days Alive</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<h2>BMI Calculator</h2>
+<form action='/bmi' method='get'>
+    height (m): <input type='text' name='height'>
+    weight (kg): <input type='text' name='weight'>
+    <button>calculate!</button>
+  </form>
+
+<% if @bmi %>
+	<section>
+  		<p>Your BMI is <%= @bmi %></p>
+  	</section>
+<% end %>

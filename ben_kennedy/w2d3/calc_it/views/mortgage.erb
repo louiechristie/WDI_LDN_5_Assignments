@@ -1,0 +1,23 @@
+<section>
+  <header>
+    <h1>Let's estimate your monthly mortage payment</h1>
+  </header>
+  <form action='/mortgage' method='get'>
+    How much do you want to borrow?
+    <input type='text' name='principal'>
+    
+    What is the annual interest rate?
+    <input type='text' name='rate'>
+
+    How long in years do you want to borrow?
+    <input type='text' name='years'>
+    
+    <button>Calculate!</button>
+  </form>
+
+  <% if @monthly_payment %>
+    <p>If you borrow <%= @principal %> at an annual interest rate of <%= (@rate*100*12).round(2) %>%
+       and the term of your loan is <%= @years %> years,
+      your monthly morgage payment will be £<%= @monthly_payment %>.</p>
+  <% end %>
+</section>

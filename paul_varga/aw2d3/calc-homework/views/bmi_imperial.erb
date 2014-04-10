@@ -1,0 +1,19 @@
+<form action='/bmi_imperial' method='get'>
+  <p>Cool, you like the imperial system.</p>
+  Please enter your weight (lbs): <input type='text' name='weight'>
+  Please enter your height (inches): <input type='text' name='height'>
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Results of Calculation</h1>
+    </header> 
+    <p>Your Body Mass Index is <%= @result %>.</p>
+  </section>
+<% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>

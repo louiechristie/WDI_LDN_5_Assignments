@@ -1,0 +1,18 @@
+<h2>Trip Calculator</h2>
+
+<form action='/trip' method='get'>
+  Distance driven: <input type='text' placeholder='miles' name='distance'></br> 
+  Fuel efficiency: <input type='text' placeholder='miles per gallon'name='efficiency'></br> 
+  Cost of gas per gallon:<input type='text' placeholder='$ per gallon' name='gas'></br> 
+  Speed:<input type='text' placeholder='mi per hour' name='speed'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @message %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

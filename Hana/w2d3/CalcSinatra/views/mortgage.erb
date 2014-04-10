@@ -1,0 +1,17 @@
+<h2>Mortgage Calculator</h2>
+
+<form action='/mortgage' method='get'>
+  Amount of the loan: <input type='text' name='principal'></br> 
+  Interest Rate (%): <input type='text' name='interest'></br> 
+  Number of payments:<input type='text' name='frequency'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @message %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

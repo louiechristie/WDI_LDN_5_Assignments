@@ -1,0 +1,20 @@
+<h2>BMI Calculator</h2>
+
+<form action='/bmi' method='get'>
+  Units: <select name="units">
+    <option value="empirical">Empirical</option> 
+    <option value="metric">Metric</option>
+  </select> </br>
+  <input type='text' placeholder='Weight' name='weight'></br> 
+  <input type='text' placeholder='Height' name='height'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @message %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

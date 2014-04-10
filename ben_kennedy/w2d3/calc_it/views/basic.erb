@@ -1,0 +1,20 @@
+<section>
+  <header>
+    <h1>Let's do some basic maths</h1>
+  </header>
+  <form action='/basic' method='get'>
+    <input type='text' name='number1'>
+    <select name='operator'>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type='text' name='number2'>
+    <button>Calculate!</button>
+  </form>
+
+  <% if @result %>
+    <p><%= @number1 %> <%= @operator %> <%= @number2 %> is <%= @result %></p>
+  <% end %>
+</section>

@@ -1,0 +1,22 @@
+<!doctype html>
+  <html lang='en'>
+    <head>
+      <meta charset='utf-8'>
+      <link rel="stylesheet" type="text/css" href="/style.css">
+      <title>Calculator</title>
+    </head>
+    <body>
+      <h1>Sinatra Calc</h1>
+      <nav>
+      <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/math'>Math</a></li>
+        <li><a href='/bmi'>BMI</a></li>
+        <li><a href='/mortgage'>Mortgage</a></li>
+        <li><a href='/trip'>Trip</a></li>
+        <li><a href='/space'>Space</a></li>
+      </ul>
+    </nav>
+      <%= yield %>
+    </body>
+  </html>

@@ -1,0 +1,22 @@
+you made it to the square root page all the way from the advanced galaxy!
+
+Type in a number of which you wish to get its square root
+
+<form action='/square' method='get'>
+    Square root me! <input type='text' name='first'>
+    <button>calculate!</button>
+  </form>
+
+
+<% if @square_result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The resulf of square root <%= @square_first %> is <%= @square_result %>
+    </section>
+  <% end %>
+
+
+
+

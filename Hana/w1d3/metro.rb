@@ -1,3 +1,5 @@
+#absolute values, same line needs to subtract
+
 require 'pry'
 @metro_hash = {
 :n_line_sub_array => {"ts" => 4,  "34" => 3, "28" => 2, "23" => 1, "8" => 1},
