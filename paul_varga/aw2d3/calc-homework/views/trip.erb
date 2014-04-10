@@ -12,7 +12,7 @@
 <% if @duration %>
   <section>
     <header>
-      <h1>Duration of the trip</h1>
+      <h3>Duration of the trip</h3>
     </header> 
     <p>The duration of your trip is <%= @duration %> hours.</p>
   </section>
@@ -21,8 +21,12 @@
 <% if @cost %>
   <section>
     <header>
-      <h1>Costs of the trip</h1>
+      <h3>Costs of the trip</h3>
     </header> 
     <p>The trip will cost you GBP <%= @cost %>.</p>
   </section>
 <% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>

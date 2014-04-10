@@ -14,8 +14,12 @@
 <% if @result %>
   <section>
     <header>
-      <h1>Your time is on planet earth since birth:</h1>
+      <h3>Your time is on planet earth since birth:</h3>
     </header> 
     <p>Congrats, you are now alive for <%= @result %> days.</p>
   </section>
 <% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>
