@@ -1,0 +1,18 @@
+<h1>Calculate Trip</h1>
+
+<form action='/trip' method='get'>
+
+  <p> How far are you going to travel? <input type='text' name='distance'></p>
+
+  <p> What is the average MPG of your car? <input type='text' name='mpg'></p>
+
+  <p> How much does fuel cost per gallon? <input type='text' name='gallon'></p>
+
+  <p> On average, how fast will you be travelling? <input type='text' name='speed'></p>
+
+  <button>Calaculate!</button>
+</form>
+
+<p> Your trip will take <%=@time%> hour(s) and will cost approximatly <%=@cost%> </p>
+
+<% end %>
