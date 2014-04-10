@@ -44,6 +44,7 @@ end
 get '/edit/:id' do
   id = params[:id]
 
+
   sql = "select * from todos where id = '#{sql_string(id)}';"  
   @todos = @db.exec(sql)
   @todo = @todos[0]
@@ -52,6 +53,16 @@ get '/edit/:id' do
 end
 
 post '/update/:id' do
+  id = params[:id]
+  title = params[:title]
+  description = params[:description]
+
+
+  sql = "UPDATE todos
+          SET title='#{title}', description='#{description}'
+          WHERE id = '#{sql_string(id)}';"  
+  @db.exec(sql)
+
   redirect to("/show/#{params[:id]}")
 end
 
