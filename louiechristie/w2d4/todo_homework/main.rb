@@ -42,6 +42,12 @@ get '/show/:id' do
 end
 
 get '/edit/:id' do
+  id = params[:id]
+
+  sql = "select * from todos where id = '#{sql_string(id)}';"  
+  @todos = @db.exec(sql)
+  @todo = @todos[0]
+
   erb :edit
 end
 
