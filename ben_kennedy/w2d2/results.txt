@@ -16,9 +16,16 @@ Set of 12 Mason Jars
 sqlite> select name, max(price) from products;
 Cat Ears|99.99
 
+BETTER SYNTAX TO GET ALL max(price)'s: 
+select name, price from products order by price desc limit 1;
+
 4. Selects the name and price of the second most expensive product.
-sqlite> select name, max(price) from products where price < (select max(price) from products);
+sqlite> select name, max(price) [AS HIGHESTS PRICE] from products where price < (select max(price) from products);
 Brown Leather Boots|82.0
+
+LESS GOOD SYNTAX: 
+select name, price from prdoucts order by price desc limit 1, 1;
+limit [# of records to skip, # of records to print]
 
 5. Selects the name and price of the least expensive product.
 sqlite> select name, min(price) from products;
@@ -60,14 +67,16 @@ sqlite> select name from users where name like 'S%';
 Sam Hill
 Scott Gammon
 
+FOR CASE SENSITIVITY:
+select name from users where substr(name, 1, 1) == 's';
+
 12. Selects the number of users whose first names are "Jonathan".
-sqlite> select name from users where name like 'Jonathan%';
-Jonathan Lai
-Jonathan Postel 2
+sqlite> select count(id) from users where name like 'Jonathan%';
+2
 
 
 13. Selects the number of users who want a "Teddy Bear".
-sqlite> select count(*) from wishlists where product_id = 1;
+sqlite> select count(*) from wishlists inner join products on products.id = wishlists.product_id where products.name = 'Teddy Bear';
 6
 
 
@@ -76,7 +85,7 @@ sqlite> select count(*) from wishlists where user_id = (select id from users whe
 3
 
 15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
-sqlite> select count(product_id), name from products inner join wishlists on products.id = wishlists.product_id group by product_id order by count(product_id)desc;
+sqlite> select count(product_id), name from products inner join wishlists on products.id = wishlists.product_id group by product_id order by count(product_id) desc;
 18|Hoodie
 16|Card Against Humanity
 15|Cat Ears
