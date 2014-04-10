@@ -1,9 +1,0 @@
-<form action='/delete' method='get'>
-  <p>Delete: 
-  <select name='id'>
-    <% @todos.each do |todo| %>
-      <option value="<%=todo['id'] %>"><%=todo['title'] %></option>
-    <% end %>
-  </select>
-  <button class="btn btn-success">Delete</button>
-</form>

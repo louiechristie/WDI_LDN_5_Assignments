@@ -11,57 +11,57 @@ after do
   @db.close
 end
 
-
 get '/' do
-  erb :home
+  sql = "select * from todos"
+  @todos = @db.exec(sql)
+  erb :index
 end
 
-get '/create' do
+get '/new' do
+  erb :new
+end
 
+post '/create' do
   @title = params[:title]
   @description = params[:description]
 
-  if @title && @title > "" && @description && @description > ""
+  sql = "insert into todos (title, description) values ('#{sql_string(@title)}', '#{sql_string(@description)}');"
 
-    sql = "insert into todos (title, description) values ('#{sql_string(@title)}', '#{sql_string(@description)}');"
-
-    @db.exec(sql)
-  end
-
-  erb :create
+  @db.exec(sql)
+  redirect to('/')
 end
 
-get '/read' do
-  sql = "select * from todos"
+get '/show/:id' do
+  id = params[:id]
+
+  sql = "select * from todos where id = '#{sql_string(id)}';"  
   @todos = @db.exec(sql)
-
-  erb :read
+  @todo = @todos[0]
+  
+  erb :show
 end
 
-get '/update' do
-  erb :update
+get '/edit/:id' do
+  erb :edit
 end
 
-get '/delete' do
+post '/update/:id' do
+  redirect to("/show/#{params[:id]}")
+end
+
+get '/delete/:id' do
 
   @id = params[:id]
 
-if @id && @id > ""
-
   sql = "delete from todos where id = (#{@id.to_i});"
-  puts sql
   @db.exec(sql)
+
+  redirect to('/')
 end
 
-  sql = "select * from todos"
-  @todos = @db.exec(sql)
-
-  erb :delete
-end
 
 def sql_string(value)
 
 "#{value.gsub("'","''")}"
    
 end
-
