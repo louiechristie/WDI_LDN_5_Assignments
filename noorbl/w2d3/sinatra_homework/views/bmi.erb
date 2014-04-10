@@ -2,7 +2,20 @@ knowing your body mass is critical when travelling through space. find it out he
 
 
 
+<form action='/bmi' method='get'>
+  Weight (in kg): <input type='text' name='weight'>
+  Height (in cm): <input type='text' name='height'>
+    <button>calculate!</button>
+  </form>
 
+  <% if @bmi_result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The resulf is <%= @bmi_result %>
+    </section>
+  <% end %>
 
 
 

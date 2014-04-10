@@ -73,22 +73,35 @@ get '/square' do
 end
 
 get '/mortgage' do
-  @principal_amount = params[:principal_amount]
-  @interest = params[:interest]
+  @principal_amount = params[:principal_amount].to_f
+  @interest = params[:interest].to_f
   if @interest
     @interest = @interest / 1200
-    @number_payments = params[:number_payments]
+    @number_payments = params[:number_payments].to_f
     @number_payments = @number_payments * 12
-    @mortgage_result = @principal_amount * @interest * ((1 + @interest)**@number_payments) / ((1 + @interest)**@number_payments - 1)
+    @mortgage_result = @principal_amount * @interest * ((1 + @interest) ** @number_payments) / ((1 + @interest) ** @number_payments - 1)
   end
   erb :mortgage
 end
 
 get '/bmi' do
+@weight = params[:weight].to_f
+@height = params[:height].to_f
+if @height
+  @height = @height / 100
+  @bmi_result = (@weight / (@height)**2).round(2)
+end
   erb :bmi
 end
 
 get '/trip' do
+  @distance = params[:distance].to_f
+  @efficiency = params[:efficiency].to_f
+  @price = params[:price].to_f
+  @speed = params[:speed].to_f
+
+  @duration_result = (@distance / @speed).round(2)
+  @cost_result = ((@distance / @efficiency) * @price).round(2)
   erb :trip
 end
 
