@@ -43,8 +43,8 @@ get '/delete/:id'  do
      @id = params[:id]
      sql = "delete FROM todo where id = '#{@id}'"
      @db.exec(sql)
-      
-redirect to '/show'
+    
+      redirect to '/show'
 
 end
 
