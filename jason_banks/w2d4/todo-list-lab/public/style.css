@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans serif;
   max-width: 640px;
   margin: 0 auto;
+  background-color: #D8ECFF;
+  color: #333;
 }
 
 header {
@@ -39,6 +41,14 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: #5729e8;
+}
+
+a:hover {
+  color: #1A79E8;
+}
+
 h2 {
   text-align: center;
 }
@@ -52,7 +62,7 @@ td {
 }
 
 td.item {
-  background-color: #98fffc;
+  background-color: #44577F;
 }
 
 footer {
@@ -60,3 +70,17 @@ footer {
   bottom: 50px;
   text-align: center;
 }
+
+footer a {
+  color: #aaa;
+}
+
+footer a:hover {
+  color: #BCD6E8;
+}
+
+
+
+
+
+
