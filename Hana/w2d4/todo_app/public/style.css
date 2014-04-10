@@ -1,0 +1,40 @@
+
+
+body{
+font-family: Helvetica;
+text-align: center;
+
+}
+
+header{
+  background-color: black;
+  color: white;
+}
+h2{
+font-family: Helvetica;
+font-weight:bold;
+font-size: 5em;
+margin-top: 25px;
+margin-bottom: 50px;
+}
+table{
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid black;
+}
+
+thead{
+  font-weight: bold;
+}
+
+td{
+padding: 50px,50px,50px,50px;
+}
+
+#add_button{
+  margin-bottom: 50px;
+}
+
+#importance{
+  margin-right: 20px;
+}

@@ -1,0 +1,46 @@
+
+ 
+
+<div>
+  <h2>Your To-Do List</h2>
+
+  <form id="add_button" action='/new' method='get'>
+  <button>Add a new task!</button>
+</form>  
+
+  <table> <!-- style ="width:300px"> -->
+   <thead>
+      <tr>
+         <th>Title</th>
+         <th>Comments</th>
+         <th>Importance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%=item['task']%></td>
+          <td><%=item['comments']%></td> 
+          <td id="importance"><%=item['importance']%></td>
+          <td>
+            <form action='/edit/:id' method='get'>
+             <button>EDIT</button>
+            </form>   
+          </td>
+          <td>
+            <form action='/delete/:id' method='get'>
+             <button>DELETE</button>
+            </form>   
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
