@@ -1,0 +1,34 @@
+<form action="/home" method="get">
+  <h2>Add an item to your list</h2>
+  Item: <input type="text" name="item" autofocus>
+  Description: <input type="text" name="description">
+  <button>Submit</button>
+</form>
+
+<% if @todos.any? %>
+  <form action="/home" method="get">
+    <h2>Things to do!</h2>
+    <table>
+      <thead>
+        <tr>
+          <td>Item</td>
+          <td>Description</td>
+          <td>Done/Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @todos.each do |todo| %>
+        <tr>
+          <td class="item"><%= todo['item'] %></td>
+          <td><%= todo['description'] %></td>
+          <td><input type="radio" name="delete" value="<%= todo['id'] %>"></td>
+          <td><button>Submit</button></td>
+        </tr>     
+        <% end %>
+      </tbody>
+    </table>
+  </form>
+<% end %>
+
+
+  

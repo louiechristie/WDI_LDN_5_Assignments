@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans serif;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 60px;
+  color: #5729e8;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+td {
+  width: 200px;
+}
+
+td.item {
+  background-color: #98fffc;
+}
