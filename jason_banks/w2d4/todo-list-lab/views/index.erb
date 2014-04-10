@@ -1,19 +1,15 @@
-<form action="/home" method="get">
-  <h2>Add an item to your list</h2>
-  Item: <input type="text" name="item" autofocus>
-  Description: <input type="text" name="description">
-  <button>Submit</button>
-</form>
+<h2><a href='/new'>Add an item to your list!</a></h2>
+<br />
 
 <% if @todos.any? %>
-  <form action="/home" method="get">
+  <form action="/show/:id" method="get">
     <h2>Things to do!</h2>
     <table>
       <thead>
         <tr>
           <td>Item</td>
           <td>Description</td>
-          <td>Done/Delete</td>
+          <td>Detail</td>
         </tr>
       </thead>
       <tbody>
@@ -21,10 +17,12 @@
         <tr>
           <td class="item"><%= todo['item'] %></td>
           <td><%= todo['description'] %></td>
-          <td><input type="radio" name="delete" value="<%= todo['id'] %>"></td>
-          <td><button>Submit</button></td>
+          <td><input type="radio" name="id" value="<%= todo['id'] %>"></td>
         </tr>     
         <% end %>
+        <tr>
+          <td><button>Submit</button></td>
+        </tr>
       </tbody>
     </table>
   </form>
