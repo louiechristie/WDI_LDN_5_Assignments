@@ -1,0 +1,40 @@
+calculate your monthly payments for your mortgage of your holiday home on Saturn. How much is it costing you, interplanetary traveller!
+
+Enter the following information:
+
+
+<form action='/mortgage' method='get'>
+  Principal amount: <input type='text' name='principal_amount'>
+  Interest rate i (5% is 5): <input type='text' name='interest'>
+  Number of years: <input type='text' name='number_payments'>
+    <button>calculate!</button>
+  </form>
+
+  <% if @mortgage_result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The resulf is <%= @mortgage_result %>
+    </section>
+  <% end %>
+
+
+
+
+
+
+
+
+<!-- if operation == "m"
+    print "Enter principal amount P: "
+    principal_amount = input_number
+    print "Enter interest rate i (5% is 5): "
+    interest_rate = input_number
+    interest_rate = interest_rate / 1200
+    puts interest_rate
+    print "Enter number of payments n (number of years): "
+    number_of_payments = input_number
+    number_of_payments = number_of_payments * 12
+    puts number_of_payments
+  end -->
