@@ -33,7 +33,7 @@ h1 {
   height: auto;
   float: right;
   position: absolute;
-  right: 0px;
+  right: 8px;
   top: 35px;
 }
 
@@ -63,6 +63,7 @@ td {
 
 td.item {
   background-color: #44577F;
+  color: #ccc;
 }
 
 footer {

@@ -38,7 +38,7 @@ post '/create' do
 end
 
 get '/show/:id' do
-  id = params[:id]
+  id = params[:id].to_i
   show_sql = "select * from todos where id = #{id}"
   @todo = @db.exec(show_sql)
 
@@ -46,7 +46,7 @@ get '/show/:id' do
 end
 
 get '/edit/:id' do
-  id = params[:id]
+  id = params[:id].to_i
   edit_sql = "select * from todos where id = #{id}"
   @todo = @db.exec(edit_sql)
 
@@ -56,7 +56,7 @@ end
 post '/update/:id' do
   item = params[:item]
   description = params[:description]
-  id = params[:id]
+  id = params[:id].to_i
 
   update_sql = "update todos set item = #{sql_string(item)}, description = #{sql_string(description)} where id = #{id}"
   @db.exec(update_sql)
@@ -68,7 +68,7 @@ get '/delete/:id' do
 
   item = params[:item]
   description = params[:description]
-  id = params[:id]
+  id = params[:id].to_i
 
   del_sql = "delete from todos where id = #{id}"
   @db.exec(del_sql)
