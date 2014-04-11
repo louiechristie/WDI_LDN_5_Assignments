@@ -5,6 +5,8 @@ require 'pg'
 
 before do
 	@db = PG.connect(dbname: 'todo_app', host: 'localhost')
+	sql = "select * from todos"
+	@items = @db.exec(sql)
 end
 
 after do
@@ -12,9 +14,7 @@ after do
 end
 
 get '/' do 
-	sql = "select * from todos"
-	@items = @db.exec(sql)
-
+	
 	erb :todo
 end
 
@@ -37,23 +37,14 @@ post "/create" do
 
 	redirect "/"
 end
-=begin
+
 get '/edit/:id'  do 
+	
 
-     @id = params[:id]
-     sql = "select * from todos"
-     data = @db.exec(sql)
-
-     data.each do |item|
-        if item["id"] == @id
-              @entry_to_edit = item
-        end
-     end 
-
-   erb  :edit
-
+	sql = "select * from todos where id = #{params[:id].to_i}"
+	@todo= @db.exec(sql).first #array with hashes in it, ask for first one.
+	erb :todo
 end
-=end
 
 post '/update/:id' do
 	@id = params[:id]
@@ -61,7 +52,7 @@ post '/update/:id' do
 	@completeness = params[:completeness]
 	@duedate = params[:duedate]
 
-    sql = "update todo SET item='#{@item}', completeness='#{@completeness}', duedate='#{@duedate}' where id = '#{@id}'"
+    sql = "update todos SET item='#{@item}', completeness='#{@completeness}', duedate='#{@duedate}' where id = '#{@id}'"
     @db.exec(sql)
 
 redirect to '/'

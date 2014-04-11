@@ -16,6 +16,7 @@
 
 
 </p>
+    <% if !params[:id] %>
     <form action='/create' method='post'>
       <input type= 'text' name= "item" autofocus>
       completeness: <select name= 'completeness'>
@@ -25,7 +26,17 @@
       <input type= 'text' name= "duedate" autofocus>
         <button>Enter a TO DO Item</button>
     </form>
-
+    <% else %>
+    <form action='/update/<%=params[:id] %>' method='post'>
+      <input type= 'text' name="item" value = "<%= @todo["item"] %>" autofocus>
+      completeness: <select name= 'completeness'>
+        <option value="0" <% if @todo['completeness']=="0" %> selected = "selected" <% end %>  >complete</option>
+        <option value="1" <% if @todo['completeness']=="1" %> selected = "selected" <% end %>  >incomplete</option>
+    </select>
+      <input type= 'text' name= "duedate" value = "<%= @todo["duedate"] %>" >
+        <button>Enter a TO DO Item</button>
+    </form>
+    <% end %>
     <table>
     <% @items.each do |item| %>
       <tr>
@@ -36,7 +47,7 @@
           <a href="/delete/<%= item["id"] %>">Delete</a>
         </td>
         <td>
-          <a href="/update/<%= item["id"] %>">Update</a>
+          <a href="/edit/<%= item ["id"] %>">Update</a>
         </td>
       </tr>
     <% end %>
