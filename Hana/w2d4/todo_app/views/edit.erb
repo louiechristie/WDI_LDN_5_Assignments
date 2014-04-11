@@ -1,5 +1,5 @@
-<form action='/update/<%=@items['id'] %>' method='post'>
-  ID: <%=@items['id'] %></br>
+<form action='/update/:id>' method='post'>
+  <h3>Make your edits!</h3>
   Task: <input type='text' name='task' autofocus></br>
   Comments: <input type='text' name='comments'></br>
   Importance: <select name="importance"></br>

@@ -17,6 +17,13 @@ font-size: 5em;
 margin-top: 25px;
 margin-bottom: 50px;
 }
+
+h3{
+  font-family: Helvetica;
+font-weight:bold;
+font-size: 3em;
+margin-bottom: 25px;
+}
 table{
   margin-right: auto;
   margin-left: auto;

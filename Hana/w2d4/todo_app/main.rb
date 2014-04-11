@@ -39,15 +39,16 @@ get '/show/:id' do
 end
 
 get '/edit/:id' do
+
   erb :edit
 end
 
 post '/update/:id' do
-  @id = params[:id]
+  @id = params[:id].to_i
   @task = params[:task]
   @comments = params[:comments]
   @importance = params[:importance]
-  
+
    sql = "select * from list"
   @items = @db.exec(sql).to_a
 binding.pry

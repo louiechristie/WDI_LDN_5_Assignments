@@ -11,6 +11,7 @@
   <table> <!-- style ="width:300px"> -->
    <thead>
       <tr>
+         <th>ID</th>
          <th>Title</th>
          <th>Comments</th>
          <th>Importance</th>
@@ -19,11 +20,12 @@
     <tbody>
       <% @items.each do |item| %>
         <tr>
+          <td><%=item['id'] %></td>
           <td><%=item['task']%></td>
           <td><%=item['comments']%></td> 
           <td id="importance"><%=item['importance']%></td>
           <td>
-            <form action='/edit/:id' method='get'>
+            <form action='/edit/<%=item['id'] %>' method='get'>
              <button>EDIT</button>
             </form>   
           </td>
