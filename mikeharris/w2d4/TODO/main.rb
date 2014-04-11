@@ -52,6 +52,7 @@ get '/edit/:id'  do
 
      @id = params[:id]
      sql = "select * from todo"
+     # change to sql to extract from database.  doh
      @todolist = @db.exec(sql)
 
      @todolist.each do |item|
