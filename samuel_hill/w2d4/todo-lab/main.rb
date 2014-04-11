@@ -32,7 +32,7 @@ post '/create' do
 
 	@db.exec(sql)
 
-  redirect to('/')
+  redirect to('/list')
 
 end
 
@@ -46,17 +46,24 @@ get '/list' do
 end
 
 get '/show/:id' do
-  erb :show
+
+	# sql = "select * from todolist where id='#{params[:id]}'"
+
+	# @db.exec(sql)
+
+  	erb :show
+
 end
+
 
 get '/edit/:id' do
 
-	redirect to("/show/#{params[:id]}")
+	redirect to('/show/:id')
 
 end  
 
 get '/delete/:id' do
-	
+
 	sql = "delete from todolist where id='#{params[:id]}'"
 
 	@db.exec(sql)
