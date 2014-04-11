@@ -5,6 +5,8 @@ require 'pg'
 
 before do 
   @db = PG.connect(dbname: 'todo', host: 'localhost')
+  sql = "select * from todos"
+  @index = @db.exec(sql)
 end
 
 after do 
@@ -12,9 +14,6 @@ after do
 end
 
 get '/' do
-  sql = "select * from todos"
-  
-  @index = @db.exec(sql)
   erb :index
 end
 
@@ -44,6 +43,11 @@ get '/show/:id' do
 end
 
 get '/edit/:id' do
+
+  sql = "select * from todos where id = #{params[:id].to_i}"
+
+  @todo = @db.exec(sql).first
+
   erb :edit
 end
 

@@ -1,7 +1,7 @@
 <h2>Enter your next To Do below:</h2>
 
 <form action='/update/<%= params['id'] %>' method='post'>
-  <input type='text' name='name' placeholder='Enter Name' autofocus>
-  <input type='text' name='task' placeholder='Enter Task'>
+  <input type='text' name='name' value='<%= @todo['name'] %>' autofocus>
+  <input type='text' name='task' value='<%= @todo['task'] %>'>
   <button>Update To Do list</button>
 </form>
