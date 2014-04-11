@@ -45,22 +45,31 @@ get '/list' do
 
 end
 
-get '/show/:id' do
-
-	# sql = "select * from todolist where id='#{params[:id]}'"
-
-	# @db.exec(sql)
-
-  	erb :show
-
-end
-
-
 get '/edit/:id' do
 
-	redirect to('/show/:id')
+	@id = params[:id]
 
-end  
+	sql = "select * from todolist where id='#{params[:id]}'"
+
+	@todo = @db.exec(sql).first
+
+	erb :edit
+
+end 
+
+get '/update/:id' do
+
+	@id = params[:id]
+	@title = params[:title]
+	@task = params[:task]
+
+	sql =  "update todolist set title='#{params[:title]}', task='#{params[:task]}' where id='#{params[:id]}'"
+
+	@db.exec(sql)
+
+	redirect to('/list')
+
+end 
 
 get '/delete/:id' do
 
