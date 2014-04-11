@@ -1,9 +1,10 @@
 body {
   text-align: center;
-  font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background: url(img/hands.jpg);
   background-size: cover;
-  background-color: #81FAFF;
-  color: #111111;
+  background-color: 
+  color: #5A6B65;
 }
 
 h1 {
@@ -25,16 +26,16 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   font-size: 22px;
-  color: #111111;
+  color: #5A6B65;
 }
 
 nav ul li a:hover {
-  color: #ffffff;
+  color: #56DEE5;
 }
 
 .main {
   text-align: center;
-  margin: 20px 300px 20px 300px;
+  margin: 40px 300px 10px 300px;
   padding: 10px 10px 10px 10px;
   border: solid black 1px;
   border-radius: 5px;
@@ -51,7 +52,7 @@ nav ul li a:hover {
 }
 
 .main ul li button a:hover {
-  color: #81FAFF;
+  color: #56DEE5;
 }
 
 .main h3 {
@@ -63,24 +64,24 @@ nav ul li a:hover {
   margin-top: 10px;
   margin-bottom: 15px;
   color: #ffffff;
-  background-color: #111111;
+  background-color: #5A6B65;
   border-color: #ffffff;
   border-radius: 5px;
   font-size: 12px;
 }
 .main button a {
   text-decoration: none;
-  color: #111111;
+  color: #5A6B65;
 }
 
 .main button a:hover {
-  color: #81FAFF;
+  color: #56DEE5;
 }
 
 .main input {
   padding: 6px 24px;
   border-radius: 5px;
-  border-color: #111111;
+  border-color: #5A6B65;
 }
 
 .main h2 {
@@ -101,5 +102,5 @@ nav ul li a:hover {
 }
 
 .main .links a:hover {
-  color: #81FAFF;
+  color: #56DEE5;
 }
