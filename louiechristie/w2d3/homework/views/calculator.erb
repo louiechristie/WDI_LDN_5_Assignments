@@ -1,0 +1,23 @@
+
+<h1>Calculator</h1>
+
+<form action='/calculator' method='get'>
+  <p>First number: <input type='text' name='first'></p>
+  <p>operator: <select name='operator'>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select></p>
+  <p>Second number: <input type='text' name='second'></p>
+  <button class="btn btn-success">Calculate</button>
+</form>
+
+  <% if @result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The result of <%=@first %> <%=@operator%> <%= @second %> is <%=@result %> </p>
+  <% end %>
+

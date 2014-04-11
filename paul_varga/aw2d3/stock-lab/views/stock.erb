@@ -1,0 +1,16 @@
+<form action='/stock' method='get'>
+  Ticker: <input type='text' name='ticker'>
+  <button>Get Quote!</button>
+</form>
+
+
+<% if @ticker %>
+<section>
+  <header>
+    <h1>Stock Info</h1>
+  </header> 
+    <p>Name: <%= @name %></p>
+    <p>Ticker: <%= @ticker %></p>
+    <p>Price: US$<%= @price %></p>
+</section>
+<% end %>

@@ -1,0 +1,29 @@
+<h1>Calculate BMI</h1>
+
+<form action='/bmi' method='get'>
+  <p>Height: <input type='text' name='height1'>
+  <select name='h_unit1'>
+    <option value="m">m</option>
+    <option value="feet">feet</option>
+  </select>
+  <input type='text' name='height2'>
+  <select name='h_unit2'>
+    <option value="m">cm</option>
+    <option value="inches">inches</option>
+  </select></p>
+  <p>Weight: <input type='text' name='weight'>
+  <select name='w_unit'>
+    <option value="kg">kg</option>
+    <option value="stone">stone</option>
+  </select>
+  </p>
+  <button class="btn btn-success">Calculate</button>
+</form>
+
+  <% if @result %>
+    <section>
+      <header>
+        <h1>BMI Calculation</h1>
+      </header>
+      <p>BMI is: <%=two_decimals(@result) %> </p>
+  <% end %>

@@ -1,0 +1,16 @@
+<h1>Find a Number to a Power</h1>
+
+
+<form action='/power' method='get'>
+  Number: <input type='text' name='number'>
+  to power of: <input type='text' name='power'>
+  <button class="btn btn-success">Calculate</button>
+</form>
+
+  <% if @result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The result of <%=@number %> to the power of <%=@power%> is <%=@result %> </p>
+  <% end %>

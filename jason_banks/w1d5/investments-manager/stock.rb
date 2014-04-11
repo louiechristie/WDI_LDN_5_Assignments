@@ -9,7 +9,6 @@ class Stock
     @stock_name = stock.name
     @start_stock_price = stock.lastTrade
     @start_investment = @start_stock_price * units
-    @stock_name_combo = "#{@stock_name} (#{@stock_symbol}, #{units} units)"
   end
 
   def get_current_stock_price
@@ -40,7 +39,7 @@ class Stock
   end
 
   def to_s
-    print stock_name_combo
+    print "#{@stock_name} (#{@stock_symbol}, #{@units} units) "
   end
 
 

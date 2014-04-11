@@ -21,7 +21,6 @@ body {
   background-color: white;
   width: 34%;
   float: right;
-  height: 830px;
   /*margin: 0 2%;*/
 }
 
@@ -109,7 +108,24 @@ aside ul {
   margin-left: 20px;
 }
 
+
 .socialmedia {
   margin-left: 50%;
   padding-top: 1%;
+}
+
+.RolloverDownload {
+  color: red;
+}
+
+.RolloverDownload a:hover {
+  font-weight: green;
+}
+
+span {
+  color: red;
+}
+
+span a:hover {
+  color: green;
 }

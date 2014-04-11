@@ -26,10 +26,11 @@ def check_stock_price
   stock_price = stock.lastTrade
   stock_name = stock.name
   stock_time = stock.time
+  stock_date = stock.date
   if stock == nil
     puts "\nYou have entered an invalid symbol.\n"
   else
-    puts "\nThe price for #{stock_name}'s stock (#{stock_symbol}) as of #{stock_time}(EST) was $#{stock_price}.\n"
+    puts "\nThe price for #{stock_name}'s stock (#{stock_symbol}) as of #{stock_time}(EST) on #{stock_date} was $#{stock_price}.\n"
   end
 end
 

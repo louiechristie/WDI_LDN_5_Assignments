@@ -1,0 +1,24 @@
+<h2>Input stock code</h2>
+
+<form action='/stock' method='get'>
+        <input type='text' name='ticker'>
+        <button>Retrieve</button>
+</form>
+
+<% if @price %>
+
+<section>
+  <h3>Stock Value</h3>
+
+  <div class="stocktitle"><%= @ticker %></div>
+  <div class="result"> <%= @price %></div>
+
+</section>
+
+<% else %>
+
+<section>
+  <h3> No such stock </h3>
+<section>
+
+  <% end %>

@@ -1,0 +1,22 @@
+<form action='/calc' method='get'>
+  First: <input type='text' name='first'>
+  Operator: <select name='operator'>
+    <option value=" "> </option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  Second: <input type='text' name='second'>
+  <button>calculate!</button>
+</form>
+
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </header>
+    <p> The result of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>
+  </section>
+<% end %>

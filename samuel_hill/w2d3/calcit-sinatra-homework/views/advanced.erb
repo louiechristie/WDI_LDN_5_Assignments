@@ -1,0 +1,27 @@
+<h2>Power Calculator</h2>
+<form action='/advanced' method='get'>
+    First: <input type='text' name='first'>
+    Power of: <input type='text' name='second'>
+    <button>Calculate!</button>
+  </form>
+
+<% if @result_power %>
+	<section>
+ 		<p>The answer to <%= @first %> to the power of <%= @second %> is <%= @result_power %>.</p>
+ 	</section>
+<% end %>
+
+<h2>Square Root Calculator</h2>
+  <form action='/advanced' method='get'>
+    Number: <input type='text' name='third'>	
+    <button>Calculate!</button>
+  </form>
+
+<% if @result_square %>
+	<section>
+ 		<p>The square root of <%=@third %> is <%= @result_square %>.</p>
+ 	</section>
+<% end %>
+
+
+

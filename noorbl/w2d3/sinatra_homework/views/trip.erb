@@ -1,0 +1,21 @@
+how much is it going to cost you spacesetter?
+
+
+
+<form action='/trip' method='get'>
+  Distance to destination (in miles): <input type='text' name='distance'>
+  Fuel efficiency (MPG): <input type='text' name='efficiency'>
+  Price of fuel ($PG): <input type='text' name='price'>
+  Driving speed (MPH): <input type = 'text' name='speed'>
+    <button>calculate!</button>
+  </form>
+
+  <% if @cost_result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>Your trip will take you <%= @duration_result %> h and cost you <%= @cost_result %> $</p>
+    </section>
+  <% end %>
+

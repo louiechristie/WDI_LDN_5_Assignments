@@ -1,0 +1,26 @@
+<form action='/simple' method='get'>
+  <p>You can use this great calculator for simple maths:</p>
+  First Number: <input type='text' name='first'>
+  Operator: <select name='operator'>
+  <option value='+'>+</option>
+  <option value='-'>-</option>
+  <option value='*'>*</option>
+  <option value='/'>/</option>
+  Second Number: <input type='text' name='second'>
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h3>Results of Calculation</h3>
+    </header> 
+    <p>The results of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>.</p>
+  </section>
+<% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>
+
+

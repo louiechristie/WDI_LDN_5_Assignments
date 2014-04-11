@@ -1,0 +1,14 @@
+<h2>Mortgage Calculator</h2>
+<form action='/mortgage' method='get'>
+    Loan Amount (£): <input type='text' name='loan_amount'>
+    Loan Time (yrs): <input type='text' name='loan_time'>
+    Interest Rate: <input type ='text' name='annual_interest_rate'>
+    <button>calculate!</button>
+  </form>
+
+<% if @monthly_payments %>
+	<section>
+	 <p>Your monthly repayments are <%= @monthly_payments %> for <%= @number_of_payments %> months.</p>
+	</section>
+<% end %>
+		

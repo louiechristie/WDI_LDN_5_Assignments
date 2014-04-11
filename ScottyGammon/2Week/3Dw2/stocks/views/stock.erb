@@ -1,0 +1,20 @@
+<form action='/stock' method='get'>
+    stock symbol: <input type= 'text' name='stock_symbol'>
+    <button>Lookup</button>
+  </form>
+
+
+  <% if @stock_price %>
+    <section>
+      <h1> Stock Lookup </h1>
+
+      <p> The value of as <%= @name %>(<%= @stock_symbol %>) is $<%= @stock_price %>.
+    </section>
+    <section>
+      <h1> <img src="/simpsons.gif"> </h1>
+    </section>
+  <% else %>
+    <section>
+      <h1> NOTHING HERE </h1>
+    </section>
+  <% end %>

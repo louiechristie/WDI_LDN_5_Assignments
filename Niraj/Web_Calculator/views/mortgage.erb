@@ -1,0 +1,32 @@
+
+<form action='/mortgage' method='get'>
+
+  <p>Please enter your mortgage amount</p>
+  <input type='number' name='amount'>amount:
+
+  <p> "Please enter the number of payments"</p>
+  <input type='number' name='payments'>payments: 
+
+
+  "Please enter your annual interest rate"
+  <input type='number' name='interest'>interest: 
+
+
+  <button>Calaculate!</button>
+
+
+  </form>
+
+ 
+<% if @repayment %>
+
+<p>The total monthly repayment is <%=@repayment%>! Press Enter to continue.</p>
+
+<% end %>
+
+
+
+
+
+
+  
