@@ -1,0 +1,29 @@
+<h2><a href='/new'>Add an item to your list!</a></h2>
+<br />
+
+<% if @todos.any? %>
+  <h2>Things to do!</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Item</td>
+        <td>Description</td>
+        <td>Detail</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @todos.each do |todo| %>
+        <form action="/show/<%= todo['id'] %>" method="get">
+          <tr>
+            <td class="item"><%= todo['item'] %></td>
+            <td><%= todo['description'] %></td>
+            <td><button type="submit" name="id" value="<%= todo['id'] %>">Select</button></td>
+          </tr>     
+        </form>
+     <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+  

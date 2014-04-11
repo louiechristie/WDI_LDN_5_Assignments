@@ -1,0 +1,12 @@
+<form action="/movie" method="get">
+  Title: <input type="text" name="title" autofocus>
+  <button>Get movie!</button>
+</form>
+
+<% if @title %>
+  <h2>You searched for: <%= @title %>.</h2>
+<% end %>
+
+<% if @hash %>
+  <p>The actors in <%= @title %> are <%= @hash['Actors'] %>.</p>
+<% end %>
