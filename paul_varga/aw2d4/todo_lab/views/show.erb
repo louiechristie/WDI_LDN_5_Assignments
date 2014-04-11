@@ -1,0 +1,11 @@
+<h2>Your To Do:</h2>
+
+<h3>Name: <%= @item["name"] %></h3>
+<p>Task: <%= @item["task"] %></p>
+
+<div class="links">
+
+  <button><a href='/edit/<%= params['id'] %>'>edit entry</a></li></button>
+  <button><a href='/delete/<%= params['id'] %>'>delete entry</a></li></button>
+
+</div>
