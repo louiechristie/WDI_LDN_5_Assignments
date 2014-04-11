@@ -1,0 +1,132 @@
+1. Selects the names of all products that are not on sale.
+sqlite> select name from products where on_sale = 'f';
+Teddy Bear
+Cat Ears
+Card Against Humanity
+Set of 12 Mason Jars
+
+2. Selects the names of all products that cost less than £20.
+sqlite> select name from products where price < 20;
+Teddy Bear
+The Ruby Programming Language
+Silicon Valley Monopoly
+Set of 12 Mason Jars
+
+3. Selects the name and price of the most expensive product.
+sqlite> select name, max(price) from products;
+Cat Ears|99.99
+
+BETTER SYNTAX TO GET ALL max(price)'s: 
+select name, price from products order by price desc limit 1;
+
+4. Selects the name and price of the second most expensive product.
+sqlite> select name, max(price) [AS HIGHESTS PRICE] from products where price < (select max(price) from products);
+Brown Leather Boots|82.0
+
+LESS GOOD SYNTAX: 
+select name, price from prdoucts order by price desc limit 1, 1;
+limit [# of records to skip, # of records to print]
+
+5. Selects the name and price of the least expensive product.
+sqlite> select name, min(price) from products;
+Set of 12 Mason Jars|6.22
+
+6. Selects the names and prices of all products, ordered by price in descending order.
+sqlite> select name, price from products order by price desc;
+Cat Ears|99.99
+Brown Leather Boots|82.0
+Lonely Pillow|78.82
+Card Against Humanity|25.0
+Hoodie|25.0
+Set of silverware|22.99
+The Ruby Programming Language|19.99
+Teddy Bear|17.99
+Silicon Valley Monopoly|10.99
+Set of 12 Mason Jars|6.22
+
+
+7. Selects the average price of all products.
+sqlite> select avg(price) from products;
+38.899
+
+8. Selects the sum of the price of all products.
+sqlite> select sum(price) from products;
+388.99
+
+9. Selects the sum of the price of all products whose prices is less than £20.
+sqlite> select sum(price) from products where price < 20;
+55.19
+
+10. Selects the id of the user with your name.
+sqlite> select id from users where name = "Ben Kennedy";
+1
+
+
+11. Selects the names of all users whose names start with the letter "S".
+sqlite> select name from users where name like 'S%';
+Sam Hill
+Scott Gammon
+
+FOR CASE SENSITIVITY:
+select name from users where substr(name, 1, 1) == 's';
+
+12. Selects the number of users whose first names are "Jonathan".
+sqlite> select count(id) from users where name like 'Jonathan%';
+2
+
+
+13. Selects the number of users who want a "Teddy Bear".
+sqlite> select count(*) from wishlists inner join products on products.id = wishlists.product_id where products.name = 'Teddy Bear';
+6
+
+
+14. Selects the count of items on the wishlish of the user with your name.
+sqlite> select count(*) from wishlists where user_id = (select id from users where name = "Ben Kennedy");
+3
+
+15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
+sqlite> select count(product_id), name from products inner join wishlists on products.id = wishlists.product_id group by product_id order by count(product_id) desc;
+18|Hoodie
+16|Card Against Humanity
+15|Cat Ears
+9|The Ruby Programming Language
+6|Teddy Bear
+5|Silicon Valley Monopoly
+4|Brown Leather Boots
+2|Lonely Pillow
+2|Set of 12 Mason Jars
+
+16. Selects the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
+sqlite> select count(product_id), name from products inner join wishlists on products.id = wishlists.product_id and products.on_sale = 'f' group by product_id order by count(product_id)desc;
+16|Card Against Humanity
+15|Cat Ears
+6|Teddy Bear
+2|Set of 12 Mason Jars
+
+
+17. Inserts a user with the name "Jonathan Anderson" into the users table. Ensure the created_at column is set to the current time.
+sqlite> insert into users (created_at, name) values (datetime('now'), "Jonathan Anderson");
+
+
+18. Selects the id of the user with the name "Jonathan Anderson"?  Ensure the created_at column is set to the current time.
+sqlite> select * from users where id = 27;
+27|2014-04-08 19:44:08|Jonathan Anderson
+
+
+19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
+sqlite> insert into wishlists (created_at, user_id, product_id) values (datetime('now'), (select id from users where name = "Jonathan Anderson"), (select id from products where name = "The Ruby Programming Language"));
+
+
+
+20. Updates the name of the "Jonathan Anderson" user to be "Jon Anderson".
+> update users set name = "Jon Anderson" where name = "Jonathan Anderson";
+
+
+
+21. Deletes the user with the name "Jon Anderson".
+sqlite> delete from users where name = "Jon Anderson";
+
+
+
+22. Deletes the wishlist item for the user you just deleted.
+sqlite> delete from wishlists where user_id not in (select id from users);

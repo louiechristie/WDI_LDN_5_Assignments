@@ -1,0 +1,15 @@
+<h2>Calculate Your Weight On Mars</h2>
+
+<form action='/space' method='get'>
+  Weight on Earth: <input type='text' placeholder='pounds' name='weight'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @message %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

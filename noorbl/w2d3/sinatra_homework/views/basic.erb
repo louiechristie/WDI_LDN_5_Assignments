@@ -1,0 +1,22 @@
+
+Want to do some basic operations? You've come to the right place of the Cosmos!
+<form action='/basic' method='get'>
+    first: <input type='text' name='first'>
+    operator: <select name='operator'>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    </select>
+    second: <input type='text' name='second'>
+    <button>calculate!</button>
+  </form>
+
+  <% if @result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The resulf of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>
+    </section>
+  <% end %>

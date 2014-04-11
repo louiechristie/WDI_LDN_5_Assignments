@@ -1,0 +1,28 @@
+<table>
+      <thead>
+        <tr>
+          <td>Item</td>
+          <td>Description</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @todo.each do |todo| %>
+        <tr>
+          <td class="item"><%= todo['item'] %></td>
+          <td><%= todo['description'] %></td>
+          <td>
+            <form action='/edit/<%= todo['id'] %>' method ='get'>
+            <button type="submit" name="id" value="<%= todo['id'] %>">Edit</button>
+            </form>
+          </td>
+          <td>
+            <form action='/delete/<%= todo['id'] %>' method='get'>
+            <button type="submit" name="id" value="<%= todo['id'] %>">Delete</button>
+            </form>
+          </td>
+        </tr>     
+        <% end %>
+      </tbody>
+    </table>

@@ -1,0 +1,34 @@
+<h2>Mortgage Calculator</h2>
+
+ 
+<form action='/mortgage' method='get'>
+
+    <table>
+      <tr>
+        <td>Enter the mortgage amount</td><td><input type='text' name='mort_prin'></td>
+      </tr>
+      <tr>
+        <td>Enter the interest rate</td><td><input type='text' name='mort_rate'></td>
+      </tr>
+      <tr>
+        <td>Enter the years</td><td><input type='text' name='mort_years'></td>
+      </tr>
+      <tr>
+        <td></td><td><button>Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+
+<% if @mort_prin && @mort_prin > 0 %>
+
+  <section>
+    <h3>Mortgage Payment</h3>
+
+    <div class="Mortgage Payments">
+      <p><%= @mort_nos_payments %> payments of $<%= @mort_monthly_payment %></p>
+  </div>  
+
+  </section>
+
+<% end %>

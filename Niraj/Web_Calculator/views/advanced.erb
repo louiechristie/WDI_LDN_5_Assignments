@@ -1,0 +1,31 @@
+
+
+<form action='/advanced' method='get'>
+  
+  first:<input type='number' name='first'>
+   operator:<select name='operator'>  
+  second: <input type='number' name='second'>
+  
+ 
+  <option type="text"  value="**">**²</option>
+  <option type="text"  value="Math.sqrt">√</option>
+
+    </select>
+
+  
+
+  <button>Calaculate!</button>
+
+</form>
+
+<% if @result %>
+  <section>
+    <div>
+      <h3> And the answer is... <%= @result %></h3>
+    </div>
+  </section>
+
+<% end %>
+
+
+

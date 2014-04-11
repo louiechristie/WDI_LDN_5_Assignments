@@ -1,0 +1,30 @@
+<form action='/simple' method='get'>
+  
+  <input type='number' name='first'>first:
+  <input type='number' name='second'>second: 
+  
+  <select name='operator'>  operator:
+      <option type="text" value="+">+</option>
+      <option type="text"  value="-">-</option>
+      <option type="text"  value="*">*</option>
+      <option type="text"  value="/">/</option>
+
+
+      
+    </select>
+
+  
+  <button>Calaculate!</button>
+
+</form>
+
+<% if @result %>
+  <section>
+    <div>
+      <h3> And the answer is... <%= @result %></h3>
+    </div>
+  </section>
+
+<% end %>
+
+

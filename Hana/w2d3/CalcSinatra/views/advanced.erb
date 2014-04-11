@@ -1,0 +1,20 @@
+<h2>Advanced Calculator<h2>
+
+<form action='/advanced' method='get'>
+  Operation: <select name="operation">
+    <option value="power">Power</option> 
+    <option value="square">Square Root</option>
+  </select> </br>
+  First Digit: <input type='text' name='first_digit'></br> 
+  Second Digit: <input type='text' name='second_digit'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p>The answer is <%=@result%>.</p>
+  </section>
+<% end %>

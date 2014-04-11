@@ -1,0 +1,32 @@
+<form action='/trip' method='get'>
+  <p>Your next trip is starting soon. Let's see your duration and costs.</p>
+  <ul>
+    <li>Please enter the distance (miles): <input type='text' name='distance'></li>
+    <li>Please enter the fuel efficiency (mpg) of your car: <input type='text' name='fuel_efficiency'></li>
+    <li>Please enter the cost per gallon (GBP): <input type='text' name='cost_per_gallon'></li>
+    <li>Please enter the speed (mph) you estimate: <input type='text' name='speed'></li>
+  </ul>
+  <button>Calculate!</button>
+</form>
+
+<% if @duration %>
+  <section>
+    <header>
+      <h3>Duration of the trip</h3>
+    </header> 
+    <p>The duration of your trip is <%= @duration %> hours.</p>
+  </section>
+<% end %>
+
+<% if @cost %>
+  <section>
+    <header>
+      <h3>Costs of the trip</h3>
+    </header> 
+    <p>The trip will cost you GBP <%= @cost %>.</p>
+  </section>
+<% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>

@@ -1,0 +1,21 @@
+body {
+  background: gray;
+  padding: 50px 200px;
+
+}
+
+
+.result {
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+  background: white;
+}
+
+
+form { 
+border: 1px solid black;
+display: inline-block;
+text-align: right;
+}
+

@@ -1,0 +1,11 @@
+<h1> Navigation</h1>
+
+<%if @error%>
+<h2> <%=@error%>
+  <%end%>
+
+
+<form action='/navigate' method='post'>
+  <input type='text' name='destination' autofocus>
+  <button>Nav!</button>
+</form>

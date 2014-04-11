@@ -1,0 +1,31 @@
+<section>
+  <header>
+    <h1>Let's do some advanced maths</h1>
+  </header>
+    <h2>Raise a number to the power of:</h2>
+  <form action='/advanced' method='get'>
+    <input type='text' name='number1'>
+    To the
+    <input type='text' name='number2'>
+    Power <br/>
+    <button>Calculate!</button>
+  </form>
+  
+  <aside>
+    <% if @result1 %>
+      <p><%= @number1 %> raised to the <%= @number2 %> power is <%= @result1 %></p>
+      <br/>
+    <% end %>
+  </aside>
+  
+    <h2>Get the square root of a number</h2>
+  <form action='/advanced' method='get'>
+    The square root of: <input type='text' name='number3'>
+    <button>Calculate!</button>
+  </form>
+  <aside>
+    <% if @result2 %>
+      <p>The square root of <%= @number3 %> is <%= @result2 %></p>
+    <% end %>
+  </aside>
+</section>

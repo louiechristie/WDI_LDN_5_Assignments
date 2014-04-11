@@ -1,0 +1,22 @@
+<section>
+  <header>
+    <h1>Let's see if you are a fatso.</h1>
+  </header>
+  <form action='/bmi_metric' method='get'>
+    How tall are you in meters?
+    <input type='text' name='height'>
+    
+    How much do you weight in kilograms?
+    <input type='text' name='weight'>
+    
+    <button>Calculate!</button>
+  </form>
+
+  <% if @bmi %>
+    <p>Your BMI is <%= @bmi %>.</p>
+    <% if @bmi > 30 %>
+      <img src="http://resources2.news.com.au/images/2010/09/09/1225916/776414-fatso-the-wombat.jpg">
+      <p>Fatso the wombat says: "You're Fat!"</p>
+    <% end %>   
+  <% end %>
+</section>
