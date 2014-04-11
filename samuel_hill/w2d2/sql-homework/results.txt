@@ -24,6 +24,14 @@
 
 4. Selects the name and price of the second most expensive product.
 
+	select name, max(price) from products where price < (select max(price) from products);
+
+	or 
+
+	select name, price from products order by price desc limit 1, 3;
+
+		Brown Leather Boots|82.0
+
 5. Selects the name and price of the least expensive product.
 
 	select name,min(price) from products;
@@ -59,7 +67,7 @@
 
 9. Selects the sum of the price of all products whose prices is less than £20.
 
-	select sum(price) from products where (price < 20);
+	select sum(price) from products where price < 20;
 		
 		55.19
 
@@ -71,25 +79,26 @@
 
 11. Selects the names of all users whose names start with the letter "S".
 
-	select name from users where name = “S%”
+	select name from users where name like 'S%';
 
-
+		Sam Hill
+		Scott Gammon
 
 12. Selects the number of users whose first names are "Jonathan".
 
-	select count(name) from users where name='Jonathan%’;
+	select count(name) from users where name like 'Jonathan%’;
 		
 		0
 
 13. Selects the number of users who want a "Teddy Bear".
 
-	select count(all) from wishlists where product_id = (select id from products where name="Teddy Bear");
+	select count(*) from wishlists where product_id = (select id from products where name="Teddy Bear");
 
 		6
 
 14. Selects the count of items on the wishlish of the user with your name.
 
-	select count(all) from wishlists where user_id = (select id from users where name="Sam Hill");
+	select count(*) from wishlists where user_id = (select id from users where name="Sam Hill");
 
 		2
 
