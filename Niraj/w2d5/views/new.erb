@@ -3,7 +3,7 @@
   <p> Title: </p> <input type='text' name='title' placeholder='video title' autofocus> </br>
   <p> Video Link:</p>   <input type='url' name='youtubeID' autofocus>
 
-  <p><iframe width="480" height="360" src="//http://www.youtube.com/embed/<%= movie['youtubeID']%>" frameborder="0" allowfullscreen></iframe></p>
+  <p><iframe width="480" height="360" src="//http://www.youtube.com/embed/<%= @movie['youtubeID']%>" frameborder="0" allowfullscreen></iframe></p>
 
   <p> Genre: </p> <input type="radio" name="genre" value="Action"> Action <br>
   <input type="radio" name="genre" value="Anime"> Anime <br>

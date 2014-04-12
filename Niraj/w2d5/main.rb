@@ -34,7 +34,7 @@ end
 
 get '/show' do
   sql = "select * from movie"
-  @movie_list = @db.exec(sql)
+  @movie = @db.exec(sql)
 
   erb :show
 end
