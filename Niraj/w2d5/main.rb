@@ -25,7 +25,6 @@ post '/create' do
   @genre = params[:genre]
   @youtubeID = params[:youtubeID]
   @movie = params[:movie]
-  # @video = params[:video]
 
   sql = "insert into movie (title, description, genre, youtubeID) values('#{@title}', '#{@description}', '#{@genre}', '#{@youtubeID}')"
   @db.exec(sql)
