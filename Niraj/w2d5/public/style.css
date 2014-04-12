@@ -1,4 +1,4 @@
-/*body {
+body {
 background:
 radial-gradient(black 15%, transparent 16%) 0 0,
 radial-gradient(black 15%, transparent 16%) 8px 8px,
@@ -14,4 +14,106 @@ ul {
   color: white;
   font-family: helvetica, arial, sans-serif;
 
-}*/
+}
+
+.youtube {
+margin-left: 20%;
+clear: right;
+display: inline-block;;
+
+}
+
+p {
+  display: inline-block;
+  float: left;
+  
+}
+
+h3 {
+margin: 0 auto;
+clear: both;
+float: right;
+margin-top: 20px;
+margin-right: 700px;
+}
+
+h2 {
+  margin: 0 auto;
+  float: right;
+  margin-right: 700px;
+}
+
+.title {
+  text-align: left;
+  border-bottom: 2px solid white;
+}
+
+.box {
+ border:2px solid #456879;
+  border-radius:10px;
+  height: 360px;
+  width: 500px;
+  clear: both;
+  float: right;
+  margin-top: -385px;
+  margin-right: 500px;
+  border-top: 5px solid white;
+}
+
+.line {
+     color: #f00;
+     background: #f00; 
+     width: 26%; 
+     height: 5px;
+     margin-left: 650px;
+     margin-top: -30px;
+
+}
+
+h1 {
+font-family: 'Nova Square', cursive;
+font-size: 60px;
+text-align: center;
+}
+
+.links {
+font-family: 'Nova Square', cursive;
+font-size: 20px;
+text-align: center;
+margin-bottom: 50px;
+color: white;
+text-decoration: none;
+
+}
+
+a:link {color:#FF0000;}    /* unvisited link */
+a:visited {color:#00FF00;} /* visited link */
+a:hover {color:#FF00FF;}   /* mouse over link */
+a:active {color:#0000FF;}  /* selected link */
+
+.delete {
+  border: 1px solid white ;
+  margin: 0 auto;
+  clear: both;
+  color: white;
+  width: 50px; 
+  padding: 5px;
+  float: right; 
+  margin-right: 350px;
+}
+
+.edit {
+  border: 1px solid white ;
+  margin: 0 auto;
+  clear: both;
+  color: white;
+  width: 50px; 
+  padding: 5px;
+  float: top; 
+  margin-right: 350px;
+}
+
+a {
+  text-decoration: none;
+}
+

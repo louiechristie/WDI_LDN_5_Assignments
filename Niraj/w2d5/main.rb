@@ -54,13 +54,15 @@ get '/edit/:id' do
 end
 
 post '/update/:id' do
-  @title = params[:title]
-  @description = params[:description]
-  @genre = params[:genre]
-  @youtubeID = params[:youtubeID]
-  @video = params[:video]
+  id = params[:id]
+  title = params[:title]
+  description = params[:description]
+  genre = params[:genre]
+  youtubeID = params[:youtubeID]
+  video = params[:video]
 
-  sql ="update movie set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)}, video=#{sql_string(@video)} where id = #{params[:id].to_i}"
+
+  sql ="update movie set title= #{sql_string(@update_title)}, description=#{sql_string(@update_description)}, genre=#{sql_string(@update_genre)}, youtubeID=#{sql_string(@update_youtubeID)}, video=#{sql_string(@update_video)} where id = #{params[:id]}"
 
   @db.exec(sql)
 
@@ -74,7 +76,7 @@ get '/delete/:id' do
 end
 
 def sql_string(value)
-  "'#{value.to_s.gusb("'", "''")}'"
+"#{value.gsub("'","''")}"
 end
 
 
