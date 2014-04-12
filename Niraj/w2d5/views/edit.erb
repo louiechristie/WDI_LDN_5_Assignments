@@ -1,0 +1,6 @@
+<form action='/update/<%= @movie/["id"] %>' method='post'
+  <input type='text' name='title' value='<% @movie["title"] %>' autofocus>
+  <textarea rows=5 cols=2 name='description' value='<% @movie["description"] %>' autofocus>
+  <input type='text' name='genre' value='<% @movie["genre"] %>' autofocus>
+  <input type='text' name='youtubeID' value='<% @movie["youtubeID"] %>' autofocus>
+</form>
