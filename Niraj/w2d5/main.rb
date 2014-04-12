@@ -60,7 +60,7 @@ post '/update/:id' do
   @youtubeID = params[:youtubeID]
   @video = params[:video]
 
-  sql ="update movie_list set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)}, video=#{sql_string(@video)} where id = #{params[:id].to_i}"
+  sql ="update movie set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)}, video=#{sql_string(@video)} where id = #{params[:id].to_i}"
 
   @db.exec(sql)
 

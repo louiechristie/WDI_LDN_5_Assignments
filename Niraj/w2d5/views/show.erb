@@ -7,9 +7,13 @@
   <h3><%= movie['youtubeID']%> </h3>
   <h3><%= movie['movie']%> </h3>
 
+ <p><iframe width="480" height="360" src="//http://www.youtube.com/embed/<%= movie['youtubeID']%>" frameborder="0" allowfullscreen></iframe></p>
 
   <a href="/delete/<%= movie['id']%>"> Delete </a>
   <a href="/edit/<%= movie['id']%>"> Edit </a>
+
+ 
+
 
 </div>
 
