@@ -25,8 +25,9 @@ post '/create' do
   @genre = params[:genre]
   @youtubeID = params[:youtubeID]
   @movie = params[:movie]
+  # @video = params[:video]
 
-  sql = "insert into movie (title, description, genre, youtubeID, movie) values('#{@title}', '#{@description}', '#{@genre}', '#{@youtubeID}', '#{@movie}')"
+  sql = "insert into movie (title, description, genre, youtubeID) values('#{@title}', '#{@description}', '#{@genre}', '#{@youtubeID}')"
   @db.exec(sql)
 
   redirect to ('/show')
@@ -58,8 +59,9 @@ post '/update/:id' do
   @description = params[:description]
   @genre = params[:genre]
   @youtubeID = params[:youtubeID]
+  @video = params[:video]
 
-  sql ="update movie_list set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)} where id = #{params[:id].to_i}"
+  sql ="update movie_list set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)}, video=#{sql_string(@video)} where id = #{params[:id].to_i}"
 
   @db.exec(sql)
 
@@ -67,7 +69,7 @@ post '/update/:id' do
 end
 
 get '/delete/:id' do
-  sql = "delete from movie_list where id = #{params[:id].to_i}"
+  sql = "delete from movie where id = #{params[:id].to_i}"
   @db.exec(sql)
   redirect to ('/show')
 end

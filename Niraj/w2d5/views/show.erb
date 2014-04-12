@@ -1,30 +1,18 @@
-<!--  <% if @movielist %> -->
+<% @movie_list.each do |movie| %>
 
-  <h1><%= @movie_list[0]['name'] %> </h1>
-  <h1><%= @movie_list[0]['description'] %> </h1>
-  <h1><%= @movie_list[0]['genre'] %> </h1>
-  <h1><%= @movie_list[0]['youtubeID'] %> </h1>
-
-
+<div>
+  <h3><%= movie['title']%> </h3>
+  <h3><%= movie['description']%> </h3>
+  <h3><%= movie['genre']%> </h3>
+  <h3><%= movie['youtubeID']%> </h3>
+  <h3><%= movie['movie']%> </h3>
   
 
-    <h1> Films currently in the database are: </h1>
+  <a href="/delete/<%= movie['id']%>"> Delete </a>
+  <a href="/edit/<%= movie['id']%>"> Edit </a>
 
+</div>
 
-<!--     <% @movie_list.each do |movie| %>
- -->
-      <div>
-        <h3><%= movie['title']%> </h3>
-        <p><%= movie['description']%></p>
-        <p><%= movie['genre']%></p>
-        <p><%= movie['youtubeID']%></p>
+</hr>
 
-        <a href="/delete/<%= movie['id']%>"> Delete </a>
-        <a href="/edit/<%= movie['id']%>"> Edit </a>
-
-      </div>
-
-<!--     <% end %>
- -->
-
-<!--  <% end %> -->
+<% end %>
