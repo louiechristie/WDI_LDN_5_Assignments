@@ -1,0 +1,10 @@
+<h2>Edit a the video:</h2>
+
+<form action='/update/<%= params["id"] %>' method='post'>
+  <input type='text' name='title' placeholder='Enter Title' value="<%= @input['title'] %>" autofocus>
+  <input type='text' name='description' placeholder='Enter  Description' value="<%= @input['description'] %>">
+  <input type='text' name='video_id' placeholder='Enter Video ID' value="<%= @input['video_id'] %>">
+  <input type='text' name='genre' placeholder='Enter Genre' value="<%= @input['genre'] %>">
+  <button>Edit video</button>
+</form>
+ 
