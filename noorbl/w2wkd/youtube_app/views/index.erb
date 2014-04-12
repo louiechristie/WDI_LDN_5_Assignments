@@ -1,0 +1,21 @@
+here are all your videos
+
+
+<% @videos.each do |videos| %>
+
+<div>
+  <h3><%= videos['title']%></h3>
+  <p><%= videos['description']%></p>
+  <p><%= videos['genre']%></p>
+  <p><%= videos['id']%></p>
+  <p><iframe width="480" height="360" src="//www.youtube.com/embed/<%= videos['video_id']%>" frameborder="0" allowfullscreen></iframe></p>
+  <a href="/delete/<%= videos['id']%>">
+  Delete</a>
+  <a href="/edit/<%= videos['id']%>">
+  Edit</a> 
+</div>
+
+<hr/>
+
+
+<% end %>
