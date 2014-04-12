@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Meme.tb</title>
+    <link rel='stylesheet' href='/reset.css'>
+    <link rel='stylesheet' href='/normalize.css'>
+    <link rel='stylesheet' href='/bootstrap.css'>
+    <link rel='stylesheet' href='/style.css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Londrina+Outline' rel='stylesheet' type='text/css'> -->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Meme.tb</a></h1>
+    </header>
+    <div class="ebthf">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+             <%= yield %>
+          </div>
+          <div class="col-md-4">
+            <a href="/upload" role="button" class="btn btn-info">Upload</a>
+            <a href="/viewall" role="button" class="btn btn-info">View All</a>
+            <a href="/viewtags" role="button" class="btn btn-info">View Tags</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
