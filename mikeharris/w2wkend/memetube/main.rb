@@ -22,7 +22,7 @@ get '/show' do
   if params[:filter] 
     sql="select * from videos WHERE genre='#{params[:filter]}'"
   else
-    sql="select * from videos"
+    sql="select * from videos order by title"
   end
   @users_videos = @db.exec(sql)
   erb :show
@@ -84,7 +84,6 @@ post '/update/:id' do
 
     
     sql = "update videos SET title='#{@title}', description='#{@description}', url='#{@url}', genre ='#{@genre}' where id = '#{@id}'"
-    binding.pry
     @db.exec(sql)
 
 redirect to '/show'

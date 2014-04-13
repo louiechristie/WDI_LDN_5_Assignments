@@ -8,7 +8,7 @@
   margin: 100px auto;
 }
 
-nav {
+.main {
   font-family: 'Gochi Hand', cursive;
   width: 375px;
   display: block;
@@ -16,29 +16,29 @@ nav {
 }
 
 
-nav img {
+.main img {
   width: 105px;
   display:inline-block;
   margin: 0 40px;
   border-radius: 65px;
 }
 
-nav img:hover {
+.main img:hover {
   box-shadow: 0 6px 6px rgba(0,0,0,0.3), inset 0 -3px 3px rgba(0,0,0,0.1);
 }
 
 .show {
-  width: 45%;
-  max-width: 630px;
+  width: 523px;
   float: left;
   position: fixed;
-  
+  margin-left: 100px;
+  margin-top: 50px;
+ 
 }
 
 .tv {
-  position: fixed;
-  top:100px;
-  left: 0px;
+ margin: 0 auto;
+ width: 523px;
 }
 
 .library {
@@ -107,16 +107,16 @@ top: -55px;
   width:425px;
   display: none;
   position: fixed;
-  top: 150px;
-  left: 60px;
+  top: 190px;
+  left: 149px;
 }
 
 
 .description {
   display: none;
   position: fixed;
-  top: 200px;
-  left: 70px;
+    top: 238px;
+  left: 156px;
   z-index: 1000;
   color: white;
   font-family: 'VT323';
@@ -185,7 +185,7 @@ h2 {
 .show_logo {
   width: 100px;
   margin: 10px;
-  margin-right: 50px;
+  
 }
 
 .show_play, .show_filter{
@@ -193,17 +193,81 @@ h2 {
   margin-top: 20px;
 }
 
+.show_play {
+  margin-left: 120px;
+}
+
+.play_play, .play_play2 {
+  width: 75px;
+  margin-top: 20px;
+  margin-left:35px;
+}
+
+.play_play2 {
+  margin-left:50px;
+}
 .genre_menu {
   display: inline-block;
+  width: 75px;
 }
-.menu {
-  display: inline-block;
+
+.genre_menu a {
+  padding: 5px;
+  text-decoration: none;
+  font-family: 'VT323';
+  background: white;
+  color: black;
+}
+
+.genre_menu a:hover {
+  background: gray;
+} 
+
+.genre_menu li {
+  height: 30px;
+  display: block;
+  width: 100px;
+}
+
+.genre_menu ul {
+  position: absolute;
+  display: none;
+  top: 90px;
+  left: 340px;
+}
+
+.genre_menu:hover ul {
+  display: block;
+}
+
+
+.filter_menu {
+ display: inline-block;
   position: relative;
   top: -75px;
   left: -80px;
   font-family: 'VT323';
   text-transform: uppercase;
   opacity: 0;
+
+}
+
+
+.menu {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.menu {
+  left: 125px;
+}
+
+.genre_menu .menu {
+  left: 315px;
 }
 .genre_menu:hover > .menu, a:hover > .menu, a:hover .menu2 {
   opacity: 1;
@@ -211,9 +275,9 @@ h2 {
 
 
 .play {
-  width: 700px;
+  width: 600px;
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 .play nav {
@@ -227,15 +291,15 @@ h2 {
 }
 
 .tv_play img{
-  width: 700px;
+  width: 600px;
 }
 
 
 .tv_play iframe {
   position: absolute;
-  width: 560px;
-  top: 105px;
-  left:65px;
+  width: 500px;
+ top: 74px;
+left: 51px;
 
 }
 
@@ -250,7 +314,7 @@ left: 42px;
   width: 75px;
 }
 .play .menu2 {
-  left: 300px;
+  left: 320px;
 }
 
 
@@ -263,6 +327,7 @@ left: 42px;
   width: 100px;
   margin: 0 auto;
   margin-bottom: 10px;
+  margin-left: 46px;
 }
 
 .play nav {

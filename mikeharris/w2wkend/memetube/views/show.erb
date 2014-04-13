@@ -1,16 +1,19 @@
 
 
 <section class="show">
+
+<a href="/new"><p class="menu">Add a clip</p><img class="show_play" src="/record_button.png" /></a>
 <a href="/"><img class="show_logo" src="vhs_tube_logo.png" /></a>
-<a href="/new"><img class="show_play" src="/record_button.png" /><p class="menu">Add a clip</p></a>
 <div class="genre_menu">
-  <img class="show_filter" src="/filter.png" />
+  
   <div class="menu">Filter By Genre</div>
   <ul>
-    <li>All</li>
+    <li><a href="/show">All</a></li>
     <% @genre_list.each do |genre| %>
-      <li><a href="/show?filter=<%= genre["genre"] %>"><%= genre["genre"] %></li>
+      <li><a href="/show?filter=<%= genre["genre"] %>"><%= genre["genre"] %></a></li>
     <% end %>
+  </ul>
+  <img class="show_filter" src="/filter.png" />
 </div>
 
 
