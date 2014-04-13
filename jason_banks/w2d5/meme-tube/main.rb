@@ -33,10 +33,16 @@ post '/create' do
 
   title = params[:title]
   id = params[:id]
-  keyword = params[:keyword]
+  keyword = params[:keyword].downcase
+  @incomplete = ""
+  
+  if title.empty? || id.empty? || keyword.empty?
+    @incomplete = "Incomplete details provided."
+    redirect to("/add")
+  end
+
   confirm_sql = "SELECT * FROM videos WHERE id = '#{sql_string(id)}'"
   @confirm_video = @db.exec(confirm_sql).first
-  binding.pry
 
   if @confirm_video
     redirect to("/add")
@@ -59,7 +65,7 @@ end
 get '/viewall' do
 
   videos_sql = "SELECT * FROM videos ORDER BY title"
-  @all_videos = @db.exec(videos_sql)
+  @videos = @db.exec(videos_sql)
 
   erb :viewall
 
@@ -67,10 +73,20 @@ end
 
 get '/keywords' do
 
-  keywords_sql = "SELECT keyword FROM videos"
-  @all_keywords = @db.exec(keywords_sql)
+  keywords_sql = "SELECT keyword FROM videos ORDER BY keyword"
+  @keywords = @db.exec(keywords_sql)
 
   erb :keywords
+
+end
+
+get '/keywords/:keyword' do
+
+  keyword = params[:keyword]
+  videos_by_keyword_sql = "SELECT * FROM videos WHERE keyword = '#{keyword}'"
+  @videos_by_keyword = @db.exec(videos_by_keyword_sql)
+
+  erb :keyword
 
 end
 

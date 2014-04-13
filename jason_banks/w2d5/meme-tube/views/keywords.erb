@@ -1,0 +1,5 @@
+<% if @keywords.any? %>
+  <% @keywords.each do |keyword| %>
+  <h2><a href="/keywords/<%= keyword['keyword'] %>"><%= keyword['keyword'] %></a>
+  <% end %>
+<% end %>

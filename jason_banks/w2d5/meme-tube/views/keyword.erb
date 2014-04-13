@@ -1,6 +1,7 @@
-<% if @videos %>
-  <% @videos.each do |video| %>
-    <h2>"<%= video['title'] %>"</h2>
+<% if @videos_by_keyword %>
+    <h2><%= @videos_by_keyword.first['keyword'] %></h2>
+  <% @videos_by_keyword.each do |video| %>
+    <h3>"<%= video['title'] %>"</h3>
     <br />
     <br />
     <iframe id="ytplayer" type="text/html" width="640" height="360"
