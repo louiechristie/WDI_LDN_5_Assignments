@@ -1,9 +1,0 @@
-<% if @keywords.any? %>
-<div class="keyword-list">
-  <ul class="nav nav-pills nav-stacked">
-    <% @keywords.each do |keyword| %>
-    <li><a href="/keywords/<%= keyword['keyword'] %>" role="button" class="btn btn-success"><%= keyword['keyword'] %><span class="badge pull-right"><%= keyword['count'] %></span></a></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>

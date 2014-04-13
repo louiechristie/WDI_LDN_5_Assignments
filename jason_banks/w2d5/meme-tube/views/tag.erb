@@ -1,7 +1,7 @@
-<% if @videos %>
-  <h2>View All</h2>
+<% if @videos_by_tag %>
+  <h2><%= @videos_by_tag.first['tag'] %></h2>
   <div class="row">
-    <% @videos.each do |video| %>
+    <% @videos_by_tag.each do |video| %>
       <div class="col-md-4">
         <div class="thumbnail">
           <img src="http://img.youtube.com/vi/<%= video['id'] %>/3.jpg" alt="<%= video['title'] %>" />
@@ -14,3 +14,6 @@
     <% end %>
   </div>
 <% end %>
+
+
+

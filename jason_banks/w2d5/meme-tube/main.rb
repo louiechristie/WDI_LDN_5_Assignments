@@ -33,10 +33,10 @@ post '/create' do
 
   title = params[:title]
   id = params[:id]
-  keyword = params[:keyword].downcase
+  tag = params[:tag].downcase
   @incomplete = ""
   
-  if title.empty? || id.empty? || keyword.empty?
+  if title.empty? || id.empty? || tag.empty?
     @incomplete = "Incomplete details provided."
     redirect to("/add")
   end
@@ -47,7 +47,7 @@ post '/create' do
   if @confirm_video
     redirect to("/add")
   else
-    add_sql = "INSERT INTO videos (id, title, keyword) VALUES ('#{sql_string(id)}', '#{sql_string(title)}', '#{sql_string(keyword)}')"
+    add_sql = "INSERT INTO videos (id, title, tag) VALUES ('#{sql_string(id)}', '#{sql_string(title)}', '#{sql_string(tag)}')"
     @db.exec(add_sql)
     redirect to("/show/#{sql_string(id)}")
   end 
@@ -71,22 +71,22 @@ get '/viewall' do
 
 end
 
-get '/keywords' do
+get '/tags' do
 
-  keywords_sql = "SELECT keyword, count(keyword) FROM videos GROUP BY keyword ORDER BY keyword"
-  @keywords = @db.exec(keywords_sql)
+  tags_sql = "SELECT tag, count(tag) FROM videos GROUP BY tag ORDER BY tag"
+  @tags = @db.exec(tags_sql)
 
-  erb :keywords
+  erb :tags
 
 end
 
-get '/keywords/:keyword' do
+get '/tags/:tag' do
 
-  keyword = params[:keyword]
-  videos_by_keyword_sql = "SELECT * FROM videos WHERE keyword = '#{keyword}'"
-  @videos_by_keyword = @db.exec(videos_by_keyword_sql)
+  tag = params[:tag]
+  videos_by_tag_sql = "SELECT * FROM videos WHERE tag = '#{tag}'"
+  @videos_by_tag = @db.exec(videos_by_tag_sql)
 
-  erb :keyword
+  erb :tag
 
 end
 
