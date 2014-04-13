@@ -25,7 +25,7 @@ get '/show' do
     sql="select * from videos order by title"
   end
   @users_videos = @db.exec(sql)
-  binding.pry
+
   erb :show
 end
 
