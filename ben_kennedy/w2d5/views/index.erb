@@ -1,0 +1,8 @@
+<section>
+  <% @video_list.each do |video| %>
+    <h3><a href="/show/:<%= video["id"] %>"><%= video["video_name"] %></a></h3>
+    <iframe width="181" height="105" src="//www.youtube.com/embed/<%= video["video_id"] %>" frameborder="0" allowfullscreen></iframe>
+    <p class="tags"><%= video["tags"].to_s.gsub("{","").gsub("}","").gsub(",",", ") %></p>
+    <p><%= video["posted_by"] %>, <%= video["created_at"] %></p>
+  <% end %>
+</section>
