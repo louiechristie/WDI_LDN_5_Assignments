@@ -1,7 +1,7 @@
 
 require 'pg'
 require 'pry'
-#create memtube test data base (createdb memetube)
+#create memtube data base (createdb memetube)
 #run: psql -d memetube -f memetube.sql 
 #run:  memetube_createdata.rb
 
