@@ -9,8 +9,8 @@
   <body>
     <nav>
       <ul id="menu">
-        <li><a href='/'>Video List</a></li>
-        <li><a href='/new'>New Video</a></li>
+        <li><a href='/'>Videos</a></li>
+        <li><a href='/new'>Add Video</a></li>
         <li>
           <a href='/genres'>Genres</a>
           <ul class="submenu">
@@ -20,12 +20,20 @@
           </ul>
         </li>
       </ul>
+      <div class="search">
+        <form method="post" action="/search">
+          <input type="text" name="query"/>
+          <input type="submit" value="Search" />
+        </form>
+      </div>
     </nav>
 
     <div class="container">
       <%= yield %>
     </div>
 
+    <footer>
+      <p><a href="http://www.louiechristie.com">Louie Christie</a> 2014</p>
+    </footer>
   </body>
-</html>  
-  
+</html>

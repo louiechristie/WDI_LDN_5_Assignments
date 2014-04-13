@@ -1,13 +1,30 @@
+<% if @query_string %>
+  <h1>Results for search: <%= @query_string %></h1>
+<% elsif @genre %>
+  <h1>Results for Genre: <%= @genre %></h1>
+<% else %>
+  <h1>All Videos</h1>
+<% end %>
+
 <% @videos.each do |video| %>
 
-    <p>
-      <a href="/show/<%=video['id'] %>"> 
-        <%=video['id'] %> <strong><%=video['title'] %></strong>
-      </a> 
-      <%= video['description'] %> <%= video['url'] %> <%= video['genre'] %>
+  <section>
+    <p class ="details">
+      <strong><%=video['title']%></strong> - 
+      <%= video['description'] %>
     </p>
 
-    <iframe width="560" height="315" src="//www.youtube.com/embed/<%= parse_youtube(video['url']) %> " frameborder="0" allowfullscreen></iframe>
+    <div class="video"
+    <p class="video"><iframe width="356" height="200" src="http://www.youtube.com/embed/<%=parse_youtube(video['url'])%>" frameborder="0" allowfullscreen></iframe></p>
 
+    <form action='/edit/<%=video['id']%>' method='put'>
+      <button class="button">Edit</button>
+    </form>
+  
+    <form action='/delete/<%=video['id'] %> <' method='delete'>
+      <button class="button">Delete</button>
+    </form>
+    </div><!--video-->
+  </section>
 
 <% end %>

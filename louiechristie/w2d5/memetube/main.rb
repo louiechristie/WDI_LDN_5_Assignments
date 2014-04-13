@@ -16,8 +16,13 @@ def sql_string(value)
 end
 
 def parse_youtube url
-   regex = /(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/
-   url.match(regex)[1]
+  regex = /(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/
+  
+  if url.match(regex) && url.match(regex).length > 1 
+    url.match(regex)[1]
+  else 
+    ""
+  end
 end
 
 def genres
@@ -32,8 +37,21 @@ get '/' do
   erb :index
 end
 
+get '/genres' do
+  erb :genres
+end
+
 get '/genre/:genre' do
-  sql = "select * from videos where genre = '#{params[:genre]}'"
+  @genre = params[:genre]
+  sql = "select * from videos where genre = '#{@genre}'"
+  @videos = @db.exec(sql)
+
+  erb :index
+end
+
+post "/search" do
+  @query_string = params[:query]
+  sql = "SELECT * FROM videos WHERE title ILIKE '%#{@query_string}%'"
   @videos = @db.exec(sql)
 
   erb :index
@@ -49,25 +67,7 @@ post '/create' do
   @url = params[:url]
   @genre = params[:genre]
 
-  sql = "insert into videos (title, description, url, genre) values (
-    '#{sql_string(@title)}', 
-    '#{sql_string(@description)}', 
-    '#{sql_string(@url)}', 
-    '#{sql_string(@genre)}'
-    );"
 
-  @db.exec(sql)
-  redirect to('/')
-end
-
-get '/show/:id' do
-  id = params[:id]
-
-  sql = "select * from videos where id = '#{sql_string(id).to_i}';"  
-  @videos = @db.exec(sql)
-  @video = @videos[0]
-  
-  erb :show
 end
 
 get '/edit/:id' do
@@ -87,6 +87,7 @@ post '/update/:id' do
   url = params[:url]
   genre = params[:genre]
 
+
   sql = "UPDATE videos
           SET title='#{sql_string(title)}', 
               description='#{sql_string(description)}', 
@@ -95,7 +96,7 @@ post '/update/:id' do
           WHERE id = '#{sql_string(id).to_i}';"  
   @db.exec(sql)
 
-  redirect to("/show/#{params[:id]}")
+  redirect to("/")
 end
 
 get '/delete/:id' do
