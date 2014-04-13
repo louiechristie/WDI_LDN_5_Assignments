@@ -1,0 +1,71 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+  color: gray;
+}
+
+.container {
+  max-width: 940px;
+  padding: 10px;
+  margin: 0 auto;
+  line-height: 2em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+form {
+  display: inline;
+}
+
+input {
+  width: 720px;
+  line-height: 2em;
+}
+
+.button {
+  margin-top: 1em;
+  padding: 1em;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  height: 40px;
+}
+
+nav a {
+  color: white;
+}
+
+ul#menu, ul.submenu{
+    list-style: none;
+}
+ul#menu li{
+    float: left;
+    padding: 10px;
+}
+/* hide the submenu */
+li ul.submenu {
+    display: none;
+}
+ul#menu li a{
+    display: block;
+    float:none;
+}
+/* show the submenu */
+ul#menu li:hover ul.submenu{
+    display: block;
+    position: absolute;
+    float:left;
+    background-color: black;
+}
+ul#menu li:hover li,  ul#menu li:hover a {
+    float: none;
+}
+ul#menu li:hover li a:hover {
+}
