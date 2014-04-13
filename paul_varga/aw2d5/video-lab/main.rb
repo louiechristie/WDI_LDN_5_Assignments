@@ -21,9 +21,10 @@ get '/' do
   erb :index
 end
 
-get '/category/' do
+get '/category/:genre' do
 
-  sql = "select * from videos where videos.genre = #{params[:genre]}"
+  sql = "select * from videos where genre = '#{params[:genre]}'"
+  binding.pry
   result = @db.exec(sql)
   @videos = result[0]
 
