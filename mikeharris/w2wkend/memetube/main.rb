@@ -16,8 +16,13 @@ get '/'  do
     erb :main 
 end
 
-get '/show' do
-  sql="select * from videos"
+get '/show' do 
+  
+  if params[:filter] 
+    sql="select * from videos WHERE genre='#{params[:filter]}'"
+  else
+    sql="select * from videos"
+  end
   @users_videos = @db.exec(sql)
   erb :show
 end
@@ -32,7 +37,6 @@ post '/create'  do
     @url = params[:url]
     @genre = params[:genre]
 
-    
     sql = "insert into videos (title, description, url, genre) values('#{@title}', '#{@description}', '#{@url}', '#{@genre}')"
     @db.exec(sql)
     

@@ -1,16 +1,9 @@
-<h2>Please edit your video:</h2>
+<h2>Edit your saved clip</h2>
 
-
-<div class="editvideo">
-      <h3> <%= @users_videos["title"] %> </h3>
-      <p>  <%= @users_videos["description"] %> </p>    
-      <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @users_videos["url"] %>" frameborder="0" allowfullscreen></iframe>
-</div>
-
-
-
-<form action='/update/<%= @users_videos["id"] %>' method='post'>
-  <table>
+<div class="new_video" >
+  <img src="/vhs_tape.png" />
+  <form action='/update/<%= @users_videos["id"] %>' method='post'>
+    <table>
     <tr>
       <td>Title</td>
       <td><input type='text' name='title' autofocus value="<%= @users_videos["title"] %>"></td>
@@ -28,13 +21,15 @@
       <td><input type='text' name='genre' value = "<%= @users_videos["description"] %>" ></td>
   </tr>
 
+      <tr>
+        <td></td>
+        <td><button>S U B M I T</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
 
-  <tr>
-    <td></td>
-    <td><button>Submit</button></td>
-  </tr>
-  </table>
 
 
-</form>
+
 

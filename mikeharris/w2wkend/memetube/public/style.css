@@ -27,6 +27,7 @@ nav img {
   width: 45%;
   max-width: 630px;
   float: left;
+  position: fixed;
   
 }
 
@@ -124,20 +125,20 @@ iframe {
 
 
 .new_video {
-  width: 700px;
-  margin: 0 auto;
+  width: 800px;
+  margin: 50px auto;
 }
 
 .new_video  img {
-  width:700px;
+  width:800px;
   z-index: -10;
   position: absolute;
 }
 
 .new_video table {
   position: relative;
-  left: 225px;
-  top: 123px;
+  left: 245px;
+  top: 138px;
   font-family: 'Gochi Hand', cursive;
 }
 
@@ -152,11 +153,53 @@ iframe {
   padding: 1px 3px;
 }
 
+table tr td:nth-child(2) { 
+  width: 230px; 
+}
+
 .new_video textarea {
   vertical-align:text-top;
   width: 100%;
 } 
 
-.new_video  input {
+.new_video  input , button{
   width:100%;
 }
+
+.new_video button {
+  font-family: 'VT323';
+}
+
+h2 {
+  font-family: 'VT323';
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.show_logo {
+  width: 100px;
+  margin: 10px;
+  margin-right: 50px;
+}
+
+.show_play, .show_filter{
+  width: 75px;
+  margin-top: 20px;
+}
+
+.genre_menu {
+  display: inline-block;
+}
+.menu {
+  display: inline-block;
+  position: relative;
+  top: -75px;
+  left: -80px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+}
+.genre_menu:hover > .menu, a:hover > .menu {
+  opacity: 1;
