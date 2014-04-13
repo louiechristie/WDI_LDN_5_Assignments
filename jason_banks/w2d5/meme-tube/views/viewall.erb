@@ -1,0 +1,16 @@
+<% if @all_videos %>
+  <% @all_videos.each do |video| %>
+    <h2>"<%= video['title'] %>"</h2>
+    <br />
+    <br />
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+    src="https://www.youtube.com/embed/<%= video['id'] %>"
+    frameborder="0" allowfullscreen />
+    </iframe>
+    <br />
+    <br />
+    <a href="/show/<%= video['id'] %>" role="button" class="btn btn-success">Details</a>
+    <br />
+    <br />
+  <% end %>
+<% end %>

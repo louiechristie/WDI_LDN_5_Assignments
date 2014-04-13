@@ -1,6 +1,10 @@
+<% if @confirm_video %>
+  <h2><a href="/show/<%= @confirm_video['id'] %>">"<%= @confirm_video['title'] %>"</a> has already been added to Meme.base.</h2>
+<% end %>
 <h2>Featured</h2>
 <h3>"<%= @featured_video['title'] %>"</h3>
-<p></p>
+<br />
+<br />
 <iframe id="ytplayer" type="text/html" width="640" height="360"
 src="https://www.youtube.com/embed/<%= @featured_video['id'] %>"
 frameborder="0" allowfullscreen />

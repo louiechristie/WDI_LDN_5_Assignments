@@ -1,9 +1,7 @@
-<% if !@confirm_video %>
-  <h2>"<%= @show_video['title'] %>" has already been added to Meme.base.</h2>
-<% else %>
-  <h2>"<%= @show_video['title'] %>"</h2>
-<% end %>
-<p></p>
+
+<h2>"<%= @show_video['title'] %>"</h2>
+<br />
+<br />
 <iframe id="ytplayer" type="text/html" width="640" height="360"
 src="https://www.youtube.com/embed/<%= @show_video['id'] %>"
 frameborder="0" allowfullscreen />
@@ -11,32 +9,31 @@ frameborder="0" allowfullscreen />
 <div class="container">
   <h4>
   <div class="row">
-    <label class="col-sm-2 control-label">Title: </label>
+    <label class="col-sm-1 control-label">Title: </label>
     <div class="col-sm-4">
     <p class="form-control-static">"<%= @show_video['title'] %>"</p>
     </div>
   </div>
   <div class="row">
-    <label class="col-sm-2 control-label">Keyword: </label>
+    <label class="col-sm-1 control-label">Keyword: </label>
     <div class="col-sm-4">
     <p class="form-control-static"><%= @show_video['keyword'] %></p>
     </div>
   </div>
   <div class="row">
-    <label class="col-sm-2 control-label">Added: </label>
+    <label class="col-sm-1 control-label">Added: </label>
     <div class="col-sm-4">
     <p class="form-control-static"><%= @show_video['upload_time'] %></p>
     </div>
   </div>
   <div class="row">
-    <label class="col-sm-2 control-label">YouTube: </label>
-    <div class="col-sm-4">
-    <p class="form-control-static"><a href="https://www.youtube.com/embed/<%= @show_video['id'] %>">https://www.youtube.com/embed/<%= @show_video['id'] %></a></p>
+    <label class="col-sm-1 control-label">YouTube: </label>
+    <div class="col-sm-5">
+    <p class="form-control-static"><a href="https://www.youtube.com/watch?v=<%= @show_video['id'] %>" target="_blank">https://www.youtube.com/watch?v=<%= @show_video['id'] %></a></p>
     </div>
     </h4>
+    <p class='help-block'><span class="star">*</span>If the video above says "undefined", then the YouTube ID is not valid.</p>
   </div>
-<!-- </div>
- -->
 
 
 

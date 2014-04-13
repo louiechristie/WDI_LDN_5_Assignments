@@ -11,6 +11,10 @@ iframe {
   margin-right: 50px;
 }
 
+.col-md-4 {
+  margin-top: 120px;
+}
+
 .col-md-4 .btn {
   display: block;
   margin: 5px auto;
@@ -33,10 +37,33 @@ iframe {
   text-decoration: none;
 }
 
-.col-sm-10 .form-control-static {
-  margin-left: -60px;
+.col-sm-1 {
+  margin-right: 10px;
 }
 
 .form-control-static a {
   text-decoration: none;
 }
+
+footer {
+  height: 100px;
+  position: relative;
+}
+
+footer p {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+
+footer a.nodecor {
+  text-decoration: none;
+}
+
+.help-block .star {
+  color: #ff0d27;
+  margin-right: 5px;
+}
+
+
+
