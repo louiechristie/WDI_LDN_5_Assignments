@@ -1,23 +1,30 @@
-<h2>Please enter your todo item:</h2>
+<h2>Please enter your new vidoe:</h2>
 
-
-<form action='/create' method='post'>
-  <table>
-    <tr>
-      <td>Input title</td>
-      <td><input type='text' name='title' autofocus></td>
-  </tr>
-  <tr>
-    <td>Input description</td>
-    <td><textarea rows=3  cols=20  name='todo' ></textarea></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><button>Submit</button></td>
-  </tr>
-  </table>
-
-
-</form>
-
+<div class="new_video" >
+  <img src="vhs_tape.png" />
+  <form action='/create' method='post'>
+    <table>
+      <tr>
+        <td>Title</td>
+        <td><input type='text' name='title' autofocus></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><textarea rows=3  cols=20  name='description' ></textarea></td>
+      </tr>
+      <tr>
+        <td>URL</td>
+        <td><input type='text' name='url'></td>
+      </tr>
+      <tr>
+        <td>Genre</td>
+        <td><input type='text' name='genre'></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
 

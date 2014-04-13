@@ -12,9 +12,14 @@ after do
     @db.close
 end
 
-
 get '/'  do
-    redirect '/show'
+    erb :main 
+end
+
+get '/show' do
+  sql="select * from videos"
+  @users_videos = @db.exec(sql)
+  erb :show
 end
 
 get '/new'  do
@@ -23,58 +28,52 @@ end
 
 post '/create'  do
     @title = params[:title]
-    @todo = params[:todo]
+    @description = params[:description]
+    @url = params[:url]
+    @genre = params[:genre]
+
     
-    sql = "insert into todo (title, todo) values('#{@title}', '#{@todo}')"
+    sql = "insert into videos (title, description, url, genre) values('#{@title}', '#{@description}', '#{@url}', '#{@genre}')"
     @db.exec(sql)
     
  redirect '/show'
 end
 
 
-get '/show' do
-  sql="select * from todo"
-  @todolist = @db.exec(sql)
-
-  erb :show
-end
-
 get '/delete/:id'  do 
      @id = params[:id]
-     sql = "delete FROM todo where id = '#{@id}'"
+     sql = "delete FROM videos where id = '#{@id}'"
      @db.exec(sql)
     
-      redirect to '/show'
+    redirect to '/show'
 
 end
 
 get '/edit/:id'  do 
 
      @id = params[:id]
-     sql = "select * from todo"
+     sql = "select * from videos where id='#{@id}'"
+
      # change to sql to extract from database.  doh
-     @todolist = @db.exec(sql)
-
-     @todolist.each do |item|
-        if item["id"] == @id
-              @entry_to_edit = item
-        end
-     end 
-
-      
+     @users_videos = @db.exec(sql)[0]
+           
    erb  :edit
 
 end
 
 post '/update/:id' do
-   @id = params[:id]
-   @title = params[:title]
-   @todo = params[:todo]
+    @id = params[:id]
+    @title = params[:title]
+    @description = params[:description]
+    @url = params[:url]
+    @genre = params[:genre]
 
-    sql = "update todo SET title='#{@title}', todo='#{@todo}' where id = '#{@id}'"
+    
+    sql = "update videos SET title='#{@title}', description='#{@description}', url='#{@url}', genre ='#{@genre}' where id = '#{@id}'"
+    binding.pry
     @db.exec(sql)
 
-redirect to '/'
+redirect to '/show'
 
 
  end

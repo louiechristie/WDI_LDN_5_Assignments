@@ -1,70 +1,162 @@
-body {
-  
-  
+* {
+  box-sizing:border-box;
 }
 
+.logo {
+  width: 500px;
+  display: block;
+  margin: 100px auto;
+}
 
-main {
-  width: 480px;
+nav {
+  font-family: 'Gochi Hand', cursive;
+  width: 375px;
+  display: block;
   margin: 0 auto;
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-}
 
-h2 {
-  font-size: 20px;
-
-}
-table {
-  margin: 20px auto;
-}
-
-nav a {
-color: black;
-background: red;
-width: 80px;
-height: 80px;
-border-radius: 80px;
-display: block;
-line-height: 80px;
-text-align: center;
-margin: 10px;
-}
-
-.edit td  {
-  padding: 20px;
-  margin: 5px 10px;
+nav img {
+  width: 105px;
+  display:inline-block;
+  margin: 0 40px;
 
 }
 
-
-nav {
-  padding: 10px;
+.show {
+  width: 45%;
+  max-width: 630px;
+  float: left;
+  
 }
 
-li {
-  display: inline-block;
+.tv {
+  position: fixed;
+  top:100px;
+  left: 0px;
 }
 
-.todo_table td {
-  padding: 5px;
-  margin: 5px 10px;
+.library {
+  width: 45%;
+  max-width: 630px;
+  float: right;
   border: 1px solid black;
+  margin-right: 2%;
 }
 
-body {
-  padding: 50px;
+
+.video {
+  display: block;
+border: 1px solid black;
+position: relative;
+height: 82px;
 }
 
-button , input{
+.video_title {
+  position: relative;
+left: 200px;
+top: -55px;
+ font-family: 'Gochi Hand', cursive;
+ font-size: 26px;
+ display: inline;
+}
+
+
+.edit, .delete {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  opacity: 0.1;
+  font-family: 'VT323';
+  color: black;
+  text-decoration: none;
+}
+
+.edit {
+  
+  top: 40px;
+  right: 35px;
+}
+
+.play_button {
+  width: 80px;
+   position: absolute;
+  top: 15px;
+  left: 8px;
+  opacity: 0.2;
+}
+
+.video:hover > .play_button, .video:hover > .delete, .video:hover > .edit {
+  opacity: 1;
+}
+
+.video:hover > iframe {
+  display: inline;
+}
+
+.video:hover > .description {
+  display: inline;
+}
+
+iframe {
+  width:425px;
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 60px;
+}
+
+
+.description {
+  display: none;
+  position: fixed;
+  top: 200px;
+  left: 70px;
+  z-index: 1000;
+  color: white;
+  font-family: 'VT323';
+  font-size: 20px;
+  width: 390px;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  text-transform:uppercase;
+}
+
+
+
+.new_video {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.new_video  img {
+  width:700px;
+  z-index: -10;
+  position: absolute;
+}
+
+.new_video table {
+  position: relative;
+  left: 225px;
+  top: 123px;
+  font-family: 'Gochi Hand', cursive;
+}
+
+.new_video input, .new_video textarea { 
+  font-family: 'Gochi Hand', cursive;
+  padding: 2px;
+  font-size: 16px;
+   }
+
+
+.new_video td {
+  padding: 1px 3px;
+}
+
+.new_video textarea {
+  vertical-align:text-top;
   width: 100%;
-}
+} 
 
-
-.todo_table a {
-
+.new_video  input {
+  width:100%;
 }
