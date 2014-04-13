@@ -32,31 +32,38 @@ post '/create' do
   redirect to('/')
 end
 
-
 get '/edit/:id' do
-  sql = "select * from list where id = #{params[:id].to_i}"
-  @items = @db.exec(sql).first
+  sql = "select * from videos where id = #{params[:id].to_i}"
+  @videos = @db.exec(sql).first
   erb :edit
 end
 
 post '/update/:id' do
   @id = params[:id]
-  @task = params[:task]
-  @comments = params[:comments]
-  @importance = params[:importance]
+  @title = params[:title]
+  @url = params[:url]
+  @description = params[:description]
+  @genre = params[:genre]
 
 
-  sql = "UPDATE list SET task='#{@task}', comments='#{@comments}', importance='#{@importance}' WHERE id='#{@id}'"
+  sql = "UPDATE videos SET title='#{@title}', url='#{@url}', description='#{@description}', genre='#{@genre}' WHERE id='#{@id}'"
   @db.exec(sql) 
   redirect to('/')
-  #redirect to("/show/#{params[:id]}")
+ 
 end
 
 get '/delete/:id' do
-  sql = "DELETE FROM list WHERE id=#{params[:id].to_i}"
+  sql = "DELETE FROM videos WHERE id=#{params[:id].to_i}"
 
   @db.exec(sql)
   redirect to('/')
+end
+
+get '/display/:genre' do
+  sql = "SELECT * FROM videos WHERE genre=#{params[:genre]}"
+  binding.pry
+  @videos = @db.exec(sql)
+  erb :display
 end
 
 
