@@ -20,7 +20,11 @@ nav img {
   width: 105px;
   display:inline-block;
   margin: 0 40px;
+  border-radius: 65px;
+}
 
+nav img:hover {
+  box-shadow: 0 6px 6px rgba(0,0,0,0.3), inset 0 -3px 3px rgba(0,0,0,0.1);
 }
 
 .show {
@@ -87,7 +91,7 @@ top: -55px;
   opacity: 0.2;
 }
 
-.video:hover > .play_button, .video:hover > .delete, .video:hover > .edit {
+.video:hover .play_button, .video:hover > .delete, .video:hover > .edit {
   opacity: 1;
 }
 
@@ -99,7 +103,7 @@ top: -55px;
   display: inline;
 }
 
-iframe {
+.video iframe {
   width:425px;
   display: none;
   position: fixed;
@@ -201,5 +205,71 @@ h2 {
   text-transform: uppercase;
   opacity: 0;
 }
-.genre_menu:hover > .menu, a:hover > .menu {
+.genre_menu:hover > .menu, a:hover > .menu, a:hover .menu2 {
   opacity: 1;
+}
+
+
+.play {
+  width: 700px;
+  display: block;
+  margin: 20px auto;
+}
+
+.play nav {
+  width: 550px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tv_play{
+  position: relative;
+}
+
+.tv_play img{
+  width: 700px;
+}
+
+
+.tv_play iframe {
+  position: absolute;
+  width: 560px;
+  top: 105px;
+  left:65px;
+
+}
+
+.play .menu, .play .menu2 {
+  display: inline-block;
+position: absolute;
+top: 0px;
+left: 42px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+  width: 75px;
+}
+.play .menu2 {
+  left: 300px;
+}
+
+
+
+.play nav a {
+  display: inline;
+}
+
+.play_logo {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.play nav {
+  width: 425px;
+  
+}
+
+
+
+
