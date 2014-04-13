@@ -73,7 +73,7 @@ end
 
 get '/keywords' do
 
-  keywords_sql = "SELECT keyword FROM videos ORDER BY keyword"
+  keywords_sql = "SELECT keyword, count(keyword) FROM videos GROUP BY keyword ORDER BY keyword"
   @keywords = @db.exec(keywords_sql)
 
   erb :keywords
