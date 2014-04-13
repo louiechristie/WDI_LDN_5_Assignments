@@ -49,16 +49,16 @@ post '/create' do
   else
     add_sql = "INSERT INTO videos (id, title, tag) VALUES ('#{sql_string(id)}', '#{sql_string(title)}', '#{sql_string(tag)}')"
     @db.exec(add_sql)
-    redirect to("/show/#{sql_string(id)}")
+    redirect to("/view/#{sql_string(id)}")
   end 
 end
 
-get '/show/:id' do
+get '/view/:id' do
   id = params[:id]
-  show_video_sql = "SELECT * FROM videos where id = '#{sql_string(id)}'"
-  @show_video = @db.exec(show_video_sql).first
+  view_video_sql = "SELECT * FROM videos where id = '#{sql_string(id)}'"
+  @view_video = @db.exec(view_video_sql).first
 
-  erb :show
+  erb :view
 
 end
 
@@ -93,15 +93,6 @@ end
 def sql_string(value)
   value.gsub("'", "''")
 end
-
-
-
-
-
-
-
-
-
 
 
 
