@@ -41,6 +41,7 @@ end
 
 get '/edit/:id' do
   @youtubeID = params[:youtubeID]
+  id = params[:id]
   sql = "select * from movie"
   @movie = @db.exec(sql)
 
@@ -54,15 +55,13 @@ get '/edit/:id' do
 end
 
 post '/update/:id' do
-  id = params[:id]
-  title = params[:title]
-  description = params[:description]
-  genre = params[:genre]
-  youtubeID = params[:youtubeID]
-  video = params[:video]
+  @id = params[:id]
+  @title = params[:title]
+  @description = params[:description]
+  @genre = params[:genre]
+  @youtubeID = params[:youtubeID]
 
-
-  sql ="update movie set title= #{sql_string(@update_title)}, description=#{sql_string(@update_description)}, genre=#{sql_string(@update_genre)}, youtubeID=#{sql_string(@update_youtubeID)}, video=#{sql_string(@update_video)} where id = #{params[:id]}"
+  sql ="update movie set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)} where id = #{@id}"
 
   @db.exec(sql)
 
@@ -70,13 +69,16 @@ post '/update/:id' do
 end
 
 get '/delete/:id' do
-  sql = "delete from movie where id = #{params[:id].to_i}"
+  sql = "delete from movie where id = #{params[:id]}"
   @db.exec(sql)
   redirect to ('/show')
 end
 
+
+
 def sql_string(value)
-"#{value.gsub("'","''")}"
+"'#{value.gsub("'", "''")}'"
+
 end
 
 

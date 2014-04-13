@@ -37,11 +37,6 @@ margin-top: 20px;
 margin-right: 700px;
 }
 
-h2 {
-  margin: 0 auto;
-  float: right;
-  margin-right: 700px;
-}
 
 .title {
   text-align: left;
@@ -61,19 +56,20 @@ h2 {
 }
 
 .line {
-     color: #f00;
-     background: #f00; 
-     width: 26%; 
+     color: black;
+     background: black; 
      height: 5px;
-     margin-left: 650px;
-     margin-top: -30px;
-
+     margin-top: 40px;
 }
 
 h1 {
 font-family: 'Nova Square', cursive;
 font-size: 60px;
 text-align: center;
+}
+
+h2 {
+  position: absolute;
 }
 
 .links {
@@ -95,11 +91,10 @@ a:active {color:#0000FF;}  /* selected link */
   border: 1px solid white ;
   margin: 0 auto;
   clear: both;
-  color: white;
   width: 50px; 
   padding: 5px;
-  float: right; 
-  margin-right: 350px;
+  margin-left: 450px;
+  display: inline;
 }
 
 .edit {
@@ -111,9 +106,13 @@ a:active {color:#0000FF;}  /* selected link */
   padding: 5px;
   float: top; 
   margin-right: 350px;
+  display: inline;
 }
 
 a {
   text-decoration: none;
 }
+
+
+
 
