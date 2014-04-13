@@ -25,6 +25,7 @@ get '/show' do
     sql="select * from videos order by title"
   end
   @users_videos = @db.exec(sql)
+  binding.pry
   erb :show
 end
 
@@ -32,6 +33,7 @@ get '/show/:id' do
   @id = params[:id]
 
   sql = "select url from videos where id='#{@id}'"
+
   @url = @db.exec(sql)[0]["url"]
 
   erb :playclip 

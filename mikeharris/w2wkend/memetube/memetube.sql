@@ -6,3 +6,4 @@ create table videos
   url varchar(1000),
   genre varchar(1000)
 );
+
