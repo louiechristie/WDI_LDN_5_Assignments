@@ -6,6 +6,11 @@ iframe {
   width: 180px;
 }
 
+.col-md-6 {
+  margin-left: 120px;
+  margin-right: 50px;
+}
+
 .col-md-4 .btn {
   display: block;
   margin: 5px auto;
@@ -25,5 +30,13 @@ iframe {
 }
 
 .help-block a {
+  text-decoration: none;
+}
+
+.col-sm-10 .form-control-static {
+  margin-left: -60px;
+}
+
+.form-control-static a {
   text-decoration: none;
 }

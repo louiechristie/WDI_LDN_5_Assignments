@@ -31,13 +31,10 @@ end
 
 post '/create' do
 
-  binding.pry
   title = params[:title]
   id = params[:id]
   keyword = params[:keyword]
-  binding.pry
   confirm_sql = "SELECT * FROM videos WHERE id = '#{sql_string(id)}'"
-  binding.pry
   @confirm_video = @db.exec(confirm_sql).to_a
 
   if !@confirm_video
@@ -51,7 +48,6 @@ post '/create' do
 end
 
 get '/show/:id' do
-  binding.pry
   id = params[:id]
   show_video_sql = "SELECT * FROM videos where id = '#{sql_string(id)}'"
   @show_video = @db.exec(show_video_sql).first
