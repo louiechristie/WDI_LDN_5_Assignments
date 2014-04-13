@@ -5,8 +5,6 @@ require 'PG'
 
 before do 
   @db = PG.connect(dbname: 'video_app', host: 'localhost')
-  sql = 'select * from videos'
-  @index = @db.exec(sql)
 end
 
 after do
@@ -14,7 +12,22 @@ after do
 end
 
 get '/' do
+  sql = 'select * from videos'
+  @index = @db.exec(sql)
+
+  gsql = 'select genre from videos group by videos.genre'
+  @genre = @db.exec(gsql)
+
   erb :index
+end
+
+get '/category/' do
+
+  sql = "select * from videos where videos.genre = #{params[:genre]}"
+  result = @db.exec(sql)
+  @videos = result[0]
+
+  erb :category
 end
 
 get '/new' do
@@ -34,8 +47,6 @@ post '/create' do
   erb :new
   redirect to('/')
 end
-
-
 
 def sql_string(value)
   "'#{value.gsub("'", "''")}'"

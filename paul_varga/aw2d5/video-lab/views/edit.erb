@@ -2,9 +2,15 @@
 
 <form action='/update/<%= params["id"] %>' method='post'>
   <input type='text' name='title' placeholder='Enter Title' value="<%= @input['title'] %>" autofocus>
-  <input type='text' name='description' placeholder='Enter  Description' value="<%= @input['description'] %>">
+  <input type='text' name='description' placeholder='Enter Description' value="<%= @input['description'] %>">
   <input type='text' name='video_id' placeholder='Enter Video ID' value="<%= @input['video_id'] %>">
-  <input type='text' name='genre' placeholder='Enter Genre' value="<%= @input['genre'] %>">
+  
+  <br />
+  <input type='checkbox' name='genre' value="Speech">Talk<br />
+  <input type='checkbox' name='genre' value="Movie">Movie<br />
+  <input type='checkbox' name='genre' value="Adverts">Advertisement<br />
+  <input type='checkbox' name='genre' value="Others">Others<br />
+
   <button>Edit video</button>
 </form>
  
