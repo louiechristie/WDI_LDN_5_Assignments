@@ -32,6 +32,12 @@ frameborder="0" allowfullscreen />
     <p class="form-control-static"><a href="https://www.youtube.com/watch?v=<%= @view_video['id'] %>" target="_blank">https://www.youtube.com/watch?v=<%= @view_video['id'] %></a></p>
     </div>
     </h4>
+    <div class="col-md-4">
+      <a href="/edit/<%= @view_video['id'] %>" role="button" class="btn btn-info">Edit</a>
+    </div>
+    <div class="col-md-4">
+      <a href="/delete/<%= @view_video['id'] %>" role="button" class="btn btn-info">Delete</a>
+    </div>
     <p class='help-block'><span class="star">*</span>If the video above says "undefined", then the YouTube ID is not valid.</p>
   </div>
 

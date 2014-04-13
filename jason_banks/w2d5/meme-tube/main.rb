@@ -90,6 +90,43 @@ get '/tags/:tag' do
 
 end
 
+get '/edit/:id' do
+
+  id = params[:id]
+  edit_sql = "SELECT * FROM videos WHERE id = '#{id}'"
+  @edit_video = @db.exec(edit_sql).first
+  binding.pry
+
+  erb :edit
+
+end
+
+post '/update/:id' do
+
+  title = params[:title]
+  id = params[:id]
+  tag = params[:tag]
+  binding.pry
+
+  update_sql = "UPDATE videos SET title = '#{sql_string(title)}', tag = '#{sql_string(tag)}' WHERE id = '#{id}'"
+  binding.pry
+  @db.exec(update_sql)
+
+  redirect to("/view/#{id}")
+
+end
+
+get '/delete/:id' do
+
+  binding.pry
+
+  id = params[:id]
+  delete_sql = "DELETE FROM videos WHERE id = '#{id}"
+
+  redirect to("/viewall")
+
+end
+
 def sql_string(value)
   value.gsub("'", "''")
 end
