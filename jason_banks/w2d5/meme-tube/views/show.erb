@@ -1,0 +1,13 @@
+<% if !@confirm_video %>
+  <h2>"<%= @show_video['title'] %>" has already been added to Meme.base.</h2>
+<% else %>
+  <h2>"<%= @show_video['title'] %>"</h2>
+<% end %>
+<p></p>
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+src="https://www.youtube.com/embed/<%= @show_video['id'] %>"
+frameborder="0" allowfullscreen />
+</iframe>
+<label class="col-sm-2 control-label">Title: </label>
+  <div class="col-sm-10">
+    <p class="form-control-static">"<%= @show_video['title'] %>"
