@@ -1,0 +1,15 @@
+<h2>Portfolio</h2>
+
+  <p>
+    <strong>Portfolio: </strong><%=@portfolio.name %> 
+    <a href='/portfolios/edit/<%=@portfolio.id%>'>edit</a>
+    <a href='/portfolios/delete/<%=@portfolio.id%>'>delete</a>
+  </p>
+  <p>
+    <strong>Stocks: </strong> 
+    <% @stocks.each do |stock| %>
+      <%=stock.name if stock %>,
+    <% end %>
+  </p>
+
+<a href='/portfolios/new' >new portfolio</a>

@@ -4,6 +4,12 @@ get '/portfolios' do
   erb :'portfolios/index'
 end
 
+get '/portfolios/:id' do
+  @portfolio = Portfolio.find(params[:id])
+  @stocks = @portfolio.stocks
+  erb :'portfolios/show'
+end
+
 get '/portfolios/new' do
   @categories = Category.all
   @portfolio = Portfolio.new

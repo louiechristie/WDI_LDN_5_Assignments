@@ -6,6 +6,7 @@
   <% @portfolios.each do |portfolio| %>
     <li>
         <strong>Portfolio: </strong><%=portfolio.name %> 
+        <a href='portfolios/<%=portfolio.id%>'>show</a> 
         <a href='portfolios/edit/<%=portfolio.id%>'>edit</a>
         <a href='portfolios/delete/<%=portfolio.id%>'>delete</a>
         <strong>Stocks: </strong> 
