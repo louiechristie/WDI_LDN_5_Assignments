@@ -6,6 +6,7 @@
       <%= category.name %>
       <%= category.portfolios.map(&:name).join(', ') %>
 
+
       <a href='/categories/<%=category.id%>/edit'> edit </a>
       <a href='/categories/<%=category.id%>/delete'> delete </a>
 

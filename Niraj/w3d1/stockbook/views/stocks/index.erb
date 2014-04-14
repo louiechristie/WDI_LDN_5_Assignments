@@ -1,15 +1,35 @@
 
 <a href='/stocks/new'>New Stocks</a>
 
-<ul>
-<% @stocks.each do |stock| %>
-
-<li><%= stock.symbol %> </li>
-    <%= stock.holding %>
-    <%= stock.portfolio.name if stock.portfolio %>
-    <a href='/stocks/<%= stock.id %>/edit'>edit</a>
-    <a href='/stocks/<%= stock.id %>/delete'>delete</a>
-</li>
-
-<% end %>
-</ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>Holding</th>
+    <th>Portfolio</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @stocks.each do |stock| %>
+    <tr>
+      <td>
+        <%= stock.name %>
+      </td>
+      <td>
+        <%= stock.symbol %> 
+      </td>
+      <td>
+        <%= stock.holding %>
+      </td>
+      <td>
+        <%= stock.portfolio.name if stock.portfolio %>
+      </td>
+      <td>
+        <a href='/stocks/<%= stock.id %>/edit'>edit</a>
+      </td>
+      <td>
+        <a href='/stocks/<%= stock.id %>/delete'>delete</a>
+      </td>
+    </tr>
+  <% end %>
+</table>
