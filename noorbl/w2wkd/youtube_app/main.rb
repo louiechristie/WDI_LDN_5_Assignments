@@ -33,6 +33,12 @@ get '/index' do
   erb :index
 end
 
+# get '/index/genre' do
+#   @id = params[:id]
+#   @genre = params[:genre]
+
+# get '/genre/:id' do
+
 
 get '/edit/:id' do
   sql = "select * from videos where id = #{params[:id].to_i}"
@@ -43,6 +49,8 @@ end
 post '/update/:id' do
   @title = params[:title]
   @description = params[:description]
+  @video_id = params[:video_id]
+  @genre = params[:genre]
 
   sql = "update videos set title = #{sql_string(@title)}, description = #{sql_string(@description)}, video_id = #{sql_string(@video_id)}, genre = #{sql_string(@genre)} where id = #{params[:id].to_i}"
 
