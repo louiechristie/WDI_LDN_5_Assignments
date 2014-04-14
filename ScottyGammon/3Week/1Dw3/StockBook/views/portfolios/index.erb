@@ -1,0 +1,17 @@
+<a href= '/portfolios/new'>
+	new portfolio</a>
+	<table>
+    <% @portfolios.each do |portfolio| %>
+      <tr>
+        <td><%= portfolio.name %></td>
+        <td><%= portfolio.stocks.map(&:name).join(', ') %></td>
+        <td><%= portfolio.category.name if portfolio.category %></td>
+        <td>
+          <a href='/portfolios/<%=portfolio.id%>/edit'>EDIT</a>
+        </td>
+        <td>
+          <a href='/portfolios/<%=portfolio.id%>/delete'>DELETE</a>
+        </td>
+      </tr>
+    <% end %>
+    </table>
