@@ -30,9 +30,9 @@
 
 <section class="library">
 
-    <% i = "" %>
+   
     <% @users_videos.each do |video| %>
-         <div class="video<%= i %>">
+         <div class="video">
             <img class="video_spine" src='vhs_spine.jpg' />
             <h3 class="video_title"> <%= video["title"] %> : <%= video["genre"] %></h3>
             <p class="description">  Title: <%= video["title"] %> <br />Description: <%= video["description"] %> <br /> Genre: <%= video["genre"] %> </p>    

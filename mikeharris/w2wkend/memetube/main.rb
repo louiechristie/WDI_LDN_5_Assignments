@@ -18,9 +18,10 @@ end
 
 get '/show' do 
   sql = ("select genre from videos group by genre order by genre")
+  #distinct
   @genre_list = @db.exec(sql)
   if params[:filter] 
-    sql="select * from videos WHERE genre='#{params[:filter]}'"
+    sql="select * from videos WHERE genre='#{params[:filter]}' order by titleg"
   else
     sql="select * from videos order by title"
   end
