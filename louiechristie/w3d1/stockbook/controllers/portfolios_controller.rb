@@ -10,7 +10,7 @@ get '/portfolios/:id' do
   erb :'portfolios/show'
 end
 
-get '/portfolios/new' do
+get '/portfolio/new' do
   @categories = Category.all
   @portfolio = Portfolio.new
   erb :'portfolios/new'
