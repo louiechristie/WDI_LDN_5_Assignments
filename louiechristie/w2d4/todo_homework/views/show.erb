@@ -1,10 +1,10 @@
 <p>
-  <%=@todo['id'] %> <strong><%=@todo['title'] %></strong>, <%= @todo['description'] %>
+  <strong><%=@todo['title'] %></strong> <%= @todo['description'] %>
   <form action='/edit/<%=@todo['id']%>' method='get'>
-    <button class="btn btn-primary">Edit</button>
+    <button class="button">Edit</button>
   </form>
   <form action='/delete/<%=@todo['id'] %> <' method='get'>
-    <button class="btn btn-danger">Delete</button>
+    <button class="button">Delete</button>
   </form>
 </p>
   
