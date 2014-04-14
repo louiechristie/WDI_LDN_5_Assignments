@@ -1,0 +1,37 @@
+<dl>
+  <dt>
+    <label for='portfolio_name'>Name:</label>
+  </dt>
+  <dd>
+    <input id='portfolio_name' type='text' name='portfolio[name]' value='<%=@portfolio.name%>' autofocus>
+  </dd>
+</dl>
+
+<dl>
+  <dt>
+    <label for='portfolio_description'>Description:</label>
+  </dt>
+  <dd>
+    <input id='portfolio_description' type='text' name='portfolio[description]' value='<%=@portfolio.description%>' autofocus>
+  </dd>
+</dl>
+
+<dl>
+  <dt>
+    <label for='portfolio_category_id'>Category ID:</label>
+  </dt>
+  <dd>
+    <select id='portfolio_category_id' name ='portfolio[category_id]'>
+      <%@categories.each do |category|%>
+      <option value='<%=category.id%>'> <% if @portfolio.category_id==category.id %> selected='selected'<%end%>
+        <%=category.name%>
+      </option> 
+      <%end%>
+    </select>
+  </dd>
+</dl>
+
+
+<div class='clear_both'></div>
+
+

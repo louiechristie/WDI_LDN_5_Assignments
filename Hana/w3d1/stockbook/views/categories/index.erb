@@ -1,0 +1,10 @@
+<a href='/categories/new'>New Category</a>
+
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= category.name %></li>
+  <li><%= category.portfolios.map(&:name).join(', ') %></li>
+  <a href='/categories/<%=category.id%>/edit'>Edit</a>
+  <a href='/categories/<%=category.id%>/delete'>Delete</a>
+  <% end %>
+</ul>
