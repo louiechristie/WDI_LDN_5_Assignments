@@ -40,6 +40,7 @@ end
 get '/portfolios/:id/stocks' do
   @portfolio = Portfolio.find(params[:id])
   @stocks = Stock.selection(params[:id])
+
   erb :'stocks/index'
 end
 
@@ -64,9 +65,6 @@ end
 
 post '/portfolios/:id/stocks' do
   @stock = Stock.new(params[:stock])
-  # @stock.symbol = @symbol
-  # @stock.name = @stock.name
-  # @stock.buying_price = @stock.buying_price
   @stock.portfolio_id = params[:id]
   @stock.save
 

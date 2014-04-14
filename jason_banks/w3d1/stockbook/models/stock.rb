@@ -28,6 +28,10 @@ class Stock < DBBase
     results.map { |result| Stock.new(result)}
   end
 
+  def investment
+    holding.to_i * 8
+  end
+
 
 
 
