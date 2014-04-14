@@ -32,3 +32,11 @@ get '/stocks/:id/delete' do
   Stock.find(params[:id]).destroy
   redirect to('/stocks')
 end
+
+
+
+
+
+
+
+

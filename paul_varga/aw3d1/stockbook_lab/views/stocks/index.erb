@@ -6,6 +6,8 @@
 <li>
     <%= stock.name %>
     <%= stock.portfolio.name if stock.portfolio %>
+    Name: <%= YahooFinance::get_standard_quotes(stock.symbol)[stock.symbol].name %>
+    Price: <%= YahooFinance::get_standard_quotes(stock.symbol)[stock.symbol].lastTrade %>
     <a href='/stocks/<%= stock.id %>/edit'>edit</a>
     <a href='/stocks/<%= stock.id %>/delete'>delete</a>
 </li>

@@ -2,6 +2,7 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'PG'
+require 'yahoofinance'
 
 require_relative 'models/db_base'
 

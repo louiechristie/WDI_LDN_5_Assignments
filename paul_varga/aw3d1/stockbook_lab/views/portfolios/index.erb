@@ -8,8 +8,10 @@
     <%= portfolio.category.name if portfolio.category %>
     <%= portfolio.stocks.map(&:name).join(', ') %>
     <a href='/portfolios/<%= portfolio.id %>/stocks'>stocks</a>
-    <a href='/portfolios/<%= portfolio.id %>/edit'>edit</a>
-    <a href='/portfolios/<%= portfolio.id %>/delete'>delete</a>
+    <a href='/stocks/new'>buy stocks</a>
+    <a href='/stocks/delete'>delete stocks</a>
+    <a href='/portfolios/<%= portfolio.id %>/edit'>edit portfolio</a>
+    <a href='/portfolios/<%= portfolio.id %>/delete'>delete portfolio</a>
 </li>
 
 <% end %>
