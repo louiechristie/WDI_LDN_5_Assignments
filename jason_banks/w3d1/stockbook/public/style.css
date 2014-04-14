@@ -1,0 +1,101 @@
+body {
+  background-image: url("/images/memebase3.png");
+  background-color: #eee;
+  background-size: auto 650px;
+  background-repeat: no-repeat;
+  background-position: left 20px;
+}
+
+iframe {
+  margin-left: 40px;
+}
+
+.btn {
+  width: 180px;
+}
+
+.col-md-6 {
+  margin-left: 120px;
+  margin-right: 50px;
+}
+
+.column-top {
+  margin-top: 120px;
+}
+
+.col-md-4 .btn {
+  display: block;
+  margin: 5px auto;
+}
+
+.thumbnail {
+  height: 250px;
+  position: relative;
+}
+
+.col-md-4 .thumbnail .btn {
+  width: 140px;
+  position: absolute;
+  bottom: 20px;
+  left: 11px;
+}
+
+.error {
+  margin-left: 200px;
+}
+
+.add-box {
+  margin-left: 250px;
+  margin-right: -8  0px;
+}
+
+.form-control {
+  width: 300px;
+  font-weight: normal;
+}
+
+.help-block {
+  font-weight: normal;
+}
+
+.highlight {
+  background-color: #ffff00;
+}
+
+.help-block a {
+  text-decoration: none;
+}
+
+.col-sm-1 {
+  margin-right: 10px;
+}
+
+.form-control-static a {
+  text-decoration: none;
+}
+
+footer {
+  height: 450px;
+  position: relative;
+}
+
+footer p {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+}
+
+footer a.nodecor {
+  text-decoration: none;
+}
+
+.help-block .star {
+  color: #ff0d27;
+  margin-right: 5px;
+}
+
+/**/
+
+
+
+
