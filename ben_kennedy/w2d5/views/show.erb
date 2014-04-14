@@ -5,6 +5,9 @@
   <p class="standard"><%= @video["posted_by"] %>, <%= if @video["updated_at"] then @video["updated_at"] else @video["created_at"] end %></p>
   <p class="standard"><%= @video["video_description"] %></p>
   <form action='/edit/:<%= @video["id"] %>' method='get'>
-    <button name='edit' type='submit' value='<%= @video["id"] %>' >Update Video Details</button>
+    <button name='edit' type='submit' value='<%= @video["id"] %>' >Update Video Details</button>    
+  </form>
+  <form action='/delete/:<%= @video["id"] %>' method='get'>
+    <button name='delete' type='submit' value='<%= @video["id"] %>' >Delete Video</button>
   </form>
 </section>
