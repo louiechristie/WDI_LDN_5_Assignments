@@ -34,3 +34,11 @@ get '/portfolios/:id/delete' do
   Portfolio.find(params[:id]).destroy
   redirect to('/portfolios')
 end
+
+
+
+
+
+
+
+
