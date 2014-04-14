@@ -59,7 +59,7 @@ post '/update/:id' do
 
 
   sql = "UPDATE todos
-          SET title='#{title}', description='#{description}'
+          SET title='#{sql_string(title)}', description='#{sql_string(description)}'
           WHERE id = '#{sql_string(id)}';"  
   @db.exec(sql)
 
