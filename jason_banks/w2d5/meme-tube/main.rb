@@ -34,23 +34,21 @@ post '/create' do
   title = params[:title]
   id = params[:id]
   tag = params[:tag].downcase
-  @incomplete = ""
   
   if title.empty? || id.empty? || tag.empty?
     @incomplete = "Incomplete details provided."
-    redirect to("/add")
-  end
-
-  confirm_sql = "SELECT * FROM videos WHERE id = '#{sql_string(id)}'"
-  @confirm_video = @db.exec(confirm_sql).first
-
-  if @confirm_video
-    redirect to("/add")
+    erb :add
   else
-    add_sql = "INSERT INTO videos (id, title, tag) VALUES ('#{sql_string(id)}', '#{sql_string(title)}', '#{sql_string(tag)}')"
-    @db.exec(add_sql)
-    redirect to("/view/#{sql_string(id)}")
-  end 
+    confirm_sql = "SELECT * FROM videos WHERE id = '#{sql_string(id)}'"
+    @confirm_video = @db.exec(confirm_sql).first
+    if @confirm_video
+      erb :add
+    else
+      add_sql = "INSERT INTO videos (id, title, tag) VALUES ('#{sql_string(id)}', '#{sql_string(title)}', '#{sql_string(tag)}')"
+      @db.exec(add_sql)
+      redirect to("/view/#{sql_string(id)}")
+    end 
+  end
 end
 
 get '/view/:id' do

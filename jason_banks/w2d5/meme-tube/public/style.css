@@ -40,6 +40,10 @@ iframe {
   left: 11px;
 }
 
+.error {
+  margin-left: 200px;
+}
+
 .add-box {
   margin-left: 250px;
   margin-right: -8  0px;

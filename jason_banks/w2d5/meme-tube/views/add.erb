@@ -1,8 +1,10 @@
-<% if @confirm_video %>
-  <h2>Chocolate.</h2>
-<% elsif @incomplete && @incomplete > "" %>
-  <h2>Chocolate.</h2>
-<% end %>
+<div class="error">
+  <% if @confirm_video %>
+    <h2><a href="/view/<%= @confirm_video['id'] %>">"<%= @confirm_video['title'] %>"</a> has already been added to meme.BASE.</h2>
+  <% elsif @incomplete %>
+    <h2>Information incomplete.</h2>
+  <% end %>
+</div>
 <div class="add-box">
   <h2>Add a Video</h2>
   <p>Each of the fields below is required.</p>
