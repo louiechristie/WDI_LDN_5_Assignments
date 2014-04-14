@@ -116,10 +116,11 @@ end
 
 get '/delete/:id' do
 
-  binding.pry
 
   id = params[:id]
-  delete_sql = "DELETE FROM videos WHERE id = '#{id}"
+  delete_sql = "DELETE FROM videos WHERE id = '#{id}'"
+  @db.exec(delete_sql)
+  binding.pry
 
   redirect to("/viewall")
 
