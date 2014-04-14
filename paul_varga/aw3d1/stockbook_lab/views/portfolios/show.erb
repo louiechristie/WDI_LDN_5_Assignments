@@ -1,0 +1,9 @@
+<% @portfolio.stocks.each do |stock| %>
+
+  <h3>Symbol: <%= stock.symbol %></h3>
+  <p>Name: <%= stock.name %></p>
+  <p>Buying Price: <%= stock.buying_price %></p>
+  <p>Holding: <%= stock.holding %></p>
+  <p>Portfolio ID: <%= stock.portfolio_id %></p>
+  
+<% end %>

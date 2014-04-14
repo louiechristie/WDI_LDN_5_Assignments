@@ -17,4 +17,9 @@ class Portfolio < DBBase
     Category.find(category_id)
   end
 
+  def stocks
+    results = run_sql("select * from stocks where portfolio_id = #{id}")
+    results.map { |result| Stock.new(result)}
+  end
+
 end

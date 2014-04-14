@@ -32,3 +32,12 @@ get '/portfolios/:id/delete' do
   Portfolio.find(params[:id]).destroy
   redirect to('/portfolios')
 end
+
+get '/portfolios/:id/stocks' do
+  @portfolio = Portfolio.find(params[:id])
+  erb :'portfolios/show'
+end
+
+
+
+
