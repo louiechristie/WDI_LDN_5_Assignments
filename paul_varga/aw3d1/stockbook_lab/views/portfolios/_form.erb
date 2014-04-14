@@ -1,6 +1,8 @@
+<div class="portfolios">
+
 <dl>
   <dt>
-    <label for='portfolio_name'>Name:</label>
+    <h2><label for='portfolio_name'>Name:</label></h2>
   </dt>
   <dd>
     <input id='portfolio_name' type='text' name='portfolio[name]' value='<%=@portfolio.name %>' autofocus>
@@ -9,7 +11,7 @@
 
 <dl>
   <dt>
-    <label for='portfolio_description'>Description:</label>
+    <h2><label for='portfolio_description'>Description:</label></h2>
   </dt>
   <dd>
     <textarea id='portfolio_description' name='portfolio[description]'><%=@portfolio.description %></textarea>
@@ -18,7 +20,7 @@
 
 <dl>
   <dt>
-    <label for='portfolio_category_id'>Category:</label>
+    <h2><label for='portfolio_category_id'>Category:</label></h2>
   </dt>
   <dd>
     <select id='portfolio_category_id' name='portfolio[category_id]'>
@@ -30,5 +32,7 @@
     </select>
   </dd>
 </dl>
+
+</div>
 
 <div class='clear_both'></div>

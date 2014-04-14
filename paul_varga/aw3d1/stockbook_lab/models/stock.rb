@@ -10,7 +10,7 @@ class Stock < DBBase
   def initialize(params={})
     @id = params['id']
     @symbol = params['symbol'].to_s.upcase
-    # @name = params['name']
+    @name = params['name']
     @buying_price = params['buying_price']
     @holding = params['holding']
     @portfolio_id = params['portfolio_id']
@@ -41,8 +41,5 @@ class Stock < DBBase
       @name = yahoo_result.name
     end
   end
-
-
-
 
 end

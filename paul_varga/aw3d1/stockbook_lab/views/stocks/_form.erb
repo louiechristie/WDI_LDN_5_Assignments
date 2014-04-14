@@ -1,3 +1,5 @@
+<div class="stocks">
+
 <dl>
   <dt>
     <label for='stock_symbol'>Symbol:</label>
@@ -9,7 +11,7 @@
 
 <dl>
   <dt>
-    <label for='stock_holding'>Holding:</label>
+    <h2><label for='stock_holding'>Holding:</label></h2>
   </dt>
   <dd>
     <input id='stock_holding' type='text' name='stock[holding]' value='<%=@stock.holding %>' >
@@ -18,7 +20,7 @@
 
 <dl>
   <dt>
-    <label for='stock_portfolio_id'>Portfolio:</label>
+    <h2><label for='stock_portfolio_id'>Portfolio:</label></h2>
   </dt>
   <dd>
     <select id='stock_portfolio_id' name='stock[portfolio_id]'>
@@ -30,5 +32,7 @@
     </select>
   </dd>
 </dl>
+
+</div>
 
 <div class='clear_both'></div>
