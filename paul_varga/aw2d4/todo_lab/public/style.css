@@ -20,7 +20,8 @@ nav {
 
 nav ul li {
   display: inline;
-  padding: 10px;
+  margin-right: 10px
+  padding: 20px;
 }
 
 nav ul li a {

@@ -1,0 +1,9 @@
+Hello there again, update your video
+
+<form action='/update/<%= @video["id"] %>' method='post'>
+  <input type='text' name='title' value='<%= @video["title"] %>' autofocus>
+  <input type='text' name='description' value='<%= @video["description"] %>'/>
+  <input type='text' name='video_id' value='<%= @video["video_id"] %>'/>
+  <input type='text' name='genre' value='<%= @video["genre"] %>'/>
+  <button>Update to your video</button>
+</form>
