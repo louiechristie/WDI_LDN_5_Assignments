@@ -29,6 +29,10 @@ class Stock < DBBase
     end
   end
 
+  def current_price
+    YahooFinance::get_standard_quotes(self.symbol)[self.symbol].lastTrade
+  end
+
   private
   def stock_quote
     if self.symbol && self.symbol > ""
