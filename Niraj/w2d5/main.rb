@@ -55,13 +55,13 @@ get '/edit/:id' do
 end
 
 post '/update/:id' do
-  @id = params[:id]
+  @id = params[:id].to_i
   @title = params[:title]
   @description = params[:description]
   @genre = params[:genre]
   @youtubeID = params[:youtubeID]
 
-  sql ="update movie set title= #{sql_string(@title)}, description=#{sql_string(@description)}, genre=#{sql_string(@genre)}, youtubeID=#{sql_string(@youtubeID)} where id = #{@id}"
+  sql ="update movie set title= '#{sql_string(@title)}', description= '#{sql_string(@description)}', genre='#{sql_string(@genre)}', youtubeID='#{sql_string(@youtubeID)}' where id = #{params[:id]}"
 
   @db.exec(sql)
 
@@ -72,6 +72,14 @@ get '/delete/:id' do
   sql = "delete from movie where id = #{params[:id]}"
   @db.exec(sql)
   redirect to ('/show')
+end
+
+get '/show/genre/:genre' do
+  @genre = params[:genre]
+
+sql="select * from movie WHERE genre='#{@genre}'"
+
+erb :genre
 end
 
 
