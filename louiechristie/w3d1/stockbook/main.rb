@@ -13,6 +13,11 @@ require_relative 'models/portfolio'
 
 require_relative 'controllers/portfolios_controller'
 
+require_relative 'models/stock'
+
+require_relative 'controllers/stocks_controller'
+
+
 get '/' do
   erb :home
 end
