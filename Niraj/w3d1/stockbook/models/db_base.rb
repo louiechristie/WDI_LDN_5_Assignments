@@ -1,3 +1,4 @@
+
 class DBBase
  
   attr_accessor :id
@@ -8,7 +9,7 @@ class DBBase
       attr_accessor attr
     end
   end
-
+ 
   def self.get_attributes
     @attributes
   end
@@ -84,11 +85,13 @@ class DBBase
   def sql_sanitize(value, type)
     case type
       when :string
-        "'#{value.gsub("'", "''")}'"
+        "'#{value.to_s.gsub("'", "''")}'"
+      when :text
+        "'#{value.to_s.gsub("'", "''")}'"
       when :integer
         value.to_i
-      when :text
-        "'#{value.gsub("'", "''")}'"
+      when :decimal
+        value.to_f
       else
         raise "Unrecognised data type `#{type}`"
     end

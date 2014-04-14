@@ -13,8 +13,8 @@ def initialize(params={})
 end
 
   def portfolios
-   results = run-sql("select * from portfolios where category_id = #{id}")
-    results.map { |result| Portfolio.new(result)}
+   results = run_sql("select * from portfolios where category_id = #{id}")
+   results.map { |result| Portfolio.new(result)}
   end
   
 

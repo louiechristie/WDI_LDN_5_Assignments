@@ -18,6 +18,7 @@ end
 
 get '/portfolios/:id/edit' do 
   @portfolio = Portfolio.find(params[:id])
+  @categories = Category.all
   erb :'portfolios/edit'
 end
 
