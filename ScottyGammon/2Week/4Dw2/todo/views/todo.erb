@@ -1,0 +1,12 @@
+<h1>TO DO Tracker</h1>
+<h2>Please Enter Due Date in DDMMYYYY format</h2>
+
+<% if @title %>
+<h2>You searched for <%= @title %> </h2>
+<%	end %>
+
+<%= @items %>
+
+<% @items.each do |item| %>
+	<%= item %>	
+<% end %>

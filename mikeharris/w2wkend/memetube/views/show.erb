@@ -1,0 +1,55 @@
+
+
+<section class="show">
+
+<a href="/new"><p class="menu">Add a clip</p><img class="show_play" src="/record_button.png" /></a>
+<a href="/"><img class="show_logo" src="vhs_tube_logo.png" /></a>
+<div class="genre_menu">
+  
+  <div class="menu">Filter By Genre</div>
+  <ul>
+    <li><a href="/show">All</a></li>
+    <% @genre_list.each do |genre| %>
+      <li><a href="/show?filter=<%= genre["genre"] %>"><%= genre["genre"] %></a></li>
+    <% end %>
+  </ul>
+  <img class="show_filter" src="/filter.png" />
+</div>
+
+
+
+
+    <div class="tv">
+      <img src="old_tv_cropped.png" />
+    </div>
+
+</section>
+
+
+
+
+<section class="library">
+
+    <% i = "" %>
+    <% @users_videos.each do |video| %>
+         <div class="video<%= i %>">
+            <img class="video_spine" src='vhs_spine.jpg' />
+            <h3 class="video_title"> <%= video["title"] %> : <%= video["genre"] %></h3>
+            <p class="description">  Title: <%= video["title"] %> <br />Description: <%= video["description"] %> <br /> Genre: <%= video["genre"] %> </p>    
+            <iframe width="560" height="315" src="//www.youtube.com/embed/<%= video["url"] %>" frameborder="0" allowfullscreen></iframe>
+            <a class="delete" href="delete/<%= video["id"] %>"a>Delete</a>
+            <a class= "edit" href="edit/<%= video["id"] %>"a>Edit</a>
+            <a href="/show/<%= video["id"] %>"><img class="play_button" src='play_button.png' /></a>
+         </div>
+    <% end %>
+    
+</section>
+
+
+
+
+
+
+
+
+

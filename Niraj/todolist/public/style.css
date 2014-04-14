@@ -1,0 +1,52 @@
+body {
+  text-align: center;
+  font-family: helvetica, arial;
+/*  background-color: #4c66a4;
+*/}
+
+.menu {
+  text-align: center;
+  font-size: 30px;
+  width: 20%;
+  margin-left: 37%;
+}
+
+.delete {
+  border: 2px solid black;
+}
+
+.edit {
+  border: 2px solid black;
+}
+
+#home {
+  border: 2px dotted black;
+  font-size: 30px;
+  width: 20%;
+  margin-left: 40%;
+  width:  200px;
+  text-align: center;
+
+
+}
+
+#newToDo {
+  border: 2px dotted black;
+  font-size: 30px;
+  width: 20%;
+  margin-left: 40%;
+  width:  200px;
+  text-align: center;
+
+
+}
+
+#update {
+  border: 2px dotted black;
+  font-size: 30px;
+  width: 20%;
+  margin-left: 40%;
+  width:  200px;
+  text-align: center;
+
+}

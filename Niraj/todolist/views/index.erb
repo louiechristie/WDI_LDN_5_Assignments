@@ -1,0 +1,10 @@
+ <% @todos.each do |todo| %>
+
+<div>
+   <h3><%= todo['name'] %></h3>
+   <p><%= todo['description'] %></p>
+   <a href="/show/<%= todo['id'] %>">View</a>
+ </div>
+
+ <% end %>
+

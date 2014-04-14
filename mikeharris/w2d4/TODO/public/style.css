@@ -1,0 +1,70 @@
+body {
+  
+  
+}
+
+
+main {
+  width: 480px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+
+}
+table {
+  margin: 20px auto;
+}
+
+nav a {
+color: black;
+background: red;
+width: 80px;
+height: 80px;
+border-radius: 80px;
+display: block;
+line-height: 80px;
+text-align: center;
+margin: 10px;
+}
+
+.edit td  {
+  padding: 20px;
+  margin: 5px 10px;
+
+}
+
+
+nav {
+  padding: 10px;
+}
+
+li {
+  display: inline-block;
+}
+
+.todo_table td {
+  padding: 5px;
+  margin: 5px 10px;
+  border: 1px solid black;
+}
+
+body {
+  padding: 50px;
+}
+
+button , input{
+  width: 100%;
+}
+
+
+.todo_table a {
+
+}

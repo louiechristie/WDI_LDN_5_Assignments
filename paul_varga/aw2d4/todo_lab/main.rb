@@ -58,9 +58,9 @@ post '/update/:id' do
 
   sql = "update todos set (name, task) = (#{sql_string(@update_name)}, #{sql_string(@update_task)}) where id = #{params[:id]}" 
   
-  @db.exec(sql)
+  #sql = "update todos set name = #{sql_string(@update_name)}, task = #{sql_string(@update_task)} where id = #{params[:id].to_i}"
 
-  erb :edit
+  @db.exec(sql)
 
   redirect to("/show/#{params[:id]}")
 end

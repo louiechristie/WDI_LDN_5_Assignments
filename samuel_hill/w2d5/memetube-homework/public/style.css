@@ -1,0 +1,60 @@
+body {
+	text-align: center;
+	font-family: helvetica, arial, sans-serif;
+	background-color: black;
+	margin: auto auto;
+}
+header {
+	background-color: blue;
+	min-height: 130px;
+}
+
+h1 {
+	font-family: 'Sonsie One', cursive;
+	color: white;
+	font-size: 500%;
+	text-align: center;
+}
+
+ul li {
+	display: inline;
+	font-size: 150%;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: red;
+}
+
+input {
+	display: block;
+	width: 250px;
+	height: 30px;
+	margin: auto auto;
+}
+
+button {
+	width: 150px;
+	height: 40px;
+	margin-top: 30px;
+}
+
+h2 {
+	margin-top: 30px;
+	font-size: 250%;
+	color: white;
+	font-family: 'Sonsie One', cursive;
+	margin-bottom: 30px;
+}
+
+table  {
+	margin: auto auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+}

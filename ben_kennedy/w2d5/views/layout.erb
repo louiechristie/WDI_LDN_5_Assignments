@@ -1,0 +1,27 @@
+<!doctype html>
+  <html lang='en'>
+    <head>
+      <meta charset='utf-8'>
+      <link rel="stylesheet" type="text/css" href="/reset.css"/>
+      <link rel="stylesheet" type="text/css" href="/style.css"/>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <title>MemeTube</title>
+    </head>
+    <body>
+      <header>
+        <h1>MemeTube</h1>
+        <nav>
+          <ul>
+            <li><a href='/index'>Browse Videos</a></li>
+            <li><a href='/new'>Add Video</a></li>
+            <li>By Topic:
+              <% @menu.each do |tag| %> 
+              <ul class="submenu"><a href ='/index/<%= tag %>'><%= tag %></a></ul>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <%= yield %>
+    </body>
+  </html>
