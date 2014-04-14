@@ -1,26 +1,27 @@
-<form action='/create' method='post'>
+<h1>Task Manager</h1>
+
+<form class="create" action='/create' method='post'>
     New Task Name:
     <input type='text' name='task_name'>
     
     Description:
-    <input type='text' name='description'>
+    <input class ="description" type='text' name='description'>
 
     <button>Save New Task</button>
 </form>
 
-<section>
-  <h2>Current To Dos:</h2>  
+<section> 
     <table>
       <tr>
         <td>Task Name</td>
-        <td>Task Description</td>
+        <td class="wide">Task Description</td>
         <td></td>
         <td></td>
         </tr>
       <% @task_list.each do |task| %>
       <tr>
         <td><%= task["task_name"] %></td>
-        <td><%= task["description"] %></td>
+        <td ><%= task["description"] %></td>
       </tr>
       <% end %>
     </table>
