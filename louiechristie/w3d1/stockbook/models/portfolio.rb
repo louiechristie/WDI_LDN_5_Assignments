@@ -19,4 +19,16 @@ class Portfolio < DBBase
     Category.find(category_id)
   end
 
+  def stocks
+    stocks = Stock.all()
+    stocks.map! do |stock| 
+      if stock.portfolio.name == self.name
+        stock
+      else
+        nil
+      end
+    end
+    stocks.compact
+  end
+
 end

@@ -1,5 +1,6 @@
 get '/portfolios' do
   @portfolios = Portfolio.all
+  @stocks = Stock.all
   erb :'portfolios/index'
 end
 
