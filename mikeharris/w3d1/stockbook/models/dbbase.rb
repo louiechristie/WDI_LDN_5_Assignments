@@ -26,7 +26,9 @@ class DBBase
   end  
 
   def self.run_sql(sql)
+    
     conn = PG.connect(dbname: 'stockbook', host: 'localhost')
+
     result = conn.exec(sql)
     conn.close
     result
@@ -89,6 +91,8 @@ class DBBase
         "'#{value.to_s.gsub("'", "''")}'"
       when :integer
         value.to_i
+      when :decimal
+        value.to_f
       else
         raise "Unrecognised data type `#{type}`"
     end

@@ -7,10 +7,11 @@
 <ul>
   <% @portfolios.each do |portfolio| %>
     <li>
-      <%= portfolio.name %>
-      <%= portfolio.category %>
+      <p>Portfolio name<%= portfolio.name %></p>
+      <p>Category name<%= portfolio.category %></p>
       <a href='portfolios/<%= portfolio.id %>/edit'>edit</a>
-        <a href='portfolios/<%= portfolio.id %>/delete'>delete </a>
+      <a href='portfolios/<%= portfolio.id %>/delete'>delete </a>
+      <a href='portfolios/<%= portfolio.id %>/stocks'>show stocks </a>
     </li>
   <% end %>
 </ul>  
