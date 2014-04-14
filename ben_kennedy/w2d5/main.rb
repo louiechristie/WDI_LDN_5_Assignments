@@ -17,7 +17,7 @@ before do
     @menu_tags_final[tag] = @menu_tags.lines(",").count(tag)
   }
   @menu = [ ] 
-  3.times do
+  4.times do
     @menu << @menu_tags_final.key(@menu_tags_final.values.max).gsub(",", "")
     @menu_tags_final.delete(@menu_tags_final.key(@menu_tags_final.values.max))
   end          
