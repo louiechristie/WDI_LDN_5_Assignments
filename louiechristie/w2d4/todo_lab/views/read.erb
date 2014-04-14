@@ -1,0 +1,7 @@
+<% @todos.each do |todo| %>
+
+  <div>
+    <p><%=todo['id'] %> <strong><%=todo['title'] %></strong>, <%= todo['description'] %></p>
+  </div>
+
+<% end %>

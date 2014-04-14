@@ -1,0 +1,23 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+nav li {
+  display: inline;
+  padding: 0.5em;
+}
+
+nav {
+  color: white;
+  background-color: black;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+nav a {
+  color: white;
+}
+
+a:hover {
+  color: gray;
+}

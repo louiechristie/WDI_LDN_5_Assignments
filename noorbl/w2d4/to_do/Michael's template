@@ -1,0 +1,35 @@
+Michael's template
+
+require 'pry'
+require 'sinatra'
+require 'sinatra/reloader' if development?
+require 'pg'
+
+get '/' do
+  # sql = "select * from items"
+  erb :index
+end
+
+get '/new' do
+  erb :new
+end
+
+post '/create' do
+  redirect to('/')
+end
+
+get '/show/:id' do
+  erb :show
+end
+
+get '/edit/:id' do
+  erb :edit
+end
+
+post '/update/:id' do
+  redirect to("/show/#{params[:id]}")
+end
+
+get '/delete/:id' do
+  redirect to('/')
+end

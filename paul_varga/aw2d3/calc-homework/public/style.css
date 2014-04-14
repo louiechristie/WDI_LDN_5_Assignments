@@ -53,7 +53,7 @@ body .navigation li a:hover {
 }
 
 .main form {
-  margin: 50px 100px 100px 50px;
+  margin: 20px 100px 20px 100px;
   padding: 40px 40px 40px 40px;
 }
 
@@ -63,7 +63,7 @@ body .navigation li a:hover {
 }
 
 .main p {
-  font-size: 32px;
+  font-size: 22px;
 }
 
 .main ul {
@@ -72,6 +72,6 @@ body .navigation li a:hover {
 }
 
 .main section header h3 {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
 }
