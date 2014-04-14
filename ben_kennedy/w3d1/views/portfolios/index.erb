@@ -1,0 +1,11 @@
+<a href="/portfolios/new">New Portfolio</a>
+
+<ul>
+  <% @portfolios.each do |portfolio| %>
+  <li>Name: <%= portfolio.name %>
+    Category: <%= portfolio.category.name %>
+  <a href='/portfolios/<%= portfolio.id %>/edit'>edit</a>
+  <a href='/portfolios/<%= portfolio.id %>/delete'>delete </a>
+  </li>
+  <% end %>
+</ul>
