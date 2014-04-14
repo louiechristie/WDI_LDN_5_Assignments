@@ -3,7 +3,7 @@ class Stock < DBBase
              name: :string,
              buying_price: :decimal,
              holding: :integer,
-             portfolio_id: :integer,
+             portfolio_id: :integer
 
 
   def self.table_name
@@ -21,6 +21,6 @@ class Stock < DBBase
 
 
   def category
-    stock.find(portfolio_id)   
+    stock.find(stock_id)   
   end
 end

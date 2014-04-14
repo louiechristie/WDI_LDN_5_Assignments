@@ -3,6 +3,7 @@ require 'pry'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pg'
+require 'yahoofinance'
 
 require_relative 'controllers/categories_controller'
 require_relative 'models/db_dbase'
@@ -17,6 +18,8 @@ require_relative 'models/stock'
 get '/' do
   erb :home
 end
+
+
 
 
 

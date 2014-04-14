@@ -1,32 +1,34 @@
 get '/stocks' do
-  @stocks = Category.all
+  @stocks = Stock.all
   erb :'stocks/index'
 end
 
 get '/stocks/new' do
-  @stock = Category.new
+  @stock = Stock.new
+  @portfolios = Portfolio.all
   erb :'stocks/new'
 end
 
 post '/stocks' do
- @stock = Category.new(params[:stock])
+ @stock = Stock.new(params[:stock])
  @stock.save
  redirect to('/stocks')
 end
 
 
 get '/stocks/:id/edit' do
-  @stock = Category.find(params[:id])
+  @stock = Stock.find(params[:id])
+   @portfolios = Portfolio.all
   erb :'stocks/edit'
 end
 
 post '/stocks/:id' do
-  @stock = Category.find(params[:id])
+  @stock = Stock.find(params[:id])
   @stock.update_attributes(params[:stock])
   redirect to("/stocks")
 end
 
 get '/stocks/:id/delete' do
-  Category.find(params[:id]).destroy
+  Stock.find(params[:id]).destroy
   redirect to('/stocks')
 end
