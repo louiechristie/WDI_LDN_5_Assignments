@@ -24,12 +24,11 @@ end
 get '/category/:genre' do
 
   sql = "select * from videos where genre = '#{params[:genre]}'"
-  binding.pry
-  result = @db.exec(sql)
-  @videos = result[0]
+  @videos = @db.exec(sql)
 
   erb :category
 end
+
 
 get '/new' do
   erb :new
@@ -47,10 +46,6 @@ post '/create' do
 
   erb :new
   redirect to('/')
-end
-
-def sql_string(value)
-  "'#{value.gsub("'", "''")}'"
 end
 
 get '/show/:id' do
@@ -93,4 +88,8 @@ post '/update/:id' do
   @db.exec(sql)
 
   redirect to("/show/#{params[:id]}")
+end
+
+def sql_string(value)
+  "'#{value.gsub("'", "''")}'"
 end

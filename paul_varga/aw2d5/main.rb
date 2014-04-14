@@ -1,7 +1,6 @@
 # puts "Please enter a number from 1 to 100."
 # user_input = gets.chomp
 
-
 (1..100).each do |x| 
   
   if (x % 3 == 0)

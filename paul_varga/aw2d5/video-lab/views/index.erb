@@ -1,22 +1,22 @@
 <% @index.each do |index| %>
-  
-<ul>
-  <li><h3><%= index['title'] %></h3></li>
-  <li><p><%= index['description'] %></p></li>
-  <li><p><%= index['genre'] %></p></li>
+
+<div id='main'>
+  <h3><%= index['title'] %></h3>
+  <p>Tags: <%= index['description'] %></p>
+  <p>Genre: <%= index['genre'] %></p>
 
 
-  <li><button><a href="/show/<%= index['id'] %>">Show Details</a></button></li>
-</ul>
+  <button><a href="/show/<%= index['id'] %>">Show Details</a></button>
 
+</div>
 
 <% end %>
+
 
 <% @genre.each do |genre| %>
 
-<ul>
-<li><p><a href="/category/<%= genre['genre'] %>"><%= genre['genre'] %></p></li>
-</ul>
+  <div id="sidebar">
+    <a href="/category/<%= genre['genre'] %>"><%= genre['genre'] %></a>
+  </div>
 
 <% end %>
-

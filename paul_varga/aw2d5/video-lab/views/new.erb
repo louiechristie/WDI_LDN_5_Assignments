@@ -1,15 +1,20 @@
-<h2>Save a new video:</h2>
+<div id="new">
+
+<h4>Save a new video</h4>
 
 <form action='/create' method='post'>
   <input type='text' name='title' placeholder='Enter Title' autofocus>
   <input type='text' name='description' placeholder='Enter Description'>
   <input type='text' name='video_id' placeholder='Enter Video ID'>
 
+<sector>
   <br />
   <input type='checkbox' name='genre' value="Speech">Speech<br />
   <input type='checkbox' name='genre' value="Movie">Movie<br />
   <input type='checkbox' name='genre' value="Adverts">Advertisement<br />
   <input type='checkbox' name='genre' value="Others">Others<br />
+</sector>
 
   <button>Add to videos</button>
+</div>
 </form>
