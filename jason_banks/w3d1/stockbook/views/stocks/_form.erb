@@ -1,0 +1,33 @@
+<dl>
+  <dt>
+    <label for='stock_symbol'>Symbol:</label>
+  </dt>
+  <dd>
+    <input id='stock_symbol' type='text' name='stock[symbol]' value='<%=@stock.symbol %>' readonly />
+  </dd>
+</dl>
+<dl>
+  <dt>
+    <label for='stock_name'>Name:</label>
+  </dt>
+  <dd>
+    <input id='stock_name' type='text' name='stock[name]' value='<%= @stock.name %>' readonly />
+  </dd>
+</dl>
+<dl>
+  <dt>
+    <label for='stock_buying_price'>Price:</label>
+  </dt>
+  <dd>
+    <input id='stock_buying_price' type='text' name='stock[buying_price]' value='<%= @stock.buying_price %>' readonly />
+  </dd>
+</dl>
+<dl>
+  <dt>
+    <label for='stock_holding'>Holding:</label>
+  </dt>
+  <dd>
+    <input id='stock_holding' type='text' name='stock[holding]' value='<%=@stock.holding %>' autofocus/>
+  </dd>
+</dl>
+<div class='clear_both'></div>

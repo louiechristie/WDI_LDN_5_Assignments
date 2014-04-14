@@ -1,0 +1,13 @@
+<h2><%= @invalid if @invalid %></h2>
+<br />
+<form action='/portfolios/<%= @portfolio.id %>/stocks/new' method='post'> 
+  <dl>
+    <dt>
+      <label for='stock_symbol'>Symbol:</label>
+    </dt>
+    <dd>
+      <input id='stock_symbol' type='text' name='stock_symbol' autofocus />
+    </dd>
+  </dl>
+  <button>Get Price</button>
+</form>

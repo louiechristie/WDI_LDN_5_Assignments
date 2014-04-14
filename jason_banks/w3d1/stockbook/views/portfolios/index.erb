@@ -3,8 +3,10 @@
   <% @portfolios.each do |portfolio| %>
     <li><%= portfolio.name %> | 
       <%= portfolio.category.name if portfolio.category %>
-    <a href="/portfolios/<%= portfolio.id %>/edit">Edit</a>
-      <a href="/portfolios/<%= portfolio.id %>/delete">Delete</a>
+    <a href="/portfolios/<%= portfolio.id %>/edit">Edit Details</a>
+    <a href="/portfolios/<%= portfolio.id %>/stocks/new">Add Stock</a>
+    <a href="/portfolios/<%= portfolio.id %>/stocks">View Stocks</a>
+    <a href="/portfolios/<%= portfolio.id %>/delete">Delete Portfolio</a>
     </li>
   <% end %>
 <ul>

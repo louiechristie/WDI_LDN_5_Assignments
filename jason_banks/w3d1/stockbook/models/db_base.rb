@@ -89,6 +89,8 @@ class DBBase
         "'#{value.to_s.gsub("'", "''")}'"
       when :integer
         value.to_i
+      when :decimal
+        value.to_f
       else
         raise "Unrecognised data type `#{type}`"
     end

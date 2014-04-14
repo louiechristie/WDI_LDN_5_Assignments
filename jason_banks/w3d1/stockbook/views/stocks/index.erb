@@ -1,0 +1,11 @@
+<p>This is the Stocks Index page for the <%= @portfolio.name %> portfolio.</p>
+<ul>
+  <% @stocks.each do |stock| %>
+    <li><%= stock.name %> | <%= stock.holding%> units | 
+    <a href="/portfolios/<%= stock.portfolio_id %>/stocks/<%= stock.id %>/edit">Buy/Sell</a>
+      <a href="/portfolios/<%= stock.portfolio_id %>/stocks/<%= stock.id %>/delete">Delete</a>
+    </li>
+  <% end %>
+</ul>
+<a href="/portfolios/<%= @portfolio.id %>/stocks/new">Add New Stock</a>
+
