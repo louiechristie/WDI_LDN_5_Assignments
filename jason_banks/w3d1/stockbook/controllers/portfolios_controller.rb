@@ -11,7 +11,6 @@ get '/portfolios/new' do
 end
 
 post '/portfolios' do
-  binding.pry
   @portfolio = Portfolio.new(params[:portfolio])
   @portfolio.save
 
@@ -39,10 +38,8 @@ get '/portfolios/:id/delete' do
 end
 
 get '/portfolios/:id/stocks' do
-  binding.pry
   @portfolio = Portfolio.find(params[:id])
-  @stocks = Stock.all
-  binding.pry
+  @stocks = Stock.selection(params[:id])
   erb :'stocks/index'
 end
 
@@ -52,7 +49,6 @@ get '/portfolios/:id/stocks/new' do
 end
 
 post '/portfolios/:id/stocks/new' do
-  binding.pry
   @portfolio = Portfolio.find(params[:id])
   @stock = Stock.new
   @stock.symbol = params[:stock_symbol].upcase
@@ -72,12 +68,32 @@ post '/portfolios/:id/stocks' do
   # @stock.name = @stock.name
   # @stock.buying_price = @stock.buying_price
   @stock.portfolio_id = params[:id]
-  binding.pry
   @stock.save
 
   redirect to("/portfolios/#{@stock.portfolio_id}/stocks")
 end
 
+get '/portfolios/:id/stocks/:id/delete' do
+  @stock = Stock.find(params[:id])
+  portfolio_id = @stock.portfolio_id
+  @stock.destroy
+  redirect to("/portfolios/#{portfolio_id}/stocks")
+end
+
+get '/portfolios/:id/stocks/:id/edit' do
+  @stock = Stock.find(params[:id])
+  @portfolio = @stock.portfolio
+  @current_price = YahooFinance::get_standard_quotes(@stock.symbol)[@stock.symbol].lastTrade
+  erb :'stocks/edit'
+end
+
+post '/portfolios/:id/stocks/:id' do
+
+  @stock = Stock.find(params[:id])
+  @stock.update_attributes(params[:stock])
+  @portfolio = @stock.portfolio
+  redirect to("/portfolios/#{@portfolio.id}/stocks")
+end
 
 
 

@@ -19,9 +19,13 @@ class Stock < DBBase
     @portfolio_id = params['portfolio_id']
   end
 
-  def portfolios
-    results = run_sql("select * from portfolios where category_id = #{id}")
-    results.map { |result| Portfolio.new(result)}
+  def portfolio
+    Portfolio.find(portfolio_id)
+  end
+
+  def self.selection(portfolio_id)
+    results = run_sql("select * from stocks where portfolio_id = #{portfolio_id}")
+    results.map { |result| Stock.new(result)}
   end
 
 
