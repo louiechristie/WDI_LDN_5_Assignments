@@ -13,6 +13,8 @@ after do
 end
 
 get '/' do
+  # sql2 = "SELECT genre FROM videos GROUP BY genre ORDER BY genre"
+  # @genres = @db.exec(sql2)
   sql = "SELECT * FROM videos"
   @videos = @db.exec(sql)
   erb :home
@@ -33,7 +35,7 @@ post '/create' do
 end
 
 get '/edit/:id' do
-  sql = "select * from videos where id = #{params[:id].to_i}"
+  sql = "SELECT * FROM videos where id = #{params[:id].to_i}"
   @videos = @db.exec(sql).first
   erb :edit
 end
@@ -60,8 +62,7 @@ get '/delete/:id' do
 end
 
 get '/display/:genre' do
-  sql = "SELECT * FROM videos WHERE genre=#{params[:genre]}"
-  binding.pry
+  sql = "SELECT * FROM videos WHERE genre='#{params[:genre]}'"
   @videos = @db.exec(sql)
   erb :display
 end

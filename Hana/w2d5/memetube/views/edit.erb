@@ -1,5 +1,7 @@
 <form action='/update/<%=params[:id]%>' method='post'>
   <h3>Make your edits!</h3>
+   <%=video['url'] %>
+     
   Title: <input type='text' name='title' value="<%=@videos["title"]%>" autofocus></br>
   URL: <input type='text' name='url' value="<%=@videos["url"]%>" ></br>
   <div id= 'description'>

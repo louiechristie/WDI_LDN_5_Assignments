@@ -2,8 +2,9 @@
  <h2>MemeTube</h2>
 
 <div id='genre'>
-  <% @videos.each do |video| %>
-  <a href= '/display/<%=video['genre'] %>' method='get'><%=video['genre'] %></a>
+  <% @genres.each do |genre| %>
+
+    <a href= '/display/<%=genre['genre'] %>' method='get'><%=genre['genre'] %></a>
   <%end%>
 </div>
 
@@ -19,7 +20,7 @@
 
 <% @videos.each do |video| %>
   <div class='entry'>
-    <div class ='video'>
+
       <%=video['url'] %>
     </div>
     <div class='text'>
