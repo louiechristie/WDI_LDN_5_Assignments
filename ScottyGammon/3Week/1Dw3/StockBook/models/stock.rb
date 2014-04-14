@@ -14,7 +14,7 @@ attr_accessor :current_price, :value
 
 	def initialize(params={})
 		@id = params['id']
-		@symbol= params['symbol'].upcase
+		@symbol= params['symbol']
 		@buying_price = params['buying_price']
 		@holding = params['holding']
 		@portfolio_id= params['portfolio_id']

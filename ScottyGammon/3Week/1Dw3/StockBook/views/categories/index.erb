@@ -1,8 +1,14 @@
 <a href= '/categories/new'>
 	new category</a>
 	<table>
+    <thead>
+        <td>CATEGORY NAME</td>
+        <td>CATEGORY PORTFOLIOS</td>
+        <td>EDIT CATEGORY</td>
+        <td>DELETE CATEGORY</td>
     <% @categories.each do |category| %>
-      <tr>
+      </thead>
+      <tbody>
         <td><%= category.name %></td>
         <td><%= category.portfolios.map(&:name).join(', ') %></td>
         <td>
@@ -11,6 +17,6 @@
         <td>
           <a href='/categories/<%=category.id%>/delete'>DELETE</a>
         </td>
-      </tr>
+    </tbody>
     <% end %>
     </table>

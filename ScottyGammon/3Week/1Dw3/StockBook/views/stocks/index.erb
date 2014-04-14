@@ -1,12 +1,21 @@
 <a href= '/stocks/new'>
 	new stock</a>
 <table>
+    <thead>
+        <td>STOCK NAME</td>
+        <td>BUYING PRICE</td>
+        <td>HOLDINGS</td>
+        <td>VALUE</td>
+        <td>ASSIGNED PORTFOLIO</td>
+        <td>EDIT STOCK</td>
+        <td>DELETE STOCK</td>
+      </thead>
     <% @stocks.each do |stock| %>
-      <tr>
+      <tbody>
         <td><%= stock.name %></td>
-        <td><%= stock.current_price %></td>
-        <td><%= stock.buying_price %></td>
+        <td>$<%= stock.buying_price %></td>
         <td><%= stock.holding %></td>
+        <td>$<%= stock.buying_price.to_i * stock.holding.to_i %></td>
         <td><%= stock.portfolio.name if stock.portfolio %></td>
         <td>
           <a href='/stocks/<%=stock.id%>/edit'>EDIT</a>
@@ -14,6 +23,6 @@
         <td>
           <a href='/stocks/<%=stock.id%>/delete'>DELETE</a>
         </td>
-      </tr>
+      </tbody>
     <% end %>
     </table>
