@@ -1,0 +1,14 @@
+
+<a href='/portfolios/new'>new portfolio</a>
+
+<ul>
+<% @portfolios.each do |portfolio| %>
+
+<li><%= portfolio.name %>
+    <%= portfolio.category.name if portfolio.category %>
+    <a href='/portfolios/<%= portfolio.id %>/edit'>edit</a>
+    <a href='/portfolios/<%= portfolio.id %>/delete'>delete</a>
+</li>
+
+<% end %>
+</ul>
