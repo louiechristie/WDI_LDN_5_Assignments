@@ -26,7 +26,7 @@ def parse_youtube url
 end
 
 def genres
-  sql = "select genre from videos group by genre"
+  sql = "select distinct genre from videos"
   @genres = @db.exec(sql)
 end
 
@@ -67,7 +67,16 @@ post '/create' do
   @url = params[:url]
   @genre = params[:genre]
 
+  sql = "insert into videos (title, description, url, genre) values (
+    '#{sql_string(@title)}', 
+    '#{sql_string(@description)}', 
+    '#{sql_string(@url)}', 
+    '#{sql_string(@genre)}'
+    );"
+  @db.exec(sql)
+  redirect to('/')
 
+  redirect to('/new')
 end
 
 get '/edit/:id' do

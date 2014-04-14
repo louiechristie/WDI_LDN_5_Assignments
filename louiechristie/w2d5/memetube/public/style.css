@@ -95,8 +95,10 @@ nav a, footer a {
 }
 
 .search {
-  padding-top: 4px;
-  text-align: right;
+  margin-top: 5px;
+  float: right;
+  margin-right: 10px;
+  display: inline;
 }
 
 section {
