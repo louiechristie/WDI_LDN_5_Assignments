@@ -1,0 +1,30 @@
+
+<section> 
+    <table>
+      <tr>
+        <td class="task_name">Task Name</td>
+        <td class="task_description">Task Description</td>
+        <td></td>
+      </tr>
+      <tr>
+        <form class="create" action='/create' method='post'>
+          <td class="input">
+            <input type='text' name='task_name'>
+          </td>
+          <td>
+            <textarea class ="description" type='TextArea' name='description'></textarea>
+          </td class="input">
+          <td>
+            <button>Save</button>
+          </td>
+        </form>
+      </tr>
+      <% @task_list.each do |task| %>
+      <tr>
+        <td class="task_name"><%= task["task_name"] %></td>
+        <td class="task_description"><%= task["description"] %></td>
+      </tr>
+      <% end %>
+    </table>
+  
+</section>   

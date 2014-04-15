@@ -1,0 +1,8 @@
+<%= @video['url']%>
+
+<form action ='/update/<%=params[:id] %>' method='put'>
+	<input type='text' name='title' value="<%= @video['title']%>" autofocus>
+	<input type='text' name='description' value="<%= @video['description']%>" >
+	<input type='text' name='tag' value="<%= @video['tag']%>" >
+	<button>Update It!</button>
+</form>

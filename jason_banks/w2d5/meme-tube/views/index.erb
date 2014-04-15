@@ -1,0 +1,8 @@
+<h2>Featured Video</h2>
+<h3>"<%= @featured_video['title'] %>"</h3>
+<br />
+<br />
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+src="https://www.youtube.com/embed/<%= @featured_video['id'] %>"
+frameborder="0" allowfullscreen />
+</iframe>

@@ -1,0 +1,21 @@
+<div class="index">
+
+<% @portfolio.stocks.each do |stock| %>
+
+  <h2>Symbol: <%= stock.symbol %></h2>
+  <p>Holding: <%= stock.holding %></p>
+
+  <p>Name: <%= stock.name %></p>
+  <p>Buying Price: <%= stock.buying_price %></p>
+  <p>Current Value: <%= stock.value %></p>
+  <p>Current Price: <%= stock.current_price %></p>
+
+  <p>Portfolio: <%= stock.portfolio.name if stock.portfolio %></p>
+
+  <button><a href='/stocks/<%= stock.id %>/edit'>Buy Additional Stocks</a></button>
+  <button><a href='/stocks/<%= stock.id %>/delete'>Sell All Stocks</a></button>
+
+
+<% end %>
+
+</div>

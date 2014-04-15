@@ -1,0 +1,21 @@
+this is the portfolios index page
+
+<a href='/portfolios/new'>new portfolio</a>
+
+
+<ul>
+  <% @portfolios.each do |portfolio| %>
+    <li>
+      Portfolio: <%= portfolio.name %>
+      <li>
+      Category: <%= portfolio.category.name if portfolio.category %>
+      </li>
+      <a href='portfolios/<%=portfolio.id%>/edit'>edit</a>
+      <a href='portfolios/<%=portfolio.id%>/delete'>delete</a>
+      <li>
+      <a href='portfolios/<%=portfolio.id%>/stocks'>show stocks</a>
+      <a href='portfolios/<%=portfolio.id%>/stocks/new'>add stocks</a>
+      </li>
+    </li>
+  <% end %>
+</ul>

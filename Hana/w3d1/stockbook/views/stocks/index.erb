@@ -1,0 +1,13 @@
+<a href='/stocks/new'>New Stock</a>
+
+<ul>
+  <% @stocks.each do |stock| %>
+  <li><%= stock.name %></li>
+  <li><%= stock.symbol%></li>
+  <li><%= stock.buying_price%></li>
+  <li><%= stock.holding%></li>
+  <li><%= stock.portfolio_id%></li>
+  <a href='/stocks/<%=stock.id%>/edit'>Edit</a>
+  <a href='/stocks/<%=stock.id%>/delete'>Delete</a>
+  <% end %>
+</ul>
