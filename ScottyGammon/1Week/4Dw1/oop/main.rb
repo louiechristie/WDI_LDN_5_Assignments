@@ -1,6 +1,16 @@
 require 'pry'
 
-class Person
+module Moveable
+	def walk
+		puts "left, right, left, right"
+	end
+end
+
+class Tetrapod
+	include Moveable
+
+
+class Person < Tetrapod
 	attr_accessor(:age, :height) #reader and writer in one, even better. Did this third
 	attr_writer :password
 	#attr_reader :age, :height
@@ -39,3 +49,5 @@ end
 
 
 binding.pry
+
+end	

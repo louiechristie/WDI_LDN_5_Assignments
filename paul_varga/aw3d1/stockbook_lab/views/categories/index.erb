@@ -1,0 +1,21 @@
+<div class="index">
+
+<a href='/categories/new'>Add New Category</a>
+
+<ul>
+<% @categories.each do |category| %>
+
+<li>
+    <h2><%= category.name %></h2>
+    <h3>Portfolios:</h3>
+    <p><%= category.portfolios.map(&:name).join(', ') %></p>
+    <button><a href='/categories/<%= category.id %>/edit'>edit</a></button>
+    <button><a href='/categories/<%= category.id %>/delete'>delete</a></button>
+</li>
+
+<% end %>
+
+</div>
+
+
+</ul>

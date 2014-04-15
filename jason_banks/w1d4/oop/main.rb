@@ -1,6 +1,28 @@
 require "pry"
 
+module Moveable
+
+  def walk
+    puts "left, right, left, right"
+  end
+
+end
+
+module Talkable
+
+  def talk(words)
+    puts "I say, '#{words}'."
+  end
+
+  def speak
+    puts "Top of the morning, to you!"
+  end
+
+end
+
 class Person
+
+  include Moveable
 
   attr_accessor :age, :height
 

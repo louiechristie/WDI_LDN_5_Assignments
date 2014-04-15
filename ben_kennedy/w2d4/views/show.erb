@@ -1,0 +1,22 @@
+<section>
+  <h2>Current To Dos:</h2>  
+  <table>
+    <tr>
+      <td>Task Name</td>
+      <td>Task Description</td>
+      <td></td>
+      <td></td>
+      </tr>
+    <% @task_list.each do |task| %>
+    <tr>
+      <% if task["id"] == @edit %>
+        <td class="show"><%= task["task_name"] %></td>
+        <td class="show"><%= task["description"] %></td>
+      <% else %>
+        <td><%= task["task_name"] %></td>
+        <td><%= task["description"] %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>  
+</section>

@@ -1,0 +1,20 @@
+<section>
+  
+  <form action='/update/:<%= @video["id"] %>' method='post'>
+  
+    <h2><input class="name" type='text' name='video_name' value='<%= @video["video_name"] %>'></h2>
+  
+    <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video["video_id"] %>" frameborder="0" allowfullscreen></iframe>
+  
+    <p>youtubeID:</p><input class='standard' type='text' name='video_id' value='<%= @video["video_id"] %>'>
+  
+    <input class="tags" type='text' name='tags' value='<%= @video["tags"].to_s.gsub("{","").gsub("}","").gsub(",",", ") %>'>
+  
+    <input class='standard' type='text' name='posted_by' value='<%= @video["posted_by"] %>'>
+  
+    <input class='standard' type='TextArea' name='video_description' value='<%= @video["video_description"] %>'>
+    
+    <button>Update</button>
+  
+  </form>
+</section>

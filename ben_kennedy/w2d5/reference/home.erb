@@ -1,0 +1,32 @@
+
+
+<form class='new' action='/new' method='get'>
+  <button name='delete' type='submit' value='delete' >Add Task</button>
+</form>
+
+<section> 
+    <table>
+      <tr>
+        <th>Task Name</th>
+        <th>Task Description</th>
+        <th> </th>
+        <th> </th>
+        </tr>
+      <% @task_list.each do |task| %>
+      <tr>
+        <td class="task_name"><%= task["task_name"] %></td>
+        <td class="task_description"><%= task["description"] %></td>
+        <td>
+          <form action='/edit/:<%= task["id"] %>' method='get'>
+            <button name='edit' type='submit' value='<%= task["id"] %>' >EDIT</button>
+          </form>
+        </td>
+        <td>
+          <form action='/delete/:<%= task["id"] %>' method='get'>
+            <button name='delete' type='submit' value='<%= task["id"] %>' >COMPLETED</button>
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>  
+</section>

@@ -1,0 +1,5 @@
+<form action ='/update/<%=params[:id] %>' method='put'>
+	<input type='text' name='title' value= "<%= @todo["title"] %>" autofocus>
+	<input type='text' name='task' value= "<%= @todo["task"] %>" >
+	<button>Update It!</button>
+</form>

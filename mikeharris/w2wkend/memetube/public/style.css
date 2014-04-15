@@ -1,0 +1,340 @@
+* {
+  box-sizing:border-box;
+}
+
+.logo {
+  width: 500px;
+  display: block;
+  margin: 100px auto;
+}
+
+.main {
+  font-family: 'Gochi Hand', cursive;
+  width: 375px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.main img {
+  width: 105px;
+  display:inline-block;
+  margin: 0 40px;
+  border-radius: 65px;
+}
+
+.main img:hover {
+  box-shadow: 0 6px 6px rgba(0,0,0,0.3), inset 0 -3px 3px rgba(0,0,0,0.1);
+}
+
+.show {
+  width: 523px;
+  float: left;
+  position: fixed;
+  margin-left: 100px;
+  margin-top: 50px;
+ 
+}
+
+.tv {
+ margin: 0 auto;
+ width: 523px;
+}
+
+.library {
+  width: 45%;
+  max-width: 630px;
+  float: right;
+  border: 1px solid black;
+  margin-right: 2%;
+}
+
+
+.video {
+  display: block;
+border: 1px solid black;
+position: relative;
+height: 82px;
+}
+
+.video_title {
+  position: relative;
+left: 200px;
+top: -55px;
+ font-family: 'Gochi Hand', cursive;
+ font-size: 26px;
+ display: inline;
+}
+
+
+.edit, .delete {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  opacity: 0.1;
+  font-family: 'VT323';
+  color: black;
+  text-decoration: none;
+}
+
+.edit {
+  
+  top: 40px;
+  right: 35px;
+}
+
+.play_button {
+  width: 80px;
+   position: absolute;
+  top: 15px;
+  left: 8px;
+  opacity: 0.2;
+}
+
+.video:hover .play_button, .video:hover > .delete, .video:hover > .edit {
+  opacity: 1;
+}
+
+.video:hover > iframe {
+  display: inline;
+}
+
+.video:hover > .description {
+  display: inline;
+}
+
+.video iframe {
+  width:425px;
+  display: none;
+  position: fixed;
+  top: 190px;
+  left: 149px;
+}
+
+
+.description {
+  display: none;
+  position: fixed;
+    top: 238px;
+  left: 156px;
+  z-index: 1000;
+  color: white;
+  font-family: 'VT323';
+  font-size: 20px;
+  width: 390px;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  text-transform:uppercase;
+}
+
+
+
+.new_video {
+  width: 800px;
+  margin: 50px auto;
+}
+
+.new_video  img {
+  width:800px;
+  z-index: -10;
+  position: absolute;
+}
+
+.new_video table {
+  position: relative;
+  left: 245px;
+  top: 138px;
+  font-family: 'Gochi Hand', cursive;
+}
+
+.new_video input, .new_video textarea { 
+  font-family: 'Gochi Hand', cursive;
+  padding: 2px;
+  font-size: 16px;
+   }
+
+
+.new_video td {
+  padding: 1px 3px;
+}
+
+table tr td:nth-child(2) { 
+  width: 230px; 
+}
+
+.new_video textarea {
+  vertical-align:text-top;
+  width: 100%;
+} 
+
+.new_video  input , button{
+  width:100%;
+}
+
+.new_video button {
+  font-family: 'VT323';
+}
+
+h2 {
+  font-family: 'VT323';
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.show_logo {
+  width: 100px;
+  margin: 10px;
+  
+}
+
+.show_play, .show_filter{
+  width: 75px;
+  margin-top: 20px;
+}
+
+.show_play {
+  margin-left: 120px;
+}
+
+.play_play, .play_play2 {
+  width: 75px;
+  margin-top: 20px;
+  margin-left:35px;
+}
+
+.play_play2 {
+  margin-left:50px;
+}
+.genre_menu {
+  display: inline-block;
+  width: 75px;
+}
+
+.genre_menu a {
+  padding: 5px;
+  text-decoration: none;
+  font-family: 'VT323';
+  background: white;
+  color: black;
+}
+
+.genre_menu a:hover {
+  background: gray;
+} 
+
+.genre_menu li {
+  height: 30px;
+  display: block;
+  width: 100px;
+}
+
+.genre_menu ul {
+  position: absolute;
+  display: none;
+  top: 90px;
+  left: 340px;
+}
+
+.genre_menu:hover ul {
+  display: block;
+}
+
+
+.filter_menu {
+ display: inline-block;
+  position: relative;
+  top: -75px;
+  left: -80px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+
+}
+
+
+.menu {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.menu {
+  left: 125px;
+}
+
+.genre_menu .menu {
+  left: 315px;
+}
+.genre_menu:hover > .menu, a:hover > .menu, a:hover .menu2 {
+  opacity: 1;
+}
+
+
+.play {
+  width: 600px;
+  display: block;
+  margin: 10px auto;
+}
+
+.play nav {
+  width: 550px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tv_play{
+  position: relative;
+}
+
+.tv_play img{
+  width: 600px;
+}
+
+
+.tv_play iframe {
+  position: absolute;
+  width: 500px;
+ top: 74px;
+left: 51px;
+
+}
+
+.play .menu, .play .menu2 {
+  display: inline-block;
+position: absolute;
+top: 0px;
+left: 42px;
+  font-family: 'VT323';
+  text-transform: uppercase;
+  opacity: 0;
+  width: 75px;
+}
+.play .menu2 {
+  left: 320px;
+}
+
+
+
+.play nav a {
+  display: inline;
+}
+
+.play_logo {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-left: 46px;
+}
+
+.play nav {
+  width: 425px;
+  
+}
+
+
+
+

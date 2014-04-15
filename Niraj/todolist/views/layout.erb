@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='/reset.css'>
+    <link rel='stylesheet' href='/style.css'>
+    <title>To Do List</title>
+  </head>
+  <body>
+
+  <div class = "menu">
+    <nav>
+      
+      <div id="home">  <a href='/'>Home</a> </div>
+       <div id="newToDo">    <a href='/new'>New todo</a> </div>
+        <div id="update">   <a href='/update/:id'>Update post</a> </div>
+      
+    </nav>
+  </div>
+  
+<!-- 
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='/'><span>Home</span></a></li>
+   <li class='active'><a href='/new'><span>New ToDo</span></a></li>
+   <li class='active'><a href='/update/:id'><span>Update Task</span></a></li>
+   <li class='active'><a href='/show/:id'><span>Show Task</span></a></li>
+   <li class='active'><a href='/edit/:id'><span>Edit Task</span></a></li>
+   <li class='active'><a href='/delete/:id'><span>Delete Task</span></a></li>
+
+</ul>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+header {
+  width: 80%;
+  max-width: 1300px;
+  min-height: 200px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+#logo {
+  width: 419px;
+  height: 100px;
+  background: url(/logo.png) no-repeat;
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 600px) {
+  #logo {
+    width: 200px;
+    height: 47px;
+    background: url(/logo_sm.png) no-repeat;
+    position: absolute;
+    bottom: 70px;
+  }
+}
+
+#home {
+  width: 32px;
+  height: 32px;
+  background: url(/menu_sprite.png) no-repeat;
+  background-position: -32px 0;
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+}
+
+#home:hover {
+  background-position: -32px -32px;
+}
+
+#new {
+  width: 32px;
+  height: 32px;
+  background: url(/menu_sprite.png) no-repeat;
+  position: absolute;
+  bottom: 18px;
+  right: 40px;
+}
+
+#new:hover {
+  background-position: 0 -32px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+#content_area {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
+
+.categories_list {
+  width: 88.888888889%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+#new_category {
+  margin-top: 50px;
+}
+
+#new_category input[name='name'] {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#new_category button {
+  float: right;
+}
+
+.categories_list h4 {
+  display: inline;
+}
+
+.categories_list h5 {
+  display: inline;
+  margin-left: 20px;
+}
+
+.categories_list button {
+  height: 18px;
+  font-size: 10px;
+  width: 80px;
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+.categories_page h3 {
+  border-bottom: 4px solid #eee;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.categories_page {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.categories_page button {
+  height: 18px;
+  font-size: 10px;
+  width: 50px;
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+.ind_category form {
+  display: inline;
+  float: right;
+}
+
+.ind_category {
+  border-bottom: 1px solid #eee;
+  margin: 15px 0;
+}
+
+.all_movies {
+  max-width: 1400px;
+  width: inherit;
+  margin: 0 auto;
+}
+
+.movie_port {
+  max-width: 322px;
+  min-height: 513px;
+  padding: 10px;
+  margin: 0 auto;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #eee;
+  position: relative;
+}
+
+.movie_port iframe {
+  margin: 20px 0;
+}
+
+.movie_port h3 {
+  margin-top: 0;
+  min-height: 55px
+}
+
+#movie_info {
+  margin-bottom: 50px;
+}
+
+#movie_options {
+  width: 100%;
+  position: absolute;
+  margin-bottom: 5px;
+  bottom: 0;
+}
+
+#movie_buttons {
+  float: right;
+  display: inline-flex;
+  margin-right: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.movie_port button {
+  margin-bottom: 3px;
+  margin-right: 3px;
+  width: 37px;
+  height: 17px;
+  padding: 0;
+  font-size: 9px;
+  line-height: 0.4;
+}
+
+#movie_options p {
+  float: left;
+  margin: 0;
+}
+
+#movie_options p[name='Updated'] {
+  margin-top: -5px;
+}
+
+#new_vid h6 {
+  display: inline-block;
+}
+
+#new_vid select {
+  width: 33%;
+  display: inline-block;
+}
+
+#new_vid form input[name='title'] {
+  height: 34px;
+  width: 55%;
+}
+
+#new_vid form input[name='url'] {
+  height: 34px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.description_input {
+  width: 100%;
+}
+
+.list_vids {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 542px;
+}
+
+.list_vids div {
+  margin-top: 20px;
+}
+
+.list_vids button {
+  margin: 10px;
+  width: 80px;
+  height: 25px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 0.4;
+}

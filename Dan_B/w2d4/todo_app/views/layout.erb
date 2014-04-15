@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='/normalize.css'>
+    <link rel="stylesheet" type="text/css" href="/bootstrap.css">
+    <link rel='stylesheet' href='/style.css'>
+    <title>SimplyDo.it</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href='/'><div id='logo'></div></a>
+        <a href='/' id='home'></a>
+        <a href='/new' id='new'></a>
+      </nav>
+    </header>
+    <div id='content_area'>
+      <%= yield %>
+    </div>
+<!--     <footer>
+      <p><small>Site designed and built by Dan.</small></p>
+    </footer>-->
+  </body>
+</html>
