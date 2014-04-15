@@ -1,0 +1,22 @@
+<h1>MTA Journey Calculator</h1>
+
+<% if @result %>
+  
+  <h2>Journey Length</h2>
+
+  <p>You will travel <strong><%=@result %></strong> stations.</p>
+  <p>Start line: <strong><%=@start_line %></strong>  Start station: <strong><%=@start_point %></strong></p>
+  <p>End line: <strong><%=@end_line %></strong>  End station: <strong><%=@end_point %></strong></p>
+<% end %>
+
+<h2>Calculate Your Journey</h2>
+
+<img src="images/mta_map.png" width="300"/ >
+
+<form action='/index' method='post'>
+  <p>Start line: <input type='text' name='start_line'></p>
+  <p>Start station: <input type='text' name='start_point'></p>
+  <p>End line: <input type='text' name='end_line'></p>
+  <p>End station: <input type='text' name='end_point'></p>
+  <button class="button">Calculate</button>
+</form>
