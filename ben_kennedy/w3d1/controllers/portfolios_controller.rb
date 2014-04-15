@@ -12,7 +12,6 @@ get '/portfolios/new' do
 end
 
 post '/portfolios' do
-  binding.pry
   @portfolio = Portfolio.new(params[:portfolio])
   @portfolio.save
 
