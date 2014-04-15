@@ -1,0 +1,15 @@
+<% @portfolio.stocks.each do |stock| %>
+
+  <h3>Symbol: <%= stock.symbol %></h3>
+  <p>Holding: <%= stock.holding %></p>
+
+  <p>Name: <%= stock.name %></p>
+  <p>Price: <%= stock.buying_price %></p>
+
+  
+
+  <a href='/stocks/<%= stock.id %>/edit'>edit stocks</a>
+  <a href='/stocks/<%= stock.id %>/delete'>delete stocks</a>
+
+
+<% end %>

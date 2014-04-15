@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+     <link rel='stylesheet' href='/reset.css'>
+    <link rel='stylesheet' href='/style.css'>
+    <link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+    <title>Video Viewer</title>
+  </head>
+  <body>
+
+    <main>
+    <h1>YouTube Videos</h1>
+    <nav>
+
+     
+     <div class="links">  <a  href='/'>Home</a> &nbsp;&nbsp;&nbsp;&nbsp;   <a  href='/new'>Create a video </a> &nbsp;&nbsp;&nbsp;&nbsp;   <a href='/show'>View all videos</a>  &nbsp;&nbsp;&nbsp;&nbsp;   <a href='/show/genre/:genre'>Search</a>      </div>
+    </nav>
+
+  
+
+    <%= yield %>
+
+    </main>
+  </body>
+</html>
