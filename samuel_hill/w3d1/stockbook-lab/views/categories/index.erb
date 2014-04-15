@@ -1,0 +1,18 @@
+<h2>Categories</h2>
+
+<a class='new' href='/categories/new'>Add Category</a>
+
+	<% @categories.each do |category| %>
+
+		<table>
+			<tr><td>CATEGORY NAME:</td><td><%= category.name %></td></tr>
+			<tr><td>PORTFOLIOS:</td><td><%= category.portfolios.map(&:name).join(', ') %></td></tr>
+			<tr><td><a href='/categories/<%=category.id%>/edit'>Edit Category</a></td></tr>
+			<tr><td><a href='/categories/<%=category.id%>/delete'>Delete Category</a></a></td></tr>
+		</table>
+
+	<% end%>
+
+
+
+	

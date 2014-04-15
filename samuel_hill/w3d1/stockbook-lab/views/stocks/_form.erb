@@ -1,0 +1,34 @@
+<dl>
+  <dt>
+    <label for='stock_symbol'>Symbol:</label>
+  </dt>
+  <dd>
+    <input id='stock_symbol' type='text' name='stock[symbol]' value='<%=@stock.symbol %>' autofocus>
+  </dd>
+</dl>
+
+<dl>
+  <dt>
+    <label for='holding'>Holding:</label>
+  </dt>
+  <dd>
+    <input id='holding' type='text' name='stock[holding]' value='<%=@stock.holding %>' >
+  </dd>
+</dl>
+
+<dl>
+  <dt>
+    <label for='stock_portfolio_id'>Portfolio:</label>
+  </dt>
+  <dd>
+    <select id='stock_portfolio_id' name='stock[portfolio_id]'>
+      <% @portfolios.each do |portfolio| %>
+        <option value='<%= portfolio.id %>' <% if @stock.portfolio_id==portfolio.id %>selected='selected'<% end %> >
+          <%= portfolio.name %>
+        </option>
+      <% end %>
+    </select>
+  </dd>
+</dl>
+
+<div class='clear_both'></div>
