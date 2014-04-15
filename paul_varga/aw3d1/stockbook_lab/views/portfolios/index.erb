@@ -7,9 +7,9 @@
 
 <li>
     <h2><%= portfolio.name %></h2>
-    <h3>Portfolios:</h3>
+    <h3>Category:</h3>
     <p><%= portfolio.category.name if portfolio.category %></p>
-    <h3>Portfolios:</h3>
+    <h3>Stocks:</h3>
     <p><%= portfolio.stocks.map(&:name).join(', ') %></p>
     <button><a href='/portfolios/<%= portfolio.id %>/stocks'>Stocks</a></button>
     <button><a href='/stocks/new'>Buy New Stock</a></button>
