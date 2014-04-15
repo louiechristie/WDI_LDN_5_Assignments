@@ -1,27 +1,28 @@
-<h1>Task Manager</h1>
-
-<form class="create" action='/create' method='post'>
-    New Task Name:
-    <input type='text' name='task_name'>
-    
-    Description:
-    <input class ="description" type='text' name='description'>
-
-    <button>Save New Task</button>
-</form>
 
 <section> 
     <table>
       <tr>
-        <td>Task Name</td>
-        <td class="wide">Task Description</td>
+        <td class="task_name">Task Name</td>
+        <td class="task_description">Task Description</td>
         <td></td>
-        <td></td>
-        </tr>
+      </tr>
+      <tr>
+        <form class="create" action='/create' method='post'>
+          <td class="input">
+            <input type='text' name='task_name'>
+          </td>
+          <td>
+            <textarea class ="description" type='TextArea' name='description'></textarea>
+          </td class="input">
+          <td>
+            <button>Save</button>
+          </td>
+        </form>
+      </tr>
       <% @task_list.each do |task| %>
       <tr>
-        <td><%= task["task_name"] %></td>
-        <td ><%= task["description"] %></td>
+        <td class="task_name"><%= task["task_name"] %></td>
+        <td class="task_description"><%= task["description"] %></td>
       </tr>
       <% end %>
     </table>
