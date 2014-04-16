@@ -1,0 +1,25 @@
+
+<h2>Station on</h2>
+<%= form_tag("/result") do %>
+    <% @lines.each do |line| %>
+        <h3><%= line[0] %></h3>
+        <%  line[1].each do |station| %>
+          <%= radio_button_tag(:station_on, "#{line[0]},#{station}") %>
+          <%= label_tag(:station_on, "#{station}") %>
+        <% end %>
+        <br />
+    <% end %>
+
+    <h2>Station off</h2>
+    <%  @lines.each do |line| %>
+        <h3><%= line[0] %></h3>
+        <%  line[1].each do |station| %>
+          <%= radio_button_tag(:station_off, "#{line[0]},#{station}") %>
+          <%= label_tag(:station_off, "#{station}") %>
+        <% end %>
+        <br />
+    <% end %>
+    <%= submit_tag("Submit") %>
+<% end %>
+
+    

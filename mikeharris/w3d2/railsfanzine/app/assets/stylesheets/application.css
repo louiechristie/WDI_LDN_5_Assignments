@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ *{
+  box-sizing: border-box;
+ }
+main {
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+}
+
+ h1 {
+  text-align: center;
+ }
+.front_img {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid red;
+  display: block;
+  margin: 0 auto;
+}
+.front_img:hover {
+  background: red;
+}
+header {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+header a {
+  margin: 0 auto;
+  display: block;
+}
+
+.indiv_spice {
+  width: 150px;
+
+  padding: 10px;
+  border-radius: 150px;
+  border: 1px solid red;
+
+}
+.indiv_spice:hover {
+  background: red;
+}
+ul {
+  display: block;
+  -webkit-margin-after: 0px;
+-webkit-margin-before: 0;
+-webkit-padding-start: 0;
+}
+
+li {
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+}
+
+li a {
+  background: gray;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+}
+li a:hover {
+  color: white;
+}
+
+body {
+  padding: 50px;
+}
