@@ -1,6 +1,8 @@
 CarsApp::Application.routes.draw do
   get "cars/index"
 
+  resources :cars
+
   root to: "cars#index"
 
   # The priority is based upon order of creation:
