@@ -4,7 +4,7 @@
 <%= @cars.inspect if @debug %>
 
 <% @cars.each do |car| %>
-  <p><%= link_to car.make %> <%= car.model %> is <%= car.color %> color
+  <p><%= link_to car.make, car_path(car) %> <%= car.model %> is <%= car.color %> color
 
   </p>
 
