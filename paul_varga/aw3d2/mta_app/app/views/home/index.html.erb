@@ -1,0 +1,28 @@
+<h1>MTA</h2>
+
+<p>Your trip length is <%= @total_length_of_trip %> stops.</p>
+
+<%= form_tag(root_path) do %>
+
+<p>What train do you want to get on: </p>
+
+<%= text_field_tag :start_train %>
+
+<p> "Which stop: </p>
+
+<%= text_field_tag :stop_a %>
+
+<p> What train do you want to get off: </p>
+
+<%= text_field_tag :stop_train %>
+
+<p> "Which stop:</p>
+
+<%= text_field_tag :stop_b %>
+
+<p>MTA hash<%= @mta.inspect %></p>
+<p>Params hash<%= params.inspect %></p>
+
+<%= submit_tag %>
+
+<% end %>
