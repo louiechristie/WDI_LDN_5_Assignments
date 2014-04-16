@@ -1,31 +1,35 @@
 
 
 <section>
-  <h2>Current To Dos:</h2>  
     <table>
       <tr>
         <td>Task Name</td>
         <td>Task Description</td>
-        <td></td>
-        <td></td>
-        </tr>
-      <% @task_list.each do |task| %>
-      <tr>
-        <% if task["id"] == @edit %>
-          <form action='/update/:<%= task["id"] %>' method='post'>
-            Edit Task Name:
-            <input type='text' name='task_name' value='<%= task["task_name"] %>'>
-    
-            Edit Description:
-            <input type='text' name='description' value='<%= task["description"] %>'>
-
-            <button name="edit" value="<% task['id'] %>">Update Task</button>
-          </form>
-        <% else %>
-          <td><%= task["task_name"] %></td>
-          <td><%= task["description"] %></td>
-        <% end %>
+        <td class="blank"></td>
       </tr>
+      <% @task_list.each do |task| %>
+      
+        <% if task["id"] == @edit %>
+        <tr>    
+          <form action='/update/:<%= task["id"] %>' method='post'>
+            <td class="input task_name">
+              <input class='edit' type='text' name='task_name' value='<%= task["task_name"] %>'>
+            </td>
+            <td class="input task_description">
+              <textarea type='text' class='description' name='description' value='<%= task["description"] %>'></textarea>
+            </td>
+            <td class="input">
+              <button name="edit" value="<% task['id'] %>">Update Task</button>
+            </td>
+          </form>
+        </tr>        
+        <% else %>
+        <tr>
+          <td class ='task_name'><%= task["task_name"] %></td>
+          <td class ='table_descriptioin'><%= task["description"] %></td>
+          <td class="blank"></td>
+        <% end %>
+        </tr>
       <% end %>
     </table>
   

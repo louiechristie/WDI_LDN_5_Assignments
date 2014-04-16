@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fanzine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to "pinkfloyd", pinkfloyd_path %></li>
+      <li><%= link_to "roger", roger_path %></li>
+      <li><%= link_to "david", david_path %></li>
+      <li><%= link_to "nick", nick_path %></li>
+      <li><%= link_to "richard", richard_path %></li>
+      <li><%= link_to "syd", syd_path %></li>
+      <li><%= link_to "tour_dates", tour_dates_path %></li>
+      <li><%= link_to "records", records_path %></li>
+    </ul>
+  </nav>
+</header>
+
+<%= yield %>
+
+</body>
+</html>

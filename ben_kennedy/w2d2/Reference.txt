@@ -1,0 +1,19 @@
+Reference.txt
+
+sqlite> .tables
+products           schema_migrations  users              wishlists        
+
+
+sqlite> .schema products
+CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "name" varchar(255), "price" float, "on_sale" boolean DEFAULT 'f' NOT NULL);
+
+
+
+sqlite> .schema users
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "name" varchar(255));
+
+
+
+sqlite> .schema wishlists
+CREATE TABLE "wishlists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "user_id" integer, "product_id" integer);
+sqlite> 
