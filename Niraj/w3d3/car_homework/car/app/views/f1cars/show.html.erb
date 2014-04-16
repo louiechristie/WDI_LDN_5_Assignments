@@ -1,0 +1,14 @@
+<h1><%= @f1car.name %></h1>
+<h1><%= @f1car.driver %></h1>
+<h1><%= @f1car.year %></h1>
+<h1><%= @f1car.engine %></h1>
+<h1><%= @f1car.image %></h1>
+
+
+
+
+<% if @f1car.image.nil? %>
+  <em> No image for this car yet. </em>
+<% else %>
+  <img src="<%= @f1car.image %>" alt="A picture of <%= @f1car.name %>" />
+<% end %>

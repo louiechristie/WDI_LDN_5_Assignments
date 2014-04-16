@@ -1,0 +1,10 @@
+<% @cars.each do |f1| %>
+ <%= f1.name %>
+ <%= f1.engine %>
+ <%= f1.year %>
+ <%= f1.driver %>
+ <%= f1.image %>
+
+<p>. <%= link_to 'Delete Car', f1car_path(f1), method: 'delete', confirm: 'Are you sure?' %>  </p>
+<% end %>
+

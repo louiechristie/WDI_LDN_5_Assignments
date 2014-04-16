@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>F1 Car database</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "All Cars", f1cars_path %> 
+<%= link_to "New Car", new_f1car_path %>
+
+
+<%= yield %>
+
+</body>
+</html>
