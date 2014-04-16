@@ -1,1 +1,9 @@
-<h2><%= @vehicle.type_of_vehicle %></h2>
+<h2><%= @vehicle.make %> <%= @vehicle.model %></h2>
+<ul>
+  <li>Type of Vehicle: <%= @vehicle.type_of_vehicle %></li>
+  <li>Country: <%= @vehicle.country %></li>
+</ul>
+<br />
+<br />
+<%= button_to "Edit Vehicle", edit_vehicle_path(@vehicle) %>
+<%= button_to "Delete Vehicle", method: 'delete' %>

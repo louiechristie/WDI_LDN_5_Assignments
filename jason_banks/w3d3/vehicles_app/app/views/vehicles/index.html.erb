@@ -1,1 +1,6 @@
 <h2>Vehicles</h2>
+<ul>
+  <% @vehicles.each do | vehicle | %>
+    <li><%= vehicle.country %>: <%= link_to "#{vehicle.make} #{vehicle.model}", vehicle_path(vehicle) %></li>
+  <% end %>
+</ul>
