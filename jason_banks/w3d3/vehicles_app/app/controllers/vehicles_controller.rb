@@ -7,7 +7,7 @@ class VehiclesController < ApplicationController
 
   def new
     @vehicle = Vehicle.new
-    @type_of_vehicle_array = ['Airplane', 'Jet', 'Helicopter', 'Jeep', 'Truck', 'Car', 'Train', 'Coach (motor)', 'Coach (non-motor)', 'Tank/heavily-armored vehicle']
+    type_of_vehicle_array
   end
 
   def create
@@ -22,6 +22,14 @@ class VehiclesController < ApplicationController
 
   def edit
     @vehicle = Vehicle.find(params[:id])
+    type_of_vehicle_array
+  end
+
+  def update
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.update_attributes(params[:vehicle])
+    flash: {notice: "Vehicle has been updated."}
+    redirect_to(vehicle_path(@vehicle)) 
   end
 
   def destroy
@@ -31,6 +39,15 @@ class VehiclesController < ApplicationController
     redirect_to(vehicles_path)
 
   end
+
+  def type_of_vehicle_array
+
+    @type_of_vehicle_array = ['Airplane', 'Jet', 'Helicopter', 'Jeep', 'Truck', 'Car', 'Train', 'Coach (motor)', 'Coach (non-motor)', 'Tank/heavily-armored vehicle']
+
+    @type_of_vehicle_array
+
+  end
+
 
 
 

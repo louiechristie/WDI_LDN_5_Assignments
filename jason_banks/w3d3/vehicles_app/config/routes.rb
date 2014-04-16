@@ -2,6 +2,9 @@ VehiclesApp::Application.routes.draw do
 
   resources :vehicles
   root to: 'vehicles#index'
+  post '/vehicles/:id/delete' => 'vehicles#destroy', :as => 'vehicle_delete'
+  get 'game' => ''
+
   #get '/vehicles/countries' => 'vehicles#countries', as: => 'countries'
   # The priority is based upon order of creation:
   # first created -> highest priority.
