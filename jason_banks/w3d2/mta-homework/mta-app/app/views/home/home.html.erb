@@ -1,0 +1,26 @@
+<%= form_tag("/", method: "post") do %>
+  <ul>
+    <li><%= label_tag(:beginning_line, "Beginning Line:") %></li>
+    <li><%= text_field_tag(:beginning_line) %></li>
+    <li><%= label_tag(:beginning_stop, "Beginning Stop:") %></li>
+    <li><%= text_field_tag(:beginning_stop) %></li>
+    <li><%= label_tag(:ending_line, "Ending Line:") %></li>
+    <li><%= text_field_tag(:ending_line) %></li>
+    <li><%= label_tag(:ending_stop, "Ending Stop:") %></li>
+    <li><%= text_field_tag(:ending_stop) %></li>
+    <li><%= submit_tag("Submit") %></li>
+  </ul>
+<% end %>
+<% @mta_lines.each do |key, value| %>
+<%= key %>: <%= value.join(', ') %>
+<br />
+<br />
+<% end %>
+<h3>
+<% if @total_stops && @total_stops == 0 %>
+  Your journey appears to begin and end in the same place.
+<% elsif @total_stops %>
+  Your journey from <%= @beginning_stop %> on the <%= @beginning_line %> line to <%= @ending_stop %> on the <%= @ending_line %> line will take <%= @total_stops %> stops.
+<% end %>
+</h3>
+
