@@ -2,6 +2,8 @@
 
 <h2>We currently have the following cars you can borrow for free. But bear in mind they have special behavior.</h2>
 
+<img src="http://3.bp.blogspot.com/-rlFUUS9BFIk/Tz9u0FG8CsI/AAAAAAAAIxI/-tLlv8iC_nY/s1600/Cars-2-Disney-Cartoon-Wallpaper-4.jpg">
+
 <% @cars.each do |car| %>
 
 <p><%= link_to car.name, car_path(car) %> was build in <%= car.year %> and comes in beautiful <%= car.color %>.</p>
