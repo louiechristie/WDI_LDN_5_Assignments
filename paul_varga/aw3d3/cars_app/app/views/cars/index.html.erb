@@ -1,0 +1,9 @@
+<% @cars.each do |car| %>
+
+<p>We currently have the following cars you can borrow for free. But bear in mind they have special behavior.</p>
+<p><%= link_to car.name, car_path(car) %> was build in <%= car.year %> and comes in beautiful <%= car.color %>.</p>
+<%= button_to 'Delete Car', car_delete_path(car), confirm: 'Are you sure?' %>
+<%= link_to 'Edit Car', edit_car_path(car) %>
+<% end %>
+
+
