@@ -3,3 +3,5 @@
 <p>Make: <%= @car.make %></p>
 <p>Car: <%= @car.model %></p>
 <p>Color: <%= @car.color %></p>
+
+<%= button_to 'Delete', @car, :method => :delete %>
