@@ -1,4 +1,8 @@
 CarsApp::Application.routes.draw do
+  get "cars/index"
+
+  root to: "cars#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
