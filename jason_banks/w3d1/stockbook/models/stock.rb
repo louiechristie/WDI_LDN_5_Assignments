@@ -29,7 +29,7 @@ class Stock < DBBase
   end
 
   def investment
-    holding.to_i * 8
+    holding.to_i * YahooFinance::get_standard_quotes(@symbol)[@symbol].lastTrade
   end
 
 
