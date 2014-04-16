@@ -1,4 +1,25 @@
 CarsApp::Application.routes.draw do
+  resources :cars
+ 
+  post '/cars/:id' => 'cars#delete', :as => 'car_delete' 
+  post  '/cars/:id/edit(.:format)' => 'cars#edit' 
+  post  '/cars/:id/update' => 'cars#update', :as => 'car_update' 
+  root to: "cars#index"
+
+  post ''
+
+
+
+#     cars GET    /cars(.:format)          cars#index
+#          POST   /cars(.:format)          cars#create
+#  new_car GET    /cars/new(.:format)      cars#new
+# edit_car GET    /cars/:id/edit(.:format) cars#edit
+#      car GET    /cars/:id(.:format)      cars#show
+#          PUT    /cars/:id(.:format)      cars#update
+#          DELETE /cars/:id(.:format)      cars#destroy
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
