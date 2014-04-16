@@ -6,7 +6,7 @@ CarsApp::Application.routes.draw do
   post  '/cars/:id/update' => 'cars#update', :as => 'car_update' 
   root to: "cars#index"
 
-  post ''
+  
 
 
 

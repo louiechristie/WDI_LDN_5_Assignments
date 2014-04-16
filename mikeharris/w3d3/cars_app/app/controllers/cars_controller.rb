@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   
   def index
     @cars = Car.all
-
+    UserMailer.test.deliver
     render 'home'
   end
 
