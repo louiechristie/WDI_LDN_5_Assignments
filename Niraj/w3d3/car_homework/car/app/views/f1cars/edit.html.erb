@@ -1,6 +1,37 @@
-<h1>Editing </h1>
+<%= form_for(@f1car) do |c| %>
+  <% if @f1car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@f1car.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @f1car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @f1car %> |
-<%= link_to 'Back', f1car_path %>
+  <div class="field">
+    <%= c.label :name %><br />
+    <%= c.text_field :name %>
+  </div>
+  <div class="field">
+    <%= c.label :driver %><br />
+    <%= c.text_field :driver %>
+  </div>
+  <div class="field">
+    <%= c.label :year %><br />
+    <%= c.text_field :year %>
+  </div>
+  <div class="field">
+    <%= c.label :engine %><br />
+    <%= c.text_field :engine %>
+  </div>
+  <div class="field">
+    <%= c.label :image %><br />
+    <%= c.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= c.submit %>
+  </div>
+<% end %>

@@ -19,14 +19,23 @@ class F1carsController < ApplicationController
     @f1car  = F1car.find(params[:id])
    end
 
-
-
    def destroy
  
     @f1car = F1car.find(params[:id])
     @f1car.destroy   
     redirect_to f1cars_path
    end
+
+  def edit
+    @f1car = F1car.find(params[:id])
+  end
+
+  def update
+    @f1car = F1car.find(params[:id])
+    @f1car.update_attributes(params[:f1car])
+    redirect_to f1cars_path   
+
+  end
 
 
 end
