@@ -1,4 +1,3 @@
-<h1> home </h1>
 
 <h2>Station on</h2>
 <%= form_tag("/result") do %>
@@ -11,9 +10,7 @@
         <br />
     <% end %>
 
-<h2>Station off</h2>
-
-
+    <h2>Station off</h2>
     <%  @lines.each do |line| %>
         <h3><%= line[0] %></h3>
         <%  line[1].each do |station| %>
@@ -22,8 +19,7 @@
         <% end %>
         <br />
     <% end %>
- <%= submit_tag("Submit") %>
-
-  <% end %>
+    <%= submit_tag("Submit") %>
+<% end %>
 
     
