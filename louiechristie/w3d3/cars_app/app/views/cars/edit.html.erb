@@ -1,0 +1,34 @@
+<h2>Edit</h2>
+
+<%= form_for(@car) do |c| %>
+  <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= c.label :make %><br />
+    <%= c.text_field :make %>
+  </div>
+  <div class="field">
+    <%= c.label :model %><br />
+    <%= c.text_field :model %>
+  </div>
+  <div class="field">
+    <%= c.label :color %><br />
+    <%= c.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= c.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @car %> |
+<%= link_to 'Back', cars_path %>
