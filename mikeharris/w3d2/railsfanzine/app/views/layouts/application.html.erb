@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Railsfanzine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<main>
+<header>
+<h1>Spice Girls Fanzine</h1>
+
+<a href="/band"><img class="front_img" src="http://upload.wikimedia.org/wikipedia/commons/2/2e/Spice_Girls_(6_janv)_56.jpg" /></a>
+<br />
+
+<nav>
+  <ul>
+    <li><%= link_to "band" , band_path %></li>
+    <li><%= link_to "scary" , scary_path %></li>
+    <li><%= link_to "sporty" , "/sporty" %></li>
+    <li><%= link_to "posh" , "/posh" %>  </li>
+    <li><%= link_to "ginger" , "/ginger" %></li>
+    <li><%= link_to "baby" , "/baby" %></li>
+</ul>
+</nav>
+</header>
+
+
+  <%= yield %>
+</main>
+</body>
+</html>

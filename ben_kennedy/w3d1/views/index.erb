@@ -1,0 +1,9 @@
+<a href="/portfolios/:id/stocks/new">Buy Stock</a>
+
+<ul>
+  <% @stocks.each do |stock| %>
+  <li>Name: <%= stock.name %>
+    Symbol: <%= stock.symbol %>
+  </li>
+  <% end %>
+</ul>
