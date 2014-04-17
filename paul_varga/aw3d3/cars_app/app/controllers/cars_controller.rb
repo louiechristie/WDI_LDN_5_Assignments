@@ -9,7 +9,7 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.create(params[:cars])
+    @car = Car.create(params[:car])
     redirect_to(cars_path)
   end
 
@@ -32,7 +32,7 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @car.update_attributes(params[:cars])
+    @car.update_attributes(params[:car])
 
     redirect_to cars_path
   end
