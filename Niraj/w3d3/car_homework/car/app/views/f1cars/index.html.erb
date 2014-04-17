@@ -1,0 +1,21 @@
+<% @cars.each do |f1| %>
+  
+  <div class="input">
+ <p>Team: <%= f1.name %></p>
+ <p>Engine: <%= f1.engine %></p>
+ <p>Year: <%= f1.year %></p>
+ <p> Driver: <%= f1.driver %></p>
+ <input type="image" src="<%= f1.image %>" name="image" width="300" height="200">
+
+
+<p> <%= link_to 'Delete Car', f1car_path(f1), method: 'delete', confirm: 'Are you sure?' %>  
+
+    <td><%= link_to 'Edit', edit_f1car_path(f1) %></td>
+
+ </div>
+
+
+
+</p>
+<% end %>
+

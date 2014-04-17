@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   
-
-
   def index
 
   @n = [:nts, :n34, :n28, :n23, :us, :n8]

@@ -13,18 +13,20 @@ class HomeController < ApplicationController
     @lines = { "n" => %w(ts 34th 28th-n 23rd-n US 8th-n),
           "l" =>  %w(8th-l 6th US 3rd 1st),
           "s" => %w(GC 33rd 28th-s 23rd-s US AP)}
-
-      @journey_start = params[:station_on].split(',')
-      @journey_end = params[:station_off].split(',')
-      @dist = mta(@journey_start, @journey_end, @lines)       
-      render 'result'
+      if params[:station_on].nil?    
+         render 'home'
+      else
+        @journey_start = params[:station_on].split(',')
+        @journey_end = params[:station_off].split(',')
+        @dist = mta(@journey_start, @journey_end, @lines)       
+        render 'result'
+      end
       
 
   end
 
   def mta (journey_start, journey_end, lines)
       
-
       get_on_line = journey_start[0]
       get_on_stop = journey_start[1]
 

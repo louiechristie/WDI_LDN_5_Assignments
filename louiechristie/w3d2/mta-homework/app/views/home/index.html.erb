@@ -13,11 +13,15 @@
 
 <img src="images/mta_map.png" width="300"/ >
 
-<form action='/index' method='post'>
-  <p><%=@subway.to_s %><p>
-  <p>Start line: <input type='text' name='start_line'></p>
-  <p>Start station: <input type='text' name='start_point'></p>
-  <p>End line: <input type='text' name='end_line'></p>
-  <p>End station: <input type='text' name='end_point'></p>
-  <button class="button">Calculate</button>
-</form>
+<p><%=@subway.to_s %><p>
+
+<%= form_tag(root_path) do %>
+
+  <p>Start line: <%= text_field_tag :start_line %></p>
+  <p>Start point:<%= text_field_tag :start_point %></p>
+  <p>End line: <%= text_field_tag :end_line %></p>
+  <p>End point: <%= text_field_tag :end_point %></p>
+
+  <%= submit_tag %>
+
+<% end %>

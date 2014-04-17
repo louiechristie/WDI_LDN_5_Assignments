@@ -9,11 +9,12 @@
 <body>
 
 <nav>
-  <li><a href='/index'>Home</a></li>
-  <li><a href='/bio'>Bio</a></li>
-  <li><a href='/photos'>Photos</a></li>
-  <li><a href='/music'>Music</a></li>
-  <li><a href='/video'>Video</a></li>
+
+  <li><%=link_to "Home", index_path %></li>
+  <li><%=link_to "Bio", bio_path %></li>
+  <li><%=link_to "Photos", photos_path %></li>
+  <li><%=link_to "Music", music_path %></li>
+  <li><%=link_to "Video", video_path %></li>
 </nav>
   <div class="container">
     <%= yield %>
