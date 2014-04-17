@@ -1,0 +1,21 @@
+<form method='put' action='/cars/<%=@car[:id]%>'>
+  Name:
+  <input type='text' value='<%=@car[:name]%>' autofocus>
+  <br>
+  Make:
+  <input type='text' value='<%=@car[:make]%>'>
+  <br>
+  Year:
+  <input type='text' value='<%=@car[:year]%>'>
+  <br>
+  Value:
+  <input type='text' value='<%=@car[:value]%>'>
+  <br>
+  Description:
+  <input type='text' value='<%=@car[:description]%>'>
+  <br>
+  Image:
+  <input type='text' value='<%=@car[:image]%>'>
+  <br>
+  <button>Save!</button>
+</form>

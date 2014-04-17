@@ -2,6 +2,7 @@ Cars::Application.routes.draw do
   resources :cars
 
   post '/cars/:id/delete' => 'cars#destroy', :as => 'car_delete'
+  post '/car' => "cars#create", :as => 'cars_create'
 
   root to: "cars#index"
   # The priority is based upon order of creation:

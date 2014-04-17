@@ -1,0 +1,12 @@
+<h1><%= @car.name %></h1>
+
+<% if @car.image.blank? %>
+  <em>No image for this car yet.</em>
+<% else %>
+  <img src="<%=@car.image%>" alt = "Picture of <%=@car.name%>" width=750px />
+<% end %></br>
+
+Make: <%=@car.make%></br>
+Value: <%=@car.value%></br>
+Description: <%=@car.description%>
+

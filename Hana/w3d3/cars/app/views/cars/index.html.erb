@@ -1,7 +1,9 @@
+<%= link_to "Add a new car!", new_car_path%>
 <% @cars.each do |car| %>
 <p>
-  <%= car.name%>
-  
-</p>
+  <%=link_to car.name, car_path(car) %>
+  <%=link_to 'Edit', edit_car_path(car)%>
+  <%=button_to 'Delete', car_delete_path(car)%>
+  </p>
 <%end%>
 
