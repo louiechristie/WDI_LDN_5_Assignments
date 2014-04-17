@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-engines = Engine.create ({name: 'v11'}) 
+engines = Engine.create ({name: 'v11'}, {name:'Renault'}) 
+
+names = Name.create ({name: 'Ferrari'})
