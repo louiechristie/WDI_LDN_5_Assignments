@@ -1,0 +1,28 @@
+<h1>NYC TRAVEL PLANNER</h1>
+
+<%= form_tag(root_path) do %>
+
+	<p>What train do you want to get on:</p>
+	
+	<%= text_field_tag :start_train %>
+
+	<p>Which stop:</p>
+	
+	<%= text_field_tag :stop_a %>
+
+	<p>What train do you want to get off:</p>
+	
+	<%= text_field_tag :stop_train %>
+
+	<p>Which stop:</p>
+
+	<%= text_field_tag :stop_b %>
+
+	<%= submit_tag %>
+
+<% end %>
+
+<p>Your total length of trip is <%=@total_length_of_trip%> stops!</p>
+
+
+
