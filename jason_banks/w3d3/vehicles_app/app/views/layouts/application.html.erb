@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>PowerWheels</h1>
+  <h1><%= link_to "PowerWheels", root_path %></h1>
+  <h3><%= link_to(flash[:notice], vehicles_game_path) if flash[:notice] %></h3>
   <ul>
     <li><%= link_to "Vehicles", vehicles_path %></li>
     <li><%= link_to "Add a Vehicle", new_vehicle_path %></li>
-    <!--<li><%#= link_to "Country", countries_path %></li>-->
   </ul>
 
 <%= yield %>
