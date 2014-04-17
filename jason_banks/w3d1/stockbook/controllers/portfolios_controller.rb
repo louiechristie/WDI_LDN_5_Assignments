@@ -44,7 +44,7 @@ get '/portfolios/:id/stocks' do
   erb :'stocks/index'
 end
 
-get '/portfolios/:id/stocks/new' do
+get '/portfolios/:id/stocks /new' do
   @portfolio = Portfolio.find(params[:id])
   erb :'stocks/price'
 end
