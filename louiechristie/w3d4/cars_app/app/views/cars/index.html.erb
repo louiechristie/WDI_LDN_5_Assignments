@@ -1,8 +1,6 @@
 <h1>Cars</h1>
 <p>A list of cars in the system:</p>
 
-<%= @cars.inspect if @debug %>
-
 <% @cars.each do |car| %>
   <p><%= link_to car.make, car_path(car) %> <%= car.model %> is <%= car.color %> color
 

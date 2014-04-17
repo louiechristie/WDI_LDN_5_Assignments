@@ -1,7 +1,5 @@
 class CarsController < ApplicationController
   
-  @debug = false
-
   def index
     @cars = Car.all
   end
@@ -12,6 +10,10 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+  end
+
+  def new
+    @car = Car.create
   end
 
   def update

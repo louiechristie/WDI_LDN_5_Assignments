@@ -1,8 +1,6 @@
 <h1>Engines</h1>
 <p>A list of engines in the system:</p>
 
-<%= @engines.inspect if @debug %>
-
 <% @engines.each do |engine| %>
   <p><%= link_to engine.power, engine_path(engine) %> horsepower <%= engine.cylinders %> cylinders <%= engine.fuel %> fuel
 

@@ -1,7 +1,5 @@
 class EnginesController < ApplicationController
 
-@debug = false
-
   def index
     @engines = Engine.all
   end
@@ -18,6 +16,10 @@ class EnginesController < ApplicationController
     @engine = Engine.find(params[:id])
     @engine.update_attributes(params[:engine])
     redirect_to(engines_path)  
+  end
+
+  def new
+    @engine = Engine.create
   end
 
   def create
