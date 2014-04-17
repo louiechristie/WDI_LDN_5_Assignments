@@ -1,0 +1,32 @@
+<h1>MTA Trip Tracker<h1>
+
+<img src="https://s3.amazonaws.com/uploads.hipchat.com/39979%2F361196%2FrFyJcFmls12B0TE%2Fmta_map.gif" alt="map" width=300px/>
+
+<p>
+  Your trip length is <%=@total_length_of_trip%> stops.
+</p>
+
+<%=form_tag(root_path) do%>
+<p>
+  What train do you want to get on?
+</p>
+<%= text_field_tag :start_train%>
+
+<p>
+  Which stop? 
+</p>
+<%= text_field_tag :stop_a%>
+
+<p>
+  What train do you want to get off at?
+</p>
+<%= text_field_tag :stop_train%>
+<p>
+  Which stop? "
+</p>
+<%= text_field_tag :stop_b%>
+
+<p><%=@mta.inspect%></p>
+<p><%=params.inspect%></p>
+<%=submit_tag%>
+<%end%>

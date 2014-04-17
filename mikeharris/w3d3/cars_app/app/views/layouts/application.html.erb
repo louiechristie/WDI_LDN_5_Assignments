@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CarsApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Your garage organser</h1>
+
+<a href="/">List your cars</a>
+<a href="<%= new_car_path%>">Add a car</a> 
+
+<%= yield %>
+
+</body>
+</html>
