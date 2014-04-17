@@ -3,7 +3,7 @@
 <h3>The vehicles below are part of which country's fleet?</h3>
 <ul>
   <% @vehicles.each do |vehicle| %>
-    <li><%= vehicle.make %> <%= vehicle.model %></li>
+    <li><%= vehicle.make %> <%= vehicle.model %>, <%= vehicle.type_of_vehicle %></li>
   <% end %>
 </ul>
 

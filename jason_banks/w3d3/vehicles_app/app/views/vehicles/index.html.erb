@@ -1,7 +1,9 @@
 <h2>Vehicles</h2>
-<ul>
+<div class="index">
+<ol>
   <% @vehicles.each do | vehicle | %>
-    <li><%= link_to "#{vehicle.make} #{vehicle.model}", vehicle_path(vehicle) %></li>
+    <li><%= link_to "#{vehicle.make} #{vehicle.model}", vehicle_path(vehicle) %>, <%= vehicle.country %></li>
   <% end %>
-</ul>
-<p>Play the <%= link_to 'game', vehicles_game_path %>?</p>
+</ol>
+</div>
+<h2>Play the <%= link_to 'game', vehicles_game_path %>?</h2>

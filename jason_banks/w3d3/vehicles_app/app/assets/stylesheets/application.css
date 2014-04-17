@@ -12,7 +12,21 @@
  *= require_tree .
  */
 
-li {
+body {
+  margin: 0 auto 0 100px;
+}
+
+/*.index {
+  height: 100px;
+}*/
+
+ol li {
+  width: 25%;
+  display: inline-block;
+  font-size: 95%
+}
+
+ul li {
   list-style: none;
 }
 
