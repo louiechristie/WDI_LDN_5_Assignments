@@ -1,0 +1,11 @@
+<h1>Engine</h1>
+
+<p>Make: <%= @engine.power %></p>
+<p>Engine: <%= @engine.cylinders %></p>
+<p>Color: <%= @engine.fuel %></p>
+
+<%= link_to 'Edit', edit_engine_path(@engine) %>
+
+<%= link_to 'Delete', @engine, :method => :delete %>
+
+<%= link_to 'Back', engines_path %>
