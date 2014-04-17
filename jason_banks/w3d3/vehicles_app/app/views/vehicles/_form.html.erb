@@ -1,14 +1,16 @@
 <%= form_for @vehicle do |v| %>
-  <%= v.label :type_of_vehicle %>:
+  <%= v.label :type_of_vehicle %>
   <%= v.select "type_of_vehicle", options_for_select(@type_of_vehicle_array) %><br />
-  <%= v.label :make %>:
+  <%= v.label :make %>
   <%= v.text_field :make %><br />
-  <%= v.label :model %>:
+  <%= v.label :model %>
   <%= v.text_field :model %><br />
-  <%= v.label :country %>:
+  <%= v.label :country %>
   <%= v.text_field :country %><br />
-  <%= v.label "Engine" %>:
-  <%= v.collection_select(:engine_id, Engine.all, :id, :engine_values) %><br />
+  <%= v.label "Engine" %>
+  <%= v.collection_select(:engine_id, Engine.all, :id, :engine_values) %><br /><br />
+  <%= v.label :image %>
+  <%= v.text_field :image %><br />
   <%= submit_tag("Submit")%>
 <% end %>
 

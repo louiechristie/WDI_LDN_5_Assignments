@@ -2,6 +2,7 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.order('make')
+    @vehicle_images = Vehicle.pluck(:image).sample(4)
 
   end
 
