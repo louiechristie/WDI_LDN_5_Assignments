@@ -9,13 +9,12 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.create(params[:car])
+    @car = Car.create(params["car"])
     redirect_to(cars_path)
   end
 
   def show
     @car = Car.find(params[:id])
-    @engine = @car.engine
 
     render 'show'
   end
@@ -33,7 +32,6 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car.update_attributes(params[:car])
-
     redirect_to cars_path
   end
 
