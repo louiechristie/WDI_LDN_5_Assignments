@@ -1,0 +1,14 @@
+<h2>Edit Car</h2>
+
+<%= form_tag(car_update_path) do %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field(:car,:name) %>
+  <%= label_tag(:colour, "Colour:") %>
+  <%= text_field(:car,:colour) %>
+  <%= label_tag(:max_speed, "Max speed:") %>
+  <%= text_field(:car,:max_speed) %>
+
+
+  <%= submit_tag("Submit") %>
+
+<% end %>
