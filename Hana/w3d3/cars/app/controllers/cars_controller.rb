@@ -4,6 +4,10 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
+  def new
+    @engines = Engine.all
+  end
+
   def create
     Car.create(params[:car])
     redirect_to(cars_path)
@@ -11,10 +15,12 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+
   end
 
   def edit
     @car = Car.find(params[:id])
+    @engines = Engine.all
   end
 
   def destroy

@@ -2,8 +2,10 @@
 <% @cars.each do |car| %>
 <p>
   <%=link_to car.name, car_path(car) %>
-  <%=link_to 'Edit', edit_car_path(car)%>
-  <%=button_to 'Delete', car_delete_path(car)%>
+  <%=button_to 'Edit', edit_car_path(car), method:'get' %>
+  <%=button_to 'Delete', car_delete_path(car), method: 'delete'%>
   </p>
 <%end%>
+
+<%= @engines.inspect%>
 

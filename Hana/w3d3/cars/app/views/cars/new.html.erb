@@ -5,6 +5,14 @@
   Make:
   <input type='text' name='car[make]'>
   <br>
+  Engine:
+  <select>
+    <option value="" selected="selected">Choose Engine</option>
+    <%@engines.each do |engine|%>
+    <option value="<%=engine.name%>"><%=engine.name%></option>
+    <%end%>
+  </select></br>
+
   Year:
   <input type='text' name='car[year]'>
   <br>

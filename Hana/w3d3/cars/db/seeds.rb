@@ -7,6 +7,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Engine.create(name:'Super', cylinders:2, fuel_type:'diesel', power: 85)
+
+Engine.create(name:'Bio-Diesel', cylinders:5, fuel_type:'bio-diesel', power: 600)
+
+Engine.create(name:'Electric', cylinders:0, fuel_type:'electric', power: 550)
+
 
 Car.create(name:'Model S', make: 'Tesla', value: 69900, description: 'At the heart of the vehicle is the proven Tesla powertrain, delivering both unprecedented range and a thrilling drive experience.', image: 'http://www.teslamotors.com/sites/default/files/blog_images/hero_20140408a.jpg')
 Car.create(name:'Yaris', make: 'Toyota', value:14430, description: 'Safe, cheap, small sub-compact car', image: 'http://www.samuipedia.com/wp-content/uploads/2012/05/Toyota-Yaris.jpg')
