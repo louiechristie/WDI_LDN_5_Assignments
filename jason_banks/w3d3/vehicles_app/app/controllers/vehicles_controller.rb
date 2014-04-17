@@ -41,7 +41,7 @@ class VehiclesController < ApplicationController
 
   def type_of_vehicle_array
 
-    @type_of_vehicle_array = ['Airplane', 'Jet', 'Helicopter', 'Jeep', 'Truck', 'Car', 'Train', 'Coach (motor)', 'Coach (non-motor)', 'Tank/heavily-armored vehicle']
+    @type_of_vehicle_array = Vehicle.pluck(:type_of_vehicle).uniq
 
     @type_of_vehicle_array
 
