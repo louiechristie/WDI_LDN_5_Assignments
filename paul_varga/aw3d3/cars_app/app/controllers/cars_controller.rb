@@ -15,8 +15,6 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
-
-    render 'show'
   end
 
   def destroy
@@ -32,7 +30,7 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car.update_attributes(params[:car])
-    redirect_to cars_path
+    redirect_to(cars_path)
   end
 
 

@@ -1,0 +1,7 @@
+<% @engines.each do |engine| %>
+
+<p><%= link_to engine.name, engines_path(engine) %></p>
+<%= button_to 'Delete Engine', engine_delete_path(engine) %>
+<% end %>
+
+<h2><%= link_to "New engine" , new_engine_path %></h2>
