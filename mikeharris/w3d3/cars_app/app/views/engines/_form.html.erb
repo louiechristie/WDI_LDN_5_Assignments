@@ -1,0 +1,8 @@
+<%= form_tag(path, :method => :put) do %>
+  <%= label_tag(:fuel, "Fuel type:") %>
+  <%= text_field(:engine,:fuel) %>
+  <%= label_tag(:size, "Size:") %>
+  <%= text_field(:engine,:size) %>
+  <%= submit_tag("Submit") %>
+
+<% end %>

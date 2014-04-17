@@ -1,0 +1,6 @@
+<h2>Your Car</h2>
+
+<p>This is a <%= @car.colour %> <%= @car.name %> with a max speed of <%= @car.max_speed %></p>
+<p>Its engine is: <%= @engine.size%> l <%= @engine.fuel %></p>
+<%= button_to 'Delete car', car_delete_path(@car) %><%= button_to 'Edit car', edit_car_path(@car) %>
+
