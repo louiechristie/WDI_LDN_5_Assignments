@@ -1,9 +1,7 @@
 CarsApp::Application.routes.draw do
-  resources :cars
+  resources :cars, :engines
   root to: "cars#index"
   post '/cars/:id/delete' => "cars#destroy", :as => 'car_delete'
-  
-  resources :engine
 
 
   # post '/cars/:id/delete' => "cars#destroy", :as => 'car_delete'
