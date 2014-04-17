@@ -14,12 +14,13 @@
 
 .input {
   border: 2px solid black;
-  clear: both;
-  padding: 5px;
+/*  clear: both;
+*/  padding: 5px;
   text-align: center;
   width: 300px;
-  margin-left: 410px;
-  margin-top: 50px;
+/*  margin-left: 410px;
+  margin-top: 50px;*/
+  display: inline-block;
 }
 
 body {
