@@ -1,0 +1,35 @@
+<h1><%= @car.make %>&nbsp;<%= @car.model %></h1>
+
+<table>
+	<tr>
+		<th>Make:</th>
+		<td><%= @car.make %></td>
+	</tr>
+	<tr>
+		<th>Model:</th>
+		<td><%= @car.model %></td>
+	</tr>
+	<tr>
+		<th>Year:</th>
+		<td><%= @car.year %></td>
+	</tr>
+	<tr>
+		<th>Colour:</th>
+		<td><%= @car.colour %></td>
+	</tr>
+	<tr>
+		<th>Engine Size:</th>
+		<td><%= @car.engine_size %></td>
+	</tr>
+	<tr>
+		<th>Category:</th>
+		<td><%= @car.category %></td>
+	</tr>
+</table>
+
+<% if @car.image.blank? %>
+	<em>No image for this car on file.</em>
+<% else %>
+	<img src= "<%= @car.image %>" alt= "A picture of <%= @car.image%>" />
+<% end %>
+
