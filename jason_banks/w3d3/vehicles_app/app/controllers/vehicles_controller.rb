@@ -8,6 +8,8 @@ class VehiclesController < ApplicationController
   def new
     @vehicle = Vehicle.new
     type_of_vehicle_array
+    #engine_types
+
   end
 
   def create
@@ -23,6 +25,7 @@ class VehiclesController < ApplicationController
   def edit
     @vehicle = Vehicle.find(params[:id])
     type_of_vehicle_array
+    #engines
   end
 
   def update
@@ -62,11 +65,13 @@ class VehiclesController < ApplicationController
         flash[:notice] = "How dare you insult the great land of #{@answer_country}?! You should get some practice in.  Play again?"
         redirect_to('/')
       end
-    end
-
-    
+    end 
   end
 
+  def engine_types
+    @engines = Engine.all.to_a
+    @engines
+  end
 
 
 
