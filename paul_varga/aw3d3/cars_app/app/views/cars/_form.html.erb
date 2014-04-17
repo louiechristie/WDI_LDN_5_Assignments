@@ -31,6 +31,10 @@
     <%= c.label :year %><br />
     <%= c.select :year, options_for_select(2014.downto(1900)) %>
   </div>
+  <div class="field">
+    <%= c.label :engine %><br />
+    <%= c.select :engine, options_from_collection_for_select(Engine.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= c.submit %>
   </div>

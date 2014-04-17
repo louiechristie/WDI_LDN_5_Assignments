@@ -1,6 +1,7 @@
 <h1><%= @car.name %></h2>
 
-<h2>On of the greatest cars, a <%= @car.description %> of <%= @car.color %> color.</h2>
+<h2>On of the greatest cars, a <%= @car.description %> of <%= @car.color %> color, with a great <%= @engine.name %> engine.</h2>
+
 
 <% if @car.image.blank? %>
   <em>No image currently available, <%= @car.name %> is probably changing the style.</em>  

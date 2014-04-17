@@ -4,12 +4,6 @@
 
 <img src="http://3.bp.blogspot.com/-rlFUUS9BFIk/Tz9u0FG8CsI/AAAAAAAAIxI/-tLlv8iC_nY/s1600/Cars-2-Disney-Cartoon-Wallpaper-4.jpg">
 
-<% @cars.each do |car| %>
-
-<p><%= link_to car.name, car_path(car) %> was build in <%= car.year %> and comes in beautiful <%= car.color %>.</p>
-<%= button_to 'Delete Car', car_delete_path(car), confirm: 'Are you sure?' %>
-<%= link_to 'Edit Car', edit_car_path(car) %>
-<% end %>
 
 
 </div>
