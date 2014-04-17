@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autos</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul>
+    <li>
+      <%= link_to 'Add Car', new_car_path %>
+    </li>
+    <li>
+      <%= link_to 'View Cars', cars_path %>
+    </li>    
+    <li>
+      <%= link_to 'Add Engine', new_engine_path %>
+    </li>
+    <li>
+      <%= link_to 'View Engines', engines_path %>
+    </li>    
+  </ul>
+  <h1>An Autos application</h1>
+
+<%= yield %>
+
+</body>
+</html>

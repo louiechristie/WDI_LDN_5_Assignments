@@ -1,0 +1,30 @@
+
+<%= form_for(@car) do |f| %>
+  <div class="field">
+    <%= f.label :make %> 
+    <%= f.text_field :make %><br>
+  </div>
+  <div class="field">
+    <%= f.label :model %> 
+    <%= f.text_field :model %><br>
+  </div>   
+  <div class="field">
+    <%= f.label :year %> 
+    <%= f.text_field :year %><br>
+  </div>  
+  <div class="field">
+    <%= f.label :mileage %> 
+    <%= f.text_field :mileage %><br>
+  </div>   
+  <div class="field">
+    <%= f.label :description %> 
+    <%= f.text_area :description %><br>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
