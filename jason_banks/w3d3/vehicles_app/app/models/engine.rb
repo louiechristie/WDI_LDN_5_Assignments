@@ -4,6 +4,6 @@ class Engine < ActiveRecord::Base
   has_many :vehicles
 
   def engine_values
-    "#{manufacturer} #{cylinders}-cylinder, #{fuel}-powered"
+    "#{manufacturer} #{cylinders}-cylinder"
   end
 end

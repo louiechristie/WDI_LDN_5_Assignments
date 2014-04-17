@@ -8,8 +8,6 @@ class VehiclesController < ApplicationController
   def new
     @vehicle = Vehicle.new
     type_of_vehicle_array
-    #engine_types
-
   end
 
   def create
@@ -25,7 +23,6 @@ class VehiclesController < ApplicationController
   def edit
     @vehicle = Vehicle.find(params[:id])
     type_of_vehicle_array
-    #engines
   end
 
   def update

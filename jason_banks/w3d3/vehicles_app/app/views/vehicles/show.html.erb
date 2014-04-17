@@ -2,7 +2,9 @@
 <ul>
   <li>Type of Vehicle: <%= @vehicle.type_of_vehicle %></li>
   <li>Country: <%= @vehicle.country %></li>
+  <% if @vehicle.engine %>
   <li>Engine: <%= @vehicle.engine.manufacturer %> <%= @vehicle.engine.cylinders %>-cylinder, which runs on <%= @vehicle.engine.fuel %></li>
+  <% end %>
 </ul>
 <br />
 <br />
