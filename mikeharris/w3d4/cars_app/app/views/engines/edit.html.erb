@@ -1,0 +1,10 @@
+<h2>Edit Car</h2>
+
+<% path = engine_path %>
+<% engine = Engine.find_by_id(params["id"]) %>
+
+
+<p>Current Engine: <%= engine.fuel %><%= engine.size %> </p>
+
+<%= render partial: 'form', locals: {path: path} %>
+

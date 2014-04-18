@@ -1,0 +1,5 @@
+<h2>Availiable Engines</h2>
+<a href="<%= new_engine_path %>">Add an engine</a>
+<% @engines.each do |engine| %>
+  <p><%= engine.fuel %> <%= engine.size %>l<%= button_to 'Delete engine', engine_path(engine), :method => :delete %><%= button_to 'Edit engine', edit_engine_path(engine), :method => :get %></p>
+<% end %>
