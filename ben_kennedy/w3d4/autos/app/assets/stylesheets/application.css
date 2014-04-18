@@ -11,3 +11,107 @@
  *= require_self
  *= require_tree .
  */
+
+nav {
+  background-color: black;
+  border-bottom: 2px solid red;
+  height: 40px;
+  clear: both;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  float: left;
+  padding: 10px 20px;
+}
+body {
+  margin: 0 0;
+  font-family: 'Lato';
+}
+.title {
+  float: left;
+  margin: 7px 58px;
+}
+.main {
+  width: 800px;
+  margin: 0 auto;
+}
+td {
+  width: 60px;
+  height: 30px;
+  padding: 5px;
+}
+.description {
+  width: 300px;
+}
+thead tr{
+  font-style: bold;
+  border-bottom: 2px solid black;
+  background-color: #525765;
+}
+tr:nth-child(even) {
+  background-color: #7593E5;
+}
+tr:nth-child(odd) {
+  background-color: #BDC9E9;
+}
+td:hover {
+  background-color: #5B72B2;
+}
+table {
+  margin-bottom: 100px;
+}
+input {
+  padding: 5px;
+  height: 40px;
+  width: 80px;
+}
+td.engine {
+  width: 300px;
+}
+
+.field {
+  margin: 20px;
+}
+label {
+  margin: 10px;
+  text-align: left;
+}
+form.edit_car, form.new_car, form.edit_engine, form.new_engine {
+  width: 400px;
+}
+
+.new_car input, .edit_car input, .new_engine input, .edit_engine input  {
+  height: 10px;
+  width: 200px;
+  float: right;
+}
+select {
+  float: right;
+  clear: both;
+  margin: 25px 0px;
+}
+.new_car textarea , .edit_car textarea {
+  height:200pxpx;
+  width: 200px;
+  float: right;
+} 
+.new_car label, .edit_car label, .new_engine label, .edit_engine label {
+  float: left;
+}
+.actions input {
+  clear: both;
+  margin-bottom: 100px;
+  padding: 5px;
+  height: 20px;
+  width: 100px;
+  margin-right: 20px;
+}

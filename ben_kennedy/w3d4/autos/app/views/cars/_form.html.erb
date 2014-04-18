@@ -20,7 +20,10 @@
     <%= f.label :description %> 
     <%= f.text_area :description %><br>
   </div>
-
+  <div class="field">
+ 
+    <%= f.select :engine_id, Engine.all.map { |engine| [engine.power  + " hp, " + engine.fuel_type + " fueled", engine.id]} %><br>
+  </div>
 
 
   <div class="actions">

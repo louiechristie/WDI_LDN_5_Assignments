@@ -3,7 +3,7 @@ Autos::Application.routes.draw do
   root to: 'cars#index'
   delete '/cars/:id/delete' => 'cars#destroy', :as => 'car_delete'
   delete '/engines/:id/delete' => 'engines#destroy', :as => 'engine_delete'
-
+  get '/cars/:id/engine' => 'cars#engine', :as => 'car_engine'
 
 
   # The priority is based upon order of creation:

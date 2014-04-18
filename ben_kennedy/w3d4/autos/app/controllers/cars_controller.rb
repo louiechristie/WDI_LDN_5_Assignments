@@ -6,6 +6,7 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    @engines = Engine.all
   end
 
   def create
@@ -17,6 +18,7 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    @engines = Engine.all
   end
 
   def update
@@ -32,5 +34,13 @@ class CarsController < ApplicationController
     @car.destroy
     redirect_to(cars_path)    
   end
+
+  def engine
+    @car_id = Car.find(params[:id])
+    @engine = Engine.find(@car_id.engine_id)
+    @cars = Car.all
+    render 'index'
+  end
+
 
 end

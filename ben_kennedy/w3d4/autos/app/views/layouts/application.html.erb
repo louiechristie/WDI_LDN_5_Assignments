@@ -2,28 +2,34 @@
 <html>
 <head>
   <title>Autos</title>
+  <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
-    <li>
-      <%= link_to 'Add Car', new_car_path %>
-    </li>
-    <li>
-      <%= link_to 'View Cars', cars_path %>
-    </li>    
-    <li>
-      <%= link_to 'Add Engine', new_engine_path %>
-    </li>
-    <li>
-      <%= link_to 'View Engines', engines_path %>
-    </li>    
-  </ul>
-  <h1>An Autos application</h1>
+  <h1 class="title">An Autos Application</h1>  
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'Add Car', new_car_path %>
+      </li>
+      <li>
+        <%= link_to 'View Cars', cars_path %>
+      </li>    
+      <li>
+        <%= link_to 'Add Engine', new_engine_path %>
+      </li>
+      <li>
+        <%= link_to 'View Engines', engines_path %>
+      </li>    
+    </ul>
+      
+  </nav>
+
+<section class="main">
 
 <%= yield %>
-
+</section>
 </body>
 </html>
