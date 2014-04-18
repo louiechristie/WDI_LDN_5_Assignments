@@ -11,27 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140417111113) do
+ActiveRecord::Schema.define(:version => 20140417151900) do
 
-  create_table "engines", :force => true do |t|
-    t.integer  "power"
-    t.integer  "cylinders"
-    t.string   "fuel_type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "vehicles", :force => true do |t|
-    t.string   "name"
+  create_table "cars", :force => true do |t|
+    t.string   "make"
+    t.string   "model"
     t.string   "year"
-    t.text     "image"
-    t.string   "price"
     t.string   "mileage"
     t.text     "description"
-    t.text     "distance"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "engine_id"
+  end
+
+  create_table "engines", :force => true do |t|
+    t.string   "power"
+    t.string   "fuel_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
