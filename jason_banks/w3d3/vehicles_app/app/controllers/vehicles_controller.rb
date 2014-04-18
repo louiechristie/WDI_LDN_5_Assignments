@@ -2,6 +2,7 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.order('make')
+    @vehicle_images = Vehicle.pluck(:image).sample(4)
 
   end
 
@@ -62,11 +63,13 @@ class VehiclesController < ApplicationController
         flash[:notice] = "How dare you insult the great land of #{@answer_country}?! You should get some practice in.  Play again?"
         redirect_to('/')
       end
-    end
-
-    
+    end 
   end
 
+  def engine_types
+    @engines = Engine.all.to_a
+    @engines
+  end
 
 
 
