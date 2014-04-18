@@ -15,3 +15,8 @@ Category.create(name: 'Snack')
 Recipe.create(name: 'Scrambled Eggs', description: 'prepare eggs and scramble them', feeds_people: 2, category_id: 4)
 Recipe.create(name: 'Cesars Salad', description: 'slice ingredients and mix them', feeds_people: 4, category_id: 5)
 
+Ingridient.create(name: 'Eggs')
+Ingridient.create(name: 'Butter')
+Ingridient.create(name: 'Salt')
+Ingridient.create(name: 'Pepper')
+Ingridient.create(name: 'Oil')
