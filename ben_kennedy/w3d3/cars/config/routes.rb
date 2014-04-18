@@ -1,7 +1,7 @@
 Cars::Application.routes.draw do
 resources :vehicles
-    root to: 'vehicle#index'
-    delete '/vehicle/:id/delete' => 'vehicle#destroy', :as => 'vehicle_delete'
+    root to: 'vehicles#index'
+    delete '/vehicles/:id/delete' => 'vehicles#destroy', :as => 'vehicle_delete'
 
 
   # The priority is based upon order of creation:
