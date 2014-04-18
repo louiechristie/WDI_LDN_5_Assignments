@@ -1,6 +1,6 @@
 body {
   font-family: 'Sniglet', cursive;
-  background: url(img/background.jpg);
+  background-color: #dddddd;
   background-size: cover;
   color: #000000;
   margin-left: 250px;
@@ -47,6 +47,17 @@ header ul li a:hover {
   color: #c2c2c2;
 }
 
+table {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  border: solid black 1px;
+}
+
+table a {
+  text-decoration: none;
+  color: #000000;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

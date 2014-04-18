@@ -1,7 +1,23 @@
 <% @engines.each do |engine| %>
 
-<p><%= link_to engine.name, engines_path(engine) %></p>
-<%= button_to 'Delete Engine', engine_delete_path(engine) %>
+<table>
+<tr>
+  <th>Name</th>
+  <th>Fuel Type</th> 
+  <th>Power</th>
+  <th>Cylinders</th>
+</tr>
+<tr>
+  <td><%= link_to engine.name, engines_path(engine) %></td>
+  <td><%= link_to engine.fuel_type, engines_path(engine) %></td> 
+  <td><%= link_to engine.power, engines_path(engine) %></td>
+  <td><%= link_to engine.cylinders, engines_path(engine) %></td>
+</tr>
+</table>
+
+
+<p><%= button_to 'Delete Engine', engine_delete_path(engine) %></p>
+<p><%= link_to 'Edit', edit_engine_path(engine) %></p>
 <% end %>
 
 <h2><%= link_to "New engine" , new_engine_path %></h2>
