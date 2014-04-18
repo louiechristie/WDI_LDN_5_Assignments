@@ -34,6 +34,10 @@
     <%= f.label :image %><br />
     <%= f.text_field :image %>
   </div>
+  <div class="field">
+    <%= f.label :engine_id %><br />
+    <%= f.select :engine_id, options_from_collection_for_select(Engine.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

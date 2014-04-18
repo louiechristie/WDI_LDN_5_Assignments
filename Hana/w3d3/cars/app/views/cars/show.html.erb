@@ -8,7 +8,10 @@
 
 Make: <%=@car.make%></br>
 Value: <%=@car.value%></br>
-Engine: <%=@car.engine.name%></br>
+Engine: <%=@car.engine.name if @car.engine %></br>
 Year: <%=@car.year%></br>
 Description: <%=@car.description%>
+
+<%=button_to 'Edit', edit_car_path(@car), method:'get' %>
+  <%=button_to 'Delete', car_delete_path(@car), method: 'delete'%>
 
