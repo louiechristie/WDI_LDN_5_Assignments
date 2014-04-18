@@ -5,7 +5,7 @@ def index
 end
 
 def new
-  @engine = Engine.create
+  @engine = Engine.new
 end
 
 def create

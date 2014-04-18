@@ -5,7 +5,7 @@ class CarsController < ApplicationController
   end
 
   def new
-    @car = Car.create
+    @car = Car.new
   end
 
   def create
