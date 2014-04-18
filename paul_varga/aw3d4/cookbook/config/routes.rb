@@ -1,9 +1,9 @@
 Cookbook::Application.routes.draw do
-  resources :categories
+  resources :categories, :recipes
 
-  root to: "categories#index"
+  root to: "recipes#index"
   post '/categories/:id/delete' => "categories#destroy", :as => 'category_delete'
-
+  post '/recipes/:id/delete' => "recipes#destroy", :as => 'recipe_delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

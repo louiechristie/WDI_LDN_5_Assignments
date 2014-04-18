@@ -11,3 +11,7 @@ Category.create(name: 'Starter')
 Category.create(name: 'Dessert')
 Category.create(name: 'Breakfast')
 Category.create(name: 'Snack')
+
+Recipe.create(name: 'Scrambled Eggs', description: 'prepare eggs and scramble them', feeds_people: 2, category_id: 4)
+Recipe.create(name: 'Cesars Salad', description: 'slice ingredients and mix them', feeds_people: 4, category_id: 5)
+

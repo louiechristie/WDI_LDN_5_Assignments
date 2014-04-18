@@ -1,0 +1,33 @@
+<%= form_for(@recipe) do |r| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= r.label :category_id %><br />
+    <%= r.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= r.label :name %><br />
+    <%= r.text_field :name %>
+  </div>
+  <div class="field">
+    <%= r.label :description %><br />
+    <%= r.text_area :description %>
+  </div>
+  <div class="field">
+    <%= r.label :feeds_people %><br />
+    <%= r.select :feeds_people, options_for_select(10.downto(1)) %>
+  </div>
+  <div class="actions">
+    <%= r.submit %>
+  </div>
+<% end %>
