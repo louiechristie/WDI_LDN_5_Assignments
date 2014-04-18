@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <h1> WDI CAR 2.0 </h1>  
   <title>Scotty's Cars</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -8,10 +9,10 @@
 </head>
 <body>
 
-
-<%= link_to "Home", cars_path %>
-<a href="/cars/new">New Vehicle</a>
-
+<h4>
+<%= link_to "Manage Cars", cars_path, :class => "link" %>
+<%= link_to "Manage Engines", engines_path, :class => "link" %>
+</h4>
 <%= yield %>
 
 </body>

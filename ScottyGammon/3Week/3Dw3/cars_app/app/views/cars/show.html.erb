@@ -1,5 +1,4 @@
-<h1><%= @car.make %>&nbsp;<%= @car.model %></h1>
-
+<h2><%= @car.make %> </h2>
 <table>
 	<tr>
 		<th>Make:</th>
@@ -17,11 +16,12 @@
 		<th>Category:</th>
 		<td><%= @car.category %></td>
 	</tr>
+		<tr>
+		<th>Engine:</th>
+		<td><% if @car.engine %>
+			<%= @car.engine.cylinders %> cylinders
+			<% end %>
+		</td>
+	</tr>
 </table>
-
-<% if @car.image.blank? %>
-	<em>No image for this car on file.</em>
-<% else %>
-	<img src= "<%= @car.image %>" alt= "A picture of <%= @car.image%>" />
-<% end %>
 

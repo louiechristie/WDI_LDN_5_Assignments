@@ -1,4 +1,4 @@
-<h1>EDIT CAR</h1>
+<h2>EDIT CAR</h2>
 
 <%= form_for(@car) do |f| %>
 
@@ -19,5 +19,9 @@
     <%= f.text_field :category %>
   <div class="actions">
     <%= f.submit %>
+  </div>
+   <div class="field">
+     <%= f.label :engine_id, 'Engine' %><br />
+    <%= f.select :engine_id, Engine.all.map { |e| [[e.cylinders].to_sentence, e.id] } %>
   </div>
 <% end %>

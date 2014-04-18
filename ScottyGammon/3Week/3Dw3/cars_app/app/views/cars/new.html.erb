@@ -1,4 +1,4 @@
-<h1>CREATE A NEW CAR</h1>
+<h2>CREATE A NEW CAR</h2>
 
 <%= form_for(@car) do |f| %>
 
@@ -21,6 +21,9 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
+   <div class="field">
+     <%= f.label :engine_id, 'Engine' %><br />
+    <%= f.select :engine_id, Engine.all.map { |e| [[e.cylinders].to_sentence, e.id] } %>
+  </div>
   <% end %>
 

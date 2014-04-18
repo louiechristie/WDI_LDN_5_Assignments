@@ -1,6 +1,7 @@
 GaCars::Application.routes.draw do
   
   resources :cars
+  resources :engines
 
   # get '/cars/new' => 'cars#new'
 
