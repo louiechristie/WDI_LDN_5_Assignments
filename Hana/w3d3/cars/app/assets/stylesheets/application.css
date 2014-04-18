@@ -1,3 +1,17 @@
+body{
+  text-align: center;
+}
+
+#home{
+  float:left;
+}
+
+
+
+#add_button{
+  color:red;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
