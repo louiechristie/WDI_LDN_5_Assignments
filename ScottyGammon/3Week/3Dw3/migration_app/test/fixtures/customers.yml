@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  active: false
+  last_purchase: 2014-04-16 12:28:25
+  credit_limit: 9.99
+
+two:
+  name: MyString
+  active: false
+  last_purchase: 2014-04-16 12:28:25
+  credit_limit: 9.99
