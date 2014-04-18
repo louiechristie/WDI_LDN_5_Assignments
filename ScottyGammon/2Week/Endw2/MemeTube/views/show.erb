@@ -1,0 +1,7 @@
+<section class="library">
+    <% @videos.each do |video| %>
+          <h3> <%= video['title'] %> </h3>
+          <iframe width="560" height="315" src="//www.youtube.com/embed/<%= video["youtube_id"] %>" frameborder="0" allowfullscreen></iframe>
+         </div>
+    <% end %>
+</section>

@@ -1,0 +1,36 @@
+<h2>A list of available engines</h2>
+
+<table>
+  <tbody>
+    <thead>
+      <td>
+        Power
+      </td>
+      <td>
+        Fuel Type
+      </td>
+      <td>
+        &nbsp
+      </td>
+      <td>
+        &nbsp
+      </td>
+    </thead>
+    <% @engines.each do |engine| %>
+    <tr>
+      <td>
+        <%= engine.power %> hp
+      </td>
+      <td>
+        <%= engine.fuel_type %>
+      </td>
+      <td>
+        <%= button_to 'Edit', edit_engine_path(engine), method: 'get' %>
+      </td>
+      <td>
+        <%= button_to 'Delete', engine_delete_path(engine), method: 'delete' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+<a href="/portfolios/<%= @portfolio_id %>/stocks/new">Buy Stock</a>
+
+<ul>
+  <% @stocks.each do |stock| %>
+  <li>Name: <%= stock.name %>
+    Symbol: <%= stock.symbol %>
+    Holding: <%= stock.holding %>
+    Buying Price: <%= stock.buying_price %>
+    Current Price: <%= YahooFinance::get_standard_quotes(stock.symbol)[stock.symbol].lastTrade if stock.symbol %>
+    <a href="/portfolios/stocks/edit/<%= stock.id %>">Edit</a>
+    <a href="/portfolios/stocks/delete/<%= stock.id %>">Sell</a>
+  </li>
+  <% end %>
+</ul>

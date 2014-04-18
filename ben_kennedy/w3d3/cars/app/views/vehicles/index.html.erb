@@ -1,0 +1,60 @@
+<h2>This is text from the vehicle index.html.erb file</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+      </td>
+      <td>
+        Type
+      </td>
+      <td>
+        Year
+      </td>
+      <td>
+        Mileage
+      </td>
+      <td>
+        Description
+      </td>
+      <td>
+        Price
+      </td>
+      <td>
+      </td>
+    </tr>
+    <% @vehicles.each do |vehicle| %>
+    <tr>
+      <td>
+        image placeholder
+      </td>
+      <td>
+        <%= vehicle.name %>
+      </td>
+      <td>
+        <%= vehicle.year %>
+      </td>
+      <td>
+        <%= vehicle.mileage %>
+      </td>
+      <td>
+        <%= vehicle.description %>
+      </td>
+      <td>
+        <%= vehicle.price %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_vehicle_path(vehicle) %>
+      </td>
+      <td>
+        <%= button_to 'Delete', vehicle_delete_path(vehicle), method: 'delete' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @test %>
+<%= @test %>
+<% end %>
+

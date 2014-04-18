@@ -1,0 +1,37 @@
+<h2>Edit Vehicle</h2>
+
+<%= form_for(@car) do |f| %>
+
+  <div class="field">
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :colour %><br />
+    <%= f.text_field :colour %>
+  </div>
+  <div class="field">
+     <%= f.label :engine_id, 'Engine' %><br />
+    <%= f.select :engine_id, Engine.all.map { |e| [[e.fuel_type, e.size, e.model].to_sentence, e.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
