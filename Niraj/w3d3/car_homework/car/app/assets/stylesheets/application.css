@@ -18,6 +18,8 @@
   text-align: center;
   width: 300px;
   display: inline-block;
+  background-color: #687e8a;
+  margin-left: 40px;
 }
 
 body {
@@ -33,6 +35,7 @@ body {
   font-size: 20px;
 }
 
+a { color:white; } 
 a:hover {
-  color: white;
+  color: #E8D7C8;
 }

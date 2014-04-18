@@ -1,3 +1,3 @@
 class Name < ActiveRecord::Base
-  attr_accessible :id, :name
+  attr_accessible :name
 end
