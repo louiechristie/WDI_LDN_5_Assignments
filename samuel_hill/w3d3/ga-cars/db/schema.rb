@@ -11,18 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140416162826) do
+ActiveRecord::Schema.define(:version => 20140417104622) do
 
   create_table "cars", :force => true do |t|
     t.string   "make"
     t.string   "model"
     t.integer  "year"
     t.string   "colour"
-    t.float    "engine_size"
     t.text     "image"
     t.string   "category"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "engine_id"
+  end
+
+  create_table "engines", :force => true do |t|
+    t.string   "fuel_type"
+    t.float    "size"
+    t.string   "model"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

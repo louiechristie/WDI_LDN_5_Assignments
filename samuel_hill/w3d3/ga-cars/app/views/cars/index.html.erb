@@ -1,22 +1,24 @@
-<h1>GENERAL ASSEMBLY CARS</h1>
+<h2>Car Management</h2>
 
+<a class='new' href="/cars/new">Add a New Vehicle</a>
 
-
-<table>
-		<tr>
-			<th>Make</th>
-			<th>Model</th>
-			<th>Year</th>
-			<th>Colour</th>
-		</tr>
-		<% @cars.each do |car| %>
-		<tr>
-			<td><%= car.make %></td>
-			<td><%= car.model %></td>
-			<td><%= car.year %></td>
-			<td><%= car.colour %></td>
-			<td><%= link_to 'Show', car_path(car) %></td><td><%= link_to'Edit', edit_car_path(car) %></td><td><%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
-		<% end %>
-</table>
+<div class='table_bg'>
+	<table>
+			<tr>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Colour</th>
+			</tr>
+			<% @cars.each do |car| %>
+			<tr>
+				<td><%= car.make %></td>
+				<td><%= car.model %></td>
+				<td><%= car.year %></td>
+				<td><%= car.colour %></td>
+				<td><%= link_to 'Show', car_path(car), :class => "new" %></td><td><%= link_to'Edit', edit_car_path(car), :class => "new" %></td><td><%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => "new" %></td></tr>	
+			<% end %>
+	</table>
+</div>
 
 
