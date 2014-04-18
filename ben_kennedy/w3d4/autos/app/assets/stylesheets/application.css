@@ -115,3 +115,9 @@ select {
   width: 100px;
   margin-right: 20px;
 }
+.blank {
+  background-color: white;
+}
+.blank:hover {
+  background-color: white
+}

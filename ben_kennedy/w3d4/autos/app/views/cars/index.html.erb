@@ -20,14 +20,14 @@
           Description
         </td>
         <% unless @engine %>
-        <td>
+        <td class='blank'>
           &nbsp
-        </td>
+        </td >
         <% end %>
-        <td>
+        <td class='blank'>
           &nbsp
         </td>
-        <td>
+        <td class='blank'>
           &nbsp
         </td>
       </tr>      
@@ -50,21 +50,21 @@
         <%= car.description %>
       </td>
       <% unless @engine %>
-      <td>
+      <td class='blank'>
         <%= button_to 'See Engine', car_engine_path(car), method: 'get' %>      
       </td>
       <% end %>
-      <td>
+      <td class='blank'>
         <%= button_to 'Edit', edit_car_path(car), method: 'get' %>
       </td>
-      <td>
+      <td class='blank'>
         <%= button_to 'Delete', car_delete_path(car), method: 'delete' %>
-      </td>
+      </td class='blank'>
     </tr>
     <% if @engine && car.id == @car_id.id %>
     <tr>
-      <td>
-        &nbsp
+      <td class='blank'>
+        Engine:
       </td>  
       <td class='engine'>
         Power: <%= @engine.power %> hp
@@ -72,7 +72,7 @@
       <td class='engine'>
         Fuel Type: <%= @engine.fuel_type %> fueled
       </td>
-      <td class='engine'>
+      <td class='engine blank'>
         <%= button_to 'Hide Engine', cars_path, method: 'get' %>
       </td>   
     </tr>
