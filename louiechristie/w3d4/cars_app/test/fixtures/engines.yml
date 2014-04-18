@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  power: 1
+  cylinders: 1
+  fuel: MyString
+
+two:
+  power: 1
+  cylinders: 1
+  fuel: MyString
