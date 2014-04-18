@@ -19,7 +19,7 @@ class EnginesController < ApplicationController
   end
 
   def new
-    @engine = Engine.create
+    @engine = Engine.new
   end
 
   def create
@@ -31,5 +31,6 @@ class EnginesController < ApplicationController
     Engine.find(params[:id]).destroy
     redirect_to(engines_path)
   end
+
 
 end
