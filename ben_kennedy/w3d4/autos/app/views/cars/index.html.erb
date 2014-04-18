@@ -1,0 +1,82 @@
+<h2>A list of available cars</h2>
+
+<table>
+  <tbody>
+    <thead>
+      <tr>
+        <td>
+          Make
+        </td>
+        <td>
+          Model
+        </td>
+        <td>
+          Year
+        </td>
+        <td>
+          Mileage
+        </td>
+        <td class = 'description'>
+          Description
+        </td>
+        <% unless @engine %>
+        <td>
+          &nbsp
+        </td>
+        <% end %>
+        <td>
+          &nbsp
+        </td>
+        <td>
+          &nbsp
+        </td>
+      </tr>      
+    </thead>
+    <% @cars.each do |car| %>
+    <tr>
+      <td>
+        <%= car.make %>
+      </td>
+      <td>
+        <%= car.model %>
+      </td>
+      <td>
+        <%= car.year %>
+      </td>
+      <td>
+        <%= car.mileage %>
+      </td>
+      <td class = 'description'>
+        <%= car.description %>
+      </td>
+      <% unless @engine %>
+      <td>
+        <%= button_to 'See Engine', car_engine_path(car), method: 'get' %>      
+      </td>
+      <% end %>
+      <td>
+        <%= button_to 'Edit', edit_car_path(car), method: 'get' %>
+      </td>
+      <td>
+        <%= button_to 'Delete', car_delete_path(car), method: 'delete' %>
+      </td>
+    </tr>
+    <% if @engine && car.id == @car_id.id %>
+    <tr>
+      <td>
+        &nbsp
+      </td>  
+      <td class='engine'>
+        Power: <%= @engine.power %> hp
+      </td>
+      <td class='engine'>
+        Fuel Type: <%= @engine.fuel_type %> fueled
+      </td>
+      <td class='engine'>
+        <%= button_to 'Hide Engine', cars_path, method: 'get' %>
+      </td>   
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

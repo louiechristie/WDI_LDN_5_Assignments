@@ -1,6 +1,15 @@
-<h1><%= @car.make %>&nbsp;<%= @car.model %></h1>
+<h2><%= @car.make %>&nbsp;<%= @car.model %></h2>
 
-<table>
+
+<div class='image_bg'>
+	<% if @car.image.blank? %>
+		<em>No image for this car on file.</em>
+	<% else %>
+		<img src= "<%= @car.image %>" alt= "A picture of <%= @car.image%>" />
+	<% end %>
+</div>
+
+<table class='show'>
 	<tr>
 		<th>Make:</th>
 		<td><%= @car.make %></td>
@@ -18,8 +27,8 @@
 		<td><%= @car.colour %></td>
 	</tr>
 	<tr>
-		<th>Engine Size:</th>
-		<td><%= @car.engine_size %></td>
+		<th>Engine:</th>
+		<td><%= @car.engine.fuel_type %>&nbsp;<%= @car.engine.size %>&nbsp;<%= @car.engine.model %></td>
 	</tr>
 	<tr>
 		<th>Category:</th>
@@ -27,9 +36,5 @@
 	</tr>
 </table>
 
-<% if @car.image.blank? %>
-	<em>No image for this car on file.</em>
-<% else %>
-	<img src= "<%= @car.image %>" alt= "A picture of <%= @car.image%>" />
-<% end %>
+
 

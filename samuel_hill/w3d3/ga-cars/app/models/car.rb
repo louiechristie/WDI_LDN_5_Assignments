@@ -1,3 +1,7 @@
 class Car < ActiveRecord::Base
-  attr_accessible :category, :colour, :engine_size, :image, :model, :make, :year
+
+  attr_accessible :category, :colour, :image, :model, :make, :year, :engine_id
+
+  belongs_to :engine
+
 end

@@ -21,8 +21,8 @@
  
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %><br />  
+    <%= f.text_field :name%>
   </div>
   <div class="field">
     <%= f.label :driver %><br />
@@ -34,7 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :engine %><br />
-    <%= f.text_field :engine %>
+    <%= f.collection_select :engine_id, Engine.all, :id, :name_for_select  %>
   </div>
   <div class="field">
     <%= f.label :image %><br />

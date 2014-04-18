@@ -3,6 +3,7 @@ class VehiclesController < ApplicationController
 def index
 
 @vehicles = Vehicle.all
+@engines = Vehicle.all
 
 end
 
@@ -11,7 +12,6 @@ def new
 end
 
 def create
-  raise params.inspect
   Vehicle.create(params[:vehicle])
 
   redirect_to(vehicles_path)
@@ -19,7 +19,7 @@ end
 
 def edit
   @vehicle = Vehicle.find(params[:id])
-
+  @engines = Engine.pluck(:id) 
 end
 
 def show
@@ -31,6 +31,8 @@ end
 
 def update
   vehicle = Vehicle.find(params[:id])
+  # @update_attributes = params[:vehicle]
+  # @update_attributes[:vehicle:]
   vehicle.update_attributes(params[:vehicle])
   redirect_to(vehicles_path)
 end

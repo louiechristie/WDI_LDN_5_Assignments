@@ -5,11 +5,11 @@ class CarsController < ApplicationController
   end
 
   def new
-    @car = Car.create
+    @car = Car.new
   end
 
   def create
-    @car = Car.create(params[:car])
+    @car = Car.create(params["car"])
     redirect_to(cars_path)
   end
 
@@ -19,7 +19,7 @@ class CarsController < ApplicationController
 
   def destroy
     @car = Car.find(params[:id])
-    @car.delete
+    @car.destroy
     redirect_to(cars_path)
   end
 
@@ -30,12 +30,9 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car.update_attributes(params[:car])
-
-    redirect_to cars_path
+    redirect_to(cars_path)
   end
 
-  def years
-    @years = (1900..2014).to_a
-  end
+
 end
 

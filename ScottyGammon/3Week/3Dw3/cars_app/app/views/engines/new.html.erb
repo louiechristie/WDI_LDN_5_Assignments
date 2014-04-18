@@ -1,0 +1,14 @@
+<h2>CREATE ENGINE</h2>
+
+<%= form_for(@engine) do |f| %>
+
+  <div class="field">
+    <%= f.label :cylinders %><br />
+    <%= f.text_field :cylinders %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>
+

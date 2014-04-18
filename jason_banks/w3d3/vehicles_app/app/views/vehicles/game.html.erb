@@ -9,9 +9,8 @@
 
   <%= form_tag("game", method: "post") do %>
   <%= hidden_field "country", "#{@vehicles.first.country}" %>
-  <%= select "vehicle", "country", options_for_select(@countries) %><%= submit_tag("Submit") %>
+  <%= select "vehicle", "country", options_for_select(@countries) %><br />
+  <%= submit_tag("Submit") %>
   <% end %>
 <br />
 <br />
-<%= @answer_country if @guess_country %>
-<%= @guess_country if @guess_country %>
