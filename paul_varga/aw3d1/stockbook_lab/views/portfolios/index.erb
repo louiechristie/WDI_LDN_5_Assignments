@@ -1,0 +1,23 @@
+<div class="index">
+
+<a href='/portfolios/new'>Add New Portfolio</a>
+
+<ul>
+<% @portfolios.each do |portfolio| %>
+
+<li>
+    <h2><%= portfolio.name %></h2>
+    <h3>Category:</h3>
+    <p><%= portfolio.category.name if portfolio.category %></p>
+    <h3>Stocks:</h3>
+    <p><%= portfolio.stocks.map(&:name).join(', ') %></p>
+    <button><a href='/portfolios/<%= portfolio.id %>/stocks'>Stocks</a></button>
+    <button><a href='/stocks/new'>Buy New Stock</a></button>
+    <button><a href='/portfolios/<%= portfolio.id %>/edit'>Edit Portfolio</a></button>
+    <button><a href='/portfolios/<%= portfolio.id %>/delete'>Delete Portfolio</a></button>
+</li>
+
+<% end %>
+</ul>
+
+</div>

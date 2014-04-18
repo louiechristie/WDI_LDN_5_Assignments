@@ -1,0 +1,18 @@
+<%= form_tag("/test", method: "post") do %>
+  <ul>
+    <li><%= label_tag(:starting_line, "Starting Line:") %></li>
+    <li><%= text_field_tag(:starting_line) %></li>
+    <li><%= label_tag(:starting_stop, "Starting Stop:") %></li>
+    <li><%= text_field_tag(:starting_stop) %></li>
+    <li><%= label_tag(:ending_line, "Ending Line:") %></li>
+    <li><%= text_field_tag(:ending_line) %></li>
+    <li><%= label_tag(:ending_stop, "Ending Stop:") %></li>
+    <li><%= text_field_tag(:ending_stop) %></li>
+    <li><%= submit_tag("Submit") %></li>
+  </ul>
+<% end %>
+<% @mta_lines.each do |key, value| %>
+<=% key %>: <%= value.join(', ') %>
+<% end %>
+
+<%= @response if @response %>

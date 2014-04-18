@@ -1,0 +1,28 @@
+img{
+height: 200px;
+padding: 30px;
+}
+thead{
+font-weight: bold;
+text-align: center;	
+}
+td {
+padding: 15px;
+border: 1px solid black;
+}
+
+nav {
+margin:0;
+padding:0px;
+word-spacing: 2em;
+}
+nav li {
+font-size: 20px;
+display:inline;
+padding:0px;
+margin:0;
+}
+
+p{
+	max-width:750px;
+}

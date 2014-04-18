@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: gray;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  border-bottom: 1px dotted black;
+  margin-bottom: 10px;
+
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul {
+  padding-left: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+form {
+  display: inline;
+}
+
+a:hover {
+  color: gray;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  min-height: 40px;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+nav a, footer a {
+  color: white;
+}
+
+nav li{
+  float: left;
+  padding: 10px;
+  list-style-type: none;
+}
+/* hide the submenu */
+.submenu {
+  display: none;
+}
+/* show the submenu */
+nav li:hover ul.submenu{
+  display: block;
+  position: absolute;
+  background-color: black;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.container {
+  min-width: 356px;
+  max-width: 600px;
+  min-height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  line-height: 2em;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.container input {
+  width: 400px;
+  line-height: 2em;
+}
+
+.input_name {
+  width: 200px;
+}
+
+.button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.search {
+  margin-top: 5px;
+  float: right;
+  margin-right: 10px;
+  display: inline;
+}
+
+section {
+  border-top: 1px dotted black;
+  margin-bottom: 10px;
+}
+
+.video {
+  text-align: center;
+}
+
+.details {
+  padding: 10px;
+}

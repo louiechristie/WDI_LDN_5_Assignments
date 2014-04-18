@@ -1,0 +1,5 @@
+<h2>You own: </h2>
+<% @cars.each do |car| %>
+  <p><a href="<%= car_path(car) %>"><%= car.name %></a><%= button_to 'Delete car', car_delete_path(car) %><%= button_to 'Edit car', edit_car_path(car) %></p>
+
+<% end %>

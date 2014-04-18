@@ -1,0 +1,19 @@
+<h1>Car</h1>
+
+<p>Name: <%= @car.name %></p>
+<p>Description: <%= @car.description %></p>
+<p>Color: <%= @car.color %></p>
+
+<% if @car.image.blank? %>
+  <em>No image currently available, <%= @car.name %> is probably changing the style.</em>  
+<% else %>  
+  <img src ="<%= @car.image %>" alt="a picture of <%= @car.name %>".>
+<% end %>
+
+<span>
+<p><%= link_to 'Edit', edit_car_path(@car) %></p>
+
+<p><%= button_to 'Delete Car', car_delete_path(@car) %></p>
+
+<p><%= link_to 'Back', cars_path %></p>
+</span>

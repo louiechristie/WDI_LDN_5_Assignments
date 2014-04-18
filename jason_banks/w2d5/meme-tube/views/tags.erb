@@ -1,0 +1,9 @@
+<% if @tags.any? %>
+  <div class="column-top row">
+    <% @tags.each do |tag| %>
+      <div class="col-md-4">
+        <a href="/tags/<%= tag['tag'] %>" role="button" class="btn btn-success"><%= tag['tag'] %><span class="badge pull-right"><%= tag['count'] %></span></a>
+      </div>
+    <% end %>
+  </div>
+<% end %>

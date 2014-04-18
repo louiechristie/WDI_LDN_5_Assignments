@@ -1,0 +1,15 @@
+<% if @vehicle_images.any? %>
+  <% @vehicle_images.each do |image| %>
+    <%= image_tag("#{image}") %>
+  <% end %>
+<% end %>
+<h1>PowerWheels</h1>
+<h2>Vehicles</h2>
+<div class="index">
+<ol>
+  <% @vehicles.each do | vehicle | %>
+    <li><%= link_to "#{vehicle.make} #{vehicle.model}", vehicle_path(vehicle) %>, <%= vehicle.country %></li>
+  <% end %>
+</ol>
+</div>
+<h2>Play the <%= link_to 'game', vehicles_game_path %>?</h2>

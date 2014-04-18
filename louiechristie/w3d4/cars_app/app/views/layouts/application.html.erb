@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CarsApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="<%= cars_path %>">Home</a>
+          <li><a href="<%= cars_path %>/new">New Car</a>
+          <li><a href="<%= engines_path %>">Engines</a>
+          <li><a href="<%= engines_path %>/new">New Engine</a>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <section>
+        <%= yield %>
+      </section>
+    </div>
+    <footer>
+      <a href="http://www.louiechristie.com">Louie Christie</a> 2014
+    </footer>
+  </body>
+
+</html>

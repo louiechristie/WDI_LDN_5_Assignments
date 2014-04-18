@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  power: 
+  cylinders: 
+  fuel_type: MyText
+
+two:
+  power: 
+  cylinders: 
+  fuel_type: MyText
