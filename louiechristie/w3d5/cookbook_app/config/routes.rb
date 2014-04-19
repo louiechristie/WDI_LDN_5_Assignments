@@ -1,7 +1,7 @@
 CookbookApp::Application.routes.draw do
 
+  resources :recipies, :categories 
   root to: "categories#index"
-  resources :categories
 
 
   # The priority is based upon order of creation:

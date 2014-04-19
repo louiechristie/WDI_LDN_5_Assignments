@@ -9,3 +9,7 @@
 Category.create(name: 'Starter')
 Category.create(name: 'Main Course')
 Category.create(name: 'Dessert')
+
+Recipe.create(name: 'Eggs')
+Recipe.create(name: 'Flour')
+Recipe.create(name: 'Milk')
