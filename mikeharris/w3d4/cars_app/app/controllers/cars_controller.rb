@@ -20,7 +20,6 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find_by_id(params[:id])
-    render 'edit'
   end
 
   def update

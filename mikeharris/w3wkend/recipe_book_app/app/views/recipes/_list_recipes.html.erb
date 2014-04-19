@@ -1,0 +1,10 @@
+<% recipes = Recipe.find_by_category_id(category_id)
+<ul>
+<% recipes.each do |recipe| %>
+  <li><%= recipe.name %></li>
+<% end %>
+</ul>
+
+<%= render partial: 'list_recipes', locals: {category_id: category.id} %> 
+  
+
