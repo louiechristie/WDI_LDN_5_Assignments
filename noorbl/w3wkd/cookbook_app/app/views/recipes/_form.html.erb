@@ -1,0 +1,23 @@
+<%= form_for(@recipe) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :serving_size %><br />
+    <%= f.text_field :serving_size %>
+  </div>
+  <div class="collection">
+    <%= f.label :category_id %><br />
+    <%= collection_select :category_id %>
+  </div>
+ 
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %> 
