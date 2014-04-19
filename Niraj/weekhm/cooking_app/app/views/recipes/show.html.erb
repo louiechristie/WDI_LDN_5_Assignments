@@ -1,0 +1,15 @@
+<% recipe.name %>
+
+Name:
+<%= recipe.name %>
+
+Serves:
+<%= recipe.size %>
+
+
+Category:
+
+<% if @recipe.category %>
+<%= @recipe.category.name %>
+
+<% end %>
