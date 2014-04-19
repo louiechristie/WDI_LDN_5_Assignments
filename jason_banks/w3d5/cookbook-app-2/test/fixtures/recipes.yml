@@ -2,12 +2,16 @@
 
 one:
   title: MyString
+  description: MyString
   prep_time: 1
   instructions: MyText
-  image: MyText
+  image: MyString
+  category_id: 1
 
 two:
   title: MyString
+  description: MyString
   prep_time: 1
   instructions: MyText
-  image: MyText
+  image: MyString
+  category_id: 1

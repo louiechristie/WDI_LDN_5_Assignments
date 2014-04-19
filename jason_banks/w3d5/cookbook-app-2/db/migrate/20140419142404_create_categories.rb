@@ -1,8 +1,8 @@
 class CreateCategories < ActiveRecord::Migration
   def change
     create_table :categories do |t|
-      t.string :name, null: false 
-      t.text :image
+      t.string :name, null: false
+      t.string :image
 
       t.timestamps
     end

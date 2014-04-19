@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  image: MyText
+  image: MyString
 
 two:
   name: MyString
-  image: MyText
+  image: MyString
