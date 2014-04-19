@@ -1,0 +1,18 @@
+<%= form_for @recipe do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br />
+<%= f.collection_select(:category_id, @categories, :id, :name) %>
+<%= f.label :description %>
+<%= f.text_field :description %><br />
+<%= f.label :prep_time %> (in months)
+<%= f.number_field :prep_time, min: 0, step: 1 %><br />
+<%= f.label :instructions %>
+<%= f.text_area :instructions %><br />
+<%= f.label :image %>
+<%= f.text_field :image %><br /><br />
+<%= submit_tag("Submit") %>
+<% end %>
+
+
+
+

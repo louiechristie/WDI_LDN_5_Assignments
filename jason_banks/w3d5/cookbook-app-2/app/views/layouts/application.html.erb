@@ -12,6 +12,9 @@
     <li><%= link_to "Recipes", recipes_path %>
     <li><%= link_to "Ingredients", ingredients_path %>
   </ul>
+  <br />
+  <br />
+  <h2><%= flash[:notice] if flash[:notice] %></h2>
 
 
 <%= yield %>

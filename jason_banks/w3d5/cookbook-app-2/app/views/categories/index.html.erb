@@ -3,7 +3,7 @@
 <% if @categories %>
   <ul>
   <% @categories.each do |category| %>
-    <li><%= link_to category.name, category_path(category) %> <%= image_tag("#{category.image}") %></li>
+    <li><%= link_to category.name, category_path(category) %> <%= image_tag("#{category.image}") if category.image %></li>
   <% end %>
   </ul>
 <% end %>
