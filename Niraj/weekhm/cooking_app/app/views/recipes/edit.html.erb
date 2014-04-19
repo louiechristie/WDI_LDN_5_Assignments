@@ -1,0 +1,20 @@
+<% form_for(@recipe) do |r| %>
+
+ <%= r.label :name %><br />  
+  <%= r.text_field :name %>
+
+   <%= r.label :serving_size %><br />  
+  <%= r.text_field :serving_size %>
+
+
+ <div class="field">
+    <%= c.label :category_id %><br />  
+    <%= c.text_field :category_id%>
+    </div>
+
+
+
+    <div class="actions">
+    <%= c.submit %>
+  </div>
+<% end %>
