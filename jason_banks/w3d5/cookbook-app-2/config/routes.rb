@@ -1,5 +1,11 @@
 CookbookApp2::Application.routes.draw do
 
+  get "ingredients/index"
+
+  get "recipes/index"
+
+  get "categories/index"
+
   resources :categories
   resources :recipes
   resources :ingredients
