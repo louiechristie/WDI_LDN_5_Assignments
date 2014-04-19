@@ -1,0 +1,19 @@
+<h2><%= @recipe.name %> </h2>
+<table>
+	<tr>
+		<th>Name:</th>
+		<td><%= @recipe.name %></td>
+	</tr>
+	<tr>
+		<th>Serves:</th>
+		<td><%= @recipe.size %></td>
+	</tr>
+			<tr>
+		<th>Category:</th>
+		<td><% if @recipe.category %>
+			<%= @recipe.category.name %>
+			<% end %>
+		</td>
+	</tr>
+</table>
+

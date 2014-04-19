@@ -1,0 +1,21 @@
+<h2>Create Recipe</h2>
+
+<%= form_for(@recipe) do |r| %>
+
+  <div class="field">
+    <%= r.label :name %><br />
+    <%= r.text_field :name %>
+  </div>
+  <div class="field">
+    <%= r.label :size %><br />
+    <%= r.text_field :size %>
+  </div>
+   <div class="field">
+     <%= r.label :category_id, 'Category' %><br />
+    <%= r.select :category_id, Category.all.map { |c| [[c.name].to_sentence, c.id] } %>
+  </div>
+    <div class="actions">
+    <%= r.submit %>
+  </div>
+  <% end %>
+

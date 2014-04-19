@@ -1,0 +1,16 @@
+<h2>Categories</h2>
+
+<a class='new' href="/categories/new">Add a New Category</a>
+
+<div class='table_bg'>
+	<table>
+			<tr>
+				<th>Names</th>
+			</tr>
+			<% @categories.each do |category| %>
+			<tr>
+				<td><%= category.name %></td>
+				<td><%= link_to'Edit', edit_category_path(category), :class => "new" %></td><td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Would you like to delete the category?' }, :class => "new" %></td></tr>	
+			<% end %>
+	</table>
+</div>
