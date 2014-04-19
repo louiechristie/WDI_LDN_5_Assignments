@@ -1,0 +1,4 @@
+<h2><%= @category.name %></h2>
+<%= image_tag("#{@category.image}") %><br />
+<%= button_to "Edit #{@category.name}", edit_category_path(@category), method: "get" %>
+<%= button_to "Delete #{@category.name}", delete_category_path(@category), method: "post", confirm: "Delete #{@category.name}?" %>

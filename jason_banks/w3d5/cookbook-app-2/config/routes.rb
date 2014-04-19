@@ -11,6 +11,9 @@ CookbookApp2::Application.routes.draw do
   resources :ingredients
 
   root to: "categories#index"
+  post "categories/:id/delete" => "categories#destroy", as: "delete_category"
+  post "recipes/:id/delete" => "recipes#destroy", as: "delete_recipe"
+  post "ingredients/:id/delete" => "ingredients#destroy", as: "delete_ingredient"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
