@@ -5,6 +5,10 @@ def index
     @categories = Category.all
   end
 
+def new
+  @category = Category.new
+end
+
   def create
     Category.create(params[:category])
     redirect_to(categories_path)

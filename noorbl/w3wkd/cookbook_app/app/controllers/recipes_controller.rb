@@ -5,6 +5,10 @@ def index
     @recipes = Recipe.all
   end
 
+  def new
+    @recipe = Recipe.new 
+  end
+
   def create
     Recipe.create(params[:recipe])
     redirect_to(recipes_path)
