@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = Recipe.create(params[:recipe])
-    flash_notice unless recipe.valid?
+    flash_notice("Recipe") unless recipe.valid?
 
     redirect_to(recipes_path)
   end
@@ -25,8 +25,9 @@ class RecipesController < ApplicationController
   end
 
   def update
-    find_recipe.update_attributes(params[:recipe])
-    flash_notice unless recipe.valid?
+    recipe = find_recipe
+    recipe.update_attributes(params[:recipe])
+    flash_notice("Recipe") unless recipe.valid?
 
     redirect_to(recipes_path)
   end
@@ -42,10 +43,6 @@ class RecipesController < ApplicationController
 
   def find_categories
     @categories = Category.find(:all, :select => "id, name")
-  end
-
-  def flash_notice
-    flash[:notice] = "Recipe not saved due to incomplete information."
   end
 
 end

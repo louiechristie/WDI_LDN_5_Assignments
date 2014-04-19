@@ -9,7 +9,7 @@ class IngredientsController < ApplicationController
 
   def create
     ingredient = Ingredient.create(params[:ingredient])
-    flash_notice unless ingredient.valid?
+    flash_notice("Ingredient") unless ingredient.valid?
 
     redirect_to(ingredients_path)
   end
@@ -23,8 +23,9 @@ class IngredientsController < ApplicationController
   end
 
   def update
-    find_ingredient.update_attributes(params[:ingredient])
-    flash_notice unless ingredient.valid?
+    ingredient = find_ingredient
+    ingredient.update_attributes(params[:ingredient])
+    flash_notice("Ingredient") unless ingredient.valid?
 
     redirect_to(ingredients_path)
   end

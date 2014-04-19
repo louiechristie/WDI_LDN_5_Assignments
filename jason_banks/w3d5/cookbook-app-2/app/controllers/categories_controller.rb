@@ -8,8 +8,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    Category.create(params[:category])
-    flash_notice unless recipe.valid?
+    category = Category.create(params[:category])
+    flash_notice("Category") unless category.valid?
 
     redirect_to(categories_path)
   end
@@ -23,8 +23,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    find_category.update_attributes(params[:category])
-    flash_notice unless recipe.valid?
+    category = find_category
+    category.update_attributes(params[:category])
+    flash_notice("Category") unless category.valid?
 
     redirect_to(categories_path)
   end
@@ -38,8 +39,5 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
-  def flash_notice
-    flash[:notice] = "Category not saved due to incomplete information."
-  end
 
 end
