@@ -1,12 +1,7 @@
-<form method='post' action='/recipes'>
-  Name:
-  <input type='text' name='recipe[name]' autofocus>
-  <br>
-  Serving size:
-  <input type='text' name='recipe[serving_size]'>
-  <br>
-  Category:
-  <input type='text' name='recipe[category_id]'>
-  <br>
-  <button>add me!</button>
-</form>
+<h1>New Recipe</h1>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @recipe %> 
+<%= link_to 'Back', recipe_path %>

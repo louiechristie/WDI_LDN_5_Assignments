@@ -10,7 +10,7 @@
   </div>
   <div class="collection">
     <%= f.label :category_id %><br />
-    <%= collection_select :category_id %>
+    <%= f.select :category_id, Category.all.map{ |category| [[category.name].to_sentence, category.id] } %>
   </div>
  
 

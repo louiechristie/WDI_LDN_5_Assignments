@@ -5,8 +5,6 @@ CookbookApp::Application.routes.draw do
 
   root to: "recipes#index"
 
-  root to: "categories#index"
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
