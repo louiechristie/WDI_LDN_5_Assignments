@@ -1,0 +1,10 @@
+<h1>Add an Ingredient</h1>
+
+<%= form_for(@ingredient)  do |f| %>
+  <%= render partial: 'form', locals: {f: f } %>
+<%= f.submit %>
+
+<% end %>
+
+
+
