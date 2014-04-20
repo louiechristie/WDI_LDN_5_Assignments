@@ -33,5 +33,9 @@ class IngridientsController < ApplicationController
     redirect_to(ingridients_path)
   end
 
+  def recipe_ingridient
+    @ingridient = Ingridient.find(params)[:id]
+    @recipe_ingridient = @ingridient.recipe_ids
+  end
 
 end
