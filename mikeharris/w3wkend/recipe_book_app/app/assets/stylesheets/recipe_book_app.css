@@ -1,0 +1,69 @@
+/**my base css**/
+* {
+  font-family: 'Spinnaker', sans-serif;
+  box-sizing:border-box;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 20px 0px;
+}
+h2 {
+  font-size: 26px;
+  margin: 10px 0px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 5px 20px 5px 0px;
+}
+nav a:hover {
+  border-bottom: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input[type=submit] {
+  border: none;
+  width: 75px;
+  padding: 7px 15px;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+select {
+  
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+    background: transparent;
+   width: 150px;
+   padding: 5px;
+   font-size: 14px;
+   border: 0;
+   border-radius: 0;
+   height: 28px;
+   /*-webkit-appearance: none;*/
+}
+
+select, input[type=text] {
+  padding: 5px 15px;
+}
+
+
+.button_to {
+  display: inline-block;
+}
+
+body {
+  padding: 30px;
+}
+
+.ingredients_list td {
+  padding: 5px;
+}

@@ -1,11 +1,6 @@
 
 
-<%= form_for @recipe do |f| %>
+<%= form_for @category do |f| %>
   Name: <%= f.text_field :name%>
-  Feeds: <%= f.text_field :feeds %>
-  Time: <%= f.text_field :time %>
-  Description: <%= f.text_area :description, size: "60x12" %>
-  <%= select_tag "recipe[category_id]", options_for_select(Category.all.collect{|c| [c.name, c.id]}) %>
   <%= f.submit "submit" %>
-
 <% end %>

@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Recipe.new
+    @category = Category.new
   end
 
   def destroy

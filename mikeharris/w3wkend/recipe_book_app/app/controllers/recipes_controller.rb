@@ -11,20 +11,26 @@ class RecipesController < ApplicationController
 
   def edit 
     @recipe = Recipe.find_by_id(params[:id])
+    @ingredients = Ingredient.all
   end
 
   def update
+    
     Recipe.find_by_id(params["id"]).update_attributes(params["recipe"])
+    Recipe.find_by_id(params["id"]).ingredient_ids = params["ingredient_ids"]
+
     redirect_to recipes_path
   end
 
   def create
-    Recipe.create(params["recipe"])
+    a = Recipe.create(params["recipe"])
+    a.ingredient_ids = params["ingredient_ids"]
     redirect_to recipes_path
   end
 
   def new
     @recipe = Recipe.new
+    @ingredients = Ingredient.all
   end
 
   def destroy

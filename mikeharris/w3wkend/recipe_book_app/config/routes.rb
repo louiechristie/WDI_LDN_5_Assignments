@@ -1,6 +1,7 @@
 RecipeBookApp::Application.routes.draw do
   resources :recipes
   resources :categories
+  resources :ingredients
 
   root to: "recipes#index"
 

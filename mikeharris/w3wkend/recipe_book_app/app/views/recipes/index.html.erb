@@ -1,8 +1,8 @@
 
 <% @categories.each do |category| %>
 
-  <h2><%= category.name %></h2>
-  
+  <h2><a href="<%= category_path(category) %>"><%= category.name.pluralize %></a></h2>
+
   <%= render partial: 'list_recipes', locals: {category_id: category.id} %> 
 
  <% end %>

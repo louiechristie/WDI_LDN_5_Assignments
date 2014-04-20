@@ -6,12 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(name: "Starter")
-Category.create(name: "Main")
-Category.create(name: "Dessert")
-Category.create(name: "Snack")
 
 
-Recipe.create(name: "Scrambled Eggs", time: 15, feeds: 4, description: "whisked cooked eggs")
-Recipe.create(name: "Hummous and description", time: 5, feeds: 4, description: "dips", catgory_id: 2)
+starter = Category.create(name: "Starter")
+main = Category.create(name: "Main")
+dessert = Category.create(name: "Dessert")
+snack = Category.create(name: "Snack")
 
+
+starter.recipes.create(name: "Scrambled Eggs", time: 15, feeds: 4, description: "whisked cooked eggs")
+starter.recipes.create(name: "Hummous and description", time: 5, feeds: 4, description: "dips")
+snack.recipes.create(name: "crisps")
+
+Ingredient.create(name:"eggs")
+Ingredient.create(name:"milk")
+Ingredient.create(name:"butter")
+Ingredient.create(name:"salt")
