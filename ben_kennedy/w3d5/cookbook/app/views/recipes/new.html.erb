@@ -1,10 +1,22 @@
-<h1>Add a Recipe:</h1>
+<h1>Add a full recipe</h1>
 
 <%= form_for(@recipe)  do |f| %>
 
   <%= render partial: 'form', locals: {f: f } %>  
+  <% if @temp_ingredients %>
+    <% i = 1; @temp_ingredients.each do |ingredient| %>
+    <p><%= ingredient[:quantity] %> <%= ingredient[:unit] %> <%= ingredient[:name] %></p>
+    <input type='hidden' name='temp_ingredients[quantity]' value='<%= ingredient[:quantity] %>'>
+    <input type='hidden' name='temp_ingredients[unit]' value='<%= ingredient[:unit] %>'>
+    <input type='hidden' name='temp_ingredients[name]' value='<%= ingredient[:name] %>'>
+    <% i = i + 1 %>
+    <% end %> 
+  <% end %>
+  <%= form_for(@ingredients) do |f| %>
+    <%= render partial: 'ingredients/form', locals: {f: f} %>
+    <%= button_to 'Add Ingredient', {action: :full_recipe} %>
+  <% end %>
 
-
-<%= f.submit %>
+  <%= button_to 'Save Recipe', {action: :full_recipe} %>
 <% end %>
 

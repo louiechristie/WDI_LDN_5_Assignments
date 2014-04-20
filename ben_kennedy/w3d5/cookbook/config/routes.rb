@@ -4,7 +4,7 @@ Cookbook::Application.routes.draw do
   delete '/categories/:id/delete' => 'categories#destroy', :as => 'category_delete'
   delete '/recipes/:id/delete' => 'recipes#destroy', :as => 'recipe_delete'
   delete '/ingredients/:id/delete' => 'ingredients#destroy', :as => 'ingredient_delete'
-  get '/recipes/newfullrecipe' => 'recipes#full_recipe', :as => 'full_recipe_new'
+  post '/recipes/newfullrecipe' => 'recipes#full_recipe', :as => 'full_recipe_new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
