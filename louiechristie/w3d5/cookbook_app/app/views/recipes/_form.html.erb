@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <% for ingredient in Ingredient.all %>
-      <%= ingredient.name %>
+      <%= c.label ingredient.name %>
       <% if @recipe.ingredients.include?(ingredient)
           included = true 
          else
@@ -25,9 +25,9 @@
          end
          
       %>
-      <%= check_box_tag ingredient.id, ingredient.id, included
-   %>
+      <%= check_box_tag ingredient.id, ingredient.id, included %>
       <br/>
+
     <% end %>
   </div>
 
