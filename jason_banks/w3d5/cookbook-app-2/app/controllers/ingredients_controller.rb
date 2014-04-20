@@ -8,8 +8,8 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    ingredient_lowercase = params[:ingredient][:name].downcase
-    ingredient = Ingredient.create(name: ingredient_lowercase)
+    params[:ingredient][:name].downcase!
+    ingredient = Ingredient.create(params[:ingredient])
     flash_notice("Ingredient") unless ingredient.valid?
 
     redirect_to(ingredients_path)
@@ -17,6 +17,7 @@ class IngredientsController < ApplicationController
 
   def show
     find_ingredient
+    find_recipes
   end
 
   def edit
@@ -25,8 +26,8 @@ class IngredientsController < ApplicationController
 
   def update
     ingredient = find_ingredient
-    ingredient_lowercase = params[:ingredient][:name].downcase
-    ingredient.update_attributes(name: ingredient_lowercase)
+    params[:ingredient][:name].downcase!
+    ingredient.update_attributes(params[:ingredient])
     flash_notice("Ingredient") unless ingredient.valid?
 
     redirect_to(ingredients_path)
@@ -39,6 +40,10 @@ class IngredientsController < ApplicationController
 
   def find_ingredient
     @ingredient = Ingredient.find(params[:id])
+  end
+
+  def find_recipes
+    @recipes = Recipe.where(id: @ingredient.recipe_ids).order(:title)
   end
 
   

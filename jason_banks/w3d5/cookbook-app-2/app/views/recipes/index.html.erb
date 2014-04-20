@@ -3,8 +3,9 @@
 <% if @recipes %>
   <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= link_to recipe.title, recipe_path(recipe) %> <%= image_tag("#{recipe.image}") if recipe.image %>
+    <li><%= link_to recipe.title, recipe_path(recipe) %> <%= image_tag("#{recipe.image}") if recipe.image > "" %>
       <ul>
+        <li>Category: <%= recipe.category.name %></li>
         <li>Description: <%= recipe.description %></li>
         <li>Prep time: <%= pluralize(recipe.prep_time, 'week') %></li>
       </ul>

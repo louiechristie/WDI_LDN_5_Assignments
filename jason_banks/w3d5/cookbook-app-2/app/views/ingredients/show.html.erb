@@ -1,3 +1,14 @@
 <h2><%= @ingredient.name %></h2>
-<%= button_to "Edit #{@ingredient.name}", edit_ingredient_path(@ingredient), method: "get" %>
-<%= button_to "Delete #{@ingredient.name}", delete_ingredient_path(@ingredient), method: "post", confirm: "Delete #{@ingredient.name}?" %>
+<% if @recipes.any? %>
+  <h4>Recipes</h4>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to recipe.title, recipe_path(recipe) %> (<span class="italics"><%= recipe.category.name %></span>)</li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Add a Recipe", new_recipe_path %>
+<br />
+<br />
+<%= button_to "Edit", edit_ingredient_path(@ingredient), method: "get" %>
+<%= button_to "Delete", delete_ingredient_path(@ingredient), method: "post", confirm: "Delete \"#{@ingredient.name}?\"" %>

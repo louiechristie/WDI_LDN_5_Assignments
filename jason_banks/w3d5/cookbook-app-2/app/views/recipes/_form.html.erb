@@ -12,10 +12,11 @@
 <% end %>
 <%= f.label :instructions %>
 <%= f.text_area :instructions %><br />
-<%= f.label :image %>
+<%= f.label :image %> URL
 <%= f.text_field :image %><br /><br />
 <%= submit_tag("Submit") %>
 <% end %>
+<%= button_to "Cancel", recipes_path, method: "get" %>
 
 
 

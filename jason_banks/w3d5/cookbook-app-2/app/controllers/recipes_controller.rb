@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    find_categories
   end
 
   def new
@@ -18,7 +19,7 @@ class RecipesController < ApplicationController
 
   def show
     find_recipe
-    find_ingredients
+    list_ingredients
   end
 
   def edit
@@ -29,6 +30,8 @@ class RecipesController < ApplicationController
 
   def update
     recipe = find_recipe
+    params[:recipe][:ingredient_ids] ||= []
+    params[:recipe][:title].capitalize!
     recipe.update_attributes(params[:recipe])
     flash_notice("Recipe") unless recipe.valid?
 
@@ -45,7 +48,11 @@ class RecipesController < ApplicationController
   end
 
   def find_ingredients
-    @ingredients = Ingredient.where(id: @recipe.ingredient_ids)
+    @ingredients = Ingredient.all
+  end
+
+  def list_ingredients
+    @ingredients = Ingredient.where(id: @recipe.ingredient_ids).order(:name)
   end
 
   def find_categories

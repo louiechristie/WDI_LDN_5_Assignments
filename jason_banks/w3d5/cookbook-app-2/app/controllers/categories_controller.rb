@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    params[:category][:name].capitalize!
     category = Category.create(params[:category])
     flash_notice("Category") unless category.valid?
 
@@ -16,7 +17,7 @@ class CategoriesController < ApplicationController
 
   def show
     find_category
-    raise
+    find_recipes
   end
 
   def edit
@@ -25,6 +26,7 @@ class CategoriesController < ApplicationController
 
   def update
     category = find_category
+    params[:category][:name].capitalize!
     category.update_attributes(params[:category])
     flash_notice("Category") unless category.valid?
 
@@ -38,6 +40,10 @@ class CategoriesController < ApplicationController
 
   def find_category
     @category = Category.find(params[:id])
+  end
+
+  def find_recipes
+    @recipes = Recipe.where(id: @category.recipe_ids)
   end
 
 
