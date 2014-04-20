@@ -11,18 +11,31 @@
     </div>
   <% end %>
 
-  <div class="name">
+  <div class="field">
     <%= c.label :name %><br />
     <%= c.text_field :name %>
   </div>
+  <div class="field">
+    <% for ingredient in Ingredient.all %>
+      <%= ingredient.name %>
+      <% if @recipe.ingredients.include?(ingredient)
+          included = true 
+         else
+          included = false
+         end
+         
+      %>
+      <%= check_box_tag ingredient.id, ingredient.id, included
+   %>
+      <br/>
+    <% end %>
+  </div>
+
 
   <div class="actions">
     <%= c.submit %>
   </div>
 <% end %>
-<% for ingredient in Ingredient.all %>
-  <p><%= ingredient.name %><%= check_box_tag 'rock', 'rock music'
- %></p>
 
-<% end %>
+
 <br/>

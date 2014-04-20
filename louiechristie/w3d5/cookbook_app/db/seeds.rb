@@ -13,3 +13,13 @@ Category.create(name: 'Dessert')
 Recipe.create(name: 'Pancakes', category_id: 2, feeds: 2)
 Recipe.create(name: 'Omlette', category_id: 2, feeds: 2)
 Recipe.create(name: 'Jacket Potato', category_id: 2, feeds: 2)
+
+Ingredient.create(name: 'Eggs')
+Ingredient.create(name: 'Milk')
+Ingredient.create(name: 'Flour')
+
+Recipe.find(1).ingredients << Ingredient.find(1)
+Recipe.find(1).ingredients << Ingredient.find(2)
+Recipe.find(1).ingredients << Ingredient.find(3)
+
+Recipe.find(2).ingredients << Ingredient.find(1)
