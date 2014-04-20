@@ -82,5 +82,14 @@ tr {
   margin: 5px;
 }
 .category_show td, .list_recipes td, .ingredients_list td {
+  padding: 0px;
+}
+
+
+.recipe_show td { 
   padding: 5px;
+}
+
+.checkboxes {
+  width: 150px;
 }

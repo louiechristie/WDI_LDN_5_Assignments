@@ -7,8 +7,10 @@
 
  <% end %>
 
-<h2>Recipes with no Category</h2>
+<% unless Recipe.where(category_id: nil).count == 0 %>
+  <h2>Recipes with no Category</h2>
 
 
-  <%= render partial: 'list_recipes', locals: {category_id: nil} %> 
+    <%= render partial: 'list_recipes', locals: {category_id: nil} %> 
+  <% end %>
 </div>

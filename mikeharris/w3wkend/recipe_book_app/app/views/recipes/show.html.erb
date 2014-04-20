@@ -1,11 +1,9 @@
 
+<h2><%= @recipe.name %></h2>
+
+ <table class = "recipe_show">
 
 
-<table>
-
-  <tr>
-    <td>Name:</td> <td><%= @recipe.name %></td>
-  </tr>
   <tr>  
     <td>Feeds:</td> <td><%= @recipe.feeds %></td>
   </tr>
@@ -26,7 +24,9 @@
       Ingredients:
     </td>
     <td>
-      <%= @recipe.ingredient_ids.collect {|id| Ingredient.find(id).name}.join(',') %>  
+      <% list = @recipe.ingredient_ids.collect {|id| Ingredient.find(id).name}.to_sentence %>
+      <% list[0] = list.first.capitalize %>
+      <%= list %>  
           
       
       </td>

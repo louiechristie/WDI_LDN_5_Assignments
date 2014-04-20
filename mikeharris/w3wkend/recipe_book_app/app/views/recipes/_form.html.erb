@@ -23,7 +23,7 @@
     <td>
       Ingredients:
     </td>
-    <td>
+    <td class="checkboxes">
       <% @ingredients.each do |ingredient| %>
         <%= check_box_tag("ingredient_ids[]", ingredient.id) %>
         <%= label_tag( "ingredient_ids[]", ingredient.name) %>
