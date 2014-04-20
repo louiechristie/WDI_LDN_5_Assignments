@@ -1,4 +1,4 @@
-
+<div class="recipe_form">
 <table>
 <%= form_for @recipe do |f| %>
   <tr>
@@ -17,7 +17,7 @@
     <td>
       Category:
     </td>
-    <td><%= select_tag 'Category', options_from_collection_for_select(Category.all, 'id', 'name') %></td>
+    <td><%= select_tag 'recipe[category_id]', options_from_collection_for_select(Category.all, 'id', 'name') %></td>
   </tr>
   <tr>
     <td>
@@ -42,3 +42,4 @@
 
 <% end %>
 </table>
+<div>

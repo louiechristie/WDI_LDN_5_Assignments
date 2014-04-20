@@ -9,8 +9,11 @@ h1 {
   margin: 20px 0px;
 }
 h2 {
+  display: inline-block;
+  width: 400px;
   font-size: 26px;
   margin: 10px 0px;
+  border-bottom: 1px solid black;
 }
 
 nav a {
@@ -18,7 +21,7 @@ nav a {
   padding: 5px 20px 5px 0px;
 }
 nav a:hover {
-  border-bottom: 1px solid black;
+  background: #ff7373;
 }
 
 a {
@@ -30,24 +33,28 @@ input[type=submit] {
   border: none;
   width: 75px;
   padding: 7px 15px;
+
 }
 
 input[type=submit]:hover {
   cursor: pointer;
 }
 
+ input  {
+  margin-bottom: 10px;
+  }
+
 select {
-  
   display: inline-block;
   height: 25px;
   line-height: 25px;
-    background: transparent;
-   width: 150px;
-   padding: 5px;
-   font-size: 14px;
-   border: 0;
-   border-radius: 0;
-   height: 28px;
+  background: transparent;
+  width: 150px;
+  padding: 5px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 0;
+  height: 28px;
    /*-webkit-appearance: none;*/
 }
 
@@ -64,6 +71,16 @@ body {
   padding: 30px;
 }
 
-.ingredients_list td {
+td:first-child {
+  width: 200px;
+   vertical-align: top;
+  
+}
+
+
+tr {
+  margin: 5px;
+}
+.category_show td, .list_recipes td, .ingredients_list td {
   padding: 5px;
 }

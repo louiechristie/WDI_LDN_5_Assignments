@@ -1,4 +1,4 @@
-
+<div class="list_recipes">
 <% @categories.each do |category| %>
 
   <h2><a href="<%= category_path(category) %>"><%= category.name.pluralize %></a></h2>
@@ -6,3 +6,9 @@
   <%= render partial: 'list_recipes', locals: {category_id: category.id} %> 
 
  <% end %>
+
+<h2>Recipes with no Category</h2>
+
+
+  <%= render partial: 'list_recipes', locals: {category_id: nil} %> 
+</div>
