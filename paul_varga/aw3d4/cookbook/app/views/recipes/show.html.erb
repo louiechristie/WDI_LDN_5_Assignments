@@ -4,25 +4,33 @@
   <th>Name </th> 
   <th>Feeds </th>
   <th>Description </th>
-  <th><%= pluralize('number of', 'ingredient') %> </th>
+  <th><%= pluralize('Name of', 'ingredient') %> </th>
 </tr>
 <tr>
-  <td><%= link_to @recipe.category.name %> </td>
-  <td><%= link_to @recipe.name %> </td> 
-  <td><%= link_to @recipe.feeds_people %> </td>
-  <td><%= link_to @recipe.description %> </td>
+  <td><%= @recipe.category.name %> </td>
+  <td><%= @recipe.name %> </td> 
+  <td><%= @recipe.feeds_people %> </td>
+  <td><%= @recipe.description %> </td>
   <% @recipe.ingridient_ids.each do |id| %> 
-  <td><%= link_to Ingridient.find(id).name %> </br></td>
+  <td><%= Ingridient.find(id).name %><br/></td>
   <% end %>
 
 </tr>
 </table>
 
+<div class="links">
 
-<span>
-<p><%= link_to 'Edit', edit_recipe_path(@recipe) %></p>
+  <ul>
+    <li>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+    </li>
+    <li>
+    <%= button_to 'Delete Recipe', recipe_delete_path(@recipe) %>
+    </li>
+    <li>
+    <%= link_to 'Back', recipes_path %>
+    </li>
+  </ul>
+  
 
-<p><%= button_to 'Delete Recipe', recipe_delete_path(@recipe) %></p>
-
-<p><%= link_to 'Back', recipes_path %></p>
-</span>
+</div>
