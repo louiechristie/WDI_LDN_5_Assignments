@@ -7,6 +7,8 @@ CookbookApp::Application.routes.draw do
 
   root to: 'categories#index'
 
+  get '/about' => 'home#about'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
