@@ -1,4 +1,12 @@
 Foodblog::Application.routes.draw do
+  resources :categories, :recipes, :ingredients
+
+    delete '/categories/:id' => 'categories#destroy', :as => 'delete_category'
+
+    delete '/recipes/:id' => 'recipes#destroy', :as => 'delete_recipe'
+
+
+  root to: 'categories#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

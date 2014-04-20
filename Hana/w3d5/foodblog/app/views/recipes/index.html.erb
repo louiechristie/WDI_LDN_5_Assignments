@@ -1,0 +1,7 @@
+<% @recipes.each do |recipe| %>
+
+<div>
+  <%=link_to recipe.name, recipe%></br>
+  <%= link_to 'Delete', delete_recipe_path(recipe), method: 'delete'%>
+ </div>
+ <%end%>
