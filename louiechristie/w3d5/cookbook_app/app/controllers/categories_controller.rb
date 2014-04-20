@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-  def index
+ def index
     @categories = Category.all
   end
 
@@ -33,3 +33,4 @@ class CategoriesController < ApplicationController
   end
 
 end
+

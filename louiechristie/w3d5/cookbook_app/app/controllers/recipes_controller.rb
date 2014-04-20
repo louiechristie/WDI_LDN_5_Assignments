@@ -1,7 +1,7 @@
-class RecipiesController < ApplicationController
+class RecipesController < ApplicationController
 
   def index
-    @recipies = Recipe.all
+    @recipes = Recipe.all
   end
 
   def new
@@ -10,7 +10,7 @@ class RecipiesController < ApplicationController
 
   def create
    Recipe.create(params["recipe"])
-   redirect_to(recipies_path)
+   redirect_to(recipes_path)
   end
 
   def show
@@ -19,7 +19,7 @@ class RecipiesController < ApplicationController
 
   def destroy
     Recipe.find(params[:id]).destroy
-    redirect_to(recipies_path)
+    redirect_to(recipes_path)
   end
 
   def edit
@@ -29,7 +29,7 @@ class RecipiesController < ApplicationController
   def update
     recipe = Recipe.find(params[:id])
     recipe.update_attributes(params[:recipe])
-    redirect_to(recipies_path)
+    redirect_to(recipes_path)
   end
 
 end

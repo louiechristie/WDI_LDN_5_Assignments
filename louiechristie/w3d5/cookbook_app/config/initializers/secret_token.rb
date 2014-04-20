@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-CookbookApp::Application.config.secret_token = 'd3832fca0087f05c8e2b3e7cf5fa8c5fd1c973723170593e4f6036a729605355c3433b26b3d5296027326d01490e28e9400fe00da0ed8da22eef79eafbc067d3'
+CookbookApp::Application.config.secret_token = '883a45e2b74e9fd915dafe9e6fd118ec873ac1abd87feb22bce3b71d271ff2d09865276ad4e38f75385dcd94d78c45822a5505afed0664e69e4476ceaf4a7b56'
