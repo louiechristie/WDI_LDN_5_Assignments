@@ -16,17 +16,13 @@
     <%= c.text_field :name %>
   </div>
 
-  <div class="name">
-    <%= c.label :category_id %><br />
-    <%= c.select 'category_id', options_from_collection_for_select(Category.all, :id, :name, @recipe.category_id) %>  
-  </div>
-
-  <div class="name">
-    <%= c.label :feeds %><br />
-    <%= c.text_field :feeds %>
-  </div>
-
   <div class="actions">
     <%= c.submit %>
   </div>
 <% end %>
+<% for ingredient in Ingredient.all %>
+  <p><%= ingredient.name %><%= check_box_tag 'rock', 'rock music'
+ %></p>
+
+<% end %>
+<br/>

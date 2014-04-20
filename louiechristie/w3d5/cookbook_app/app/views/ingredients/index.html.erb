@@ -1,0 +1,15 @@
+<h2>Ingredients</h2>
+
+<table>
+
+  <% @ingredients.each do |ingredient| %>
+  <tr>
+    <td><%= link_to(ingredient.name, ingredient_path(ingredient.id)) %></td>
+    <td><%= link_to('Edit', edit_ingredient_path(ingredient.id)) %></td>
+    <td><%= link_to('Delete', ingredient_path(ingredient.id), :method => :delete) %></td>
+  </tr>
+  <% end %>
+ 
+</table>
+<br/>
+<p><%= link_to('New Ingredient',new_ingredient_path) %></p>
