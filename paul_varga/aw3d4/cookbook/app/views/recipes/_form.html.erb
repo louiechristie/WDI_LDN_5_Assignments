@@ -27,6 +27,19 @@
     <%= r.label :feeds_people %><br />
     <%= r.select :feeds_people, options_for_select(10.downto(1)) %>
   </div>
+
+  <div class="field">
+    <%= r.label :ingridients %><br />
+    <% for ingridient in Ingridient.find(:all) %>
+    <%= check_box_tag "recipe[ingridient_ids][]", ingridient.id, @recipe.ingridients.include?(ingridient) %>
+    <%= ingridient.name %>
+  <% end %>
+  </div>
+
+
+
+
+
   <div class="actions">
     <%= r.submit %>
   </div>
