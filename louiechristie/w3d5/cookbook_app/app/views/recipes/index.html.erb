@@ -1,15 +1,25 @@
 <h2>Recipes</h2>
 
 <table>
+  <thead>
+    <tr>
+      <th>Recipe Name</th>
+      <th>Category</th> 
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
 
-  <% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= link_to(recipe.name, recipe_path(recipe.id)) %></td>
-    <td><%= link_to('Edit', edit_recipe_path(recipe.id)) %></td>
-    <td><%= link_to('Delete', recipe_path(recipe.id), :method => :delete) %></td>
-  </tr>
-  <% end %>
- 
+  </tbody>
+    <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to(recipe.name, recipe_path(recipe.id)) %></td>
+      <td><%= Category.find(recipe.category_id).name %></td>
+      <td><%= link_to('Edit', edit_recipe_path(recipe.id)) %></td>
+      <td><%= link_to('Delete', recipe_path(recipe.id), :method => :delete) %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 <br/>
 <p><%= link_to('New Recipe',new_recipe_path) %></p>

@@ -28,6 +28,10 @@ strong {
   font-weight: bold;
 }
 
+thead {
+  font-weight: bold;
+}
+
 form {
   display: inline;
 }
@@ -60,15 +64,13 @@ nav li{
 /* hide the submenu */
 .submenu {
   display: none;
+  padding: 10px;
 }
 /* show the submenu */
 nav li:hover ul.submenu{
   display: block;
   position: absolute;
-  background-color: black;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  background-color: white;
 }
 
 td {
