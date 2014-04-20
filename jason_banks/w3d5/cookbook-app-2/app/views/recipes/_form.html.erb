@@ -6,6 +6,10 @@
 <%= f.text_field :description %><br />
 <%= f.label :prep_time %> (in months)
 <%= f.number_field :prep_time, min: 0, step: 1 %><br />
+<% @ingredients.each do |ingredient| %>
+<%= check_box_tag("recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)) %>
+<%= label_tag("recipe[ingredient_ids][]", ingredient.name) %>
+<% end %>
 <%= f.label :instructions %>
 <%= f.text_area :instructions %><br />
 <%= f.label :image %>

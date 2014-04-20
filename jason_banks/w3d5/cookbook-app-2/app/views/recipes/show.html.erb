@@ -1,4 +1,14 @@
 <h2><%= @recipe.title %></h2>
-<%= image_tag("#{@recipe.image}") %><br />
+<%= image_tag("#{@recipe.image}") if @recipe.image %><br />
+<h4><%= @recipe.description %></h4>
+<h4>Ingredients</h4>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+<h4>Instructions</h4>
+<p><%= @recipe.instructions %></p>
+<br />
 <%= button_to "Edit #{@recipe.title}", edit_recipe_path(@recipe), method: "get" %>
 <%= button_to "Delete #{@recipe.title}", delete_recipe_path(@recipe), method: "post", confirm: "Delete #{@recipe.title}?" %>

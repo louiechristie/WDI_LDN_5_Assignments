@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :category_id, :description, :image, :instructions, :prep_time, :title
+  attr_accessible :category_id, :description, :image, :instructions, :prep_time, :title, :ingredient_ids
   validates :description, :instructions, :title, presence: true
 
   belongs_to :category

@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
 
   def show
     find_category
+    raise
   end
 
   def edit

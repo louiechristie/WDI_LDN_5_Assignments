@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     find_categories
+    find_ingredients
   end
 
   def create
@@ -17,11 +18,13 @@ class RecipesController < ApplicationController
 
   def show
     find_recipe
+    find_ingredients
   end
 
   def edit
     find_recipe
     find_categories
+    find_ingredients
   end
 
   def update
@@ -39,6 +42,10 @@ class RecipesController < ApplicationController
 
   def find_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def find_ingredients
+    @ingredients = Ingredient.where(id: @recipe.ingredient_ids)
   end
 
   def find_categories
