@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Recipe Name</th>
-      <th>Category</th> 
+      <th>Category</th>
+      <th>Feeds</th>  
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -15,6 +16,7 @@
     <tr>
       <td><%= link_to(recipe.name, recipe_path(recipe.id)) %></td>
       <td><%= Category.find(recipe.category_id).name %></td>
+      <td><%= recipe.feeds %></td>
       <td><%= link_to('Edit', edit_recipe_path(recipe.id)) %></td>
       <td><%= link_to('Delete', recipe_path(recipe.id), :method => :delete) %></td>
     </tr>
