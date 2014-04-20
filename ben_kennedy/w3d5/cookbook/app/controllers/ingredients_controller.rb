@@ -4,14 +4,18 @@ class IngredientsController < ApplicationController
   end
 
   def new
+    if params[:ingredient][:recipe_id]
+      @recipe = Recipe.find(params[:ingredient][:recipe_id])
+    else
+      @recipe = Recipe.last
+    end
     @ingredient = Ingredient.new
   end
 
   def create
     @ingredient = Ingredient.create(params[:ingredient])
     @ingredient.save
-
-    redirect_to(ingredients_path)
+    redirect_to(recipe_path(@ingredient.recipe_id))
   end
 
   def edit
@@ -32,12 +36,6 @@ def destroy
   redirect_to(ingredients_path)    
 end
 
-# def engine
-#   @ingredient_id = Ingredient.find(params[:id])
-#   @engine = Engine.find(@ingredient_id.engine_id)
-#   @ingredients = Ingredient.all
-#   render 'index'
-# end
 
 end
 

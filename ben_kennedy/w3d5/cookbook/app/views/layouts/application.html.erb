@@ -7,10 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to 'Add Category', new_category_path %>
+  <%= link_to 'View Recipes', recipes_path %>
   <%= link_to 'Add Recipe', new_recipe_path %>
+  <%= link_to 'View Categories', categories_path %>
   <%= link_to 'View Ingredients', ingredients_path %>
-  <%= link_to 'Add Recipe with Ingredients', full_recipe_new_path %>
 <%= yield %>
 
 </body>

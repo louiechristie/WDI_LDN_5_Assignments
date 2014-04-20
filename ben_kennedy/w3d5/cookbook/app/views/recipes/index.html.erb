@@ -22,6 +22,9 @@
         <%= button_to 'Edit', edit_recipe_path(recipe.id), method: "get" %>
       </td>
       <td>
+        <%= button_to 'See Ingredients', recipe_path(recipe.id), method: "get" %>
+      </td>      
+      <td>
         <%= button_to 'Delete', recipe_delete_path(recipe.id), method: "delete" %>
       </td>      
     </tr>

@@ -5,23 +5,14 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new unless @recipe 
-    @ingredients = Ingredient.new
     @categories = Category.all
   end
 
   def create
-    raise 'check'
-    @recipe = Recipe.new(params[:recipe])
-    if params[:temp_ingredients]
-      @temp_ingredients = [ params[:temp_ingredients] ]
-      else
-      @temp_ingredients = [ ]
-    end
-    @ingredient = Ingredient.new(params[:ingredient])
-    @temp_ingredients.push(name: @ingredient.name, quantity: @ingredient.quantity, unit: @ingredient.unit)
-    @ingredients = Ingredient.new
+    @recipe = Recipe.create(params[:recipe])
+    @ingredient = Ingredient.new
     @categories = Category.all
-    render 'new'
+    redirect_to(new_ingredient_path)
   end
 
   def edit
@@ -51,9 +42,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-    raise 'show path'
-
+    @recipe = Recipe.find(params[:id]) 
+    @ingredients = Ingredient.where("recipe_id = '#{params[:id]}'")
+    @ingredient = Ingredient.new
   end
 
 end
+
+
 
