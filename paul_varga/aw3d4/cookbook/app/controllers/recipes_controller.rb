@@ -9,8 +9,15 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params[:recipe])
-    redirect_to(recipes_path)
+    @recipe = Recipe.new(params[:recipe])
+
+    respond_to do |format|
+      if @recipe.save
+        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
+      else 
+        format.html { render action: "new" }
+      end
+    end
   end
 
   def show
@@ -24,8 +31,13 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     #params[:recipe][:ingridient_ids] ||= [] 
-    @recipe.update_attributes(params[:recipe])
-    redirect_to(recipes_path)
+    respond_to do |format|
+      if @recipe.update_attributes(params[:recipe])
+      format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
+      else
+      format.html { render action: "edit" }
+      end
+    end
   end
 
   def destroy
