@@ -2,6 +2,10 @@
 
 <%= form_for(@recipe) do |r| %>
  
+  <div class="field">
+    <%= r.label :category_id %><br />
+    <%= r.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+  </div>
 
   <div class="field">
     <%= r.label :name %><br />  
@@ -14,28 +18,19 @@
     </div>
 
     <div class="field">
-    <%= r.label :category_id %><br />  
-    <%= r.text_field :category_id %>
-    </div>
-
-    <div class="field">
     <%= r.label :picture %><br />
     <%= r.text_field :picture %>
   </div>
 
     <div class="field">
-    <%= r.label :Ingredients %><br />
-    <%= r.collection_select :category_id, Ingredient.all, :id, :name_for_select  %>
-    </div>
-
-    <div class="field">
-            <%= r.label :ingridients %><br />
-            <% for ingredient in Ingredient.find(:all) %>
-
-        
-        <% end %>
-    </div>
-
+    <%= r.label :ingridients %><br />
+    <%= hidden_field_tag "recipe[ingredient_ids][]" %>
+    <% for ingredient in Ingredient.all %>
+    <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %> 
+    <%= ingredient.name %>
+    <% end %>
+  </div>
+    
 
   <div class="actions">
     <%= r.submit %>

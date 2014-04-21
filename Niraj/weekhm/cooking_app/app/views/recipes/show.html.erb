@@ -1,15 +1,8 @@
-<%= recipe.name %>
+
 
 Name:
-<%= recipe.name %>
+<%= @recipe.name %>
 
 Serves:
-<%= recipe.size %>
+<%= @recipe.serving_size %>
 
-
-Category:
-
-<% if @recipe.category %>
-<%= @recipe.category.name %>
-
-<% end %>
