@@ -2,31 +2,25 @@
 <p>Name: <%= @recipe.name %></p>
 <p>Category: <%= Category.find(@recipe.category_id).name %></p>
 <p>Ingredients:</p>
-<ul>
-  <% for ingredient in @recipe.ingredients %>
-    <li>
-      <%= ingredient.name %>
-    </li>
-  <% end %>
-</ul>
 
+   <%
+    sentences = []
 
-<div class="field">
-  Quantities: <%= @recipe.ingredients_recipes.map do |ingredients_recipe | 
-      ingredients_recipe.quantity
+    @recipe.ingredients_recipes.map do |ingredients_recipe |
+
+      quantity = ingredients_recipe.quantity.to_s || ""
+      measure = ingredients_recipe.measure|| ""
+      name = Ingredient.find(ingredients_recipe.ingredient_id).name || ""
+      sentence = quantity+" "+measure+" of "+name
+      sentences << sentence
     end
   %>
-</br>
-  Measures: <%= @recipe.ingredients_recipes.map do |ingredients_recipe | 
-      ingredients_recipe.measure
-    end
-  %>
-
-</div>
-
-
-
-
+  
+  <ul>
+    <% sentences.each do |sentence| %>
+      <li><%= sentence %></li>
+    <% end %>
+  </ul>
 <p>
   <%= link_to('Edit', edit_recipe_path(@recipe.id)) %> 
   <%= link_to('Delete', recipe_path(@recipe.id), :method => :delete) %>
