@@ -3,15 +3,22 @@
 <head>
   <title>Cookbook</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to 'View Recipes', recipes_path %>
-  <%= link_to 'Add Recipe', new_recipe_path %>
-  <%= link_to 'View Categories', categories_path %>
-  <%= link_to 'View Ingredients', ingredients_path %>
+  <nav>
+    <ul>
+      <li><%= link_to 'View All Recipes', recipes_path %></li>
+      <li><%= link_to 'Add Recipe', new_recipe_path %></li>
+      <li><%= link_to 'View Recipes by Category', categories_path %></li>
+      <li><%= link_to 'View Recipes by Ingredient', ingredients_path %></li>
+    </ul>
+  </nav>
+  <section class='main'>
 <%= yield %>
+  </section>
 
 </body>
 </html>

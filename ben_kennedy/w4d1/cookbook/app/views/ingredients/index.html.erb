@@ -17,6 +17,11 @@
       <td>
         <%= button_to 'Delete', ingredient_delete_path(ingredient.id), method: "delete" %>
       </td>             
+      <td>
+        <form action='/recipes' method='get'>
+          <%= hidden_field(:ingredient, :id, value: ingredient.id)   %> 
+        <button class='index_submit'>See Recipes Using This Ingredient</button></form>     
+      </td>      
     </tr>
     <% end %>
   </table>
