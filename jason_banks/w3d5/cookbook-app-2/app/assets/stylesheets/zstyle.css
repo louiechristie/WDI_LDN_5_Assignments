@@ -114,3 +114,8 @@ h2 {
 .black {
   color: #000;
 }
+
+.flash {
+  margin-top: 100px;
+  margin-bottom: -50px;
+}
