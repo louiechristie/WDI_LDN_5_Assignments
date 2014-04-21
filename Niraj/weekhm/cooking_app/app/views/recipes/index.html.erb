@@ -2,17 +2,20 @@
 
 <p> <a href="<%= new_recipe_path %>" >New Recipe</a></p>
 
+<div class="recipe">
 
-<%= @recipes.each do |recipe| %>
+        <% @recipes.each do |recipe| %>
 
-  <%= recipe.name %>
+          <p> Name: <%= recipe.name %> </p>
+          <p> Serving size: <%= recipe.serving_size %> </p>
+          <p> <input type="image" src="<%= recipe.picture %>" name="image" width="300" height="169"> </p>
 
-  <%= link_to "edit", edit_recipe_path(recipe)%>
+          <p>Ingredients: </p>
+
+          <%= link_to "edit", edit_recipe_path(recipe)%>
 
 
- <%= link_to 'Delete', recipe_path(recipe), method: 'delete', confirm: 'Are you sure?' %> 
+         <%= link_to 'Delete', recipe_path(recipe), method: 'delete', confirm: 'Are you sure?' %> 
+</div>
+        <% end %>
 
-
-
- 
-  <% end %>
