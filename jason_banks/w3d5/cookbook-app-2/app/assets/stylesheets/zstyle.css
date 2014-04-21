@@ -12,6 +12,21 @@ body {
   font-size: 20px;
 }
 
+h1 {
+  font-family: 'Metrophobic', sans-serif;
+  font-size: 80px;
+  margin-right: 25px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
 li {
   list-style: none;
   margin-left: -40px;
@@ -52,16 +67,7 @@ img {
   border: 3px solid #fff;
 }
 
-h1 {
-  font-family: 'Metrophobic', sans-serif;
-  font-size: 80px;
-  margin-right: 25px;
-  margin-bottom: 60px;
-}
 
-h2 {
-  font-size: 40px;
-}
 
 .bar {
   width: 960px;
@@ -118,4 +124,8 @@ h2 {
 .flash {
   margin-top: 100px;
   margin-bottom: -50px;
+}
+
+#error_explanation, #notice {
+  color: #5B80FF;
 }

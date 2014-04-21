@@ -11,10 +11,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.create(params[:recipe])
-    flash_notice("Recipe") unless recipe.valid?
-
-    redirect_to(recipes_path)
+    @recipe = Recipe.new(params[:recipe])
+    if @recipe.save
+      redirect_to(recipes_path, notice: "#{@recipe.title} has been successfully added.")
+    else
+      find_categories
+      find_ingredients
+      render action: 'new'
+    end
   end
 
   def show
@@ -32,10 +36,11 @@ class RecipesController < ApplicationController
     recipe = find_recipe
     params[:recipe][:ingredient_ids] ||= []
     params[:recipe][:title].capitalize!
-    recipe.update_attributes(params[:recipe])
-    flash_notice("Recipe") unless recipe.valid?
-
-    redirect_to(recipes_path)
+    if @recipe.update_attributes(params[:category])
+      redirect_to(recipes_path, notice: "#{@recipe.title} has been successfully updated.")
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy

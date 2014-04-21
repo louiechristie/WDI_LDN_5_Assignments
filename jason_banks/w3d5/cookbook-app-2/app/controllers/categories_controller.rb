@@ -8,11 +8,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    params[:category][:name].capitalize!
-    category = Category.create(params[:category])
-    flash_notice("Category") unless category.valid?
+    @category = Category.new(params[:category])
+    if @category.save
+      redirect_to(categories_path, notice: "#{@category.name} has been successfully added.")
+    else
+      render action: 'new'
+    end
 
-    redirect_to(categories_path)
   end
 
   def show
@@ -25,12 +27,12 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category = find_category
-    params[:category][:name].capitalize!
-    category.update_attributes(params[:category])
-    flash_notice("Category") unless category.valid?
-
-    redirect_to(categories_path)
+    find_category
+    if @category.update_attributes(params[:category])
+      redirect_to(categories_path, notice: "#{@category.name} has been successfully updated.")
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy

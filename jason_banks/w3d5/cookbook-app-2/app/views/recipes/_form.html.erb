@@ -1,4 +1,10 @@
 <%= form_for @recipe do |f| %>
+<% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved: <%= @recipe.errors.full_messages.join(", ").downcase %>.</h3>
+    </div>
+  <% end %>
+
 <%= f.label :title %>
 <div class="black"><%= f.text_field :title %></div>
 <br /><br />
