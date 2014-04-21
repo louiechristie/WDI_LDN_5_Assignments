@@ -28,11 +28,26 @@
       Ingredients:
     </td>
     <td class="checkboxes<%= if @recipe.errors[:ingredient_ids].count > 0 then 'field_with_errors' end %>" >
+      <% j = 0 %>
       <% @ingredients.each do |ingredient| %>
-        <%= check_box_tag("ingredient_ids[]", ingredient.id, if  @recipe.ingredient_ids.include?(ingredient.id) then checked = true end) %>
+        <%= check_box_tag("ingredient_ids[]", ingredient.id, if  @recipe.ingredient_ids.include?(ingredient.id) then checked = true end, class: "check" + j.to_s) %>
         <%= label_tag( "ingredient_ids[]", ingredient.name) %>
-      
+        <% j += 1%>
       <% end %>
+      <!-- </td>
+      <td class="checkboxes"> -->
+        <% i = 0 %>
+        </br> Quantity:</br> 
+
+      <% @ingredients.each do |ingredient| %>
+      
+        <div class="ingredient<%= i.to_s %> hidebox">
+        
+        <%= ingredient.name %> <%= text_field "quantity" , ingredient.id , value: quantity(ingredient)  %> <br />
+          <% i += 1 %>
+        </div>
+      <% end %>
+
       </td>
       <td>
         <%= error_msg(:ingredient_ids) %>

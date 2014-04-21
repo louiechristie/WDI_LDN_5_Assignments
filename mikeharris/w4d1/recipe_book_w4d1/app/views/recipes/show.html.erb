@@ -24,10 +24,10 @@
       Ingredients:
     </td>
     <td>
-      <% list = @recipe.ingredient_ids.collect {|id| Ingredient.find(id).name}.to_sentence %>
-      <% list[0] = list.first.capitalize %>
-      <%= list %>  
-          
+        
+       <%= list_ingredients %>
+
+            
       
       </td>
   </tr>
