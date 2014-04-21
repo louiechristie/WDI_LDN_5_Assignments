@@ -13,10 +13,19 @@
   </p>
 
   <p>
-     <% Ingredient.all.each do |ingredient| %>
-       <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient), id: "recipe_ingredient_ids_#{ingredient.id}" %>
-       <%= f.label :ingredient_ids, ingredient.name, for: "recipe_ingredient_ids_#{ingredient.id}" %>
-       <br>
+     <% if @ingredients_recipes %>
+       <% @ingredients_recipes.each do |ingredient_recipe| %>
+         <%= text_field :ingredients_recipes, ingredient_recipe.ingredient_id, value: ingredient_recipe.quantity  %>
+         <%= ingredient_recipe.ingredient.name %>
+         <br>
+         <% end %>
+         
+         <% else %>     
+       <% Ingredient.all.each do |ingredient| %>
+         <%= text_field :ingredients_recipes, ingredient.id  %>
+         <%= ingredient.name %>
+         <br>
+      <% end %>
      <% end %>
   </p>
 

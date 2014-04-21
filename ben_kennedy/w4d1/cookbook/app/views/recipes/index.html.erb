@@ -16,13 +16,16 @@
         <%= recipe.feeds %>
       </td>
       <td>
-        <%= Category.find(recipe.category.id).name %>
+        <%= recipe.category.name %>
       </td>            
       <td>
         <%= button_to 'Edit', edit_recipe_path(recipe.id), method: "get" %>
       </td>
       <td>
         <%= button_to 'Delete', recipe_delete_path(recipe.id), method: "delete" %>
+      </td>      
+      <td>
+        <%= button_to 'See Ingredients', recipe_path(recipe.id), method: "get" %>
       </td>      
     </tr>
     <% end %>

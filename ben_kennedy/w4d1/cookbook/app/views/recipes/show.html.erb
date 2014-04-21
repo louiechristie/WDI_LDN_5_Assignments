@@ -1,11 +1,16 @@
 <h1><%= @recipe.name %></h1>
 
-<% @ingredients.each do |ingredient| %>
-<p><%= ingredient.quantity %> <%= ingredient.unit %> <%= ingredient.name %></p>
- <%= button_to 'Edit Ingredient', edit_ingredient_path(ingredient.id), method: "get" %>
- <%= button_to 'Delete Ingredient', ingredient_delete_path(ingredient.id), method: "delete" %> 
-<% end %>
-  <form action='/ingredients/new' method='get'>
-  <%= hidden_field(:ingredient, :recipe_id, value: @recipe.id) if @recipe.id  %> <br/>
-  <button>Add New Ingredient</button>
+  <table>
+    <thead>
+      <td>Quantity</td>
+      <td>Ingredient</td>
+    </thead>
+    <% @ingredients_recipes.each do |ingredients_recipe| %>
+    <tr>
+      <td><%= ingredients_recipe.quantity unless ingredients_recipe.quantity == "" %></td>
+      <td><%= ingredients_recipe.ingredient.name unless ingredients_recipe.quantity == "" %></td>
+    </tr>
+    <% end %>
+  </table>
+
   
