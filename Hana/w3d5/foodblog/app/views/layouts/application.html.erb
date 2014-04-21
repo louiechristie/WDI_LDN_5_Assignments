@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="home"><%=link_to "Food Blog", categories_path%></div>
+<div id="home"><%=link_to "Food Blog", root_path%></div>
 <div id="view_all_recipes"><%=link_to "View All Recipes", recipes_path%></div>
+<div id="view_all_ingredients"><%=link_to "View All Ingredients", ingredients_path%></div>
 
 <%= yield %>
 

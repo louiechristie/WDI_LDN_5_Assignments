@@ -10,9 +10,7 @@
 <div class = 'ingredients'>
   Ingredients: 
   <% @recipe.ingredients.each do |ingredient|%>
-    <ul>
       <li><%=ingredient.name%></li>
-    </ul>
     <%end%>
 </div>
 <div class = 'instructions'>
