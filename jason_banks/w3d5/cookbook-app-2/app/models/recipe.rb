@@ -3,5 +3,8 @@ class Recipe < ActiveRecord::Base
   validates :description, :instructions, :title, presence: true
 
   belongs_to :category
-  has_and_belongs_to_many :ingredients
+  has_many :ingredientsrecipes
+  has_many :ingredients, through: :ingredientsrecipes
+
+  accepts_nested_attributes_for :ingredients
 end

@@ -88,8 +88,7 @@ img {
   background-color: #5B80FF;
   margin-left: 30px;
   margin-right: 6px;
-/*  display: inline-block;
-*/}
+}
 
 .button_to {
   background-color: #000;
@@ -127,5 +126,9 @@ img {
 }
 
 #error_explanation, #notice {
+  color: #5B80FF;
+}
+
+.active_menu_item {
   color: #5B80FF;
 }
