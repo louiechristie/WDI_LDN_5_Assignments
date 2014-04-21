@@ -7,5 +7,7 @@
     <% end %>
   </ul>
 <% end %>
-<%= button_to "Edit", edit_category_path(@category), method: "get" %>
-<%= button_to "Delete", delete_category_path(@category), method: "post", confirm: "Delete \"#{@category.name}?\"" %>
+<%= link_to "Edit", edit_category_path(@category) %>
+<br />
+<br />
+<%= link_to "Delete", delete_category_path(@category), method: "post", confirm: "Delete \"#{@category.name}?\"" %>

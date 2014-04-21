@@ -10,7 +10,7 @@ CookbookApp2::Application.routes.draw do
   resources :recipes
   resources :ingredients
 
-  root to: "categories#index"
+  root to: "categories#home"
   post "categories/:id/delete" => "categories#destroy", as: "delete_category"
   post "recipes/:id/delete" => "recipes#destroy", as: "delete_recipe"
   post "ingredients/:id/delete" => "ingredients#destroy", as: "delete_ingredient"

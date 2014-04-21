@@ -1,5 +1,4 @@
-<h1>Categories#index</h1>
-<%= link_to "New Category", new_category_path %>
+<h2>Categories#index</h2>
 <% if @categories %>
   <ul>
   <% @categories.each do |category| %>
@@ -7,3 +6,5 @@
   <% end %>
   </ul>
 <% end %>
+<br />
+<%= link_to "New Category", new_category_path %>

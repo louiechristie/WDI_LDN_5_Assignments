@@ -1,5 +1,4 @@
-<h1>Ingredients#index</h1>
-<%= link_to "New Ingredient", new_ingredient_path %>
+<h2>Ingredients#index</h2>
 <% if @ingredients %>
   <ul>
   <% @ingredients.each do |ingredient| %>
@@ -7,3 +6,5 @@
   <% end %>
   </ul>
 <% end %>
+<br />
+<%= link_to "New Ingredient", new_ingredient_path %>

@@ -12,5 +12,7 @@
 <h4>Instructions</h4>
 <p><%= @recipe.instructions %></p>
 <br />
-<%= button_to "Edit", edit_recipe_path(@recipe), method: "get" %>
-<%= button_to "Delete", delete_recipe_path(@recipe), method: "post", confirm: "Delete \"#{@recipe.title}?\"" %>
+<%= link_to "Edit", edit_recipe_path(@recipe) %>
+<br />
+<br />
+<%= link_to "Delete", delete_recipe_path(@recipe), method: "post", confirm: "Delete \"#{@recipe.title}?\"" %>

@@ -1,15 +1,26 @@
-<h1>Recipes#index</h1>
-<%= link_to "New Recipe", new_recipe_path %>
+<h2>Recipes#index</h2>
 <% if @recipes %>
-  <ul>
+  <table>
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
   <% @recipes.each do |recipe| %>
-    <li><%= link_to recipe.title, recipe_path(recipe) %> <%= image_tag("#{recipe.image}") if recipe.image > "" %>
-      <ul>
-        <li>Category: <%= recipe.category.name %></li>
-        <li>Description: <%= recipe.description %></li>
-        <li>Prep time: <%= pluralize(recipe.prep_time, 'week') %></li>
-      </ul>
-    </li>
+    <tr>
+      <td>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+        <ul>
+          <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %></li>
+          <li class="recipes-list">Description: <%= recipe.description %></li>
+          <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'week') %></li>
+        </ul>
+      </td>
+      <td>
+        <%= image_tag("#{recipe.image}") if recipe.image > "" %>
+      </td>
+    </tr>
   <% end %>
-  </ul>
 <% end %>
+<br />
+<%= link_to "New Recipe", new_recipe_path %>

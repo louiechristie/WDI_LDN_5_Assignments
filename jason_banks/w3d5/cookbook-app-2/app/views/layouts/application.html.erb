@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CookbookApp2</title>
+  <title>disastronomia</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Metrophobic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div class="bar">
+      The guide for serving disaster, anarchy, chaos, apocalyptic ruin, and pandemonium in epic proportions.
+    </div>
+      <div class="logo">
+        <h1>disastro</h1>
+        <h1>
+          <a href="/">
+            <div class="box"></div>
+          </a>
+        nomia</h1>
+      </div>
+  </header>
   <ul>
-    <li><%= link_to "Categories", categories_path %>
-    <li><%= link_to "Recipes", recipes_path %>
-    <li><%= link_to "Ingredients", ingredients_path %>
+    <li><%= link_to "Categories#index", categories_path %>
+    <li><%= link_to "Recipes#index", recipes_path %>
+    <li><%= link_to "Ingredients#index", ingredients_path %>
   </ul>
   <br />
   <br />
-  <h2><%= flash[:notice] if flash[:notice] %></h2>
-
-
-<%= yield %>
-
+  <h2>
+    <%= flash[:notice] if flash[:notice] %>
+  </h2>
+  <div class="yield">
+    <%= yield %>
+  </div>
 </body>
+<footer>
+</footer>
 </html>

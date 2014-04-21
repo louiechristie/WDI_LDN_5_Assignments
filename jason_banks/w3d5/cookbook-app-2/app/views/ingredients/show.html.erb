@@ -10,5 +10,7 @@
 <%= link_to "Add a Recipe", new_recipe_path %>
 <br />
 <br />
-<%= button_to "Edit", edit_ingredient_path(@ingredient), method: "get" %>
-<%= button_to "Delete", delete_ingredient_path(@ingredient), method: "post", confirm: "Delete \"#{@ingredient.name}?\"" %>
+<%= link_to "Edit", edit_ingredient_path(@ingredient) %>
+<br />
+<br />
+<%= link_to "Delete", delete_ingredient_path(@ingredient), method: "post", confirm: "Delete \"#{@ingredient.name}?\"" %>
