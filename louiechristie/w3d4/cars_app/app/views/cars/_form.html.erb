@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= c.label :engine_id %> Horsepower<br />
-    <%= select_tag 'engine_id', options_from_collection_for_select(Engine.all, :id, :power) %>
+    <%= c.select 'engine_id', options_from_collection_for_select(Engine.all, :id, :engine_values) %>
   </div>
 
   <div class="actions">
