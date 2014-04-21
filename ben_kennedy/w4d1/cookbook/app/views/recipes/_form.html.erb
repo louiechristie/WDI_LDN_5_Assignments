@@ -1,0 +1,25 @@
+<%= form_for @recipe do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :feeds %><br />
+    <%= f.text_field :feeds %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </p>
+
+  <p>
+     <% Ingredient.all.each do |ingredient| %>
+       <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient), id: "recipe_ingredient_ids_#{ingredient.id}" %>
+       <%= f.label :ingredient_ids, ingredient.name, for: "recipe_ingredient_ids_#{ingredient.id}" %>
+       <br>
+     <% end %>
+  </p>
+
+
+  <p><%= f.submit %></p>
+<% end %>
