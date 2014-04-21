@@ -15,6 +15,17 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+
+    @sentences = []
+
+    @recipe.ingredients_recipes.map do |ingredients_recipe |
+
+      quantity = ingredients_recipe.quantity.to_s || "some amount"
+      measure = ingredients_recipe.measure|| "A measure"
+      name = Ingredient.find(ingredients_recipe.ingredient_id).name || ""
+      sentence = quantity+" "+measure+" "+name
+      @sentences << sentence
+    end
   end
 
   def destroy

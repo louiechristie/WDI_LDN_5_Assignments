@@ -10,16 +10,19 @@ Category.create(name: 'Starter')
 Category.create(name: 'Main Course')
 Category.create(name: 'Dessert')
 
-Recipe.create(name: 'Pancakes', category_id: 2, feeds: 2)
-Recipe.create(name: 'Omlette', category_id: 2, feeds: 2)
-Recipe.create(name: 'Jacket Potato', category_id: 2, feeds: 2)
+Recipe.create(name: 'Pancakes', category_id: 2, feeds: 4)
+Recipe.create(name: 'Omlette', category_id: 2, feeds: 1)
+Recipe.create(name: 'Jacket Potato', category_id: 2, feeds: 1)
 
 Ingredient.create(name: 'Eggs')
 Ingredient.create(name: 'Milk')
 Ingredient.create(name: 'Flour')
+Ingredient.create(name: 'Potato')
 
-Recipe.find(1).ingredients << Ingredient.find(1)
-Recipe.find(1).ingredients << Ingredient.find(2)
-Recipe.find(1).ingredients << Ingredient.find(3)
+IngredientsRecipe.create(ingredient_id: 1, measure: "whole", quantity: 2, recipe_id: 1)
+IngredientsRecipe.create(ingredient_id: 2, measure: "ml", quantity: 300, recipe_id: 1)
+IngredientsRecipe.create(ingredient_id: 3, measure: "g", quantity: 100, recipe_id: 1)
 
-Recipe.find(2).ingredients << Ingredient.find(1)
+IngredientsRecipe.create(ingredient_id: 1, measure: "whole", quantity: 2, recipe_id: 2)
+
+IngredientsRecipe.create(ingredient_id: 4, measure: "large", quantity: 1, recipe_id: 3)

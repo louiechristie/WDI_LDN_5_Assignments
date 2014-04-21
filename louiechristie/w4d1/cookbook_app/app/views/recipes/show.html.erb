@@ -4,20 +4,11 @@
 <p>Ingredients:</p>
 
    <%
-    sentences = []
-
-    @recipe.ingredients_recipes.map do |ingredients_recipe |
-
-      quantity = ingredients_recipe.quantity.to_s || ""
-      measure = ingredients_recipe.measure|| ""
-      name = Ingredient.find(ingredients_recipe.ingredient_id).name || ""
-      sentence = quantity+" "+measure+" of "+name
-      sentences << sentence
-    end
-  %>
   
+  %>
+
   <ul>
-    <% sentences.each do |sentence| %>
+    <% @sentences.each do |sentence| %>
       <li><%= sentence %></li>
     <% end %>
   </ul>
