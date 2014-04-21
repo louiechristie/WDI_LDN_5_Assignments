@@ -7,7 +7,6 @@ class IngredientsRecipe < ActiveRecord::Base
 
 
 
-  validates :name, presence: true
 
 
 
