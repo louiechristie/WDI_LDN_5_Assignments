@@ -5,6 +5,8 @@
   <th>Feeds </th>
   <th>Description </th>
   <th><%= pluralize('Name of', 'ingredient') %> </th>
+  <th>Quantity </th>
+  <th>Measure </th>
 </tr>
 <tr>
   <td><%= @recipe.category.name %> </td>
@@ -14,7 +16,13 @@
   <td>
   <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
   </td>
-  
+  <td>
+  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.quantity } %>
+  </td>
+  <td>
+  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.measure } %>
+  </td>
+
 </tr>
 </table>
 
