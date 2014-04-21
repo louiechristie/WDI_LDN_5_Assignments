@@ -2,6 +2,8 @@
 
 <% path = engines_path %>
 
-<%= render partial: 'form', locals: {path: path} %>
+<% meth = :post %>
+
+<%= render partial: 'form', locals: {path: path, meth: meth} %>
 
 

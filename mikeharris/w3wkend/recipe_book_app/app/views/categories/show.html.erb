@@ -1,0 +1,9 @@
+<div class="category_show">
+<h2><%= "#{@category.name.pluralize}" %></h2>
+<%= button_to 'Delete', category_path(@category), :method => :delete %>
+<%= button_to 'Edit', edit_category_path(@category), :method => :get %> 
+
+
+<%= render partial: 'list_recipes', locals: {category_id: @category.id} %>   
+
+</div>

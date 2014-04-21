@@ -5,6 +5,7 @@
   <%= text_field(:car,:colour) %>
   <%= label_tag(:max_speed, "Max speed:") %>
   <%= text_field(:car,:max_speed) %>
+
   <% engines_array =  Engine.all.map { |engine| [engine.fuel.to_s + " " +engine.size.to_s + "l", engine.id] } %>
 
   <%= select_tag "car[engine_id]", options_for_select(engines_array) %>
@@ -12,3 +13,5 @@
   <%= submit_tag("Submit") %>
 
 <% end %>
+
+

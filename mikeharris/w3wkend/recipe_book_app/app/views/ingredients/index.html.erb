@@ -1,0 +1,14 @@
+
+<h2>List of ingredients</h2>
+
+<table class="ingredients_list">
+<% @ingredients.each do |ingredient| %>
+  <tr>
+    <td><%= ingredient.name %></td>
+    <td><%= button_to 'Delete', ingredient_path(ingredient), :method => :delete %></td>
+    <td><%= button_to 'Edit', edit_ingredient_path(ingredient), :method => :get %></td>
+  </tr>
+ <% end %>
+</table>
+
+<%= button_to 'Add an ingredient', new_ingredient_path, :method => :get %>
