@@ -1,7 +1,6 @@
-class CategoriesController < ApplicationController
+class HomeController < ApplicationController
 
   def about
   render 'about'
   end
-  
 end

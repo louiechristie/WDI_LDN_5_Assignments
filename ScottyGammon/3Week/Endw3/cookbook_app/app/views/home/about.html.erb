@@ -4,13 +4,8 @@
 
 <table>
     <tr>
-      <th>Name</th>
+      <th>Made By</th>
     </tr>
-    <% @recipes.each do |recipe| %>
     <tr>
-      <td><%= recipe.name %></td>
-      <td><%= recipe.size %></td>
-      <td><%= recipe.category.name %></td>
-      <td><%= link_to 'Show', recipe_path(recipe) %></td><td><%= link_to'Edit', edit_recipe_path(recipe) %></td><td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
-    <% end %>
+      <td><img src="/scotty.jpg" alt="logo" /></td></tr>
 </table>

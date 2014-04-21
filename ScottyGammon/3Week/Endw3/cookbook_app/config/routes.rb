@@ -5,7 +5,7 @@ CookbookApp::Application.routes.draw do
   resources :recipes
 
 
-  root to: 'categories#index'
+  root to: 'home#about'
 
   get '/about' => 'home#about'
 
