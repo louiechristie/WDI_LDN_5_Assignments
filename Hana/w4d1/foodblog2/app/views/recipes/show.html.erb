@@ -10,7 +10,7 @@
 <div class = 'ingredients'>
   Ingredients: 
   <% @recipe.ingredients_recipes.each do |ingredient_recipe|%>
-      <div><%=ingredient_recipe.ingredient.quantity%><%=ingredient_recipe.ingredient.name%></div>
+      <div><%=ingredient_recipe.quantity%>&nbsp&nbsp<%=ingredient_recipe.ingredient.name%></div>
     <%end%>
 </div>
 <div class = 'instructions'>

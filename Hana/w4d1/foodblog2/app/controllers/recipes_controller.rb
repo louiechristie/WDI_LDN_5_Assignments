@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+    #params([:recipe][:ingredients_recipes])
     @recipe = Recipe.create(params[:recipe])
     @ingredients = Ingredient.all 
     if @recipe.save
