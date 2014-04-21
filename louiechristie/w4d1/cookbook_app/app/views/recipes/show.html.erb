@@ -9,6 +9,24 @@
     </li>
   <% end %>
 </ul>
+
+
+<div class="field">
+  Quantities: <%= @recipe.ingredients_recipes.map do |ingredients_recipe | 
+      ingredients_recipe.quantity
+    end
+  %>
+</br>
+  Measures: <%= @recipe.ingredients_recipes.map do |ingredients_recipe | 
+      ingredients_recipe.measure
+    end
+  %>
+
+</div>
+
+
+
+
 <p>
   <%= link_to('Edit', edit_recipe_path(@recipe.id)) %> 
   <%= link_to('Delete', recipe_path(@recipe.id), :method => :delete) %>
