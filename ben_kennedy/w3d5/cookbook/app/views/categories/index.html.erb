@@ -16,6 +16,11 @@
       <td>
         <%= button_to 'Delete', category_delete_path(category.id), method: "delete" %>
       </td>      
+      <td>
+        <form action='/recipes' method='get'>
+          <%= hidden_field(:category, :id, value: category.id)   %> <br/>
+        <button>See Recipes in this Category</button>      
+      </td>  
     </tr>
     <% end %>
   </table>

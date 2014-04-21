@@ -4,10 +4,10 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    if params[:ingredient][:recipe_id]
+    if params[:ingredient] && params[:ingredient][:recipe_id]
       @recipe = Recipe.find(params[:ingredient][:recipe_id])
-    else
-      @recipe = Recipe.last
+    else 
+    @recipe = Recipe.last
     end
     @ingredient = Ingredient.new
   end

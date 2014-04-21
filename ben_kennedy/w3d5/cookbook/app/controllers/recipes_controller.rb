@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
  def index
-      @recipes = Recipe.all
+      if params[:category] && params[:category][:id]
+        @recipes = Recipe.where("category_id = '#{params[:category][:id]}'")
+      else
+        @recipes = Recipe.all
+      end
   end
 
   def new
