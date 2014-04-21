@@ -1,0 +1,20 @@
+<h2>Engine Management</h2>
+
+<a class='new' href="/engines/new">Add a New Engine</a>
+
+<div class='table_bg'>
+	<table>
+			<tr>
+				<th>Fuel Type</th>
+				<th>Size</th>
+				<th>Model</th>
+			</tr>
+			<% @engines.each do |engine| %>
+			<tr>
+				<td><%= engine.fuel_type %></td>
+				<td><%= engine.size %></td>
+				<td><%= engine.model %></td>
+				<td><%= link_to'Edit', edit_engine_path(engine), :class => "new" %></td><td><%= link_to 'Delete', engine, method: :delete, data: { confirm: 'Are you sure?' }, :class => "new" %></td></tr>	
+			<% end %>
+	</table>
+</div>

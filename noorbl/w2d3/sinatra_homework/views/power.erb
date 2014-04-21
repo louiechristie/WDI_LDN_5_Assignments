@@ -1,0 +1,20 @@
+you made it to the power page all the way from the advanced galaxy!
+
+Type in a number you wish to get to the power of another
+
+<form action='/power' method='get'>
+    power_first: <input type='text' name='first'>
+    power_second: <input type='text' name='second'>
+    <button>calculate!</button>
+  </form>
+
+
+<% if @power_result %>
+    <section>
+      <header>
+        <h1>Result of Calculation</h1>
+      </header>
+      <p>The resulf of <%= @power_first %> at the power of <%= @power_second %> is <%= @power_result %>
+    </section>
+  <% end %>
+

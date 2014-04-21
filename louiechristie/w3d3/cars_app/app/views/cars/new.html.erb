@@ -1,0 +1,23 @@
+<h2>New</h2>
+
+  <%= form_tag(cars_path) do %>
+  
+
+  <p><%= label_tag(:make, "Make:") %>
+  <%= text_field(:car,:make) %></p>
+  
+
+
+  <p><%= label_tag(:model, "Model:") %>
+  <%= text_field(:car,:model) %></p>
+
+  
+  <p><%= label_tag(:color, "Color:") %>
+  <%= text_field(:car,:color) %>
+  </p>
+
+  
+
+  <p><%= submit_tag("Submit") %></p>
+
+<% end %>

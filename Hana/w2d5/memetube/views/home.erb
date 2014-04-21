@@ -1,0 +1,54 @@
+
+ <h2>MemeTube</h2>
+
+<div id='genre'>
+  <% @genres.each do |genre| %>
+
+    <a href= '/display/<%=genre['genre'] %>' method='get'><%=genre['genre'] %></a>
+  <%end%>
+</div>
+
+  <form action='/create' method='post'>
+  Title: <input type='text' name='title' autofocus></br>
+  URL: <input type='text' name='url'></br>
+  <div id= 'description'>
+  Description: <input type='text' name='description'></div>
+  <div id='genre'>
+  Genre: <input type='text' name='genre'></div>
+  <button>Save</button>
+</form>   
+
+<% @videos.each do |video| %>
+  <div class='entry'>
+
+      <%=video['url'] %>
+    </div>
+    <div class='text'>
+      <%=video['title'] %></br>
+      <%=video['description'] %></br>
+      <%=video['genre'] %></br>
+    </div>
+    <div class = 'change_buttons'>
+    <form action='/edit/<%=video['id'] %>' method='get'>
+      <button>EDIT</button>
+    </form>
+    <form action='/delete/<%=video['id'] %>' method='get'>
+      <button>DELETE</button>
+    </form>  
+  </div>
+    
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+

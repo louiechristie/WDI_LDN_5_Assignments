@@ -1,0 +1,17 @@
+<h1><%= @car.model %></h1>
+<h2>Made by <%= @car.make %> in <%= @car.year %></h2>
+
+<% if @car.image.blank? %>
+  <em>No image for this model yet.</em>
+<% else %>
+  <img src="<%= @car.image %>" alt="A picture of the <%= @car.model %>" />
+<% end %>
+
+<% if @car.description.blank? %>
+  <em>No available description for this model.</em>
+<% else %>
+  <%= @car.description %>
+<% end %>
+
+<%= button_to 'Delete Car', car_path(@car), method: 'delete', confirm: 'Are you sure?' %>
+<button><%= link_to 'Edit Car', edit_car_path(@car) %></button>

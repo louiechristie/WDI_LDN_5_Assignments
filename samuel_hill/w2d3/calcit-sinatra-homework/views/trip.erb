@@ -1,0 +1,12 @@
+<h2>Trip Calculator</h2>
+<form action='/trip' method='get'>
+    Distance: <input type='text' name='distance'>
+    MPG: <input type ='text' name='mpg'>
+    Fuel Cost: <input type='text' name='fuel_cost'>
+    Speed(MPH): <input type='text' name='speed'>
+    <button>Calculate!</button>
+  </form>
+
+<section>
+  	<p>This trip will take you <%= @time %>hrs and will cost £<%= @cost %></p>
+ </section>	

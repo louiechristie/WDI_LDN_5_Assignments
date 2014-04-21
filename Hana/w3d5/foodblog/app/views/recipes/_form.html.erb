@@ -1,0 +1,32 @@
+<%= form_for(@recipe) do |f| %>
+
+<div class = 'field'>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</div>
+<div class = 'field'>
+  <%= f.label :image %><br/>
+  <%= f.text_field :image %>
+</div>
+<div class = 'field'>
+
+  Ingredients:</br>
+  <% @ingredients.each do |ingredient| %>
+  <%= check_box_tag("@recipe[ingredients][]", ingredient, @recipe.ingredients.include?(ingredient))%>
+  <%=ingredient.name%></br>
+
+  <% end %>
+</div>
+<div class = 'field'>
+  <%= f.label :servings %><br/>
+  <%= f.text_field :servings %>
+</div>
+<div class = 'field'>
+  <%= f.label :instructions %><br/>
+  <%= f.text_field :instructions %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<%end%>

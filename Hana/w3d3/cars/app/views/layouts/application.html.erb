@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cars</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id='home'><%= link_to "Home", cars_path%></div>
+<div><%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %> </div>
+<h1>General Assembly Motor Company</h1>
+
+<%= yield %>
+
+</body>
+</html>

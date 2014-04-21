@@ -1,0 +1,26 @@
+<section>
+  <header>
+    <h1>I'm going to ask you questions, then calculate your personality.</h1>
+  </header>
+  <form action='/personality' method='get'>
+    What's your name?
+    <input type='text' name='whocares'>
+    
+    Who is your best friend?
+    <input type='text' name='whocares1'>
+
+    How old are you?
+    <input type='text' name='whocares2'>
+
+    What's your favourite vegitable?
+    <input type='text' name='whocares3'>
+    
+    <button>Calculate!</button>
+  </form>
+
+  <% if @display_personality %>
+    <h2>The following words best estimate your personality:</h2>
+    <brt/>
+    <h2>"<%= @who_you_are %>"</h2>
+  <% end %>
+</section>

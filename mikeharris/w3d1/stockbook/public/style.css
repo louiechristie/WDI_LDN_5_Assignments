@@ -1,0 +1,12 @@
+body {
+  padding: 50px;
+}
+
+li {
+  margin: 5px;
+}
+
+td {
+  width: 150px;
+  border: 1px solid black;
+}

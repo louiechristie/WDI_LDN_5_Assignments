@@ -1,0 +1,30 @@
+<div class="error">
+  <% if @confirm_video %>
+    <h2><a href="/view/<%= @confirm_video['id'] %>">"<%= @confirm_video['title'] %>"</a> has already been added to meme.BASE.</h2>
+  <% elsif @incomplete %>
+    <h2>Information incomplete.</h2>
+  <% end %>
+</div>
+<div class="add-box">
+  <h2>Add a Video</h2>
+  <p>Each of the fields below is required.</p>
+  <form action='/create' method='post' role="form">
+    <div class='form-group'>
+      <label for='title'>Title of Video</lable>
+      <input type='text' class='form-control' id='title' name='title' placeholder='Enter title' autofocus/>
+    </div>
+    <div class='form-group'>
+      <label for='id'>YouTube ID</label>
+      <input type='text' class='form-control' id='id' name='id' placeholder='Enter ID' />
+      <p class='help-block'>E.g, the highlighted portion of the following YouTube URL: <a href="https://www.youtube.com/watch?v=NadvpHvm7v8">https://www.youtube.com/watch?v=<span class='highlight'>NadvpHvm7v8</span></a>
+      </p>
+    </div>
+    <div class='form group'>
+      <label for='tag'>Tag</lable>
+      <input type='text' class='form-control' id='tag' name='tag' placeholder='Enter a tag' />
+      <p class='help-block'>E.g., "comedy", "folk music", "hipster nonsense"</p>
+    </div>
+    <button type='submit' class='btn btn-success'>Submit</button>
+  </form>
+</div>
+

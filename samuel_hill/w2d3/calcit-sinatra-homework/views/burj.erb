@@ -1,0 +1,16 @@
+<h2>In Comparison...</h2>
+<form action='burj' method='get'>
+  	<select name='operator'>
+    	<option value="bus">Bus</option>
+   		<option value="car">Car</option>
+    	<option value="giraffe">Giraffe</option>
+    	<option value="person">Person</option>
+	</select>
+    <button>calculate!</button>
+  </form>
+
+<% if @result %>
+	<section>
+  		<p>It would take <%= @result %> stacked end to end to reach the top of the Burj Khalifa!</p>
+  	</section>
+<% end %>  	

@@ -1,0 +1,6 @@
+<%= form_for @ingredient do |f| %>
+<%= f.label :name %>
+<div class="black"><%= f.text_field :name %></div><br /><br />
+<div class="black"><%= submit_tag("Submit") %></div>
+<% end %>
+<%= link_to "Cancel", ingredients_path %>

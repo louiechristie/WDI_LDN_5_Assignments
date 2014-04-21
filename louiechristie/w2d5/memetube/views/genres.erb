@@ -1,0 +1,6 @@
+<h1>Genres</h1>
+<ul>
+  <% genres.each do |genre_hash| %>
+    <li><a href='/genre/<%= genre_hash["genre"].downcase %>'><%= genre_hash["genre"].downcase %></a></li>
+  <% end %>  
+</ul>

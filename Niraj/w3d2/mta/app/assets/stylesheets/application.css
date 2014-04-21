@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+body {
+  background-image:url(/grandcentral.jpg);
+  font-family: silom, helvetica, arial;
+
+}
+
+
+.title {
+    text-align: center;
+    -moz-transform:scale(0.5);
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+    margin-top: -100px;
+
+}
+
+.line {
+  color: white;
+  border: 5px solid black;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 150px;
+font-style: italic;
+}
+
+.form {
+  text-align: left;
+  font-size: 2em;
+}
+
+#startline {
+  text-align: center;
+  padding: -20px;
+}
+
+#startstation {
+  text-align: center;
+  margin-top: -50px;
+}
+
+#finishline {
+   text-align: center;
+  margin-top: -50px;
+}
+
+#finalstation {
+   text-align: center;
+  margin-top: -50px;
+}
+
+#button {
+  text-align: center;
+}
+

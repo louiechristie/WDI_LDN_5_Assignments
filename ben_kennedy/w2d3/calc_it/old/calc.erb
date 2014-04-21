@@ -1,0 +1,18 @@
+
+
+
+<% if @price %>
+   <section>
+     <header>
+       <h1><%= @ticker %></h1>
+     </header>
+     <p>The price of <%= @ticker %> is $<%= @price %></p>
+   </section>
+ <% end %>
+
+
+
+ <form action='/stock' method='get'>
+    ticker: <input type='text' name='ticker'>
+    <button>Show Me the Money!</button>
+  </form>

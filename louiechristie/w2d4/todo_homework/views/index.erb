@@ -1,0 +1,7 @@
+<% @todos.each do |todo| %>
+
+  <div>
+    <p><a href="/show/<%=todo['id'] %>"> <strong><%=todo['title'] %></strong></a> <%= todo['description'] %></p>
+  </div>
+
+<% end %>

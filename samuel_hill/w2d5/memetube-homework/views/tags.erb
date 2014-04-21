@@ -1,0 +1,9 @@
+<h2>Search Tags</h2>
+
+<% @videos.each do |video| %>
+
+		<ul>
+			<li><a href='/results/<%=video['tag'] %>'><%=video['tag'] %></li>
+		</ul>
+
+ 	<% end %>
