@@ -1,0 +1,22 @@
+<form action='/advanced' method='get'>
+  <p>Please enter a calculation for advanced maths:</p>
+  First Number: <input type='text' name='first'>
+  Operator: <select name='operator'>
+  <option value='**'>**</option>
+  <option value='square'>√</option>
+  Second Number: <input type='text' name='second'>
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h3>Results of Calculation</h3>
+    </header> 
+    <p>The results of <%= @first %> <%= @operator %> <%= @second %> is <%= @result %>.</p>
+  </section>
+<% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>

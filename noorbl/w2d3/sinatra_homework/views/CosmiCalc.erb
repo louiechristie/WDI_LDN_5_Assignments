@@ -1,0 +1,16 @@
+
+Welcome to the CosmiCalc!
+
+Choose an option from the menu
+
+
+<% if @error %>
+  Incorrect page name chosen
+<% end %>
+
+
+<h2>
+<form action='/navigate' method='post'>
+  <input type='text' name='destination' autofocus>
+  <button>Space out!</button>
+</form>

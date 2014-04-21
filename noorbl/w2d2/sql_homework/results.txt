@@ -1,0 +1,163 @@
+1. Selects the names of all products that are not on sale.
+
+sqlite> select name from products where on_sale is 'f';
+Teddy Bear
+Cat Ears
+Card Against Humanity
+Set of 12 Mason Jars
+
+***
+
+2. Selects the names of all products that cost less than £20.
+
+sqlite> select name from products where price > 20;
+Lonely Pillow
+Cat Ears
+Card Against Humanity
+Brown Leather Boots
+Hoodie
+Set of silverware
+
+***
+
+3. Selects the name and price of the most expensive product.
+
+  sqlite> select max(price) as highestprice from products;
+  99.99
+
+  sqlite> select name, max(price) as highestprice from products;
+  Cat Ears|99.99
+
+***
+
+4. Selects the name and price of the second most expensive product.
+
+  sqlite> select name, max(price) as highestprice from products where price < (select max(price) from products);
+  Brown Leather Boots|82.0
+
+***
+
+5. Selects the name and price of the least expensive product.
+
+  sqlite> select name, min(price) as lowestprice from products;
+  Set of 12 Mason Jars|6.22
+
+***
+
+6. Selects the names and prices of all products, ordered by price in descending order.
+
+  sqlite> select name, price from products order by price desc;
+  Cat Ears|99.99
+  Brown Leather Boots|82.0
+  Lonely Pillow|78.82
+  Card Against Humanity|25.0
+  Hoodie|25.0
+  Set of silverware|22.99
+  The Ruby Programming Language|19.99
+  Teddy Bear|17.99
+  Silicon Valley Monopoly|10.99
+  Set of 12 Mason Jars|6.22
+
+***
+
+7. Selects the average price of all products.
+
+  sqlite> select avg(price) from products;
+  38.899
+
+***
+
+8. Selects the sum of the price of all products.
+
+  sqlite> select sum(price) from products;
+  388.99
+
+***
+
+9. Selects the sum of the price of all products whose prices is less than £20.
+
+  sqlite> select sum(price) from products where price < 20;
+  55.19
+
+***
+
+10. Selects the id of the user with your name.
+
+
+
+***
+
+11. Selects the names of all users whose names start with the letter "S".
+
+  sqlite> select name from users where name like 'S%';
+  Sam Hill
+  Scott Gammon
+
+***
+
+12. Selects the number of users whose first names are "Jonathan".
+
+  sqlite> select count(*) from users where name like 'Jonathan%';
+  2
+
+***
+
+13. Selects the number of users who want a "Teddy Bear".
+
+  > first tried the following:
+  sqlite> select count(*) from wishlists where product like 'Teddy Bear%';
+  Error: no such column: product
+
+  > second attempt:
+  # after looking at what is into whishlists table
+  # you want to go into products, get the id of teddy bear, and then go into wishlists to see how many times it appears
+  # so you're joining products and wishlists tables 
+
+  select count(*) from wishlists join product_id for 'Teddy Bear';
+
+  sqlite> select count(*) from wishlists join products on wishlists.product_id = product_id where products.name='Teddy Bear';
+  77
+
+***
+
+14. Selects the count of items on the wishlish of the user with your name.
+>> select count() from wishlists join users on wishlists.user_id = user_id where users.name='Noor Binladin';
+## why isn't this working???? the code makes total sense!!
+
+
+
+
+
+15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
+
+
+
+
+
+
+
+16. Selects the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
+
+
+
+
+
+17. Inserts a user with the name "Jonathan Anderson" into the users table. Ensure the created_at column is set to the current time.
+
+
+18. Selects the id of the user with the name "Jonathan Anderson"?  Ensure the created_at column is set to the current time.
+
+
+19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
+
+
+20. Updates the name of the "Jonathan Anderson" user to be "Jon Anderson".
+
+
+21. Deletes the user with the name "Jon Anderson".
+
+
+22. Deletes the wishlist item for the user you just deleted.
+
+
+

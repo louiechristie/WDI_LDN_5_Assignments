@@ -1,0 +1,47 @@
+header {
+	background-color: #00AAB5;
+	color: white;
+	min-height: 80px;
+}
+
+body {
+	text-align: center;
+	background-color: #282828;
+	font-family: helvetica, arial, sans-serif;
+	margin: auto auto;
+	color: white;
+}
+
+h1 {
+	color: #C1C923;
+	font-size: 600%;
+	margin-top: 200px;
+}
+
+ul li {
+	font-size: 200%;
+	margin-top: 25px;
+	display: inline-block;
+}
+
+a{
+	text-decoration: none;
+	color: #F5F0F0; 	
+}
+
+a:hover {
+	color:#F41C54;
+	text-decoration: none;
+	}  
+
+h2 {
+	color: #C1C923;
+	font-size: 350%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	}
+
+section {
+	font-size: 120%;
+	margin-top: 30px;
+}	

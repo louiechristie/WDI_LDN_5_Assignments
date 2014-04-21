@@ -1,0 +1,7 @@
+<% @cars.each do |car| %>
+
+<p><%= link_to car.name, car_path(car) %> was build in <%= car.year %> and comes in beautiful <%= car.color %>.</p>
+
+<% end %>
+
+

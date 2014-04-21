@@ -1,0 +1,10 @@
+<form action='/stock' method='get'>
+    Stock Symbol: <input type='text' name='stock_symbol'>
+    <button>Find!</button>
+ </form>
+
+<% if @price %>
+	<section>
+	  		<p>The current stock price of <%= @name %> is $<%= @price %>.</p>
+	</section>
+<% end %>

@@ -1,0 +1,31 @@
+body {
+  background: url("/img/band.jpg");
+  background-size: cover;
+  font-style: Helvetica, Arial, sans-serif;
+}
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+header ul li {
+  display: inline;
+}
+
+
+.main {
+  text-align: center;
+  background-color: rgba(172, 172, 172, 0.5);
+  padding: 5px;
+}
+
+.main p {
+  margin-left: 70px;
+  margin-right: 70px;
+  line-height: 1.5;
+  font-size: 20px;
+}

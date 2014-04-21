@@ -1,0 +1,12 @@
+<p>This is the Categories Index page.</p>
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= category.name %> | 
+      <%= category.portfolios.map(&:name).join(', ') %>
+    <a href="/categories/<%= category.id %>/edit">Edit</a>
+      <a href="/categories/<%= category.id %>/delete">Delete</a>
+    </li>
+  <% end %>
+<ul>
+<a href="/categories/new">New Category</a>
+

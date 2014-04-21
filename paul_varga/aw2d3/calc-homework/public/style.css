@@ -1,0 +1,77 @@
+body {
+  font-family: 'Raleway', sans-serif;*/
+  background-size: cover;
+  background-color: #54a1b2;
+}
+
+
+body .navigation ul {
+  padding: 20px;
+  margin: 0 0 10px 0;
+  border-radius: 5%;
+}
+
+body .navigation li {
+  display: inline;
+  text-align: 0 auto;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+body .navigation li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body .navigation li a:hover {
+  color: #111111;
+}
+
+.main {
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.main input {
+  padding: 6px 24px;
+  border-radius: 5px;
+}
+
+.main button {
+  background-color: #ffffff;
+  text-decoration: none;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  padding: 6px 22px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.main form {
+  margin: 20px 100px 20px 100px;
+  padding: 40px 40px 40px 40px;
+}
+
+.main option {
+  padding: 6px 24px;
+  border-radius: 5px;
+}
+
+.main p {
+  font-size: 22px;
+}
+
+.main ul {
+  list-style: none;
+  text-align: center; 
+}
+
+.main section header h3 {
+  font-size: 32px;
+  font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<h2>Trip Calculator</h2>
+
+ 
+<form action='/trip' method='get'>
+
+    <table>
+      <tr>
+        <td>Enter the distance</td><td><input type='text' name='trip_dist'></td>
+      </tr>
+      <tr>
+        <td>Enter the MPG</td><td><input type='text' name='trip_mpg'></td>
+      </tr>
+      <tr>
+        <td>Enter the cost of Fuel</td><td><input type='text' name='trip_mpgcost'></td>
+      </tr>
+      <tr>
+        <td>Enter the average speed</td><td><input type='text' name='trip_speed'></td>
+      </tr>
+      <tr>
+        <td></td><td><button>Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+<% if @trip_dist && @trip_dist > 0 %>
+
+  <section>
+    <h3>Results</h3>
+
+    <div class="Trip result">
+      <p>Trip Time <%= @trip_time %> </p>
+      <p>Trip Cost $<%= @trip_cost %> </p>
+
+</div>
+  
+
+  </section>
+
+<% end %>

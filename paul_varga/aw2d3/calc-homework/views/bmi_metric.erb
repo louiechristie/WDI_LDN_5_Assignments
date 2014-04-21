@@ -1,0 +1,19 @@
+<form action='/bmi_metric' method='get'>
+  <p>Yeah, you are international, you use the metric system!</p>
+  Please enter your weight (kg): <input type='text' name='weight'>
+  Please enter your height (m): <input type='text' name='height'>
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h3>Results of Calculation</h3>
+    </header> 
+    <p>Your Body Mass Index is <%= @result %>.</p>
+  </section>
+<% end %>
+
+<form action='/' method='get'>
+<button name='home' autofocus>Home!</button>
+</form>

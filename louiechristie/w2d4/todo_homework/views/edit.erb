@@ -1,0 +1,5 @@
+<form action='/update/<%=@todo['id'] %> ' method='post'>
+  <p>Title: <input type="text" name="title" value="<%=@todo['title'] %>"></p>
+  <p>Description: <input type="text" name="description" value="<%= @todo['description'] %>"></p>
+    <button class="button">Update</button>
+</form>

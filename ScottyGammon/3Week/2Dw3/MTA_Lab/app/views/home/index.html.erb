@@ -1,0 +1,16 @@
+<h1>MTA Tracker</h1>
+
+
+<p>
+<%= print "What train do you want to get off: #{mta.keys.join(', ')}? " %>
+</p>
+<% stop_train = gets.chomp.to_sym %>
+<p>
+<% print "Which stop: #{mta[stop_train].join(', ')}? " %>
+</p>
+<% stop_b = gets.chomp %>
+
+
+<h2>
+<%= puts "\n\nYour trip length is #{total_length_of_trip} stops.\n\n" %>
+</h2>

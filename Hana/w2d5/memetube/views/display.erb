@@ -1,0 +1,21 @@
+<% @videos.each do |video| %>
+  <div class='entry'>
+    <div class ='video'>
+      <%=video['url'] %>
+    </div>
+    <div class='text'>
+      <%=video['title'] %></br>
+      <%=video['description'] %></br>
+      <%=video['genre'] %></br>
+    </div>
+    <div class = 'change_buttons'>
+    <form action='/edit/<%=video['id'] %>' method='get'>
+      <button>EDIT</button>
+    </form>
+    <form action='/delete/<%=video['id'] %>' method='get'>
+      <button>DELETE</button>
+    </form>  
+  </div>
+    
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+
+<h2>Game!</h2>
+<h3>The vehicles below are part of which country's fleet?</h3>
+<ul>
+  <% @vehicles.each do |vehicle| %>
+    <li><%= vehicle.make %> <%= vehicle.model %>, <%= vehicle.type_of_vehicle %></li>
+  <% end %>
+</ul>
+
+  <%= form_tag("game", method: "post") do %>
+  <%= hidden_field "country", "#{@vehicles.first.country}" %>
+  <%= select "vehicle", "country", options_for_select(@countries) %><br />
+  <%= submit_tag("Submit") %>
+  <% end %>
+<br />
+<br />

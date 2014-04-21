@@ -1,0 +1,86 @@
+*{
+  box-sizing: border-box;
+}
+
+@import "twitter/bootstrap/bootstrap";
+body {
+  padding-top: 40px;
+}
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+@import url(http://fonts.googleapis.com/css?family=Armata);
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+  margin: 5px;
+}
+
+body {
+  width: 680px;
+  margin: 0px auto auto 200px;
+  position: relative;
+  font-family: 'Armata', sans-serif;
+}
+
+.yield_content {
+  margin: 80px auto 0px auto;
+}
+
+.right {
+  width: 200px;
+  position: absolute;
+  right: 0px;
+}
+
+.left {
+  width: 400px;
+  margin: 0 20px 0 0;
+  position: absolute;
+  left: 0px;
+}
+
+.button_to {
+  display: inline-block;
+  margin-top: 200px;
+  padding: 10px;
+}
+
+footer {
+  margin-top: 400px;
+  height: 100px;
+}
+
+.yield_content a {
+  text-decoration: none;
+}
+

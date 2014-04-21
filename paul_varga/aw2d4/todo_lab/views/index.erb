@@ -1,0 +1,10 @@
+<% @index.each do |index| %>
+
+  
+<ul>
+  <li><h3><%= index['name'] %></h3></li>
+  <li><p><%= index['task'] %></p></li>
+  <li><button><a href="/show/<%= index['id'] %>">Show Details</a></button></li>
+</ul>
+
+<% end %>

@@ -1,0 +1,37 @@
+<h2>BMI Calculator</h2>
+
+ 
+<form action='/BMI' method='get'>
+
+    <table>
+      <tr>
+        <td>Metric</td><td><input type="radio" name="units" value="metric" checked></td>
+      </tr>
+      <tr>
+        <td>Imperial</td><td><input type="radio" name="units" value="imperial"></td>
+      </tr>
+      <tr>
+        <td>Weight (kg or lb)</td><td><input type='text' name='weight'></td>
+      </tr>
+      <tr>
+        <td>Height (m or in)</td><td><input type='text' name='height'></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+<% if @weight > 0 %>
+
+  <section>
+    <h3>Your BMI</h3>
+
+    <div class="BMI result">Your BMI is <%= @BMIresult %></div>
+  
+
+  </section>
+
+<% end %>
+

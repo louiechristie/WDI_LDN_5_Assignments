@@ -1,0 +1,22 @@
+<h2>Basic Calculator<h2>
+
+<form action='/basic' method='get'>
+  Operation: <select name="operation">
+    <option value="addition">+</option> 
+    <option value="subtraction">-</option>
+    <option value="division">/</option>
+    <option value="multiplication">*</option>
+  </select> </br>
+  First Digit: <input type='text' name='first_digit'></br> 
+  Second Digit: <input type='text' name='second_digit'></br> 
+  <button>Calculate!</button>
+</form>
+
+<% if @result %>
+  <section>
+    <header>
+      <h1>Result of Calculation</h1>
+    </hedaer>
+    <p><%=@message%></p>
+  </section>
+<% end %>

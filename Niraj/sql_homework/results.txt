@@ -1,0 +1,194 @@
+1. Selects the names of all products that are not on sale.
+
+    select name from products where on_sale is 'f';
+
+Teddy Bear
+Cat Ears
+Card Against Humanity
+Set of 12 Mason Jars
+
+--------------------------------------------------------------------------------------------
+
+2. Selects the names of all products that cost less than £20.
+
+    select name from products where price < 20;
+
+Teddy Bear
+The Ruby Programming Language
+Silicon Valley Monopoly
+Set of 12 Mason Jars
+
+--------------------------------------------------------------------------------------------
+
+3. Selects the name and price of the most expensive product.
+
+    select name, max(price) from products;
+
+    select name, price from products where price = (select max(price) from products);
+
+    sqlite> select name, max(price) as higest_price from products;
+
+
+    update products set price = 99.99 where id = 1 ----- How to change price, id needs to be changed to select product
+
+
+    Cat Ears|99.99
+
+--------------------------------------------------------------------------------------------
+
+4. Selects the name and price of the second most expensive product.
+
+   select name, max(price) from products where price < (select max(price) from products);
+
+   select name, price from products order by price desc limit 1,1; ----- limit, select the first one but offset by 1. (skip this many (3), give me (1))
+
+Brown Leather Boots|82.0
+
+--------------------------------------------------------------------------------------------
+
+5. Selects the name and price of the least expensive product.
+
+  select name, min(price) from products;
+
+
+  Set of 12 Mason Jars|6.22
+
+--------------------------------------------------------------------------------------------
+
+6. Selects the names and prices of all products, ordered by price in descending order.
+
+  SELECT name, price from products order by price DESC;
+
+Cat Ears|99.99
+Brown Leather Boots|82.0
+Lonely Pillow|78.82
+Card Against Humanity|25.0
+Hoodie|25.0
+Set of silverware|22.99
+The Ruby Programming Language|19.99
+Teddy Bear|17.99
+Silicon Valley Monopoly|10.99
+Set of 12 Mason Jars|6.22
+
+--------------------------------------------------------------------------------------------
+
+7. Selects the average price of all products.
+
+  select avg(price) from products;
+
+38.899
+
+--------------------------------------------------------------------------------------------
+
+8. Selects the sum of the price of all products.
+
+select sum(price) from products;
+
+388.99
+
+--------------------------------------------------------------------------------------------
+
+9. Selects the sum of the price of all products whose prices is less than £20.
+
+select sum(price) from products where price < 20;
+
+55.19
+
+--------------------------------------------------------------------------------------------
+
+10. Selects the id of the user with your name.
+
+  select id from users where name = "Niraj Vyas";
+
+8
+
+--------------------------------------------------------------------------------------------
+
+11. Selects the names of all users whose names start with the letter "S".
+
+  select name from users where name like 'S%';
+
+  sqlite> select name from users where substr(name,1,1) == 'S'; --- make it case sensitive 
+
+
+Sam Hill
+Scott Gammon
+
+--------------------------------------------------------------------------------------------
+
+12. Selects the number of users whose first names are "Jonathan".
+
+ select count(*) name from users where name like 'Jonathan%';
+
+   select count(id) from users where name like 'Jonathan%'; - better to use id
+
+
+  2
+
+--------------------------------------------------------------------------------------------
+
+13. Selects the number of users who want a "Teddy Bear".
+
+  select count(*) from wishlists join products on products.id = wishlists.product_id where products.name = 'Teddy Bear';
+
+  select count(*) from wishlists inner join products on products.id = wishlists.product_id where products.name = 'Teddy Bear';
+
+  -- different type of joins: inner, outer, left, right, full, inner-left, inner-right, etc --
+
+
+  6
+
+--------------------------------------------------------------------------------------------
+
+14. Selects the count of items on the wishlist of the user with your name.
+
+  select count(*) from wishlists join users on users.id = wishlists.user_id where users.name ='Niraj Vyas';
+
+  5
+
+--------------------------------------------------------------------------------------------
+
+15. Selects the count and name of all products on the wishlist, ordered by count in descending order.
+
+
+select products.name, count(wishlists.product_id) from wishlists join products on products.id = wishlists.product_id group by wishlists.product_id order by count(wishlists.product_id) desc;
+
+Card Against Humanity|16
+Cat Ears|15
+The Ruby Programming Language|9
+Teddy Bear|6
+Silicon Valley Monopoly|5
+Brown Leather Boots|4
+Lonely Pillow|2
+Set of 12 Mason Jars|2
+
+--------------------------------------------------------------------------------------------
+
+16. Selects the count and name of all products that are not on sale on the wishlist, ordered by count in descending order.
+
+select name, count_items from (select products.name, products.on_sale, count(wishlists.product_id) as count_items from wishlists join products on products.id = wishlists.product_id group by wishlists.product_id order by count(wishlists.product_id) desc) where on_sale = 'f';
+
+Card Against Humanity|16
+Cat Ears|15
+Teddy Bear|6
+Set of 12 Mason Jars|2
+
+17. Inserts a user with the name "Jonathan Anderson" into the users table. Ensure the created_at column is set to the current time.
+
+
+18. Selects the id of the user with the name "Jonathan Anderson"?  Ensure the created_at column is set to the current time.
+
+
+19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
+
+    insert into wishlists(created_at, user_id, product_id) values (DateTime('now'), (select id from users where name = 'Scott Gammon'), (select id from products where name = 'The Ruby Programming Language'));
+    
+
+
+20. Updates the name of the "Jonathan Anderson" user to be "Jon Anderson".
+
+
+21. Deletes the user with the name "Jon Anderson".
+
+
+22. Deletes the wishlist item for the user you just deleted.
