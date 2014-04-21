@@ -1,8 +1,10 @@
 <%= form_for @category do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %><br />
+<div class="black"><%= f.text_field :name %></div>
+<br /><br />
 <%= f.label :image %> URL
-<%= f.text_field :image %><br /><br />
-<%= submit_tag("Submit") %>
+<div class="black"><%= f.text_field :image %></div>
+<br /><br />
+<div class="black"><%= submit_tag("Submit") %></div>
 <% end %>
-<%= button_to "Cancel", categories_path, method: "get" %>
+<%= link_to "Cancel", categories_path %>

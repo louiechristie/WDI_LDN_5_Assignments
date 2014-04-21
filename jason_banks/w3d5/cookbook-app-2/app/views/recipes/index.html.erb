@@ -11,9 +11,12 @@
       <td>
         <%= link_to recipe.title, recipe_path(recipe) %>
         <ul>
-          <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %></li>
+          <% if recipe.category_id %>
+          <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %>
+            <% end%>
+          </li>
           <li class="recipes-list">Description: <%= recipe.description %></li>
-          <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'week') %></li>
+          <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'month') %></li>
         </ul>
       </td>
       <td>
@@ -21,6 +24,8 @@
       </td>
     </tr>
   <% end %>
+</tbody>
+</table>
 <% end %>
 <br />
 <%= link_to "New Recipe", new_recipe_path %>

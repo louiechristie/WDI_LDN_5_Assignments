@@ -1,22 +1,38 @@
 <%= form_for @recipe do |f| %>
 <%= f.label :title %>
-<%= f.text_field :title %><br />
-<%= f.collection_select(:category_id, @categories, :id, :name) %>
+<div class="black"><%= f.text_field :title %></div>
+<br /><br />
+Category <%= f.collection_select(:category_id, @categories, :id, :name) %>
+<br /><br />
 <%= f.label :description %>
-<%= f.text_field :description %><br />
+<div class="black"><%= f.text_field :description %></div>
+<br /><br />
 <%= f.label :prep_time %> (in months)
-<%= f.number_field :prep_time, min: 0, step: 1 %><br />
-<% @ingredients.each do |ingredient| %>
-<%= check_box_tag("recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)) %>
-<%= label_tag("recipe[ingredient_ids][]", ingredient.name) %>
-<% end %>
+<div class="black"><%= f.number_field :prep_time, min: 0, step: 1 %></div>
+<br /><br />
+Ingredients
+<br />
+<div class="checkbox-list">
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li>
+        <%= check_box_tag("recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)) %>
+      <%= label_tag("recipe[ingredient_ids][]", ingredient.name) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<br />
 <%= f.label :instructions %>
-<%= f.text_area :instructions %><br />
+<br /><br />
+<div class="black"><%= f.text_area :instructions %></div>
+<br /><br />
 <%= f.label :image %> URL
-<%= f.text_field :image %><br /><br />
-<%= submit_tag("Submit") %>
+<div class="black"><%= f.text_field :image %></div>
+<br /><br />
+<div class="black"><%= submit_tag("Submit") %></div>
 <% end %>
-<%= button_to "Cancel", recipes_path, method: "get" %>
+<%= link_to "Cancel", recipes_path %>
 
 
 
