@@ -1,0 +1,51 @@
+<h1> Your journey </h1>
+
+<form action='/journey' method='post'>
+
+<h3>Start Line: <%= @start_line_print %></h3>
+
+<dl>
+  <dt>
+    <label for='start_station'>Start station</label>
+  </dt>
+  <dd>
+    <select id='start_station' name='start_station' autofocus>
+      <% @subway[@start_line].each do |station| %>
+        <option value='<%= station %>'><%= station %></option>
+      <% end %>
+    </select>
+  </dd>
+</dl>
+
+<h3>Finish Line: <%= @finish_line_print %></h3>
+
+<dl>
+  <dt>
+    <label for='finish_station'>Finish Station</label>
+  </dt>
+  <dd>
+    <select id='finish_station' name='finish_station' autofocus>
+      <% @subway[@finish_line].each do |station| %>
+        <option value='<%= station %>'><%= station %></option>
+      <% end %>
+    </select>
+  </dd>
+</dl>
+
+<input class="no_display" name="start_line" value="<%= @start_line %>"/>
+<input class="no_display" name="finish_line" value="<%= @finish_line %>"/> 
+
+<button>Submit</button>
+</form>
+
+<p class='output'>
+<% if @output1 %><%= @output1 %>
+<% end %>
+<% if @output2 %><%= @output2 %>
+<% end %>
+</p>
+
+
+
+
+
