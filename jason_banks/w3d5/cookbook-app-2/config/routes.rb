@@ -1,5 +1,11 @@
 CookbookApp2::Application.routes.draw do
 
+  get "users/index"
+
+  get "users/new"
+
+  get "users/create"
+
   get "ingredients/index"
 
   get "recipes/index"
