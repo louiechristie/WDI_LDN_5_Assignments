@@ -29,6 +29,10 @@
   </ul>
   <br />
   <br />
+  <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <br /><br />
   <div class="flash">
     <h2>
       <%= flash[:notice] if flash[:notice] %>
