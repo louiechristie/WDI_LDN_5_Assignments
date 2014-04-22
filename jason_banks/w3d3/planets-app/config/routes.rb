@@ -1,5 +1,8 @@
 PlanetsApp::Application.routes.draw do
   
+  resources :galaxies
+
+
   resources :planets
   root to: 'planets#index'
   post '/planets/:id/delete' => 'planets#destroy', :as => 'planet_delete'
