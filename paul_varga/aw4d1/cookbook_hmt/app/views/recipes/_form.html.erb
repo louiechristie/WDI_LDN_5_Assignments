@@ -37,6 +37,17 @@
     <%= ingridient.name %>
   <% end %>
   </div>
+
+   <!-- <p>
+  <%= r.fields_for :ingridients_recipes do |i| %>
+    <div class="field">
+      <%= i.hidden_field :ingridient_id %>
+      <%= i.text_field :quantity %>
+      <%= i.label :quantity, "Quantity of #{i.object.ingridient.name}" %>
+    </div>
+  <% end %>
+  </p> -->
+
   <div class="actions">
     <%= r.submit %>
   </div>

@@ -1,6 +1,10 @@
 Cookbook::Application.routes.draw do
   resources :categories, :recipes, :ingridients
 
+  resources :users, only: [:index, :new, :create]
+
+  resources :sessions
+
   root to: "recipes#index"
   post '/categories/:id/delete' => "categories#destroy", :as => 'category_delete'
   post '/recipes/:id/delete' => "recipes#destroy", :as => 'recipe_delete'
