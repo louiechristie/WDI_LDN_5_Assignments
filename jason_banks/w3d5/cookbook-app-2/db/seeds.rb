@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Recipe.delete_all
+Category.delete_all
+Ingredient.delete_all
 
 recipes = Recipe.create([
   { title:"This is why we can't have nice things w. Aliens", description:"Stop the kind aliens from fixing humanity's problems and ruining your profits", prep_time: 9, instructions: "Odd Future normcore synth plaid, Vice Godard literally flexitarian DIY slow-carb kale chips gentrify XOXO four loko. Kale chips Banksy gastropub, mumblecore fanny pack biodiesel cliche occupy squid letterpress farm-to-table organic 3 wolf moon.", image:"" },
