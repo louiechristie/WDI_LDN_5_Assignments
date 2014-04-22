@@ -11,13 +11,20 @@
 <body>
     <h1> Welcome to my CookBook</h1>
     <h3>
-    <%= link_to "All Recipes", recipes_path %>
-    <%= link_to "All Categories", categories_path %>
-    <%= link_to "Add Recipe", new_recipe_path %>
-    <%= link_to "Add Category", new_category_path %>
-    <%= link_to "All Ingredients", ingredients_path %>
-    <%= link_to "Add Ingredient", new_ingredient_path %>
 
+ <nav>
+  <ul>
+    <li>
+    <%= link_to "All Recipes", recipes_path %> * <%= link_to "Add Recipe", new_recipe_path %>
+    </li>
+    <li>
+    <%= link_to "All Categories", categories_path %> * <%= link_to "Add Category", new_category_path %>
+    </li>
+    <li>
+    <%= link_to "All Ingredients", ingredients_path %> * <%= link_to "Add Ingredient", new_ingredient_path %>
+    </li>
+
+  </ul>
 
     </h3>
    
