@@ -1,0 +1,15 @@
+<h1>Recipes</h1>
+
+<a href="/recipes/new">Add a New Recipe</a>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Actions</th>
+	</tr>
+	<% @recipes.each do |recipe| %>
+	<tr>
+		<td><%= recipe.name %></td>
+		<td><%= link_to 'Show', recipe_path(recipe) %><%= link_to'Edit', edit_recipe_path(recipe) %></td><td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
+	<% end %>
+</table>

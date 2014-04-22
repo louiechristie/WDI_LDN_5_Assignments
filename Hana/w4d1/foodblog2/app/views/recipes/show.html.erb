@@ -1,0 +1,20 @@
+<h1><%=link_to @recipe.name, @recipe.url, :target => "_blank"%></h1>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %>
+<%= link_to 'Delete', delete_recipe_path(@recipe), method: 'delete'%></br>
+
+
+<img src = "<%=@recipe.image%>" alt = 'Main picture of the dish.'/>
+<div class = 'servings'>
+  Servings: <%= @recipe.servings%>
+</div>
+<div class = 'ingredients'>
+  Ingredients: 
+  <% @recipe.ingredients_recipes.each do |ingredient_recipe|%>
+      <div><%=ingredient_recipe.ingredient.quantity%><%=ingredient_recipe.ingredient.name%></div>
+    <%end%>
+</div>
+<div class = 'instructions'>
+  Instructions: <%= @recipe.instructions%>
+</div>
+
+
