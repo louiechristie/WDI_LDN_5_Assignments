@@ -94,25 +94,32 @@ footer ul li a:hover {
   font-weight: bold;
   border-bottom: solid black 1px;
   padding: 10px;
-  color: #ffffff;
+  color: #428bca;
 }
 
 .main table td {
   text-align: center;
   padding: 10px;
-  color: #ffffff;
+  color: #428bca;
   border-bottom: solid black 1px;
+  font-size: 14px;
 }
 
 .links {
   margin-top: 20px;
   padding: 10px;
+  text-align: right;
+  margin-right: 80px;
 }
 
-.links li {
-  display: inline;
+.links ul {
+  list-style-type: none; 
+}
+
+.links ul li {
+  display: inline-block;
   font-size: 14px;
-  padding-top: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .field {

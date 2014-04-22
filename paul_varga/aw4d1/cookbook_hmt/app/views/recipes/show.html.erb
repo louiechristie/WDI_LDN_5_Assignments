@@ -17,10 +17,10 @@
   <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
   </td>
   <td>
-  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.quantity } %>
+  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.quantity.to_s } %>
   </td>
   <td>
-  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.measure } %>
+  <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.measure.to_s  } %>
   </td>
 
 </tr>
