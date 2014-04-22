@@ -2,7 +2,9 @@ class Recipe < ActiveRecord::Base
   attr_accessible :category_id, :name, :serving_size, :ingredient_ids
 
   belongs_to :category
-  has_and_belongs_to_many :ingredients
+
+  has_many :ingredients_recipes
+  has_many :ingredients, through: :ingredients_recipes
 
   validates :category_id, presence: true
 
