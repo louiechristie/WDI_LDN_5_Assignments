@@ -1,0 +1,13 @@
+<h2><%= @category.name %></h2>
+<%= @category.image if @category.image > "" %><br />
+<% if @recipes %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to recipe.title, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Edit", edit_category_path(@category) %>
+<br />
+<br />
+<%= link_to "Delete", delete_category_path(@category), method: "post", confirm: "Delete \"#{@category.name}?\"" %>

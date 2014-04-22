@@ -1,0 +1,16 @@
+
+<%= link_to "New Category", categories_path %>
+
+
+<%= form_for(@category) do |c| %>
+ 
+
+  <div class="field">
+    <%= c.label :name %><br />  
+    <%= c.text_field :name%>
+    </div>
+
+  <div class="actions">
+    <%= c.submit %>
+  </div>
+<% end %>

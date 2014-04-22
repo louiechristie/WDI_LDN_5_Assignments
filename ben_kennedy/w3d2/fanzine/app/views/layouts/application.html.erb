@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Links</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to "Home", root_path %><br>
+      </li>
+      <li>
+        <%= link_to "John", john_path %><br>
+      </li>
+      <li>
+        <a href='/paul'>Paul</a><br>
+      </li>
+      <li>
+        <a href='/george'>George</a><br>
+      </li>
+      <li>
+        <a href='/ringo'>Ringo</a><br>
+      </li>
+      <li>
+        <a href='/tour_dates'>Tour Dates</a><br>
+      </li>
+    </ul>
+  </nav>
+  <div class='main'>
+
+<%= yield %>
+  
+  </div>
+</body>
+</html>

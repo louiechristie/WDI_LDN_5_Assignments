@@ -19,7 +19,7 @@ class EnginesController < ApplicationController
   end
 
   def edit
-    @car = Engine.find_by_id(params[:id])
+    @engine = Engine.find_by_id(params[:id])
   end
 
   def update

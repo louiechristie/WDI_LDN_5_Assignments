@@ -1,0 +1,14 @@
+<h1>Ingredients</h1>
+
+<a href="/ingredients/new">Add a New Ingredient</a>
+
+<table>
+	<tr>
+		<th>Name</th>
+	</tr>
+	<% @ingredients.each do |ingredient| %>
+	<tr>
+		<td><%= ingredient.name %></td>
+		<td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
+	<% end %>
+</table>

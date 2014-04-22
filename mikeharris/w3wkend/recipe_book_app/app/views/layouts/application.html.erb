@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecipeBookApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+ <link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<h1><a href="/"> Mike's Cookbook</a></h1>
+<nav>
+  <a href="<%= new_recipe_path %>">New Recipe</a>
+  <a href="<%= new_category_path %>">New Category</a>
+  <a href="<%= ingredients_path %>">Manage Ingredients</a>
+</nav>
+<%= yield %>
+
+</body>
+</html>

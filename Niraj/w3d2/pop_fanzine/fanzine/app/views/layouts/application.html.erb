@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fanzine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<header> <%= link_to "index", index_path %> <%= link_to "bio", bio_path %> <%= link_to "music", music_path %> <%= link_to "video", video_path %> <%= link_to "review", review_path %></header>
+
+<%= yield %>
+
+</body>
+</html>

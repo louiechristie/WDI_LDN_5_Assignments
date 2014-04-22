@@ -1,0 +1,36 @@
+<table>
+<tr>
+  <th>Category </th>
+  <th>Name </th> 
+  <th>Feeds </th>
+  <th>Description </th>
+  <th><%= pluralize('Name of', 'ingredient') %> </th>
+</tr>
+<tr>
+  <td><%= @recipe.category.name %> </td>
+  <td><%= @recipe.name %> </td> 
+  <td><%= @recipe.feeds_people %> </td>
+  <td><%= @recipe.description %> </td>
+  <td>
+  <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
+  </td>
+  
+</tr>
+</table>
+
+<div class="links">
+
+  <ul>
+    <li>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+    </li>
+    <li>
+    <%= button_to 'Delete Recipe', recipe_delete_path(@recipe) %>
+    </li>
+    <li>
+    <%= link_to 'Back', recipes_path %>
+    </li>
+  </ul>
+  
+
+</div>

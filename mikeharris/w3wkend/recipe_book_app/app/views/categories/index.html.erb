@@ -1,0 +1,8 @@
+
+<% @categories.each do |category| %>
+
+  <h2><%= category.name %></h2>
+  
+  <%= render partial: 'list_recipes', locals: {category_id: category.id} %> 
+
+ <% end %>

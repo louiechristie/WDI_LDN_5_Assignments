@@ -1,0 +1,11 @@
+<h2>Ingredients#index</h2>
+<h3 id="notice"><%= notice %></h3>
+<% if @ingredients %>
+  <ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br />
+<%= link_to "New Ingredient", new_ingredient_path %>

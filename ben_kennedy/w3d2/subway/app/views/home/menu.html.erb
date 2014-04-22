@@ -1,0 +1,47 @@
+
+
+<h1>Pick Your Start and Finish Lines </h1>
+
+<form action='/station' method='post'
+<dl>
+  <dt>
+    <label for='start_line'>Start Line</label>
+  </dt>
+  <dd>
+    <select id='start_line' name='start_line' autofocus>
+      <option value='l_line'>L Line</option>
+      <option value='n_line'>N Line</option>
+      <option value='6'>6</option>
+      <option value="b_line">B Line</option>
+    </select>
+  </dd>
+</dl>
+
+
+<dl>
+  <dt>
+    <label for='finsih_line'>Finish Line</label>
+  </dt>
+  <dd>
+    <select id='finish_line' name='finish_line' autofocus>
+      <option value='l_line'>L Line</option>
+      <option value='n_line'>N Line</option>
+      <option value='6'>6</option>
+      <option value="b_line">B Line</option>
+    </select>
+  </dd>
+</dl>
+
+
+<button>Submit</button>
+</form>
+
+<% if @output1 %><%= @output1 %>
+<% end %>
+<% if @output2 %><%= @output2 %>
+<% end %>
+
+
+
+
+

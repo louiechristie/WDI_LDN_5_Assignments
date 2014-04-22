@@ -1,0 +1,16 @@
+<%= form_for @category do |f| %>
+<% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved: <%= @category.errors.full_messages.join(", ").downcase %>.</h3>
+    </div>
+  <% end %>
+
+<%= f.label :name %>
+<div class="black"><%= f.text_field :name %></div>
+<br /><br />
+<%= f.label :image %> URL
+<div class="black"><%= f.text_field :image %></div>
+<br /><br />
+<div class="black"><%= submit_tag("Submit") %></div>
+<% end %>
+<%= link_to "Cancel", categories_path %>

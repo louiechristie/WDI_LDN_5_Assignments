@@ -1,22 +1,3 @@
 <h2>Add An Engine</h2>
 
-<%= form_for(@engine) do |f| %>
-
-  <div class="field">
-    <%= f.label :fuel_type %><br />
-    <%= f.text_field :fuel_type %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br />
-    <%= f.text_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  <% end %>
+<%= render 'form' %>
