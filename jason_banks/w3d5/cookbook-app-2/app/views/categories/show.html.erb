@@ -1,5 +1,5 @@
 <h2><%= @category.name %></h2>
-<%= image_tag("#{@category.image}") if @category.image > "" %><br />
+<%= @category.image if @category.image > "" %><br />
 <% if @recipes %>
   <ul>
     <% @recipes.each do |recipe| %>

@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
   def show
     find_recipe
     list_ingredients
+    list_ingredientsrecipes
   end
 
   def edit
@@ -33,6 +34,7 @@ class RecipesController < ApplicationController
   end
 
   def update
+    raise
     recipe = find_recipe
     params[:recipe][:ingredient_ids] ||= []
     params[:recipe][:title].capitalize!
@@ -58,6 +60,10 @@ class RecipesController < ApplicationController
 
   def list_ingredients
     @ingredients = Ingredient.where(id: @recipe.ingredient_ids).order(:name)
+  end
+
+  def list_ingredientsrecipes
+    @ingredientsrecipes = Ingredientsrecipe.where(recipe_id: @recipe.id)
   end
 
   def find_categories
