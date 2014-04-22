@@ -1,5 +1,5 @@
-<h2><%= @recipe.title %></h2>
-<%= image_tag("#{@recipe.image}") if @recipe.image > "" %><br />
+<h2><%= raw @recipe.category.try(:image) %><%= @recipe.title %></h2>
+<br />
 <h4><%= @recipe.description %></h4>
 <% if @recipe.ingredients_recipes.any? %>
   <h4>Ingredients</h4>

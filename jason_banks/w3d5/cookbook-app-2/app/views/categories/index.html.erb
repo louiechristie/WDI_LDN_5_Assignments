@@ -1,23 +1,12 @@
 <h2>Categories#index</h2>
 <h3 id="notice"><%= notice %></h3>
 <% if @categories %>
-  <table>
-    <thead>
-      <tr>
-      </tr>
-    </thead>
-    <tbody>
-      <% @categories.each do |category| %>
-        <tr>
-          <td>
-          <%= link_to category.name, category_path(category) %>
-          </td>
-          <td><%= image_tag("#{category.image}") if category.image > "" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @categories.each do |category| %>
+    <div class="category-index">
+      <%= raw category.image %>
+      <%= link_to category.name, category_path(category) %>
+    </div>
+  <% end %>
 <% end %>
 <br />
 <%= link_to "New Category", new_category_path %>
