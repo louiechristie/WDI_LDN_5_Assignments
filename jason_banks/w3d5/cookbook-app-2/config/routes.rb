@@ -12,6 +12,7 @@ CookbookApp2::Application.routes.draw do
   resources :recipes
   resources :ingredients
   resources :users, only: [:index, :new, :create]
+  resources :sessions
 
   root to: "categories#home"
   post "categories/:id/delete" => "categories#destroy", as: "delete_category"

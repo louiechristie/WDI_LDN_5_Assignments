@@ -159,3 +159,7 @@ th {
 td {
   width: 150px;
 }
+
+#email, #password {
+  width: 315px;
+}
