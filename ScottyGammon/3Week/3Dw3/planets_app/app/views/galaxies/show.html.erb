@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @galaxy.name %>
+</p>
+
+<p>
+  <b>Stars:</b>
+  <%= @galaxy.stars %>
+</p>
+
+<p>
+  <b>Shape:</b>
+  <%= @galaxy.shape %>
+</p>
+
+
+<%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
+<%= link_to 'Back', galaxies_path %>

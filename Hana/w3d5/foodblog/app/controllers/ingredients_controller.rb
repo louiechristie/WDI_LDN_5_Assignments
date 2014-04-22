@@ -4,7 +4,12 @@ def new
 end
 
 def create
-  Ingredient.create(params[:ingredient])
-  redirect_to(categories_path)
+  @ingredient = Ingredient.create(params[:ingredient])
+
+  if @ingredient.save
+    redirect_to(categories_path)
+  else
+    render action: 'new'
+  end
 end
 end
