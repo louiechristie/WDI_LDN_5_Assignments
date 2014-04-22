@@ -25,12 +25,14 @@
 
 <div class = 'field'>
   Ingredients:</br>
-  
-    <%= f.label @recipe[:ingredients_recipes][:quantity]%><br/>
-    <%= f.text_field @recipe[:ingredients_recipes][:quantity] %> &nbsp
-    <%=select @recipe[:ingredients_recipes], :ingredient_id, @ingredients.map {|a|[a.name, a.id]}%>
-  
+  <%binding.pry%>
+  <% f.fields_for :ingredients_recipes do |ir| %>
+    <%=ir.label :quantity%><br/>
+    <%=ir.text_field :quantity%> &nbsp
+    <%=ir.select :ingredient_id, @ingredients.map {|a|[a.name, a.id]}%>
+  <%end%>
 </div>
+
 <div class = 'field'>
   <%= f.label :servings %><br/>
   <%= f.text_field :servings %>
