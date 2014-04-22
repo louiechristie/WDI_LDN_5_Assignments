@@ -150,3 +150,12 @@ svg {
 svg:hover {
   fill: #5B80FF;
 }
+
+th {
+  width: 450px;
+  table-layout: fixed;
+}
+
+td {
+  width: 150px;
+}
