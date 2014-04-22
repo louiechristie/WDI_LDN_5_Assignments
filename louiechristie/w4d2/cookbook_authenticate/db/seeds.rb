@@ -26,3 +26,6 @@ IngredientsRecipe.create(ingredient_id: 3, measure: "g", quantity: 100, recipe_i
 IngredientsRecipe.create(ingredient_id: 1, measure: "whole", quantity: 2, recipe_id: 2)
 
 IngredientsRecipe.create(ingredient_id: 4, measure: "large", quantity: 1, recipe_id: 3)
+
+User.create(email: "admin", password: "password", password_confirmation: "password", role: "admin")
+User.create(email: "user", password: "password", password_confirmation: "password")
