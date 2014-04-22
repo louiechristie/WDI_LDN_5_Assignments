@@ -4,11 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, alert: "You don't have permission to do that dufus!"
+    redirect_to root_url, alert: "You don't have permission to do that."
   end
-
-
-
 
   private
   def current_user
