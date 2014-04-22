@@ -1,9 +1,10 @@
 class Ingredient < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :recipe_ids
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  has_many :quantities
-  has_many :recipes, through: :quantities
-  accepts_nested_attributes_for :recipes
+  has_many :ingredientsrecipes
+  has_many :recipes, through: :ingredientsrecipes
+
+  # accepts_nested_attributes_for :recipes
 end

@@ -1,20 +1,11 @@
 <h2><%= @recipe.title %></h2>
-<%#= image_tag("#{@recipe.image}") if @recipe.image > "" %><!-- <br /> -->
+<%= image_tag("#{@recipe.image}") if @recipe.image > "" %><br />
 <h4><%= @recipe.description %></h4>
 <% if @ingredients.any? %>
   <h4>Ingredients</h4>
   <ul>
     <% @ingredients.each do |ingredient| %>
       <li><%= ingredient.name %></li>
-    <% end %>
-  </ul>
-<% end %>
-<h2>This is the Ingredientsrecipes</h2>
-<% if @ingredientsrecipes.any? %>
-  <h4>Ingredients</h4>
-  <ul>
-    <% @ingredientsrecipes.each do |ingredientrecipe| %>
-      <li><%= ingredientrecipe.quantity %></li>
     <% end %>
   </ul>
 <% end %>

@@ -12,7 +12,7 @@
           <td>
           <%= link_to category.name, category_path(category) %>
           </td>
-          <td><%= category.image if category.image > "" %>
+          <td><%= image_tag("#{category.image}") if category.image > "" %>
           </td>
         </tr>
       <% end %>
