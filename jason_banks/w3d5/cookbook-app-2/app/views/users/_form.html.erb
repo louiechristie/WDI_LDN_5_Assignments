@@ -1,6 +1,16 @@
 <%= form_for @user do |f| %>
-<% if @user.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved: <%= @user.errors.full_messages.join(", ").downcase %>.</h3>
     </div>
   <% end %>
+
+  <%= f.label :email %><br />
+  <div class="black"><%= f.text_field :email %></div><br />
+  <%= f.label :password %><br />
+  <div class="black"><%= f.text_field :password %></div><br />
+  <%= f.label :password_confirmation %><br />
+  <div class="black"><%= f.text_field :password_confirmation %></div><br />
+  <div class="black"><%= f.submit %></div>
+
+<% end %>
