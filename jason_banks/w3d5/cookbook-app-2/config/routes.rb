@@ -2,6 +2,12 @@ CookbookApp2::Application.routes.draw do
 
   
 
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :categories
   resources :recipes
   resources :ingredients

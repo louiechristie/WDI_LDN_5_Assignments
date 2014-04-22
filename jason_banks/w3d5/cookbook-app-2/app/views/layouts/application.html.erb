@@ -23,9 +23,11 @@
       </div>
   </header>
   <ul>
+    <li><%= link_to "Users#new", new_user_path, class: active_menu_item(new_user_path) %>
     <li><%= link_to "Categories#index", categories_path, class: active_menu_item(categories_path) %>
     <li><%= link_to "Recipes#index", recipes_path, class: active_menu_item(recipes_path) %>
     <li><%= link_to "Ingredients#index", ingredients_path, class: active_menu_item(ingredients_path) %>
+    <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %>
   </ul>
   <br />
   <br />
