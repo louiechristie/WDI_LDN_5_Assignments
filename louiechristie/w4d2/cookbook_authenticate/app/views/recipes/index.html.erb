@@ -19,7 +19,7 @@
       <td><%= recipe.feeds %></td>
 
       <% if can? :update, recipe %>
-      
+
       <td><%= link_to('Edit', edit_recipe_path(recipe.id)) %></td>
       <td><%= link_to('Delete', recipe_path(recipe.id), :method => :delete) %></td>
       

@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
       sentence = quantity+" "+measure+" "+name
       @sentences << sentence
     end
+
   end
 
   def destroy
@@ -39,7 +40,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
 
-    authorize! :edit, @recipe
+  #  authorize! :edit, @recipe
 
   end
 

@@ -33,7 +33,9 @@
         <li><%= link_to('New Ingredient',new_ingredient_path) %></li >
       </ul>
     </li >
-    <li><%= link_to('Users', users_path)%> </li>
+    <li><% if current_user && current_user.role == "admin" %>
+        <%= link_to 'Users', users_path %>
+      <% end %></li>
    </ul >
  </nav>
 

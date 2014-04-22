@@ -7,9 +7,9 @@ class Ability
     if user.role? :admin
         can :manage, :all
     else
+      can :read, Category
       can :read, Recipe
-      can :manage, Recipe
-      can :manage, Ingredient
+      can :read, Ingredient
     end
   end
 end
