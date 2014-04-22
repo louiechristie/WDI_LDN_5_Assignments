@@ -6,5 +6,5 @@ class Recipe < ActiveRecord::Base
   has_many :ingredientsrecipes
   has_many :ingredients, through: :ingredientsrecipes
 
-  # accepts_nested_attributes_for :ingredients
+  accepts_nested_attributes_for :ingredients
 end
