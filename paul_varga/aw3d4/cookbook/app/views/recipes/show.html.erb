@@ -11,10 +11,10 @@
   <td><%= @recipe.name %> </td> 
   <td><%= @recipe.feeds_people %> </td>
   <td><%= @recipe.description %> </td>
-  <% @recipe.ingridient_ids.each do |id| %> 
-  <td><%= Ingridient.find(id).name %><br/></td>
-  <% end %>
-
+  <td>
+  <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
+  </td>
+  
 </tr>
 </table>
 

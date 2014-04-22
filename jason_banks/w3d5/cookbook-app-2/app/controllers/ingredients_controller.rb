@@ -9,10 +9,12 @@ class IngredientsController < ApplicationController
 
   def create
     params[:ingredient][:name].downcase!
-    ingredient = Ingredient.create(params[:ingredient])
-    flash_notice("Ingredient") unless ingredient.valid?
-
-    redirect_to(ingredients_path)
+    @ingredient = Ingredient.new(params[:ingredient])
+    if @ingredient.save
+      redirect_to(ingredients_path, notice: "#{@ingredient.name} has been successfully added.")
+    else
+      render action: 'new'
+    end
   end
 
   def show
@@ -25,12 +27,13 @@ class IngredientsController < ApplicationController
   end
 
   def update
-    ingredient = find_ingredient
+    find_ingredient
     params[:ingredient][:name].downcase!
-    ingredient.update_attributes(params[:ingredient])
-    flash_notice("Ingredient") unless ingredient.valid?
-
-    redirect_to(ingredients_path)
+    if @ingredient.update_attributes(params[:ingredient])
+      redirect_to(ingredients_path, notice: "#{@ingredient.name} has been successfully updated.")
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy

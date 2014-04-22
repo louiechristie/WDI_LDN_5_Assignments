@@ -30,14 +30,12 @@
 
   <div class="field">
     <%= r.label :ingridients %><br />
-    <% for ingridient in Ingridient.find(:all) %>
-    <%= check_box_tag "recipe[ingridient_ids][]", ingridient.id, @recipe.ingridients.include?(ingridient) %>
+    <%= hidden_field_tag "recipe[ingridient_ids][]" %>
+    <% for ingridient in Ingridient.all %>
+    <%= check_box_tag "recipe[ingridient_ids][]", ingridient.id, @recipe.ingridients.include?(ingridient) %> 
     <%= ingridient.name %>
   <% end %>
   </div>
-
-
-
 
 
   <div class="actions">

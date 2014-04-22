@@ -1,7 +1,17 @@
 <h2>Edit Recipe</h2>
 
 <%= form_for(@recipe) do |r| %>
+<% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field">
     <%= r.label :name %><br />
     <%= r.text_field :name %>
@@ -17,6 +27,12 @@
   <div class="field">
     <%= r.label :pictue %><br />
     <%= r.text_field :picture %>
+  </div>
+  <div class="checkboxes">
+      <% @ingredients.each do |ingredient| %>
+        <%= check_box_tag("ingredient_ids[]", ingredient.id) %>
+        <%= label_tag( "ingredient_ids[]", ingredient.name) %>
+      <% end %>
   </div>
   <div class="actions">
     <%= r.submit %>

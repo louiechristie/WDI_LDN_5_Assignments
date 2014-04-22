@@ -1,8 +1,14 @@
 <%= form_for @recipe do |f| %>
+<% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved: <%= @recipe.errors.full_messages.join(", ").downcase %>.</h3>
+    </div>
+  <% end %>
+
 <%= f.label :title %>
 <div class="black"><%= f.text_field :title %></div>
 <br /><br />
-Category <%= f.collection_select(:category_id, @categories, :id, :name) %>
+<%= f.label "Category" %> <div class="black"><%= f.collection_select(:category_id, @categories, :id, :name) %></div>
 <br /><br />
 <%= f.label :description %>
 <div class="black"><%= f.text_field :description %></div>
@@ -12,16 +18,8 @@ Category <%= f.collection_select(:category_id, @categories, :id, :name) %>
 <br /><br />
 Ingredients
 <br />
-<div class="checkbox-list">
-  <ul>
-    <% @ingredients.each do |ingredient| %>
-      <li>
-        <%= check_box_tag("recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient)) %>
-      <%= label_tag("recipe[ingredient_ids][]", ingredient.name) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<%= f.label "Ingredients" %>
+<%= f.collection_select(:ingredientsrecipes, @ingredients, :id, :name) %>
 <br />
 <%= f.label :instructions %>
 <br /><br />

@@ -1,0 +1,213 @@
+/**my base css**/
+* {
+  font-family: 'Spinnaker', sans-serif;
+  box-sizing:border-box;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 20px 0px;
+}
+h2 {
+  display: inline-block;
+  width: 400px;
+  font-size: 26px;
+  margin: 10px 0px;
+  border-bottom: 1px solid black;
+}
+
+nav a {
+  display: inline-block;
+  padding: 5px 20px 5px 0px;
+}
+
+ a:hover {
+  border-bottom: 3px solid #5ccccc;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid white;
+   -webkit-transition: border 0.2s ease-in-out;
+
+}
+
+input[type=submit] {
+  border: none;
+  width: 75px;
+  padding: 7px 15px;
+
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+ input  {
+  margin-bottom: 10px;
+  }
+
+select {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  background: transparent;
+  width: 150px;
+  padding: 5px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 0;
+  height: 28px;
+   /*-webkit-appearance: none;*/
+}
+
+select, input[type=text] {
+  padding: 5px 15px;
+}
+
+
+.button_to {
+  display: inline-block;
+}
+
+body {
+  padding: 30px;
+}
+
+td:first-child {
+  width: 200px;
+   vertical-align: top;
+}
+
+tr a {
+ width: 200px;
+ display: inline-block;
+ padding-bottom: 10px;
+}
+
+tr {
+  margin: 5px;
+}
+
+
+.category_show td, .list_recipes td, .ingredients_list td {
+  padding: 0px;
+}
+
+
+.recipe_show td { 
+  padding: 5px;
+}
+
+.checkboxes {
+  width: 300px;
+}
+.checkboxesfield_with_errors {
+  width: 150px;
+  background: #ff7373;
+}
+
+.field_with_errors input {
+  background: #ff7373;
+}
+
+.hidebox {
+  display:none;
+}
+.check0:checked~.ingredient0 {
+  display: block;
+}
+.check0:checked~.ingredient0{
+display: block;
+}
+.check1:checked~.ingredient1{
+display: block;
+}
+.check2:checked~.ingredient2{
+display: block;
+}
+.check3:checked~.ingredient3{
+display: block;
+}
+.check4:checked~.ingredient4{
+display: block;
+}
+.check5:checked~.ingredient5{
+display: block;
+}
+.check6:checked~.ingredient6{
+display: block;
+}
+.check7:checked~.ingredient7{
+display: block;
+}
+.check8:checked~.ingredient8{
+display: block;
+}
+.check9:checked~.ingredient9{
+display: block;
+}
+.check10:checked~.ingredient10{
+display: block;
+}
+.check11:checked~.ingredient11{
+display: block;
+}
+.check12:checked~.ingredient12{
+display: block;
+}
+.check13:checked~.ingredient13{
+display: block;
+}
+.check14:checked~.ingredient14{
+display: block;
+}
+.check15:checked~.ingredient15{
+display: block;
+}
+.check16:checked~.ingredient16{
+display: block;
+}
+.check17:checked~.ingredient17{
+display: block;
+}
+.check18:checked~.ingredient18{
+display: block;
+}
+.check19:checked~.ingredient19{
+display: block;
+}
+.check20:checked~.ingredient20{
+display: block;
+}
+.check21:checked~.ingredient21{
+display: block;
+}
+.check22:checked~.ingredient22{
+display: block;
+}
+.check23:checked~.ingredient23{
+display: block;
+}
+.check24:checked~.ingredient24{
+display: block;
+}
+.check25:checked~.ingredient25{
+display: block;
+}
+.check26:checked~.ingredient26{
+display: block;
+}
+.check27:checked~.ingredient27{
+display: block;
+}
+.check28:checked~.ingredient28{
+display: block;
+}
+.check29:checked~.ingredient29{
+display: block;
+}
+.check30:checked~.ingredient30{
+display: block;
+}

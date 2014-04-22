@@ -1,0 +1,6 @@
+
+<p><%= "#{@ingredient.name}"</p>   
+
+
+<%= link_to 'Delete', recipe_path(@ingredient), :method => :delete %>
+<%= link_to 'Edit', edit_recipe_path(@ingredient), :method => :get %>

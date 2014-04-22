@@ -1,9 +1,12 @@
 PlanetsApp::Application.routes.draw do
 
+  resources :galaxies
+
+
 resources :planets
 
 root to: "planets#index"
-post '/planets/:id/delete' => "planets#destroy", :as 'planet_delete'
+# post '/planets/:id/delete' => "planets#destroy", :as 'planet_delete'
 
 
   # The priority is based upon order of creation:
