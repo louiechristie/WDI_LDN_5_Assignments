@@ -7,10 +7,24 @@ body {
 h1 {
   color: #424242;
   font-size: 30px;
-  
+
 }
 
 footer {
   margin-top: 250px;
+}
+
+#main {
+  width: 480px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#left-banner {
+  width: 187px;
+  height: 1000px;
+  background-color: #424242;
+  float: left;
+
 }
 
