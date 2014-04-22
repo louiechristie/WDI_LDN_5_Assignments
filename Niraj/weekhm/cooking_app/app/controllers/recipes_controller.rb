@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+  load_and_authorize_resource
   def index
         @recipes = Recipe.all
       end
@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
 
       def edit
         @recipe = Recipe.find(params[:id])
+        
+        authorize! :edit, @recipe
       end
 
 
