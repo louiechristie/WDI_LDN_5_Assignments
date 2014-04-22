@@ -129,3 +129,7 @@ img {
 #error_explanation, #notice {
   color: #5B80FF;
 }
+
+.active_menu_item {
+  color: #5B80FF;  
+}
