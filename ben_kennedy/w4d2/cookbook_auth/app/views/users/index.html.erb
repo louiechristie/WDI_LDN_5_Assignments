@@ -1,0 +1,16 @@
+<!-- Admin only manage access -->
+
+<h1>User Table</h1>
+
+<table>
+  <thead>
+    <td>Email</td>
+    <td>Password Digest <em>[Hide Later!]</em></td>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.password_digest %></td>
+    </tr>
+  <% end %>
+</table>
