@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
  def index
       if params[:category] && params[:category][:id]
-        @recipes = Recipe.where("category_id = '#{params[:category][:id]}'")
+        @recipes = Category.find(params[:category][:id]).recipes
+      elsif params[:ingredient] && params[:ingredient][:id]
+        @recipes = Ingredient.find(params[:ingredient][:id]).recipes
       else
         @recipes = Recipe.all
       end
@@ -9,16 +11,17 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new unless @recipe 
-    @categories = Category.all
   end
 
   def create
     @recipe = Recipe.new(params[:recipe])
     @recipe.save
-    @ingredient = Ingredient.new
-    @categories = Category.all
+    @ingredients_recipes = params[:ingredients_recipes]
+    @ingredients_recipes.each { |ingredient_id, quantity|
+      IngredientsRecipe.create(recipe_id: @recipe.id, ingredient_id: ingredient_id, quantity: quantity)
+      }
     if @recipe.save
-      redirect_to(new_ingredient_path)
+      redirect_to(recipes_path)
     else 
       render 'new'
     end 
@@ -26,7 +29,8 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @categories = Category.all
+    @ingredients_recipes = @recipe.ingredients_recipes
+
   end
 
   def update
@@ -56,8 +60,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id]) 
-    @ingredients = Ingredient.where("recipe_id = '#{params[:id]}'")
-    @ingredient = Ingredient.new
+    @ingredients_recipes = @recipe.ingredients_recipes
   end
 
 end

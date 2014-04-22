@@ -1,5 +1,6 @@
+<h1>Add a recipe</h1>
 
-   <% if @recipe.errors.any? %>
+<% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
@@ -12,11 +13,6 @@
   <% end %>
 
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :feeds %>
-  <%= f.text_field :feeds %>
+<%= render 'form' %>
 
-  <%= f.select :category_id, @categories.map { |category| [category.name, category.id] } %>
-  
 
