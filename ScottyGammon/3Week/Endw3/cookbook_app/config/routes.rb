@@ -3,7 +3,7 @@ CookbookApp::Application.routes.draw do
 
   resources :categories
   resources :recipes
-
+  resources :ingredients
 
   root to: 'home#about'
 
