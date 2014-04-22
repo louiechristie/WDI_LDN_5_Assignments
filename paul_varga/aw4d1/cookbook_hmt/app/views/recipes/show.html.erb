@@ -5,8 +5,11 @@
   <th>Feeds </th>
   <th>Description </th>
   <th><%= pluralize('Name of', 'ingredient') %> </th>
-  <th>Quantity </th>
-  <th>Measure </th>
+
+  <!-- <th>Quantity </th>
+  <th>Measure </th> -->
+
+  <th>Quantity of Ingridients </th>
 </tr>
 <tr>
   <td><%= @recipe.category.name %> </td>
@@ -16,11 +19,18 @@
   <td>
   <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
   </td>
-  <td>
+
+  <!-- <td>
   <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.quantity.to_s } %>
   </td>
   <td>
   <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.measure.to_s  } %>
+  </td> -->
+
+  <td>
+    <% @recipe.ingridients_recipes.each do |ingridients_recipe| %>
+      <%= ingridients_recipe.quantity %> <%= ingridients_recipe.measure %>  of <%= ingridients_recipe.ingridient.try(:name) %><br>
+    <% end %>
   </td>
 
 </tr>
@@ -30,7 +40,9 @@
 
   <ul>
     <li>
+    <% if can? :update, @recipe %>
     <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+    <% end %>
     </li>
     <li>
     <%= button_to 'Delete Recipe', recipe_delete_path(@recipe) %>

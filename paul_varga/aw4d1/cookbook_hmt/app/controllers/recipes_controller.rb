@@ -1,18 +1,20 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+  # commented out methods as CanCan automatically loads the standard controllers
 
   def index
-    @recipes = Recipe.all
+    #@recipes = Recipe.all
   end
 
   def new
-    @recipe = Recipe.new
+    #@recipe = Recipe.new
     Ingridient.all.each do |ingridient|
       @recipe.ingridients_recipes.build(ingridient_id: ingridient.id)
     end
   end
 
   def create
-    @recipe = Recipe.new(params[:recipe])
+    #@recipe = Recipe.new(params[:recipe])
 
     if ir = params[:recipe][:ingridients_recipes_attributes]
       ir.delete_if do |key, value|
@@ -33,18 +35,18 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    #@recipe = Recipe.find(params[:id])
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    #@recipe = Recipe.find(params[:id])
     Ingridient.all.each do |ingridient|
       @recipe.ingridients_recipes.build(ingridient_id: ingridient.id) unless @recipe.ingridients.include?(ingridient)
     end
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
+    #@recipe = Recipe.find(params[:id])
 
     if ir = params[:recipe][:ingridients_recipes_attributes]
       ir.keys.each do |key|
@@ -65,7 +67,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
+    #@recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to(recipes_path)
   end
