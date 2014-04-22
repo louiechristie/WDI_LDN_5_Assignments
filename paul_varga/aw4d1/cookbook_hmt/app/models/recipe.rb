@@ -6,7 +6,7 @@ class Recipe < ActiveRecord::Base
   has_many :ingridients_recipes
   has_many :ingridients, through: :ingridients_recipes
 
-  accepts_nested_attributes_for :ingridients_recipes
+  accepts_nested_attributes_for :ingridients_recipes, allow_destroy: true
 
   validates :name, presence: true;
   validates :name, length: {minimum: 2}

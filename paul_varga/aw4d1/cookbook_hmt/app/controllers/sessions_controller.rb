@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
 
-
       flash[:notice] = 'Logged in successfully'
       redirect_to root_url 
     else
@@ -19,5 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:current_user_id] = nil 
+    redirect_to root_url, notice: 'you have logged out'
+
   end
 end
