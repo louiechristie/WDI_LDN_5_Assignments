@@ -8,9 +8,16 @@ class IngridientsController < ApplicationController
     @ingridient = Ingridient.new
   end
 
-  def create
-    @ingridient = Ingridient.create(params[:ingridient])
-    redirect_to(ingridients_path)
+  def create 
+    @ingridient = Ingridient.new(params[:ingridient])
+
+    respond_to do |format|
+      if @ingridient.save
+        format.html { redirect_to @ingridient, notice: 'Ingredient was successfully created.' }
+      else
+        format.html { render action: 'new'}
+      end
+    end
   end
 
   def show
@@ -23,8 +30,14 @@ class IngridientsController < ApplicationController
 
   def update
     @ingridient = Ingridient.find(params[:id])
-    @ingridient.update_attributes(params[:ingridient])
-    redirect_to(ingridients_path)
+
+    respond_to do |format|
+      if @ingridient.update_attributes(params[:ingridient])
+      format.html { redirect_to @ingridient, notice: 'Ingredient was successfully updated.' }
+      else
+      format.html { render action: "edit" }
+      end
+    end
   end
 
   def destroy

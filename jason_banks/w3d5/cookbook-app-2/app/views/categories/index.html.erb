@@ -1,4 +1,5 @@
 <h2>Categories#index</h2>
+<h3 id="notice"><%= notice %></h3>
 <% if @categories %>
   <table>
     <thead>
@@ -11,7 +12,7 @@
           <td>
           <%= link_to category.name, category_path(category) %>
           </td>
-          <td><%= image_tag("#{category.image}") if category.image > "" %>
+          <td><%= category.image if category.image > "" %>
           </td>
         </tr>
       <% end %>

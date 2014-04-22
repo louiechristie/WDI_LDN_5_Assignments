@@ -1,0 +1,66 @@
+
+<% @recipe.errors.full_messages %>
+
+
+<div class="recipe_form">
+<table>
+<%= form_for @recipe do |f| %>
+  <tr>
+    <td>Name:</td> <td><%= f.text_field :name%></td><td><%= error_msg(:name) %>
+  
+  <tr>  
+    <td>Feeds:</td> <td><%= f.text_field :feeds %></td>
+  </tr>
+  <tr>
+    <td>Time:</td> <td><%= f.text_field :time %></td>
+  </tr>
+  <tr>
+    <td>Description:</td> <td><%= f.text_area :description, size: "40x12" %></td>
+  </tr>
+  <tr>
+    <td>
+      Category:
+    </td>
+    <td><%= select_tag 'recipe[category_id]', options_from_collection_for_select(Category.all, 'id', 'name') %></td>
+  </tr>
+  <tr>
+    <td>
+      Ingredients:
+    </td>
+    <td class="checkboxes<%= if @recipe.errors[:ingredient_ids].count > 0 then 'field_with_errors' end %>" >
+      <% j = 0 %>
+      <% @ingredients.each do |ingredient| %>
+        <%= check_box_tag("ingredient_ids[]", ingredient.id, if  @recipe.ingredient_ids.include?(ingredient.id) then checked = true end, class: "check" + j.to_s) %>
+        <%= label_tag( "ingredient_ids[]", ingredient.name) %>
+        <% j += 1%>
+      <% end %>
+      <!-- </td>
+      <td class="checkboxes"> -->
+        <% i = 0 %>
+        </br> Quantity:</br> 
+
+      <% @ingredients.each do |ingredient| %>
+      
+        <div class="ingredient<%= i.to_s %> hidebox">
+        
+        <%= ingredient.name %> <%= text_field "quantity" , ingredient.id , value: quantity(ingredient)  %> <br />
+          <% i += 1 %>
+        </div>
+      <% end %>
+
+      </td>
+      <td>
+        <%= error_msg(:ingredient_ids) %>
+      </td>
+
+  </tr>
+
+  <tr>
+    <td></td><td><%= f.submit "submit" %></td>
+  </tr>
+
+
+
+<% end %>
+</table>
+<div>

@@ -8,9 +8,16 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def create
-    @category = Category.create(params["category"])
-    redirect_to(categories_path)
+  def create 
+    @category = Category.new(params[:category])
+
+    respond_to do |format|
+      if @category.save
+        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+      else
+        format.html { render action: 'new'}
+      end
+    end
   end
 
   def show
@@ -29,8 +36,14 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.update_attributes(params[:category])
-    redirect_to(categories_path)
+
+    respond_to do |format|
+      if @category.update_attributes(params[:category])
+      format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+      else
+      format.html { render action: "edit" }
+      end
+    end
   end
 
 

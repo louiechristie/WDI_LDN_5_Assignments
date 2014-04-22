@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  instructions: MyText
+  servings: 
+  category_id: 1
+
+two:
+  name: MyString
+  instructions: MyText
+  servings: 
+  category_id: 1
