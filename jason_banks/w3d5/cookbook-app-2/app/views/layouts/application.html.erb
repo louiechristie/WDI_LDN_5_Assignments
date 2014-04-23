@@ -23,21 +23,25 @@
       </div>
   </header>
   <ul>
-    <li><%= link_to "Users#new", new_user_path, class: active_menu_item(new_user_path) %>
-    <li><%= link_to "Categories#index", categories_path, class: active_menu_item(categories_path) %>
-    <li><%= link_to "Recipes#index", recipes_path, class: active_menu_item(recipes_path) %>
-    <li><%= link_to "Ingredients#index", ingredients_path, class: active_menu_item(ingredients_path) %>
-    <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %>
+    <% if current_user %>
+      <li>Welcome, <%= current_user.email %>! | 
+        <%= link_to "Logout", session_path(0), method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Login", new_session_path, class: active_menu_item(new_session_path) %> | 
+        <%= link_to "Join", new_user_path, class: active_menu_item(new_user_path) %></li>
+    <% end %>
+    <li><%= link_to "Categories#index", categories_path, class: active_menu_item(categories_path) %></li>
+    <li><%= link_to "Recipes#index", recipes_path, class: active_menu_item(recipes_path) %></li>
+    <li><%= link_to "Ingredients#index", ingredients_path, class: active_menu_item(ingredients_path) %></li>
+    <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %></li>
   </ul>
   <br />
   <br />
-  <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <br /><br />
   <div class="flash">
     <h2>
-      <%= flash[:notice] if flash[:notice] %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
     </h2>
   </div>
   <div class="yield">

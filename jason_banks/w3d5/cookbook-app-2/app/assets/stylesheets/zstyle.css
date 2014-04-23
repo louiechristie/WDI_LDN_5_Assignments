@@ -88,8 +88,7 @@ img {
   background-color: #5B80FF;
   margin-left: 30px;
   margin-right: 6px;
-/*  display: inline-block;
-*/}
+}
 
 .button_to {
   background-color: #000;
@@ -124,6 +123,7 @@ img {
 .flash {
   margin-top: 100px;
   margin-bottom: -50px;
+  color: #5B80FF
 }
 
 #error_explanation, #notice {
