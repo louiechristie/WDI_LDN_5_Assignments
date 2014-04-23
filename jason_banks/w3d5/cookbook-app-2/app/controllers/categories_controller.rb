@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.order
+    @q = Category.search(params[:q])
+    @categories = @q.result
   end
 
   def new

@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :setup_search_object
+
   helper_method :current_user
+
+  private
+  def setup_search_object
+    @q = nil
+  end
 
   private
   def current_user

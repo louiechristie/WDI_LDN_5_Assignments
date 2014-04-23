@@ -1,6 +1,12 @@
 <h2>Recipes#index</h2>
 <h3 id="notice"><%= notice %></h3>
-<% if @recipes %>
+
+<%#= search_form_for @q do |f| %>
+  <%#= f.label :title_cont %>
+  <%#= f.text_field :title_cont, class: "black" %>
+  <%#= f.submit class: "black" %><br /><br />
+<%# end %>
+
   <table>
     <thead>
       <tr>
@@ -27,6 +33,6 @@
   <% end %>
 </tbody>
 </table>
-<% end %>
+
 <br />
 <%= link_to "New Recipe", new_recipe_path %>

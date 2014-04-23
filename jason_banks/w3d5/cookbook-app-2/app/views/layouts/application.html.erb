@@ -37,6 +37,11 @@
   </ul>
   <br />
   <br />
+  <%= search_form_for @q do |f| %>
+    <%= f.label :title_cont %>
+    <%= f.text_field :title_cont, class: "black" %>
+    <%= f.submit class: "black" %><br /><br />
+  <% end %>
   <div class="flash">
     <h2>
       <% flash.each do |name, msg| %>
