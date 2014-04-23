@@ -1,6 +1,6 @@
 <h1>Categories</h1>
 
-<a href="/categories/new">Add a New Category</a>
+<div class='add'><a href="/categories/new">Add a New Category</a></div>
 
 <table>
 	<tr>
@@ -10,6 +10,10 @@
 	<% @categories.each do |category| %>
 	<tr>
 		<td><%= category.name %></td>
-		<td><%= link_to'Edit', edit_category_path(category) %></td><td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
+		<% if can? :update, category %>
+		<td><%= link_to'Edit', edit_category_path(category) %></td>
+		<td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+	</tr>	
 	<% end %>
 </table>

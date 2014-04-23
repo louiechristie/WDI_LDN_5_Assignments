@@ -1,15 +1,14 @@
 class RecipesController < ApplicationController
 
+	load_and_authorize_resource
+
 	def index
-		@recipes = Recipe.all
 	end
 
 	def new
-		@recipe = Recipe.new
 	end
 
 	def create
-		@recipe = Recipe.create(params[:recipe])
 
 		respond_to do |format|
       		if @recipe.save
@@ -23,15 +22,12 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
-		@recipe = Recipe.find(params[:id])
 	end
 
 	def show
-		@recipe = Recipe.find(params[:id])
 	end
 
 	def update
-		@recipe = Recipe.find(params[:id])
       	@recipe.update_attributes(params[:recipe])
       	
       	respond_to do |format|
@@ -46,7 +42,6 @@ class RecipesController < ApplicationController
     end
 
     def destroy
-    	@recipe = Recipe.find(params[:id])
 	    @recipe.destroy
 	    redirect_to recipes_path
 	end
