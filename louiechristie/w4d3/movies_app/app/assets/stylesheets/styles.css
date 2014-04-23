@@ -1,0 +1,25 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+table {
+  border-collapse:collapse;
+}
+td, td, th {
+  border: 1px solid black;
+  padding: 10px;
+}
+header {
+  border-bottom: 1px dotted black;
+}
+footer {
+  text-align: center;
+  border-top: 1px dotted black;
+}
+.container {
+  max-width: 300px;
+  min-height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: white;
+}

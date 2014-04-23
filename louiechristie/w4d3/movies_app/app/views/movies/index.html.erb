@@ -7,13 +7,15 @@
       <tr>
         <th>Title</th>
         <th>Year</th>
+        <th>Year</th>
+
     </thead>
     <tbody>
-
       <% @movies.each do |movie| %>
         <tr>
           <td><%= movie.title %></td>
           <td><%= movie.year %></td>
+          <td><%= link_to("show", movie_path(movie.id)) %></td>
         </tr>
       <% end %>
     </tbody>

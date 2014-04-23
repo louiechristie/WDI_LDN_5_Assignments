@@ -8,6 +8,8 @@
 </head>
 <body>
   <header>
+    <h1>Movies App</h1>
+
     <nav>
       <ul>
         <li><%= link_to("Home",movies_path) %></li>
@@ -15,9 +17,7 @@
     </nav>
   </header>
   
-  <h1>Movies App</h1>
-
-  <div id="container">
+  <div class="container">
     <%= yield %>
   </div>
 
