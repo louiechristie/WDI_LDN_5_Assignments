@@ -19,7 +19,11 @@ class Movie < ActiveRecord::Base
 
       if html 
         hash = JSON(html)
-        hash['Plot']
+        if hash['Plot'] && hash['Plot'] > ""
+          hash['Plot']
+        else
+          "Plot information not available from internet"
+        end
       else
         "Plot information not available from internet"
       end

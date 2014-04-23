@@ -1,25 +1,50 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
+  background-color: #84D1E0;
+  font-size: 16px;
 }
-
 table {
   border-collapse:collapse;
 }
 td, td, th {
-  border: 1px solid black;
-  padding: 10px;
+  padding: 14px;
 }
-header {
-  border-bottom: 1px dotted black;
+header, footer, .container {
+  background-color: white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 4px solid #69A7B3;
+  padding: 0px 40px;
+  font-size: 16px;
 }
 footer {
   text-align: center;
-  border-top: 1px dotted black;
+  font-size: small;
 }
 .container {
-  max-width: 300px;
-  min-height: 300px;
-  padding: 10px;
-  margin: 0 auto;
-  background-color: white;
+  max-width:500px;
+  margin: 20px auto;
+}
+h1 a {
+  text-decoration: none;
+}
+a {
+    color: #3C5F66;
+}
+a:hover {
+  color: gray;
+}
+.field {
+  margin: 10px;
+  margin: 20px;
+}
+
+textarea, input {
+  max-height: 100px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 6px;
 }

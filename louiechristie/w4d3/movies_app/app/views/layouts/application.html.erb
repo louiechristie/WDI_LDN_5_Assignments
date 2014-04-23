@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MoviesApp</title>
+  <title>My Movies</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
-    <h1>Movies App</h1>
-
+    <h1><%= link_to("My Movies",movies_path) %></h1>
     <nav>
-      <ul>
-        <li><%= link_to("Home",movies_path) %></li>
-      </ul>
     </nav>
   </header>
   
