@@ -4,3 +4,20 @@ img {
   border: 3px solid yellow;
   border-radius: 20px;
 }
+
+h1, h2 {
+  text-align: center;
+}
+
+body {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.movies_index {
+  border-bottom: 3px solid yellow;
+}
+
+.center {
+  text-align: center;
+}

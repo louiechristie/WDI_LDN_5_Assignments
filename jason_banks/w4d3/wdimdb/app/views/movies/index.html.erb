@@ -1,1 +1,27 @@
-<h2>WDImdb</h2>
+<h2>Movies</h2>
+<br />
+<br />
+<div class="center">
+  <%= search_form_for @q do |f| %>
+    <%= f.label "Search" %>
+    <%= f.text_field :title_or_director_or_review_cont, placeholder: "Title, director or review.", size: "60" %>
+  <% end %>
+</div>
+<br />
+<br />
+<% @movies.each do |movie| %>
+  <%= link_to movie.title, movie_path(movie) %>
+  <div class="movies_index">
+    <ul>
+      <li>
+        Rating: <%= movie.rating %>
+      </li>
+      <li>
+        Director: <%= movie.director %>
+      </li>
+      <li>
+        Review: <%= movie.review %>
+      </li>
+    </ul>
+  </div>
+<% end %>
