@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><% link_to movies_path "Home" %></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <h1>Movies App</h1>
 
-<%= yield %>
+  <div id="container">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <p><a ref="http://www.louiechristie.com">Louie Christie</a> 2014</p>
+  </footer>
 
 </body>
 </html>
