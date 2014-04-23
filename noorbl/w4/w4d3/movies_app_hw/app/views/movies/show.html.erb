@@ -1,2 +1,33 @@
 <h1>Movies#show</h1>
 <p>Find me in app/views/movies/show.html.erb</p>
+
+
+
+<%# title "Movie" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+<p>
+  <strong>Director:</strong>
+  <%= @movie.director %>
+</p>
+<p>
+  <strong>Actors:</strong>
+  <%= @movie.actor %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+<p>
+  <strong>Review:</strong>
+  <%= @movie.review%>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_movie_path(@movie) %> |
+  <%= link_to "Destroy", @movie, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", movies_path %>
+</p>

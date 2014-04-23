@@ -1,45 +1,8 @@
 MoviesAppHw::Application.routes.draw do
-  get "genres/new"
+  
+  resources :movies
 
-  get "genres/create"
-
-  get "genres/update"
-
-  get "genres/edit"
-
-  get "genres/destroy"
-
-  get "genres/index"
-
-  get "genres/show"
-
-  get "categories/new"
-
-  get "categories/create"
-
-  get "categories/update"
-
-  get "categories/edit"
-
-  get "categories/destroy"
-
-  get "categories/index"
-
-  get "categories/show"
-
-  get "movies/new"
-
-  get "movies/create"
-
-  get "movies/update"
-
-  get "movies/edit"
-
-  get "movies/destroy"
-
-  get "movies/index"
-
-  get "movies/show"
+  root :to => 'movies#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
