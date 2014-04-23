@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def active_menu_item(link_path)
+    def active_menu_item(link_path)
 
     # current_uri = request.env['PATH_INFO']
     # # If you are browsing http://example.com/my/test/path, 
@@ -13,11 +13,9 @@ module ApplicationHelper
     path = Rails.application.routes.recognize_path(link_path)
 
     controller = path[:controller]
-    action = path[:action]
 
     :active_menu_item if controller == params[:controller]
 
   end
 
-  
 end

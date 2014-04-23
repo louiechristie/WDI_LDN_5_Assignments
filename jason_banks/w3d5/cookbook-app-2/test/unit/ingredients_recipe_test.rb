@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GalaxyTest < ActiveSupport::TestCase
+class IngredientsRecipeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
