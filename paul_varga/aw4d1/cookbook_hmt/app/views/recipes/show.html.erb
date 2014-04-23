@@ -12,7 +12,7 @@
   <th>Quantity of Ingridients </th>
 </tr>
 <tr>
-  <td><%= @recipe.category.name %> </td>
+  <td><%= @recipe.category.try :name %> </td>
   <td><%= @recipe.name %> </td> 
   <td><%= @recipe.feeds_people %> </td>
   <td><%= @recipe.description %> </td>

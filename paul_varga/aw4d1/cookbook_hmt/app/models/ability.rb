@@ -9,7 +9,7 @@ class Ability
     else
       can :read, Category
       can :manage, Recipe
-      can :manage, Ingridient
+      can :read, Ingridient
     end
 
 
