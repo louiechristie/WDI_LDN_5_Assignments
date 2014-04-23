@@ -4,7 +4,12 @@
 
 
 Image: DO
-
+<div>
+  Category:</br>
+  <% @movie.categories.each do |category| %>
+      <%= category.name %><br>
+    <% end %>
+</div>
 <div>
   Venue: <%= @movie.venue%>
 </div>

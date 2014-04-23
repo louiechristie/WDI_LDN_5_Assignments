@@ -23,10 +23,12 @@
     <%= f.text_field :movie_image %>
   </div>
 
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
-  </div>
+ <div class="field">
+  <% Category.all.each do |category| %>
+       <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category), id: "category_movie_ids_#{category.id}" %>
+       <%= f.label :category_ids, category.name, for: "category_movie_ids_{category.id}" %>
+       <%end%>
+     </div>
 
   <div class="field">
     <%= f.label :venue %>
