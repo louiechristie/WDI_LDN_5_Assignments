@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <%= form_for(@movie) do |form| %>
 
   <% if @movie.errors.any? %>
@@ -12,12 +14,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %><br />
+    <%= form.label :title %>*<br />
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :year %><br />
+    <%= form.label :year %>*<br />
     <%= form.text_field :year %>
   </div>
 

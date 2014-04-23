@@ -20,9 +20,9 @@ class MoviesController < ApplicationController
     @movie = Movie.new(params[:movie])
 
     if @movie.save
-      redirect_to @movie, notice: 'Category was successfully created.'
+      redirect_to @movie, notice: 'Movie was successfully created.'
     else
-      redirect_to new_movie_path, notice: 'Category was not created.'  
+      redirect_to new_movie_path, notice: 'Movie was not created. Include title and valid year'
     end
   end
 
@@ -37,7 +37,7 @@ class MoviesController < ApplicationController
     if @movie.update_attributes(params[:movie])
     redirect_to @movie, notice: 'Movie was successfully updated.'
     else
-      redirect_to(edit_movies_path)
+      redirect_to edit_movie_path, notice: 'Movie was not updated. Include title and valid year'
     end
   end
 
