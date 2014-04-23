@@ -1,1 +1,61 @@
-<%= @movie.title %>
+<h2><%= @movie.title %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>
+        <%= image_tag @movie.image %>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Rating:
+      </td>
+      <td>
+        <%= @movie.rating %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        How Viewed:
+      </td>
+      <td>
+        <%= @movie.how_viewed %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Director:
+      </td>
+      <td>
+        <%= @movie.director %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Actors:
+      </td>
+      <td>
+        <%= @movie.actors %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Plot:
+      </td>
+      <td>
+        <%= @movie.plot %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Review:
+      </td>
+      <td>
+        <%= @movie.review %>
+      </td>
+    </tr>
+  </tbody>
+</table>
