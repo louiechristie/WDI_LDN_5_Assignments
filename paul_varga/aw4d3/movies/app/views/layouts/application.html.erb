@@ -8,12 +8,28 @@
 </head>
 <body>
 
+<% flash.each do |name, message| %>
+   <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+   </div>
+<% end %>
+
+
 <header>
   <%= search_form_for @q do |f| %>
   <%= f.label :name_or_categories_name_cont %>
   <%= f.text_field :name_or_categories_name_cont %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+  <ul>
+    <li><%= link_to "Sign Up", users_path %></li>
+    <% if current_user %>
+        Hello, <%= current_user.email %>
+      <strong><li><%= link_to 'Sign In', session_path(0), method: :delete %></li></strong>
+      <% else %>
+      <strong><li><%= link_to "Sign Out", new_session_path %></li></strong>
+      <% end %>
+  </ul>
 </header>
 
 

@@ -1,7 +1,10 @@
 Movies::Application.routes.draw do
-  resources :categories, :movies
-
-  root to: "categories#index"
+  resources :categories, :movies, :users
+  
+  resources :sessions, only: [:new, :create, :destroy]
+  
+  root to: "users#index"
+  get 'login', to: 'sessions#new'
   post '/categories/:id/delete' => "categories#destroy", :as => 'category_delete'
   post '/movies/:id/delete' => "movies#destroy", :as => 'movies_delete'
 

@@ -16,18 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :review %><br />
-    <%= f.text_area :review %>
-  </div>
-  <div class="field">
     <%= f.label :rating %><br />
     <%= f.select :rating, options_for_select(10.downto(1)) %>
   </div>
-  <div class="field">
-    <%= f.label :year %><br />
-    <%= f.select :year, options_for_select(2014.downto(1900)) %>
-  </div>
-
   <div class="field">
     <%= f.label :categories %><br />
     <%= hidden_field_tag "movie[category_ids][]" %>
