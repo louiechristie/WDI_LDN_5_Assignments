@@ -11,18 +11,17 @@
     <%= f.label :category_id %><br />
     <%= f.collection_select :category_id, Category.all, :id, :name %>
   </p>
-
   <p>
      <% if @recipe.ingredients_recipes.any? %>
        <% @recipe.ingredients_recipes.each do |ingredients_recipe| %>
-         <%= text_field :ingredients_recipes, ingredients_recipe.ingredient_id, value: ingredients_recipe.quantity  %>
+         <%= text_field :ingredients_recipes, ingredients_recipe.ingredient_id, value: ingredients_recipe.quantity %>
          <%= ingredients_recipe.ingredient.try(:name) %>
          <br>
          <% end %>
          
          <% else %>     
        <% Ingredient.all.each do |ingredient| %>
-         <%= text_field :ingredients_recipes, ingredient.id  %>
+         <%= text_field :ingredients_recipe, ingredient.id %>
          <%= ingredient.name %>
          <br>
       <% end %>

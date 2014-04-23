@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+ load_and_authorize_resource
  def index
       if params[:category] && params[:category][:id]
         @recipes = Category.find(params[:category][:id]).recipes
@@ -15,10 +16,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.user_id = session[:user_id]
     @recipe.save
-    @ingredients_recipes = params[:ingredients_recipes]
+    @ingredients_recipes = params[:ingredients_recipe]
     @ingredients_recipes.each { |ingredient_id, quantity|
-      IngredientsRecipe.create(recipe_id: @recipe.id, ingredient_id: ingredient_id, quantity: quantity)
+      IngredientsRecipe.create(recipe_id: @recipe.id, ingredient_id: ingredient_id.to_i, quantity: quantity)
       }
     if @recipe.save
       redirect_to(recipes_path)

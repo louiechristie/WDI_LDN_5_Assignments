@@ -18,7 +18,6 @@ class CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
-    # @engines = Engine.all
   end
 
 def update

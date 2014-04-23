@@ -7,6 +7,9 @@ class Ability
             can :manage, :all
         else
             can :read, Category
+            can :manage, Recipe
+            cannot :destroy, Recipe
+            can :create, User 
         end
 
 

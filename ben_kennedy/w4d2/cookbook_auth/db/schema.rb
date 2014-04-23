@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422165040) do
+ActiveRecord::Schema.define(:version => 20140422182840) do
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140422165040) do
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
 
   add_index "recipes", ["category_id"], :name => "index_recipes_on_category_id_id"
