@@ -1,4 +1,10 @@
 class CategoriesController < ApplicationController
+  def home
+    @q = Category.search(params[:q])
+    @categories = @q.result
+    @model_name = "category"
+  end
+
   def index
     @q = Category.search(params[:q])
     @categories = @q.result

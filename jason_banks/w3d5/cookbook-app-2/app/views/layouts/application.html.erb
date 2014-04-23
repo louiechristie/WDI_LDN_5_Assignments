@@ -37,10 +37,12 @@
   </ul>
   <br />
   <br />
-  <%= search_form_for @q do |f| %>
-    <%= f.label :name_cont %>
-    <%= f.text_field :name_cont, class: "black" %>
-    <%= f.submit class: "black" %><br /><br />
+  <% if correct_view_for_search? %>
+    <%= search_form_for @q do |f| %>
+      <%= f.label "Search" %>
+      <%= f.text_field :name_cont, placeholder: "Name of #{@model_name}", class: "black" %>
+      <%= f.submit class: "black" %><br /><br />
+    <% end %>
   <% end %>
   <div class="flash">
     <h2>

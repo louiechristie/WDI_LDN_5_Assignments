@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-    def active_menu_item(link_path)
+  def active_menu_item(link_path)
 
     # current_uri = request.env['PATH_INFO']
     # # If you are browsing http://example.com/my/test/path, 
@@ -18,4 +18,7 @@ module ApplicationHelper
 
   end
 
+  def correct_view_for_search?
+    true if params[:controller] != "sessions" && params[:controller] != "users" && !params[:id]
+  end
 end

@@ -2,6 +2,7 @@ class IngredientsController < ApplicationController
   def index
     @q = Ingredient.search(params[:q])
     @ingredients = @q.result
+    @model_name = "ingredient"
   end
 
   def new
