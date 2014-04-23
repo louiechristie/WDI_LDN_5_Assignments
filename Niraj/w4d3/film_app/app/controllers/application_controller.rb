@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :setup_search_object
+
 helper_method :current_user
+
+
 
   private
     def current_user

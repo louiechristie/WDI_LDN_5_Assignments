@@ -8,6 +8,7 @@ gem 'rails', '3.2.17'
 gem 'sqlite3'
 
 gem 'cancan', '1.6.10'
+gem 'ransack', '1.1.0'
 
 group :development, :test do
   gem 'nifty-generators', '>= 0.4.0'
