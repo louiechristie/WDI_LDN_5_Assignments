@@ -12,12 +12,12 @@
         <%= link_to "Destroy", movie, :confirm => 'Are you sure?', :method => :delete %>
 
         <% if current_user %>
-          <%= link_to "Add film to favourites", edit_user_path(current_user, :movie_id => movie.id, :action => "add") %>
+          <%= link_to "Add film to favourites", edit_user_path(current_user, :movie_id => movie.id, :movieaction => "add") %>
          <% end %>
 
         <% else %>
           <!-- #doesn't work and seems very smely -->
-          <%= link_to "Remove film from favourites", edit_user_path(current_user, :movie_id => movie.id, :action => "remove") %>
+          <%= link_to "Remove film from favourites", edit_user_path(current_user, :movie_id => movie.id, :movieaction => "remove") %>
 
         <% end %>
 

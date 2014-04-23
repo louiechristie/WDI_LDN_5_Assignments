@@ -10,6 +10,7 @@
 # movies = ["Seven", "Pulp Fiction"]
 Movie.all.map{|movie| movie.destroy }
 
+
 Movie.create(title: "batman")
 Movie.create(title: "pulp fiction")
 Movie.create(title: "seven")

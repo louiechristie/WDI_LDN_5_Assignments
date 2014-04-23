@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     
     @user = User.find(current_user)
     current_films = @user.movie_ids
-  
-    if params[:action] == "add"
+ 
+    if params[:movieaction] == "add"
         current_films << params["movie_id"].to_i
     else 
         current_films.delete(params["movie_id"].to_i)
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
       if @user.save
-        redirect_to movies_path
+        redirect_to new_session_path
         
       else
          render action: "new" 
