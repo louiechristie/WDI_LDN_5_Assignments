@@ -1,0 +1,26 @@
+<h1>Movie Database</h1>
+
+<ul>Title</ul>
+<ul>Review</ul>
+<ul>Poster</ul>
+<ul>Genre</ul>
+<ul>Ownership</ul>
+  
+
+<% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie.title %></td>
+    <td><%= movie.review %></td>
+    <td><%= movie.poster %></td>
+    <td><%= movie.genre %></td>
+    <td><%= movie.ownership %></td>
+    <td><%= link_to 'Show', movie %></td>
+    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movie', new_movie_path %>
