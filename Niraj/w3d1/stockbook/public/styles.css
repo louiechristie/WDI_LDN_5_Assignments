@@ -1,0 +1,22 @@
+body {
+  background-image: url(wallpaper.jpg);
+}
+
+nav {
+  font-family: Charlemagne Std; arial;
+  font-size: 50px;
+  margin-top: 250px;
+  text-align: center;
+  word-spacing:50px;
+  margin-left: 60px;
+
+}
+
+.category {
+ font-family: Charlemagne Std; arial;
+ font-size: 30px;
+ margin-left: 900px;
+}
+
+a:hover {color:white;}  
+

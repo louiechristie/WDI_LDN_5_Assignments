@@ -1,0 +1,18 @@
+<h2>Scott's Engines</h2>
+
+<a class='new' href="/engines/new">Add a New Engine</a>
+
+<div class='table_bg'>
+	<table>
+			<tr>
+				<th>Cylinders</th>
+			</tr>
+			<% @engines.each do |engine| %>
+			<tr>
+				<td><%= engine.cylinders %></td>
+				<td><%= link_to'Edit', edit_engine_path(engine), :class => "new" %></td><td><%= link_to 'Delete', engine, method: :delete, data: { confirm: 'Would you like to delete the engine?' }, :class => "new" %></td></tr>	
+			<% end %>
+	</table>
+</div>
+
+

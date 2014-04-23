@@ -1,0 +1,39 @@
+h1 {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:30px;
+color:#fff;
+margin:2px;
+background: black no-repeat left top;
+}
+img{
+height: 200px;
+padding: 30px;
+}
+thead{
+font-weight: bold;
+text-align: center;	
+}
+td {
+padding: 15px;
+border: 1px solid black;
+}
+body {
+background-image: url(/car.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+font-family: helvetica, arial, sans-serif;
+nav {
+margin:0;
+padding:0px;
+word-spacing: 2em;
+}
+nav li {
+font-size: 20px;
+display:inline;
+padding:0px;
+margin:0;
+}
+
+p{
+	max-width:750px;
+}

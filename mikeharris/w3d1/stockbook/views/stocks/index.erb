@@ -1,0 +1,78 @@
+<h2>Show stocks page</h2><br /><br />
+
+<p>Portfolio Name: <%= @portfolio.name %></p>
+
+<a href="/portfolio/<%= @portfolio.id %>/stocks/new">buy new stock </a>
+
+<table>
+  <tr>
+    <td>
+      stock ticker
+    </td>
+    <td>
+      stock name
+    </td>
+    <td>
+      price bought at
+    </td>
+    <td>
+      holding
+    </td>
+    <td> 
+      current price
+    </td>
+    <td>
+      value
+    </td>
+    <td>
+      action
+    </td>
+    <td>
+      action
+    </td>
+    <td>
+      action
+    </td>
+    <td>
+      action
+    </td>
+  </tr>
+  <% @stocks.each do |stock| %>
+  <tr>
+    <td>
+        <%= stock.symbol %> 
+    </td>
+    <td>
+        <%= stock.name %>    
+    </td>
+    <td>
+        <%= stock.buying_price %>    
+    </td>
+    <td>
+        <%= stock.holding %>    
+    </td>
+    <td> 
+      
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      <a href="/portfolios/<%= @portfolio.id %>/stocks/<%= stock.id %>">sell all</a>
+    </td>
+    <td>
+      <form action='/portfolios/<%= @portfolio.id %>/stocks/<%= stock.id %>' method='post'>
+        <input type="number" name="amount"><br/ ><input type="radio" name="direction" value="buy">Buy
+        <input type="radio" name="direction" value="sell">Sell<button>Submit</button>
+      </form>
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+<% end %>
+
+
+    
+    
+    

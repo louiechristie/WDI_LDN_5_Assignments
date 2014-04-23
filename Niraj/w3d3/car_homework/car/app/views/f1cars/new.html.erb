@@ -1,0 +1,48 @@
+<!-- <form method='post' action='/f1cars'>
+  Name:
+  <input type='text' name='name' autofocus>
+  <br>
+  Driver:
+  <input type='text' name='driver'>
+  <br>
+  Year:
+  <input type='text' name='year'>
+  <br>
+  engine:
+  <input type='text' name='engine'>
+  <br>
+  image:
+  <input type='text' name='image'>
+  <br>
+  <button>Add F1 car!</button>
+</form> -->
+
+<%= form_for(@f1car) do |f| %>
+ 
+
+  <div class="field">
+    <%= f.label :name %><br />  
+    <%= f.text_field :name%>
+  </div>
+  <div class="field">
+    <%= f.label :driver %><br />
+    <%= f.text_field :driver %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :engine %><br />
+    <%= f.collection_select :engine_id, Engine.all, :id, :name_for_select  %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

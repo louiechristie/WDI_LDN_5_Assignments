@@ -1,0 +1,19 @@
+Here are all you 2Dos:
+
+<% @to_dos.each do |to_do| %>
+
+
+<div>
+  <h3><%= to_do['title']%></h3>
+  <p><%= to_do['description']%></p>
+  <p><%= to_do['id']%></p>
+  <a href="/delete/<%= to_do['id']%>">
+  Delete</a>
+  <a href="/edit/<%= to_do['id']%>">
+  Edit</a> 
+</div>
+
+<hr/>
+
+
+<% end %>

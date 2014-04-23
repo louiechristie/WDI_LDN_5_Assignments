@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	background-image: url(/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+	color: white;
+	font-family: 'Racing Sans One', cursive;
+	text-align: right;
+	font-size: 300%
+}
+
+.link {
+	color: white;
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'Racing Sans One', cursive;
+	font-size: 150%;
+	margin-left: 20px;
+	margin-top: -20px;
+	float: right;
+}
+
+h2 {
+	color: white;
+	font-family: 'Racing Sans One', cursive;
+	clear: both;
+	margin-bottom: 0px;
+}
+
+.new {
+	color: white;
+	text-decoration: none;
+}
+
+th {
+	color: orange;
+	text-align: left;
+}
+
+table {
+	color: white;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	border-spacing: 10px;
+    border-collapse: separate;
+    float: left;
+}
+
+.show {
+	margin-left: 40px;
+}
+
+form {
+	color: white;
+}
+
+.link:hover {
+	color: orange;
+}
+
+.new:hover {
+	color: orange;
+}
+
+img {
+   border:5px solid orange;
+   border-radius: 25px;
+   width: 300px;
+   float: left;
+   margin-top: 30px;
+}
+
+.field {
+	color: orange;
+}

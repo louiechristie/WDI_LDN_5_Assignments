@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wham!FanZone</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1>Wham! FanZone</h1>
+  <ul>
+    <li><%= link_to "Band", band_path %></li>
+    <li><%= link_to "History", history_path %></li>
+    <li><%= link_to "George", george_path %></li>
+    <li><%= link_to "Andrew", andrew_path %></li>
+    <li><%= link_to "Music", music_path %></li>
+    <li><%= link_to "Gallery", gallery_path %></li>
+  </ul>
+
+<%= yield %>
+
+</body>
+</html>

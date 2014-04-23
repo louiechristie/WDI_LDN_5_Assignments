@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  model: MyString
+  year: 1
+  colour: MyString
+  engine_size: 1.5
+  image: MyText
+  category: MyString
+
+two:
+  name: MyString
+  model: MyString
+  year: 1
+  colour: MyString
+  engine_size: 1.5
+  image: MyText
+  category: MyString

@@ -1,0 +1,7 @@
+Hello there again, update your 2Do
+
+<form action='/update/<%= @to_do["id"] %>' method='post'>
+  <input type='text' name='title' value='<%= @to_do["title"] %>' autofocus>
+  <input type='text' name='description' value='<%= @to_do["description"] %>'/>
+  <button>Update to your 2Do list</button>
+</form>

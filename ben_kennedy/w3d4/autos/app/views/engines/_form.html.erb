@@ -1,0 +1,16 @@
+
+<%= form_for(@engine) do |f| %>
+  <div class="field">
+    <%= f.label :power %> 
+    <%= f.text_field :power %><br>
+  </div>
+  <div class="field">
+    <%= f.label :fuel_type %> 
+    <%= f.text_field :fuel_type %><br>
+  </div>   
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>

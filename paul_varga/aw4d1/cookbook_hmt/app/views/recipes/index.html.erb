@@ -1,0 +1,8 @@
+<h1>We make you cook delicious food!</h1>
+<h2>Check out our amazing recipes...</h2>
+
+<% @recipes.each do |recipe| %>
+
+  <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+
+<% end %>

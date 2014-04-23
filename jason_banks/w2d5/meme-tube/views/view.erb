@@ -1,0 +1,47 @@
+
+<h2>"<%= @view_video['title'] %>"</h2>
+<br />
+<br />
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+src="https://www.youtube.com/embed/<%= @view_video['id'] %>"
+frameborder="0" allowfullscreen />
+</iframe>
+<div class="container">
+  <h4>
+  <div class="row">
+    <label class="col-sm-1 control-label">Title: </label>
+    <div class="col-sm-4">
+    <p class="form-control-static">"<%= @view_video['title'] %>"</p>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-1 control-label">Tag: </label>
+    <div class="col-sm-4">
+    <p class="form-control-static"><%= @view_video['tag'] %></p>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-1 control-label">Added: </label>
+    <div class="col-sm-4">
+    <p class="form-control-static"><%= @view_video['upload_time'] %></p>
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-1 control-label">YouTube: </label>
+    <div class="col-sm-5">
+    <p class="form-control-static"><a href="https://www.youtube.com/watch?v=<%= @view_video['id'] %>" target="_blank">https://www.youtube.com/watch?v=<%= @view_video['id'] %></a></p>
+    </div>
+    </h4>
+    <div class="col-md-4">
+      <a href="/edit/<%= @view_video['id'] %>" role="button" class="btn btn-info">Edit</a>
+    </div>
+    <div class="col-md-4">
+      <a href="/delete/<%= @view_video['id'] %>" role="button" class="btn btn-info">Delete</a>
+    </div>
+      </div>
+
+    <p class='help-block'><span class="star">*</span>If the video above says "undefined", then the YouTube ID is not valid.</p>
+
+
+
+

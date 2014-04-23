@@ -1,0 +1,7 @@
+<% @ingridients.each do |ingridient| %>
+
+<ul>
+  <li><%= link_to ingridient.name, ingridient_path(ingridient) %></li>
+</ul>
+
+<% end %>

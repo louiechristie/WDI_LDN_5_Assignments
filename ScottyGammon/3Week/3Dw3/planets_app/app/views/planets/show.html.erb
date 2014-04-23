@@ -1,0 +1,9 @@
+<h1><%= @planet.name %></h1>
+<h2>A Planet with <%= pluraliaze(@planet.moons, 'moon') %></h2>
+
+
+<% if @planet.image.empty? %>
+  <em>No image for the planet yet.</em>
+<% else %>
+<img src="<%= @planet.image %>" alt=A picture of <%= @planet.name %>>
+<% end %>

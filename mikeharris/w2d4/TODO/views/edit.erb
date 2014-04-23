@@ -1,0 +1,26 @@
+
+
+<h2>Item to edit</h2>
+
+<p>The title was:</p>
+
+
+
+
+<form action='/update/<%= @entry_to_edit["id"] %>' method='post'>
+
+<table class="edit">
+ <tr>
+  <td>Edit title</td>
+</td><td><textarea rows=3  cols=20  name='title' value="<%= @entry_to_edit["title"] %>"><%= @entry_to_edit["title"] %></textarea></td>
+</tr>
+<tr>
+  <td>Edit description</td>
+  <td><textarea rows=3  cols=20  name='todo' value="<%= @entry_to_edit["todo"] %>"><%= @entry_to_edit["todo"] %></textarea></td>
+</tr>
+<tr>
+  <td></td>
+  <td><button>Submit</button></td>
+</tr>
+  </table>
+  </form>

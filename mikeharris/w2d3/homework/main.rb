@@ -47,6 +47,10 @@ get '/Maths' do
   erb :Maths
 end
 
+get '/maths' do
+  redirect  to '/Maths'
+end
+
 get '/Maths/Basic' do
   @maths_basic_first = params[:maths_basic_first].to_f
   @maths_basic_second = params[:maths_basic_second].to_f
@@ -125,7 +129,7 @@ get '/Pieceofstring' do
   @string_length=params[:string_length].to_f
 
   if @string_length
-    @string_actual = @string_length + rand(100)
+    @string_actual = @string_length + rand(100) +1 
   end
 
 erb :pieceofstring

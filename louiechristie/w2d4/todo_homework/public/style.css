@@ -1,0 +1,54 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+nav li {
+  display: inline;
+  padding: 0.5em;
+}
+
+nav {
+  color: white;
+  background-color: black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+nav a {
+  color: white;
+}
+
+a:hover {
+  color: gray;
+}
+
+.container {
+  max-width: 360px;
+  padding: 10px;
+  padding-top: 50px;
+  margin: 0 auto;
+  line-height: 2em;
+}
+
+.container a {
+
+}
+
+strong {
+  font-weight: bold;
+}
+
+form {
+  display: inline;
+}
+
+input {
+  float: right;
+  width: 240px;
+  line-height: 2em;
+}
+
+.button {
+  margin-top: 1em;
+  padding: 1em;
+}

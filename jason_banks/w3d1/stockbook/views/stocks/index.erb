@@ -1,0 +1,15 @@
+<p>This is the Stocks Index page for the <%= @portfolio.name %> portfolio.</p>
+<ul>
+  <% total_investments = 0 %>
+  <% @stocks.each do |stock| %>
+    <li><%= stock.name %> | <%= stock.holding%> units 
+    <a href="/portfolios/<%= stock.portfolio_id %>/stocks/<%= stock.id %>/edit">Buy/Sell</a>
+      <a href="/portfolios/<%= stock.portfolio_id %>/stocks/<%= stock.id %>/delete">Delete</a>
+    </li>
+    <% total_investments += stock.investment %>
+  <% end %>
+</ul>
+<br />
+<p>The total value of investments in this portfolio is $<%= total_investments %>.</p>
+<a href="/portfolios/<%= @portfolio.id %>/stocks/new">Add New Stock</a>
+

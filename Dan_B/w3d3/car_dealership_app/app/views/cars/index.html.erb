@@ -1,0 +1,28 @@
+
+<section id='index_cars'>
+<% @cars.each do |car| %>
+    <div class='index_car_port'>
+
+    <a href="/cars/<%= car.id %>"><h2><%= car.make %> <%= car.model %>: <small>'<%= car.reg_year.strftime("%y") %></small></h2></a>
+    <p>Guide Price: <%= number_to_currency(car.price, unit: '£') %></p>
+    <a href="/cars/<%= car.id %>"><div id='index_car_image' style='background-image:url(<%= car.image %>)'></div></a>
+
+    <span>Colour:<div id='index_car_colour' style='background-color:<%= car.colour %>'></div></span>
+    <br>
+    
+    <p>Mileage: <%= number_with_delimiter(car.mileage) %></p>
+    <p>Gearing: <%= car.gearbox %></p>
+    <p>Fuel Type: <%= car.engine.fuel_type %></p>
+
+    <%= button_to 'Edit', edit_car_path(car), method: :get, class: 'btn btn-default btn-xs' %>
+    <%= button_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+    </div>
+<% end %>
+</section>
+<section id='index_engines'>
+  <% @engines.each do |engine| %>
+    <% @engine = engine %>
+    <%= render partial: '/engines/show' %>
+  <% end %>
+</section>
+

@@ -1,0 +1,37 @@
+
+<h2><%= @recipe.name %></h2>
+
+ <table class = "recipe_show">
+
+
+  <tr>  
+    <td>Feeds:</td> <td><%= @recipe.feeds %></td>
+  </tr>
+  <tr>
+    <td>Time:</td> <td><%= @recipe.time %></td>
+  </tr>
+  <tr>
+    <td>Description:</td> <td><%= @recipe.description %></td>
+  </tr>
+  <tr>
+    <td>
+      Category:
+    </td>
+    <td><%= @recipe.category.name unless @recipe.category.nil? %></td>
+  </tr>
+  <tr>
+    <td>
+      Ingredients:
+    </td>
+    <td>
+        
+       <%= list_ingredients %>
+
+            
+      
+      </td>
+  </tr>
+
+</table>
+<%= button_to 'Delete', recipe_path(@recipe), :method => :delete %>
+<%= button_to 'Edit', edit_recipe_path(@recipe), :method => :get %>

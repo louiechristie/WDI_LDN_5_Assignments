@@ -1,0 +1,22 @@
+
+   <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :feeds %>
+  <%= f.text_field :feeds %>
+
+  <%= f.select :category_id, @categories.map { |category| [category.name, category.id] } %>
+  
+

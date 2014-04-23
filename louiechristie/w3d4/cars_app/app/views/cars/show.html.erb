@@ -1,0 +1,11 @@
+<h1>Car</h1>
+
+<p>Make: <%= @car.make %></p>
+<p>Car: <%= @car.model %></p>
+<p>Color: <%= @car.color %></p>
+
+<%= link_to 'Edit', edit_car_path(@car) %>
+
+<%= link_to 'Delete', @car, :method => :delete %>
+
+<%= link_to 'Back', cars_path %>
