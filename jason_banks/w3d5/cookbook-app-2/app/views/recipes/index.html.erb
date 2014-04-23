@@ -1,37 +1,33 @@
 <h2>Recipes#index</h2>
 <h3 id="notice"><%= notice %></h3>
 
-<%#= search_form_for @q do |f| %>
-  <%#= f.label :title_cont %>
-  <%#= f.text_field :title_cont, class: "black" %>
-  <%#= f.submit class: "black" %><br /><br />
-<%# end %>
 
-  <table>
-    <thead>
-      <tr>
-      </tr>
-    </thead>
-    <tbody>
-  <% @recipes.each do |recipe| %>
+
+<table>
+  <thead>
     <tr>
-      <td>
-        <%= link_to recipe.title, recipe_path(recipe) %>
-        <ul>
-          <% if recipe.category_id %>
-          <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %>
-            <% end%>
-          </li>
-          <li class="recipes-list">Description: <%= recipe.description %></li>
-          <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'month') %></li>
-        </ul>
-      </td>
-      <td>
-        <%= image_tag("#{recipe.image}") if recipe.image > "" %>
-      </td>
     </tr>
-  <% end %>
-</tbody>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <%= link_to recipe.title, recipe_path(recipe) %>
+          <ul>
+            <% if recipe.category_id %>
+            <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %>
+              <% end%>
+            </li>
+            <li class="recipes-list">Description: <%= recipe.description %></li>
+            <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'month') %></li>
+          </ul>
+        </td>
+        <td>
+          <%= image_tag("#{recipe.image}") if recipe.image > "" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />

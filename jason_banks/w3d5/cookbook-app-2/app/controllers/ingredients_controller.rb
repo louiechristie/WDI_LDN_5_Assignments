@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
+    @q = Ingredient.search(params[:q])
+    @ingredients = @q.result
   end
 
   def new
