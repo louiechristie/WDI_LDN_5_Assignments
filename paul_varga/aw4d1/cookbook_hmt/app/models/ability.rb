@@ -10,6 +10,7 @@ class Ability
       can :read, Category
       can :manage, Recipe
       can :read, Ingridient
+      can :manage, User
     end
 
 
