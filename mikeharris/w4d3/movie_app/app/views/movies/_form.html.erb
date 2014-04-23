@@ -1,0 +1,15 @@
+
+<% @movie.errors.full_messages %>
+
+<%= form_for @movie do |f| %>
+  
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %> <%= error_msg(:title) %>
+  </p>
+  
+  
+
+
+  <p><%= f.submit %></p>
+<% end %>

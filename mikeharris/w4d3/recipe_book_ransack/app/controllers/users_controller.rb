@@ -13,10 +13,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
+
   end
 
  
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        redirect_to @user, notice: 'User was successfully created.' 
+        redirect_to sessions_path, notice: 'User was successfully created.' 
        
       else
         render action: "new" 

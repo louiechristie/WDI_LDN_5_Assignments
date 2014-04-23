@@ -1,7 +1,10 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :description, :feeds, :image, :name, :time, :category_id, :ingredient_ids
+  attr_accessible :description, :feeds, :image, :name, 
+  :time, :category_id, :ingredient_ids, :recipe_image
   
   default_scope order(:name)
+
+  mount_uploader :recipe_image, RecipeImageUploader
 
   belongs_to :category
   has_many :ingredients, through: :ingredients_recipes
@@ -13,6 +16,6 @@ class Recipe < ActiveRecord::Base
   validates :name, length: {maximum: 20}
   validates :ingredient_ids, presence: true
 
- 
+  
 
 end

@@ -1,0 +1,18 @@
+<h2>Actor:  <%= @actor.name %></h2>
+
+
+
+<p>These are the films they have been in:</p>
+<ul>
+  <% @movie_ids.each do |id| %>
+        <% movie = Movie.find(id) %>
+    <li>
+     
+        <a href="<%= movie_path(movie) %>"><%= movie.title %></a>
+      </li>
+  
+    
+  <% end %>
+</ul>
+
+    

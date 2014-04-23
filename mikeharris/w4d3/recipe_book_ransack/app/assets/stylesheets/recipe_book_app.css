@@ -34,11 +34,19 @@ h2 {
   border-bottom: 1px solid black;
 }
 
-.loginstatus {
-  border: 2px solid  #ff7373;
+.loginstatus{
+  border: 2px solid  #5ccccc;
   display: inline-block;
   padding: 15px;
 }
+
+
+
+.loggedout {
+  
+  border: 2px solid  #ff7373;
+
+ }
 .loginstatus > a {
   padding: 5px 5px 5px 5px;
   background: #5ccccc;
@@ -64,11 +72,16 @@ a {
 
 }
 
-input[type=submit] {
+input[type=submit], input[type=password] {
   border: none;
   width: 75px;
   padding: 7px 15px;
+  
 
+}
+
+input[type=password] {
+  border: 1px solid #5ccccc;
 }
 
 input[type=submit]:hover {

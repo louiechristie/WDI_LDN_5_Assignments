@@ -18,6 +18,13 @@
     <td>Description:</td> <td><%= f.text_area :description, size: "40x12" %></td>
   </tr>
   <tr>
+    <td> <%= f.label :recipe_image %></td>
+        <td>
+       
+        <%= f.file_field :recipe_image %>
+      </td>
+  </tr>
+  <tr>
     <td>
       Category:
     </td>
@@ -57,6 +64,7 @@
       </td>
 
   </tr>
+        <tr>
 
   <tr>
     <td></td><td><%= f.submit "submit" %></td>
