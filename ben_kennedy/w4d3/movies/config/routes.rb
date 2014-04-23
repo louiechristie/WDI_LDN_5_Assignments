@@ -1,4 +1,14 @@
 Movies::Application.routes.draw do
+  resources :movies
+  resources :where_watcheds
+  resources :users 
+  resources :sessions, only: [:new, :create, :destroy]
+  delete 'movies/:id/delete' => 'movies#destroy', as: :delete_movie
+  delete 'where_watcheds/:id/delete' => 'where_watcheds#destroy', as: :delete_where_watched
+  get 'login', to: 'sessions#new'
+  root to: 'movies#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -7,7 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+  <% if current_user %>
+    <p>You're logged in as <%= current_user.email %></p>
+    <%= link_to 'Logout', session_path(session), method: :delete %>
+  <% else %>
+    <%= link_to 'Please Login', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+  <nav>
+    <ul>
+      <% if can? :manage, User %>
+        <li><%= link_to 'Manage Users', users_path %></li>
+      <% end %>
+      <% if can? :manage, WhereWatched %>
+        <li><%= link_to 'Manage Locations', users_path  %></li>
+      <% end %>
+        <li><%= link_to 'View All Movie Reviews', movies_path %></li>
+        <li><%= link_to 'Review a Movie', new_movie_path %></li>
 <%= yield %>
 
 </body>
