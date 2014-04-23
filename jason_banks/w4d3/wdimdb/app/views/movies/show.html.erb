@@ -1,11 +1,12 @@
-<h2><%= @movie.title %></h2>
-
 <table>
   <thead>
     <tr>
-      <th colspan="2">
+      <td>
         <%= image_tag @movie.image %>
-      </th>
+      </td>
+      <td>
+        <h2><%= @movie.title %></h2>
+      </td>
     </tr>
   </thead>
   <tbody>

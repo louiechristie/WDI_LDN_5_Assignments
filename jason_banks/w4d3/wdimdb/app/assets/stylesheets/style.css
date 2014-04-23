@@ -1,18 +1,36 @@
+body {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #12accc;
+  font-size: 16px;
+  font-family: 'Nunito', 'sans-serif';
+}
+
 img {
   width: 150px;
   height: auto;
-  border: 3px solid yellow;
+  border: 3px solid #ffc130;
   border-radius: 20px;
+}
+
+nav li {
+  display: inline-block;
+}
+
+h1 {
+  font-family: 'Monoton', 'cursive';
+  color: #ff9100;
+  font-size: 110px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 h1, h2 {
   text-align: center;
-}
-
-body {
-  width: 700px;
-  margin: 0 auto;
-}
+} 
 
 li {
   list-style: none;
@@ -22,8 +40,24 @@ a {
   text-decoration: none;
 }
 
+h1 a:visited {
+  color: #ff9100;
+}
+
+h1 a:hover {
+  color: #ffc130;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #ffc130;
+}
+
 .movies_index {
-  border-bottom: 3px solid yellow;
+  border-bottom: 3px solid #ffc130;
 }
 
 .center {
@@ -32,13 +66,13 @@ a {
 
 table {
   margin: 0 auto 100px auto;
-  width: 450px;
+  width: 620px;
 }
 
 .table_border_right {
-  border-right: 2px solid yellow;
+  border-right: 2px solid #ffc130;
 }
 
 .table_border_bottom {
-  border-bottom: 2px solid yellow;
+  border-bottom: 2px solid #ffc130;
 }
