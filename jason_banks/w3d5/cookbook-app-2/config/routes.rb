@@ -4,7 +4,7 @@ CookbookApp2::Application.routes.draw do
 
   get "sessions/new"
 
-  get "sessions/create"
+  get "sessions/create" => "sessions#create", as: "create_session_path"
 
   get "sessions/destroy"
 
@@ -18,6 +18,7 @@ CookbookApp2::Application.routes.draw do
   post "categories/:id/delete" => "categories#destroy", as: "delete_category"
   post "recipes/:id/delete" => "recipes#destroy", as: "delete_recipe"
   post "ingredients/:id/delete" => "ingredients#destroy", as: "delete_ingredient"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

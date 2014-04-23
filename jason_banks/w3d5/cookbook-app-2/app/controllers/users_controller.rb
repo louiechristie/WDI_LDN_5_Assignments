@@ -11,7 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to(root_path, notice: "You have been successfully added to disastronomia.")
+      @user = User.find_by_email(@user.email)
+      session[:current_user_id] = @user.id
+      redirect_to(root_path, notice: "You have been successfully added and logged into disastronomia.")
     else
       render :new
     end
