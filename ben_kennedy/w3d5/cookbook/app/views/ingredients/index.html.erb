@@ -1,0 +1,30 @@
+<h1>The Ingredients index:</h1>
+
+<p><%= link_to 'Add Ingredient', new_ingredient_path %>
+
+  <table>
+    <thead>
+      <td>Quantiy</td>
+      <td>Unit</td>
+      <td>Name</td>
+    </thead>
+    <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td>
+        <%= ingredient.quantity %>
+      </td>
+      <td>
+        <%= ingredient.unit %>
+      </td>
+      <td>
+        <%= ingredient.name %>
+      </td>   
+      <td>
+        <%= button_to 'Edit', edit_ingredient_path(ingredient.id), method: "get" %>
+      </td>
+      <td>
+        <%= button_to 'Delete', ingredient_delete_path(ingredient.id), method: "delete" %>
+      </td>             
+    </tr>
+    <% end %>
+  </table>

@@ -4,11 +4,14 @@
   <div class="field">
     Name: <%= f.text_field :name %><br>
     </div>
-    <div class="field">
+  <div class="field">
     Year: <%= f.text_field :year %><br>
   </div>  
-    <div class="field">
-    Description: <%= f.text_area :name %><br>
+  <div class="field">
+    Description: <%= f.text_area :description %><br>
+  </div>
+  <div class="field">
+    Engine: <%= select_tag(:engine_id, options_for_select(@engines)) %><br>
   </div>
 
 

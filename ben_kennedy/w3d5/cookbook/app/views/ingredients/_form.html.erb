@@ -1,0 +1,11 @@
+<%= form_for(@ingredient)  do |f| %>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+  <%= f.label :unit %>
+  <%= f.text_field :unit %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= hidden_field(:ingredient, :recipe_id, value: @recipe.id) if @recipe && @recipe.id  %> 
+<%= f.submit %>
+<% end %>

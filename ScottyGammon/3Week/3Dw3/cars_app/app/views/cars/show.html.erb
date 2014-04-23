@@ -1,0 +1,27 @@
+<h2><%= @car.make %> </h2>
+<table>
+	<tr>
+		<th>Make:</th>
+		<td><%= @car.make %></td>
+	</tr>
+	<tr>
+		<th>Year:</th>
+		<td><%= @car.year %></td>
+	</tr>
+	<tr>
+		<th>Color:</th>
+		<td><%= @car.color %></td>
+	</tr>
+	<tr>
+		<th>Category:</th>
+		<td><%= @car.category %></td>
+	</tr>
+		<tr>
+		<th>Engine:</th>
+		<td><% if @car.engine %>
+			<%= @car.engine.cylinders %> cylinders
+			<% end %>
+		</td>
+	</tr>
+</table>
+

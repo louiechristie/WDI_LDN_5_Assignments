@@ -2,13 +2,22 @@
   
   <div class="input">
  <p>Team: <%= f1.name %></p>
- <p>Engine: <%= f1.engine %></p>
+
+ <p>Engine:<% if f1.engine.nil? %>
+  <em> No engine </em>
+<% else %>
+  <%= f1.engine.name_for_select %> 
+<% end %> </p>
+
+
  <p>Year: <%= f1.year %></p>
  <p> Driver: <%= f1.driver %></p>
- <input type="image" src="<%= f1.image %>" name="image" width="300" height="200">
+ <input type="image" src="<%= f1.image %>" name="image" width="300" height="169">
 
+ 
 
-<p> <%= link_to 'Delete Car', f1car_path(f1), method: 'delete', confirm: 'Are you sure?' %>  
+<p> <%= link_to 'Delete Car', f1car_path(f1), method: 'delete', confirm: 'Are you sure?' %>  </p>
+
 
     <td><%= link_to 'Edit', edit_f1car_path(f1) %></td>
 
@@ -16,6 +25,5 @@
 
 
 
-</p>
 <% end %>
 
