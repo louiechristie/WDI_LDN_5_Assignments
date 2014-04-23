@@ -39,6 +39,15 @@
       <% end %>
 
     </ul>
+
+  <%= search_form_for @q do |f| %>
+    <p>
+    <%= f.label :recipe_name_or_description_or_ingredients_name_cont %>
+    <%= f.text_field :name_or_description_or_ingridients_name_cont %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+
   </header>
 
 <div class="main">

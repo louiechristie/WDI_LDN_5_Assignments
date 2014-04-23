@@ -2,8 +2,10 @@ class RecipesController < ApplicationController
   load_and_authorize_resource
   # commented out methods as CanCan automatically loads the standard controllers
 
+    
   def index
     #@recipes = Recipe.all
+    @recipes = @q.result(distinct: true)
   end
 
   def new
