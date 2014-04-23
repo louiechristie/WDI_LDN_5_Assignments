@@ -1,6 +1,6 @@
 img {
-  height: 150px;
-  width: auto;
+  width: 150px;
+  height: auto;
   border: 3px solid yellow;
   border-radius: 20px;
 }
