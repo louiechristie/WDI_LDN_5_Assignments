@@ -26,12 +26,14 @@ class MoviesController < ApplicationController
       @movie.director = @hash['Director']
       @movie.actors = @hash['Actors']
       @movie.plot = @hash['Plot']
-      @movie.image = @hash['Image']
+      @movie.image = @hash['Poster']
+      
       render 'new'
     end
   end
 
   def create
+    
     @movie = Movie.new(params[:movie])
 
     if @movie.save

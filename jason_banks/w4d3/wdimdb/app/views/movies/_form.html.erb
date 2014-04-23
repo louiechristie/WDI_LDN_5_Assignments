@@ -1,4 +1,11 @@
 <%= form_for @movie, url: { action: "create" } do |f| %>
+
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved: <%= @movie.errors.full_messages.join(", ").downcase %>.</h3>
+    </div>
+  <% end %>
+
   <%= f.label :title %>
   <%= f.text_field :title, size: "80", readonly: true %><br />
   <%= f.label :director %>
@@ -25,8 +32,8 @@
   <%= f.label :how_viewed, "Cable/TV" %>
   <%= f.radio_button :how_viewed, "DVD (own)" %>
   <%= f.label :how_viewed, "DVD (own)" %>
-  <%= f.radio_button :how_viewed, "DVD (rent)" %><br />
-  <%= f.label :how_viewed, "DVD (rent)" %><br />
+  <%= f.radio_button :how_viewed, "DVD (rented)" %><br />
+  <%= f.label :how_viewed, "DVD (rented)" %><br />
   <%= f.label :review %><br />
   <%= f.text_area :review, cols: "62", rows: "5" %><br />
   <%= f.hidden_field :image %>
