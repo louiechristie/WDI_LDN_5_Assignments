@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
   load_and_authorize_resource
   def index
-        @recipes = Recipe.all
-      end
+    @recipes = @q.result(distinct: true)
+  end
 
       def new
         @recipe = Recipe.new

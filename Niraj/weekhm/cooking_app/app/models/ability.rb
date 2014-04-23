@@ -11,6 +11,7 @@ class Ability
         can :read, Category
         can :read, Recipe
         can :read, Ingredient
+
     end
 
             
