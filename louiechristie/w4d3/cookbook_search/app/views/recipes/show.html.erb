@@ -1,0 +1,13 @@
+<h2><%= @recipe.name %> Recipe</h2>
+<h3>Category</h3>
+<p><%= Category.find(@recipe.category_id).name %></p>
+<h3>Ingredients</h3>
+<ul>
+  <% @sentences.each do |sentence| %>
+    <li><%= sentence %></li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to('Edit', edit_recipe_path(@recipe.id)) %> 
+  <%= link_to('Delete', recipe_path(@recipe.id), :method => :delete) %>
+</p>
