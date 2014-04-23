@@ -18,6 +18,10 @@
   <%= @movie.actor %>
 </p>
 <p>
+  <strong>Category:</strong>
+  <%= @movie.category.try(:name) %>
+</p>
+<p>
   <strong>Description:</strong>
   <%= @movie.description %>
 </p>
