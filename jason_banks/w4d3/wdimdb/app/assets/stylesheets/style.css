@@ -14,10 +14,31 @@ body {
   margin: 0 auto;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .movies_index {
   border-bottom: 3px solid yellow;
 }
 
 .center {
   text-align: center;
+}
+
+table {
+  margin: 0 auto 100px auto;
+  width: 450px;
+}
+
+.table_border_right {
+  border-right: 2px solid yellow;
+}
+
+.table_border_bottom {
+  border-bottom: 2px solid yellow;
 }

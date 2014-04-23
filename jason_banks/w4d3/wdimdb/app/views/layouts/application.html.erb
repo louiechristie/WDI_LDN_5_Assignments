@@ -8,14 +8,18 @@
 </head>
 <body>
 
-  <h1>WDImdb</h1>
-  <p>All the movies are belong to you.</p>
+  <h1><%= link_to "WDImdb", movies_path %></h1>
+  <div class="center">
+    <p>All the movies are belong to you.</p>
+  </div>
 
   <nav>
     <ul>
       <li><%= link_to "Index", movies_path %></li>
       <li><%= link_to "New", new_movie_path %></li>
     </ul>
+  </nav>
+  
   <div class="flash">
     <h2>
       <% flash.each do |name, msg| %>

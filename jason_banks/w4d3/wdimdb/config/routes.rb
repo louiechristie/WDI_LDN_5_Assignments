@@ -3,6 +3,7 @@ Wdimdb::Application.routes.draw do
   post "movies/search_omdb" => "movies#search_omdb"
   resources :movies
   root to: "movies#index"
+  post "movies/:id/delete" => "movies#destroy", as: "delete_movie"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
