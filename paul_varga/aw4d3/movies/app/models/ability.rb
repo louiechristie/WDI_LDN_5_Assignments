@@ -7,9 +7,10 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
-      can :read, Category
+      can :manage, Category
       can :manage, Movie
       can :manage, User
+      can :manage, Actor
     end
 
 

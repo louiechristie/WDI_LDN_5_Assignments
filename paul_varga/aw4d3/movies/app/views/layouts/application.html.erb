@@ -25,9 +25,9 @@
     <li><%= link_to "Sign Up", users_path %></li>
     <% if current_user %>
         Hello, <%= current_user.email %>
-      <strong><li><%= link_to 'Sign In', session_path(0), method: :delete %></li></strong>
+        <%= link_to 'Sign Out', session_path(0), method: :delete %>
       <% else %>
-      <strong><li><%= link_to "Sign Out", new_session_path %></li></strong>
+      <li><%= link_to "Sign In", new_session_path %></li>
       <% end %>
   </ul>
 </header>
@@ -38,6 +38,8 @@
   <li><%= link_to "New Movie" , new_movie_path %></li>
   <li><%= link_to "Available Categories", categories_path %></li>
   <li><%= link_to "New Category" , new_category_path %></li>
+  <li><%= link_to "Available Actors", actors_path %></li>
+  <li><%= link_to "New Actor" , new_actor_path %></li>
 </ul>
 
 <%= yield %>

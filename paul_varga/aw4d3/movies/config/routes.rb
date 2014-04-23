@@ -1,12 +1,14 @@
 Movies::Application.routes.draw do
-  resources :categories, :movies, :users
+  resources :categories, :movies, :actors
   
   resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:index, :new, :create]
   
   root to: "users#index"
-  get 'login', to: 'sessions#new'
+  get 'Sign In', to: 'sessions#new'
   post '/categories/:id/delete' => "categories#destroy", :as => 'category_delete'
   post '/movies/:id/delete' => "movies#destroy", :as => 'movies_delete'
+  post '/actors/:id/delete' => "actors#destroy", :as => 'actors_delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

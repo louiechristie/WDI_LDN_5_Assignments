@@ -28,6 +28,15 @@
   <% end %>
   </div>
 
+ <div class="field">
+    <%= f.label :actors %><br />
+    <%= hidden_field_tag "movie[actor_ids][]" %>
+    <% for actor in Actor.all %>
+    <%= check_box_tag "movie[actor_ids][]", actor.id, @movie.actors.include?(actor) %> 
+    <%= actor.name %>
+  <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

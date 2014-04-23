@@ -8,11 +8,18 @@ class MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
+    # Actor.all.each do |actor|
+    #   @movie.actors_movies.build(actor_id: actor.id)
+    # end
   end
 
   def create 
-    @movie = Movie.new(params[:movie])
+    
+    # if ir = params[:movie][:actors_movies_attributes]
+    #   ir.delete_if do |key, value|
+    #     ir[key]['film_role'].blank?
+    #   end
+    # end
 
     respond_to do |format|
       if @movie.save
@@ -34,6 +41,9 @@ class MoviesController < ApplicationController
 
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
       else
+        # Actor.all.each do |actor|
+        #   @movie.actors_movies.build(actor_id: actor_id) unless @movie.actors_movies.map(&:actor_id).include?(actor.id)
+        # end
         format.html { render action: 'new'}
       end
     end

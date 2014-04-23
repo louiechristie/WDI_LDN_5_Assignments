@@ -5,6 +5,7 @@
   <th>Review </th>
   <th>Rating </th> 
   <th>Year </th>
+  <th>Acting </th>
 </tr>
 <tr>
   <td><%= @movie.name %> </td> 
@@ -12,6 +13,7 @@
   <td><%= @movie.review %> </td> 
   <td><%= @movie.rating %> </td> 
   <td><%= @movie.year %> </td> 
+  <td><%= @movie.actors.map { |actor| actor.name }.to_sentence %>  </td> 
 </tr>
 </table>
 
