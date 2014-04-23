@@ -16,8 +16,14 @@
       <li><%= link_to "Index", movies_path %></li>
       <li><%= link_to "New", new_movie_path %></li>
     </ul>
-
-<%= yield %>
+  <div class="flash">
+    <h2>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    </h2>
+  </div>
+  <%= yield %>
 
 </body>
 </html>

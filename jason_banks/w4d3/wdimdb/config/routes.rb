@@ -1,8 +1,9 @@
 Wdimdb::Application.routes.draw do
 
+  post "movies/new" => "movies#search_omdb"
   resources :movies
   root to: "movies#index"
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
