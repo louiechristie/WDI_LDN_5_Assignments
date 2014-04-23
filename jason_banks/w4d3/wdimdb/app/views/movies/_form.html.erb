@@ -1,17 +1,23 @@
-<%= form_for @movie do |f| %>
+<%= form_for @movie, url: { action: "create" } do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, size: "80" %><br />
-  Rating: 
+  <%= f.text_field :title, size: "80", readonly: true %><br />
+  <%= f.label :director %>
+  <%= f.text_field :director, readonly: true %><br />
+  <%= f.label :actors %>
+  <%= f.text_field :actors, size: "80", readonly: true %><br />
+  <%= f.label :plot %><br />
+  <%= f.text_area :plot, cols: "62", rows: "5", readonly: true %><br />
+  Your Rating: 
   <%= f.radio_button :rating, "1" %>
-  <%= f.label :rating, "Hated It!" %>
+  <%= f.label :rating, "1" %>
   <%= f.radio_button :rating, "2" %>
-  <%= f.label :rating, "Meh." %>
+  <%= f.label :rating, "2" %>
   <%= f.radio_button :rating, "3" %>
-  <%= f.label :rating, "It's OK." %>
+  <%= f.label :rating, "3" %>
   <%= f.radio_button :rating, "4" %>
-  <%= f.label :rating, "Liked It!" %>
+  <%= f.label :rating, "4" %>
   <%= f.radio_button :rating, "5" %>
-  <%= f.label :rating, "Loved It!" %><br />
+  <%= f.label :rating, "5" %><br />
   How Viewed: 
   <%= f.radio_button :how_viewed, "Cinema" %>
   <%= f.label :how_viewed, "Cinema" %>
@@ -22,6 +28,7 @@
   <%= f.radio_button :how_viewed, "DVD (rent)" %><br />
   <%= f.label :how_viewed, "DVD (rent)" %><br />
   <%= f.label :review %><br />
-  <%= f.text_area :review, cols: "62", rows: "10" %><br />
+  <%= f.text_area :review, cols: "62", rows: "5" %><br />
+  <%= f.hidden_field :image %>
   <%= submit_tag "Add Movie" %>
 <% end %>

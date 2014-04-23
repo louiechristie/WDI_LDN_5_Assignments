@@ -1,6 +1,6 @@
 Wdimdb::Application.routes.draw do
 
-  post "movies/new" => "movies#search_omdb"
+  post "movies/search_omdb" => "movies#search_omdb"
   resources :movies
   root to: "movies#index"
 

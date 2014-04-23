@@ -8,19 +8,26 @@ class MoviesController < ApplicationController
   end
 
   def search_omdb
-    @title = params[:title]
 
-    if @title && @title > ""
-      @url_title = @title.tr(" ", "+")
+    if params[:title] == ""
+      redirect_to new_movie_path, notice: "Your search did not return a movie. Please check the title and try again."
+    else
+      @url_title = params[:title].tr(" ", "+")
       url = "http://www.omdbapi.com/?t=#{@url_title}"
       html = HTTParty.get(url)
-      @hash = JSON(html)
+      @hash = JSON(html)      
+    end
+
+    if @hash && @hash['Response'] == "False"
+      redirect_to new_movie_path, notice: "Your search did not return a movie. Please check the title and try again."
+    else
       @movie = Movie.new
       @movie.title = @hash['Title']
-      @movie.review = @hash['Plot']
+      @movie.director = @hash['Director']
+      @movie.actors = @hash['Actors']
+      @movie.plot = @hash['Plot']
+      @movie.image = @hash['Image']
       render 'new'
-    else
-      render 'new', notice: "You search did not return a movie. Please check the title and try again."
     end
   end
 
@@ -28,7 +35,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(params[:movie])
 
     if @movie.save
-      redirect_to movie_path(@movie), notice: '"#{@movie.title}" has been added to the WDImdb.'
+      redirect_to movie_path(@movie), notice: "Successfully added to the WDImdb."
     else
       render 'new'
     end
