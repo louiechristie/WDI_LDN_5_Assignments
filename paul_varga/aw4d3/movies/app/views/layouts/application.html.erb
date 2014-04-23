@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movies</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <%= search_form_for @q do |f| %>
+  <%= f.label :name_or_categories_name_cont %>
+  <%= f.text_field :name_or_categories_name_cont %>
+  <%= f.submit %>
+<% end %>
+</header>
+
+
+<ul>
+  <li><%= link_to "Available Movies", movies_path %></li>
+  <li><%= link_to "New Movie" , new_movie_path %></li>
+  <li><%= link_to "Available Categories", categories_path %></li>
+  <li><%= link_to "New Category" , new_category_path %></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
