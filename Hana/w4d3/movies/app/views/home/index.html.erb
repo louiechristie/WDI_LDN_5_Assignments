@@ -1,0 +1,25 @@
+<h1>Movie Buzz</h1>
+
+<h2>
+  <%= link_to "Categories", categories_path %>
+</h2>
+
+  <% @categories.each do |category| %>
+    <div>
+      <%=link_to category.name, category%>
+    </div>
+  <%end%>
+
+<h2><%= link_to "Movies", movies_path %></h2>
+  <% @movies.each do |movie| %>
+    <div>
+      <%=link_to movie.title, movie%>
+    </div>
+  <%end%>
+
+
+List All Categories
+List All Movies
+Add a Category
+Add a Movie
+
