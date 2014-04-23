@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, notice: "You are not authorized to view this page."
+  end
+
   private
   def setup_search_object
     @q = nil

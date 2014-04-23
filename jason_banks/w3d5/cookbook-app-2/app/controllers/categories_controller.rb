@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
+
   def home
     @q = Category.search(params[:q])
     @categories = @q.result

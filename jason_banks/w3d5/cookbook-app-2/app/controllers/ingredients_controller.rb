@@ -1,4 +1,6 @@
 class IngredientsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @q = Ingredient.search(params[:q])
     @ingredients = @q.result
