@@ -17,18 +17,25 @@
   </div>
   <div class="field">
     <%= f.label :review %><br />
-    <%= f.text_field :review %>
+    <%= f.text_area :review %>
   </div>
+
   <div class="field">
-    <%= f.label :poster %><br />
-    <%= f.text_area :poster %>
+    <%= f.label "Paste URL or upload file" %><br />
+    <%= f.url_field :poster %>
+    <%= f.file_field :picture %>
   </div>
+
   <div class="field">
     <%= f.label :genre %><br />
-    <%= f.text_field :genre %>
+    <%= f.select :genre, options_for_select(["Action", "Animation", "Biopics", "Comedy", "Crime", "Documentry", "Drama", "Family", "Horror", "Musicals", "Historical", "Sci-Fi/Fantasy", "Short Films", "Sport", "Thriller", "War", "Western", "World Cinema" ]) %>
   </div>
+ 
 
-
+<div class="field">
+    <%= f.label "Have you seen it?" %><br />
+    <%= f.select :ownership, options_for_select(["Yes", "No"]) %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

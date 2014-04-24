@@ -13,6 +13,8 @@
           <p> Category: <%= recipe.category.try :name %>
           <p>Ingredients:</p>
 
+          <%= image_tag recipe.recipe_image.url %>
+
           <% if can? :update, recipe %>
                 
           <%= link_to "edit", edit_recipe_path(recipe)%>

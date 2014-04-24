@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  Title:
   <%= @movie.title %>
 </p>
 
 <p>
-  <b>Review:</b>
+  Review:
   <%= @movie.review %>
 </p>
 
 <p>
-  <b>Poster:</b>
-  <%= @movie.poster %>
+  Poster:
+  <p> <input type="image" src="<%= @movie.poster %>" name="image" width="300" height="169"> </p>
 </p>
 
 <p>
-  <b>Genre:</b>
+  Genre:
   <%= @movie.genre %>
 </p>
 
 <p>
-  <b>Ownership:</b>
+  Ownership:
   <%= @movie.ownership %>
 </p>
 

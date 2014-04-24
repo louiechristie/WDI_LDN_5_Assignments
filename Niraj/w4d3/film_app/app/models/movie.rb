@@ -1,7 +1,5 @@
 class Movie < ActiveRecord::Base
-  attr_accessible :genre, :ownership, :poster, :review, :title
+  attr_accessible :genre, :ownership, :poster, :review, :title, :picture
 
-  def options
-    "yes" 
-  end
+ 
 end
