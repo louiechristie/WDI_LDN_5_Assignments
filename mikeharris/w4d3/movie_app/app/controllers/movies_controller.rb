@@ -52,7 +52,6 @@ class MoviesController < ApplicationController
       end
     end
      
-    
     if @movie.save
       flash[:nofilm] = "No film by that name - however we've added it to the database for you" unless @movie.year 
       redirect_to  movies_path
@@ -85,11 +84,9 @@ class MoviesController < ApplicationController
           end
           
    
-          keys = Movie.new.to_yaml.split(": \n").map(&:strip)
-          keys.shift
-          new_params = {}
-          keys.each do |key|
-            new_params[key] = @hash[key.capitalize]  
+          new_params  = Movie.new.as_json
+          new_params.each_key do |key|
+              new_params[key] = @hash[key.capitalize]  
           end
           new_params.delete("created_at")
           new_params.delete("updated_at")
