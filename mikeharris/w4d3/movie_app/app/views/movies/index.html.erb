@@ -22,10 +22,13 @@
           <% end %>
 </div>
 
-<% unless @movies[0].year %>
+
+<% unless @movies.map{|movie| movie.year}.any?  %>
+<% unless params[:q] %>
 <div class="alert_data">
 <%= button_to 'Alex/imran - click to Update Movie Data', movie_path(Movie.first), :method => :put  %>
 </div>
+<% end %>
 <% end %>
 
 <table>
