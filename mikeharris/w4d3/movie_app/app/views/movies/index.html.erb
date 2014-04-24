@@ -1,0 +1,53 @@
+<h2>List of Movies</h2>
+
+<div class = "search">
+    <%= search_form_for @q do |f| %>
+      <p>
+        <%= f.label "Movie title contains:" %> 
+        <%= f.text_field :title_cont %>
+
+      </p>
+      <p>
+          <%= f.submit %> 
+      </p>
+
+  <% end %>
+
+
+
+
+<div id="container">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %>
+</div>
+
+
+<% unless @movies.map{|movie| movie.year}.any?  %>
+<% unless params[:q] %>
+<div class="alert_data">
+<%= button_to 'Alex/imran - click to Update Movie Data', movie_path(Movie.first), :method => :put  %>
+</div>
+<% end %>
+<% end %>
+
+<table>
+  <tr>
+  <th>
+    Movie
+  </th>
+  <th>
+    Year
+  </th>
+  <th>
+    action
+   </th>
+ </tr>
+  <% @movies.each do |movie| %>
+     
+     <%= render "showmovie", :movie => movie %>
+
+  <% end %>
+</table>
+
+    
