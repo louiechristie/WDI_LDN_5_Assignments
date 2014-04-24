@@ -1,6 +1,11 @@
-<h2>About the App</h2>
+<h2>Cookbook Login</h2>
 
-<h3><a class='new' href="/recipes/new">New Recipe</a></h3>
+<h2><% if current_user %>
+            hello, <%= current_user.email %>
+            <%=button_to 'Logout', session_path(0), method: :delete %>
+            <% else %>
+            <%=link_to 'Login', new_session_path %>
+            <% end %></h2>
 
 <table>
     <tr>

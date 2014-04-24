@@ -1,4 +1,8 @@
+<% title "Edit Ingredient" %>
 
-<h2>Edit an Ingredient</h2>
+<%= render 'form' %>
 
-<%= render "form" %>
+<p>
+  <%= link_to "Show", @ingredient %> |
+  <%= link_to "View All", ingredients_path %>
+</p>

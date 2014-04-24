@@ -1,6 +1,22 @@
+<% title "Ingredient" %>
 
-<p><%= "#{@ingredient.name}"</p>   
+<p>
+  <strong>Name:</strong>
+  <%= @ingredient.name %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= @ingredient.image %>
+</p>
+<p>
+  <strong>Recipes:</strong><br>
+  <% @ingredient.ingredients_recipes.each do |ingredients_recipe| %>
+    <%= ingredients_recipe.quantity %> on <%= ingredients_recipe.recipe.try(:name) %><br>
+  <% end %>
+</p>
 
-
-<%= link_to 'Delete', recipe_path(@ingredient), :method => :delete %>
-<%= link_to 'Edit', edit_recipe_path(@ingredient), :method => :get %>
+<p>
+  <%= link_to "Edit", edit_ingredient_path(@ingredient) %> |
+  <%= link_to "Destroy", @ingredient, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ingredients_path %>
+</p>

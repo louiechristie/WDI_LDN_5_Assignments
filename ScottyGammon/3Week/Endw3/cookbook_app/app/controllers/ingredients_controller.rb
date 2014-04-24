@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController 
+load_and_authorize_resource
 
   def index
     @ingredients = Ingredient.all
@@ -13,13 +14,21 @@ class IngredientsController < ApplicationController
   end
 
   def update
-    Ingredient.find_by_id(params["id"]).update_attributes(params["ingredient"])
-    redirect_to ingredients_path
+    ingredient = Ingredient.find(params[:id])
+    if @ingredient.update_attributes(params[:ingredient])
+      redirect_to @ingredient, :notice  => "Successfully updated ingredient."
+    else
+      render :action => 'edit'
+    end
   end
 
   def create
-    Ingredient.create(params["ingredient"])
-    redirect_to ingredients_path
+    @ingredient = Ingredient.new(params[:ingredient])
+    if @ingredient.save
+      redirect_to @ingredient, :notice => "Successfully created ingredient."
+    else
+      render :action => 'new'
+    end
   end
 
   def new
@@ -27,8 +36,9 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
-    Ingredient.find_by_id(params[:id]).destroy
-    redirect_to ingredients_path
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.destroy
+    redirect_to ingredients_url, :notice => "Successfully destroyed ingredient."
   end
 
 end
