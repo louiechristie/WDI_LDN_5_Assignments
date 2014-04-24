@@ -1,4 +1,2 @@
 require 'sinatra'
-get '/tweety' do
-  erb :tweety
-end
+get '/tweety' do erb :tweety end
