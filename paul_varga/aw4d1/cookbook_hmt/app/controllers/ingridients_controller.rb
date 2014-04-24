@@ -1,4 +1,5 @@
 class IngridientsController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @ingridients = Ingridient.all

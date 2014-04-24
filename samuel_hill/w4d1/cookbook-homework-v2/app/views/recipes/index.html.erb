@@ -1,6 +1,6 @@
 <h1>Recipes</h1>
 
-<a href="/recipes/new">Add a New Recipe</a>
+<div class='add'><%= link_to 'Add a New Recipe', new_recipe_path %></div>
 
 <table>
 	<tr>
@@ -10,6 +10,11 @@
 	<% @recipes.each do |recipe| %>
 	<tr>
 		<td><%= recipe.name %></td>
-		<td><%= link_to 'Show', recipe_path(recipe) %><%= link_to'Edit', edit_recipe_path(recipe) %></td><td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
+		<td><%= link_to 'Show', recipe_path(recipe) %></td>
+		<% if can? :update, recipe %>
+			<td><%= link_to'Edit', edit_recipe_path(recipe) %></td>
+			<td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+	</tr>	
 	<% end %>
 </table>
