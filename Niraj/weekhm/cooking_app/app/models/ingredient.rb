@@ -1,5 +1,5 @@
 class Ingredient < ActiveRecord::Base
-  attr_accessible :name, :recipe_id, :recipe_ids
+  attr_accessible :name, :recipe_id, :recipe_ids, :ingredients_recipes
 
     validates :name, presence: true
 
