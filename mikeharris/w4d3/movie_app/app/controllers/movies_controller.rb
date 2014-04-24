@@ -40,10 +40,8 @@ class MoviesController < ApplicationController
           actor_ids << Actor.find_by_name(actor).id
         end
  
-        keys = Movie.new.to_yaml.split(": \n").map(&:strip)
-        keys.shift
-        new_params = {}
-        keys.each do |key|
+        new_params  = Movie.new.as_json
+        new_params.each_key do |key|
           new_params[key] = @hash[key.capitalize]  
         end
         new_params.delete("created_at")
