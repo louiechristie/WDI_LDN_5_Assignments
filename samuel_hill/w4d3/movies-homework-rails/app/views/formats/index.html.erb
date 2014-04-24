@@ -1,0 +1,13 @@
+<%= link_to "Add a new Format", new_format_path %>
+<table>
+	<tr>
+		<th>Format</th>
+	</tr>
+	<% @formats.each do |format| %>
+	<tr>
+		<td><%= format.name %></td>
+		<td><%= button_to'Edit', edit_format_path(format), method: :get %></td>
+		<td><%= button_to 'Delete', format, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>	
+	<% end %>
+</table>

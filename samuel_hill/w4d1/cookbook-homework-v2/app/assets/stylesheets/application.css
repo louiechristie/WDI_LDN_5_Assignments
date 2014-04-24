@@ -1,5 +1,5 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+
+ /** This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -7,12 +7,108 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+ **/
+ /**= require_self
+ *= require_tree .*/
 
  body {
+  background-image: url(/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: helvetica, arial, sans-serif;
+  color: white;
+ }
+ 
+
+ header {
+  background-color: #15BF3D;
+  min-height: 80px;
+}
+
+.title {
+  color: white;
+  float: left;
+  font-size: 320%;
+  margin: 0px 0px 0px 15px;
+  font-family: 'Indie Flower', 'cursive';
+}
+
+.login .field, .login .actions {
+  float: right;
+  margin-top: 27px;
+  margin-right: 15px;
+  color: white;
+}
+
+.navigation a {
+  margin: 28px 0px 0px 60px;
+  float: left;
+  font-size: 125%;
+}
+
+.navigation a:link, .navigation a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation a:active {
+  color: red;
+}
+
+.welcome, .logout {
+  float: right;
+  color: white;
+  margin-right: 15px;
+  margin-top: 28px;
+  font-size: 110%;
+}
+
+.yield {
+  clear: both;
+}
+
+.box {
+  background-color: white;
+  opacity: 0.5;
+  min-height: 400px;
+}
+
+h1 {
+  color: white;
+  float: left;
+}
+
+.add {
+  float: right;
+  margin: 25px 5px 0px 0px;
+}
+
+.add a:link, .add a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+table {
+  font-size: 120%;
+  clear: both;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:active {
+  color: red;
+}
+
+.form {
+  clear: both;
+}
+
+
+ /*body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -82,6 +178,6 @@ div {
   }
 }
 
-
+*/
  
  	
