@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Index:</b>
+  <%= @user.index %>
+</p>
+
+<p>
+  <b>New:</b>
+  <%= @user.new %>
+</p>
+
+<p>
+  <b>Create:</b>
+  <%= @user.create %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
