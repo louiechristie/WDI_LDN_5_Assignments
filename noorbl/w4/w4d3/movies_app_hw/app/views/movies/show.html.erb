@@ -10,6 +10,10 @@
   <%= @movie.title %>
 </p>
 <p>
+  <b>Image:</b>
+  <%= image_tag @movie.movie_image.details.url %>
+</p>
+<p>
   <strong>Director:</strong>
   <%= @movie.director %>
 </p>
