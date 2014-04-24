@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wdimdb</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1><%= link_to "WDImdb", movies_path %></h1>
+  <div class="center">
+    <p>All the movies are belong to you.</p>
+  </div>
+
+  <nav>
+    <ul>
+      <li><%= link_to "Index", movies_path %></li>
+      <li><%= link_to "New", new_movie_path %></li>
+    </ul>
+  </nav>
+  
+  <div class="flash">
+    <h2>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    </h2>
+  </div>
+  <%= yield %>
+
+</body>
+</html>

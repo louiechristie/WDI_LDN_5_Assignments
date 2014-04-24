@@ -1,12 +1,10 @@
 <h2>Categories#index</h2>
 <h3 id="notice"><%= notice %></h3>
-<% if @categories %>
-  <% @categories.each do |category| %>
-    <div class="category-index">
-      <%= raw category.image %>
-      <%= link_to category.name, category_path(category) %>
-    </div>
-  <% end %>
+<% @categories.each do |category| %>
+  <div class="category-index">
+    <%= raw category.image %>
+    <%= link_to category.name, category_path(category) %>
+  </div>
 <% end %>
 <br />
 <%= link_to "New Category", new_category_path %>

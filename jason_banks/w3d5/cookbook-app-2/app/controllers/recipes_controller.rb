@@ -1,7 +1,10 @@
 class RecipesController < ApplicationController
+ load_and_authorize_resource
+ 
   def index
-    @recipes = Recipe.all
-    # find_categories
+    @q = Recipe.search(params[:q])
+    @recipes = @q.result
+    @model_name = "recipe"
   end
 
   def new

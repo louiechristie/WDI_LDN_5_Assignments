@@ -1,6 +1,10 @@
 class IngredientsController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @ingredients = Ingredient.all
+    @q = Ingredient.search(params[:q])
+    @ingredients = @q.result
+    @model_name = "ingredient"
   end
 
   def new

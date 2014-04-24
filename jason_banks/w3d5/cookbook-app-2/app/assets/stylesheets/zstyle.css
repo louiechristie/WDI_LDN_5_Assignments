@@ -151,13 +151,13 @@ svg:hover {
   fill: #5B80FF;
 }
 
-th {
-  width: 450px;
+table.users-index {
+  width: 600px;
   table-layout: fixed;
 }
 
-td {
-  width: 150px;
+td.users-index {
+  width: 200px;
 }
 
 #email, #password {
