@@ -1,0 +1,23 @@
+<%= link_to "Add a new Movie", new_movie_path %>
+
+<h1>MOVIES</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label 'Search Titles: ' %>
+  <%= f.text_field :title_cont %>
+  <%= f.submit %>
+<% end %>
+
+<table>
+	
+	<% @movies.each do |movie| %>
+	
+	<tr><th>Title</th><td><%= movie.title %></td></tr>
+	<tr><th>Review</th><td><%= movie.review %></td></tr>
+	<tr><th>Format</th><td><%= movie.format.name if movie.format %></td></tr>
+	<tr>
+	<td><%= button_to'Edit', edit_movie_path(movie), method: :get %></td>
+	<td><%= button_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>	
+	<% end %>
+</table>
