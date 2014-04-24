@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @actors = @movie.actor_ids.map{|id| Actor.find(id)}
   end
 
   def new

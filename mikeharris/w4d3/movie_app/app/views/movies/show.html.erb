@@ -13,14 +13,17 @@
       Actors
     </td>
       <td>
-          <%= actors %>        
+        <ul>
+          <% @actors.each do |actor| %>
+           <li>
+     
+              <a href="<%= actor_path(actor) %>"><%= actor.name %></a>
+            </li>
+  
+    
+          <% end %>       
+        </ul>
       </td>
     </tr>
-    <tr>
-      <td></td>
-      <td>
-          <%= link_to "Edit", edit_movie_path(@movie) %> 
-          <%= link_to "Destroy", @movie, :confirm => 'Are you sure?', :method => :delete %>
-       </td>   
-    </tr>
+    
   </table>

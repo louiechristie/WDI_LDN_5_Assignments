@@ -45,3 +45,33 @@ li {
   display: block;
   margin: 15px;
 }
+
+
+input[type=submit], input[type=password] {
+  border: none;
+  width: 150px;
+  padding: 7px 15px;
+  display: inline-block;
+  background: #b764d4;
+}
+
+input[type=submit]:hover{
+  cursor: pointer;
+  background: #7E07A9;
+}
+
+.button_to {
+  display: inline-block;
+}
+
+.alert_data .button_to {
+  width: 500px;
+}
+.alert_data input[type=submit] {
+  background: red;
+  padding: 50px;
+  width: 500px;
+  text-align: center;
+  font-size: 25p;
+  font-weight: bold;
+}

@@ -21,8 +21,11 @@
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
           <% end %>
 </div>
+
 <% unless @movies[0].year %>
-<%= button_to 'Alex/imran - click to Update Movie Data', movie_path(Movie.first), :method => :put %>
+<div class="alert_data">
+<%= button_to 'Alex/imran - click to Update Movie Data', movie_path(Movie.first), :method => :put  %>
+</div>
 <% end %>
 
 <table>

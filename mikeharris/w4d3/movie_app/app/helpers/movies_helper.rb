@@ -1,8 +1,7 @@
 module MoviesHelper
 
 def actors
-   actors = @movie.actor_ids.map{|id| Actor.find(id).name}.to_sentence
-
+   actors = @movie.actor_ids.map{|id| Actor.find(id).name}
 end
 
 

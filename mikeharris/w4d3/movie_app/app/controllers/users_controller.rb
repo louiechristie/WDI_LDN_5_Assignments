@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   end
 
-  def edit
+  def update
     
     @user = User.find(current_user)
     current_films = @user.movie_ids
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+
   end
 
   
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
     
       if @user.save
         redirect_to new_session_path
+        # redirect_to 'sessions#create'
         
       else
          render action: "new" 
