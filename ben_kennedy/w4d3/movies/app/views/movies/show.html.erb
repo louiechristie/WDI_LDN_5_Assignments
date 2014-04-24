@@ -1,0 +1,17 @@
+<div class='show' >
+<h1><%= @movie.name %></h1>
+<%= image_tag @movie.image %>
+<h2>Plot</h2>
+<p><%= @movie.plot %></p>
+<h2>Posted by: <%= @movie.user.try(:email) %></h2>
+<h2>Review</h2>
+<p><%= @movie.review %></p>
+<h2>Movie Watched Location</h2>
+<p><%= @movie.where_watched.try(:location) %></p>
+  <% if @movie.user_id == current_user.try(:id)  %>
+    <%= button_to 'Edit', edit_movie_path(@movie.id), method: :get %>
+  <% end %>
+  <% if @movie.user_id == current_user.try(:id)  %>
+    <%= button_to 'Delete', delete_movie_path(@movie.id), method: :delete %>
+  <% end %>
+</div>

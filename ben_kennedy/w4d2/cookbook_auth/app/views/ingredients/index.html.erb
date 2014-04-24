@@ -1,0 +1,33 @@
+<h1>The Ingredients index:</h1>
+
+
+
+  <table>
+    <thead>
+      <td>Name</td>
+    </thead>
+    <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td>
+        <%= ingredient.name %>
+      </td>   
+      <% if can? :update, Ingredient %>
+        <td>
+          <%= button_to 'Edit', edit_ingredient_path(ingredient.id), method: "get" %>
+        </td>
+      <% end %>
+      <% if can? :destroy, Ingredient %>  
+        <td>
+          <%= button_to 'Delete', ingredient_delete_path(ingredient.id), method: "delete" %>
+        </td>
+      <% end %>             
+      <td>
+        <form action='/recipes' method='get'>
+          <%= hidden_field(:ingredient, :id, value: ingredient.id)   %> 
+        <button class='index_submit'>See Recipes Using This Ingredient</button></form>     
+      </td>      
+    </tr>
+    <% end %>
+  </table>
+  <h3>Need another ingredient?</h3>
+  <%= button_to 'Add New Ingredient', new_ingredient_path, method: :get %>

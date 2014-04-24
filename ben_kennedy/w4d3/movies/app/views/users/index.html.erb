@@ -1,0 +1,17 @@
+<h1>Registered Users</h1>
+<p><%= link_to "Add New User", new_user_path %>
+
+<table>
+  <thead>
+    <td>Email Address</td>
+    <td>Role</td>
+    <td>Password Digest</td>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td><%= !user.password_digest.nil? %></td>
+    </tr>
+    <% end %>
+</table>
