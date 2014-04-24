@@ -22,6 +22,10 @@
     <%= r.text_field :name %>
   </div>
   <div class="field">
+    <%= r.label :recipe_image %><br />
+    <%= r.file_field :recipe_image %>
+  </div>
+  <div class="field">
     <%= r.label :description %><br />
     <%= r.text_area :description %>
   </div>

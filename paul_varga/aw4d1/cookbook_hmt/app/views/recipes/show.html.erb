@@ -1,24 +1,25 @@
 <table>
 <tr>
+  <th>Image </th>
   <th>Category </th>
   <th>Name </th> 
   <th>Feeds </th>
   <th>Description </th>
-  <th><%= pluralize('Name of', 'ingredient') %> </th>
+  <th><%= pluralize('Quantity of', 'ingredient') %> </th>
 
   <!-- <th>Quantity </th>
   <th>Measure </th> -->
 
-  <th>Quantity of Ingridients </th>
 </tr>
 <tr>
+  <td><%= image_tag @recipe.recipe_image %> </td> 
   <td><%= @recipe.category.try :name %> </td>
   <td><%= @recipe.name %> </td> 
   <td><%= @recipe.feeds_people %> </td>
   <td><%= @recipe.description %> </td>
-  <td>
+  <!-- <td>
   <%= @recipe.ingridients.map { |ingridient| ingridient.name }.to_sentence %> 
-  </td>
+  </td> -->
 
   <!-- <td>
   <%= @recipe.ingridients_recipes.map { |ingridients_recipe| ingridients_recipe.quantity.to_s } %>

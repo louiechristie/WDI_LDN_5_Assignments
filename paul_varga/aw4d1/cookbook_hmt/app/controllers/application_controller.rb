@@ -3,9 +3,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  before_filter :setup_search_object
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: "You don't have permission."
   end
+
+
+  private
+  def setup_search_object
+        @q = Recipe.search(params[:q])
+  end
+
 
   private
   def current_user

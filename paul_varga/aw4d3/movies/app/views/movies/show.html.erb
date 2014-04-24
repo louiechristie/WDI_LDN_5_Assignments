@@ -1,0 +1,32 @@
+<table>
+<tr>
+  <th>Name </th>
+  <th>Category </th>
+  <th>Review </th>
+  <th>Rating </th> 
+  <th>Year </th>
+  <th>Acting </th>
+</tr>
+<tr>
+  <td><%= @movie.name %> </td> 
+  <td><%= @movie.categories.map { |category| category.name }.to_sentence %>  </td> 
+  <td><%= @movie.review %> </td> 
+  <td><%= @movie.rating %> </td> 
+  <td><%= @movie.year %> </td> 
+  <td><%= @movie.actors.map { |actor| actor.name }.to_sentence %>  </td> 
+</tr>
+</table>
+
+
+
+
+
+
+
+<span>
+<p><%= link_to 'Edit', edit_movie_path(@movie) %></p>
+
+<p><%= button_to 'Delete Movie', movies_delete_path(@movie) %></p>
+
+<p><%= link_to 'Back', movies_path %></p>
+</span>
