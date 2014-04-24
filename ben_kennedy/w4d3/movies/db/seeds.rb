@@ -7,9 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Movie.create(name: 'movie 1', review:'good', where_watched_id:1, user_id: 3)
-Movie.create(name: 'movie 2', review:'ok', where_watched_id:1, user_id: 2)
-Movie.create(name: 'movie 3', review:'terrible', where_watched_id:1, user_id: 1)
+m = Movie.create(name: 'Jaws', review:'good', where_watched_id:1, user_id: 3)
+m.omdb_pull
+m.save
+m = Movie.create(name: 'Saw', review:'ok', where_watched_id:1, user_id: 2)
+m.omdb_pull
+m.save
+m = Movie.create(name: 'Pulp Fiction', review:'terrible', where_watched_id:1, user_id: 1)
+m.omdb_pull
+m.save
 
 WhereWatched.create(location: 'cinema')
 WhereWatched.create(location: 'tv')

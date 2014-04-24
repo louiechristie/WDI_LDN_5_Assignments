@@ -12,12 +12,16 @@
       <%= message %>
     </div>
   <% end %>
-  <% if current_user %>
-    <p>You're logged in as <%= current_user.email %></p>
-    <%= link_to 'Logout', session_path(session), method: :delete %>
-  <% else %>
-    <%= link_to 'Please Login', login_path %> or <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
+  <div class='top_container'>
+    <div class='user_login_status'>
+      <% if current_user %>
+        <p>You're logged in as <%= current_user.email %></p>
+        <%= link_to 'Logout', session_path(session), method: :delete %>
+      <% else %>
+        <%= link_to 'Please Login', login_path %> or <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+    </div>
+  </div>
   <nav>
     <ul>
       <% if can? :manage, User %>
@@ -28,7 +32,10 @@
       <% end %>
         <li><%= link_to 'View All Movie Reviews', movies_path %></li>
         <li><%= link_to 'Review a Movie', new_movie_path %></li>
-<%= yield %>
-
+      </ul>
+    </nav>
+    <section class='main'>
+      <%= yield %>
+    </section>
 </body>
 </html>

@@ -29,6 +29,8 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     @movie.update_attributes(params[:movie])
+    @movie.omdb_pull
+    @movie.save
     if @movie.update_attributes(params[:movie])
       redirect_to movies_path, notice: "'#{@movie.name}' updated!"
     else

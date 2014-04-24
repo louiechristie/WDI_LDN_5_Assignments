@@ -7,11 +7,11 @@
   <p>Added by: <%= movie.user.try(:email) if movie.user %></p>
   <%= image_tag movie.image if movie.image %>
   <p><%= movie.plot %></p>
-  <%= button_to 'Details...', movie_path(movie.id), method: :get %>
-  <% if movie.user_id == current_user.id %>
+  <%= button_to 'See User Review', movie_path(movie.id), method: :get %>
+  <% if movie.user_id == current_user.try(:id)  %>
     <%= button_to 'Edit', edit_movie_path(movie.id), method: :get  %>
   <% end %>
-  <% if movie.user_id == current_user.id %>
+  <% if movie.user_id == current_user.try(:id)  %>
     <%= button_to 'Delete', delete_movie_path(movie.id), method: :delete %>
   <% end %>
 </div>
