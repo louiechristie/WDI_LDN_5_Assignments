@@ -1,0 +1,32 @@
+
+
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <p>
+     <% Movie.all.each do |movie| %>
+       <%= check_box_tag "category[movie_ids][]", movie.id, @category.movies.include?(movie), id: "category_movie_ids_#{movie.id}" %>
+       <%= f.label :movie_ids, movie.title, for: "category_movie_ids_#{movie.id}" %>
+       <br>
+     <% end %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
