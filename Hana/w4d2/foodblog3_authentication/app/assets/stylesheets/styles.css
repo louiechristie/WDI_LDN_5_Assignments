@@ -1,0 +1,47 @@
+#home_text{
+  font-size: 6em;
+  font-family: Didot, Serif;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  left: 20px;
+  top: 35px;
+}
+
+#global_header_block{
+  position: fixed;
+  display: inline-block;
+  background-color: white;
+  font-family: Gill Sans, Sans-Serif;
+  color: white;
+  right:0px;
+  top:0px;
+  height:20px;
+  width: 100%;
+  border-bottom: 1px solid #121212;
+
+
+}
+
+#home{
+  
+  left: 0;
+  top: 0;
+  width: 990px;
+  height: 185px;
+  background-image: url(https://d2k9njawademcf.cloudfront.net/indeximages/39919/full/2013-1216_genius_maialino-olive-oil-cake_final-011.jpg?1392158110);
+  background-position: 50% 50%;
+  overflow:hidden;
+}
+
+body{
+  text-align: center
+}
+
+.field_with_errors > input {
+  border: 1px solid #FFC125;
+}
+
+.field_with_errors > label {
+  color: #FFC125;
+}

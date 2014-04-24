@@ -1,0 +1,5 @@
+<h1><%=@category.name%></h1>
+
+<%@category.recipes.each do |recipe|%>
+ <div id='link_to_recipe'><%= link_to recipe.name, recipe%></div>
+<%end%>

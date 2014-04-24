@@ -21,15 +21,18 @@
   <%= f.text_field :image %>
 </div>
 
+
+
 <div class = 'field'>
   Ingredients:</br>
-  <% @ingredients.each do |ingredient| %>
-  <%=ingredient.name%></br>
-  <%= f.label :servings %><br/>
-  <%= f.text_field :servings %>
-
-  <% end %>
+  <%binding.pry%>
+  <% f.fields_for :ingredients_recipes do |ir| %>
+    <%=ir.label :quantity%><br/>
+    <%=ir.text_field :quantity%> &nbsp
+    <%=ir.select :ingredient_id, @ingredients.map {|a|[a.name, a.id]}%>
+  <%end%>
 </div>
+
 <div class = 'field'>
   <%= f.label :servings %><br/>
   <%= f.text_field :servings %>
