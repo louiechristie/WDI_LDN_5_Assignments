@@ -18,11 +18,23 @@
     <%= f.text_field :title %>
   </div>
 
+<<<<<<< HEAD
   <div class="field">
     <%= f.label :movie_image %>
+=======
+ <div class = 'field'>
+    <%= f.label :movie_image %><br/>
+>>>>>>> 2f4bf6ab33da6defed86734a5f388b7ae1d35697
     <%= f.file_field :movie_image %>
   </div>
+   <p>
+    <label>
+      <%= f.check_box :remove_movie_image %>
+      Remove Image
+    </label>
+  </p>
 
+<<<<<<< HEAD
  <div class="field">
   <% Category.all.each do |category| %>
        <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category), id: "category_movie_ids_#{category.id}" %>

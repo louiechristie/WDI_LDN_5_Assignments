@@ -1,8 +1,5 @@
 <h1><%=@movie.title%></h1>
 
-
-
-
 <div>
   <%= link_to image_tag(@movie.movie_image.thumb.url), @movie.movie_image.detail.url %>
 </div>
@@ -11,6 +8,7 @@
   <% @movie.categories.each do |category| %>
       <%= category.name %><br>
     <% end %>
+
 </div>
 <div>
   Venue: <%= @movie.venue%>
@@ -21,4 +19,12 @@
 <div>
   Review: <%= @movie.review%>
 </div>
+
+  <div>
+      <%= button_to 'Edit', edit_movie_path(@movie), method: 'get'%>
+    </div>
+   <div>
+      <%= button_to 'Delete', delete_movie_path(@movie), method: 'delete'%>
+    </div>
+
 
