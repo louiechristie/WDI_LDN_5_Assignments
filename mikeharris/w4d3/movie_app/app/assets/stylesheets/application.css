@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  padding: 20px 200px;
+}
+
+a {
+  padding: 5px;
+  text-decoration: none;
+  background: #b764d4;
+  margin: 10px;
+  color: black;
+}
+
+a:hover {
+  background: #7E07A9;
+
+}
+td {
+  padding: 10px;
+}
+
+nav , .user_details{
+  padding: 20px 0px;
+  margin: 5px;
+  border: 2px solid #F5FD72;
+  display: inline-block;
+
+}
+
+
+li {
+  display: block;
+  margin: 15px;
+}
+
+
+input[type=submit], input[type=password] {
+  border: none;
+  width: 150px;
+  padding: 7px 15px;
+  display: inline-block;
+  background: #b764d4;
+}
+
+input[type=submit]:hover{
+  cursor: pointer;
+  background: #7E07A9;
+}
+
+.button_to {
+  display: inline-block;
+}
+
+.alert_data .button_to {
+  width: 500px;
+}
+.alert_data input[type=submit] {
+  background: red;
+  padding: 50px;
+  width: 500px;
+  text-align: center;
+  font-size: 25p;
+  font-weight: bold;
+}

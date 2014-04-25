@@ -1,0 +1,32 @@
+<h2>Users#index</h2>
+<table class="users-index">
+  <thead>
+    <tr>
+      <td>
+        User ID
+      </td>
+      <td>
+        Email
+      </td>
+      <td>
+        Password Digest
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.id %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <%= user.password_digest %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+<table>
+

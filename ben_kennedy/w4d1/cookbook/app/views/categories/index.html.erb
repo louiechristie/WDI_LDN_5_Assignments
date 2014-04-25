@@ -1,0 +1,27 @@
+<h1>The Categories index:</h1>
+<p><%= link_to 'Add Category', new_category_path %></p>
+
+  <table>
+    <thead>
+      <td>Name</td>
+    </thead>
+    <% @categories.each do |category| %>
+    <tr>
+      <td>
+        <%= category.name %>
+      </td>
+      <td>
+        <%= button_to 'Edit', edit_category_path(category.id), method: "get" %>
+      </td>
+      <td>
+        <%= button_to 'Delete', category_delete_path(category.id), method: "delete" %>
+      </td>      
+      <td>
+        <form action='/recipes' method='get'>
+          <%= hidden_field(:category, :id, value: category.id)   %>
+        <button class='index_submit'>See Recipes in this Category</button></form>     
+      </td>  
+    </tr>
+    <% end %>
+  </table>
+

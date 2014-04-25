@@ -1,0 +1,23 @@
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td><strong><%= movie.title %></strong></td>
+          <td><%= movie.year %></td>
+          <td><%= link_to("Details", movie_path(movie.id)) %></td>
+          <td><%= link_to("Edit", edit_movie_path(movie.id)) %></td>
+          <td><%= link_to('Delete', movie_path(movie.id), method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br/>
+  <p><%= link_to "New Movie", new_movie_path %><p>

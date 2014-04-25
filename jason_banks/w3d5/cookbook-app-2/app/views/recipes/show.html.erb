@@ -1,0 +1,18 @@
+<h2><%= raw @recipe.category.try(:image) %><%= @recipe.title %></h2>
+<br />
+<h4><%= @recipe.description %></h4>
+<% if @recipe.ingredients_recipes.any? %>
+  <h4>Ingredients</h4>
+  <ul>
+    <% @recipe.ingredients_recipes.each do |ir| %>
+      <li><%= ir.ingredient.name %>: <%= ir.quantity %></li>
+    <% end %>
+  </ul>
+<% end %>
+<h4>Instructions</h4>
+<p><%= @recipe.instructions %></p>
+<br />
+<%= link_to "Edit", edit_recipe_path(@recipe) %>
+<br />
+<br />
+<%= link_to "Delete", delete_recipe_path(@recipe), method: "post", confirm: "Delete \"#{@recipe.title}?\"" %>

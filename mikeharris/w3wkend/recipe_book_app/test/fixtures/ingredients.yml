@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  unit: MyString
+  calories: 1
+  image: MyString
+
+two:
+  name: MyString
+  unit: MyString
+  calories: 1
+  image: MyString

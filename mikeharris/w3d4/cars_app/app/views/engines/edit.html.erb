@@ -1,10 +1,10 @@
-<h2>Edit Car</h2>
+<h2>Edit Engine</h2>
 
 <% path = engine_path %>
-<% engine = Engine.find_by_id(params["id"]) %>
+
+<% meth = :put %>
 
 
-<p>Current Engine: <%= engine.fuel %><%= engine.size %> </p>
 
-<%= render partial: 'form', locals: {path: path} %>
+<%= render partial: 'form', locals: {path: path, meth: meth} %>
 

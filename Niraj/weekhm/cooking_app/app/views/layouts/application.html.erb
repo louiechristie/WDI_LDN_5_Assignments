@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CookingApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+
+
+
+    <% if current_user %>
+    hello, <%= current_user.email %>
+    <%= link_to 'logout', session_path(0), method: :delete%>
+    <% else %>
+      <%= link_to "login", new_session_path %>
+    <% end %>
+
+  <%= link_to "Category", categories_path %>
+
+  <%= link_to "Recipe", recipes_path %>
+
+  <%= link_to "users", users_path %>
+
+
+
+<%= search_form_for @q do |f| %>
+  <p> 
+    <%= f.label :name_cont %>
+    <%= f.text_field :name_cont %>
+  </p>
+
+<p> 
+    <%= f.label :category_name_cont %>
+    <%= f.text_field :category_name_cont %>
+    </p>
+
+    <%= f.submit %>
+
+    <% end %>
+
+
+
+
+
+<%= yield %>
+
+</body>
+</html>

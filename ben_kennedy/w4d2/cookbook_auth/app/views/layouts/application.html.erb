@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookbook</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+  <div class='user_login_status'
+    <% if current_user %>
+      <h3>Hello, <%= current_user.email %> <%= button_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?' } %></h3>
+    <% else %>
+      <p><%= link_to 'Login', login_path %>  </p>
+    <% end %>
+  </div>
+  <nav>
+    <ul>
+      <li><%= link_to 'View All Recipes', recipes_path %></li>
+      <li><%= link_to 'Add Recipe', new_recipe_path %></li>
+      <li><%= link_to 'View Recipes by Category', categories_path %></li>
+      <li><%= link_to 'View Recipes by Ingredient', ingredients_path %></li>
+      <% unless current_user %>
+        <li><%= link_to 'Create an Account', new_user_path %></li>
+      <% end %>
+      <li><%= link_to 'View Users', users_path if can? :manage, User %></li>
+    </ul>
+  </nav>
+  <section class='main'>
+<%= yield %>
+  </section>
+
+</body>
+</html>

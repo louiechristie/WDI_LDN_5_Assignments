@@ -1,0 +1,43 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Paste URL or upload file" %><br />
+    <%= f.url_field :poster %>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre %><br />
+    <%= f.select :genre, options_for_select(["Action", "Animation", "Biopics", "Comedy", "Crime", "Documentry", "Drama", "Family", "Horror", "Musicals", "Historical", "Sci-Fi/Fantasy", "Short Films", "Sport", "Thriller", "War", "Western", "World Cinema" ]) %>
+  </div>
+ 
+
+<div class="field">
+    <%= f.label "Have you seen it?" %><br />
+    <%= f.select :ownership, options_for_select(["Yes", "No"]) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

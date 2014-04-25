@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookbook</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav >
+   <ul >
+    <li><%= link_to('Categories',categories_path) %>
+      <ul class="submenu"
+        <li><%= link_to('New Category',new_category_path) %></li >
+      </ul>
+    </li >
+    <li><%= link_to('Recipes',recipes_path) %>
+      <ul class="submenu"
+        <li><%= link_to('New Recipe',new_recipe_path) %></li >
+      </ul>
+    </li >
+    <li><%= link_to('Ingredients',ingredients_path) %>
+      <ul class="submenu"
+        <li><%= link_to('New Ingredient',new_ingredient_path) %></li >
+      </ul>
+    </li >
+   </ul >
+ </nav>
+
+<div class="container">
+
+  <h1>Online Cookbook</h1>
+
+  <%= yield %>
+
+</div>
+
+</body>
+
+<footer><a href="http://www.louiechristie.com">Louie Christie</a> 2014</a></footer>
+</html>
+

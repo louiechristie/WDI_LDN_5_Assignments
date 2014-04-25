@@ -1,0 +1,45 @@
+<h1>Movies</h1>
+
+
+
+
+<%# title "Movie" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+<p>
+  <b>Image:</b>
+  <%= image_tag @movie.movie_image.details.url %>
+</p>
+<p>
+  <strong>Director:</strong>
+  <%= @movie.director %>
+</p>
+<p>
+  <strong>Actors:</strong>
+  <%= @movie.actor %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @movie.category.try(:name) %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+<p>
+  <strong>Review:</strong>
+  <%= @movie.review%>
+</p>
+<p>
+  <strong>Trailer:</strong>
+  <iframe width="560" height="315" src="//www.youtube.com/embed/<%= @movie.trailer_url %>" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_movie_path(@movie) %> |
+  <%= link_to "Destroy", @movie, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", movies_path %>
+</p>

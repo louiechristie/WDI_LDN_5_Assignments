@@ -1,0 +1,43 @@
+<h2> Edit Recipe </h2>  
+
+<%= form_for(@recipe) do |r| %>
+ 
+  <div class="field">
+    <%= r.label :category_id %><br />
+    <%= r.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= r.label :name %><br />  
+    <%= r.text_field :name %>
+    </div>
+
+    <div class="field">
+    <%= r.label :serving_size %><br />  
+    <%= r.text_field :serving_size %>
+    </div>
+
+     <div class="field">
+    <%= r.label :recipe_image %><br />  
+    <%= r.file_field :recipe_image %>
+    </div>
+
+    <div class="field">
+    <%= r.label :picture %><br />
+    <%= r.text_field :picture %>
+  </div>
+
+    <div class="field">
+    <%= r.label :ingridients %><br />
+    <%= hidden_field_tag "recipe[ingredient_ids][]" %>
+    <% for ingredient in Ingredient.all %>
+    <%= check_box_tag "recipe[ingredient_ids][]", ingredient.id, @recipe.ingredients.include?(ingredient) %> 
+    <%= ingredient.name %>
+    <% end %>
+  </div>
+    
+
+  <div class="actions">
+    <%= r.submit %>
+  </div>
+<% end %>

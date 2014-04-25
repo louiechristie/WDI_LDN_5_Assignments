@@ -1,0 +1,15 @@
+<% recipes = Recipe.where(category_id: category_id) %>
+  <ul>
+  <% recipes.each do |recipe| %>
+
+    <li>
+      <a href="<%= recipe_path(recipe) %>"><%= recipe.name %></a>
+      <%= button_to 'Delete', recipe_path(recipe), :method => :delete %>
+      <%= button_to 'Edit', edit_recipe_path(recipe), :method => :get %>
+    </li>
+
+  <% end %>
+  </ul>
+
+  
+

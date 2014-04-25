@@ -1,0 +1,16 @@
+<h1><%= @recipe.name %></h1>
+<h2>
+  <ul>
+    <li>Serving Size: <%= @recipe.serving_size %></li>
+    <li>Category: <%= @recipe.category.name %></li>
+    <li>Ingredients: <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+      <% end %>
+    </li>
+  </ul>
+
+</h2>
+
+
+<%= button_to 'Delete Recipe', recipe_path(@recipe), method: 'delete', confirm: 'Are you sure?' %>
+<%= button_to 'Edit Recipe', edit_recipe_path(@recipe), method: 'get' %>
