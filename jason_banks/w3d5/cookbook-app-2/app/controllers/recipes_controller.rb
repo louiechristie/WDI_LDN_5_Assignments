@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
 
 
     if @recipe.save
-      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully added.")
+      redirect_to(@recipe, notice: "#{@recipe.name} has been successfully added.")
     else
       find_categories
       Ingredient.all.each do |ingredient|
@@ -64,11 +64,11 @@ class RecipesController < ApplicationController
     
 
     params[:recipe][:ingredients_recipes_attributes] = ir    
-    params[:recipe][:title].capitalize!
+    params[:recipe][:name].capitalize!
 
 
     if @recipe.update_attributes(params[:recipe])
-      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully updated.")
+      redirect_to(@recipe, notice: "#{@recipe.name} has been successfully updated.")
     else
       find_categories
       Ingredient.all.each do |ingredient|

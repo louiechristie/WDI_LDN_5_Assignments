@@ -2,14 +2,11 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def home
-    @q = Category.search(params[:q])
-    @categories = @q.result
-    @model_name = "category"
+    search_form
   end
 
   def index
-    @q = Category.search(params[:q])
-    @categories = @q.result
+    search_form
   end
 
   def new
@@ -55,6 +52,12 @@ class CategoriesController < ApplicationController
 
   def find_recipes
     @recipes = Recipe.where(id: @category.recipe_ids)
+  end
+
+  def search_form
+    @q = Category.search(params[:q])
+    @categories = @q.result
+    @model_name = "category"
   end
 
 

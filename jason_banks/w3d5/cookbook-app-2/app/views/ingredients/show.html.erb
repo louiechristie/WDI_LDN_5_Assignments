@@ -3,7 +3,7 @@
   <h4>Recipes</h4>
   <ul>
     <% @ingredient.ingredients_recipes.each do |ingredients_recipe| %>
-      <li><%= link_to ingredients_recipe.recipe.title, recipe_path(ingredients_recipe.recipe) %> (<span class="italics"><%= ingredients_recipe.recipe.category.name if ingredients_recipe.recipe.category.name %></span>)</li>
+      <li><%= link_to ingredients_recipe.recipe.name, recipe_path(ingredients_recipe.recipe) %> (<span class="italics"><%= ingredients_recipe.recipe.category.name if ingredients_recipe.recipe.category.name %></span>)</li>
 
     <% end %>
   </ul>

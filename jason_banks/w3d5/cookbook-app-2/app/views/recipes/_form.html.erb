@@ -5,8 +5,8 @@
     </div>
   <% end %>
 
-<%= f.label :title %>
-<div class="black"><%= f.text_field :title %></div>
+<%= f.label :name %>
+<div class="black"><%= f.text_field :name %></div>
 <br /><br />
 Category <div class="black"><%= f.collection_select(:category_id, @categories, :id, :name) %></div>
 <br /><br />

@@ -12,7 +12,7 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td>
-          <%= link_to recipe.title, recipe_path(recipe) %>
+          <%= link_to recipe.name, recipe_path(recipe) %>
           <ul>
             <% if recipe.category_id %>
             <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %>
