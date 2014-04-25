@@ -1,6 +1,6 @@
  class Recipe < ActiveRecord::Base
 
-  attr_accessible :category_id, :feeds, :instructions, :name, :ingredient_ids, :ingredients_recipes_attributes
+  attr_accessible :category_id, :feeds, :instructions, :name, :ingredient_ids, :ingredients_recipes_attributes, :recipe_image
 
   belongs_to :category	
 
@@ -13,5 +13,7 @@
   validates :feeds, numericality: { greater_than: 0 }
   validates :instructions, presence: true
   validates :ingredient_ids, presence: true
+
+  mount_uploader :recipe_image, RecipeImageUploader
   
 end

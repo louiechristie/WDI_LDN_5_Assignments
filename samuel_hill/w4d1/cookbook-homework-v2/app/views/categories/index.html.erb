@@ -5,14 +5,13 @@
 <table>
 	<tr>
 		<th>Name</th>
-		<th>Actions</th>
 	</tr>
 	<% @categories.each do |category| %>
 	<tr>
 		<td><%= category.name %></td>
 		<% if can? :update, category %>
-		<td><%= link_to'Edit', edit_category_path(category) %></td>
-		<td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= button_to'Edit', edit_category_path(category), method: :get %></td>
+		<td><%= button_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		<% end %>
 	</tr>	
 	<% end %>
