@@ -1,0 +1,13 @@
+def working 
+  (1..4).each do |i|
+    print "\b\\",  sleep(1.0/6)
+    print "\b|"
+    sleep(1.0/6)
+    print("\b/")
+    sleep(1.0/6)
+    print("\b-")
+    sleep(1.0/6)
+  end
+end
+
+working
