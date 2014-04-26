@@ -16,7 +16,4 @@
 <p class="section-heading">Instructions</p>
 <p><%= @recipe.instructions %></p>
 <br />
-<%= link_to "Edit", edit_recipe_path(@recipe) %>
-<br />
-<br />
-<%= link_to "Delete", delete_recipe_path(@recipe), method: "post", confirm: "Delete \"#{@recipe.name}?\"" %>
+<%= render partial: "layouts/edit_delete_actions", locals: { model_name: Recipe, edit_path: edit_recipe_path, delete_path: delete_recipe_path, item: @recipe.name } %>

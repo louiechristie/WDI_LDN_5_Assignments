@@ -6,11 +6,14 @@
   <% end %>
 
   <%= f.label :username %><br />
-  <div class="black"><%= f.text_field :username %></div><br />
+  <div class="black"><%= f.text_field :username, readonly: true_if_admin %></div><br />
   <%= f.label :password %><br />
-  <div class="black"><%= f.password_field :password %></div><br />
+  <div class="black"><%= f.password_field :password, readonly: true_if_admin %></div><br />
   <%= f.label :password_confirmation %><br />
-  <div class="black"><%= f.password_field :password_confirmation %></div><br />
-  <div class="black"><%= f.submit %></div>
-
+  <div class="black"><%= f.password_field :password_confirmation, readonly: true_if_admin %></div><br />
+  <% if true_if_admin %>
+    <%= f.label :role %><br />
+    <div class="black"><%= f.select :role, [[:admin],[:member]] %></div><br />
+  <% end %>
+  <div class="black"><%= f.submit "Submit" %></div>
 <% end %>

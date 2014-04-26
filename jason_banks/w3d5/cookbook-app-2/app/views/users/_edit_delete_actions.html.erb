@@ -1,0 +1,6 @@
+<% if can? :manage, model_name %>
+  <%= link_to "Edit", edit_path %> | 
+<% end %>
+<% if can? :manage, model_name %>
+  <%= link_to "Delete", delete_path, method: "post", confirm: "Delete \"#{item}?\"" %>
+<% end %>

@@ -7,7 +7,4 @@
     <% end %>
   </ul>
 <% end %>
-<%= link_to "Edit", edit_category_path(@category) %>
-<br />
-<br />
-<%= link_to "Delete", delete_category_path(@category), method: "post", confirm: "Delete \"#{@category.name}?\"" %>
+<%= render partial: "layouts/edit_delete_actions", locals: { model_name: Category, edit_path: edit_category_path, delete_path: delete_category_path, item: @category.name } %>

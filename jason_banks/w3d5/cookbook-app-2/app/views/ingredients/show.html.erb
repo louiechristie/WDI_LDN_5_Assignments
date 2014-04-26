@@ -8,4 +8,4 @@
     <% end %>
   </ul>
 <% end %>
-<%= render partial: "layouts/cud_actions", locals: { model_name: Ingredient, new_path: new_ingredient_path, edit_path: edit_ingredient_path, delete_path: delete_ingredient_path, item: @ingredient.name } %>
+<%= render partial: "layouts/edit_delete_actions", locals: { model_name: Ingredient, edit_path: edit_ingredient_path, delete_path: delete_ingredient_path, item: @ingredient.name } %>

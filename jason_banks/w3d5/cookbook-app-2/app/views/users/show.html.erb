@@ -12,7 +12,4 @@
 <% end %>
 <br />
 <br />
-<%#= link_to "Edit", edit_user_path(@user) %>
-<br />
-<br />
-<%#= link_to "Delete", delete_user_path(@user), method: "post", confirm: "Delete \"#{@user.name}?\"" %>
+<%= render partial: "edit_delete_actions", locals: { model_name: User, edit_path: edit_user_path, delete_path: delete_user_path, item: @user.username } %>
