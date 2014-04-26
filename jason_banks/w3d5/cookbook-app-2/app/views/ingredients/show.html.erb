@@ -3,15 +3,9 @@
   <p class="section-heading">Recipes</p>
   <ul>
     <% @ingredient.ingredients_recipes.each do |ingredients_recipe| %>
-      <li><%= link_to ingredients_recipe.recipe.name, recipe_path(ingredients_recipe.recipe) %> (<span class="italics"><%= ingredients_recipe.recipe.category.name if ingredients_recipe.recipe.category.name %></span>)</li>
-
+      <li><%= link_to ingredients_recipe.recipe.name, recipe_path(ingredients_recipe.recipe) %> <span class="italics"><%= "(#{ingredients_recipe.recipe.category.try(:name)})" %></span>
+      </li>
     <% end %>
   </ul>
 <% end %>
-<%= link_to "Add a Recipe", new_recipe_path %>
-<br />
-<br />
-<%= link_to "Edit", edit_ingredient_path(@ingredient) %>
-<br />
-<br />
-<%= link_to "Delete", delete_ingredient_path(@ingredient), method: "post", confirm: "Delete \"#{@ingredient.name}?\"" %>
+<%= render partial: "layouts/cud_actions", locals: { model_name: Ingredient, new_path: new_ingredient_path, edit_path: edit_ingredient_path, delete_path: delete_ingredient_path, item: @ingredient.name } %>
