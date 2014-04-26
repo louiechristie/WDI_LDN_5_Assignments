@@ -1,6 +1,10 @@
 <%= raw @recipe.category.try(:image) %>
 <br />
 <h2><%= @recipe.name %></h2>
+<% if @recipe.user %>
+<h4>By: <%= @recipe.user.try(:email) || "a former member" %></h4>
+<br />
+<% end %>
 <h4><%= @recipe.description %></h4>
 <% if @recipe.ingredients_recipes.any? %>
   <h4>Ingredients</h4>
