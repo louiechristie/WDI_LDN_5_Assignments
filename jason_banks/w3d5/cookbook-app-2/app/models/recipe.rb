@@ -3,6 +3,7 @@ class Recipe < ActiveRecord::Base
   validates :description, :instructions, :name, presence: true
 
   belongs_to :category
+  belongs_to :user
   has_many :ingredients_recipes
   has_many :ingredients, through: :ingredients_recipes
 
