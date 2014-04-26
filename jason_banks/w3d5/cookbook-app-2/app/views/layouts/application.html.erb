@@ -24,7 +24,7 @@
   </header>
   <ul>
     <% if current_user %>
-      <li>Welcome, <%= current_user.email %>! | 
+      <li>Welcome, <%= current_user.username %>! | 
         <%= link_to "Logout", session_path(0), method: :delete %></li>
     <% else %>
       <li><%= link_to "Login", new_session_path, class: active_menu_item(new_session_path) %> | 
@@ -33,7 +33,9 @@
     <li><%= link_to "Categories#index", categories_path, class: active_menu_item(categories_path) %></li>
     <li><%= link_to "Recipes#index", recipes_path, class: active_menu_item(recipes_path) %></li>
     <li><%= link_to "Ingredients#index", ingredients_path, class: active_menu_item(ingredients_path) %></li>
-    <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %></li>
+    <% if current_user %>
+      <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %></li>
+    <% end %>
   </ul>
   <br />
   <br />

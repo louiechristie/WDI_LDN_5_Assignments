@@ -3,7 +3,7 @@
 <h2><%= @recipe.name %></h2>
 <p><%= @recipe.description %></p>
 <% if @recipe.user %>
-<p>By: <%= @recipe.user.try(:email) || "a former member" %></p>
+<p>By: <%= @recipe.user.try(:username) || "a former member" %></p>
 <% end %>
 <% if @recipe.ingredients_recipes.any? %>
   <p class="section-heading">Ingredients</p>

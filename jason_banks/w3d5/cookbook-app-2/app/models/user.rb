@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :password, :password_confirmation, :role
+  attr_accessible :username, :password, :password_confirmation, :role
 
-  validates :email, presence: true
-  validates :email, uniqueness: true
+  validates :username, presence: true
+  validates :username, uniqueness: true
 
   has_many :recipes
 

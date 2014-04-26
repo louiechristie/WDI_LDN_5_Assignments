@@ -58,10 +58,10 @@ categories = Category.create([
   ])
 
 users = User.create([
-  {email: "jason", password: "jason", password_confirmation: "jason", role: :admin},
-  {email: "sam", password: "sam", password_confirmation: "sam", role: :member},
-  {email: "dean", password: "dean", password_confirmation: "dean", role: :member},
-  {email: "castiel", password: "castiel", password_confirmation: "castiel", role: :member}
+  {username: "jason", password: "jason", password_confirmation: "jason", role: :admin},
+  {username: "sam", password: "sam", password_confirmation: "sam", role: :member},
+  {username: "dean", password: "dean", password_confirmation: "dean", role: :member},
+  {username: "castiel", password: "castiel", password_confirmation: "castiel", role: :member}
   ])
 
 ingredients_recipes = IngredientsRecipe.create([

@@ -11,7 +11,7 @@ CookbookApp2::Application.routes.draw do
   resources :categories
   resources :recipes
   resources :ingredients
-  resources :users, only: [:index, :new, :create]
+  resources :users
   resources :sessions
 
   root to: "categories#home"

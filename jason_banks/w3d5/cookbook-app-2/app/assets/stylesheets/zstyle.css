@@ -146,7 +146,7 @@ svg {
   margin: 0 40px;
 }
 
-svg:hover {
+a svg:hover {
   fill: #5B80FF;
 }
 
@@ -159,7 +159,7 @@ td.users-index {
   width: 200px;
 }
 
-#email, #password {
+#username, #password {
   width: 315px;
 }
 
