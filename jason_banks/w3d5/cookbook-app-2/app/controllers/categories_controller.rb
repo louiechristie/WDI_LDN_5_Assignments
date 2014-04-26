@@ -1,12 +1,12 @@
 class CategoriesController < ApplicationController
   load_and_authorize_resource
 
+  before_filter :search_form
+
   def home
-    search_form
   end
 
   def index
-    search_form
   end
 
   def new

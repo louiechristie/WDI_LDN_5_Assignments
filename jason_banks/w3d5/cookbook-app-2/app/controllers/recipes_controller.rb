@@ -1,10 +1,9 @@
 class RecipesController < ApplicationController
  load_and_authorize_resource
+
+ before_filter :search_form
  
   def index
-    @q = Recipe.search(params[:q])
-    @recipes = @q.result
-    @model_name = "recipe"
   end
 
   def new
@@ -16,6 +15,8 @@ class RecipesController < ApplicationController
   end
 
   def create
+
+    raise
     
     if ir = params[:recipe][:ingredients_recipes_attributes]
       ir.delete_if do |key, value|
@@ -93,6 +94,12 @@ class RecipesController < ApplicationController
 
   def find_categories
     @categories = Category.find(:all, :select => "id, name")
+  end
+
+  def search_form
+    @q = Recipe.search(params[:q])
+    @recipes = @q.result
+    @model_name = "recipe"
   end
 
 end
