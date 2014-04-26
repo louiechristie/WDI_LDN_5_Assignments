@@ -1,20 +1,19 @@
 <%= raw @recipe.category.try(:image) %>
 <br />
 <h2><%= @recipe.name %></h2>
+<p><%= @recipe.description %></p>
 <% if @recipe.user %>
-<h4>By: <%= @recipe.user.try(:email) || "a former member" %></h4>
-<br />
+<p>By: <%= @recipe.user.try(:email) || "a former member" %></p>
 <% end %>
-<h4><%= @recipe.description %></h4>
 <% if @recipe.ingredients_recipes.any? %>
-  <h4>Ingredients</h4>
+  <p class="section-heading">Ingredients</p>
   <ul>
     <% @recipe.ingredients_recipes.each do |ir| %>
       <li><%= ir.ingredient.name %>: <%= ir.quantity %></li>
     <% end %>
   </ul>
 <% end %>
-<h4>Instructions</h4>
+<p class="section-heading">Instructions</p>
 <p><%= @recipe.instructions %></p>
 <br />
 <%= link_to "Edit", edit_recipe_path(@recipe) %>

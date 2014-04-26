@@ -22,9 +22,6 @@
             <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'month') %></li>
           </ul>
         </td>
-        <td>
-          <%= image_tag("#{recipe.image}") if recipe.image > "" %>
-        </td>
       </tr>
     <% end %>
   </tbody>

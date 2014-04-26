@@ -162,3 +162,7 @@ td.users-index {
 #email, #password {
   width: 315px;
 }
+
+.section-heading {
+  color: #5B80FF;
+}

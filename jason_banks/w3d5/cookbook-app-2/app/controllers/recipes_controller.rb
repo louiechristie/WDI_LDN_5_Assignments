@@ -15,8 +15,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-
-    raise
     
     if ir = params[:recipe][:ingredients_recipes_attributes]
       ir.delete_if do |key, value|
@@ -25,8 +23,9 @@ class RecipesController < ApplicationController
     end
 
     params[:recipe][:ingredients_recipes_attributes] = ir
-    @recipe = Recipe.new(params[:recipe])
+    params[:recipe][:user_id] = @current_user.id
 
+    @recipe = Recipe.new(params[:recipe])
 
     if @recipe.save
       redirect_to(@recipe, notice: "#{@recipe.name} has been successfully added.")
