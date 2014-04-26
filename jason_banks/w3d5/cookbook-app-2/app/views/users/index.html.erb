@@ -6,7 +6,7 @@
         <div class="section-heading">Username</div>
         <br />
       </td>
-      <% if current_user.role.to_s == "admin" %>
+        <% if can? :manage, User %>
         <td>
           <div class="section-heading">User ID</div>
           <br />
@@ -24,7 +24,7 @@
         <td>
           <%= link_to user.username, user_path(user) %>
         </td>
-        <% can? read: @users %>
+        <% if can? :manage, User %>
           <td>
             <%= user.id %>
           </td>

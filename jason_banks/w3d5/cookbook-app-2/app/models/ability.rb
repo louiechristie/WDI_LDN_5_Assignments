@@ -13,7 +13,8 @@ class Ability
         can :create, Recipe
         can [:update, :destroy], Recipe, user_id: user.id
         can [:update, :destroy], User, user_id: user.id
-      else !user.role?
+      else
+        can :home, Category
         can :read, :all
         cannot :read, User
         can :create, User
