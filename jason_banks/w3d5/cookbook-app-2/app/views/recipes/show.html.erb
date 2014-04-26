@@ -3,13 +3,13 @@
 <h2><%= @recipe.name %></h2>
 <p><%= @recipe.description %></p>
 <% if @recipe.user %>
-<p>By: <%= @recipe.user.try(:username) || "a former member" %></p>
+<p>By: <%= link_to @recipe.user.try(:username), user_path(@recipe.user) || "a former member" %></p>
 <% end %>
 <% if @recipe.ingredients_recipes.any? %>
   <p class="section-heading">Ingredients</p>
   <ul>
     <% @recipe.ingredients_recipes.each do |ir| %>
-      <li><%= ir.ingredient.name %>: <%= ir.quantity %></li>
+      <li><%= link_to "#{ir.ingredient.name}: ", ingredient_path(ir.ingredient) %><%= ir.quantity %></li>
     <% end %>
   </ul>
 <% end %>
