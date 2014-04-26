@@ -13,6 +13,7 @@ class Ability
         cannot :read, User
         can :create, User
         can :create, Recipe
+        can [:update, :destroy], Recipe, user_id: user.id
        end
     #
     # The first argument to `can` is the action you are giving the user 

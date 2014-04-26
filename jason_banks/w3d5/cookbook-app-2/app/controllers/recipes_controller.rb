@@ -59,13 +59,7 @@ class RecipesController < ApplicationController
       ir[key]["_destroy"] = true if ir[key]["quantity"].blank?
     end
 
-    
-    
-    
-
     params[:recipe][:ingredients_recipes_attributes] = ir    
-    params[:recipe][:name].capitalize!
-
 
     if @recipe.update_attributes(params[:recipe])
       redirect_to(@recipe, notice: "#{@recipe.name} has been successfully updated.")
@@ -80,7 +74,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.destroy(params[:id])
-    redirect_to(recipes_path)
+    redirect_to(recipes_path, notice: "Recipe has been deleted.")
   end
 
   def find_recipe
