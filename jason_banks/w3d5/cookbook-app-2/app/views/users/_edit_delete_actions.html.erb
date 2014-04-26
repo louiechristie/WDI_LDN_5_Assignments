@@ -1,6 +1,6 @@
 <% if can? :update, user %>
-  <%= link_to "Edit", edit_user_path %> | 
+  <%= link_to "Edit Profile", edit_user_path %> | 
 <% end %>
 <% if can? :destroy, user %>
-  <%= link_to "Remove", delete_user_path, method: "post", confirm: "Remove \"#{username}?\"" %>
+  <%= link_to "Remove Profile", delete_user_path, method: "post", confirm: "Remove \"#{username}?\"" %>
 <% end %>

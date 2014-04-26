@@ -11,6 +11,7 @@ class Ability
         can :home, Category
         can :read, :all
         can :create, Recipe
+        can :create, Ingredient
         can [:update, :destroy], Recipe, user_id: user.id
         can [:update, :destroy], User, id: user.id
       else
