@@ -1,6 +1,6 @@
-<% if can? :manage, model_name %>
-  <%= link_to "Edit", edit_path %> | 
+<% if can? :update, user %>
+  <%= link_to "Edit", edit_user_path %> | 
 <% end %>
-<% if can? :manage, model_name %>
-  <%= link_to "Delete", delete_path, method: "post", confirm: "Delete \"#{item}?\"" %>
+<% if can? :destroy, user %>
+  <%= link_to "Remove", delete_user_path, method: "post", confirm: "Remove \"#{username}?\"" %>
 <% end %>

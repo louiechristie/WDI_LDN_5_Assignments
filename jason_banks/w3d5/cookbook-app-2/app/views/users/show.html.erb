@@ -12,4 +12,4 @@
 <% end %>
 <br />
 <br />
-<%= render partial: "edit_delete_actions", locals: { model_name: User, edit_path: edit_user_path, delete_path: delete_user_path, item: @user.username } %>
+<%= render partial: "edit_delete_actions", locals: { user: @user, edit_user_path: edit_user_path, delete_user_path: delete_user_path, username: @user.username } %>

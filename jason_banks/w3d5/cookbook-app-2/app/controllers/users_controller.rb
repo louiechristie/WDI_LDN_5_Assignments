@@ -36,12 +36,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.destroy(params[:id])
-    if session[:current_user_id] = params[:id]
-      session[:current_user_id] = nil
+    if session[:current_user_id] == params[:id].to_i
+      User.destroy(params[:id])
       redirect_to(root_url, notice: "You have been removed.")
     else
-      redirect_to(users_path)
+      User.destroy(params[:id])
+      redirect_to(users_path, notice: "User has been removed.")
     end
   end
 
