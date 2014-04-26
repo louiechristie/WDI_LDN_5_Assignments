@@ -1,9 +1,9 @@
 <h2><%= @ingredient.name %></h2>
-<% if @ingredient.ingredients_recipes.any? %>
+<% if @ingredient.recipes.any? %>
   <p class="section-heading">Recipes</p>
   <ul>
-    <% @ingredient.ingredients_recipes.each do |ingredients_recipe| %>
-      <li><%= link_to ingredients_recipe.recipe.name, recipe_path(ingredients_recipe.recipe) %> <span class="italics"><%= "(#{ingredients_recipe.recipe.category.try(:name)})" %></span>
+    <% @ingredient.recipes.each do |recipe| %>
+      <li><%= link_to recipe.name, recipe_path(recipe) %> <span class="italics"><%= "(#{recipe.category.try(:name)})" %></span>
       </li>
     <% end %>
   </ul>
