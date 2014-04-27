@@ -1,10 +1,5 @@
 class ChangeIngredientsRecipesToModelTable < ActiveRecord::Migration
   def up
-    remove_column :ingredients_recipes, :id, :primary_key
-    remove_column :ingredients_recipes, :quantity, :string
-    remove_column :ingredients_recipes, :created_at, :datetime
-    remove_column :ingredients_recipes, :updated_at, :datetime
-    
     add_column :ingredients_recipes, :id, :primary_key
     add_column :ingredients_recipes, :quantity, :string
     add_column :ingredients_recipes, :created_at, :datetime
