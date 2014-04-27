@@ -1,0 +1,41 @@
+<%= form_for @movie do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <div class="field">
+    <%= f.label :movie_image %><br />
+    <%= f.file_field :movie_image %>
+  </div>
+  <p>
+    <%= f.label :director %><br />
+    <%= f.text_field :director %>
+  </p>
+  <p>
+    <%= f.label :actor %><br />
+    <%= f.text_area :actor %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </p>
+   <p>
+    <%= f.label :trailer_url %> &nbsp;(only input youtube id)<br />
+    <%= f.text_field :trailer_url %>
+  </p>
+  
+
+
+
+
+  <p><%= f.submit %></p>
+<% end %>

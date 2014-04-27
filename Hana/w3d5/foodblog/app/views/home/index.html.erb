@@ -1,0 +1,30 @@
+<h2>Home</h2>
+
+<h3><%= link_to "Add a recipe", new_recipe_path%></h3></br>
+
+<h3><%= link_to "Add a category", new_category_path%></h3></br>
+
+<% @categories.each do |category| %>
+<div>
+  <%=link_to category.name, category%></br>
+  <%=button_to 'Delete', delete_category_path(category), method: 'delete' %>
+</div>
+<%end%>
+
+<div id = 'ingredient'>
+  <h3>Ingredients</h3>
+  <h4><%= link_to "Add a new ingredient", new_ingredient_path%></br>
+  <% @ingredients.each do |ingredient|%>
+      <%=ingredient.name%></br>
+    <%end%>
+</div>
+
+
+
+
+
+
+
+
+
+

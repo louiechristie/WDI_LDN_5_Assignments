@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reci.pe</title>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+
+		<div class='title'>Reci.pe</div>
+
+		<nav>
+			<% if current_user %>
+				<div class='navigation'>
+					<%= link_to "Home", root_url %>
+					<%= link_to "Recipes", recipes_path %>
+					<%= link_to "Categories", categories_path %>
+					<%= link_to "Ingredients", ingredients_path %>
+				</div>
+				<div class='logout'>
+					<%= link_to "Logout", session_path(0), method: :delete %>
+				</div>
+				<div class='welcome'>
+					Hello, <%= current_user.email.capitalize %>
+				</div>
+					
+			<% else %>
+
+				<div class='navigation'><%= link_to "Home", root_url %>
+					<%= link_to "Signup", new_user_path %></div>
+					<%= render '/sessions/login' %>
+			<% end %>
+		</nav>
+
+		
+
+	</header>
+
+	
+
+	<div id='container'>
+		<% flash.each do |name, msg| %>
+			<% content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+	</div>
+
+	<div class='yield'>
+	<%= yield %>
+	</div>
+
+</body>
+</html>

@@ -12,6 +12,21 @@ body {
   font-size: 20px;
 }
 
+h1 {
+  font-family: 'Metrophobic', sans-serif;
+  font-size: 80px;
+  margin-right: 25px;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
 li {
   list-style: none;
   margin-left: -40px;
@@ -52,16 +67,7 @@ img {
   border: 3px solid #fff;
 }
 
-h1 {
-  font-family: 'Metrophobic', sans-serif;
-  font-size: 80px;
-  margin-right: 25px;
-  margin-bottom: 60px;
-}
 
-h2 {
-  font-size: 40px;
-}
 
 .bar {
   width: 960px;
@@ -82,8 +88,7 @@ h2 {
   background-color: #5B80FF;
   margin-left: 30px;
   margin-right: 6px;
-/*  display: inline-block;
-*/}
+}
 
 .button_to {
   background-color: #000;
@@ -113,4 +118,48 @@ h2 {
 
 .black {
   color: #000;
+}
+
+.flash {
+  margin-top: 100px;
+  margin-bottom: -50px;
+  color: #5B80FF
+}
+
+#error_explanation, #notice {
+  color: #5B80FF;
+}
+
+.active_menu_item {
+  color: #5B80FF;  
+}
+
+.category-index {
+  margin: 10px;
+  display: block;
+}
+
+svg {
+  fill: #fff;
+  height: 140px;
+  width: 120px;
+  margin-right: 40px;
+  margin-bottom: -40px;
+}
+
+svg:hover {
+  fill: #5B80FF;
+}
+
+table.users-index {
+  width: 600px;
+  table-layout: fixed;
+}
+
+td.users-index {
+  width: 200px;
+}
+
+#email, #password {
+  width: 315px;
 }

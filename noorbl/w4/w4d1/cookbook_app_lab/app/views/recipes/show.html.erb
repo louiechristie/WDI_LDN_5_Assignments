@@ -1,0 +1,6 @@
+<h1><%= @recipe.name %></h1>
+<h2><%= @recipe.serving_size %> * <%= @recipe.category_id %></h2>
+
+
+<%= button_to 'Delete Recipe', recipe_path(@recipe), method: 'delete', confirm: 'Are you sure?' %>
+<%= button_to 'Edit Recipe', edit_recipe_path(@recipe), method: 'get' %>

@@ -1,41 +1,81 @@
 class RecipesController < ApplicationController
+ load_and_authorize_resource
+ 
   def index
-    @recipes = Recipe.all
-    find_categories
+    @q = Recipe.search(params[:q])
+    @recipes = @q.result
+    @model_name = "recipe"
   end
 
   def new
     @recipe = Recipe.new
     find_categories
-    find_ingredients
+    Ingredient.all.each do |ingredient|
+      @recipe.ingredients_recipes.build(ingredient_id: ingredient.id)
+    end
   end
 
   def create
-    recipe = Recipe.create(params[:recipe])
-    flash_notice("Recipe") unless recipe.valid?
+    
+    if ir = params[:recipe][:ingredients_recipes_attributes]
+      ir.delete_if do |key, value|
+        ir[key]['quantity'].blank?
+      end
+    end
 
-    redirect_to(recipes_path)
+    params[:recipe][:ingredients_recipes_attributes] = ir
+    @recipe = Recipe.new(params[:recipe])
+
+
+    if @recipe.save
+      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully added.")
+    else
+      find_categories
+      Ingredient.all.each do |ingredient|
+        @recipe.ingredients_recipes.build(ingredient_id: ingredient.id) unless @recipe.ingredients_recipes.map(&:ingredient_id).include?(ingredient.id)
+      end
+      render action: 'new'
+    end
   end
 
   def show
     find_recipe
-    list_ingredients
   end
 
   def edit
     find_recipe
     find_categories
-    find_ingredients
+    Ingredient.all.each do |ingredient|
+      @recipe.ingredients_recipes.build(ingredient_id: ingredient.id) unless @recipe.ingredients_recipes.include?(ingredient.id)
+    end
+    
   end
 
   def update
-    recipe = find_recipe
-    params[:recipe][:ingredient_ids] ||= []
-    params[:recipe][:title].capitalize!
-    recipe.update_attributes(params[:recipe])
-    flash_notice("Recipe") unless recipe.valid?
+    find_recipe
 
-    redirect_to(recipes_path)
+    ir = params[:recipe][:ingredients_recipes_attributes]
+    ir.keys.each do |key|
+      ir[key]["_destroy"] = true if ir[key]["quantity"].blank?
+    end
+
+    
+    
+    
+
+    params[:recipe][:ingredients_recipes_attributes] = ir    
+    params[:recipe][:title].capitalize!
+
+
+    if @recipe.update_attributes(params[:recipe])
+      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully updated.")
+    else
+      find_categories
+      Ingredient.all.each do |ingredient|
+        @recipe.ingredients_recipes.build(ingredient_id: ingredient.id) unless @recipe.ingredients_recipes.map(&:ingredient_id).include?(ingredient.id)
+      end
+      render action: 'edit'
+    end
   end
 
   def destroy
@@ -49,10 +89,6 @@ class RecipesController < ApplicationController
 
   def find_ingredients
     @ingredients = Ingredient.all
-  end
-
-  def list_ingredients
-    @ingredients = Ingredient.where(id: @recipe.ingredient_ids).order(:name)
   end
 
   def find_categories

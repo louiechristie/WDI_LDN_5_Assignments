@@ -1,0 +1,27 @@
+<%= form_for @movie do |m| %>
+  <%= m.error_messages %>
+  <p>
+    <%= m.label :title %><br />
+    <%= m.text_field :title %>
+  </p>
+  <p>
+    <%= m.label :actors %><br />
+    <%= m.text_area :actors %>
+  </p>
+  <p>
+    <%= m.label :year %><br />
+    <%= m.collection_select :year, Category.all, :id, :name %>
+  </p>
+  <p>
+    <%= m.label :poster %><br />
+    <%= m.text_area :poster %>
+  </p>
+
+
+  <% end %>
+  </p>
+
+
+  <p><%= m.submit %></p>
+<% end %>
+

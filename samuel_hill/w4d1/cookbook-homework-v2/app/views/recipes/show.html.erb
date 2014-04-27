@@ -1,0 +1,16 @@
+<h1>View Recipe</h1>
+
+<h2><%= @recipe.name %></h2>
+
+<h3>Feeds:</h3><%= pluralize(@recipe.feeds, 'Person') %>
+
+<h3>Instructions:</h3><%= @recipe.instructions %>
+
+<h3>Category:</h3><%= @recipe.category.name %>
+
+<h3>Ingredients:</h3>
+
+<%= @recipe.ingredients.pluck(:name).to_sentence %>
+<%= @recipe.ingredients_recipes.pluck(:quantity).join(', ') %>
+
+

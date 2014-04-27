@@ -1,0 +1,18 @@
+<h1>Movie Reviews</h1>
+<%= button_to 'Add Movie', new_movie_path, method: :get %>
+
+<% @movies.each do |movie| %> 
+<div class = 'movie_thumbnail'>
+  <h2><%= movie.name %></h2>
+  <p>Added by: <%= movie.user.try(:email) if movie.user %></p>
+  <%= image_tag movie.image if movie.image %>
+  <p><%= movie.plot %></p>
+  <%= button_to 'See User Review', movie_path(movie.id), method: :get %>
+  <% if movie.user_id == current_user.try(:id)  %>
+    <%= button_to 'Edit', edit_movie_path(movie.id), method: :get  %>
+  <% end %>
+  <% if movie.user_id == current_user.try(:id)  %>
+    <%= button_to 'Delete', delete_movie_path(movie.id), method: :delete %>
+  <% end %>
+</div>
+<% end %>

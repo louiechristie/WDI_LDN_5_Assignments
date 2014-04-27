@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ingridient_id: 1
+  recipe_id: 1
+  quantity: 1
+  measure: MyString
+
+two:
+  ingridient_id: 1
+  recipe_id: 1
+  quantity: 1
+  measure: MyString

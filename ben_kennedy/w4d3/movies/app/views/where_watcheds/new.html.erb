@@ -1,0 +1,10 @@
+<h1>Add location</h1>
+
+<%=form_for @where_watched do |f| %>
+
+<%= render partial: 'form', locals: { f: f } %>
+
+    <p>
+      <%= f.submit 'Add Location!' %>
+    </p>
+    <% end %>

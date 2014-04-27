@@ -9,8 +9,17 @@ class IngredientsController < ApplicationController
 	end
 
 	def create
-		Ingredient.create(params[:ingredient])
-		redirect_to ingredients_path
+		@ingredient = Ingredient.create(params[:ingredient])
+		
+		respond_to do |format|
+      		if @ingredient.save
+		        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully created.' }
+		        format.json { render json: @ingredient, status: :created, location: @ingredient }
+     		 else
+			    format.html { render action: "new" }
+			    format.json { render json: @ingredient.errors, status: :unprocessable_entity }
+			 end
+    	end
 	end
 
 	def edit
@@ -20,7 +29,16 @@ class IngredientsController < ApplicationController
 	def update
 		@ingredient = Ingredient.find(params[:id])
       	@ingredient.update_attributes(params[:ingredient])
-      	redirect_to ingredients_path
+      	
+      	respond_to do |format|
+      		if @ingredient.update_attributes(params[:ingredient])
+		        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully updated.' }
+		        format.json { head :no_content }
+      		else
+		        format.html { render action: "edit" }
+		        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
+      		end
+    	end
     end
 
     def destroy
