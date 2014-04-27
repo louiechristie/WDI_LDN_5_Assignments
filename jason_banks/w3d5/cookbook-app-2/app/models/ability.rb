@@ -6,9 +6,12 @@ class Ability
     #
        user ||= User.new # guest user (not logged in)
        if user.role? :admin
-         can :manage, :all
+        can :manage, :all
+        can :home, Category
+        can :attribution, Category
        elsif user.role? :member
         can :home, Category
+        can :attribution, Category
         can :read, :all
         can :create, Recipe
         can :create, Ingredient
@@ -16,6 +19,7 @@ class Ability
         can [:update, :destroy], User, id: user.id
       else
         can :home, Category
+        can :attribution, Category
         can :read, :all
         cannot :read, User
         can :create, User

@@ -4,9 +4,11 @@ CookbookApp2::Application.routes.draw do
 
   get "sessions/new"
 
-  get "sessions/create" => "sessions#create", as: "create_session_path"
+  get "sessions/create" => "sessions#create", as: "create_session"
 
   get "sessions/destroy"
+
+  get "categories/attribution" => "categories#attribution", as: "attribution"
 
   resources :categories
   resources :recipes

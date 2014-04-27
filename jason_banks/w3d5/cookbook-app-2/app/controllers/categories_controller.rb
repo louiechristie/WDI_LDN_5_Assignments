@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
   def home
   end
 
+  def attribution
+  end
+
   def index
   end
 
