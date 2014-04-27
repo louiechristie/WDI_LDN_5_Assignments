@@ -3,10 +3,13 @@
 <% @categories.each do |category| %>
   <div class="category-index">
     <%= link_to raw(category.image), category_path(category) %>
+    <br />
     <%= link_to category.name, category_path(category) %>
   </div>
 <% end %>
-<div class="category-index small-svg" >
-  <%= link_to raw(new_category_svg), new_category_path %>
-  <%= link_to "New Category", new_category_path %>
-</div>
+<% if can? :create, Category %>
+  <div class="category-index small-svg" >
+    <%= link_to raw(new_category_svg), new_category_path %>
+    <%= link_to "New Category", new_category_path %>
+  </div>
+<% end %>

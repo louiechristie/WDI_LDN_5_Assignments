@@ -135,21 +135,23 @@ img {
 }
 
 .category-index {
+  width: 180px;
   margin: 20px;
   display: inline-block;
+  text-align: center;
 }
 
 svg {
   fill: #fff;
   height: 140px;
   width: 120px;
-  margin: 0 40px;
+  margin: 20px auto;
 }
 
 .small-svg svg {
   height: 90px;
   width: 90px;
-  margin: 0 40px;
+  margin: 40px;
 }
 
 a svg:hover {
