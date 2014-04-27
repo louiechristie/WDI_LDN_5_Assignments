@@ -1,1 +1,1 @@
-This is now being maintained at link:github.com/jasonklein/disastronomia.
+This is now being maintained at link:../disastronomia.
