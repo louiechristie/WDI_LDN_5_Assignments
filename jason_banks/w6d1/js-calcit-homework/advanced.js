@@ -26,7 +26,7 @@ function calcItBmiImperial() {
   var mass = parseFloat(document.getElementById("imperial_mass").value);
   var height = parseFloat(document.getElementById("imperial_height").value);
 
-  var maths = (mass / Math.pow(height,2)) * 703;
+  var maths = ((mass / Math.pow(height,2)) * 703).toFixed(2);
   var bmi = document.getElementById("bmi_imperial");
   bmi.innerHTML = " | BMI: ";
 
@@ -43,7 +43,7 @@ function calcItBmiMetric() {
   var mass = parseFloat(document.getElementById("metric_mass").value);
   var height = parseFloat(document.getElementById("metric_height").value);
 
-  var maths = mass / Math.pow((height / 100),2);
+  var maths = (mass / Math.pow((height / 100),2)).toFixed(2);
   var bmi = document.getElementById("bmi_metric");
   bmi.innerHTML = " | BMI: ";
 
@@ -55,3 +55,34 @@ function calcItBmiMetric() {
     bmi.innerHTML += maths
   }
 }
+
+function calcItTrip() {
+  var distance = parseFloat(document.getElementById("distance").value);
+  var mpg = parseFloat(document.getElementById("mpg").value);
+  var cost_per_gallon = parseFloat(document.getElementById("cost_per_gallon").value);
+  var mph = parseFloat(document.getElementById("mph").value);
+
+  var trip = document.getElementById("trip");
+
+  if (isNaN(distance) || isNaN(mpg) || isNaN(cost_per_gallon) || isNaN(mph)) {
+    trip.innerHTML = " | Cost and time could not be determined due to invalid inputs.";
+  } else if (distance <= 0 || mpg <= 0 || cost_per_gallon <= 0 || mph <= 0) {
+    trip.innerHTML = " | Must enter amounts greater than zero.";
+  } else {
+      if (mph > 60) {
+        mpg = mpg - (2 * (mph - 60));
+      }
+
+      var trip_time = (distance / mph).toFixed(2);
+      var trip_cost = ((distance / mpg) * cost_per_gallon).toFixed(2)
+
+      if (trip_cost <= 0) {
+        trip_cost = 0;
+        trip.innerHTML = " | Cost: " + trip_cost + " Time: " + trip_time + " hours. How economic!";
+      } else {
+        trip.innerHTML = " | Cost: " + trip_cost + " Time: " + trip_time + " hours. Have a lovely journey.";
+      }
+  }
+}
+
+
