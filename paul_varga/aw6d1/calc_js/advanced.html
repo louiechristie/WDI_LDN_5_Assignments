@@ -11,15 +11,43 @@
 
     <main>
 
-      <h1>Calc It</h1>
+        <h1>Calc It</h1>
 
-      <input type="text" placeholder="Principal" id="principal" />
-      <input type="text" placeholder="Interest Rate" id="yearlyInterestRate" />
-      <input type="text" placeholder="Repayments" id="numberOfYears" />
-      
-      <button onclick="mortgage()">Calc</button>
+        <input type="text" placeholder="Principal" id="principal" />
+        <input type="text" placeholder="Interest Rate" id="yearlyInterestRate" />
+        <input type="text" placeholder="Repayments" id="numberOfYears" />
+        
+        <button onclick="mortgage()">Calc</button>
 
-      <p id="repayment"></p> 
+        <p id="repayment"></p> 
+
+      <hr />
+
+        <input type="text" placeholder="Weight in kg" id="weight" />
+        <input type="text" placeholder="Height in m" id="height" />
+
+        <button onclick="bmiMetric()">Calc</button>
+
+        <input type="text" placeholder="Weight in lbs" id="weight2" />
+        <input type="text" placeholder="Height in inches" id="height2" />
+
+        <button onclick="bmiImperial()">Calc</button>
+
+        <p id="bmiM"></p> 
+        <p id="bmiI"></p> 
+
+      <hr />
+
+        <input type="text" placeholder="Distance" id="distance" />
+        <input type="text" placeholder="Fuel Efficiency" id="fuelEfficiency" />
+        <input type="text" placeholder="Cost per Gallon" id="costPerGallon" />
+        <input type="text" placeholder="Speed" id="speed" />
+
+        <button onclick="trip()">Calc</button>
+
+        <p id="tripResult"></p> 
+
+
     </main>
       <script src="main.js"></script>
   </body>
