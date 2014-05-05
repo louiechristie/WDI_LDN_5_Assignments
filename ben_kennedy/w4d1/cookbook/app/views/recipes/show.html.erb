@@ -1,0 +1,16 @@
+<h1><%= @recipe.name %></h1>
+
+  <table>
+    <thead>
+      <td>Quantity</td>
+      <td>Ingredient</td>
+    </thead>
+    <% @ingredients_recipes.each do |ingredients_recipe| %>
+    <tr>
+      <td><%= ingredients_recipe.quantity unless ingredients_recipe.quantity == "" %></td>
+      <td><%= ingredients_recipe.ingredient.name unless ingredients_recipe.quantity == "" %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  

@@ -13,11 +13,12 @@ module ApplicationHelper
     path = Rails.application.routes.recognize_path(link_path)
 
     controller = path[:controller]
-    action = path[:action]
 
     :active_menu_item if controller == params[:controller]
 
   end
 
-  
+  def correct_view_for_search?
+    true if params[:controller] != "sessions" && params[:controller] != "users" && !params[:id]
+  end
 end

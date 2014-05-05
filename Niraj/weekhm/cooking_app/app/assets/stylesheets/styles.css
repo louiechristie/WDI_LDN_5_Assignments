@@ -1,5 +1,8 @@
 body {
-  background-color: #687e8a;
+/*  background-image: url(landingpage.jpg);
+*/  background-repeat: no-repeat;
+background-color: #8c5a48;
+  width: 100%;
 }
 
 
@@ -9,3 +12,20 @@ body {
   display: inline-block;
   padding: 5px;
 }
+
+.login_form {
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.image {
+   content:url(/assets/ga.png);
+   margin-top: -150px;
+   margin-left: 400px;
+}​
+
+.ga {
+  font-size: 80px;
+  font-family: helvetica; 
+}​
+

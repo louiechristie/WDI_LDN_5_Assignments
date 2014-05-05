@@ -13,10 +13,15 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params[:recipe])
+    @recipe = Recipe.new(params[:recipe])
+    @recipe.save
     @ingredient = Ingredient.new
     @categories = Category.all
-    redirect_to(new_ingredient_path)
+    if @recipe.save
+      redirect_to(new_ingredient_path)
+    else 
+      render 'new'
+    end 
   end
 
   def edit
@@ -28,8 +33,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(params[:recipe])
     @recipe.save
-    redirect_to(recipes_path)
-
+    if @recipe.save
+      redirect_to(recipes_path)
+    else 
+      @categories = Category.all
+      render 'edit'
+    end
   end
 
   def destroy

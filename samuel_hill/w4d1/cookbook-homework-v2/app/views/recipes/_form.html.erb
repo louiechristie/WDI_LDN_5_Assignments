@@ -1,3 +1,4 @@
+<div class='form'>
 <%= form_for(@recipe) do |f| %>
 
 <% if @recipe.errors.any? %>
@@ -38,13 +39,13 @@
    <%= f.label :category_id, 'Category' %><br />
    <%= f.select :category_id, Category.all.map { |c| [[c.name].to_sentence, c.id] } %>
   </div>
-  
+ 
  <!-- <%= f.label :ingredients %><br />
   <% for ingredient in Ingredient.find(:all) %>
   <%= f.select :ingredients, Ingredient.all.map { |i| [[i.name].to_sentence, i.id] } %>
   <% end %> -->
 
-  <div class="field">
+  
   
   
   <div class="actions">
@@ -52,4 +53,6 @@
   </div>
 
   <% end %>
+
+</div>
   

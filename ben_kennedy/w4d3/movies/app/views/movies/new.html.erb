@@ -1,0 +1,10 @@
+<h1>Add movie</h1>
+
+<%=form_for @movie do |f| %>
+
+<%= render partial: 'form', locals: { f: f } %>
+
+    <p>
+      <%= f.submit 'Add Movie!' %>
+    </p>
+    <% end %>

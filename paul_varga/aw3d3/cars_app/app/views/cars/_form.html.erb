@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= c.label :engine_id %><br />
-    <%= c.select :engine_id, options_from_collection_for_select(Engine.all, :id, :name) %>
+    <%= c.select :engine_id, options_from_collection_for_select(Engine.all, :id, :engine_values) %>
   </div>
   <div class="actions">
     <%= c.submit %>

@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421103145) do
-
-  create_table "galaxies", :force => true do |t|
-    t.string   "name"
-    t.integer  "stars"
-    t.text     "shape"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140416131137) do
 
   create_table "planets", :force => true do |t|
     t.string   "name"

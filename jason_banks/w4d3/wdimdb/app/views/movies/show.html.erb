@@ -1,0 +1,69 @@
+<table>
+  <thead>
+    <tr>
+      <td>
+        <%= image_tag @movie.image %>
+      </td>
+      <td>
+        <h2><%= @movie.title %></h2>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="table_border_right ">
+        Your Rating:
+      </td>
+      <td>
+        <%= @movie.rating %>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_border_right">
+        How Viewed:
+      </td>
+      <td>
+        <%= @movie.how_viewed %>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_border_right">
+        Director:
+      </td>
+      <td>
+        <%= @movie.director %>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_border_right">
+        Actors:
+      </td>
+      <td>
+        <%= @movie.actors %>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_border_right">
+        Plot:
+      </td>
+      <td>
+        <%= @movie.plot %>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_border_right table_border_bottom">
+        Review:
+      </td>
+      <td class="table_border_bottom">
+        <%= @movie.review %>
+      </td>
+      <td>
+        &nbsp;
+      </td>
+      <td>
+        <%= button_to "Edit Movie", edit_movie_path(@movie), method: "get" %>
+        <%= button_to "Delete Movie", delete_movie_path(@movie), confirm: "Delete \"#{@movie.title}\"?" %>
+      </td>
+    </tr>
+  </tbody>
+</table>

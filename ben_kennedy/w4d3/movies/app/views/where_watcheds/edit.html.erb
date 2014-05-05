@@ -1,0 +1,10 @@
+<h1>Edit location</h1>
+
+  <%=form_for @where_watched do |f| %>
+
+<%= render partial: 'form', locals: { f: f } %>
+
+    <p>
+      <%= f.submit 'Update Location!' %>
+    </p>
+    <% end %>

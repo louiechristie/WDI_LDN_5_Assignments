@@ -9,8 +9,17 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		Category.create(params[:category])
-		redirect_to categories_path
+		@category = Category.create(params[:category])
+		
+		respond_to do |format|
+      		if @category.save
+		        format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
+		        format.json { render json: @category, status: :created, location: @category }
+     		 else
+			    format.html { render action: "new" }
+			    format.json { render json: @category.errors, status: :unprocessable_entity }
+			 end
+    	end
 	end
 
 	def edit
@@ -20,7 +29,16 @@ class CategoriesController < ApplicationController
 	def update
 		@category = Category.find(params[:id])
       	@category.update_attributes(params[:category])
-      	redirect_to categories_path
+      	
+      	respond_to do |format|
+      		if @category.update_attributes(params[:category])
+		        format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
+		        format.json { head :no_content }
+      		else
+		        format.html { render action: "edit" }
+		        format.json { render json: @category.errors, status: :unprocessable_entity }
+      		end
+    	end
     end
 
     def destroy

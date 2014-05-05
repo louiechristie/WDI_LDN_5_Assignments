@@ -1,0 +1,43 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.select :rating, options_for_select(10.downto(1)) %>
+  </div>
+  <div class="field">
+    <%= f.label :categories %><br />
+    <%= hidden_field_tag "movie[category_ids][]" %>
+    <% for category in Category.all %>
+    <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category) %> 
+    <%= category.name %>
+  <% end %>
+  </div>
+
+ <div class="field">
+    <%= f.label :actors %><br />
+    <%= hidden_field_tag "movie[actor_ids][]" %>
+    <% for actor in Actor.all %>
+    <%= check_box_tag "movie[actor_ids][]", actor.id, @movie.actors.include?(actor) %> 
+    <%= actor.name %>
+  <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

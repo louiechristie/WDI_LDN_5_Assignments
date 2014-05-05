@@ -1,7 +1,13 @@
 CookingApp::Application.routes.draw do
 
-   resources :recipes, path: '/index'
-  resources :categories
+
+    resources :recipes, path: '/index'
+    resources :categories
+
+    resources :users, only: [:index, :new, :create]
+
+    resources :sessions
+
   root to: 'categories#index'
 
   # The priority is based upon order of creation:
