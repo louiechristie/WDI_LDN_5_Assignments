@@ -46,16 +46,20 @@ function sum() {
   }
 }
 
-// function subtract() {
-//   var array = getTwoInputs();
-//   var result = array[0] - array[1];
+function subtract() {
+  var first = getFirstInput();
+  var second = getSecondInput();
+  var result = document.getElementById("result");
+  var maths = first - second;
 
-//    if (isNaN(result)) {
-//     alert (errorNAN);
-//   } else {
-//     alert ("The difference between " + array[0] + " and " + array[1] + " is " + result + ".");
-//   }
-// }
+  result.innerHTML = " | Result: ";
+
+  if (maths) {
+    result.innerHTML += maths;
+  } else {
+    result.innerHTML;
+  }
+}
 
 // function multiply() {
 //   var array = getTwoInputs();
