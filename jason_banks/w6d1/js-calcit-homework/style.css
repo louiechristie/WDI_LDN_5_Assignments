@@ -1,3 +1,7 @@
 p {
   display: inline;
 }
+
+.mortgage-field {
+  width: 160px;
+}

@@ -2,12 +2,13 @@
 <head>
   <title>Calc-It JS!</title>
   <script src="main.js"></script>
+  <script src="advanced.js"></script>
   <link rel="stylesheet" type="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Calc-It JS!</h1>
 
-  <input type="number" id="first">
+  <input type="number" id="first"/ >
   <select id="operation" onclick="update()">
     <option>+</option>
     <option>-</option>
@@ -15,14 +16,14 @@
     <option>&divide;</option>
     <option>sqrt</option>
   </select>
-  <input type="number" id="second">
+  <input type="number" id="second" />
   <button onclick="calcIt()">Calc It!</button><p id="result"></p>
 
   <h2>Mortgage</h2>
-  <input type="number" id="principal" placeholder="Principal">
-  <input type="number" id="interest" placeholder="Interest (no % sign)">
-  <input type="number" id="number" placeholder="Number of Monthly Payments">
-  <button onclick="calcItMortgage()">Calc It!</button><p id="result"></p>
+  <input type="number" id="principal" placeholder="Principal" />
+  <input type="number" id="apr" placeholder="Interest (without % sign)" class="mortgage-field" />
+  <input type="number" id="number" placeholder="No. of Monthly Payments" class="mortgage-field" />
+  <button onclick="calcItMortgage()">Calc It!</button><p id="mortgage"></p>
 
   
 
