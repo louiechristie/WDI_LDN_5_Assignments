@@ -8,6 +8,7 @@
 <body>
   <h1>Calc-It JS!</h1>
 
+  <h2>Basic</h2>
   <input type="number" id="first"/ >
   <select id="operation" onclick="update()">
     <option>+</option>
@@ -25,6 +26,17 @@
   <input type="number" id="number" placeholder="No. of Monthly Payments" class="mortgage-field" />
   <button onclick="calcItMortgage()">Calc It!</button><p id="mortgage"></p>
 
+  <h2>Body Mass Index</h2>
+  <h3>Imperial</h3>
+  <input type="number" id="imperial_mass" placeholder="Mass (lbs)" />
+  <input type="number" id="imperial_height" placeholder="Height (in)" />
+  <button onclick="calcItBmiImperial()">Calc It!</button><p id="bmi_imperial"></p>
+  <h3>Metric</h3>
+  <input type="number" id="metric_mass" placeholder="Mass (kg)" />
+  <input type="number" id="metric_height" placeholder="Height (cm)" />
+  <button onclick="calcItBmiMetric()">Calc It!</button><p id="bmi_metric"></p>
+
+  
   
 
 </body>
