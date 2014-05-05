@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calc Lab Basic</title>
+  </head>
+
+  <body>
+
+    <a href="index.html">Basic</a>
+    <a href="advanced.html">Advanced</a>
+
+    <main>
+      <h1>Calc It</h1>
+
+      <input type="text" placeholder="Enter 1st number" id="first_number" />
+
+      <select id="operations" >
+        <option onclick="add">add</option>
+        <option onclick="subtract">subtract</option>
+        <option onclick="multiply">multiply</option>
+        <option onclick="divide">divide</option>
+        <option onclick="squareRoot">squareRoot</option>
+      </select> 
+
+      <input type="text" placeholder="Enter 2nd number" id="second_number" />
+
+      <button onclick="calc()">Calc</button>
+
+      <p id="result"></p>
+    </main>
+      <script src="main.js"></script>
+  </body>
+</html>
