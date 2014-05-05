@@ -1,67 +1,93 @@
-function getTwoInputs() {
-  array = [];
-  var first = parseInt(prompt("Please enter first number."));
-  var second = parseInt(prompt("Please enter second number."));
-  array.push(first);
-  array.push(second);
-  return array;
+function calcIt() {
+  var y = document.getElementById("operation").selectedIndex;
+  var x = document.getElementById("operation").options;
+
+  switch (x[y].text) {
+    case "+":
+      sum();
+      break;
+    case "-":
+      subtract();
+      break;
+    case "&times;":
+      multiply();
+      break;
+    case "&divide":
+      divide();
+      break;
+    default:
+      break;
+  }
+
 }
 
-var errorNAN = "Not all of the inputs were numbers. Please try again.";
+function getFirstInput() {
+  var first = parseInt(document.getElementById("first").value);
+  return first;
+}
 
-function add() {
-  var array = getTwoInputs();
-  var result = array[0] + array[1];
+function getSecondInput () {
+  var second = parseInt(document.getElementById("second").value);
+  return second;
+}
 
-  if (isNaN(result)) {
-    alert (errorNAN);
+function sum() {
+  var first = getFirstInput();
+  var second = getSecondInput();
+  var result = document.getElementById("result");
+  var maths = first + second;
+
+  result.innerHTML = " | Result: ";
+
+  if (maths) {
+    result.innerHTML += maths;
   } else {
-    alert ("The sum of " + array[0] + " and " + array[1] + " is " + result + ".");
+    result.innerHTML;
   }
 }
 
-function subtract() {
-  var array = getTwoInputs();
-  var result = array[0] - array[1];
+// function subtract() {
+//   var array = getTwoInputs();
+//   var result = array[0] - array[1];
 
-   if (isNaN(result)) {
-    alert (errorNAN);
-  } else {
-    alert ("The difference between " + array[0] + " and " + array[1] + " is " + result + ".");
-  }
-}
+//    if (isNaN(result)) {
+//     alert (errorNAN);
+//   } else {
+//     alert ("The difference between " + array[0] + " and " + array[1] + " is " + result + ".");
+//   }
+// }
 
-function multiply() {
-  var array = getTwoInputs();
-  var result = array[0] * array[1];
+// function multiply() {
+//   var array = getTwoInputs();
+//   var result = array[0] * array[1];
 
-  if (isNaN(result)) {
-    alert (errorNAN);
-  } else {
-    alert ("The product of " + array[0] + " and " + array[1] + " is " + result + ".");
-  }
-}
+//   if (isNaN(result)) {
+//     alert (errorNAN);
+//   } else {
+//     alert ("The product of " + array[0] + " and " + array[1] + " is " + result + ".");
+//   }
+// }
 
-function divide() {
-  var array = getTwoInputs();
-  var result = array[0] / array[1];
+// function divide() {
+//   var array = getTwoInputs();
+//   var result = array[0] / array[1];
 
-  if (array[1] == 0) {
-    alert ("Cannot divide by 0.");
-  } else if (isNaN(result)) {
-    alert (errorNAN);
-  } else {
-    alert ("The quotient of " + array[0] + " and " + array[1] + " is " + result + ".");
-  }
-}
+//   if (array[1] == 0) {
+//     alert ("Cannot divide by 0.");
+//   } else if (isNaN(result)) {
+//     alert (errorNAN);
+//   } else {
+//     alert ("The quotient of " + array[0] + " and " + array[1] + " is " + result + ".");
+//   }
+// }
 
-function squareRoot() {
-  var first = parseInt(prompt("Please enter number."));
-  var result = Math.sqrt(first);
+// function squareRoot() {
+//   var first = parseInt(prompt("Please enter number."));
+//   var result = Math.sqrt(first);
 
-  if (first < 0) {
-    alert ("Cannot find the square of a number less than 0.")
-  } else {
-    alert ("The square of " + first + " is " + result + ".");
-  }
-}
+//   if (first < 0) {
+//     alert ("Cannot find the square of a number less than 0.")
+//   } else {
+//     alert ("The square of " + first + " is " + result + ".");
+//   }
+// }
