@@ -23,20 +23,44 @@ function calculate() {
     root();
     break;
   default:
-    alert("Select an operation.");
+    result.innerHTML = "Select an operation.";
   }
-
-
 }
 
-function add(){
+function has_bad_input() {
+  var first_number = document.getElementById('first_number');
+  var first_number = document.getElementById('first_number');
+  var result = document.getElementById('result');
+
+  if (isNaN(first_number.value) || isNaN(second_number.value)) {
+
+    result.innerHTML = "Errors:"
+
+
+    if (isNaN(first_number.value)) {
+      result.innerHTML = result.innerHTML + " First number '" + first_number.value + "' is not a number."
+    }
+    if (isNaN(second_number.value)) {
+      result.innerHTML = result.innerHTML + " Second number '" + second_number.value + "' is not a number."
+    }
+
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+function add() {
 
   var first_number = document.getElementById('first_number');
   var first_number = document.getElementById('first_number');
   var result = document.getElementById('result');
 
   
-  result.innerHTML = parseInt(first_number.value) + parseInt(second_number.value);
+  if (!has_bad_input()) { 
+    result.innerHTML = parseInt(first_number.value) + parseInt(second_number.value);
+  }
 
 }
 
@@ -47,7 +71,9 @@ function subtract(){
   var result = document.getElementById('result');
 
   
-  result.innerHTML = parseInt(first_number.value) - parseInt(second_number.value);
+  if (!has_bad_input()) { 
+    result.innerHTML = parseInt(first_number.value) - parseInt(second_number.value);
+  }
 
 }
 
@@ -58,7 +84,9 @@ function divide(){
   var result = document.getElementById('result');
 
   
-  result.innerHTML = parseInt(first_number.value) / parseInt(second_number.value);
+  if (!has_bad_input()) { 
+    result.innerHTML = parseInt(first_number.value) / parseInt(second_number.value);
+  }
 
 }
 
@@ -69,7 +97,9 @@ function multiply(){
   var result = document.getElementById('result');
 
   
-  result.innerHTML = parseInt(first_number.value) * parseInt(second_number.value);
+  if (!has_bad_input()) { 
+    result.innerHTML = parseInt(first_number.value) * parseInt(second_number.value);
+  }
 
 }
 
