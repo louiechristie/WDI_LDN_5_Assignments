@@ -22,8 +22,8 @@
 
   <h2>Mortgage</h2>
   <input type="number" id="principal" placeholder="Principal" />
-  <input type="number" id="apr" placeholder="Interest (without % sign)" class="mortgage-field" />
-  <input type="number" id="number" placeholder="No. of Monthly Payments" class="mortgage-field" />
+  <input type="number" id="apr" placeholder="Interest (without % sign)" class="placeholder-field" />
+  <input type="number" id="number" placeholder="No. of Monthly Payments" class="placeholder-field" />
   <button onclick="calcItMortgage()">Calc It!</button><p id="mortgage"></p>
 
   <h2>Body Mass Index</h2>
@@ -35,6 +35,14 @@
   <input type="number" id="metric_mass" placeholder="Mass (kg)" />
   <input type="number" id="metric_height" placeholder="Height (cm)" />
   <button onclick="calcItBmiMetric()">Calc It!</button><p id="bmi_metric"></p>
+
+  <h2>Trip</h2>
+  <input type="number" id="distance" placeholder="Distance" class="placeholder-field" />
+  <input type="number" id="mpg" placeholder="MPG" class="placeholder-field" />
+  <br />
+  <input type="number" id="cost" placeholder="Cost per Gallon"class="placeholder-field" />
+  <input type="number" id="mph" placeholder="MPH" class="placeholder-field" />
+  <button onclick="calcItTrip()">Calc It!</button><p id="trip"></p>
 
   
   

@@ -55,25 +55,3 @@ function calcItBmiMetric() {
     bmi.innerHTML += maths
   }
 }
-
-//   var metric_mass = parseFloat(document.getElementById("metric_mass").value);
-//   var metric_height = parseFloat(document.getElementById("metric_height").value);
-
-
-
-
-
-//   @imperial_mass = params[:imperial_mass].to_f
-//   imperial_height = params[:imperial_height].to_f
-
-//   @metric_mass = params[:metric_mass].to_f
-//   metric_height = params[:metric_height].to_f
-
-//   if params[:metric_mass] && params[:imperial_mass].empty?
-//     @metric_result = @metric_mass / (metric_height**2)
-//   elsif params[:imperial_mass] && params[:metric_mass].empty?
-//     @imperial_result = (@imperial_mass / (imperial_height**2)) * 703
-//   else
-//     @nothing = true
-//   end
-// }
