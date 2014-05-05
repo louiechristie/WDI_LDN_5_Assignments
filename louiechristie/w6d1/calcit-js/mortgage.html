@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Calcit-JS</title>
+  <script src="mortgage.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip</a></li>
+      <li><a href="mortgage.html">Mortgage</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="birthday.html">Birthday</a></li>
+    </ul>
+  </nav>
+
+  <h1>Calcit-JS</h1>
+
+
+  </header>
+
+  <main>
+
+  <h2>Calculate Mortgage Payments</h2>
+
+  <p>Principal: &pound;<input type='text' id='principal'></p>
+  <p>Yearly interest rate in %: <input type='text' id='interest_rate'></p>
+  <p>Number of monthly payments: <input type='text' id='number_of_payments'></p>
+  <button onclick="calculate()">Calculate</button>
+
+  
+  <h2>Monthly Mortgage Calculation</h2>
+  <p>Principal: &pound;<span id="principal_out"></span> </p>
+  <p>Yearly interest rate in %: <span id="interest_rate_out"></span></p>
+  <p>Number of monthly payments: <span id="number_of_payments_out"></span></p>
+
+  <p>The result is &pound;<span id="result"></span> per month</p>
+
+  </main>
+
+</body>
+</html>
