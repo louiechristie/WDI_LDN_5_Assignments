@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController 
+def editclass RecipesController < ApplicationController 
 
   def index
     @categories = Category.all
@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
     @q = Recipe.search(params[:q])
     @recipes = @q.result(distinct: true)
+    
   end
 
   def show
