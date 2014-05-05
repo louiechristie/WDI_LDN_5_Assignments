@@ -1,26 +1,29 @@
-function getFirstInput() {
+function getTwoInputs() {
+  array = [];
   var first = parseInt(prompt("Please enter first number."));
-  return first;
-}
-
-function getSecondInput() {
   var second = parseInt(prompt("Please enter second number."));
-  return second;
+  array.push(first);
+  array.push(second);
+  return array;
 }
 
 function add() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+  var array = getTwoInputs();
+  var result = array[0] + array[1];
 
-  var result = first + second;
-  alert ("The sum of " + first + " and " + second + " is " + result + ".");
+  alert ("The sum of " + array[0] + " and " + array[1] + " is " + result + ".");
 }
 
 function subtract() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+  var array = getTwoInputs();
+  var result = array[0] - array[1];
 
-  var result = first - second;
-  alert ("The difference between " + first + " and " + second + " is " + result + ".");
+  alert ("The difference between " + array[0] + " and " + array[1] + " is " + result + ".");
+}
 
+function multiply() {
+  var array = getTwoInputs();
+  var result = array[0] * array[1];
+
+  alert ("The product of " + array[0] + " and " + array[1] + " is " + result + ".");
 }
