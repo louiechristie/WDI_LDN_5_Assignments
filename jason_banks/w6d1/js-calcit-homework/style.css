@@ -5,3 +5,8 @@ p {
 .placeholder-field {
   width: 160px;
 }
+
+body {
+  width: 600px;
+  margin: 0 auto 200px auto;
+}
