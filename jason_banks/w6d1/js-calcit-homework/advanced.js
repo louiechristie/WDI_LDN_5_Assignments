@@ -89,10 +89,15 @@ function calcItTooMany() {
   var too_many = parseInt(document.getElementById("too_many").value);
   array = ["This isn't too many?", "This may be too many.", "Surely this is too many.", "You're right; this does not feel like too many.", "Maybe you really meant this, because this feels like too many.", "Whoops, no, this is too many.", "This is surely very nearly too many.", "Wooo, doggie, this has got to be too many.", "Well, this isn't nearly too many."]
 
-  for (var i = 0; i < too_many-1; i++) {
-    alert(array[Math.floor((Math.random() * array.length))]);
-  }
-  alert("Yep, too many.");
+  if (isNaN(too_many) || too_many <= 0) {
+    var response = document.getElementById("response");
+    response.innerHTML = "| Please enter a number greater than zero.";
+  } else {
+      for (var i = 0; i < too_many-1; i++) {
+        alert(array[Math.floor((Math.random() * array.length))]);
+      }
+      alert("Yep, too many.");
+    }
 }
 
 
