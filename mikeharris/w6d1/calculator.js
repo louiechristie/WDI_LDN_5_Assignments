@@ -9,6 +9,7 @@ function sqrt_hide(){
   };
 
 
+
 function calculate(){
     var numb1 = Number(document.getElementById('numb1').value);
     var numb2 = Number(document.getElementById('numb2').value);
@@ -34,9 +35,59 @@ function calculate(){
               the_answer = Math.sqrt(numb1);
               break;
               };
-    answer.innerHTML = the_answer;
+
+            if(the_answer) {    
+                answer.innerHTML = the_answer;
+              };
 
         };
       
 
+function bmi(){
+    var weight= Number(document.getElementById('weight').value);
+    var height= Number(document.getElementById('height').value);
+     var units= document.getElementById('units').value;
+    var factor = 1   
 
+
+  if(units == "imperial") {
+    var factor = 703;
+    };
+  
+      var BMIresult = (weight / (height * height * factor));
+      
+       document.getElementById('bmiresult').innerHTML = "Your BMI is :" + BMIresult; 
+}
+
+
+function mort() {
+  var mort_prin = Number(document.getElementById('mort_prin').value);
+  var mort_rate = Number(document.getElementById('mort_rate').value);
+  var mort_years = Number(document.getElementById('mort_years').value);
+  
+    mort_rate = mort_rate /1200;
+    var mort_nos_payments = mort_years * 12;
+
+
+    var mort_monthly_payment = (mort_prin * mort_rate  * (Math.pow((1 + mort_rate),mort_nos_payments)) / (Math.pow((1 + mort_rate),mort_nos_payments) - 1)  );
+    document.getElementById('mort_result').innerHTML = "monthly payments: " + mort_monthly_payment;
+  
+
+}
+
+
+function trip() {
+    var trip_dist=Number(document.getElementById('trip_dist').value);
+    var trip_mpg=Number(document.getElementById('trip_mpg').value);
+    var trip_mpgcost=Number(document.getElementById('trip_mpgcost').value);
+    var trip_speed = Number(document.getElementById('trip_speed').value);
+
+    trip_mpg = trip_mpg - Math.max(0, trip_speed - 60) * 2;
+
+    var trip_time = (trip_dist / trip_speed);
+    var trip_cost = (trip_dist / trip_mpg * trip_mpgcost);
+
+    document.getElementById('trip_result').innerHTML = "The trip will take: " + trip_time + " and cost " + trip_cost;
+
+
+}

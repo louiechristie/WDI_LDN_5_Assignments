@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>Javascript Calculator</h1>
+  <h2>Basic calculator</h2>
  <input type="text" id="numb1" />
  <select name="operator" id="operator" onchange="sqrt_hide()">
   <option value="+">+</option>
@@ -19,23 +20,103 @@
  <input type="text" id="numb2" />
  <button onclick="calculate()">Calculate</button>
  <div id="answer"></div>
-<!-- 
-  <div class="numb">1</div>
-  <div class="numb">2</div>
-  <div class="numb">3</div>
-  <div class="numb">4</div>
-  <div class="numb">5</div>
-  <div class="numb">6</div>
-  <div class="numb">7</div>
-  <div class="numb">8</div>
-  <div class="numb">9</div>
-  <div class="operator">+</div>
-  <div class="operator">-</div>
-  <div class="operator">*</div>
-  <div class="operator">/</div>
-  <div class="operator">SQRT</div>
-  <div class="equals">=</div>
- -->  
+
+
+<h2>BMI Calculator</h2>
+
+    <table>
+      <tr>
+        <td>Metric</td><td><input type="radio" id="units" value="metric" checked></td>
+      </tr>
+      <tr>
+        <td>Imperial</td><td><input type="radio" id="units" value="imperial"></td>
+      </tr>
+      <tr>
+        <td>Weight (kg or lb)</td><td><input type='text' id='weight'></td>
+      </tr>
+      <tr>
+        <td>Height (m or in)</td><td><input type='text' id='height'></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button onclick="bmi()">Submit</button></td>
+      </tr>
+    </table>  
+
+<section>
+    <h3>Your BMI</h3>
+
+    <div id="bmiresult"></div>
+  
+
+  </section> 
+  
+  <h2>Mortgage Calculator</h2>
+
+ 
+    <table>
+      <tr>
+        <td>Input the mortgage principal</td><td><input type='text' id='mort_prin'></td>
+      </tr>
+      <tr>
+        <td>Yearly interest rate (7% = 7)</td><td><input type='text' id='mort_rate'></td>
+      </tr>
+      <tr>
+        <td>Input number of years</td><td><input type='text' id='mort_years'></td>
+      </tr>
+      <tr>
+        <td></td><td><button onclick="mort()">Submit</button></td>
+      </tr>
+    </table>  
+</form>
+
+  <section>
+    <h3>Your Mortgage Repayments</h3>
+
+    <div id="mort_result">
+      
+  </div>  
+
+  </section>
+
+  <h2>Trip Calculator</h2>
+
+    <table>
+      <tr>
+        <td>How far will you drive? (miles)</td><td><input type='text' id='trip_dist'></td>
+      </tr>
+      <tr>
+        <td>What is the MPG of the car?</td><td><input type='text' id='trip_mpg'></td>
+      </tr>
+      <tr>
+        <td>What is the cost of a gallon of fuel?</td><td><input type='text' id='trip_mpgcost'></td>
+      </tr>
+      <tr>
+        <td>How fast will you drive? (mph)</td><td><input type='text'id='trip_speed'></td>
+      </tr>
+      <tr>
+        <td></td><td><button onclick="trip()">Submit</button></td>
+      </tr>
+    </table>  
+
+
+  <section>
+    <h3>Trip Calculation</h3>
+
+    <div id="trip_result">
+      
+
+</div>
+  
+
+  </section>
+
+
+
+
+
+
+
 
 
 </body>
