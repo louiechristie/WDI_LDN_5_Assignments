@@ -1,0 +1,77 @@
+<!DOCTYPE>
+
+<html>
+<head>
+  <title>Javascript Calculator</title>
+</head>
+<body>
+
+  <h1> Basic calculator </h1>
+
+    <input type="number" placeholder="Enter first number..." id="numberOne" onkeydown="return isNumber(event);"  />
+    <input type="number" placeholder="Enter second number..." id="numberTwo" onkeydown="return isNumber(event);" />
+
+  <div class="actions">
+
+      <select id="operator">
+         <option value="Choose"> --- </option>
+         <option value="qdd" onclick="add()">Add it!</option> 
+         <option value="subtract"onclick="subtract()">Subtract it!</option>
+         <option value="multiply" onclick="multiply()">Multiply it!</option>
+         <option value="divide"onclick="divide()">Divide it!</option>
+         <option value="squareroot" onclick="squareRoot()">Square root it!</option>
+      </select>
+
+  </div>
+
+    <button value="calculate" onclick="return operator()">Calculate!</button>
+
+    <p id="result"></p>
+
+
+
+
+
+
+
+
+<h1> Mortgage Calculator </h1>
+
+
+  <input type="number" placeholder="Enter loan amount" id="loan_amount" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="Yearly interest rate" id="interest_rate" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="Number of payments" id="number_of_payments" onkeydown="return isNumber(event);"  />
+
+  <button onclick="mortgage()"> Calculate </button>
+
+    <p id="mortgage_result"></p>
+
+
+
+<h1> BMI Calculator </h1>
+
+  <input type="number" placeholder="Your Weight" id="weight" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder= "Your height" id="height" onkeydown="return isNumber(event);"  />
+
+  <button onclick="calculateBMI()"> Calculate </button>
+
+<p id="BMI"> </p>
+
+
+<h1> Trip Calculator </h1>
+
+  <input type="number" placeholder="Distance" id="distance" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="mpg" id="mpg" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="Average speed" id="speed" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="Fuel price per gallon" id="cost" onkeydown="return isNumber(event);"  />
+
+  <button onclick="tripCalculator()"> Calculate </button>
+
+<p id="trip"> </p>
+
+
+    <script src="main.js"> </script>  
+</body>
+</html>
+
+
