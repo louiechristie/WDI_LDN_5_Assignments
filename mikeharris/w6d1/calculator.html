@@ -3,13 +3,23 @@
 <head>
 
   <title>Calculator</title>
-  <link rel="stylesheet" href="calcualtor.css"  type="text/css" />
+  <link rel="stylesheet" href="calculator.css"  type="text/css" />
   <script src="calculator.js"></script> 
 </head>
 <body>
   <h1>Javascript Calculator</h1>
  <input type="text" id="numb1" />
+ <select name="operator" id="operator" onchange="sqrt_hide()">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+  <option value="sqrt">sqrt</option>
+</select>
  <input type="text" id="numb2" />
+ <button onclick="calculate()">Calculate</button>
+ <div id="answer"></div>
+<!-- 
   <div class="numb">1</div>
   <div class="numb">2</div>
   <div class="numb">3</div>
@@ -25,7 +35,7 @@
   <div class="operator">/</div>
   <div class="operator">SQRT</div>
   <div class="equals">=</div>
-  <div id="answer"></div>
+ -->  
 
 
 </body>
