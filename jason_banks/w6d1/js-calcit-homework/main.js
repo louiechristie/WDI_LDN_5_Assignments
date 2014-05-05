@@ -1,3 +1,16 @@
+// function update() {
+//   var y = document.getElementById("operation").selectedIndex;
+//   var x = document.getElementById("operation").options;
+//   var second = document.getElementById("second");
+
+//   switch (unescape(x[y].text)) {
+//     case "\u221A":
+//       second.setAttribute("disabled", true);
+//       break
+//     default:
+//       break;
+// }
+
 function calcIt() {
   var y = document.getElementById("operation").selectedIndex;
   var x = document.getElementById("operation").options;
@@ -15,10 +28,12 @@ function calcIt() {
     case "\xF7":
       divide();
       break;
+    case "sqrt":
+      squareRoot();
+      break
     default:
       break;
   }
-
 }
 
 function getFirstInput() {
@@ -101,13 +116,20 @@ function divide() {
   }
 }
 
-// function squareRoot() {
-//   var first = parseInt(prompt("Please enter number."));
-//   var result = Math.sqrt(first);
+function squareRoot() {
+  var first = getFirstInput();
+  var result = document.getElementById("result");
+  var maths = Math.sqrt(first);
 
-//   if (first < 0) {
-//     alert ("Cannot find the square of a number less than 0.")
-//   } else {
-//     alert ("The square of " + first + " is " + result + ".");
-//   }
-// }
+  result.innerHTML = " | Result: ";
+
+  if (first < 0) {
+    result.innerHTML += "cannot find the square of a negative number.";
+  } else if (maths) {
+    result.innerHTML += maths;
+  } else if (maths == 0) {
+    result.innerHTML += "0";
+  } else if (isNaN(first)) {
+    result.innerHTML += "could not be determined due to invalid inputs. ";
+  }
+}
