@@ -18,27 +18,25 @@ function operator() {
       answer;
 
 
+  if (numberTwo !== 0) {
+    if (operator == "add") {
+         answer = numberOne + numberTwo;
+    } else if (operator == "subtract") { 
+         answer = numberOne - numberTwo;
+    } else if (operator == "divide") {
+         answer = numberOne / numberTwo;
+    } else if (operator == "multiply") {
+          answer = numberOne * numberTwo;
+    } else if (operator == "squareroot") {
+          answer = Math.sqrt(numberOne) 
+    }
 
-  if (operator == "add") {
-       answer = numberOne + numberTwo;
-  } else if (operator == "subtract") { 
-       answer = numberOne - numberTwo;
-  } else if (operator == "divide") {
-       answer = numberOne / numberTwo;
-  } else if (operator == "multiply") {
-        answer = numberOne * numberTwo;
-  } else if (operator == "squareroot") {
-        answer = Math.sqrt(numberOne) 
+    printResult('result', answer);
+  } else {
+    printResult('result', '0');
   }
-
-  printResult('result', answer);
+  
 };
- 
-
-
-
-
-
 
 function printResult(elementId, message) {
   document.getElementById(elementId).innerText = message;
@@ -91,5 +89,21 @@ document.getElementById('operator').onchange = function() {
     numberTwo.style.display = ""; 
   } 
 };
+
+
+function validate(type) {
+  if (document.feet_or_meters.values.value=='') {
+    return false;
+  } else {
+    if(type=="to_feet") {
+      var res=3.2808*document.feet_or_meters.values.value;
+          var unit=" feet";
+    } else {
+      var res=0.3048*document.feet_or_meters.values.value;
+      var unit=" meter";
+    }
+    document.getElementById("result_for_feet_to_meters").innerHTML=res.toFixed(2) + unit;
+  }
+}
 
 

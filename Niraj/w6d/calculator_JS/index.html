@@ -29,12 +29,6 @@
     <p id="result"></p>
 
 
-
-
-
-
-
-
 <h1> Mortgage Calculator </h1>
 
 
@@ -68,6 +62,20 @@
   <button onclick="tripCalculator()"> Calculate </button>
 
 <p id="trip"> </p>
+
+
+<h1> Feet or Meters Calculator </h1>
+
+
+<form name='feet_or_meters' action='' method='post' 
+onSubmit='return validate();'>
+<input type="number" name="values" size=10>
+<input type="button" value='Convert to Feet' onClick=validate('to_feet');>
+<input type="button" value='Convert to Meter' onClick=validate('to_meter');>
+
+</form>
+
+<p id="result_for_feet_to_meters"> </p>
 
 
     <script src="main.js"> </script>  
