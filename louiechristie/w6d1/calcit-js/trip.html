@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Calcit-JS</title>
+  <script src="trip.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip</a></li>
+      <li><a href="mortgage.html">Mortgage</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+      <li><a href="birthday.html">Birthday</a></li>
+    </ul>
+  </nav>
+
+  <h1>Calcit-JS</h1>
+
+  </header>
+
+  <main>
+
+  <h1>Calculate Trip</h1>
+
+  
+    <p>Distance, how far will you drive?: <input type='text' id='distance'></p>
+    <p>MPG, fuel efficiency of the car?: <input type='text' id='mpg'></p>
+    <p>$PG, how much does gas cost per gallon?: <input type='text' id='cpg'></p>
+    <p>Speed, how fast will you drive?: <input type='text' id='speed'></p>
+    <button onclick="trip()">Calculate</button>
+  
+
+  <h1>Trip Calculation</h1>
+      <p>Distance, how far will you drive: <span id="distance_out"></span></p>
+      <p>MPG, fuel efficiency of the car: <span id="mpg_out"></span></p>
+      <p>$PG, how much does gas cost per gallon: <span id="cpg_out"></span></p>
+      <p>Speed, how fast will you drive: <span id="speed_out"></span></p>
+
+      <p>Your trip will take <span id="hours"></span> hours and cost <span id="cost"></span></p>
+
+  </main>
+
+</body>
+</html>
