@@ -77,6 +77,28 @@ function trip() {
   caption.innerHTML = "The duration of your trip is " + duration + " hours and the costs are GBP " + cost + "!";
 }
 
+function fizzbuzz() {
+  var input = parseInt(document.getElementById('input').value);
+  var caption = document.getElementById('show');
+
+    if (input % 3 == 0 && input % 5 == 0) {
+       var show = 'Fizzbuzz';
+    } else if (input % 5 == 0) {
+       var show = 'Buzz';
+    } else if (input % 3 == 0) {
+        var show = 'Fizz';
+    } else { 
+       alert('Please enter a valid input and try again');
+    }
+
+  caption.innerHTML = show + "!";
+
+}
+
+
+
+
+
 
 
 
