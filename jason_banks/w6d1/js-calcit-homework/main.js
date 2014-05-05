@@ -1,15 +1,16 @@
-// function update() {
-//   var y = document.getElementById("operation").selectedIndex;
-//   var x = document.getElementById("operation").options;
-//   var second = document.getElementById("second");
+function update() {
+  var y = document.getElementById("operation").selectedIndex;
+  var x = document.getElementById("operation").options;
+  var second = document.getElementById("second");
 
-//   switch (unescape(x[y].text)) {
-//     case "\u221A":
-//       second.setAttribute("disabled", true);
-//       break
-//     default:
-//       break;
-// }
+  switch (unescape(x[y].text)) {
+    case "sqrt":
+      second.setAttribute("disabled", "disabled");
+      break
+    default:
+      break;
+  }
+}
 
 function calcIt() {
   var y = document.getElementById("operation").selectedIndex;
