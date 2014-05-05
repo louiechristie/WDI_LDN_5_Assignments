@@ -2,17 +2,17 @@ function calcIt() {
   var y = document.getElementById("operation").selectedIndex;
   var x = document.getElementById("operation").options;
 
-  switch (x[y].text) {
+  switch (unescape(x[y].text)) {
     case "+":
       sum();
       break;
     case "-":
       subtract();
       break;
-    case "&times;":
+    case "\xD7":
       multiply();
       break;
-    case "&divide":
+    case "\xF7":
       divide();
       break;
     default:
@@ -41,8 +41,10 @@ function sum() {
 
   if (maths) {
     result.innerHTML += maths;
-  } else {
-    result.innerHTML;
+  } else if (maths == 0) {
+    result.innerHTML += "0";
+  } else if (isNaN(first) || isNaN(second)) {
+    result.innerHTML += "could not be determined due to invalid inputs.";
   }
 }
 
@@ -56,34 +58,48 @@ function subtract() {
 
   if (maths) {
     result.innerHTML += maths;
-  } else {
-    result.innerHTML;
+  } else if (maths == 0) {
+    result.innerHTML += "0";
+  } else if (isNaN(first) || isNaN(second)) {
+    result.innerHTML += "could not be determined due to invalid inputs.";
   }
 }
 
-// function multiply() {
-//   var array = getTwoInputs();
-//   var result = array[0] * array[1];
+function multiply() {
+  var first = getFirstInput();
+  var second = getSecondInput();
+  var result = document.getElementById("result");
+  var maths = first * second;
 
-//   if (isNaN(result)) {
-//     alert (errorNAN);
-//   } else {
-//     alert ("The product of " + array[0] + " and " + array[1] + " is " + result + ".");
-//   }
-// }
+  result.innerHTML = " | Result: ";
 
-// function divide() {
-//   var array = getTwoInputs();
-//   var result = array[0] / array[1];
+  if (maths) {
+    result.innerHTML += maths;
+  } else if (maths == 0) {
+    result.innerHTML += "0";
+  } else if (isNaN(first) || isNaN(second)) {
+    result.innerHTML += "could not be determined due to invalid inputs.";
+  }
+}
 
-//   if (array[1] == 0) {
-//     alert ("Cannot divide by 0.");
-//   } else if (isNaN(result)) {
-//     alert (errorNAN);
-//   } else {
-//     alert ("The quotient of " + array[0] + " and " + array[1] + " is " + result + ".");
-//   }
-// }
+function divide() {
+  var first = getFirstInput();
+  var second = getSecondInput();
+  var result = document.getElementById("result");
+  var maths = first / second;
+
+  result.innerHTML = " | Result: ";
+
+  if (second == 0) {
+    result.innerHTML += "cannot divide by zero.";
+  } else if (maths) {
+    result.innerHTML += maths;
+  } else if (maths == 0) {
+    result.innerHTML += "0";
+  } else if (isNaN(first) || isNaN(second)) {
+    result.innerHTML += "could not be determined due to invalid inputs.";
+  }
+}
 
 // function squareRoot() {
 //   var first = parseInt(prompt("Please enter number."));
