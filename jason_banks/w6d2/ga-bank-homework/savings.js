@@ -18,12 +18,12 @@ Bank.getDisplaySavings = function () {
 }
 
 Bank.displaySavingsAmount = function () {
-  $display_savings.text("\xA3" + Bank.savingsAmount.toFixed(2));
   if (Bank.savingsAmount > 0) {
-    $display_savings.parent().removeClass( "zero_color");
+    $display_savings.parent().removeClass("zero_color").addClass("more_than_zero_color");
   } else {
-    $display_savings.parent().addClass( "zero_color");
+    $display_savings.parent().removeClass("more_than_zero_color").addClass( "zero_color");
   }
+  $display_savings.text("\xA3" + Bank.savingsAmount.toFixed(2));
 }
 
 Bank.clearSavingsInput = function () {

@@ -18,12 +18,12 @@ Bank.getDisplayCurrent = function () {
 }
 
 Bank.displayCurrentAmount = function () {
-  $display_current.text("\xA3" + Bank.currentAmount.toFixed(2));
   if (Bank.currentAmount > 0) {
-    $display_current.parent().removeClass( "zero_color");
+    $display_current.parent().removeClass("zero_color").addClass("more_than_zero_color");
   } else {
-    $display_current.parent().addClass( "zero_color");
+    $display_current.parent().removeClass("more_than_zero_color").addClass( "zero_color");
   }
+  $display_current.text("\xA3" + Bank.currentAmount.toFixed(2));
 }
 
 Bank.clearCurrentInput = function () {

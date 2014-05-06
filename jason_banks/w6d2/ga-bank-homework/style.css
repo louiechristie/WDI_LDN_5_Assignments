@@ -42,6 +42,9 @@ div {
   width: 360px;
   height: 100px;
   margin: 20px auto;
+}
+
+.more_than_zero_color {
   background-color: #888;
 }
 
