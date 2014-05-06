@@ -35,7 +35,7 @@ td {
 nav , .user_details{
   padding: 20px 0px;
   margin: 5px;
-  border: 2px solid #F5FD72;
+  border: 2px solid #b764d4;
   display: inline-block;
 
 }
@@ -47,7 +47,7 @@ li {
 }
 
 
-input[type=submit], input[type=password] {
+input[type=submit] {
   border: none;
   width: 150px;
   padding: 7px 15px;
