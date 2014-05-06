@@ -62,6 +62,7 @@ myApp.addToSavings = function() {
 myApp.withdrawFromSavings = function() {
   var input = parseInt($('#amountSavings').val());
   var savingsBalance = parseInt($('#savingsOutput').val());
+  var newbalance = savingsBalance - input
 
   if (savingsBalance == parseInt(savingsBalance)) {
     savingsBalance = parseInt($('#savingsOutput').val());
@@ -69,11 +70,10 @@ myApp.withdrawFromSavings = function() {
       savingsBalance = 0;
   }
 
-  if (savingsBalance > 0) {
-    savingsBalance = $('#savingsOutput').val(savingsBalance - input);
-  } else {
-    savingsBalance == 0;
+  if (newbalance <= 0) {
     alert("You currently have no overdraft - call your bank manager.");
+  } else {
+    savingsBalance = $('#savingsOutput').val(savingsBalance - input);
   }
   
 }
