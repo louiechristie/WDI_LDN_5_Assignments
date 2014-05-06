@@ -15,8 +15,14 @@ p {
   text-align: center;
   font-size: 20px;
   font-family: helvetica;
+  color: #354C4C;
+}
+
+ul {
+  padding: 0;
 }
 
 ul li {
   text-align: center;
+  list-style: none;
 }
