@@ -10,7 +10,7 @@
 <body>
   <h1>Calc It JS!</h1>
 
-  <div class="box" onmouseover="this.setAttribute('style', 'color: #fff; opacity: 1;')" onmouseout="this.setAttribute('style', 'color: #000; opacity: 0.2;')">
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
     <h2>Basic</h2>
     <input type="number" id="first"/ >
     <select id="operation" onclick="update()">
@@ -21,42 +21,48 @@
       <option>sqrt</option>
     </select>
     <input type="number" id="second" />
+    <br />
     <button onclick="calcIt()">Calc It!</button><p id="result"></p>
   </div>
 
-  <div class="box" onmouseover="this.setAttribute('style', 'color: #fff; opacity: 1;')" onmouseout="this.setAttribute('style', 'color: #000; opacity: 0.2;')">
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
     <h2>Mortgage</h2>
     <input type="number" id="principal" placeholder="Principal" />
     <input type="number" id="apr" placeholder="Interest (without % sign)" class="placeholder-field" />
     <input type="number" id="number" placeholder="No. of Monthly Payments" class="placeholder-field" />
+    <br />
     <button onclick="calcItMortgage()">Calc It!</button><p id="mortgage"></p>
   </div>
 
-  <div class="box" onmouseover="this.setAttribute('style', 'color: #fff; opacity: 1;')" onmouseout="this.setAttribute('style', 'color: #000; opacity: 0.2;')">
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
   <h2>Body Mass Index</h2>
   <h3>Imperial</h3>
   <input type="number" id="imperial_mass" placeholder="Mass (lbs)" />
   <input type="number" id="imperial_height" placeholder="Height (in)" />
+  <br />
   <button onclick="calcItBmiImperial()">Calc It!</button><p id="bmi_imperial"></p>
   <h3>Metric</h3>
   <input type="number" id="metric_mass" placeholder="Mass (kg)" />
   <input type="number" id="metric_height" placeholder="Height (cm)" />
+  <br />
   <button onclick="calcItBmiMetric()">Calc It!</button><p id="bmi_metric"></p>
 </div>
 
-  <div class="box" onmouseover="this.setAttribute('style', 'color: #fff; opacity: 1;')" onmouseout="this.setAttribute('style', 'color: #000; opacity: 0.2;')">
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
     <h2>Trip</h2>
   <input type="number" id="distance" placeholder="Distance" class="placeholder-field" />
   <input type="number" id="mpg" placeholder="Efficiency (mpg)" class="placeholder-field" />
   <br />
   <input type="number" id="cost_per_gallon" placeholder="Cost per Gallon"class="placeholder-field" />
   <input type="number" id="mph" placeholder="Speed (mph)" class="placeholder-field" />
+  <br />
   <button onclick="calcItTrip()">Calc It!</button><p id="trip"></p>
 </div>
 
-  <div class="box" onmouseover="this.setAttribute('style', 'color: #fff; opacity: 1;')" onmouseout="this.setAttribute('style', 'color: #000; opacity: 0.2;')">
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
     <h2>How Many is Too Many?</h2>
-  <input type="number" id="too_many" placeholder="Careful&hellip;" /><button onclick="calcItTooMany()">Calc it!</button><p id="response"></p>
+  <input type="number" id="too_many" placeholder="Careful&hellip;" />
+  <br /><button onclick="calcItTooMany()">Calc it!</button><p id="response"></p>
 </div>
 
   

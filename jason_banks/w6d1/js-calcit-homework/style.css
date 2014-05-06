@@ -25,7 +25,16 @@ h1 {
 
 .box {
   background-color: #E872C6;
-  opacity: .2;
-  padding: 20px;
+  padding: 20px;  
+}
+
+.out{
+  color: #000;
+  opacity: 0.2;
+}
+
+.over {
+  color: #fff;
+  opacity: 1;
 }
 

@@ -73,14 +73,22 @@ function calcItTrip() {
         mpg = mpg - (2 * (mph - 60));
       }
 
-      var trip_time = (distance / mph).toFixed(2);
-      var trip_cost = ((distance / mpg) * cost_per_gallon).toFixed(2)
+      if (mpg <= 0) {
+        var trip_cost = 0;
+      } else {
+        var trip_cost = ((distance / mpg) * cost_per_gallon);
+      }
 
       if (trip_cost <= 0) {
         trip_cost = 0;
-        trip.innerHTML = " | Cost: " + trip_cost + " Time: " + trip_time + " hours. How economic!";
+      }
+
+      var trip_time = (distance / mph);
+
+      if (trip_cost == 0) {
+        trip.innerHTML = " | Cost: " + trip_cost.toFixed(2) + " Time: " + trip_time.toFixed(2) + " hours. How economic!";
       } else {
-        trip.innerHTML = " | Cost: " + trip_cost + " Time: " + trip_time + " hours. Have a lovely journey.";
+        trip.innerHTML = " | Cost: " + trip_cost.toFixed(2) + " Time: " + trip_time.toFixed(2) + " hours. Have a lovely journey.";
       }
   }
 }
