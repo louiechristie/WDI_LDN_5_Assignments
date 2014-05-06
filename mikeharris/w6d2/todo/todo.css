@@ -1,0 +1,25 @@
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 5px;
+  display: block;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.cross_off {
+  text-decoration:line-through;
+}
+
+.highlight {
+    background: red;
+}
+
+.up, .down {
+  display: inline-block;
+  /*width: 100px;*/
+  margin-left: 20px;
+  float: right;
+}
