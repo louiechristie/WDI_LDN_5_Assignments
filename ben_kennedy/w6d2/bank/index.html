@@ -1,18 +1,19 @@
 <html>
 <head>
   <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src='jquery-1.11.1.js'></script>
-  <script src="main.js"></script>
   <title>GA Bank</title>
 </head>
 <body>
   <header>
     <h1>GA Bank</h1>
   </header>
-  <main>
+  <main class='clear'>
     <section id='checking'>
       <div>
+        <h2>Checking</h2>
         <p class='balance'></p> 
       </div>
         <input type='text' class='amount'>
@@ -21,6 +22,7 @@
     </section>
     <section id='savings'>
       <div>
+        <h2>Savings</h2>
         <p class='balance'></p>
       </div>
         <input type='text' class='amount'>
@@ -28,5 +30,6 @@
         <input type='submit' class='withdraw' value='withdraw'>
     </section>
   </main>
+  <script src="main.js"></script>
 </body>
 </html>
