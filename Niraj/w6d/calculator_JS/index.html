@@ -3,19 +3,22 @@
 <html>
 <head>
   <title>Javascript Calculator</title>
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
 
   <h1> Basic calculator </h1>
 
-    <input type="number" placeholder="Enter first number..." id="numberOne" onkeydown="return isNumber(event);"  />
+    <input type="number" placeholder="Enter first number..."  id="numberOne" onkeydown="return isNumber(event);"  />
     <input type="number" placeholder="Enter second number..." id="numberTwo" onkeydown="return isNumber(event);" />
 
   <div class="actions">
 
       <select id="operator">
          <option value="Choose"> --- </option>
-         <option value="qdd" onclick="add()">Add it!</option> 
+         <option value="add" onclick="add()">Add it!</option> 
          <option value="subtract"onclick="subtract()">Subtract it!</option>
          <option value="multiply" onclick="multiply()">Multiply it!</option>
          <option value="divide"onclick="divide()">Divide it!</option>

@@ -69,11 +69,11 @@ function calculateBMI()
 
 function tripCalculator()
 {
-   var distance = Number(document.getElementById('distance').value);
-   var mpg = Number(document.getElementById('mpg').value);
-   var speed = Number(document.getElementById('speed').value);
-   var cost = Number(document.getElementById('cost').value);
-   var caption = document.getElementById('tripHours' + 'tripCost');
+   var distance = parseFloat(document.getElementById('distance').value);
+   var mpg = parseFloat(document.getElementById('mpg').value);
+   var speed = parseFloat(document.getElementById('speed').value);
+   var cost = parseFloat(document.getElementById('cost').value);
+   var caption = parseFloat.getElementById('tripHours' + 'tripCost');
 
    var tripHours = distance/speed
    var tripCost = (distance/mpg)*cost
