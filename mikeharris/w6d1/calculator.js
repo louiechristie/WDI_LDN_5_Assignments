@@ -1,6 +1,8 @@
-function sqrt_hide(){
-   var operator = document.getElementById('operator').value;
+ (function() {
+    var calcIt = calcIt || {};
 
+calcIt.sqrtHide = function(){
+   var operator = document.getElementById('operator').value;
    if(operator == "sqrt") {
       document.getElementById('numb2').setAttribute("style","opacity: 0");
    } else {
@@ -10,7 +12,7 @@ function sqrt_hide(){
 
 
 
-function calculate(){
+calcIt.calculate = function(){
     var numb1 = Number(document.getElementById('numb1').value);
     var numb2 = Number(document.getElementById('numb2').value);
     var operator = document.getElementById('operator').value;
@@ -43,7 +45,7 @@ function calculate(){
         };
       
 
-function bmi(){
+calcIt.bmi = function(){
     var weight= Number(document.getElementById('weight').value);
     var height= Number(document.getElementById('height').value);
      var units= document.getElementById('units').value;
@@ -60,7 +62,7 @@ function bmi(){
 }
 
 
-function mort() {
+calcIt.mort = function() {
   var mort_prin = Number(document.getElementById('mort_prin').value);
   var mort_rate = Number(document.getElementById('mort_rate').value);
   var mort_years = Number(document.getElementById('mort_years').value);
@@ -76,7 +78,7 @@ function mort() {
 }
 
 
-function trip() {
+calcIt.trip = function () {
     var trip_dist=Number(document.getElementById('trip_dist').value);
     var trip_mpg=Number(document.getElementById('trip_mpg').value);
     var trip_mpgcost=Number(document.getElementById('trip_mpgcost').value);
@@ -91,3 +93,22 @@ function trip() {
 
 
 }
+
+calcIt.setup =function () {
+var operator_button = document.getElementById("operator");
+var basic_button = document.getElementById("calculate");
+var bmi_button = document.getElementById("bmi");
+var mort_button = document.getElementById("mort");
+var trip_button = document.getElementById("trip");
+
+
+operator_button.addEventListener('change', calcIt.sqrtHide);
+basic_button.addEventListener('click', calcIt.calculate);
+bmi_button.addEventListener('click', calcIt.bmi);
+mort_button.addEventListener('click', calcIt.mort);
+trip_button.addEventListener('click', calcIt.trip);
+};
+
+calcIt.setup();
+})();
+
