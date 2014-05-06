@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Calc Lab Advanced</title>
+    <script src="advanced.js"></script>
   </head>
 
   <body>
@@ -19,7 +20,7 @@
         <input type="text" placeholder="Interest Rate" id="yearlyInterestRate" />
         <input type="text" placeholder="Repayments" id="numberOfYears" />
         
-        <button onclick="mortgage()">Calc</button>
+        <button id="mortgage">Calc</button>
 
         <p id="repayment"></p> 
 
@@ -30,14 +31,14 @@
         <input type="text" placeholder="Weight in kg" id="weight" />
         <input type="text" placeholder="Height in m" id="height" />
 
-        <button onclick="bmiMetric()">Calc</button>
+        <button id="bmiMetric">Calc</button>
 
         <br />
 
         <input type="text" placeholder="Weight in lbs" id="weight2" />
         <input type="text" placeholder="Height in inches" id="height2" />
 
-        <button onclick="bmiImperial()">Calc</button>
+        <button id="bmiImperial">Calc</button>
 
         <p id="bmiM"></p> 
         <p id="bmiI"></p> 
@@ -51,7 +52,7 @@
         <input type="text" placeholder="Cost per Gallon" id="costPerGallon" />
         <input type="text" placeholder="Speed" id="speed" />
 
-        <button onclick="trip()">Calc</button>
+        <button id="trip">Calc</button>
 
         <p id="tripResult"></p> 
 
@@ -61,11 +62,10 @@
 
         <input type="text" placeholder="Number " id="input" />
 
-        <button onclick="fizzbuzz()">Calc</button>
+        <button id="fizzbuzz">Calc</button>
 
         <p id="show"></p> 
 
     </main>
-      <script src="main.js"></script>
   </body>
 </html>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Calc Lab Basic</title>
+    <script src="main.js"></script>
   </head>
 
   <body>
@@ -15,19 +16,18 @@
       <input type="text" placeholder="Enter 1st number" id="first_number" />
 
       <select id="operations" >
-        <option onclick="add">add</option>
-        <option onclick="subtract">subtract</option>
-        <option onclick="multiply">multiply</option>
-        <option onclick="divide">divide</option>
-        <option onclick="squareRoot">squareRoot</option>
+        <option id="add">add</option>
+        <option id="subtract">subtract</option>
+        <option id="multiply">multiply</option>
+        <option id="divide">divide</option>
+        <option id="squareRoot">squareRoot</option>
       </select> 
 
       <input type="text" placeholder="Enter 2nd number" id="second_number" />
 
-      <button onclick="calc()">Calc</button>
+      <button id="calc">Calc</button>
 
       <p id="result"></p>
     </main>
-      <script src="main.js"></script>
   </body>
 </html>
