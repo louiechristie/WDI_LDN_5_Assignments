@@ -146,6 +146,31 @@ CalcItBasic.setup = function () {
 
   var button_basic = document.getElementById("button_basic");
   button_basic.addEventListener('click', CalcItBasic.calcIt);
+
+  var box_basic = document.getElementById("box_basic");
+  box_basic.addEventListener('mouseover', function() {
+    this.setAttribute('class', 'over');});
+  box_basic.addEventListener('mouseout', function() { this.setAttribute('class', 'out')});
+
+  var box_mortgage = document.getElementById("box_mortgage");
+  box_mortgage.addEventListener('mouseover', function() {
+    this.setAttribute('class', 'over');});
+  box_mortgage.addEventListener('mouseout', function() { this.setAttribute('class', 'out')});
+
+  var box_bmi = document.getElementById("box_bmi");
+  box_bmi.addEventListener('mouseover', function() {
+    this.setAttribute('class', 'over');});
+  box_bmi.addEventListener('mouseout', function() { this.setAttribute('class', 'out')});
+
+  var box_trip = document.getElementById("box_trip");
+  box_trip.addEventListener('mouseover', function() {
+    this.setAttribute('class', 'over');});
+  box_trip.addEventListener('mouseout', function() { this.setAttribute('class', 'out')});
+
+  var box_too_many = document.getElementById("box_too_many");
+  box_too_many.addEventListener('mouseover', function() {
+    this.setAttribute('class', 'over');});
+  box_too_many.addEventListener('mouseout', function() { this.setAttribute('class', 'out')});
 }
 
 document.addEventListener('DOMContentLoaded', CalcItBasic.setup);

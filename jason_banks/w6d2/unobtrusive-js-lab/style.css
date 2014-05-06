@@ -23,7 +23,7 @@ h1 {
   font-size: 50px;
 }
 
-.box {
+#box_basic, #box_mortgage, #box_bmi, #box_trip, #box_too_many {
   background-color: #E872C6;
   padding: 20px;  
 }
