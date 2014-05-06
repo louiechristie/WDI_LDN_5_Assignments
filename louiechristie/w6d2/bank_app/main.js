@@ -6,8 +6,9 @@ myApp.checkingBalance = function() {
     return balance;
   };
   if (arguments.length > 0) {
-    $('#checking .amount').text(arguments[0]); 
+    $('#checking .amount').text(arguments[0]);
   };
+  myApp.toggleCheckingColor("#checking");
 }
 
 myApp.checkingDeposit = function() {
@@ -42,8 +43,9 @@ myApp.savingBalance = function() {
     return balance;
   }
   if (arguments.length > 0) {
-    $('#saving .amount').text(arguments[0])  
+    $('#saving .amount').text(arguments[0]) 
   }
+  myApp.toggleSavingColor("#saving");
 }
 
 myApp.savingDeposit = function() {
@@ -62,6 +64,24 @@ myApp.savingWithdraw = function() {
       myApp.savingBalance(balance-amount);
     }
   }
+}
+
+myApp.toggleCheckingColor = function() {
+  if (myApp.checkingBalance() == 0) {
+    $('#checking').attr('style', 'background-color: red');
+  }
+  else {
+    $('#checking').attr('style', 'background-color: white');
+  }  
+}
+
+myApp.toggleSavingColor = function() {
+  if (myApp.savingBalance() == 0) {
+    $('#saving').attr('style', 'background-color: red');
+  }
+  else {
+    $('#saving').attr('style', 'background-color: white');
+  }    
 }
 
 myApp.setup = function() {
