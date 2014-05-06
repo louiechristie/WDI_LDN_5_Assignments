@@ -5,80 +5,77 @@ var checkings = 0;
 var savings = 0;
 
 myApp.checkingsDeposit = function(){
- var caption = $('#checkingsText');
+ // var caption = $('#checkingsText');
  var input = $('#checkingsNewitem').val();
 
 total += parseFloat(input);
 checkings += parseFloat(input);
-caption.text("$" + checkings.toFixed(2));  
-
-
-//show total
-var caption = $('#total');
-caption.text("$" + total.toFixed(2)); 
+// caption.text("$" + checkings.toFixed(2));  
+myApp.showBalances(checkings);
 }
 
 myApp.checkingsWithdraw = function(){
- var caption = $('#checkingsText');
+ // var caption = $('#checkingsText');
  var input = $('#checkingsNewitem').val();
 
   if(input<=total&&input<=checkings){
     total -= parseFloat(input);
     checkings -= parseFloat(input);
-    caption.text("$" + checkings.toFixed(2));  
+    // caption.text("$" + checkings.toFixed(2)); 
+    myApp.showBalances(checkings,savings,total); 
   }
   else if(input<=total&&input>=checkings){
     remainder = parseFloat(input) - checkings;
     checkings = 0;
     total -= remainder;
-    caption.text("$" + checkings.toFixed(2));
+    // caption.text("$" + checkings.toFixed(2));
+    myApp.showBalances(checkings,savings,total); 
   }
 
 
-//show total
-var caption = $('#total');
-caption.text("$" + total.toFixed(2)); 
+// //show total
+// var caption = $('#total');
+// caption.text("$" + total.toFixed(2)); 
 }
 
 myApp.savingsDeposit = function(){
- var caption = $('#savingsText');
+ // var caption = $('#savingsText');
  var input = $('#savingsNewitem').val();
 
 total += parseFloat(input);
 savings += parseFloat(input);
-caption.text("$" + savings.toFixed(2));  
+// caption.text("$" + savings.toFixed(2));  
+myApp.showBalances(checkings,savings,total); 
 
 
-
-//show total
-var caption = $('#total');
-caption.text("$" + total.toFixed(2)); 
+// //show total
+// var caption = $('#total');
+// caption.text("$" + total.toFixed(2)); 
 }
 
 
 myApp.savingsWithdraw = function(){
- var caption = $('#savingsText');
+ // var caption = $('#savingsText');
  var input = $('#savingsNewitem').val();
 
 total -= parseFloat(input);
 savings -= parseFloat(input);
-caption.text("$" + savings.toFixed(2));  
-
+// caption.text("$" + savings.toFixed(2));  
+myApp.showBalances(checkings,savings,total); 
 
 //show total
-var caption = $('#total');
-caption.text("$" + total.toFixed(2)); 
+// var caption = $('#total');
+// caption.text("$" + total.toFixed(2)); 
 }
 
-myApp.showBalances = function(balance){
+myApp.showBalances = function(checkings, savings, total){
   var checkingsCaption = $('#checkingsText');
-  checkingsCaption.text("$" + balance.toFixed(2));
-
+  checkingsCaption.text("$" + checkings.toFixed(2));
   var savingsCaption = $('#savingsText');
-  savingsCaption.text("$" + balance.toFixed(2)); 
+  savingsCaption.text("$" + savings.toFixed(2)); 
 
   var captionTotal = $('#total');
-  captionTotal.text("$" + balance.toFixed(2)); 
+  captionTotal.text("$" + total.toFixed(2)); 
 }
 
 myApp.setup = function(){
@@ -93,6 +90,8 @@ myApp.setup = function(){
 
   var $SavingsWithdrawButton = $("#SavingsWithdrawButton");
   $SavingsWithdrawButton.on("click", myApp.savingsWithdraw);
+
+  myApp.showBalances(checkings,savings,total); 
 }
 
 $(myApp.setup);
