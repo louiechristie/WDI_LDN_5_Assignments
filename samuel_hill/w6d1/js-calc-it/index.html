@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Calc-It Javascript</title>
+	<script src="main.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<h1>Calc-it v 7.00</h1>
+
+	<p>SIMPLE CALCULATOR</p>
+
+	<input type="text" placeholder="Number one..." id="numberone" />
+
+	<select id="operator">
+	  <option value="add" selected>+</option> 
+	  <option value="subtract">-</option>
+	  <option value="multiply">*</option>
+	  <option value="divide">/</option>
+	  <option value="sqrt">sqrt</option>
+	</select>
+
+	<input type="text" placeholder="Number two..." id="numbertwo" />
+
+	<button onclick="simplemath()" class="btn btn-success">CALC-IT!</button>
+	
+
+	<p>BMI CALCULATOR</p>
+
+	<input type="text" placeholder="height (m)" id="height" />
+	<input type="text" placeholder="weight (kg)" id="weight" />
+	
+	<button onclick="bmi()" class="btn btn-success">GET MY BMI</button>
+
+	<p>TRIP CALCULATOR</p>
+
+	<input type="text" placeholder="distance (miles)" id="distance" />
+	<input type="text" placeholder="mpg" id="mpg" />
+	<input type="text" placeholder="cost per gallon" id="fuelcost" />
+	<input type="text" placeholder="speed (mph)" id="speed" />
+	
+	<button onclick="trip()" class="btn btn-success">CALCULATE</button>
+
+	<p>MORTGAGE CALCULATOR</p>
+
+	<input type="text" placeholder="loan amount (£)" id="loanamount" />
+	<input type="text" placeholder="loan time (yrs)" id="loantime" />
+	<input type="text" placeholder="annual interest rate" id="interestrate" />
+	
+	<button onclick="mortgage()" class="btn btn-success">CALCULATE</button>
+
+	<p>TO THE POWER OF 10 CALCULATOR</p>
+
+	<input type="text" placeholder="number..." id="power" />
+
+	<button onclick="power()" class="btn btn-success">POWER!</button>
+
+	<h2>The answer is:</h2>
+	<h3 id="answer"></h3>
+
+</body>
+</html>

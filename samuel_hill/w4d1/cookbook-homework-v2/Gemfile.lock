@@ -37,6 +37,10 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
     cancan (1.6.10)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -61,6 +65,8 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     multi_json (1.9.2)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -94,8 +100,13 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.3.1)
+    ransack (1.1.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.2)
     sass (3.3.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -126,11 +137,14 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   cancan (= 1.6.10)
+  carrierwave (= 0.9.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
   pry-rails
   pry-stack_explorer
   rails (= 3.2.17)
+  ransack (= 1.1.0)
+  rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
