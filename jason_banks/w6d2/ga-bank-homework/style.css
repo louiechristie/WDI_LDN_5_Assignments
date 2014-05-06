@@ -1,0 +1,12 @@
+body {
+  width: 800px;
+  margin: 100px auto 300px auto;
+}
+
+#current {
+  float: left;
+}
+
+#savings {
+  float: right;
+}
