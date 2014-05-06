@@ -119,10 +119,15 @@ function divide() {
 
 function squareRoot() {
   var first = getFirstInput();
+  var second = getSecondInput();
   var result = document.getElementById("result");
   var maths = Math.sqrt(first);
 
   result.innerHTML = " | Result: ";
+  
+  if (second) {
+    result.innerHTML = " Only the first number is evaluated" + result.innerHTML;
+  }
 
   if (first < 0) {
     result.innerHTML += "cannot find the square of a negative number.";
