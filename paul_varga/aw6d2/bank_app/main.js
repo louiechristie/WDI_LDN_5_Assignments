@@ -32,8 +32,7 @@ myApp.withdrawFromCurrent = function() {
     alert("You cannot withdraw this amount, but we will try to access your savings.");
     var newbalance = Math.abs(newbalance);
     var newsavingsbalance = savingsbalance - newbalance;
-    console.log(newsavingsbalance);
-      if (newsavingsbalance < 0) {
+      if (newsavingsbalance <= 0 || savingsbalance = 0) {
         alert("You do not have enough money in your savings. No withdrawl possible.");
       } else {
           $('#savingsOutput').val(savingsbalance - newbalance);
@@ -44,8 +43,6 @@ myApp.withdrawFromCurrent = function() {
   }
   
 }
-
-
 
 myApp.addToSavings = function() {
   var input = parseInt($('#amountSavings').val());
@@ -75,7 +72,7 @@ myApp.withdrawFromSavings = function() {
   if (savingsBalance > 0) {
     savingsBalance = $('#savingsOutput').val(savingsBalance - input);
   } else {
-    savingsBalance = 0;
+    savingsBalance == 0;
     alert("You currently have no overdraft - call your bank manager.");
   }
   
