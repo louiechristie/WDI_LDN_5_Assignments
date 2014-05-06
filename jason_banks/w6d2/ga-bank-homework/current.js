@@ -33,7 +33,7 @@ Bank.reduceCurrentAmount = function () {
   if ($current_input && $current_input > Bank.currentAmount) {
     if ($current_input > (Bank.currentAmount + Bank.savingsAmount)) {
     $current_overdraft = $("#current_overdraft");
-    $current_overdraft.text("Profligacy! Cannot withdraw greater than your Current Account balance.");
+    $current_overdraft.text("Profligacy! Cannot withdraw greater than your Savings Account balance.");
     } else {
       Bank.savingsAmount = Bank.savingsAmount - $current_input + Bank.currentAmount;
       Bank.currentAmount = 0;
