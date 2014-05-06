@@ -47,33 +47,6 @@ myApp.withdrawFromCurrent = function() {
 
 
 
-
-// if ($newsavingsbalance < 0) {
-// alert("You do not have enough money in your savings. Withdrawl cannot be made.");
-// } else {
-// document.getElementById('balance-savings').value=($savingsbalance - $newbalance);
-// document.getElementById('balance-current').value=($currentbalance - $currentbalance);
-// }
-// } else {
-// document.getElementById('balance-current').value=($currentbalance - $amount);
-// }
-// }
-
-//SAMS START
-
-// myApp.currentwithdraw = function() {
-
-// var $amount = parseInt($('#amount-current').val());
-// var $currentbalance = parseInt($('#balance-current').val());
-// var $newbalance = $currentbalance - $amount
-// var $savingsbalance = parseInt($('#balance-savings').val());
-
-// if ($newbalance < 0) {
-// alert("You cannot withdraw this much money from this account. We will attempt to take the remainder from your savings.");
-// var $newbalance = Math.abs($newbalance);
-// var $newsavingsbalance = $savingsbalance - $newbalance;
-
-
 myApp.addToSavings = function() {
   var input = parseInt($('#amountSavings').val());
   var savingsBalance = parseInt($('#savingsOutput').val());
