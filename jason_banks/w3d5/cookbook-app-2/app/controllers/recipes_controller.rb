@@ -1,10 +1,9 @@
 class RecipesController < ApplicationController
  load_and_authorize_resource
+
+ before_filter :search_form
  
   def index
-    @q = Recipe.search(params[:q])
-    @recipes = @q.result
-    @model_name = "recipe"
   end
 
   def new
@@ -24,11 +23,12 @@ class RecipesController < ApplicationController
     end
 
     params[:recipe][:ingredients_recipes_attributes] = ir
+    params[:recipe][:user_id] = @current_user.id
+
     @recipe = Recipe.new(params[:recipe])
 
-
     if @recipe.save
-      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully added.")
+      redirect_to(@recipe, notice: "#{@recipe.name} has been successfully added.")
     else
       find_categories
       Ingredient.all.each do |ingredient|
@@ -59,16 +59,10 @@ class RecipesController < ApplicationController
       ir[key]["_destroy"] = true if ir[key]["quantity"].blank?
     end
 
-    
-    
-    
-
     params[:recipe][:ingredients_recipes_attributes] = ir    
-    params[:recipe][:title].capitalize!
-
 
     if @recipe.update_attributes(params[:recipe])
-      redirect_to(@recipe, notice: "#{@recipe.title} has been successfully updated.")
+      redirect_to(@recipe, notice: "#{@recipe.name} has been successfully updated.")
     else
       find_categories
       Ingredient.all.each do |ingredient|
@@ -80,7 +74,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.destroy(params[:id])
-    redirect_to(recipes_path)
+    redirect_to(recipes_path, notice: "Recipe has been deleted.")
   end
 
   def find_recipe
@@ -93,6 +87,12 @@ class RecipesController < ApplicationController
 
   def find_categories
     @categories = Category.find(:all, :select => "id, name")
+  end
+
+  def search_form
+    @q = Recipe.search(params[:q])
+    @recipes = @q.result
+    @model_name = "recipe"
   end
 
 end

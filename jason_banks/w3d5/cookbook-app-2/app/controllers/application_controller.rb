@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: "You are not authorized to view this page."
   end
 
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    redirect_to root_url, notice: "That record does not exist or has been deleted."
+  end
+
   private
   def setup_search_object
     @q = nil

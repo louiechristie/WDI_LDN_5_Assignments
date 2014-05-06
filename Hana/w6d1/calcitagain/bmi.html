@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title> Calculator</title>
+  <script src = "bmi.js"></script>
+</head>
+<body>
+  <h1>  BMI Calculator </h1>
+
+  <nav>
+    <li><a href = "index.html">Basic</a></li>
+    <li><a href = "trip.html">Trip</a></li>
+    <li><a href = "mortgage.html">Mortgage</a></li>
+    <li><a href = "bmi.html">BMI</a></li>
+    <li><a href = "extra.html">Extra</a></li>
+  </nav>
+
+
+
+    Units: <select id="units">
+      <option value="imperial">Imperial</option> 
+      <option value="metric">Metric</option>
+    </select> </br>
+    <input type='text' placeholder='Weight' id='weight'></br> 
+    <input type='text' placeholder='Height' id='height'></br> 
+    <button onclick="bmi()">Click!</button>
+ 
+
+
+  <p id = "answer"></p>
+  
+</body>
+</html>

@@ -4,6 +4,8 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag :defaults %>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

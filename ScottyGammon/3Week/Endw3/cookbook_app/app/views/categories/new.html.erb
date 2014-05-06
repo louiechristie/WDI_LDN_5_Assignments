@@ -1,14 +1,5 @@
-<h2>Create Category</h2>
+<% title "New Category" %>
 
-<%= form_for(@category) do |c| %>
+<%= render 'form' %>
 
-  <div class="field">
-    <%= c.label :name %><br />
-    <%= c.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= c.submit %>
-  </div>
-
-  <% end %>
-
+<p><%= link_to "Back to List", categories_path %></p>

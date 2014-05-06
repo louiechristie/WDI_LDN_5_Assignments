@@ -24,7 +24,7 @@
   </header>
   <ul>
     <% if current_user %>
-      <li>Welcome, <%= current_user.email %>! | 
+      <li>Welcome, <%= link_to current_user.username, user_path(current_user) %>! | 
         <%= link_to "Logout", session_path(0), method: :delete %></li>
     <% else %>
       <li><%= link_to "Login", new_session_path, class: active_menu_item(new_session_path) %> | 
@@ -33,14 +33,16 @@
     <li><%= link_to "Categories#index", categories_path, class: active_menu_item(categories_path) %></li>
     <li><%= link_to "Recipes#index", recipes_path, class: active_menu_item(recipes_path) %></li>
     <li><%= link_to "Ingredients#index", ingredients_path, class: active_menu_item(ingredients_path) %></li>
-    <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %></li>
+    <% if current_user %>
+      <li><%= link_to "Users#index", users_path, class: active_menu_item(users_path) %></li>
+    <% end %>
   </ul>
   <br />
   <br />
   <% if correct_view_for_search? %>
     <%= search_form_for @q do |f| %>
       <%= f.label "Search" %>
-      <%= f.text_field :name_cont, placeholder: "Name of #{@model_name}", class: "black" %>
+      <%= f.text_field :name_cont, placeholder: " enter name of #{@model_name}", class: "black" %>
       <%= f.submit class: "black" %><br /><br />
     <% end %>
   <% end %>
@@ -54,7 +56,9 @@
   <div class="yield">
     <%= yield %>
   </div>
-</body>
 <footer>
+  <p>Built and designed by <a href="https://twitter.com/jasonnotklein" target="_blank">Jason</a>, powered by Rails | WDI | London | April | 2014</p>
+  <p><%= link_to "Category symbols", attribution_path %> from <a href="http://thenounproject.com" target="_blank">the Noun Project</a> collection.</p>
 </footer>
+</body>
 </html>

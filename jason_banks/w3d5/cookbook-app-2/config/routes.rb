@@ -4,20 +4,23 @@ CookbookApp2::Application.routes.draw do
 
   get "sessions/new"
 
-  get "sessions/create" => "sessions#create", as: "create_session_path"
+  get "sessions/create" => "sessions#create", as: "create_session"
 
   get "sessions/destroy"
+
+  get "categories/attribution" => "categories#attribution", as: "attribution"
 
   resources :categories
   resources :recipes
   resources :ingredients
-  resources :users, only: [:index, :new, :create]
+  resources :users
   resources :sessions
 
   root to: "categories#home"
   post "categories/:id/delete" => "categories#destroy", as: "delete_category"
   post "recipes/:id/delete" => "recipes#destroy", as: "delete_recipe"
   post "ingredients/:id/delete" => "ingredients#destroy", as: "delete_ingredient"
+  post "users/:id/delete" => "users#destroy", as: "delete_user"
 
 
   # The priority is based upon order of creation:

@@ -1,19 +1,11 @@
 class UsersController < ApplicationController
  
   def index
-    @users = User.all
-
-    
+    @users = User.all    
   end
 
-
-
-  # GET /users/new
-  # GET /users/new.json
   def new
     @user = User.new
-
-
   end
 
  
@@ -31,5 +23,6 @@ class UsersController < ApplicationController
     end
   end
 
+  
   
 end
