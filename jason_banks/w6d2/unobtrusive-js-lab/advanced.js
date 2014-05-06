@@ -106,7 +106,7 @@ CalcItAdvanced.calcItTooMany = function () {
       for (var i = 0; i < too_many-1; i++) {
         alert(array[Math.floor((Math.random() * array.length))]);
       }
-      alert("Yep, too many.");
+      alert("Yep, " + too_many + " was definitely too many.");
     }
 }
 
@@ -120,6 +120,12 @@ CalcItAdvanced.setup = function () {
 
   var button_bmi_metric = document.getElementById("button_bmi_metric");
   button_bmi_metric.addEventListener('click', CalcItAdvanced.calcItBmiMetric);
+
+  var button_trip = document.getElementById("button_trip");
+  button_trip.addEventListener('click', CalcItAdvanced.calcItTrip);
+
+  var button_too_many = document.getElementById("button_too_many");
+  button_too_many.addEventListener('click', CalcItAdvanced.calcItTooMany);
 }
 
 document.addEventListener('DOMContentLoaded', CalcItAdvanced.setup);
