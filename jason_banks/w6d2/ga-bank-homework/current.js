@@ -19,6 +19,11 @@ Bank.getDisplayCurrent = function () {
 
 Bank.displayCurrentAmount = function () {
   $display_current.text("\xA3" + Bank.currentAmount.toFixed(2));
+  if (Bank.currentAmount > 0) {
+    $display_current.parent().removeClass( "zero_color");
+  } else {
+    $display_current.parent().addClass( "zero_color");
+  }
 }
 
 Bank.clearCurrentInput = function () {
@@ -32,8 +37,8 @@ Bank.reduceCurrentAmount = function () {
 
   if ($current_input && $current_input > Bank.currentAmount) {
     if ($current_input > (Bank.currentAmount + Bank.savingsAmount)) {
-    $current_overdraft = $("#current_overdraft");
-    $current_overdraft.text("Profligacy! Cannot withdraw greater than your Savings Account balance.");
+    $overdraft = $("#overdraft");
+    $overdraft.text("Profligacy! Cannot withdraw greater than your Savings Account balance.");
     } else {
       Bank.savingsAmount = Bank.savingsAmount - $current_input + Bank.currentAmount;
       Bank.currentAmount = 0;
@@ -57,8 +62,7 @@ Bank.increaseCurrentAmount = function () {
 }
 
 Bank.clearOverdraftError = function () {
-  $("#savings_overdraft").text("");
-  $("#current_overdraft").text("");
+  $("#overdraft").text("");
 }
 
 Bank.setup = function () {

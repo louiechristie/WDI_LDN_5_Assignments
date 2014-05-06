@@ -4,7 +4,7 @@
 
 body {
   width: 800px;
-  margin: 100px auto 400px auto;
+  margin: 50px auto 400px auto;
   background-color: #999;
 }
 
@@ -42,6 +42,10 @@ div {
   width: 360px;
   height: 100px;
   margin: 20px auto;
+  background-color: #888;
+}
+
+.zero_color {
   background-color: #FF241E;
 }
 
