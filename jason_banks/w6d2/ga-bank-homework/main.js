@@ -12,7 +12,7 @@ BankApp.getDisplayCurrent = function () {
 }
 
 BankApp.clearCurrentInput = function () {
-  $display_current.val("");
+  $("#current_input").val("");
 }
 
 BankApp.displaySavingsAmount = function () {
