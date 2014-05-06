@@ -3,7 +3,13 @@ var BankCurrent = {};
 BankCurrent.currentAmount = 0;
 
 BankCurrent.getCurrentInput = function () {
-  $current_input = parseFloat($("#current_input").val());
+  pre_valid_current_input = parseFloat($("#current_input").val());
+
+  if (pre_valid_current_input && $.isNumeric(pre_valid_current_input) && pre_valid_current_input > 0) {
+    $current_input = pre_valid_current_input;
+  } else {
+    alert("Must enter a number greater than zero.");
+  }
 }
 
 BankCurrent.getDisplayCurrent = function () {
@@ -22,7 +28,13 @@ BankCurrent.clearCurrentInput = function () {
 BankCurrent.reduceCurrentAmount = function () {
   BankCurrent.getCurrentInput();
   BankCurrent.getDisplayCurrent();
-  BankCurrent.currentAmount -= $current_input;
+
+  if ($current_input && $current_input > BankCurrent.currentAmount) {
+    $current_overdraft = $("#current_overdraft");
+    $current_overdraft.text("Profligacy! Cannot withdraw greater than your Current Account balance.");
+  } else {
+    BankCurrent.currentAmount -= $current_input;
+  }
 
   BankCurrent.displayCurrentAmount();
   BankCurrent.clearCurrentInput();
