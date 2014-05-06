@@ -1,6 +1,6 @@
 function bmi(){
   var selectedElement = document.getElementById("units");
-  var selectedLabel = sel.options[sel.selectedIndex].value;
+  var selectedLabel = selectedElement.options[selectedElement.selectedIndex].value;
 
   if(selectedLabel == "imperial"){
     imperial();
@@ -11,22 +11,22 @@ function bmi(){
 }
 
 function imperial(){
-  var weight = parseInt(document.getElementById("weight").value);
-  var height = parseInt(document.getElementById("height").value);
-  var result = Math.pow((weight/height),2) * 703
-  var rounded = Math.round(result*10 ) / 10;
-  var answer = parse('Your BMI is %s.', rounded);
+  var weight = parseFloat(document.getElementById("weight").value);
+  var height = parseFloat(document.getElementById("height").value);
+  var number = ((weight / Math.pow(height, 2))*703).toFixed(2);
+  var result = "Your BMI is " + number + ".";
+  answer(result);
 }
 
 function metric(){
-  var weight = parseInt(document.getElementById("weight").value);
-  var height = parseInt(document.getElementById("height").value);
-  var result = Math.pow((weight/height),2)
-  var rounded = Math.round( result * 10 ) / 10;
-  var answer = parse('Your BMI is %s.', rounded);
+  var weight = parseFloat(document.getElementById("weight").value);
+  var height = parseFloat(document.getElementById("height").value);
+  var number = ((weight / Math.pow(height, 2))).toFixed(2);  var result = "Your BMI is " + number + ".";
+  
+  answer(result);
 }
 
 function answer(result){
   var caption = document.getElementById('answer');
-  caption.innerHTML = answer;
+  caption.innerHTML = result;
 }
