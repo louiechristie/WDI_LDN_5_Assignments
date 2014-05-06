@@ -1,9 +1,10 @@
-var BankCurrent = {};
+var Bank = Bank || {};
 
-BankCurrent.currentAmount = 0;
+Bank.currentAmount = 0;
 
-BankCurrent.getCurrentInput = function () {
+Bank.getCurrentInput = function () {
   pre_valid_current_input = parseFloat($("#current_input").val());
+  $current_input = null;
 
   if (pre_valid_current_input && $.isNumeric(pre_valid_current_input) && pre_valid_current_input > 0) {
     $current_input = pre_valid_current_input;
@@ -12,64 +13,69 @@ BankCurrent.getCurrentInput = function () {
   }
 }
 
-BankCurrent.getDisplayCurrent = function () {
+Bank.getDisplayCurrent = function () {
   $display_current = $("#display_current");
 }
 
-BankCurrent.displayCurrentAmount = function () {
-  $display_current.text("\xA3" + BankCurrent.currentAmount.toFixed(2));
+Bank.displayCurrentAmount = function () {
+  $display_current.text("\xA3" + Bank.currentAmount.toFixed(2));
 }
 
-BankCurrent.clearCurrentInput = function () {
+Bank.clearCurrentInput = function () {
   $("#current_input").val("");
 }
 
 
-BankCurrent.reduceCurrentAmount = function () {
-  BankCurrent.getCurrentInput();
-  BankCurrent.getDisplayCurrent();
+Bank.reduceCurrentAmount = function () {
+  Bank.getCurrentInput();
+  Bank.getDisplayCurrent();
 
-  if ($current_input && $current_input > BankCurrent.currentAmount) {
+  if ($current_input && $current_input > Bank.currentAmount) {
+    if ($current_input > (Bank.currentAmount + Bank.savingsAmount)) {
     $current_overdraft = $("#current_overdraft");
     $current_overdraft.text("Profligacy! Cannot withdraw greater than your Current Account balance.");
+    } else {
+      Bank.savingsAmount = Bank.savingsAmount - $current_input + Bank.currentAmount;
+      Bank.currentAmount = 0;
+    }
   } else {
-    BankCurrent.currentAmount -= $current_input;
+    Bank.currentAmount -= $current_input;
   }
 
-  BankCurrent.displayCurrentAmount();
-  BankCurrent.clearCurrentInput();
+  Bank.displayCurrentAmount();
+  Bank.displaySavingsAmount();
+  Bank.clearCurrentInput();
 }
 
-BankCurrent.increaseCurrentAmount = function () {
-  BankCurrent.getCurrentInput();
-  BankCurrent.getDisplayCurrent();
-  BankCurrent.currentAmount += $current_input;
+Bank.increaseCurrentAmount = function () {
+  Bank.getCurrentInput();
+  Bank.getDisplayCurrent();
+  Bank.currentAmount += $current_input;
 
-  BankCurrent.displayCurrentAmount();
-  BankCurrent.clearCurrentInput();
+  Bank.displayCurrentAmount();
+  Bank.clearCurrentInput();
 }
 
-BankCurrent.clearOverdraftError = function () {
+Bank.clearOverdraftError = function () {
   $("#savings_overdraft").text("");
   $("#current_overdraft").text("");
 }
 
-BankCurrent.setup = function () {
-  BankCurrent.getDisplayCurrent();
-  BankCurrent.displayCurrentAmount();
+Bank.setup = function () {
+  Bank.getDisplayCurrent();
+  Bank.displayCurrentAmount();
   
   $("#current_withdraw_button").click( function (ev) {
-    BankCurrent.clearOverdraftError();
+    Bank.clearOverdraftError();
     ev.preventDefault();
-    BankCurrent.reduceCurrentAmount();
+    Bank.reduceCurrentAmount();
   });
   
 $("#current_deposit_button").click( function (ev) {
-    BankCurrent.clearOverdraftError();
+    Bank.clearOverdraftError();
     ev.preventDefault();
-    BankCurrent.increaseCurrentAmount();
-  });
-  
+    Bank.increaseCurrentAmount();
+  }); 
 }
 
-$(document).ready(BankCurrent.setup);
+$(document).ready(Bank.setup);

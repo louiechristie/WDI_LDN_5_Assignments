@@ -1,8 +1,8 @@
-var BankSavings = {};
+var Bank = Bank || {};
 
-BankSavings.savingsAmount = 0;
+Bank.savingsAmount = 0;
 
-BankSavings.getSavingsInput = function () {
+Bank.getSavingsInput = function () {
   pre_valid_savings_input = parseFloat($("#savings_input").val());
   $savings_input = null;
 
@@ -13,63 +13,62 @@ BankSavings.getSavingsInput = function () {
   }
 }
 
-BankSavings.getDisplaySavings = function () {
+Bank.getDisplaySavings = function () {
   $display_savings = $("#display_savings");
 }
 
-BankSavings.displaySavingsAmount = function () {
-  $display_savings.text("\xA3" + BankSavings.savingsAmount.toFixed(2));
+Bank.displaySavingsAmount = function () {
+  $display_savings.text("\xA3" + Bank.savingsAmount.toFixed(2));
 }
 
-BankSavings.clearSavingsInput = function () {
+Bank.clearSavingsInput = function () {
   $("#savings_input").val("");
 }
 
-BankSavings.reduceSavingsAmount = function () {
-  BankSavings.getSavingsInput();
-  BankSavings.getDisplaySavings();
+Bank.reduceSavingsAmount = function () {
+  Bank.getSavingsInput();
+  Bank.getDisplaySavings();
 
-  if ($savings_input && $savings_input > BankSavings.savingsAmount) {
+  if ($savings_input && $savings_input > Bank.savingsAmount) {
     $savings_overdraft = $("#savings_overdraft");
     $savings_overdraft.text("Profligacy! Cannot withdraw greater than your Savings Account balance.");
   } else {
-    BankSavings.savingsAmount -= $savings_input;
+    Bank.savingsAmount -= $savings_input;
   }
 
-  BankSavings.displaySavingsAmount();
-  BankSavings.clearSavingsInput();
+  Bank.displaySavingsAmount();
+  Bank.clearSavingsInput();
 }
 
-BankSavings.increaseSavingsAmount = function () {
-  BankSavings.getSavingsInput();
-  BankSavings.getDisplaySavings();
-  BankSavings.savingsAmount += $savings_input;
+Bank.increaseSavingsAmount = function () {
+  Bank.getSavingsInput();
+  Bank.getDisplaySavings();
+  Bank.savingsAmount += $savings_input;
 
-  BankSavings.displaySavingsAmount();
-  BankSavings.clearSavingsInput();
+  Bank.displaySavingsAmount();
+  Bank.clearSavingsInput();
 }
 
-BankSavings.clearOverdraftError = function () {
+Bank.clearOverdraftError = function () {
   $("#savings_overdraft").text("");
   $("#current_overdraft").text("");
 }
 
-BankSavings.setup = function () {
+Bank.setup = function () {
   $display_savings = $("#display_savings");
-  BankSavings.displaySavingsAmount();
+  Bank.displaySavingsAmount();
 
   $("#savings_withdraw_button").click( function (ev) {
-    BankSavings.clearOverdraftError();
+    Bank.clearOverdraftError();
     ev.preventDefault();
-    BankSavings.reduceSavingsAmount();
+    Bank.reduceSavingsAmount();
   });
   
 $("#savings_deposit_button").click( function (ev) {
-    BankSavings.clearOverdraftError();
+    Bank.clearOverdraftError();
     ev.preventDefault();
-    BankSavings.increaseSavingsAmount();
-  });
-  
+    Bank.increaseSavingsAmount();
+  }); 
 }
 
-$(document).ready(BankSavings.setup);
+$(document).ready(Bank.setup);
