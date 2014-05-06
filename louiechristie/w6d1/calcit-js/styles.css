@@ -39,6 +39,7 @@ footer {
 main {
   max-width:800px;
   margin: 20px auto;
+  padding-bottom: 10px;
 }
 h1 a {
   text-decoration: none;
@@ -51,7 +52,7 @@ a:hover {
   margin: 20px;
   font-size: 18px;
 }
-textarea, input, select {
+textarea, input, select, button {
   max-height: 100px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
