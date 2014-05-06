@@ -49,16 +49,23 @@ BankCurrent.increaseCurrentAmount = function () {
   BankCurrent.clearCurrentInput();
 }
 
+BankCurrent.clearOverdraftError = function () {
+  $("#savings_overdraft").text("");
+  $("#current_overdraft").text("");
+}
+
 BankCurrent.setup = function () {
   BankCurrent.getDisplayCurrent();
   BankCurrent.displayCurrentAmount();
   
   $("#current_withdraw_button").click( function (ev) {
+    BankCurrent.clearOverdraftError();
     ev.preventDefault();
     BankCurrent.reduceCurrentAmount();
   });
   
 $("#current_deposit_button").click( function (ev) {
+    BankCurrent.clearOverdraftError();
     ev.preventDefault();
     BankCurrent.increaseCurrentAmount();
   });

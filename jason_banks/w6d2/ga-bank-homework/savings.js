@@ -3,7 +3,14 @@ var BankSavings = {};
 BankSavings.savingsAmount = 0;
 
 BankSavings.getSavingsInput = function () {
-  $savings_input = parseFloat($("#savings_input").val());
+  pre_valid_savings_input = parseFloat($("#savings_input").val());
+  $savings_input = null;
+
+  if (pre_valid_savings_input && $.isNumeric(pre_valid_savings_input) && pre_valid_savings_input > 0) {
+    $savings_input = pre_valid_savings_input;
+  } else {
+    alert("Must enter a number greater than zero.");
+  }
 }
 
 BankSavings.getDisplaySavings = function () {
@@ -21,7 +28,13 @@ BankSavings.clearSavingsInput = function () {
 BankSavings.reduceSavingsAmount = function () {
   BankSavings.getSavingsInput();
   BankSavings.getDisplaySavings();
-  BankSavings.savingsAmount -= $savings_input;
+
+  if ($savings_input && $savings_input > BankSavings.savingsAmount) {
+    $savings_overdraft = $("#savings_overdraft");
+    $savings_overdraft.text("Profligacy! Cannot withdraw greater than your Savings Account balance.");
+  } else {
+    BankSavings.savingsAmount -= $savings_input;
+  }
 
   BankSavings.displaySavingsAmount();
   BankSavings.clearSavingsInput();
@@ -36,16 +49,23 @@ BankSavings.increaseSavingsAmount = function () {
   BankSavings.clearSavingsInput();
 }
 
+BankSavings.clearOverdraftError = function () {
+  $("#savings_overdraft").text("");
+  $("#current_overdraft").text("");
+}
+
 BankSavings.setup = function () {
   $display_savings = $("#display_savings");
   BankSavings.displaySavingsAmount();
 
   $("#savings_withdraw_button").click( function (ev) {
+    BankSavings.clearOverdraftError();
     ev.preventDefault();
     BankSavings.reduceSavingsAmount();
   });
   
 $("#savings_deposit_button").click( function (ev) {
+    BankSavings.clearOverdraftError();
     ev.preventDefault();
     BankSavings.increaseSavingsAmount();
   });
