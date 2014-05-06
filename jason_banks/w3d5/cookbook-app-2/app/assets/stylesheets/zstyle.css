@@ -135,19 +135,26 @@ img {
 }
 
 .category-index {
-  margin: 10px;
-  display: block;
+  width: 180px;
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
 }
 
 svg {
   fill: #fff;
   height: 140px;
   width: 120px;
-  margin-right: 40px;
-  margin-bottom: -40px;
+  margin: 20px auto;
 }
 
-svg:hover {
+.small-svg svg {
+  height: 90px;
+  width: 90px;
+  margin: 40px;
+}
+
+a svg:hover {
   fill: #5B80FF;
 }
 
@@ -160,6 +167,15 @@ td.users-index {
   width: 200px;
 }
 
-#email, #password {
+#username, #password {
   width: 315px;
+}
+
+.section-heading {
+  color: #5B80FF;
+}
+
+footer {
+  height: 100px;
+  margin: 200px auto 50px auto;
 }
