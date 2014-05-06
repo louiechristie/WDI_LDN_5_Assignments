@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Calc It JS!</title>
+  <script src="main.js"></script>
+  <script src="advanced.js"></script>
+  <link rel="stylesheet" type="stylesheet" href="style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <h1>Calc It JS!</h1>
+
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
+    <h2>Basic</h2>
+    <input type="number" id="first"/ >
+    <select id="operation" onclick="update()">
+      <option>+</option>
+      <option>-</option>
+      <option>&times;</option>
+      <option>&divide;</option>
+      <option>sqrt</option>
+    </select>
+    <input type="number" id="second" />
+    <br />
+    <button onclick="calcIt()">Calc It!</button><p id="result"></p>
+  </div>
+
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
+    <h2>Mortgage</h2>
+    <input type="number" id="principal" placeholder="Principal" />
+    <input type="number" id="apr" placeholder="Interest (without % sign)" class="placeholder-field" />
+    <input type="number" id="number" placeholder="No. of Monthly Payments" class="placeholder-field" />
+    <br />
+    <button id="button_mortgage">Calc It!</button><p id="mortgage"></p>
+  </div>
+
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
+  <h2>Body Mass Index</h2>
+  <h3>Imperial</h3>
+  <input type="number" id="imperial_mass" placeholder="Mass (lbs)" />
+  <input type="number" id="imperial_height" placeholder="Height (in)" />
+  <br />
+  <button id="button_bmi_imperial">Calc It!</button><p id="bmi_imperial"></p>
+  <h3>Metric</h3>
+  <input type="number" id="metric_mass" placeholder="Mass (kg)" />
+  <input type="number" id="metric_height" placeholder="Height (cm)" />
+  <br />
+  <button id="button_bmi_metric">Calc It!</button><p id="bmi_metric"></p>
+</div>
+
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
+    <h2>Trip</h2>
+  <input type="number" id="distance" placeholder="Distance" class="placeholder-field" />
+  <input type="number" id="mpg" placeholder="Efficiency (mpg)" class="placeholder-field" />
+  <br />
+  <input type="number" id="cost_per_gallon" placeholder="Cost per Gallon"class="placeholder-field" />
+  <input type="number" id="mph" placeholder="Speed (mph)" class="placeholder-field" />
+  <br />
+  <button onclick="calcItTrip()">Calc It!</button><p id="trip"></p>
+</div>
+
+  <div class="box out" onmouseover="this.setAttribute('class', 'box over')" onmouseout="this.setAttribute('class', 'box out')">
+    <h2>How Many is Too Many?</h2>
+  <input type="number" id="too_many" placeholder="Careful&hellip;" />
+  <br /><button onclick="calcItTooMany()">Calc it!</button><p id="response"></p>
+</div>
+
+  
+  
+
+</body>
+</html>
