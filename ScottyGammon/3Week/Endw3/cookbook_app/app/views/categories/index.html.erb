@@ -1,16 +1,17 @@
-<h2>Cookbook Categories</h2>
+<% title "Categories" %>
 
-<h3><a class='new' href="/categories/new">New Category</a></h3>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for category in @categories %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to "Show", category %></td>
+      <td><%= link_to "Edit", edit_category_path(category) %></td>
+      <td><%= link_to "Destroy", category, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
 
-<div class='table_bg'>
-	<table>
-			<tr>
-				<th>Names</th>
-			</tr>
-			<% @categories.each do |category| %>
-			<tr>
-				<td><%= category.name %></td>
-				<td><%= link_to'Edit', edit_category_path(category), :class => "new" %></td><td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Would you like to delete the category?' }, :class => "new" %></td></tr>	
-			<% end %>
-	</table>
-</div>
+<p><%= link_to "New Category", new_category_path %></p>

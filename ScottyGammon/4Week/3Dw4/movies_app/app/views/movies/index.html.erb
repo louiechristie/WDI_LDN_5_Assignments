@@ -8,7 +8,7 @@
     <th>Genre</th>
     <th>Review</th>
     <th>Watched</th>
-    <th></th>
+    <th>Image</th>
   </tr>
 
 <% @movies.each do |movie| %>
@@ -19,6 +19,7 @@
     <td><%= movie.genre %></td>
     <td><%= movie.review %></td>
     <td><%= movie.ownership %></td>
+    <td><img src="<%= movie.movie_image %>"></td>
     <td><%= link_to 'Show', movie %></td>
     <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
     <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
