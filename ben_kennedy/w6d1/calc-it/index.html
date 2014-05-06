@@ -12,50 +12,68 @@
     <input type='text/javascript' id='calc' class='basic' value="" autofocus>
   </section>
   <section class='calcbuttons'>
-    <button onclick="digit('1');">1</button>
-    <button onclick="digit('2');">2</button>
-    <button onclick="digit('3');">3</button>
-    <button onclick="digit('4');">4</button>
-    <button onclick="digit('5');">5</button>
-    <button onclick="digit('6');">6</button>
-    <button onclick="digit('7');">7</button>
-    <button onclick="digit('8');">8</button>
-    <button onclick="digit('9');">9</button>
-    <button onclick="digit('0');">0</button>
-    <button onclick="digit('.');">.</button>
-    <button class='basic' onclick="add();">+</button>
-    <button class='basic' onclick="subtract();">-</button>
-    <button class='basic' onclick="multiply();">*</button>
-    <button class='basic' onclick="divide();">/</button>
-    <button onclick="equals();">=</button>
-    <button onclick="clearScreen();">C</button>
-    <button class='basic' onclick="sqrt();">sqrt</button>
+    <div class='basic'>
+      <button onclick="digit('1');">1</button>
+      <button onclick="digit('2');">2</button>
+      <button onclick="digit('3');">3</button>
+    </div>
+    <div class='basic'>
+      <button onclick="digit('4');">4</button>
+      <button onclick="digit('5');">5</button>
+      <button onclick="digit('6');">6</button>
+    </div>
+    <div class='basic'>
+      <button onclick="digit('7');">7</button>
+      <button onclick="digit('8');">8</button>
+      <button onclick="digit('9');">9</button>
+    </div>
+    <div class='basic'>
+      <button onclick="digit('0');">0</button>
+      <button onclick="digit('.');">.</button>
+      <button class='basic' onclick="add();">+</button>
+    </div>
+    <div class='basic'>
+      <button class='basic' onclick="subtract();">-</button>
+      <button class='basic' onclick="multiply();">*</button>
+      <button class='basic' onclick="divide();">/</button>
+    </div>
+    <div class='basic'>
+      <button onclick="equals();">=</button>
+      <button onclick="clearScreen();">C</button>
+      <button class='basic' onclick="sqrt();">sqrt</button>
+    </div>
   </section>
   <section class='mortgage-area'>
     <p>Mortgage</p><input type='radio' name='specialty' value='mortgage' onclick='mortgageDisplay()'>
-    <p class='mortgage'>Principal: £<input type='number' id='principal' class='mortgage'></p>
-    <p class='mortgage'>Interest Rate (e.g. 5.0):<input type='number' id='rate' class='mortgage'>%</p>
-    <p class='mortgage'>Years:</p><input type='number' id='years' class='mortgage'>
-    <button class='mortgage' onclick='mortgageCalc()'>Monthly Payment</button>
-    <p class='mortgage' id='monthly_payment'> </p>
+      <div class='inputs'>
+        <p class='mortgage'>Principal: £<input type='number' id='principal' class='mortgage'></p>
+        <p class='mortgage'>Interest Rate (e.g. 5.0):<input type='number' id='rate' class='mortgage'>%</p>
+        <p class='mortgage'>Years:</p><input type='number' id='years' class='mortgage'>
+        <button class='mortgage' onclick='mortgageCalc()'>Monthly Payment</button>
+        <p class='mortgage' id='monthly_payment'> </p>
+      </div>
   </section>
   <section class='bmi-area'>
     <p>BMI</p><input type='radio' name='specialty' value='bmi' onclick='bmiDisplay()'>
-    <p class='bmi'>Imperial</p><input type='radio' class='bmi' id='bmi-type' name='bmi-type' value='imperial' onclick='defBMIImperial()'>
-    <p class='bmi'>Metric</p><input type='radio' class='bmi' id='bmi-type' name='bmi-type' value='metric' onclick='defBMIMetric()'>
-    <p class='bmi'>Weight:</p><input type='number' id='weight' class='bmi'><p class='bmi' id='bmi weight-units'>pounds</p>
-    <p class='bmi'>Height:</p><input type='number' id='height' class='bmi'><p class='bmi' id='bmi height-units'>inches</p>
-    <button class='bmi' onclick='bmiCalc()'>BMI Index</button>
-    <p class='bmi' id='bmi_index'> </p>
+    <div class='inputs'>
+      <p class='bmi'>Imperial</p><input type='radio' class='bmi' id='bmi-type' name='bmi-type' value='imperial' onclick='defBMIImperial()'>
+      <p class='bmi'>Metric</p><input type='radio' class='bmi' id='bmi-type' name='bmi-type' value='metric' onclick='defBMIMetric()'>
+      <p class='bmi'>Weight:</p><input type='number' id='weight' class='bmi'><p class='bmi' id='bmi weight-units'>pounds</p>
+      <p class='bmi'>Height:</p><input type='number' id='height' class='bmi'><p class='bmi' id='bmi height-units'>inches</p>
+      <button class='bmi' onclick='bmiCalc()'>BMI Index</button>
+      <p class='bmi' id='bmi_index'> </p>
+    </div>
   </section>
   <section class='trip-area'>
     <p>Trip</p><input type='radio' name='specialty' value='trip' onclick='tripDisplay()'>
-    <p class='trip'>Distance:</p><input type='number' id='distance' class='trip'><p class='trip' id='trip distance'>miles</p>
-    <p class='trip'>Average Speed:</p><input type='number' id='speed' class='trip'><p class='trip' id='trip speed'>mph</p>
-    <p class='trip'>Averge mpg:</p><input type='number' id='mpg' class='trip'><p class='trip' id='trip mpg'>miles per gallon</p>
-    <p class='trip'>Gas Price:</p><input type='number' id='price' class='trip'><p class='trip' id='trip price'>$ per gallon</p>
-    <button class='trip' onclick='tripCalc()'>Trip Details</button>
-    <p class='trip' id='trip_details'> </p>
+    <div class='inputs'>
+      <p class='trip'>Distance:</p><input type='number' id='distance' class='trip'><p class='trip' id='trip distance'>miles</p>
+      <p class='trip'>Average Speed:</p><input type='number' id='speed' class='trip'><p class='trip' id='trip speed'>mph</p>
+      <p class='trip'>Averge mpg:</p><input type='number' id='mpg' class='trip'><p class='trip' id='trip mpg'>miles per gallon</p>
+      <p class='trip'>Gas Price:</p><input type='number' id='price' class='trip'><p class='trip' id='trip price'>$ per gallon</p>
+      <button class='trip' onclick='tripCalc()'>Trip Details</button>
+      <p class='trip' id='trip_details'> </p>
+    </div>
   </section>
 </main>
 </body>

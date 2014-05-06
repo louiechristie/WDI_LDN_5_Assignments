@@ -1,6 +1,13 @@
 .mortgage, .bmi, .trip {
   display: none;
 }
+main {
+  width: 600px;
+  margin: 0 auto;
+}
+section.calctop input#calc {
+  margin: 10px auto;
+}
 input {
   display: inline-block;
   padding: 5px;
