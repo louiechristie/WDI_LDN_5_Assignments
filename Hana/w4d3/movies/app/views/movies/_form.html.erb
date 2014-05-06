@@ -18,8 +18,13 @@
     <%= f.text_field :title %>
   </div>
 
+<<<<<<< HEAD
+  <div class="field">
+    <%= f.label :movie_image %>
+=======
  <div class = 'field'>
     <%= f.label :movie_image %><br/>
+>>>>>>> 2f4bf6ab33da6defed86734a5f388b7ae1d35697
     <%= f.file_field :movie_image %>
   </div>
    <p>
@@ -29,13 +34,13 @@
     </label>
   </p>
 
-  <div class="field">
-     <% Category.all.each do |category| %>
-       <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category), id: "movie_category_ids_#{category.id}" %>
-       <%= f.label :category_ids, category.name, for: "movie_category_ids_#{category.id}" %>
-       <br>
-     <% end %>
-  </div>
+<<<<<<< HEAD
+ <div class="field">
+  <% Category.all.each do |category| %>
+       <%= check_box_tag "movie[category_ids][]", category.id, @movie.categories.include?(category), id: "category_movie_ids_#{category.id}" %>
+       <%= f.label :category_ids, category.name, for: "category_movie_ids_{category.id}" %>
+       <%end%>
+     </div>
 
   <div class="field">
     <%= f.label :venue %>

@@ -1,14 +1,14 @@
 <h1><%=@movie.title%></h1>
 
-
-
 <div>
-  <%= image_tag @movie.movie_image.url %>
+  <%= link_to image_tag(@movie.movie_image.thumb.url), @movie.movie_image.detail.url %>
 </div>
 <div>
-  Category: <% @movie.categories.each do |category| %>
-    <%= category.name %><br>
-  <% end %>
+  Category:</br>
+  <% @movie.categories.each do |category| %>
+      <%= category.name %><br>
+    <% end %>
+
 </div>
 <div>
   Venue: <%= @movie.venue%>
