@@ -1,55 +1,55 @@
-var BankApp = {};
+var BankSavings = {};
 
-BankApp.savingsAmount = 0;
+BankSavings.savingsAmount = 0;
 
-BankApp.getSavingsInput = function () {
+BankSavings.getSavingsInput = function () {
   $savings_input = parseFloat($("#savings_input").val());
 }
 
-BankApp.getDisplaySavings = function () {
+BankSavings.getDisplaySavings = function () {
   $display_savings = $("#display_savings");
 }
 
-BankApp.displaySavingsAmount = function () {
-  $display_savings.text(BankApp.savingsAmount);
+BankSavings.displaySavingsAmount = function () {
+  $display_savings.text(BankSavings.savingsAmount);
 }
 
-BankApp.clearSavingsInput = function () {
+BankSavings.clearSavingsInput = function () {
   $("#savings_input").val("");
 }
 
-BankApp.reduceSavingsAmount = function () {
-  BankApp.getSavingsInput();
-  BankApp.getDisplaySavings();
-  BankApp.savingsAmount -= $savings_input;
+BankSavings.reduceSavingsAmount = function () {
+  BankSavings.getSavingsInput();
+  BankSavings.getDisplaySavings();
+  BankSavings.savingsAmount -= $savings_input;
 
-  BankApp.displaySavingsAmount();
-  BankApp.clearSavingsInput();
+  BankSavings.displaySavingsAmount();
+  BankSavings.clearSavingsInput();
 }
 
-BankApp.increaseSavingsAmount = function () {
-  BankApp.getSavingsInput();
-  BankApp.getDisplaySavings();
-  BankApp.savingsAmount += $savings_input;
+BankSavings.increaseSavingsAmount = function () {
+  BankSavings.getSavingsInput();
+  BankSavings.getDisplaySavings();
+  BankSavings.savingsAmount += $savings_input;
 
-  BankApp.displaySavingsAmount();
-  BankApp.clearSavingsInput();
+  BankSavings.displaySavingsAmount();
+  BankSavings.clearSavingsInput();
 }
 
-BankApp.setup = function () {
+BankSavings.setup = function () {
   $display_savings = $("#display_savings");
-  BankApp.displaySavingsAmount();
+  BankSavings.displaySavingsAmount();
 
   $("#savings_withdraw_button").click( function (ev) {
     ev.preventDefault();
-    BankApp.reduceSavingsAmount();
+    BankSavings.reduceSavingsAmount();
   });
   
 $("#savings_deposit_button").click( function (ev) {
     ev.preventDefault();
-    BankApp.increaseSavingsAmount();
+    BankSavings.increaseSavingsAmount();
   });
   
 }
 
-$(document).ready(BankApp.setup);
+$(document).ready(BankSavings.setup);

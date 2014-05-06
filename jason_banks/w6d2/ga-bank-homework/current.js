@@ -1,59 +1,56 @@
-var BankApp = {};
+var BankCurrent = {};
 
-BankApp.currentAmount = 0;
+BankCurrent.currentAmount = 0;
 
-
-BankApp.getCurrentInput = function () {
+BankCurrent.getCurrentInput = function () {
   $current_input = parseFloat($("#current_input").val());
 }
 
-BankApp.getDisplayCurrent = function () {
+BankCurrent.getDisplayCurrent = function () {
   $display_current = $("#display_current");
 }
 
-BankApp.displayCurrentAmount = function () {
-  $display_current.text(BankApp.currentAmount);
+BankCurrent.displayCurrentAmount = function () {
+  $display_current.text(BankCurrent.currentAmount);
 }
 
-BankApp.clearCurrentInput = function () {
+BankCurrent.clearCurrentInput = function () {
   $("#current_input").val("");
 }
 
 
-BankApp.reduceCurrentAmount = function () {
-  BankApp.getCurrentInput();
-  BankApp.getDisplayCurrent();
-  BankApp.currentAmount -= $current_input;
+BankCurrent.reduceCurrentAmount = function () {
+  BankCurrent.getCurrentInput();
+  BankCurrent.getDisplayCurrent();
+  BankCurrent.currentAmount -= $current_input;
 
-  BankApp.displayCurrentAmount();
-  BankApp.clearCurrentInput();
+  BankCurrent.displayCurrentAmount();
+  BankCurrent.clearCurrentInput();
 }
 
-BankApp.increaseCurrentAmount = function () {
-  BankApp.getCurrentInput();
-  BankApp.getDisplayCurrent();
-  BankApp.currentAmount += $current_input;
+BankCurrent.increaseCurrentAmount = function () {
+  BankCurrent.getCurrentInput();
+  BankCurrent.getDisplayCurrent();
+  BankCurrent.currentAmount += $current_input;
 
-  BankApp.displayCurrentAmount();
-  BankApp.clearCurrentInput();
+  BankCurrent.displayCurrentAmount();
+  BankCurrent.clearCurrentInput();
 }
 
-
-BankApp.setup = function () {
-  $display_current = $("#display_current");
-  BankApp.displayCurrentAmount();
-
+BankCurrent.setup = function () {
+  BankCurrent.getDisplayCurrent();
+  BankCurrent.displayCurrentAmount();
   
   $("#current_withdraw_button").click( function (ev) {
     ev.preventDefault();
-    BankApp.reduceCurrentAmount();
+    BankCurrent.reduceCurrentAmount();
   });
   
 $("#current_deposit_button").click( function (ev) {
     ev.preventDefault();
-    BankApp.increaseCurrentAmount();
+    BankCurrent.increaseCurrentAmount();
   });
   
 }
 
-$(document).ready(BankApp.setup);
+$(document).ready(BankCurrent.setup);
