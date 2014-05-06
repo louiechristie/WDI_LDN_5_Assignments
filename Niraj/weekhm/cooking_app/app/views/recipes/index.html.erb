@@ -13,9 +13,14 @@
           <p> Category: <%= recipe.category.try :name %>
           <p>Ingredients:</p>
 
+          <%= image_tag recipe.recipe_image.url %>
 
-
+          <% if can? :update, recipe %>
+                
           <%= link_to "edit", edit_recipe_path(recipe)%>
+
+          <% end %>
+
 
 
          <%= link_to 'Delete', recipe_path(recipe), method: 'delete', confirm: 'Are you sure?' %> 

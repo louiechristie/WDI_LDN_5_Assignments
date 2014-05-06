@@ -1,6 +1,10 @@
 class IngredientsController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @ingredients = Ingredient.all
+    @q = Ingredient.search(params[:q])
+    @ingredients = @q.result
+    @model_name = "ingredient"
   end
 
   def new
@@ -11,7 +15,7 @@ class IngredientsController < ApplicationController
     params[:ingredient][:name].downcase!
     @ingredient = Ingredient.new(params[:ingredient])
     if @ingredient.save
-      redirect_to(ingredients_path, notice: "#{@ingredient.name} has been successfully added.")
+      redirect_to(@ingredient, notice: "#{@ingredient.name} has been successfully added.")
     else
       render action: 'new'
     end
@@ -19,7 +23,6 @@ class IngredientsController < ApplicationController
 
   def show
     find_ingredient
-    find_recipes
   end
 
   def edit
@@ -30,7 +33,7 @@ class IngredientsController < ApplicationController
     find_ingredient
     params[:ingredient][:name].downcase!
     if @ingredient.update_attributes(params[:ingredient])
-      redirect_to(ingredients_path, notice: "#{@ingredient.name} has been successfully updated.")
+      redirect_to(@ingredient, notice: "#{@ingredient.name} has been successfully updated.")
     else
       render action: 'edit'
     end
@@ -45,9 +48,6 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
   end
 
-  def find_recipes
-    @recipes = Recipe.where(id: @ingredient.recipe_ids).order(:title)
-  end
 
   
 end

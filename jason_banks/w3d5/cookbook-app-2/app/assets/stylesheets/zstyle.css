@@ -123,6 +123,7 @@ img {
 .flash {
   margin-top: 100px;
   margin-bottom: -50px;
+  color: #5B80FF
 }
 
 #error_explanation, #notice {
@@ -130,5 +131,35 @@ img {
 }
 
 .active_menu_item {
-  color: #5B80FF;
+  color: #5B80FF;  
+}
+
+.category-index {
+  margin: 10px;
+  display: block;
+}
+
+svg {
+  fill: #fff;
+  height: 140px;
+  width: 120px;
+  margin-right: 40px;
+  margin-bottom: -40px;
+}
+
+svg:hover {
+  fill: #5B80FF;
+}
+
+table.users-index {
+  width: 600px;
+  table-layout: fixed;
+}
+
+td.users-index {
+  width: 200px;
+}
+
+#email, #password {
+  width: 315px;
 }

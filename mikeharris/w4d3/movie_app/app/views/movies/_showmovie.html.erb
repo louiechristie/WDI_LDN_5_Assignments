@@ -1,0 +1,27 @@
+
+    <tr>
+      <td>
+        <a href="<%= movie_path(movie) %>"><%= movie.title %></a>
+      </td>
+      <td>
+        <%= movie.year %>
+      </td>
+      <td>
+       
+       <% unless params[:id] %>
+        <%= link_to "Destroy", movie, :confirm => 'Are you sure?', :method => :delete %>
+
+        <% if current_user %>
+           <%= button_to "Add film to favourites", user_path(current_user, :movie_id => movie.id, :movieaction => "add") ,  :method => :put%>
+         <% end %>
+
+        <% else %>
+          <!-- #doesn't work and seems very smely -->
+          <%= button_to "Remove film from favourites", user_path(current_user, :movie_id => movie.id, :movieaction => "remove") ,  :method => :put%>
+
+        <% end %>
+
+      </td>
+    </tr>
+ 
+    

@@ -1,0 +1,16 @@
+
+<h2>Movie Index</h2>
+  <div>
+    <%= link_to "Add a movie", new_movie_path %>
+  </div>
+  
+  <% @movies.each do |movie| %>
+    <div>
+      <%=link_to movie.title, movie%>
+    </div>
+    <div>
+      <%= button_to 'Delete', delete_movie_path(movie), method: 'delete'%>
+    </div>
+    <div>
+      <%= button_to 'Edit', edit_movie_path(movie), method: 'get'%>
+  <%end%>

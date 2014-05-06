@@ -1,6 +1,15 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
+
+  def home
+    @q = Category.search(params[:q])
+    @categories = @q.result
+    @model_name = "category"
+  end
+
   def index
-    @categories = Category.order
+    @q = Category.search(params[:q])
+    @categories = @q.result
   end
 
   def new

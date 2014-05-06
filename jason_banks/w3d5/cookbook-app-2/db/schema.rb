@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421174558) do
+ActiveRecord::Schema.define(:version => 20140423142442) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -26,14 +26,17 @@ ActiveRecord::Schema.define(:version => 20140421174558) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "quantities", :force => true do |t|
+  create_table "ingredients_recipes", :force => true do |t|
     t.integer  "ingredient_id"
     t.integer  "recipe_id"
-    t.integer  "quantity"
     t.string   "measure"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "quantity"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "ingredients_recipes", ["ingredient_id"], :name => "index_ingredients_recipes_on_ingredient_id"
+  add_index "ingredients_recipes", ["recipe_id"], :name => "index_ingredients_recipes_on_recipe_id"
 
   create_table "recipes", :force => true do |t|
     t.string   "title",        :null => false
@@ -44,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20140421174558) do
     t.integer  "category_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "role"
   end
 
 end

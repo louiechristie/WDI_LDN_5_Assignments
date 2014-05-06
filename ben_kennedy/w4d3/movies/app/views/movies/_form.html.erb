@@ -1,0 +1,32 @@
+<% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label 'Add Your Review' %><br />
+      <%= f.text_area :review %>
+    </p>
+    <p>
+      <%= f.label 'Where did you watch this movie?' %><br />
+      <% WhereWatched.all.each do |where_watched| %>
+        <div class ='radio'>
+          <%= where_watched.location %>
+          <%= radio_button "movie", :where_watched_id, where_watched.id %>
+        </div>
+      <% end %>
+    </p>
+
+  

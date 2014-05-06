@@ -1,0 +1,17 @@
+<h2><%= @user.email %>s page</h2>
+
+<p>A list of your favourite films</p>
+<table>
+<% @movies.each do |movie| %>
+     
+     <%= render "/movies/showmovie", :movie => movie %>
+     
+<% end %>
+<table>
+
+<p>A list of your favourite actors</p>
+
+
+
+
+

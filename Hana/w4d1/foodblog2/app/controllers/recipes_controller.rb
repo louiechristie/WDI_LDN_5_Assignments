@@ -11,10 +11,12 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @ingredients = Ingredient.all 
+    @recipe.ingredients_recipes.build
    
   end
 
   def create
+    #params([:recipe][:ingredients_recipes])
     @recipe = Recipe.create(params[:recipe])
     @ingredients = Ingredient.all 
     if @recipe.save

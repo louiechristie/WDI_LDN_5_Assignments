@@ -1,0 +1,22 @@
+<%= form_for(@movie) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </div>
+
+  <div class="field">
+   <%= f.label :format_id, 'Format' %><br />
+   <%= f.select :format_id, Format.all.map { |f| [[f.name].to_sentence, f.id] } %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <% end %>

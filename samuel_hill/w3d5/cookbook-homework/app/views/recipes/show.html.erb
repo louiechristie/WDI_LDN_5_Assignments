@@ -2,11 +2,11 @@
 
 <h2><%= @recipe.name %></h2>
 
-<h3>Feeds:</h3><%= @recipe.feeds %>
+<h3>Feeds:</h3><%= pluralize(@recipe.feeds, 'Person') %>
 
 <h3>Instructions:</h3><%= @recipe.instructions %>
 
 <h3>Category:</h3><%= @recipe.category.name %>
 
-<h3>Ingredients:</h3><%= @recipe.ingredients %>
+<h3>Ingredients:</h3><%= @recipe.ingredients.pluck(:name).to_sentence %>
 

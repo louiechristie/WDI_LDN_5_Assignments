@@ -22,6 +22,10 @@
     <%= r.text_field :name %>
   </div>
   <div class="field">
+    <%= r.label :recipe_image %><br />
+    <%= r.file_field :recipe_image %>
+  </div>
+  <div class="field">
     <%= r.label :description %><br />
     <%= r.text_area :description %>
   </div>
@@ -29,14 +33,30 @@
     <%= r.label :feeds_people %><br />
     <%= r.select :feeds_people, options_for_select(10.downto(1)) %>
   </div>
-  <div class="field">
+
+  <!-- <div class="field">
     <%= r.label :ingridients %><br />
     <%= hidden_field_tag "recipe[ingridient_ids][]" %>
     <% for ingridient in Ingridient.all %>
     <%= check_box_tag "recipe[ingridient_ids][]", ingridient.id, @recipe.ingridients.include?(ingridient) %> 
     <%= ingridient.name %>
   <% end %>
-  </div>
+  </div> -->
+
+  <p>
+  <%= r.fields_for :ingridients_recipes do |i| %>
+    <div class="field">
+      <%= i.hidden_field :ingridient_id %>
+      <%= i.text_field :quantity %>
+      <%= i.label :quantity, "Quantity of #{i.object.ingridient.name}" %>
+    </div>
+    <div class="field">
+      <%= i.text_field :measure %>
+      <%= i.label :measure, "Measure of #{i.object.ingridient.name}" %>
+    </div>
+  <% end %>
+  </p>
+
   <div class="actions">
     <%= r.submit %>
   </div>

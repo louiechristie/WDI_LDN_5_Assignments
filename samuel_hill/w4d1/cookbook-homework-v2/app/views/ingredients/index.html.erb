@@ -1,6 +1,6 @@
 <h1>Ingredients</h1>
 
-<a href="/ingredients/new">Add a New Ingredient</a>
+<div class='add'><a href="/ingredients/new">Add a New Ingredient</a></div>
 
 <table>
 	<tr>
@@ -9,6 +9,9 @@
 	<% @ingredients.each do |ingredient| %>
 	<tr>
 		<td><%= ingredient.name %></td>
-		<td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>	
+		<% if can? :update, ingredient %>
+		<td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+	</tr>	
 	<% end %>
 </table>

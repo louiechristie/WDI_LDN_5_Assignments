@@ -8,7 +8,7 @@
 <%= f.label :title %>
 <div class="black"><%= f.text_field :title %></div>
 <br /><br />
-<%= f.label "Category" %> <div class="black"><%= f.collection_select(:category_id, @categories, :id, :name) %></div>
+Category <div class="black"><%= f.collection_select(:category_id, @categories, :id, :name) %></div>
 <br /><br />
 <%= f.label :description %>
 <div class="black"><%= f.text_field :description %></div>
@@ -16,17 +16,25 @@
 <%= f.label :prep_time %> (in months)
 <div class="black"><%= f.number_field :prep_time, min: 0, step: 1 %></div>
 <br /><br />
-Ingredients
+Ingredients (if any)
 <br />
-<%= f.label "Ingredients" %>
-<%= f.collection_select(:ingredientsrecipes, @ingredients, :id, :name) %>
+
+<%= f.fields_for :ingredients_recipes do |i| %>
+  <div class="field">
+    <%= i.hidden_field :ingredient_id %>
+    <%= i.label :quantity, i.object.ingredient.name %>
+    <div class="black">
+      <%= i.text_field :quantity, placeholder: "Quantity" %>
+    </div>
+  </div>
+  <% end %>
+
+
+
 <br />
 <%= f.label :instructions %>
 <br /><br />
 <div class="black"><%= f.text_area :instructions %></div>
-<br /><br />
-<%= f.label :image %> URL
-<div class="black"><%= f.text_field :image %></div>
 <br /><br />
 <div class="black"><%= submit_tag("Submit") %></div>
 <% end %>

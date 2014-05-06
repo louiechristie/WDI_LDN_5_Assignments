@@ -27,7 +27,11 @@
 	</tr>
 	<tr>
 		<th>Engine:</th>
-		<td><%= @car.engine.fuel_type %>&nbsp;<%= @car.engine.size %>&nbsp;<%= @car.engine.model %></td>
+		<td>
+if car.engine
+			<%= @car.engine.fuel_type %>&nbsp;<%= @car.engine.size %>&nbsp;<%= @car.engine.model %>
+end
+		</td>
 	</tr>
 	<tr>
 		<th>Category:</th>

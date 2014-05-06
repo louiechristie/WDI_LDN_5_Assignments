@@ -1,10 +1,10 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :category_id, :description, :image, :instructions, :prep_time, :title
+  attr_accessible :category_id, :description, :image, :instructions, :prep_time, :title, :ingredients_recipes_attributes
   validates :description, :instructions, :title, presence: true
 
   belongs_to :category
-  has_many :quantities
-  has_many :ingredients, through: :quantities
+  has_many :ingredients_recipes
+  has_many :ingredients, through: :ingredients_recipes
 
-  accepts_nested_attributes_for :ingredients, :quantities
+  accepts_nested_attributes_for :ingredients_recipes, allow_destroy: true
 end

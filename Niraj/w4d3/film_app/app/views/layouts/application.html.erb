@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FilmApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+      <nav>
+        <ul>
+          <li>
+            <% if current_user %>
+              hello, <%= current_user.email %>
+              <%= button_to 'logout', session_path(0), method: :delete %>
+            <% else %>
+              <%=link_to 'login', new_session_path %>
+            <% end %>
+          </li>
+         
+          <li>
+            <%=link_to 'users', users_path %>
+          </li>
+        </ul>
+
+      </nav>
+
+<%= yield %>
+
+</body>
+</html>
