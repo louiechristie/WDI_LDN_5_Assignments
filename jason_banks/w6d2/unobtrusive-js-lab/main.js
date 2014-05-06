@@ -1,55 +1,57 @@
-function update() {
-  var y = document.getElementById("operation").selectedIndex;
-  var x = document.getElementById("operation").options;
-  var second = document.getElementById("second");
+var CalcItBasic = {};
 
-  switch (unescape(x[y].text)) {
-    case "sqrt":
-      second.setAttribute("disabled", "disabled");
-      break
-    default:
-      break;
-  }
-}
+// CalcItBasic.update = function () {
+//   var y = document.getElementById("operation").selectedIndex;
+//   var x = document.getElementById("operation").options;
+//   var second = document.getElementById("second");
 
-function calcIt() {
+//   switch (unescape(x[y].text)) {
+//     case "sqrt":
+//       second.setAttribute("disabled", "disabled");
+//       break
+//     default:
+//       break;
+//   }
+// }
+
+CalcItBasic.calcIt = function () {
   var y = document.getElementById("operation").selectedIndex;
   var x = document.getElementById("operation").options;
 
   switch (unescape(x[y].text)) {
     case "+":
-      sum();
+      CalcItBasic.sum();
       break;
     case "-":
-      subtract();
+      CalcItBasic.subtract();
       break;
     case "\xD7":
-      multiply();
+      CalcItBasic.multiply();
       break;
     case "\xF7":
-      divide();
+      CalcItBasic.divide();
       break;
     case "sqrt":
-      squareRoot();
+      CalcItBasic.squareRoot();
       break
     default:
       break;
   }
 }
 
-function getFirstInput() {
+CalcItBasic.getFirstInput = function () {
   var first = parseInt(document.getElementById("first").value);
   return first;
 }
 
-function getSecondInput () {
+CalcItBasic.getSecondInput = function () {
   var second = parseInt(document.getElementById("second").value);
   return second;
 }
 
-function sum() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+CalcItBasic.sum = function () {
+  var first = CalcItBasic.getFirstInput();
+  var second = CalcItBasic.getSecondInput();
   var result = document.getElementById("result");
   var maths = first + second;
 
@@ -64,9 +66,9 @@ function sum() {
   }
 }
 
-function subtract() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+CalcItBasic.subtract = function () {
+  var first = CalcItBasic.getFirstInput();
+  var second = CalcItBasic.getSecondInput();
   var result = document.getElementById("result");
   var maths = first - second;
 
@@ -81,9 +83,9 @@ function subtract() {
   }
 }
 
-function multiply() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+CalcItBasic.multiply = function () {
+  var first = CalcItBasic.getFirstInput();
+  var second = CalcItBasic.getSecondInput();
   var result = document.getElementById("result");
   var maths = first * second;
 
@@ -98,9 +100,9 @@ function multiply() {
   }
 }
 
-function divide() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+CalcItBasic.divide = function () {
+  var first = CalcItBasic.getFirstInput();
+  var second = CalcItBasic.getSecondInput();
   var result = document.getElementById("result");
   var maths = first / second;
 
@@ -117,9 +119,9 @@ function divide() {
   }
 }
 
-function squareRoot() {
-  var first = getFirstInput();
-  var second = getSecondInput();
+CalcItBasic.squareRoot = function () {
+  var first = CalcItBasic.getFirstInput();
+  var second = CalcItBasic.getSecondInput();
   var result = document.getElementById("result");
   var maths = Math.sqrt(first);
 
@@ -139,3 +141,11 @@ function squareRoot() {
     result.innerHTML += "could not be determined due to invalid inputs. ";
   }
 }
+
+CalcItBasic.setup = function () {
+
+  var button_basic = document.getElementById("button_basic");
+  button_basic.addEventListener('click', CalcItBasic.calcIt);
+}
+
+document.addEventListener('DOMContentLoaded', CalcItBasic.setup);
