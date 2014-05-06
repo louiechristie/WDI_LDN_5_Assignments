@@ -88,7 +88,7 @@ function fizzbuzz() {
     } else if (input % 3 == 0) {
         var show = 'Fizz';
     } else { 
-       alert('Please enter a valid input and try again');
+       var show = input;
     }
 
   caption.innerHTML = show + "!";
