@@ -1,13 +1,12 @@
 var ToDoApp = {};
 
-ToDoApp.items_list = [];
+ToDoApp.items_list = ["Get keys from the key maker", "Buy krugerands", "Drink Dan's orange juice"];
 
 ToDoApp.add_item = function () {
   var $new_item = $('#new_item');
-  var $list = $('#list');
 
   if ($new_item.val()){
-    ToDoApp.items_list.push($new_item);
+    ToDoApp.items_list.push($new_item.val());
   } else {
     alert("Cannot add a blank item.");
   }
@@ -19,7 +18,10 @@ ToDoApp.add_item = function () {
 
 
 ToDoApp.setup = function () {
-  $('#add_button').click(ToDoApp.add_item);
+  $('#add_button').click( function (ev) {
+    ev.preventDefault();
+    ToDoApp.add_item();
+  });
 
 }
 
