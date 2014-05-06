@@ -1,10 +1,13 @@
 <html>
 <head>
   <title>Bank</title>
+  <script src="jquery-1.11.1.js"></script>
+  <script src="main.js"></script>
 </head>
 <body>
   <h1>Bank!</h1>
   <div id="current">
+    <h2 id="display_current"></h2>
     <form>
       <input type="number" id="current_input" name="current_input" placeholder="Enter &pound;" />
       <button id="current_withdraw_button">Withdraw</button>
@@ -12,6 +15,7 @@
   </div>
 
   <div id="savings">
+    <h2 id="display_savings"></h2>
     <form>
       <input type="number" id="savings_input" name="savings_input" placeholder="Enter &pound;" />
       <button id="savings_withdraw_button">Withdraw</button>
