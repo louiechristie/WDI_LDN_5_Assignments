@@ -17,7 +17,7 @@ BankCurrent.getDisplayCurrent = function () {
 }
 
 BankCurrent.displayCurrentAmount = function () {
-  $display_current.text(BankCurrent.currentAmount);
+  $display_current.text("\xA3" + BankCurrent.currentAmount.toFixed(2));
 }
 
 BankCurrent.clearCurrentInput = function () {

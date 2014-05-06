@@ -18,7 +18,7 @@ BankSavings.getDisplaySavings = function () {
 }
 
 BankSavings.displaySavingsAmount = function () {
-  $display_savings.text(BankSavings.savingsAmount);
+  $display_savings.text("\xA3" + BankSavings.savingsAmount.toFixed(2));
 }
 
 BankSavings.clearSavingsInput = function () {
