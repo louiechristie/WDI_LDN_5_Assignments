@@ -1,5 +1,19 @@
 var myApp = myApp || {}
 
+
+function isNumber(event) {
+  if (event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode != 190 && charCode > 31 && 
+       (charCode < 48 || charCode > 57) && 
+       (charCode < 96 || charCode > 105) && 
+       (charCode < 37 || charCode > 40) && 
+        charCode != 110 && charCode != 8 && charCode != 46 )
+       return false;
+  }
+  return true;
+}
+
 myApp.deposit_to_checkings = function(event) {
   event.preventDefault();
   var amount = parseInt($('#balance_checkings').val());
@@ -11,13 +25,32 @@ myApp.deposit_to_checkings = function(event) {
 
 myApp.withdraw_from_checkings = function() {
   event.preventDefault();
+
   var amount = parseInt($('#balance_checkings').val());
   var balance = parseInt($('#amount_checkings').val());
   var newbalance = amount - balance
+  var savingsbalance = parseInt($('#savingsOutput').val());
 
+  if (newbalance < 0 ){
+    alert("You do not have enough money to withdraw the requested amount, we will try to deduct from your savings account.");
+    var newbalance = Math.abs(newbalance);
+    var newsavingsbalance = savingsbalance - newbalance;
+
+      if (newsavingsbalance < 0) {
+        alert("Sorry, you do not have enough money, please deposit some money.");
+      } else {
+          $('#savingsOutput').val(savingsbalance - newbalance);
+          $('#amount_checkings').val(balance - balance);
+      }
+  } else {
   document.getElementById('balance_checkings').value=(amount - balance);
-
+  }
+  
 }
+
+
+
+
 
 
 myApp.deposit_to_savings = function(event) {
