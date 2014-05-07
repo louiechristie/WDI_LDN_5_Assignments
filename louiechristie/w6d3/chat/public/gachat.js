@@ -18,25 +18,38 @@ chatApp.messageSubmitHandler = function(ev) {
   console.log('timestamp: '+timestamp);
 
   var ajaxOptions = {
-    url: '/',
+    url: '/chat',
     username: username,
     message: message,
     since: timestamp,
-    type: 'GET',
+    type: 'POST',
     success: chatApp.updatePage,
     error: function(data) {
       console.error("AJAX request failed.");
       console.log(data);
       },
     };
-    $.ajax(ajaxOptions).done(chatApp.updatePage);
+    console.log('ajaxOptions: '+ajaxOptions);
+    $.ajax(ajaxOptions).done(chatApp.updatePage());
+    
 }
 
-chatApp.updatePage = function (data) {
+chatApp.updatePage = function(data) {
   console.log('updatePage()');
+
+  // chatApp.addMessage(data);
+  
+}
+
+chatApp.addMessage = function(data) {
+  console.log('data: '+data)
+  $('.chat').append( "<li><span class='username'>"+data[username]+"</span> <span class='message'>"+data[message]+"</span></li>" );
+
   var bits = ['username', 'message', 'since'];
   $.each(bits, function(i, name) {
-  chatApp.updateBits($('chat #' + name), data[name]);
+
+
+    chatApp.updateBits($('.chat .'+name), data[name]);
   });
 }
 
