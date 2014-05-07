@@ -14,6 +14,18 @@ get '/' do
   erb :index
 end
 
+get '/latest' do
+  @username = params["username"] || ""
+  if chatlines.length > 10
+    @lines = chatlines[-10, 10]
+  else
+    @lines = chatlines
+  end
+  # if request.xhr? 
+  #     return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
+  # end
+end
+
 post '/chat' do
   # Add a line to our chat
   requirements = %w{username message}
@@ -22,7 +34,11 @@ post '/chat' do
     if request.xhr? and params.has_key? "since"
       return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
     end
-  end
+  else
+      if request.xhr? and params.has_key? "since"
+          return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
+      end
+   end   
   redirect to '/?username=' + params["username"]
 end
 

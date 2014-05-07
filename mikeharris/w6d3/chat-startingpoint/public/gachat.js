@@ -1,17 +1,18 @@
 var Gachat = Gachat || {};
 
 Gachat.chat = function(ev){
-  ev.preventDefault();
-  var bits =['message', 'username', 'since'];
+  console.log();
   var data = {};
+  if(ev) {
+    ev.preventDefault();
+  var bits =['message', 'username', 'since'];
+  
   $.each(bits, function(i,name) {
-      // console.log(name)
-      // console.log('#' + name);
-      // console.log($('#' + name).val());
-      data[name] = $('#' + name).val();
+        data[name] = $('#' + name).val();
   });
-
-  console.log(data);
+  } else {
+    data['since'] = $('#since').val();
+  }
 
   var ajaxOptions = {
           url: "/chat",
@@ -22,14 +23,38 @@ Gachat.chat = function(ev){
             console.log(data);
           }
         }
-  $.ajax(ajaxOptions);  
+  $.ajax(ajaxOptions).done(Gachat.updatePage) 
 }
 
+Gachat.flash = function(n){
+      $item = $('li').slice(-n);
+      $item.addClass('test');
+      setTimeout(function () {
+            $item.removeClass('test');
+      }, 50);
+}
+ 
+Gachat.updatePage = function(data) {
+     $.each(data, function(i,message) {          
+          $a = ("<li><span class='username'>&lt;" + message['username']  +"&gt;</span><span class='message'> " + message['message'] + '</span></li>')
+          $('ul').append($a)        
+          $('#since').val(message['timestamp']);
+          if($('li').length >=  10) {
+              $('li:first').remove();
+          }
+     });
+     Gachat.flash(data.length)
+}
+
+Gachat.updateRegularly = function() {
+    setInterval(function() {
+        Gachat.chat();
+      }, 1000);
+  }
 
 Gachat.setup =function(){
    $('form').on('submit', Gachat.chat)
+   Gachat.updateRegularly();
 }
-
-
 
 $(Gachat.setup);

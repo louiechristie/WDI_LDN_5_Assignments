@@ -18,6 +18,8 @@ ul {
 
 ul li {
     list-style-type: none;
+    background: inherit;
+    transition: background 1s ease-in;
 }
 
 label {
@@ -26,4 +28,8 @@ label {
 
 .username {
     font-weight: bold;
+}
+
+.test {
+    background: red;
 }
