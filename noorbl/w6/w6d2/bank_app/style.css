@@ -1,0 +1,39 @@
+body {
+  background-color: #B2FFFF ;
+  text-align: center;
+}
+
+h1 {
+  color: #FF7519;
+  font-family: helvetica;
+  text-align: center;
+  font-size: 35px;
+}
+
+h2 {
+  color: #FF7519;
+  font-family: helvetica;
+  text-align: center;
+  font-size: 30px;
+}
+
+#checking {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+}
+
+#saving {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+}
+
+
+/*p {
+  text-align: center;
+  font-size: 20px;
+  font-family: helvetica;
+  color: #354C4C;
+}*/
+
