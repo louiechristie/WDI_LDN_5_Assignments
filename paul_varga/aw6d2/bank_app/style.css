@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  background: url('finance.jpg');
+  background-size: 100%;
+}
+
+main {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 350px;
+  margin-right: 350px; 
+}
+
+img {
+  width: 150px;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+h3 {
+  color: #ffffff;
+}
+
+#current {
+  margin-top: 50px;
+}
+
+#current input {
+  font-size: 16px;
+}
+
+#savings {
+  margin-top: 50px;
+}
+
+#savings input {
+  font-size: 16px;
+}
+
