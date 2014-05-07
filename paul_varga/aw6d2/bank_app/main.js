@@ -70,7 +70,7 @@ myApp.withdrawFromSavings = function() {
       savingsBalance = 0;
   }
 
-  if (newbalance <= 0) {
+  if (newbalance < 0) {
     alert("You currently have no overdraft - call your bank manager.");
   } else {
     savingsBalance = $('#savingsOutput').val(savingsBalance - input);
