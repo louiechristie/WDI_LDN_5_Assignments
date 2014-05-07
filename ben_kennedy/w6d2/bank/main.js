@@ -15,17 +15,9 @@ bankApp.updateBalance = function(accountTypeID, balance) {
 bankApp.deposit = function() {
   accountTypeID = bankApp.getAccountTypeID($(this));
   currentBalance = parseFloat(bankApp.getBalance(accountTypeID));
-  try {
-    deposit = parseFloat($(accountTypeID + " .amount").val());
-    if (deposit < 0 || deposit == NaN) {
-      throw "Invalid Input";
-    }
-  }
+  deposit = parseFloat($(accountTypeID + " .amount").val());
   newBalance = currentBalance + deposit;
   bankApp.updateBalance(accountTypeID, newBalance);
-  catch (error){
-    bankApp.errors(error);
-  }
 }
 
 bankApp.withdraw = function() {
