@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Calcit-JS</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip</a></li>
+      <li><a href="mortgage.html">Mortgage</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+    </ul>
+  </nav>
+
+  <h1>Calcit-JS</h1>
+
+
+  </header>
+
+  <main>
+
+  <h2>Calculate BMI</h2>
+
+  <p>Height: <input type='text' id='height1'>
+  <select id='h_unit1'>
+    <option value="m">m</option>
+    <option value="feet">feet</option>
+  </select>
+  <input type='text' id='height2'>
+  <select id='h_unit2'>
+    <option value="m">cm</option>
+    <option value="inches">inches</option>
+  </select></p>
+  <p>Weight: <input type='text' id='weight'>
+  <select id='w_unit'>
+    <option value="kg">kg</option>
+    <option value="stone">stone</option>
+  </select>
+  </p>
+  <button id="calculate">Calculate</button>
+
+
+  <div id="calculation">  
+  <h2>BMI Calculation</h2>
+
+  <p>BMI is: <span id="result"></span> </p>
+  </div>
+
+  </main>
+  <script src="bmi.js"></script>
+
+</body>
+</html>
