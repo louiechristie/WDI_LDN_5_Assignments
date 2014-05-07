@@ -4,13 +4,13 @@
 
   <title>Calculator</title>
   <link rel="stylesheet" href="calculator.css"  type="text/css" />
-  <script src="calculator.js"></script> 
+  
 </head>
 <body>
   <h1>Javascript Calculator</h1>
   <h2>Basic calculator</h2>
  <input type="text" id="numb1" />
- <select name="operator" id="operator" onchange="sqrt_hide()">
+ <select name="operator" id="operator">
   <option value="+">+</option>
   <option value="-">-</option>
   <option value="*">*</option>
@@ -18,7 +18,7 @@
   <option value="sqrt">sqrt</option>
 </select>
  <input type="text" id="numb2" />
- <button onclick="calculate()">Calculate</button>
+ <button id="calculate">Calculate</button>
  <div id="answer"></div>
 
 
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td></td>
-        <td><button onclick="bmi()">Submit</button></td>
+        <td><button id="bmi">Submit</button></td>
       </tr>
     </table>  
 
@@ -65,7 +65,7 @@
         <td>Input number of years</td><td><input type='text' id='mort_years'></td>
       </tr>
       <tr>
-        <td></td><td><button onclick="mort()">Submit</button></td>
+        <td></td><td><button id="mort">Submit</button></td>
       </tr>
     </table>  
 </form>
@@ -95,7 +95,7 @@
         <td>How fast will you drive? (mph)</td><td><input type='text'id='trip_speed'></td>
       </tr>
       <tr>
-        <td></td><td><button onclick="trip()">Submit</button></td>
+        <td></td><td><button id="trip">Submit</button></td>
       </tr>
     </table>  
 
@@ -117,7 +117,7 @@
 
 
 
-
+<script src="calculator.js"></script> 
 
 </body>
 

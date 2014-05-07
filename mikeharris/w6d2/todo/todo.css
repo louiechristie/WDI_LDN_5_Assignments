@@ -1,0 +1,60 @@
+main {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Oxygen', sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: inline;
+  margin: 10px;
+}
+
+li {
+  padding: 5px;
+  display: block;
+  border-radius: 5px;
+  margin: 5px;
+  border: 1px solid black;
+  transition: all 1s;
+  position: relative;
+  top: 0px;
+}
+
+.cross_off {
+  text-decoration:line-through;
+  transform: rotateX(360deg);
+  -webkit-transform: rotateX(360deg);
+}
+
+.highlight {
+    background: red;
+}
+
+.up, .down {
+  display: inline;
+  /*width: 100px;*/
+  margin-left: 20px;
+  float: right;
+  
+}
+
+
+
+.notransition {
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+
+button, input[type="text"] {
+  padding: 10px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+
+
+
+
+
+
