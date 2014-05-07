@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Bank</title>
+  <script src="jquery-1.11.1.js"></script>
+  <script src="savings.js"></script>
+  <script src="current.js"></script>
+  <link type="text/css" rel="stylesheet" href="normalize.css" />
+  <link type="text/css" rel="stylesheet" href="style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <h1>First <span class="red">International</span> Bank of <span class="red">GA</span></h1>
+  <div id="current">
+    <h2>Current</h2>
+    <div class="display">
+      <h3 id="display_current"></h3>
+    </div>
+    <form>
+      <input type="number" id="current_input" name="current_input" placeholder="Enter &pound;" />
+      <button id="current_withdraw_button">Withdraw</button>
+      <button id="current_deposit_button">Deposit</button>
+    </form>
+  </div>
+
+  <div id="savings">
+    <h2>Savings</h2>
+    <div class="display zero_color">
+      <h3 id="display_savings"></h3>
+    </div>
+    <form>
+      <input type="number" id="savings_input" name="savings_input" placeholder="Enter &pound;" />
+      <button id="savings_withdraw_button">Withdraw</button>
+      <button id="savings_deposit_button">Deposit</button>
+    </form>
+  </div>
+  <h3 id="overdraft"></h3>
+
+</body>
+</html>

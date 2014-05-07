@@ -1,0 +1,40 @@
+p {
+  display: inline;
+}
+
+.placeholder-field {
+  width: 160px;
+}
+
+body {
+  width: 600px;
+  margin: 50px auto 200px auto;
+  padding: 0 50px;
+  background-color: #E84C56;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #eee;
+  font-size: 50px;
+}
+
+#box_basic, #box_mortgage, #box_bmi, #box_trip, #box_too_many {
+  background-color: #E872C6;
+  padding: 20px;  
+}
+
+.out{
+  color: #000;
+  opacity: 0.2;
+}
+
+.over {
+  color: #fff;
+  opacity: 1;
+}
+
