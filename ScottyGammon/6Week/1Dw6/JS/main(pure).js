@@ -192,31 +192,22 @@ myApp.sayHello = function () {
   alert('Hello WDI!')
 }
 myApp.update = function() {
-  var $caption = $('#greeting');
-  var $input = $('#name');
+  var caption = document.getElementById('greeting');
+  var input = document.getElementById('name');
 
-  if ($input.val() == 'Scotty') {
-    $input.val('Scott');
-  }
-
-  if ($input.val()) {
-  $caption.text = "Hello, " + $input.value + "!";
-  }
-  else {
-    $caption.text("<h1>Hello</h1>");
-  }
+  caption.innerHTML = "Hello, " +input.value + "!";
 }
 
 var colors = ["red", "green", "blue", "orange", "purple"]
 var count = 0;
 
 myApp.rotate = function() {
-  var listItems = $('li');
-  $.each(listItems, function(i, el) {
-    var $el = $(el);
-    el.setAttribute('style', 'background-color: ' + colors[(i+count) % colors.length]);
-});
-  myApp.count++;
+  var listItems = document.getElementsByTagName('li');
+  for (var i = 0; i < colors.length; i++) {
+    var listItem = listItems[i];
+    listItem.setAttribute('style', 'background-color: ' + colors[(i+count) % colors.length]);
+  };
+  count++;
 }
 
 myApp.permaRotate = function() {
@@ -292,7 +283,7 @@ else if(b.value!=0){
 myApp.setup = function() {
   var input = document.getElementById('name')
   input.addEventListener('keyup', myApp.update)
-  var button = document.$("#greeter");
+  var button = document.getElementById("greeter");
   button.addEventListener('click', myApp.sayHello);
   var button = document.getElementById("disco");
   button.addEventListener('click', myApp.permaRotate);
@@ -308,9 +299,8 @@ myApp.setup = function() {
   button.addEventListener('click', myApp.sqrt);
 }
 
-$document.ready(myApp.setup)
-$(myApp.setup)
-
 var input = document.getElementById('name')
+
+myApp.setup();
 
 input.addEventListener('keyup', myApp.update);

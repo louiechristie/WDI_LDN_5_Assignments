@@ -1,0 +1,36 @@
+* {
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  width: 500px;
+  padding: 20px;
+  margin: auto;
+  border: 7px #fe0034 solid;
+  border-radius: 20px
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 7px #fe0034 solid;
+  border-radius: 20px
+}
+h1 {
+  width: 200px;
+  height: 235px;
+  margin: auto;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.box {
+  margin: 20px;
+}
+
+.account {
+  padding: 10px;
+  border: 5px #fe0034 solid;
+  border-radius: 5px
+}\
