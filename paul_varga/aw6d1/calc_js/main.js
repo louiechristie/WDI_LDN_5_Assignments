@@ -35,7 +35,6 @@ myApp.setup = function() {
   button.addEventListener('click', myApp.calc);
 }
 
-
 document.addEventListener('DOMContentLoaded', myApp.setup);
 
 
