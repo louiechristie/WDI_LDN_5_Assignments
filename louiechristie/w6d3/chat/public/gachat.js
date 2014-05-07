@@ -1,12 +1,5 @@
 var chatApp = chatApp || {};
 
-chatApp.getLines = function() {
-  console.log('getLines');
-  var lines = [];
-  return lines;
-
-}
-
 chatApp.messageSubmitHandler = function(ev) {
   ev.preventDefault();
   console.log('messageSubmitHandler');
@@ -29,20 +22,29 @@ chatApp.messageSubmitHandler = function(ev) {
       console.log(data);
       },
     };
-    console.log('ajaxOptions: '+ajaxOptions);
-    $.ajax(ajaxOptions).done(chatApp.updatePage());
-    
+    $.ajax(ajaxOptions).done(chatApp.updatePage());    
 }
 
-chatApp.updatePage = function(data) {
+chatApp.updatePage = function() {
   console.log('updatePage()');
 
-  // chatApp.addMessage(data);
+  var since = Date.now();
+
+  var ajaxOptions = {
+    url: '/',
+    since: since,
+    type: 'GET',
+    success: chatApp.addMessage,
+    error: function(data) {
+      console.error("AJAX request failed.");
+      console.log(data);
+      },
+    };
+    $.ajax(ajaxOptions);
   
 }
 
 chatApp.addMessage = function(data) {
-  console.log('data: '+data)
   $('.chat').append( "<li><span class='username'>"+data[username]+"</span> <span class='message'>"+data[message]+"</span></li>" );
 
   var bits = ['username', 'message', 'since'];
