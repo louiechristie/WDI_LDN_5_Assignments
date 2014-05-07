@@ -1,0 +1,53 @@
+<!DOCTYPE>
+
+<html>
+<head>
+  <title>Javascript Money </title>
+  <script src="jquery-1.11.1.js"></script>
+  <script src="main.js"> </script>  
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+<p> GENERAL ASSEMBLY - banking application  </p>
+
+
+
+<div class="checkings">
+
+    <h1 class="checkings_title"> Checkings Account </h1> <br>
+
+
+    <input class="money" type="text" value="0" id="balance_checkings" readonly /> <br>
+
+    <input class="data" type="text" placeholder="amount"  id="amount_checkings" onkeydown="return isNumber(event);"><br>
+        
+    <button class="first" id="deposit_to_checkings"> Deposit </button>
+    <button class="second" id="withdraw_from_checkings"> Withdraw </button>
+
+</div>
+
+
+
+<div class="savings">
+
+    <h1 class="savings_title"> Savings </h1>
+
+    <form>
+    <input class="money2" type="text" value="0" id="savings_balance" readonly><br>
+
+    <input class="data2" type="text" placeholder="amount" id="savings_amount" onkeydown="return isNumber(event);"><br>
+
+      <button class="third" id="deposit_to_savings"> Deposit </button>
+      <button class="forth" id="withdraw_to_savings"> Withdraw </button>
+    </form> 
+
+</div>
+
+</body>
+
+</html>
