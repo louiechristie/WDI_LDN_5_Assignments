@@ -21,6 +21,8 @@ post '/chat' do
     chatlines << {:username => params["username"], :timestamp => Time.now().to_i, :message => params["message"]}
     if request.xhr? and params.has_key? "since"
       return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
+    else
+      redirect to '/error/?no_key_since'
     end
   end
   redirect to '/?username=' + params["username"]

@@ -9,38 +9,29 @@ chatApp.messageSubmitHandler = function(ev) {
   console.log('message: '+message);
   console.log('username: '+username);
   console.log('timestamp: '+timestamp);
+  var data = {}
+  data['since'] = timestamp;
+  data['username'] = username;
+  data['message'] = message;
 
   var ajaxOptions = {
     url: '/chat',
-    username: username,
-    message: message,
-    since: timestamp,
     type: 'POST',
+    data: data,
     success: chatApp.updatePage,
     error: function(data) {
       console.error("AJAX request failed.");
       console.log(data);
-      },
+      }
     };
-    $.ajax(ajaxOptions).done(chatApp.updatePage());    
+    $.ajax(ajaxOptions).done(chatApp.updatePage);    
 }
 
-chatApp.updatePage = function() {
+chatApp.updatePage = function(data) {
   console.log('updatePage()');
+    console.log('data: '+data);
 
-  var since = Date.now();
-
-  var ajaxOptions = {
-    url: '/',
-    since: since,
-    type: 'GET',
-    success: chatApp.addMessage,
-    error: function(data) {
-      console.error("AJAX request failed.");
-      console.log(data);
-      },
-    };
-    $.ajax(ajaxOptions);
+  chatApp.addMessage(data);
   
 }
 
