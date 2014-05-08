@@ -7,13 +7,14 @@ var Chat = Chat || {};
 
 Chat.formSubmitHandler = function(ev) {
   ev.preventDefault();
-  var $username = $("#username").val();
-  var $message = $("#message").val();
+  // var username = $("#username").val();
+  // var message = $("#message").val();
 
-  if ($username && $message) {
+  if ($("#username").val() && $("#message").val()) {
     var ajaxOptions = {
     url: "/chat",
     type: "POST",
+    data: {username: $("#username").val(), message: $("#message").val()},
     error: function(data) {
       console.log("Error!");
       console.log(data);
