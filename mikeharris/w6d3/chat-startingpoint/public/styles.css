@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+main{
+    padding: 2%;
+}
+input[type="text"] , input[type="submit"]{
+    padding: 5px 10px;
+    width: 200px;
+    -webkit-appearance: none;
+    margin-right: 10px;
+}
+input[type="submit"] {
+    width: 50px;
+}
+ul {
+    padding-left: 0;
+    border: 1px solid #888;
+    background: #eee;
+    width: 95%;
+
+
+}
+
+ul li {
+  
+    list-style-type: none;
+    background: inherit;
+    padding: 5px;
+    transition: background 1s ease-in;
+}
+
+.current_user {
+    background: #4479D4;
+}
+.user1 {
+    background: #34D0BA;
+}
+
+label {
+    margin-right: 5px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.flash {
+    background: #FF8F40;
+
+}
