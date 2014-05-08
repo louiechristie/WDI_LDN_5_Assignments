@@ -1,0 +1,12 @@
+.todos:first-child {
+  background-color: red;
+  color: white;
+  margin-right: 1000px;
+  padding: 5px;
+}
+.todos {
+  background-color: orange;
+  color: white;
+  margin-right: 1000px;
+  padding: 5px;
+}
