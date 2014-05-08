@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ten_line.name %>
+  <%= @ten_line.description %>
+  <%= @ten_line.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_ten_line_path(@ten_line) %> |
+<%= link_to 'Back', ten_lines_path %>

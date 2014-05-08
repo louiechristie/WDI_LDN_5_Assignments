@@ -10,7 +10,7 @@
 	<tr>
 		<td><%= ingredient.name %></td>
 		<% if can? :update, ingredient %>
-		<td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= button_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		<% end %>
 	</tr>	
 	<% end %>

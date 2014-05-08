@@ -1,0 +1,59 @@
+main {
+  padding: 50px;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 0;
+}
+h2 {
+  font-size: 1rem;
+}
+
+.bank {
+  position: relative;
+  font-size: 1rem;
+  width: 200px;
+  /*height: 200px;*/
+  text-align: center;
+  /*line-height: 100px;*/
+  /*border: 1px solid black;*/
+  display: inline-block;
+  margin: 10px;
+}
+
+#current, #saving {
+  background: white;
+  display: inline;
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+
+}
+button {
+  padding: 10px 5px;
+}
+#current_box, #saving_box{
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  background-image:url("coin.jpeg");
+  background-size: cover;
+  transition: all 1s;
+  z-index: 10;
+  margin: 10px;
+}
+
+.spin {
+   transform: rotateY(720deg);
+  -webkit-transform: rotateY(720deg);
+}

@@ -4,7 +4,6 @@ class MoviesController < ApplicationController
   def index
     @movies = @q.result(distinct: true)
 
-    @movies = Movie.all
   end
 
   def new

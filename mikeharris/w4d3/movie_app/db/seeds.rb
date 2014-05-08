@@ -8,7 +8,10 @@
 
 
 # movies = ["Seven", "Pulp Fiction"]
+Movie.all.map{|movie| movie.actor_ids = [] }
 Movie.all.map{|movie| movie.destroy }
+Actor.all.map{|actor| actor.destroy }
+
 
 
 Movie.create(title: "batman")

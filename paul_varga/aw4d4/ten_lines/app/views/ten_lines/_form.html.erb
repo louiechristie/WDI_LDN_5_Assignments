@@ -1,0 +1,26 @@
+<%= form_for(@ten_line) do |f| %>
+  <% if @ten_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ten_line.errors.count, "error") %> prohibited this ten_line from being saved:</h2>
+
+      <ul>
+      <% @ten_line.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.label :image %>
+    <%= f.image_field :image %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

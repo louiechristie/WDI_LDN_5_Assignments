@@ -1,14 +1,12 @@
 class IngredientsController < ApplicationController
   load_and_authorize_resource
 
+  before_filter :search_form
+
   def index
-    @q = Ingredient.search(params[:q])
-    @ingredients = @q.result
-    @model_name = "ingredient"
   end
 
   def new
-    @ingredient = Ingredient.new
   end
 
   def create
@@ -22,11 +20,9 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    find_ingredient
   end
 
   def edit
-    find_ingredient
   end
 
   def update
@@ -46,6 +42,12 @@ class IngredientsController < ApplicationController
 
   def find_ingredient
     @ingredient = Ingredient.find(params[:id])
+  end
+
+  def search_form
+    @q = Category.search(params[:q])
+    @categories = @q.result
+    @model_name = "category"
   end
 
 

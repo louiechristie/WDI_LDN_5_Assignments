@@ -7,6 +7,7 @@ class Ability
 
     if user.role? :admin
         can :manage, :all
+        # :admin from terminal
      else
         can :read, Category
         can :read, Recipe

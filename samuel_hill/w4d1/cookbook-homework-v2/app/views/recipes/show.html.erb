@@ -1,5 +1,5 @@
 <h1>View Recipe</h1>
-
+<div class='show'>
 <h2><%= @recipe.name %></h2>
 
 <h3>Feeds:</h3><%= pluralize(@recipe.feeds, 'Person') %>
@@ -12,5 +12,9 @@
 
 <%= @recipe.ingredients.pluck(:name).to_sentence %>
 <%= @recipe.ingredients_recipes.pluck(:quantity).join(', ') %>
+
+<h3>Image:</h3><%= image_tag @recipe.recipe_image.details.url %>
+
+</div>
 
 

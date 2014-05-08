@@ -3,28 +3,35 @@
   <thead>
     <tr>
       <td>
-        User ID
+        <div class="section-heading">Username</div>
+        <br />
       </td>
-      <td>
-        Email
-      </td>
-      <td>
-        Password Digest
-      </td>
+        <% if can? :manage, User %>
+        <td>
+          <div class="section-heading">User ID</div>
+          <br />
+        </td>      
+        <td>
+          <div class="section-heading">Password Digest</div>
+          <br />
+        </td>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td>
-          <%= user.id %>
+          <%= link_to user.username, user_path(user) %>
         </td>
-        <td>
-          <%= user.email %>
-        </td>
-        <td>
-          <%= user.password_digest %>
-        </td>
+        <% if can? :manage, User %>
+          <td>
+            <%= user.id %>
+          </td>
+          <td>
+            <%= user.password_digest %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
