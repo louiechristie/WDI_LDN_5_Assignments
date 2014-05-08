@@ -12,24 +12,25 @@
  *= require_tree .*/
 
  body {
-  background-image: url(/background.jpg);
+  background-image: url(/background.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: helvetica, arial, sans-serif;
-  color: white;
+  color: navy;
  }
  
 
  header {
   background-color: #15BF3D;
   min-height: 80px;
+  border-bottom: 3px solid white;
 }
 
 .title {
   color: white;
   float: left;
-  font-size: 320%;
+  font-size: 350%;
   margin: 0px 0px 0px 15px;
   font-family: 'Indie Flower', 'cursive';
 }
@@ -58,10 +59,15 @@
 
 .welcome, .logout {
   float: right;
-  color: white;
+  color: navy;
   margin-right: 15px;
   margin-top: 28px;
   font-size: 110%;
+}
+
+.search {
+  float: right;
+  margin-top: 10px;
 }
 
 .yield {
@@ -75,18 +81,20 @@
 }
 
 h1 {
-  color: white;
+  color: navy;
   float: left;
+  font-family: 'Indie Flower', 'cursive';
 }
 
 .add {
   float: right;
   margin: 25px 5px 0px 0px;
+  clear: right;
 }
 
 .add a:link, .add a:visited {
   text-decoration: none;
-  color: white;
+  color: red;
 }
 
 table {
@@ -96,16 +104,23 @@ table {
 
 a:link, a:visited {
   text-decoration: none;
-  color: white;
+  color: navy;
 }
 
-a:active {
+a:active, a:hover {
   color: red;
 }
 
-.form {
+.form, .show {
   clear: both;
 }
+
+img {
+  border: 3px solid navy;
+}
+
+
+
 
 
  /*body {

@@ -1,0 +1,15 @@
+<h2><%= @user.username %></h2>
+<% if @user.recipes.any? %>
+  <p class="section-heading">Recipes</p>
+  <ul>
+    <% @user.recipes.each do |recipe| %>
+      <li><%= link_to recipe.name, recipe_path(recipe) %> <span class="italics"><%= "(#{recipe.category.try(:name)})" %></span></li>
+    <% end %>
+  </ul>
+<% end %>
+<% if current_user && current_user.id == @user.id %>
+  <%= link_to "Add a Recipe", new_recipe_path %>
+<% end %>
+<br />
+<br />
+<%= render partial: "edit_delete_actions", locals: { user: @user, edit_user_path: edit_user_path, delete_user_path: delete_user_path, username: @user.username } %>

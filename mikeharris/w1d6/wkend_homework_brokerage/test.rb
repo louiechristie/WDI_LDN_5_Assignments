@@ -2,7 +2,7 @@ def rolling_ticker(input)
   require 'pry'
   print `clear`
   time_int = 20
-  line-length = 30
+  line_length = 30
   output_string =  input + (line_length - input.size).times {print " "}
   print output_string
   (1..100).each do |i|
@@ -25,4 +25,4 @@ def rolling_ticker(input)
   
 end
 
-rolling_ticker
+rolling_ticker("hello")

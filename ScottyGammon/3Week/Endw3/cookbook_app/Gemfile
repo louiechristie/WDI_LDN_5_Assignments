@@ -7,7 +7,17 @@ gem 'rails', '3.2.17'
 
 gem 'sqlite3'
 
+gem 'cancan', '1.6.10'
 
+group :development, :test do
+        gem 'nifty-generators', '>= 0.4.0'
+        gem 'pry-rails'
+        gem 'pry-byebug'
+        gem 'pry-stack_explorer'
+        gem 'binding_of_caller'
+        gem 'better_errors'
+      end
+      
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,7 +33,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

@@ -31,6 +31,10 @@
     <%= check_box_tag(:ownership) %>
     <%= label_tag(:ownership, "Streamed Online") %>
   </div>
+  <div class="field">
+    <%= f.label :movie_image %><br />
+    <%= f.file_field :movie_image %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

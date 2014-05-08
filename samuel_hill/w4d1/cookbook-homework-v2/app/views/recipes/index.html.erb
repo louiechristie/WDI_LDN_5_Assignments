@@ -1,3 +1,12 @@
+<div class='search'>
+<%= search_form_for @q do |f| %>
+		<%= f.label 'Search: ' %>
+		<%= f.text_field :name_cont %>
+		<%= f.submit %>
+
+<% end %>
+</div>
+
 <h1>Recipes</h1>
 
 <div class='add'><%= link_to 'Add a New Recipe', new_recipe_path %></div>
@@ -5,15 +14,14 @@
 <table>
 	<tr>
 		<th>Name</th>
-		<th>Actions</th>
 	</tr>
 	<% @recipes.each do |recipe| %>
 	<tr>
 		<td><%= recipe.name %></td>
-		<td><%= link_to 'Show', recipe_path(recipe) %></td>
+		<td><%= button_to 'Show', recipe_path(recipe), method: :get %></td>
 		<% if can? :update, recipe %>
-			<td><%= link_to'Edit', edit_recipe_path(recipe) %></td>
-			<td><%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<td><%= button_to'Edit', edit_recipe_path(recipe), method: :get %></td>
+			<td><%= button_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		<% end %>
 	</tr>	
 	<% end %>

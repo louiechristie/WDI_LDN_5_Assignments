@@ -12,7 +12,7 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td>
-          <%= link_to recipe.title, recipe_path(recipe) %>
+          <%= link_to recipe.name, recipe_path(recipe) %>
           <ul>
             <% if recipe.category_id %>
             <li class="recipes-list" class="recipes-list">Category: <%= recipe.category.name %>
@@ -21,9 +21,6 @@
             <li class="recipes-list">Description: <%= recipe.description %></li>
             <li class="recipes-list">Prep time: <%= pluralize(recipe.prep_time, 'month') %></li>
           </ul>
-        </td>
-        <td>
-          <%= image_tag("#{recipe.image}") if recipe.image > "" %>
         </td>
       </tr>
     <% end %>

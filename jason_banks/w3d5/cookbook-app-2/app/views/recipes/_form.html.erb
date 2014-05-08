@@ -5,8 +5,8 @@
     </div>
   <% end %>
 
-<%= f.label :title %>
-<div class="black"><%= f.text_field :title %></div>
+<%= f.label :name %>
+<div class="black"><%= f.text_field :name %></div>
 <br /><br />
 Category <div class="black"><%= f.collection_select(:category_id, @categories, :id, :name) %></div>
 <br /><br />
@@ -18,19 +18,15 @@ Category <div class="black"><%= f.collection_select(:category_id, @categories, :
 <br /><br />
 Ingredients (if any)
 <br />
-
-<%= f.fields_for :ingredients_recipes do |i| %>
-  <div class="field">
-    <%= i.hidden_field :ingredient_id %>
-    <%= i.label :quantity, i.object.ingredient.name %>
-    <div class="black">
-      <%= i.text_field :quantity, placeholder: "Quantity" %>
+  <%= f.fields_for :ingredients_recipes do |i| %>
+    <div class="field">
+      <%= i.hidden_field :ingredient_id %>
+      <%= i.label :quantity, i.object.ingredient.name %>
+      <div class="black">
+        <%= i.text_field :quantity, placeholder: "Quantity" %>
+      </div>
     </div>
-  </div>
   <% end %>
-
-
-
 <br />
 <%= f.label :instructions %>
 <br /><br />

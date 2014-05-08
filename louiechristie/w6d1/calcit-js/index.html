@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Calcit-JS</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="trip.html">Trip</a></li>
+      <li><a href="mortgage.html">Mortgage</a></li>
+      <li><a href="bmi.html">BMI</a></li>
+    </ul>
+  </nav>
+
+  <h1>Calcit-JS</h1>
+
+
+  </header>
+
+  <main>
+
+
+  <h2>Add Two Numbers</h2>
+
+  <h3>First Number</h3>
+  <input type="text" placeholder="First number" id="first_number" />
+
+  <h3>Function</h3>
+<!--   <button onclick="add()">Add</button>
+  <button onclick="subtract()">Subtract</button>
+  <button onclick="divide()">Divide</button>
+  <button onclick="multiply()">Multiply</button>
+  <button onclick="root()">Square Root</button> -->
+
+  <select id="selectBox" onchange="calculate()">
+    <option value="select">Select</option>
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+    <option value="divide">Divide</option>
+    <option value="multiply">Multiply</option>
+    <option value="root">Square Root</option>
+  </select>
+
+  <div id="second_number_section">
+    <h3>Second Number</h3>
+    <input type="text" placeholder="Second number" id="second_number" />
+  </div>
+
+  <h3>Result</h3>
+  <p id="result"></p>
+
+  </main>
+
+</body>
+</html>
