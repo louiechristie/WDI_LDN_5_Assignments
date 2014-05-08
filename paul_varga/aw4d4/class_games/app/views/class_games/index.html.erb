@@ -1,0 +1,27 @@
+<h1>Listing class_games</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @class_games.each do |class_game| %>
+  <tr>
+    <td><%= class_game.name %></td>
+    <td><%= class_game.description %></td>
+    <td><%= image_tag class_game.image %></td>
+    <td><%= link_to 'Show', class_game %></td>
+    <td><%= link_to 'Edit', edit_class_game_path(class_game) %></td>
+    <td><%= link_to 'Destroy', class_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Class game', new_class_game_path %>

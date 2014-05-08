@@ -2,7 +2,16 @@ var myApp = myApp || {};
 
 
 myApp.updatePage = function(data){
-  document.location.reload(true);
+ 
+  $.each(data, function(i,name){
+    $( "ul" ).append("<li><span class='username'>&lt;" + name["username"] + "&gt;</span><span class='message'> " +  name["message"] + "</span></li>");
+    $( "#since" ).val(name["timestamp"]);
+
+    if ($('li').length >= 10) {
+      $("li:first").remove();
+    }
+  });
+
 };
 
 myApp.formSubmitHandler = function(ev) {

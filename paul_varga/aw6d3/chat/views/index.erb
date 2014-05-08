@@ -10,7 +10,7 @@
         <h1>GAChat</h1>
         <p>Welcome to GAChat!</p>
         <form action="/chat" method="POST">
-          <input type="hidden" name="since" id="since" value="<%= Time.now().to_i %>" />
+          <input name="since" id="since" value="<%= Time.now().to_i %>" />
           <label for="username">Username</label><input id="username" type="text" name="username" value="<%= @username %>" />
           <ul class="chat">
             <% @lines.each do |l| %>
