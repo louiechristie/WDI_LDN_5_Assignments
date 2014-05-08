@@ -1,19 +1,17 @@
 var Chat = Chat || {};
 
-Chat.updatePage = function(data) {
+Chat.updatePage = function(chatline) {
 
+  var line_parts = ["username", "message"];
+
+  $.each(line_parts, function(i, line_part) {
+    $("." + line_part).text(chatline[i][line_part]);
+  });
 }
-
-
-
-
-
 
 Chat.formSubmitHandler = function(ev) {
   ev.preventDefault();
-  // var username = $("#username").val();
-  // var message = $("#message").val();
-
+ 
   if ($("#username").val() && $("#message").val()) {
     var ajaxOptions = {
     url: "/chat",
@@ -22,13 +20,9 @@ Chat.formSubmitHandler = function(ev) {
     error: function(data) {
       console.log("Error!");
       console.log(data);
-    },
-    success: function(data) {
-      console.log("Success!");
-      console.log(data);
     }
   };
-  $.ajax(ajaxOptions);
+  $.ajax(ajaxOptions).done(Chat.updatePage);
   } else {
     alert("Must enter username and message.");
   }
