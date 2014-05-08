@@ -17,22 +17,24 @@ myApp.addToCurrent = function() {
 
 myApp.withdrawFromCurrent = function() {
   var input = parseInt($('#amountCurrent').val());
+  debugger
   var currentbalance = parseInt($('#currentOutput').val());
   var newbalance = currentbalance - input
   var savingsbalance = parseInt($('#savingsOutput').val());
 
-
+  //starting balance set to 0
   if (currentbalance == parseInt(currentbalance)) {
     currentbalance = parseInt($('#currentOutput').val());
   } else {
       currentbalance = 0;
   }
 
+
   if (newbalance < 0 ){
     alert("You cannot withdraw this amount, but we will try to access your savings.");
     var newbalance = Math.abs(newbalance);
     var newsavingsbalance = savingsbalance - newbalance;
-      if (newsavingsbalance <= 0) {
+      if (newsavingsbalance < 0) {
         alert("You do not have enough money in your savings. No withdrawl possible.");
       } else {
           $('#savingsOutput').val(savingsbalance - newbalance);
