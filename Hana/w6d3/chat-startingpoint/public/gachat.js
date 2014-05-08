@@ -1,4 +1,4 @@
-$.ajax
+// $.ajax
 
 var Messages = Messages || {};
 
@@ -15,19 +15,19 @@ Messages.textSubmitHandler = function(ev){
     url: '/chat',
     type: 'POST',
     data: data,
-    success: Messages.updatePage,
+    // success: Messages.updatePage,
     error: function(data){
       console.error("Ajax request failed.");
       console.log(data);}
   };
   $.ajax(ajaxOptions).done(Messages.updatePage);
 
-};
+}
 
 Messages.updatePage = function(data){
 
   console.log(data)
-  $.each(data, function(i, name)){
+  $.each(data, function(i, name){
 
     $("ul").append($('<li><span class="username">&lt;' + name['username'] + '&gt;</span><span class="message">' + name['message'] + '</span></li>'));
     $("#since").val(name["timestamp"]);
@@ -42,7 +42,7 @@ Messages.updatePage = function(data){
 // $lastMessage.text()
 
 
-};
+
 
 
 
@@ -52,6 +52,5 @@ Messages.updatePage = function(data){
 Messages.setup = function() {
   $('form').on('submit', Messages.textSubmitHandler);
 };
-
 
 $(Messages.setup)
