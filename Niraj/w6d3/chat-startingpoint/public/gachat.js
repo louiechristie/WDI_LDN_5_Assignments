@@ -9,6 +9,28 @@ myApp.updatePage = function(data){
   });
 };
 
+
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div3").fadeIn(3000);
+  });
+});
+
+
+function = removeFirstLine {
+
+}
+
+// move to updatePage
+
+myApp.removeFirstLine = function() {
+
+  if (data.length >= 10)
+    $("li:first").remove();
+
+}
+
 myApp.formSubmitHandler = function(ev) {
     ev.preventDefault();
     var message = $('#message').val();   
