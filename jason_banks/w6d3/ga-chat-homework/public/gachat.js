@@ -1,12 +1,13 @@
 var Chat = Chat || {};
 
-Chat.updatePage = function(chatline) {
+Chat.updatePage = function(data) {
 
-  var line_parts = ["username", "message"];
+  var $chat = $("ul");
 
-  $.each(line_parts, function(i, line_part) {
-    $("." + line_part).text(chatline[i][line_part]);
+  $.each(data, function(i, chatline) {
+    $chat.append("<li><span class='username'>&lt;" + chatline["username"] + "&gt; </span><span class='message'>" + chatline["message"] + "</span></li>");
   });
+
 }
 
 Chat.formSubmitHandler = function(ev) {
@@ -26,8 +27,6 @@ Chat.formSubmitHandler = function(ev) {
   } else {
     alert("Must enter username and message.");
   }
-
-  
 
 };
 
