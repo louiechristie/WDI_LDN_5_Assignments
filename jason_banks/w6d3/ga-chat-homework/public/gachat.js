@@ -1,5 +1,9 @@
 var Chat = Chat || {};
 
+Chat.updatePage = function(data) {
+
+}
+
 
 
 
@@ -14,7 +18,7 @@ Chat.formSubmitHandler = function(ev) {
     var ajaxOptions = {
     url: "/chat",
     type: "POST",
-    data: {username: $("#username").val(), message: $("#message").val()},
+    data: {username: $("#username").val(), message: $("#message").val(), since: $("#since").val()},
     error: function(data) {
       console.log("Error!");
       console.log(data);
