@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Online Todo List</h1>
 
 <table>
@@ -5,8 +7,8 @@
     <th>Name</th>
     <th>Done</th>
     <th>Update</th>
-    <th>Delete</th>
-    <th>Errors</th>
+    <th>Remove</th>
+    <th></th>
   </tr>
 
   <% @todos.each do |todo| %>
@@ -40,5 +42,8 @@
     <% end %>
   <% end %> 
 </table>
+
+<p><%= link_to 'New Todo', new_todo_path %></p>
+
 
 
