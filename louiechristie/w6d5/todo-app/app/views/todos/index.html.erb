@@ -1,4 +1,4 @@
-<h1>Listing todos</h1>
+<h1>Online Todo List</h1>
 
 <table>
   <tr>
@@ -9,45 +9,36 @@
     <th>Errors</th>
   </tr>
 
-<% @todos.each do |todo| %>
-  <%= form_for(todo) do |f| %>
-
-  <tr> 
-    <td> <!-- Name -->
-        <div class="field">
+  <% @todos.each do |todo| %>
+    <%= form_for(todo) do |f| %>
+      <tr> 
+        <td> <!-- Name -->
           <%= f.text_field :name %>
-        </div>
-    </td>
-    <td> <!-- Done -->
-      <div class="field">
-        <%= f.check_box :done %>
-      </div>
-    </td>
-    <td> <!-- Update -->
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    </td>
-    <td> <!-- Delete -->
-      <%= link_to 'Remove', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-    <td> <!-- Errors -->
-      <% if todo.errors.any? %>
-      <div id="error_explanation">
-        <%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:
-
-        <ul>
-        <% todo.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-      <% end %>
-    </td>
-  </tr>
-  <% end %>
-<% end %> 
+        </td>
+        <td> <!-- Done -->
+          <%= f.check_box :done %>
+        </td>
+        <td> <!-- Update -->
+          <%= f.submit %>
+        </td>
+        <td> <!-- Delete -->
+          <%= link_to 'Remove', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td> <!-- Errors -->
+          <% if todo.errors.any? %>
+            <div id="error_explanation">
+              <%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:
+              <ul>
+              <% todo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %> 
 </table>
 
-<br />
-<%= link_to 'New Todo', new_todo_path %>
+
