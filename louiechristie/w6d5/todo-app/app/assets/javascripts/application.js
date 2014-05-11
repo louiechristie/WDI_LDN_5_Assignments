@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+alert ("Hello from application.js");
+
+$(function() {
+  $("#hello-world").click(function() {
+    alert ("Hello world from application.js");
+  })
+})
