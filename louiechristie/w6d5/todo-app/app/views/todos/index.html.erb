@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rails Todo List</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Done</th>
+    <th>Update</th>
+    <th>Remove</th>
+    <th></th>
+  </tr>
+
+  <% @todos.each do |todo| %>
+    <%= form_for(todo) do |f| %>
+      <tr> 
+        <td> <!-- Name -->
+          <%= f.text_field :name %>
+        </td>
+        <td> <!-- Done -->
+          <%= f.check_box :done %>
+        </td>
+        <td> <!-- Update -->
+          <%= f.submit %>
+        </td>
+        <td> <!-- Delete -->
+          <%= link_to 'Remove', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        <td> <!-- Errors -->
+          <% if todo.errors.any? %>
+            <div id="error_explanation">
+              <%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:
+              <ul>
+              <% todo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %> 
+</table>
+
+<p><%= link_to 'New Todo', new_todo_path %></p>
+
+
+
