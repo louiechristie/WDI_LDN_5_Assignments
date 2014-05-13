@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 58a825718be55c1391dfcf34b02511ba35bc27b0 louiechristie <post@louiechristie.com> 1399989972 +0100	clone: from git@github.com:Pavling/wdi-w7d2-devise.git
-58a825718be55c1391dfcf34b02511ba35bc27b0 3d05f161af98364153db27081f6407622b22a57b louiechristie <post@louiechristie.com> 1399999987 +0100	commit: w7d2 facebook contacts_app initial commit
-3d05f161af98364153db27081f6407622b22a57b 3664ed3971c6efe06f780b4dbf2df179b0a70ed3 louiechristie <post@louiechristie.com> 1400001869 +0100	commit: w7d2 facebook contacts_app login with facebook working, followed instructions at https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview
-3664ed3971c6efe06f780b4dbf2df179b0a70ed3 c803348ad49a80afb28ff29826aa5f9bd69ed536 louiechristie <post@louiechristie.com> 1400004592 +0100	commit: w7d2 facebook contacts app Logged in user name and avatar added.
