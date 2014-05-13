@@ -1,5 +1,7 @@
 Cookbook::Application.routes.draw do
 
+  devise_for :users
+
   resources :users, only: [:index, :new, :create]
 
   get    '/signup', to: 'users#new',         as: 'signup'
