@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Scotty's Bank of GA</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="jquery-1.11.1.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <img src="bank.gif">
+      </header> 
+      <div id="checking">
+        <div class="box">
+          <h2>Checking</h2>
+          <div class="account" id="account-checking">
+            $<span id="cash-checking">25</span>.00
+          </div>
+        </div>
+        <div class="box">
+          <input type="text" id="amount-checking" placeholder="Enter an amount">
+          <input type="button" value="Deposit" id="deposit-checking">
+          <input type="button" value="Withdraw" id="withdraw-checking">
+        </div>
+      </div>
+      <div id="savings">
+        <div class="box">
+          <h2>Savings</h2>
+          <div class="account" id="account-savings">
+            $<span id="cash-savings">25</span>.00
+          </div>
+        </div>
+        <div class="box">
+          <input type="text" id="amount-savings" placeholder="Enter an amount">
+          <input type="button" value="Deposit" id="deposit-savings">
+          <input type="button" value="Withdraw" id="withdraw-savings">
+        </div>
+      </div>
+      <footer>
+      </footer>
+  </body>
+</html>

@@ -1,4 +1,6 @@
-function simplemath() {
+var calcit = calcit || {};
+
+calcit.simplemath = function() {
 
 	var a = document.getElementById('numberone');
 	var b = document.getElementById('numbertwo');
@@ -29,7 +31,7 @@ function simplemath() {
 	}
 }
 
-function bmi() {
+calcit.bmi = function() {
 
 	var height = document.getElementById('height');
 	var weight = document.getElementById('weight');
@@ -44,7 +46,7 @@ function bmi() {
 
 }
 
-function trip() {
+calcit.trip = function() {
 
 	var distance = document.getElementById('distance');
 	var mpg = document.getElementById('mpg');
@@ -58,11 +60,11 @@ function trip() {
 	var time = parseInt(distance.value) / parseInt(speed.value)
 	var cost = (parseInt(distance.value) / parseInt(mpg.value)) * parseInt(fuelcost.value)
 
-	answer.innerHTML = "Your trip will cost £" + cost + ". It will take " + time  + " hours."
+	answer.innerHTML = "Your trip will cost $" + cost + ". It will take " + time  + " hours."
 
 }
 
-function mortgage() {
+calcit.mortgage = function() {
 
 	var loanamount = document.getElementById('loanamount');
 	var loantime = document.getElementById('loantime');
@@ -82,7 +84,7 @@ function mortgage() {
 
 }
 
-function power() {
+calcit.power = function() {
 
 	var power = document.getElementById('power');
 
@@ -95,3 +97,21 @@ function power() {
 	answer.innerHTML = result
 
 }
+
+calcit.setup = function() {
+var buttonone = document.getElementById('one');
+buttonone.addEventListener('click', calcit.simplemath);
+var buttontwo = document.getElementById('two');
+buttontwo.addEventListener('click', calcit.bmi);
+var buttonthree = document.getElementById('three');
+buttonthree.addEventListener('click', calcit.trip);
+var buttonfour = document.getElementById('four');
+buttonfour.addEventListener('click', calcit.mortgage);
+var buttonfive = document.getElementById('five');
+buttonfive.addEventListener('click', calcit.power);
+
+}
+
+document.addEventListener('DOMContentLoaded', calcit.setup);
+
+calcit.setup();

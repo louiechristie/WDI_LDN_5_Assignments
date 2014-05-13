@@ -1,0 +1,15 @@
+input {
+	min-width: 600px;
+}
+
+.oldest {
+	background-color: red;
+}
+
+.oldest2 {
+	background-color: orange;
+}
+
+.oldest3 {
+	background-color: green;
+}

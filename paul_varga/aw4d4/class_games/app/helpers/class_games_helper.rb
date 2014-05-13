@@ -1,0 +1,2 @@
+module ClassGamesHelper
+end

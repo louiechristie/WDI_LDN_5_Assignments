@@ -1,9 +1,61 @@
 <html>
 <head>
-  <title>whatever</title>
-  <script src="main.js"></script>
+  <title>JS Intro</title>
 </head>
 <body>
-hiiii
+<h1>Introduction to JavaScript</h1>
+
+<p id="greeting">Hello!</p>
+<input type= "text" placeholer= "Enter Your  Name..." id= "name"/>
+
+<button id="greeter">I am a button</button>
+
+  <img src="mascot.gif" onmouseover="this.setAttribute('src', 'oven.gif') " onmouseout="this.setAttribute('src', 'mascot.gif') "/>
+
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+  </ul>
+  <button id= "disco"> Disco </button>
+
+  <form name="calculator">
+
+Number 1: <input id="num1" type="text" name="number1"> 
+
+Number 2: <input id="num2" type="text" name="number2"> 
+
+
+<button id="add">ADD</button>
+<button id="sub">SUB</button>
+<button id="mul">MUL</button>
+<button id="div">DIV</button>
+<button id="sqrt">SQRT</button>
+
+</form> 
+
+<!-- <form name="advanced">
+  <input type="number" id="distance" placeholder="Distance" class="placeholder-field" />
+  <input type="number" id="mpg" placeholder="mpg" class="placeholder-field" />
+  <br />
+  <input type="number" id="cost" placeholder="Gas Cost"class="placeholder-field" />
+  <input type="number" id="mph" placeholder="Speed" class="placeholder-field" />
+  <br />
+  <button onclick="calcItTrip()">Trip</button><p id="trip"></p>
+  <input type="number" id="weight" placeholder="weight" />
+  <input type="number" id="height" placeholder="height" />
+  <br />
+  <button onclick="bmi()">BMI</button><p id="bmi"></p>
+    <input type="number" id="principal" placeholder="Principal" />
+    <input type="number" id="apr" placeholder="Interest (without % sign)" class="placeholder-field" />
+    <br />
+    <button onclick="calcItMortgage()">Mortgage</button><p id="mortgage"></p>
+</form> -->
+
+<script src="main.js"></script>
+<script src="jquery-1.11.1.js"></script>
+
 </body>
 </html>
