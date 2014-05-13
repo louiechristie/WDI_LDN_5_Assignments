@@ -1,0 +1,18 @@
+// Place all the styles related to the ingredients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ingredient:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+ul.ingredients {
+  list-style: none;
+  li {
+  margin-bottom: 20px;
+  }
+}
+
