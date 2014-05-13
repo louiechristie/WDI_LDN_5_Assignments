@@ -1,0 +1,7 @@
+<% @planets.each do |planet| %>
+  <p><%= link_to planet.name, planet_path(planet) %> has <%= pluralize(planet.moons, 'moon') %>,
+
+  <%= button_to 'Delete Planet', planet_destroy_path(planet) %>
+  </p>
+
+<% end %>
