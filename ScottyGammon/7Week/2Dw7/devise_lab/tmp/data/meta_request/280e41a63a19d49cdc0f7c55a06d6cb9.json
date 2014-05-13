@@ -1,0 +1,1 @@
+[{"name":"process_action.action_controller","payload":{"controller":"ContactsController","action":"index","params":{"controller":"contacts","action":"index"},"format":"html","method":"GET","path":"/"},"time":"2014-05-13T10:02:37+01:00","transaction_id":"9f69ce859c0a62be3b19","end":"2014-05-13T10:02:37+01:00","duration":0.553}]
