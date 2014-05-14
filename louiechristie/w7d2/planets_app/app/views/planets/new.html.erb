@@ -1,0 +1,17 @@
+<h2>New</h2>
+
+  <%= form_tag(planets_path) do %>
+  <p><%= label_tag(:name, "Name:") %>
+  <%= text_field(:planet,:name) %></p>
+  <p><%= label_tag(:image, "Image:") %>
+  <%= text_field(:planet,:image) %></p>
+  <p><%= label_tag(:mass, "Mass:") %>
+  <%= text_field(:planet,:mass) %></p>
+  <p><%= label_tag(:orbit, "Orbit:") %>
+  <%= text_field(:planet,:orbit) %></p>
+  <p><%= label_tag(:moons, "Moons:") %>
+  <%= text_field(:planet,:moons) %></p>
+
+  <p><%= submit_tag("Submit") %></p>
+
+<% end %>
