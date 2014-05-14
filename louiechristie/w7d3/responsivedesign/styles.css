@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  vertical-align: top;
 }
 
 body {
@@ -7,19 +8,42 @@ body {
   background-color: #ccc;
 }
 
-header {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  background-color: white;
+.portrait-container {
+  display: inline-block;
+}
+.portraits {
+  display: block;
+
+}
+.herotext {
+  display: inline;
 }
 
+.one-third, .two-thirds, .one-half {
+  display: inline-block;
+}
+.one-third {
+  width: 33%;
+}
+.two-thirds {
+  width: 66%;
+}
+.one-half {
+  width: 50%;
+}
 .herotext h2 {
   font-style: italic;
+}
+.sellingpoints {
+  display: inline-block;
 }
 
 main {
   border: 1px solid black;
   background-color: #eee;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
 main h1 {
@@ -28,6 +52,7 @@ main h1 {
 
 main section {
   border-top: 1px solid #888;
+  clear: both;
 }
 
 main section:first-child {
@@ -44,3 +69,37 @@ footer {
   color: #eee;
   font-size: 75%;
 }
+section img {
+  float: right;
+  max-width: 33%
+}
+
+header {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+
+  .one-third, .two-thirds, .one-half {
+      width: auto;
+      display: block;
+  }
+
+  .portrait-container {
+    display: none;
+  }
+
+  body, footer {
+    font-size: 18px;
+  }
+
+  section img {
+    display: none;
+  }
+}
+
+
+
