@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :image, :name, :remote_avatar_url
   # attr_accessible :title, :body
 
-  def self.find_for_facebook_oauth(auth)
+  def self.find_for_twitter_oauth(auth)
     if user = User.find_by_email(auth.info.email)
       user.uid = auth.uid
      user
@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
       where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.email = auth.info.email
+        user.email = auth.uid+"@twitter.com"
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
-        user.remote_avatar_url = auth[:info][:image]
+        #user.remote_avatar_url = auth[:info][:image]
         puts "auth.info.name: "+auth.info.name  
         puts "remote_avatar_url: "+auth[:info][:image]       
       end
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+      if data = session["devise.twitter_data"] && session["devise.twitter_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
     end
