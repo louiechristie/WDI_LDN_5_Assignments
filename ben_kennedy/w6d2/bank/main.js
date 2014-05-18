@@ -1,7 +1,7 @@
 var bankApp = bankApp || {};
 
 bankApp.setup = function() { 
-  bankApp.balance = 0;
+  bankApp.balance = (0)
   bankApp.updateBalance('#checking', bankApp.balance);
   bankApp.updateBalance('#savings', bankApp.balance);
   $('.deposit').click(bankApp.deposit);
@@ -9,12 +9,12 @@ bankApp.setup = function() {
 }
 
 bankApp.updateBalance = function(accountTypeID, balance) {  
-  $( accountTypeID + ' p.balance' ).html("£ " + balance); 
+  $( accountTypeID + ' p.balance' ).html("£ " + balance.toFixed(2)); 
 }
 
 bankApp.deposit = function() {
   accountTypeID = bankApp.getAccountTypeID($(this));
-  currentBalance = parseFloat(bankApp.getBalance(accountTypeID));
+  currentBalance = bankApp.getBalance(accountTypeID);
   deposit = parseFloat($(accountTypeID + " .amount").val());
   newBalance = currentBalance + deposit;
   bankApp.updateBalance(accountTypeID, newBalance);
@@ -22,7 +22,7 @@ bankApp.deposit = function() {
 
 bankApp.withdraw = function() {
   accountTypeID = bankApp.getAccountTypeID($(this));
-  currentBalance = parseFloat(bankApp.getBalance(accountTypeID));
+  currentBalance = bankApp.getBalance(accountTypeID);
   withdraw = parseFloat($(accountTypeID + " .amount").val());
   if (withdraw <= currentBalance) {
     newBalance = currentBalance - withdraw;
@@ -59,8 +59,8 @@ bankApp.insufficientFunds = function() {
 }
 
 bankApp.getBalance = function(accountTypeID) {
-  return $( accountTypeID + ' p.balance' ).html().substring(2);
-
+   balance = $( accountTypeID + ' p.balance' ).html().substring(2);
+   return parseFloat(balance)
 }
 
 bankApp.getAccountTypeID = function(buttonObject) {

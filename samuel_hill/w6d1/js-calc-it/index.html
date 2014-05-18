@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Calc-It Javascript</title>
-	<script src="main.js"></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,7 +21,7 @@
 
 	<input type="text" placeholder="Number two..." id="numbertwo" />
 
-	<button onclick="simplemath()" class="btn btn-success">CALC-IT!</button>
+	<button id="one" class="btn btn-success">CALC-IT!</button>
 	
 
 	<p>BMI CALCULATOR</p>
@@ -30,7 +29,7 @@
 	<input type="text" placeholder="height (m)" id="height" />
 	<input type="text" placeholder="weight (kg)" id="weight" />
 	
-	<button onclick="bmi()" class="btn btn-success">GET MY BMI</button>
+	<button id="two" class="btn btn-success">GET MY BMI</button>
 
 	<p>TRIP CALCULATOR</p>
 
@@ -39,24 +38,26 @@
 	<input type="text" placeholder="cost per gallon" id="fuelcost" />
 	<input type="text" placeholder="speed (mph)" id="speed" />
 	
-	<button onclick="trip()" class="btn btn-success">CALCULATE</button>
+	<button id="three" class="btn btn-success">CALCULATE</button>
 
 	<p>MORTGAGE CALCULATOR</p>
 
-	<input type="text" placeholder="loan amount (£)" id="loanamount" />
+	<input type="text" placeholder="loan amount ($)" id="loanamount" />
 	<input type="text" placeholder="loan time (yrs)" id="loantime" />
 	<input type="text" placeholder="annual interest rate" id="interestrate" />
 	
-	<button onclick="mortgage()" class="btn btn-success">CALCULATE</button>
+	<button id="four" class="btn btn-success">CALCULATE</button>
 
 	<p>TO THE POWER OF 10 CALCULATOR</p>
 
 	<input type="text" placeholder="number..." id="power" />
 
-	<button onclick="power()" class="btn btn-success">POWER!</button>
+	<button id="five" class="btn btn-success">POWER!</button>
 
 	<h2>The answer is:</h2>
 	<h3 id="answer"></h3>
+
+	<script src="main.js"></script>
 
 </body>
 </html>
