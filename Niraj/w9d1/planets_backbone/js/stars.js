@@ -8,7 +8,7 @@ starApp.models.Star = Backbone.Model.extend({
   defaults: {
     name: "",
     mass: "",
-    planets: "",
+    orbit: "",
     picture: "http://www.ipad-wallpapers.us/bgs/universe.jpg",
   }
 });
@@ -43,8 +43,8 @@ starApp.views.StarCollectionView = Backbone.View.extend({
     this.collection.bind('remove', this.render, this);
   },
 
-  add: function(name, mass, planets, picture) {
-    var star = new starApp.models.Star({name: name, mass: mass, planets: planets, picture: picture});
+  add: function(name, mass, orbit, picture) {
+    var star = new starApp.models.Star({name: name, mass: mass, orbit: orbit, picture: picture});
     this.collection.add(star);
   },
 
@@ -52,12 +52,12 @@ starApp.views.StarCollectionView = Backbone.View.extend({
     ev.preventDefault();
     var $name = $('#name');
     var $mass = $('#mass');
-    var $planets = $('#planets');
+    var $orbit = $('#orbit');
     var $picture = $('#picture');
-    this.add($name.val(), $mass.val(), $planets.val(), $picture.val());
+    this.add($name.val(), $mass.val(), $orbit.val(), $picture.val());
     $name.val('');
     $mass.val('');
-    $planets.val('');
+    $orbit.val('');
     $picture.val('');
   },
 

@@ -21,10 +21,10 @@
 
      <script type="text/template" id="tmpl_star">
         <p class="remove">X</p>
-        <h2><%= planet.get('name') %></h2>
-        <h2><%= planet.get('mass') %></h2>
-        <h2><%= planet.get('planets') %></h2>
-        <h2><img src="<%= planet.get('picture') %>" /></h2>
+        <h2><%= star.get('name') %></h2>
+        <h2><%= star.get('mass') %></h2>
+        <h2><%= star.get('orbit') %></h2>
+        <h2><img src="<%= star.get('picture') %>" /></h2>
     </script>
 
   </head>
@@ -53,7 +53,7 @@
         <form id="add_star" action="#">
           <input id="name" placeholder="Your name" name="name" />
           <input id="mass" placeholder="mass" name="mass" />
-          <input id="planets" placeholder="planets" name="planets" />
+          <input id="orbit" placeholder="Planets in solar system" name="orbit" />
           <input id="picture" placeholder="Link to picture" name="picture" />
 
           <input type="submit" value="Add Star" />
