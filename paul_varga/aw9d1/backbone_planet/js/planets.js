@@ -73,6 +73,11 @@ planetApp.views.PlanetCollectionView = Backbone.View.extend({
 planetApp.setup = function() {
     var planet = new planetApp.views.PlanetCollectionView();
     planet.add('Earth', '1', 'http://i.telegraph.co.uk/multimedia/archive/01296/earth-land_1296194c.jpg')
+
+    var $select = $("#moons");
+    for (i=0;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
 };
 
 $(planetApp.setup);
