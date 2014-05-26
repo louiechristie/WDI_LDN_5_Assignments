@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140516160810) do
+ActiveRecord::Schema.define(:version => 20140516165748) do
 
   create_table "cheerups", :force => true do |t|
     t.string   "message"
@@ -22,16 +22,38 @@ ActiveRecord::Schema.define(:version => 20140516160810) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "identities", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "identities", ["user_id"], :name => "index_identities_on_user_id"
+
   create_table "users", :force => true do |t|
-    t.string   "email"
     t.string   "profile_pic_url"
     t.string   "location"
     t.string   "username"
     t.string   "role"
     t.text     "tagline"
     t.string   "cover_image_url"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
       # Create the user if it is a new registration
       if user.nil?
         user = User.new(
-          name: auth.extra.raw_info.name,
-          #username: auth.info.nickname || auth.uid,
+          #name: auth.extra.raw_info.name,
+          username: auth.info.nickname || auth.uid,
           email: email ? email : TEMP_EMAIL,
           password: Devise.friendly_token[0,20]
         )
