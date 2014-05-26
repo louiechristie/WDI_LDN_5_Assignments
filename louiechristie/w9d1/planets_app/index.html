@@ -5,10 +5,12 @@
     <link rel="stylesheet" href="styles.css" />
 
     <script type="text/templte" id="tmpl_planet">
-      <p class="close">X</p>
-      <h1><%= planet.get('name') %></h1>
-      <h2><%= planet.get('volume') %></h2>
-      <img src="<%= planet.get('url') %>" alt="<%= planet.get('title') %>">
+      <div class="planet">
+        <p class="close">X</p>
+        <h1><%= planet.get('name') %></h1>
+        <p>Volume: <%= planet.get('volume') %> Earths</p>
+        <img src="<%= planet.get('url') %>" alt="<%= planet.get('title') %>" width="100" />
+      </div>
     </script>
 
 
@@ -22,15 +24,22 @@
   <body>
 
     <header>
-      <h1>Backbone Address Book</h1>
+      <h1>Backbone Planets App</h1>
     </header>
 
     <div id="container">
       <form id="add_planet" action="#">
+        <label for="name">Name:</label>
         <input id="name" placeholder="name" name="name" />
-        <input id="volume" placeholder="example@example.com/..." name="url" />
+        <br />
+        <label for="volume">Volume:</label>
+        <input id="volume" placeholder="1" name="url" />
+        <br />
+        <label for="url">Picture URL:</label>
         <input id="url" placeholder="http://example.com/..." name="url" />
+        <br />
         <input type="submit" value="Add Planet" />
+      </form>
       <ul id="address_book"></ul>
     </div>
   </body>

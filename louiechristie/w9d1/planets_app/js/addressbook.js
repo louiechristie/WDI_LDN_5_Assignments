@@ -80,9 +80,10 @@ addressApp.views.PlanetCollectionView = Backbone.View.extend({
 addressApp.setup = function() {
   var address = new addressApp.views.PlanetCollectionView();
 
+  address.add('Mercury', '0.056', 'http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/405px-Mercury_in_color_-_Prockter07_centered.jpg');
+  address.add('Earth', '1', 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/450px-Earth_Eastern_Hemisphere.jpg');
+  address.add('Venus', '0.866', 'http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Venus_globe.jpg/375px-Venus_globe.jpg');
   address.add('Jupiter', '1321.3', 'http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/390px-Jupiter_by_Cassini-Huygens.jpg');
-  address.add('Noor BL', 'noorbl@hello.com', 'http://www.fillmurray.com/210/310');
-  address.add('Nic Cage', 'cage@hello.com', 'http://www.placecage.com/g/200/300');
 };
 
 

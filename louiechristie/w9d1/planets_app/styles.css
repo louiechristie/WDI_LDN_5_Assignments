@@ -1,19 +1,23 @@
 body {
   background-color: #aac;
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg/800px-Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg');
   margin: 0;
+  font-family: Helvetica;
+  background-color: black;
 }
 
 #container {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 header {
+  padding-top: 2em;
+  padding-bottom: 2em;
   text-align: center;
-  background-color: #004;
   color: #eee;
-  min-height: 80px;
   border-bottom: 1px solid #eee;
 }
 
@@ -23,9 +27,17 @@ header h1 {
 
 li {
   display: inline-block;
-  border: 1px solid black;
   margin-right: 5px;
   vertical-align: top;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  color: white;
+  padding: 10px;
+}
+
+li img {
+  border-radius: 50%;
 }
 
 li h1 {
@@ -35,4 +47,22 @@ li h1 {
 
 p.close {
   float: right;
+}
+p.close:hover {
+  cursor: pointer; cursor: hand;
+}
+
+#container form {
+  display: inline-block;
+  background-color: white;
+  width: 300px;
+  margin-top: 1em;
+  border-radius: 10px;
+  padding: 10px;
+}
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+
 }
