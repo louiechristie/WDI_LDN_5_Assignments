@@ -51,7 +51,7 @@ addressApp.views.PersonCollectionView = Backbone.View.extend({
   },
 
   // add an image to this view's Collection:
-  add: function(title, email, url) {
+  add: function(name, email, url) {
         var person = new addressApp.models.Person({name: name, email: email, url: url});
         this.collection.add(person);
   },
