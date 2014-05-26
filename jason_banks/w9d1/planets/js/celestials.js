@@ -33,6 +33,26 @@ celestialsApp.collections.BodyCollection = Backbone.Collection.extend({
   model: celestialsApp.models.Body
 });
 
+celestialsApp.view.PlanetView = Backbone.View.extend({
+  tagName: 'li',
+  render: function() {
+    var templateContents = $('#template_planet').html();
+    var template = _.template(templateContents);
+    this.$el.html(template({planet: this.model}));
+    return this;
+  }
+})
+
+celestialsApp.view.StarView = Backbone.View.extend({
+  tagName: 'li',
+  render: function() {
+    var templateContents = $('#template_star').html();
+    var template = _.template(templateContents);
+    this.$el.html(template({star: this.model}));
+    return this;
+  }
+})
+
 // var addressApp = addressApp || {
 //   models: {},
 //   views: {},
