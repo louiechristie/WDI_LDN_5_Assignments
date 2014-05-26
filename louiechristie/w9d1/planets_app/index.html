@@ -12,12 +12,22 @@
         <img src="<%= planet.get('url') %>" alt="<%= planet.get('title') %>" width="100" />
       </div>
     </script>
+    <script type="text/templte" id="tmpl_star">
+      <div class="star">
+        <p class="close">X</p>
+        <h1><%= star.get('name') %></h1>
+        <p>Luminosity: <%= star.get('luminosity') %> L</p>
+        <img src="<%= star.get('url') %>" alt="<%= star.get('title') %>" width="100" />
+      </div>
+    </script>
 
 
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/underscore.js"></script>
     <script src="js/backbone.js"></script>
-    <script src="js/addressbook.js"></script>
+    <script src="js/planets.js"></script>
+    <script src="js/stars.js"></script>
+
 
   </head>
 
@@ -29,18 +39,36 @@
 
     <div id="container">
       <form id="add_planet" action="#">
+        <h2>Add Planet</h2>
         <label for="name">Name:</label>
         <input id="name" placeholder="name" name="name" />
         <br />
         <label for="volume">Volume:</label>
-        <input id="volume" placeholder="1" name="url" />
+        <input id="volume" placeholder="1" name="volume" />
         <br />
         <label for="url">Picture URL:</label>
         <input id="url" placeholder="http://example.com/..." name="url" />
         <br />
         <input type="submit" value="Add Planet" />
       </form>
-      <ul id="address_book"></ul>
+
+      <form id="add_star" action="#">
+        <h2>Add Star</h2>
+        <label for="name">Name:</label>
+        <input id="name" placeholder="name" name="name" />
+        <br />
+        <label for="luminosity">Luminosity:</label>
+        <input id="luminosity" placeholder="1" name="luminosity" />
+        <br />
+        <label for="url">Picture URL:</label>
+        <input id="url" placeholder="http://example.com/..." name="url" />
+        <br />
+        <input type="submit" value="Add Star" />
+      </form>
+
+      <ul id="solar_system"></ul>
+      <ul id="solar_system2"></ul>
+
     </div>
   </body>
 </html>
