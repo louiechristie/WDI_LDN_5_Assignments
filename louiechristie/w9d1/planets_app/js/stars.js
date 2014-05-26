@@ -53,9 +53,9 @@ starsApp.views.StarCollectionView = Backbone.View.extend({
   addStarFromEvent: function(ev) {
     ev.preventDefault();
     console.log('addStarFromEvent')
-    var $name = $('#name');
+    var $name = $('#star_name');
     var $luminosity = $('#luminosity');
-    var $url = $('#url');
+    var $url = $('#star_url');
     this.add($name.val(), $luminosity.val(), $url.val());
     $name.val('');
     $luminosity.val('');
