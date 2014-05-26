@@ -72,7 +72,10 @@ planetApp.views.PlanetCollectionView = Backbone.View.extend({
 
 planetApp.setup = function() {
     var planet = new planetApp.views.PlanetCollectionView();
-    planet.add('Earth', '1', 'http://i.telegraph.co.uk/multimedia/archive/01296/earth-land_1296194c.jpg')
+    planet.add('Mercury', '0', 'http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2008/05/mercury_mariner10-580x542.jpg')
+    planet.add('Venus', '0', 'http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2009/08/venusmagellan-580x580.jpg')
+    planet.add('Earth', '1', 'http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2009/08/messenger_earth_lrg-580x456.jpg')
+    planet.add('Mars', '2', 'http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2009/05/nasa_mars.jpg')
 
     var $select = $("#moons");
     for (i=0;i<=100;i++){
