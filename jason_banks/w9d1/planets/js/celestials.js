@@ -53,6 +53,20 @@ celestialsApp.view.StarView = Backbone.View.extend({
   }
 })
 
+celestialsApp.view.BodyCollectionView = Backbone.View.extend({
+  el: '#container',
+  events: {'submit form#celestial_body': 'addBodyFromForm'},
+  initialize: function() {
+    console.log('Initializing!');
+    this.collection = new celestialsApp.collection.BodyCollection();
+    this.collection.bind('add', this.render, this);
+  },
+
+  add: function() {
+    
+  }
+})
+
 // var addressApp = addressApp || {
 //   models: {},
 //   views: {},
@@ -78,13 +92,13 @@ addressApp.views.AddressView = Backbone.View.extend({
   remove: function() {
     this.model.destroy();
   },
-  render: function(){
-    var templateContents = $('#tmpl_address').html();
-    var template = _.template(templateContents);
-    this.$el.html(template({address: this.model}));
-    return this;
-  }
-})
+//   render: function(){
+//     var templateContents = $('#tmpl_address').html();
+//     var template = _.template(templateContents);
+//     this.$el.html(template({address: this.model}));
+//     return this;
+//   }
+// })
 
 addressApp.views.AddressCollectionView = Backbone.View.extend({
   el: '#container',
