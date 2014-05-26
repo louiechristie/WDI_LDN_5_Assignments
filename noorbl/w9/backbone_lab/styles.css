@@ -21,6 +21,10 @@ header h1 {
   margin: 0;
 }
 
+p.close {
+  float: right;
+}
+
 li {
   display: inline-block;
   border: 1px solid black;

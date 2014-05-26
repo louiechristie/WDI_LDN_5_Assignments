@@ -10,6 +10,7 @@
 
 
     <script type="text/template" id="tmpl_person">
+          <p class="close">X</p>
           <h1><%= person.get('name') %></h1>
           <h2><%= person.get('email') %></h2>
           <img src="<%= person.get('url') %>" alt="<%= person.get('name') %>" />
@@ -24,7 +25,13 @@
     </header>
 
     <div id="container">
-      <ul id="demo_people"></ul>
+      <form id="add_person" action="#">
+        <input id="name" placeholder="Name" name="name" />
+        <input id="email" placeholder="Email" name="email" />
+        <input id="url" placeholder="http://example.com/..." name="url" />
+        <input type="submit" value="Add Contact" />
+      </form>
+      <ul id="list_people"></ul>
     </div>
 
 

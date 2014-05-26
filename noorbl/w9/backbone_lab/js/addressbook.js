@@ -1,16 +1,9 @@
-// defining the module:
+ // defining the module:
 var addressApp = addressApp || {
   models: {},
   views: {},
   collections: {}
 };
-
-
-addressApp.views.AppView = Backbone.View.extend({
-  initialize: function() {
-    this.render();
-  }
-});
 
 
 addressApp.models.Person = Backbone.Model.extend({
@@ -23,8 +16,6 @@ addressApp.models.Person = Backbone.Model.extend({
 
 
 
-
-
 addressApp.collections.PersonCollection = Backbone.Collection.extend({
   model: addressApp.models.Person
 });
@@ -32,6 +23,12 @@ addressApp.collections.PersonCollection = Backbone.Collection.extend({
 
 addressApp.views.PersonView = Backbone.View.extend({
   tagName: 'li',
+  events: { 'click .close': 'remove'},
+
+  remove: function() {
+    this.model.destroy();
+  },
+
   render: function() {
     var templateContents = $('#tmpl_person').html();
     var template = _.template(templateContents);
@@ -43,11 +40,13 @@ addressApp.views.PersonView = Backbone.View.extend({
 
 
 addressApp.views.PersonCollectionView = Backbone.View.extend({
-  el: '#demo_people',
+  el: '#container',
+  events: {'submit form#add_person': 'addPersonFromEvent'},
 
   initialize: function() {
     this.collection = new addressApp.collections.PersonCollection();
-    this.collection.bind('add', this.appendItem, this);
+    this.collection.bind('add', this.render, this);
+    this.collection.bind('remove', this.render, this);
   },
 
   // add an image to this view's Collection:
@@ -56,10 +55,23 @@ addressApp.views.PersonCollectionView = Backbone.View.extend({
         this.collection.add(person);
   },
 
-  // draw an image on the page:
-  appendItem: function(person) {
-    var personView = new addressApp.views.PersonView({model: person});
-    this.$el.append(personView.render().el);
+   addPersonFromEvent: function(ev) {
+    ev.preventDefault();
+    var $name = $('#name');
+    var $email = $('#email')
+    var $url = $('#url');
+    this.add($name.val(), $email.val(), $url.val());
+    $name.val('');
+    $email.val('');
+    $url.val('');
+  },
+
+  render: function() {
+    $('#list_people').empty();
+    this.collection.each(function(el) {
+      var personView = new addressApp.views.PersonView({model: el});
+      $('#list_people').append(personView.render().el);
+    });
   }
 
 });
@@ -67,8 +79,7 @@ addressApp.views.PersonCollectionView = Backbone.View.extend({
 
 // creating a new view:
 addressApp.setup = function() {
-  var avocado = new addressApp.views.AppView();
-
+  
   var address = new addressApp.views.PersonCollectionView();
   address.add('Louie Christie', 'louiechristie@hello.com', 'http://www.fillmurray.com/200/300');
   address.add('Noor BL', 'noorbl@hello.com', 'http://www.fillmurray.com/210/310');
