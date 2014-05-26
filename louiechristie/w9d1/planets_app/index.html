@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Planets App</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="text/templte" id="tmpl_planet">
+      <p class="close">X</p>
+      <h1><%= planet.get('name') %></h1>
+      <h2><%= planet.get('volume') %></h2>
+      <img src="<%= planet.get('url') %>" alt="<%= planet.get('title') %>">
+    </script>
+
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/addressbook.js"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Backbone Address Book</h1>
+    </header>
+
+    <div id="container">
+      <form id="add_planet" action="#">
+        <input id="name" placeholder="name" name="name" />
+        <input id="volume" placeholder="example@example.com/..." name="url" />
+        <input id="url" placeholder="http://example.com/..." name="url" />
+        <input type="submit" value="Add Planet" />
+      <ul id="address_book"></ul>
+    </div>
+  </body>
+</html>
+
+
+
+
