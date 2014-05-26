@@ -8,13 +8,23 @@
     <script src="js/underscore.js"></script>
     <script src="js/backbone.js"></script>
     <script src="js/planets.js"></script>
+    <script src="js/stars.js"></script>
+
 
     <script type="text/template" id="tmpl_planet">
         <p class="remove">X</p>
         <h1><%= planet.get('name') %></h1>
         <h2><%= planet.get('moons') %></h2>
         <h2><%= planet.get('gravity') %></h2>
-        <h2><%= planet.get('picture') %></h2>
+        <h2><img src="<%= planet.get('picture') %>" /></h2>
+    </script>
+
+     <script type="text/template" id="tmpl_star">
+        <p class="remove">X</p>
+        <h2><%= planet.get('name') %></h2>
+        <h2><%= planet.get('mass') %></h2>
+        <h2><%= planet.get('planets') %></h2>
+        <h2><img src="<%= planet.get('picture') %>" /></h2>
     </script>
 
   </head>
@@ -35,6 +45,21 @@
         </form>
 
         <ul id="demo_planets"></ul>
+    </div>
+
+      <h1>Stars</h1>
+
+    <div id="container2">
+        <form id="add_star" action="#">
+          <input id="name" placeholder="Your name" name="name" />
+          <input id="mass" placeholder="mass" name="mass" />
+          <input id="planets" placeholder="planets" name="planets" />
+          <input id="picture" placeholder="Link to picture" name="picture" />
+
+          <input type="submit" value="Add Star" />
+        </form>
+
+        <ul id="demo_stars"></ul>
     </div>
 
   </body>

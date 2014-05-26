@@ -26,15 +26,15 @@ planetApp.views.PlanetView = Backbone.View.extend({
   },
 
   render: function() {
-    var templateContents = $('tmpl_planet').html();
+    var templateContents = $('#tmpl_planet').html();
     var template = _.template(templateContents);
-    this.$el.html(template({person: this.model}));
+    this.$el.html(template({planet: this.model}));
     return this;
   }
 });
 
 planetApp.views.PlanetCollectionView = Backbone.View.extend({
-  el: 'container',
+  el: '#container',
   events: {'submit form#add_planet': 'addPlanetFromEvent'},
 
   initialize: function() {
@@ -72,7 +72,7 @@ planetApp.views.PlanetCollectionView = Backbone.View.extend({
 
 planetApp.setup = function() {
   var planet = new planetApp.views.PlanetCollectionView();
-  planet.add('Earth', '1', '8.2', 'www.google.com');
+  planet.add('Earth', '1', '8.2', 'http://images.wisegeek.com/planet-earth.jpg');
 };
 
 $(planetApp.setup)
