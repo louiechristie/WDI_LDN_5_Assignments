@@ -13,12 +13,18 @@
   <body>
     <h1>Celestials</h1>
     <div id='container'>
-      <form id='planet-form' action='#'>
+      <form id='celestial_body' action='#'>
+        <input type='radio' id='planet' name='body_type' value='Planet'>Planet<br>
+        <input type='radio' id='star' name='body_type' value='Star'>Star<br>
         <input id='name' placeholder='Name' name='name' />
         <input id='galaxy' placholder='Galaxy' name='galaxy' />
-        <input id='star' placeholder='Star it orbits' name='star' />
-        <input type='number' min='0' step='1' id='mass' placeholder='Mass' name='mass' />
-        <input type='number' min='0' step='1' id='moons' placeholder='Number of moons' name='moon' />
+        <input id='star' placeholder='Star it orbits (NAS)' name='star' />
+        <input id='mass' placeholder='Mass' name='mass' />
+        <input type='number' min='0' step='1' id='moons' placeholder='Number of moons (NAS)' name='moon' />
+        <input id='classification' placeholder='Classification (NAP)' name='classification' />
+        <input id='lumninosity' placeholder='Luminosity (NAP)' name='luminosity' />
+        <input id='color' placeholder='Color (NAP)' name='color' />
+        <input id='age' placeholder='Age' name='moon' />
         <input type='submit' />
       </form>
   </body>

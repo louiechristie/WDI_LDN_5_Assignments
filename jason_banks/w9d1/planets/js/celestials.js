@@ -1,8 +1,40 @@
-var addressApp = addressApp || {
+var celestialsApp = celestialsApp || {
   models: {},
   views: {},
   collections: {}
-};
+}
+
+celestialsApp.models.Planet = Backbone.Model.extend({
+  defaults: {
+    type: 'Planet',
+    name: '',
+    galaxy: '',
+    star: '',
+    mass: '',
+    moons: '',
+    age: ''
+  }
+});
+
+celestialsApp.models.Star = Backbone.Model.extend({
+  defaults: {
+    type: 'Star',
+    name: '',
+    galaxy: '',
+    mass: '',
+    moons: '',
+    classification: '',
+    luminosity: '',
+    color: '',
+    age: ''
+  }
+})
+
+// var addressApp = addressApp || {
+//   models: {},
+//   views: {},
+//   collections: {}
+// };
 
 addressApp.models.Address = Backbone.Model.extend({
     defaults: {
