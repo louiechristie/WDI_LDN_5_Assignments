@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Backbone Planets App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/planets.js"></script>
+
+    <script type="text/template" id="tmpl_planet">
+        <p class="remove">X</p>
+        <h1><%= planet.get('name') %></h1>
+        <h2><%= planet.get('moons') %></h2>
+        <h2><%= planet.get('gravity') %></h2>
+        <h2><%= planet.get('picture') %></h2>
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+      <h1>Planets</h1>
+    </header>
+
+    <div id="container">
+        <form id="add_planet" action="#">
+          <input id="name" placeholder="Your name" name="name" />
+          <input id="moons" placeholder="number of moons" name="moons" />
+          <input id="gravity" placeholder="Gravity" name="gravity" />
+          <input id="picture" placeholder="Link to picture" name="picture" />
+
+          <input type="submit" value="Add Planet" />
+        </form>
+
+        <ul id="demo_planets"></ul>
+    </div>
+
+  </body>
+
+</html>
