@@ -4,31 +4,34 @@ var celestialsApp = celestialsApp || {
   collections: {}
 }
 
-celestialsApp.models.Planet = Backbone.Model.extend({
+celestialsApp.models.Body = Backbone.Model.extend({
   defaults: {
     type: 'Planet',
     name: '',
     galaxy: '',
-    star: '',
     mass: '',
-    moons: '',
     age: ''
   }
 });
 
-celestialsApp.models.Star = Backbone.Model.extend({
+celestialsApp.models.PlanetBody = celestialsApp.models.Body.extend({
   defaults: {
-    type: 'Star',
-    name: '',
-    galaxy: '',
-    mass: '',
+    star: '',
     moons: '',
+  }
+})
+
+celestialsApp.models.StarBody = celestialsApp.models.Body.extend({
+  defaults: {
     classification: '',
     luminosity: '',
     color: '',
-    age: ''
   }
 })
+
+celestialsApp.collections.BodyCollection = Backbone.Collection.extend({
+  model: celestialsApp.models.Body
+});
 
 // var addressApp = addressApp || {
 //   models: {},
@@ -36,18 +39,18 @@ celestialsApp.models.Star = Backbone.Model.extend({
 //   collections: {}
 // };
 
-addressApp.models.Address = Backbone.Model.extend({
-    defaults: {
-      first_name: '',
-      last_name: '',
-      email: '',
-      image: '',
-    }
-});
+// addressApp.models.Address = Backbone.Model.extend({
+//     defaults: {
+//       first_name: '',
+//       last_name: '',
+//       email: '',
+//       image: '',
+//     }
+// });
 
-addressApp.collections.AddressCollection = Backbone.Collection.extend({
-  model: addressApp.models.Address
-});
+// addressApp.collections.AddressCollection = Backbone.Collection.extend({
+//   model: addressApp.models.Address
+// });
 
 addressApp.views.AddressView = Backbone.View.extend({
   tagName: 'li',
