@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wham!FanZone</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1>Wham! FanZone</h1>
+  <ul>
+    <li><%= link_to "Band", band_path %></li>
+    <li><%= link_to "History", history_path %></li>
+    <li><%= link_to "George", george_path %></li>
+    <li><%= link_to "Andrew", andrew_path %></li>
+    <li><%= link_to "Music", music_path %></li>
+    <li><%= link_to "Gallery", gallery_path %></li>
+  </ul>
+
+
+
+   <div class='login'>
+    <%# if current_user %>
+      <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'sign in', new_user_session_path %>
+      <%= link_to 'register', new_user_registration_path %>
+      <% end %>
+  </div>
+
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
