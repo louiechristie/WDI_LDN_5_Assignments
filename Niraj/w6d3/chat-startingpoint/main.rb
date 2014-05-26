@@ -22,6 +22,7 @@ post '/chat' do
     if request.xhr? and params.has_key? "since"
       return [200, {"Content-Type" => "application/json"}, JSON.generate(chatlines.select { |x| x[:timestamp] > params["since"].to_i })]
     end
+    
   end
   redirect to '/?username=' + params["username"]
 end

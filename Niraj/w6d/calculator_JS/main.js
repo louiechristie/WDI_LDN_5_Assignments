@@ -1,4 +1,6 @@
-function isNumber(event) {
+var calcApp = calcApp || {};
+
+calcApp.isNumber = function (event) {
   if (event) {
     var charCode = (event.which) ? event.which : event.keyCode;
     if (charCode != 190 && charCode > 31 && 
@@ -11,7 +13,8 @@ function isNumber(event) {
   return true;
 }
 
-function operator() {
+
+calcApp.operator = function() {
   var numberOne = parseInt(document.getElementById('numberOne').value),
       numberTwo = parseInt(document.getElementById('numberTwo').value),
       operator = document.getElementById('operator').value,
@@ -43,7 +46,7 @@ function printResult(elementId, message) {
 }
 
 
-function mortgage() {
+calcApp.mortgage = function() {
   var a = parseFloat(document.getElementById('loan_amount').value);
   var b = parseFloat(document.getElementById('interest_rate').value);
   var c = parseFloat(document.getElementById('number_of_payments').value);
@@ -69,11 +72,11 @@ function calculateBMI()
 
 function tripCalculator()
 {
-   var distance = parseFloat(document.getElementById('distance').value);
-   var mpg = parseFloat(document.getElementById('mpg').value);
-   var speed = parseFloat(document.getElementById('speed').value);
-   var cost = parseFloat(document.getElementById('cost').value);
-   var caption = parseFloat.getElementById('tripHours' + 'tripCost');
+   var distance = Number(document.getElementById('distance').value);
+   var mpg = Number(document.getElementById('mpg').value);
+   var speed = Number(document.getElementById('speed').value);
+   var cost = Number(document.getElementById('cost').value);
+   var caption = document.getElementById('tripHours' + 'tripCost');
 
    var tripHours = distance/speed
    var tripCost = (distance/mpg)*cost
@@ -106,4 +109,7 @@ function validate(type) {
   }
 }
 
+calcApp.setup = function() {
+
+}
 

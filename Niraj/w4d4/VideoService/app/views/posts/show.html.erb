@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Link:</b>
+   <div class="youtube"> <p><iframe width="480" height="360" src="http://www.youtube.com/embed/<%= @post.link %>" frameborder="0" allowfullscreen></iframe></p></div>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @post.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

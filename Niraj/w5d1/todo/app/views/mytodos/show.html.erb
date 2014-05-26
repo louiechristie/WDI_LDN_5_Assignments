@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @mytodo.name %>
+</p>
+
+<p>
+  <h2>Items</h2>
+  <ul>
+    <% @mytodo.items.each do |item| %>
+
+      <li>
+        <%= link_to 'up', move_item_path(item, direction: :up), method: :put %>
+        <%= link_to 'down', move_item_path(item, direction: :down), method: :put %>
+
+        <%= item.position %>
+        <%= item.name %>
+
+      </li>
+
+    <% end %>
+
+  </ul>
+</p>
+
+
+
+<%= link_to 'Edit', edit_mytodo_path(@mytodo) %> |
+<%= link_to 'Back', mytodos_path %>

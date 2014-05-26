@@ -29,12 +29,14 @@ myApp.withdraw_from_checkings = function() {
   var amount = parseInt($('#balance_checkings').val());
   var balance = parseInt($('#amount_checkings').val());
   var newbalance = amount - balance
-  var savingsbalance = parseInt($('#savingsOutput').val());
+  var savingsbalance = parseInt($('#deposit_to_savings').val());
 
   if (newbalance < 0 ){
     alert("You do not have enough money to withdraw the requested amount, we will try to deduct from your savings account.");
     var newbalance = Math.abs(newbalance);
-    var newsavingsbalance = savingsbalance - newbalance;
+    var newsavingsbalance = savingsbalance - newbalance;  
+
+    
 
       if (newsavingsbalance < 0) {
         alert("Sorry, you do not have enough money, please deposit some money.");
