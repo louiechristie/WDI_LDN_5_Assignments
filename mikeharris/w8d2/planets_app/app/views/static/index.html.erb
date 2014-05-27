@@ -1,2 +1,17 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<% content_for :templates do %>
+  <script type="text/template" id="tmpl_planet">
+    <p><%%= planet.get('name') %></p>
+    <p><%%= planet.get('moons') %></p>
+    <p><%%= planet.get('size') %></p>
+    <p><%%= planet.get('dist_from_sun') %></p>
+  </script>
+
+<% end %>
+
+
+
+<h1>List of planets</h1>
+
+<div id="container">
+  <p>Lodaing app...</p>
+</div>

@@ -1,6 +1,11 @@
 class PlanetsController < ApplicationController
-  def index
+  respond_to :json
 
+  def index
+    @planets = Planet.all
+
+
+    respond_with @planets
   end
 
 end

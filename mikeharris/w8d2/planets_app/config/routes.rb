@@ -1,6 +1,7 @@
 PlanetsApp::Application.routes.draw do
-  get "static/index"
+  
 
+  resources :planets , defaults: {format: :json}
   root to: "static#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
