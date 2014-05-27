@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Backbone Gallery App</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="text/templte" id="tmpl_person">
+      <p class="close">X</p>
+      <h1><%= person.get('name') %></h1>
+      <h2><%= person.get('email') %></h2>
+      <img src="<%= person.get('url') %>" alt="<%= person.get('title') %>">
+    </script>
+
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/addressbook.js"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Backbone Address Book</h1>
+    </header>
+
+    <div id="container">
+      <form id="add_person" action="#">
+        <input id="name" placeholder="name" name="name" />
+        <input id="email" placeholder="example@example.com/..." name="url" />
+        <input id="url" placeholder="http://example.com/..." name="url" />
+        <input type="submit" value="Add Person" />
+      <ul id="address_book"></ul>
+    </div>
+  </body>
+</html>
+
+
+
+

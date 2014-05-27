@@ -1,0 +1,65 @@
+body {
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg/800px-Night-sky-milky-way-galaxy-astrophotography_-_West_Virginia_-_ForestWander.jpg');
+  margin: 0;
+  font-family: Helvetica;
+  background-color: black;
+}
+
+#container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+header {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  color: white;
+}
+
+li {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: top;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  color: white;
+  padding: 10px;
+}
+
+.planet img, .star img {
+  border-radius: 50%;
+}
+
+li h1 {
+  font-size: 120%;
+  text-align: center;
+}
+
+p.close {
+  float: right;
+}
+p.close:hover {
+  cursor: pointer; cursor: hand;
+}
+
+#container form {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  margin-right: 30px;
+}
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+}

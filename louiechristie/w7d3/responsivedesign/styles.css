@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ccc;
+}
+
+.portrait-container {
+  display: inline-block;
+}
+.portraits {
+  display: block;
+
+}
+.herotext {
+  display: inline;
+}
+
+.one-third, .two-thirds, .one-half {
+  display: inline-block;
+}
+.one-third {
+  width: 33%;
+}
+.two-thirds {
+  width: 66%;
+}
+.one-half {
+  width: 50%;
+}
+.herotext h2 {
+  font-style: italic;
+}
+.sellingpoints {
+  display: inline-block;
+}
+
+main {
+  border: 1px solid black;
+  background-color: #eee;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+main h1 {
+  font-size: 150%;
+}
+
+main section {
+  border-top: 1px solid #888;
+  clear: both;
+}
+
+main section:first-child {
+  border-top: 0;
+}
+
+.testimonials {
+  color: #444;
+  font-style: italic;
+}
+
+footer {
+  background-color: #111;
+  color: #eee;
+  font-size: 75%;
+  padding: 10px 40px;
+}
+section img {
+  float: right;
+  max-width: 33%
+}
+
+header {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+  padding: 10px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+
+  .one-third, .two-thirds, .one-half {
+      width: auto;
+      display: block;
+  }
+
+  img {
+    display: none;
+  }
+ 
+  footer {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+}
+
+
+
