@@ -19,6 +19,7 @@ Stars.Views.StarView = Backbone.View.extend({
   events: {'click span': 'makeElementEditable',
             'blur input': 'saveChanges',
             'keyup input': 'keyboardSaveChanges',
+            'click button': 'remove'
   },
   template: _.template($('#template_star').html()),
 
@@ -51,6 +52,10 @@ Stars.Views.StarView = Backbone.View.extend({
     } else if (27 == ev.keyCode) {
       this.render();
     }
+  },
+
+  remove: function(ev) {
+    this.model.destroy();
   }
 });
 
@@ -70,7 +75,7 @@ Stars.Views.StarCollectionView = Backbone.View.extend({
 Stars.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'showIndex',
-    'new': 'createNewStar'
+    'star/new': 'createNewStar'
   },
 
   showIndex: function() {
@@ -84,7 +89,7 @@ Stars.Routers.AppRouter = Backbone.Router.extend({
 
 Stars.Views.StarCreationView = Backbone.View.extend({
   el: '#stars-container',
-  events: {'submit form': 'createNewStar'},
+  events: {'submit form#star_form': 'createNewStar'},
   template: _.template($('#template_newstar').html()),
   render: function() {
     this.$el.html(this.template());

@@ -6,17 +6,18 @@
       <li id='age'>Age: <span><%%= planet.get('age') %></span></li>
       <li id='mass'>Mass: <span><%%= planet.get('mass') %></span></li>
       <li id='moons'>Moons: <span><%%= planet.get('moons') %></span></li>
-      <li><button>Zzzzzap!</button></li>
+      <br>
+      <li><button>Zzzap!</button></li>
     </ul>
   </script>
   <script type="text/templates" id="template_newplanet">
-    <form>
+    <form id='planet_form'>
       <input name='name' placeholder='Name' /><br />
       <input name='age' placeholder='Age' /><br />
       <input name='mass' placeholder='Mass' /><br />
       <input type='number' name='moons' placeholder='Number of moons' /><br />
       <input name='image' placeholder='Image URL...' /><br />
-      <input type='submit', value='Add' />
+      <input type='submit', value='Save' />
     </form>
     <a href='#'><button>Back</button></a>
   </script>
@@ -29,17 +30,19 @@
       <li id='mass'>Mass: <span><%%= star.get('mass') %></span></li>
       <li id='classification'>Classification: <span><%%= star.get('classification') %></span></li>
       <li id='luminosity'>Luminosity: <span><%%= star.get('luminosity') %></span></li>
+      <br>
+      <li><button>Zzzap!</button></li>
     </ul>
   </script>
   <script type="text/templates" id="template_newstar">
-    <form>
+    <form id='star_form'>
       <input name='name' placeholder='Name' /><br />
       <input name='age' placeholder='Age' /><br />
       <input name='mass' placeholder='Mass' /><br />
       <input name='classification' placeholder='Classification' /><br />
       <input name='luminosity' placeholder='Luminosity' /><br />
       <input name='image' placeholder='Image URL...' /><br />
-      <input type='submit', value='Add' />
+      <input type='submit', value='Save' />
     </form>
     <a href='#'><button>Back</button></a>
   </script>
@@ -50,11 +53,13 @@
 <h1>Celestial Bodies</h1>
 <br />
 <div id="container">
-  <a href="#new"><button>Add Planet</button></a>
+  <a href="#planet/new"><button>Add Planet</button></a>
   <div id="planets-container">
     <p>Please wait, loading planets&hellip;</p>
   </div>
-  <a href="#new"><button>Add Star</button></a>
+  <br />
+  <br />
+  <a href="#star/new"><button>Add Star</button></a>
   <div id="stars-container">
     <p>Please wait, loading stars&hellip;</p>
   </div>

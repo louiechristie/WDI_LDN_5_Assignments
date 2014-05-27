@@ -19,6 +19,7 @@ Planets.Views.PlanetView = Backbone.View.extend({
   events: {'click span': 'makeElementEditable',
             'blur input': 'saveChanges',
             'keyup input': 'keyboardSaveChanges',
+            'click button': 'remove',
   },
   template: _.template($('#template_planet').html()),
 
@@ -51,6 +52,10 @@ Planets.Views.PlanetView = Backbone.View.extend({
     } else if (27 == ev.keyCode) {
       this.render();
     }
+  },
+
+  remove: function(ev) {
+    this.model.destroy();
   }
 });
 
@@ -70,7 +75,7 @@ Planets.Views.PlanetCollectionView = Backbone.View.extend({
 Planets.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'showIndex',
-    'new': 'createNewPlanet'
+    'planet/new': 'createNewPlanet'
   },
 
   showIndex: function() {
@@ -84,7 +89,7 @@ Planets.Routers.AppRouter = Backbone.Router.extend({
 
 Planets.Views.PlanetCreationView = Backbone.View.extend({
   el: '#planets-container',
-  events: {'submit form': 'createNewPlanet'},
+  events: {'submit form#planet_form': 'createNewPlanet'},
   template: _.template($('#template_newplanet').html()),
   render: function() {
     this.$el.html(this.template());

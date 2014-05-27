@@ -26,4 +26,9 @@ class StarsController < ApplicationController
       respond_with @star, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    Star.destroy params[:id]
+    redirect_to root_path
+  end
 end
