@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Backbone Planets and Stars App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/planet.js"></script>
+    <script src="js/star.js"></script>
+
+
+    <script type="text/template" id="tmpl_planet">
+          <p class="close">X</p>
+          <h1><%= planet.get('name') %></h1>
+          <h2><%= planet.get('moons') %></h2>
+          <h2><%= planet.get('gravity') %></h2>
+          <img src="<%= planet.get('url') %>" alt="<%= planet.get('name') %>" />
+    </script>
+
+
+    <script type="text/template" id="tmpl_star">
+          <p class="close">X</p>
+          <h1><%= star.get('name') %></h1>
+          <h2><%= star.get('mass') %></h2>
+          <h2><%= star.get('life_cycle') %></h2>
+          <h2><%= star.get('planets') %></h2>
+          <img src="<%= star.get('url') %>" alt="<%= star.get('name') %>" />
+    </script>
+
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Backbone Cosmic App</h1>
+    </header>
+
+    <div id="container">
+      <form id="add_planet" action="#">
+        <input id="name" placeholder="Name" name="name" />
+        <input id="moons" placeholder="Moons" name="moons" />
+        <input id="gravity" placeholder="Gravity" name="gravity" />
+        <input id="url" placeholder="http://example.com/..." name="url" />
+        <input type="submit" value="Add Planet" />
+      </form>
+      <ul id="list_planet"></ul>
+    </div>
+
+    <div id="container">
+    <form id="add_star" action="#">
+      <input id="name" placeholder="Name" name="name" />
+      <input id="mass" placeholder="Mass" name="mass" />
+      <input id="life_cycle" placeholder="Life cycle" name="life_cycle" />
+      <input id="planets" placeholder="Planets" name="planets" />
+      <input id="url" placeholder="http://example.com/..." name="url" />
+      <input type="submit" value="Add Star" />
+    </form>
+    <ul id="list_star"></ul>
+  </div>
+
+
+
+
+  </body>
+
+
+
+</html>
