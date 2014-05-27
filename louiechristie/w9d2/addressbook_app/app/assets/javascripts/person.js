@@ -15,6 +15,7 @@ People.Views.PersonView = Backbone.View.extend({
   tagName: 'div',
   template: _.template($('#tmpl_person').html()),
   render: function() {
+    this.$el.addClass('person');
     this.$el.html(this.template({person: this.model}));
     return this;
   }
