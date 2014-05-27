@@ -1,0 +1,221 @@
+* { margin:0; padding:0;}
+
+  div,article,section,header,li { position:relative; }
+  .group:after          { display: block; height: 0; font-size: 0; content: "."; clear: both; visibility: hidden; }
+  *               { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; } 
+  ::-moz-selection { background:#333; color:#fff; }
+  ::selection { background:#333; color:#fff; }
+
+  body,input,textarea { color:#333;}
+  textarea { resize:both; } /* none|horizontal|vertical|both */
+  textarea.vert { resize:both; }
+  textarea.noResize { resize:none; } 
+
+
+  body { font-family:"tablet-gothic", verdana, arial, sans-serif;}
+  h2,h3 { font-family:"tablet-gothic-condensed", "arial narrow", arial, verdana, sans-serif; }
+
+  /* Headings */
+  h1,h2,h3 { font-weight:normal; }
+  h1 { background:#ea2e49; color:#fff; display:inline-block; margin-bottom:1em; padding:0.5em 1em; }
+  h2 { color:#fff; font-weight:900; /* Heavy */ font-size:6em; letter-spacing:1px; line-height:1em; }
+  h3 { font-size:2.25em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em; padding:0.5em 0 0.25em 0; }
+
+  /* Links */
+  a { border-bottom:1px solid rgba(0,0,0,0.2); color:#333; text-decoration:none; -moz-transition:border-color 0.2s ease-in-out; -ms-transition:border-color 0.2s ease-in-out; -o-transition:border-color 0.2s ease-in-out; -webkit-transition:border-color 0.2s ease-in-out; transition:border-color 0.2s ease-in-out; }
+  a:hover { border-color:#ea2e49; }
+  div.comments { color:#fff;}
+
+  /* Paragraph styles */
+  p,
+  li { font-size:1em; font-weight:400; /* Regular */ line-height:1.5em; padding:0.5em 0; }
+  h1,
+  section.intro div.summary p,
+  div.requirements p:last-child   { font-weight:300; letter-spacing:2px; text-transform:uppercase; }
+  section.intro div.summary p:last-child, 
+  div.requirements p:last-child   { border-top:1px solid #ea2e49; margin-top:1em; padding-top:1.5em; }
+
+  html { background:#daede2; padding:5%; }
+  body { background:#77c4d3; }
+  div.page-wrapper { z-index:2; }
+  div.main     { padding:5%; }
+  div.comments { background:rgba(234,46,73,0.9); color:#fff; padding:5%; }
+
+
+
+  @media screen and (min-width:1px) {
+  body { font-size:85%; }
+  }
+ 
+  @media screen and (min-width:550px) {
+    h2              { font-size:8em; }
+    div.comments    { float:left; width:49%; }
+  }
+
+  @media screen and (min-width:650px) {
+
+  }
+
+  @media screen and (min-width:1500px) {
+
+    body            { font-size:125%; }
+
+  }
+
+  @media screen and (min-width:2100px) {
+
+    body            { font-size:175%; }
+
+  }
+
+
+* {
+margin:0;
+padding:0;
+}
+h2 {
+  padding:1em 0 0 0;
+}
+p {
+  line-height:1.4em;
+}
+p + p {
+  text-indent:2em;
+}
+body {
+  font-size:100%;
+  text-align:center;
+  background:#ddd;
+}
+pre {
+  display:block;
+  margin:1em 0 0 0;
+  width:488px;
+}
+pre code {
+  background:#eee;
+  display:block;
+  padding:10px;
+}
+.r {
+  float:right;
+  padding:0 0 10px 20px;
+}
+
+/* Landscape mode (default) */
+#wrap {
+  margin:0 auto;
+  width:1024px;
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+  background:#fff;
+}
+#header {
+  float:left;
+  width:1024px;
+  padding:10px 0 20px 0;
+  background:#fff;
+  border-bottom:1px solid #000;
+}
+#header h1 {
+  padding:10px 30px 0 30px;
+}
+#header p {
+  padding:0 30px;
+  line-height:1.4em;
+}
+#content {
+  float:left;
+  width:1024px;
+  background:#eee;
+  position:relative;
+  left:768px;
+}
+#main {
+  float:left;
+  width:708px;
+  position:relative;
+  right:738px;
+  padding:20px 0;
+}
+#side {
+  float:right;
+  width:216px;
+  position:relative;
+  right:788px;
+  padding-bottom:20px;
+}
+#sidea,
+#sideb,
+#sidec {
+  clear:left;
+  float:left;
+  width:216px;
+}
+#footer {
+  clear:both;
+  float:left;
+  width:1024px;
+  border-top:1px solid #000;
+  background:#ddd;
+}
+#footer p {
+  padding:20px 30px;
+}
+
+@media only screen and (orientation:portrait){
+  /* portrait mode */
+  #header,
+  #wrap,
+  #content {
+    left:0;
+    background:#fff;
+  }
+  #main {
+    float:left;
+    width:708px;
+    position:relative;
+    right:0;
+    left:30px;
+    padding:20px 0;
+  }
+  #side {
+    clear:left;
+    float:left;
+    width:768px;
+    right:0;
+    padding-bottom:20px;
+    background:#eee;
+  }
+  #sidea {
+    clear:none;
+    width:216px;
+    float:left;
+    position:relative;
+    left:30px;
+    padding-top:20px;
+  }
+  #sideb {
+    clear:none;
+    width:216px;
+    float:left;
+    position:relative;
+    left:60px;
+    padding-top:20px;
+  }
+  #sidec {
+    clear:none;
+    width:216px;
+    float:right;
+    position:relative;
+    right:30px;
+    padding-top:20px;
+  }
+}
+
+
+
+
+
+  

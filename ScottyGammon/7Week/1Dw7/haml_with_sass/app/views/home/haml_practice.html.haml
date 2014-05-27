@@ -1,0 +1,26 @@
+#wrapper
+  #header
+    %ul.menu
+      -%w(Home Contact About).each do |menu_item|
+        = content_tag :li, class: 'menu-item' do
+          = menu_item
+  #sidebar
+    .favourites My faves
+    .todo-list Must do
+
+  #content
+    %form{method: :post, action: '/result'}
+      %input{name: 'name', placeholder: 'Name', type: :text}
+      %input{name: 'email', placeholder: 'Email', type: :text}
+      %input{type: :submit, value: 'Send'}
+      %label Sex
+      %select
+        %option{ value: 'f'} Female
+        %option{ value: 'm'}Male
+  #footer
+    %p Copyright 2013
+    %p.very-big Make this text very big
+    %p 
+      but only make 
+      %span.very-big this text
+      very big
