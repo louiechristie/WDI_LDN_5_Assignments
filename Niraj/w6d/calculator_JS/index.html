@@ -11,23 +11,24 @@
 
   <h1> Basic calculator </h1>
 
-    <input type="number" placeholder="Enter first number..."  id="numberOne" onkeydown="return isNumber(event);"  />
-    <input type="number" placeholder="Enter second number..." id="numberTwo" onkeydown="return isNumber(event);" />
+    <input type="number" placeholder="Enter first number..."  id="numberOne" onkeydown="return calcApp.isNumber(event);"  />
+    <input type="number" placeholder="Enter second number..." id="numberTwo" onkeydown="return calcApp.isNumber(event);" />
+    <!-- <input type="number" placeholder="Enter second number..." id="numberTwo" onkeydown="return isNumber(event);" /> -->
 
   <div class="actions">
 
       <select id="operator">
          <option value="Choose"> --- </option>
-         <option value="add" onclick="add()">Add it!</option> 
-         <option value="subtract"onclick="subtract()">Subtract it!</option>
-         <option value="multiply" onclick="multiply()">Multiply it!</option>
-         <option value="divide"onclick="divide()">Divide it!</option>
-         <option value="squareroot" onclick="squareRoot()">Square root it!</option>
+         <option value="add" onclick="calcApp.add()">Add it!</option> 
+         <option value="subtract"onclick="calcApp.subtract()">Subtract it!</option>
+         <option value="multiply" onclick="calcApp.multiply()">Multiply it!</option>
+         <option value="divide"onclick="calcApp.divide()">Divide it!</option>
+         <option value="squareroot" onclick="calcApp.squareRoot()">Square root it!</option>
       </select>
 
   </div>
 
-    <button value="calculate" onclick="return operator()">Calculate!</button>
+    <button value="calculate" onclick="return calcApp.operator()">Calculate!</button>
 
     <p id="result"></p>
 
@@ -35,9 +36,9 @@
 <h1> Mortgage Calculator </h1>
 
 
-  <input type="number" placeholder="Enter loan amount" id="loan_amount" onkeydown="return isNumber(event);"  />
-  <input type="number" placeholder="Yearly interest rate" id="interest_rate" onkeydown="return isNumber(event);"  />
-  <input type="number" placeholder="Number of payments" id="number_of_payments" onkeydown="return isNumber(event);"  />
+  <input type="number" placeholder="Enter loan amount" id="loan_amount" onkeydown="return calcApp.isNumber(event);"  />
+  <input type="number" placeholder="Yearly interest rate" id="interest_rate" onkeydown="return calcApp.isNumber(event);"  />
+  <input type="number" placeholder="Number of payments" id="number_of_payments" onkeydown="return calcApp.isNumber(event);"  />
 
   <button onclick="mortgage()"> Calculate </button>
 
@@ -80,8 +81,7 @@ onSubmit='return validate();'>
 
 <p id="result_for_feet_to_meters"> </p>
 
-
-    <script src="main.js"> </script>  
+      <script src="main.js"> </script>  
 </body>
 </html>
 

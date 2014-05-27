@@ -1,6 +1,6 @@
 var musicPlayer = musicPlayer || {};
 
-musicPlayer.play = function() {
+musicPlayer.play = function(id) {
 sound = $(this).attr("id");
      var my_sound = soundManager.createSound({
                  url: '/wavs/' + sound + '.wav',
@@ -13,6 +13,8 @@ sound = $(this).attr("id");
 musicPlayer.setup = function() {
 
 
+
+   $('#after').click(musicPlayer.play);
    $('#better').click(musicPlayer.play);
    $('#doit').click(musicPlayer.play);
    $('#ever').click(musicPlayer.play);
@@ -31,19 +33,13 @@ musicPlayer.setup = function() {
 };
 
 
-// TRYING TO PLAY SOUND ON KEY DOWN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// document.onkeydown = function(event) {
-//     event = event || window.event;
-//     switch (event.keyCode || event.which) {
-//         case 37:
-//          $('#better').click(musicPlayer.play);
-//             break;
-//         case 39:
-//             alert('right');
-//             break;
-//     }
-// };
+// $( "musicPlayer" ).keydown(function( event ) {
+//   if ( event.which == 13 ) {
+//    event.preventDefault();
+//     my_sound.play('#after'); 
 
+//   }
+// }
         
 
 

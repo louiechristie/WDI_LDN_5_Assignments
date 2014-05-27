@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gallery.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @gallery.address %>
+</p>
+
+<div id='paintings'>
+  <% @gallery.paintings.each do |painting| %>
+    <div class='painting'>
+      <%= link_to [@gallery, painting] do %>
+        <%= image_tag painting.image_url(:thumb) %>
+      <% end %>
+      <div class='name'>
+        <%= link_to painting.title, [@gallery, painting] %>
+      </div>
+      <div class='actions'>
+        <%= link_to "edit", edit_gallery_painting_path(@gallery, painting) %>
+        |
+        <%= link_to "remove", [@gallery, painting], :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+
+    </div>
+  <% end %>
+
+  <%= link_to "Add a Painting", new_gallery_painting_path(@gallery) %>
+
+</div>
+
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

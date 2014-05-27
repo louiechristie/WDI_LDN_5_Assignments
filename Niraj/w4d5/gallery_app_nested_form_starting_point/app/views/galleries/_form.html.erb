@@ -1,0 +1,54 @@
+<%= form_for(@gallery) do |f| %>
+  <% if @gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+      <ul>
+      <% @gallery.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+
+  Paintings:
+  <%= f.fields_for :paintings do |sub_form| %>
+  <div class="field">
+    <%= sub_form.label :title %><br />
+    <%= sub_form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= sub_form.label :artist %><br />
+    <%= sub_form.text_field :artist %>
+  </div>
+  <div class="field">
+    <%= sub_form.label :description %><br />
+    <%= sub_form.text_field :description %>
+  </div>
+  <div class="field">
+    <%= sub_form.label :price %><br />
+    <%= sub_form.text_field :price %>
+  </div>
+  <div class="field">
+    <%= sub_form.label :image %><br />
+    <%= sub_form.file_field :image %>
+  </div>
+  <% end %>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
