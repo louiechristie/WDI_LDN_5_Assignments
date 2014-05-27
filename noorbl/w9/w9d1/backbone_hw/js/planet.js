@@ -84,9 +84,9 @@ planetApp.views.PlanetCollectionView = Backbone.View.extend({
 planetApp.setup = function() {
   
   var planet = new planetApp.views.PlanetCollectionView();
-  planet.add('Mars', 'louiechristie@hello.com', 'http://www.fillmurray.com/200/300');
-  planet.add('Earth', 'noorbl@hello.com', 'http://www.fillmurray.com/210/310');
-  planet.add('Venus', 'cage@hello.com', 'http://www.placecage.com/g/200/300');
+  planet.add('Mars', 'http://www.fillmurray.com/200/300');
+  planet.add('Earth', 'http://www.fillmurray.com/210/310');
+  planet.add('Venus', 'http://www.placecage.com/g/200/300');
 };
 
 
