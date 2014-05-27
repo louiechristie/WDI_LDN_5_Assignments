@@ -1,2 +1,17 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<% content_for :templates do %>
+  <script type="text/template" id="tmpl_person">
+    <h2><%%= person.get('name') %></h2>
+
+
+    <%% if (person.get('email')) { %>
+      <p><%%= person.get('email') %></p>
+    <%% } else { %>
+      <p><em>No email provided</em></p>
+    <%% } %>
+  </script>
+<% end %>
+
+<h1>My Contacts</h1>
+<div id="container">
+  <p>Please wait, application loading...</p>
+</div>
