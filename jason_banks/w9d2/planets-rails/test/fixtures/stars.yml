@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  mass: MyString
+  classification: MyString
+  luminosity: MyString
+
+two:
+  name: MyString
+  mass: MyString
+  classification: MyString
+  luminosity: MyString

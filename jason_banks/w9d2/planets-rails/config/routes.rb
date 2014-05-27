@@ -1,4 +1,10 @@
 PlanetsRails::Application.routes.draw do
+  get "stars/index"
+
+  get "planets/index"
+
+  get "static/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
