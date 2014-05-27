@@ -7,11 +7,19 @@
     <%% } else { %>
       <p><em>No Description</em></p>
      <%% } %> 
+  </script>
 
+  <script type="text/template" id="tmpl_newnote">
+    <form>
+      <input name="title" placeholder="Note Title" />
+      <textarea name="body" placeholder="Note Body"></textarea>
+      <input type="submit" value="Save Note" />
+    </form>
   </script>
 <% end %>
 
 <h1>My Notes</h1>
+<a href="#new">Create new note</a>
 <div id="container">
   <p>Please wait, application loading...</p>
 </div>
