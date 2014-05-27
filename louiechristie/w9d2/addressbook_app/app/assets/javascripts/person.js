@@ -17,6 +17,8 @@ People.Views.PersonView = Backbone.View.extend({
   render: function() {
     this.$el.addClass('person');
     this.$el.html(this.template({person: this.model}));
+
+
     return this;
   }
 });
@@ -40,6 +42,7 @@ People.setup = function() {
     var collectionView = new People.Views.PersonCollectionView({collection: allPeople});
     collectionView.render();
   }});
+  
 };
 
 $(People.setup);
