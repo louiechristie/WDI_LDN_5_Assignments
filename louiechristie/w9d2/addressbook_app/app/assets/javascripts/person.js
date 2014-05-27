@@ -52,9 +52,10 @@ People.Views.PersonCreationView = Backbone.View.extend({
 
   createNewPerson: function(ev) {
     ev.preventDefault();
-    var title = $('input[name="title"]').val();
-    var body = $('textarea[name="body"]').val();
-    var person = new People.Models.Person({title: title, body: body});
+    var name = $('input[name="name"]').val();
+    var email = $('input[name="email"]').val();
+    var url = $('input[name="url"]').val();
+    var person = new People.Models.Person({name: name, email: email, url: url});
     People.allPeople.add(person);
     person.save();
     People.router.navigate("", {trigger: true});
