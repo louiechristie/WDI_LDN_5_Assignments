@@ -8,22 +8,22 @@ class StarsController < ApplicationController
   end
 
   def create
-    @planet = Planet.new params[:planet]
+    @star = Star.new params[:star]
 
-    if @planet.save
-      respond_with @planet, status: :accepted
+    if @star.save
+      respond_with @star, status: :accepted
     else
-      respond_with @planet, status: :unprocessable_entity
+      respond_with @star, status: :unprocessable_entity
     end
   end
 
   def update
-    @planet = Planet.find params[:id]
+    @star = Star.find params[:id]
 
-    if @planet.update_attributes params[:planet]
-      respond_with @planet, status: :accepted
+    if @star.update_attributes params[:star]
+      respond_with @star, status: :accepted
     else
-      respond_with @planet, status: :unprocessable_entity
+      respond_with @star, status: :unprocessable_entity
     end
   end
 end

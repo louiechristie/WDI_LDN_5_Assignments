@@ -107,7 +107,6 @@ Stars.Views.StarCreationView = Backbone.View.extend({
 });
 
 Stars.setup = function() {
-  console.log('Something!');
   Stars.router = new Stars.Routers.AppRouter();
   Stars.allStars = new Stars.Collections.StarCollection();
   Stars.allStars.fetch({ success: Stars.router.showIndex });
