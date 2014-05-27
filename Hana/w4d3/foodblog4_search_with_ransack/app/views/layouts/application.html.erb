@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foodblog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%end%>
+
+  <div id="home">
+    <%= link_to "Food Blog", root_path, id: 'home_text' %>
+  </div>
+
+  <div id = "global_header_block">
+    <%= link_to "Home", root_path%>&nbsp&nbsp
+    <% if current_user %>
+      Hello, <%=current_user.email%>
+      <%=link_to "Log Out", session_path(0), method: :delete%>
+    <%else %>
+      <%= link_to 'Sign Up', new_user_path %>&nbsp&nbsp
+      <%=link_to "Log In", new_session_path%>
+    <% end %>
+    <%= search_form_for @q do |f|%>
+      <p>
+        <%= f.label "Search" %>
+        <%= f.text_field :category_name_or_ingredients_name_or_name_cont %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <%end%>
+ 
+ 
+  </div>
+  <div id="view_all_recipes"><%=link_to "View All Recipes", recipes_path%></div>
+  <div id="view_all_ingredients"><%=link_to "View All Ingredients", ingredients_path%></div>
+
+  <% if can? :update, @users %>
+    <div id="view_all_users"><%=link_to "Users", users_path%></div>
+  <% end %>
+
+
+  
+
+
+<%= yield %>
+
+</body>
+</html>

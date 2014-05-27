@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>Morgage Calculator</title>
-  <script src = "mortgage.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>  Mortgage Calculator </h1>
@@ -16,14 +16,14 @@
 
 
   
-  Amount of the loan: <input type='text' id='principal'></br> 
-  Interest Rate (%): <input type='text' id='interest'></br> 
+  Amount of the loan: <input type='text' id='principal' placeholder = '$'></br> 
+  Interest Rate: <input type='text' id='interest' placeholder = '%'></br> 
   Number of payments:<input type='text' id='frequency'></br> 
-  <button onclick="mortgage()">Calculate!</button>
+  <button onclick="myApp.mortgage()">Calculate!</button>
 
 
 
   <p id = "answer"></p>
-  
+  <script src = "mortgage.js"></script>
 </body>
 </html>

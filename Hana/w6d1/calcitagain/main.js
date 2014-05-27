@@ -1,62 +1,84 @@
-function maths(){
+
+var myApp = myApp || {}
+
+myApp.numberoftextfields = function(){
+  var sel = document.getElementById("operations");
+  var selTitle = sel.options[sel.selectedIndex].value;
+
+  if(selTitle == "Square"){
+    document.getElementById("secondNumber").setAttribute("style","display:none");
+  }
+}
+
+myApp.maths = function(){
   var sel = document.getElementById("operations");
   var selTitle = sel.options[sel.selectedIndex].value;
 
   switch(selTitle){
     case "+":
-      addition();
+      myApp.addition();
       break;
     case "-":
-      subtraction();
+      myApp.subtraction();
       break;
     case "*":
-      multiplication();
+      myApp.multiplication();
       break;
     case "/":
-      division();
+      myApp.division();
       break;
     case "Square":
-      square();
+      myApp.square();
       break;
     default:
       break; 
   }
 }
 
-function addition(){
+myApp.addition = function(){
   var firstInt = parseInt(document.getElementById("firstNumber").value);
   var secondInt = parseInt(document.getElementById("secondNumber").value);
   var result = firstInt + secondInt;
-  answer(result);
- 
+  myApp.answer(result);
 }
 
-function subtraction(){
+myApp.subtraction = function(){
   var firstInt = parseInt(document.getElementById("firstNumber").value);
   var secondInt = parseInt(document.getElementById("secondNumber").value);
-  answer(firstInt - secondInt);
+  myApp.answer(firstInt - secondInt);
 }
 
-function multiplication(){
+myApp.multiplication = function(){
   var firstInt = parseInt(document.getElementById("firstNumber").value);
   var secondInt = parseInt(document.getElementById("secondNumber").value);
-  answer(firstInt * secondInt);
+  myApp.answer(firstInt * secondInt);
 }
 
-function division(){
+myApp.division = function(){
   var firstInt = parseInt(document.getElementById("firstNumber").value);
   var secondInt = parseInt(document.getElementById("secondNumber").value);
-  answer(firstInt / secondInt);
+  myApp.answer(firstInt / secondInt);
 }
 
-function square(){
+myApp.square = function(){
   var firstInt = parseInt(document.getElementById("firstNumber").value);
   var secondInt = parseInt(document.getElementById("secondNumber").value);
-  answer(Math.sqrt(firstInt));
-
+  myApp.answer(Math.sqrt(firstInt));
 }
 
-function answer(result){
+ myApp.answer = function(result){
   var caption = document.getElementById('answer');
   caption.innerHTML = result;
 }
+
+myApp.setup = function(){
+  var operationsinput = document.getElementById("operations");
+  operationsinput.addEventListener("onchange", myApp.numberoftextfields);
+  var button = document.getElementById("basicbutton");
+  button.addEventListener('click', myApp.maths);
+}
+
+  myApp.setup();
+  
+
+

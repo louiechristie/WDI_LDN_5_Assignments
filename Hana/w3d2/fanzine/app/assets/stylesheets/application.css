@@ -1,0 +1,62 @@
+.menu{
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+   font-size:3em;
+}
+
+#home_search{
+ text-align: center; 
+}
+
+body{
+  text-align:center;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu{
+  background-color:purple;
+  border: 2px solid;
+  border-radius: 10px;
+  float: left;
+  margin-bottom: -5000px; 
+  padding-bottom: 5000px; 
+
+}
+
+.menu a:visited{
+  color:#D3D3D3;
+
+}
+
+.menu a{
+  color: white;
+}
+
+.video{
+  margin: 25px, 25px, 25px, 25px;
+}
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
