@@ -15,7 +15,12 @@ People.Collections.PersonCollection = Backbone.Collection.extend({
 
 People.Views.PersonView = Backbone.View.extend({
   tagName: 'div',
-  events: {'click h2': 'makeNameEditable', 'blur input': 'saveChanges', 'keyup input': 'keyboardSaveChanges'},
+  events: {
+    'click h2': 'makeEditable',
+    'blur input': 'saveChanges',
+    'keyup input': 'keyboardSaveChanges',
+    'click h3': 'makeEditable'
+  },
   template: _.template($('#tmpl_person').html()),
 
   initialize: function() {
@@ -27,11 +32,12 @@ People.Views.PersonView = Backbone.View.extend({
     return this;
   },
 
-  makeNameEditable: function(ev) {
+  makeEditable: function(ev) {
     var $target = $(ev.currentTarget);
-    var name = $target.text();
+    var value = $target.text();
     var newInput = $('<input>');
-    newInput.val(name);
+    newInput.attr('name', $target.data('attribute'));
+    newInput.val(value);
     $target.replaceWith(newInput);
     newInput.focus();
   },
@@ -47,7 +53,8 @@ People.Views.PersonView = Backbone.View.extend({
   saveChanges: function(ev) {
     var $target = $(ev.currentTarget);
     var newName = $target.val();
-    this.model.set('name', newName);
+    var attribute = $target.attr('name');
+    this.model.set(attribute, newName);
     this.model.save();
     this.render();
   }
@@ -83,7 +90,7 @@ People.Views.PersonCreationView= Backbone.View.extend({
   createNewPerson: function(ev) {
     ev.preventDefault();
     var name = $('input[name="name"]').val();
-    var email = $('textarea[name="email"]').val();
+    var email = $('input[name="email"]').val();
     var person = new People.Models.Person({name: name, email: email});
     People.allPeople.add(person);
     person.save();

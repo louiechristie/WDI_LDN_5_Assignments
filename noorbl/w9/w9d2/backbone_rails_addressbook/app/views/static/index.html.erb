@@ -1,13 +1,14 @@
 <% content_for :templates do %>
   <script type="text/template" id="tmpl_person">
-    <h2><%%= person.get('name') %></h2>
+    <h2 data-attribute='name'><%%= person.get('name') %></h2>
 
 
     <%% if (person.get('email')) { %>
-      <p><%%= person.get('email') %></p>
+      <h3 data-attribute='email'><%%= person.get('email') %></h3>
     <%% } else { %>
-      <p><em>No email provided</em></p>
+      <h3 data-attribute='email'><em>No email provided</em></h3>
     <%% } %>
+    
   </script>
 
   <script type="text/template" id="tmpl_newperson">
