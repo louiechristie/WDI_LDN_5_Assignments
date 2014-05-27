@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Celestials</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/backbone.js"></script>
+    <script type="text/javascript" src="js/celestials.js"></script>
+
+    <script type="text/template" id="template_planet">
+      <h2><%= planet.get('name') %></h2>
+      <ul>
+        <li>Galaxy: <%= planet.get('galaxy') %></li>
+        <li>Mass: <%= planet.get('mass') %></li>
+        <li>Age: <%= planet.get('age') %></li>
+        <li>Star: <%= planet.get('star') %></li>
+        <li>Moons: <%= planet.get('moons') %></li>
+      </ul>
+    </script>
+    <script type="text/template" id="template_star">
+      <h2><%= star.get('name') %></h2>
+      <ul>
+        <li>Galaxy: <%= star.get('galaxy') %></li>
+        <li>Mass: <%= star.get('mass') %></li>
+        <li>Age: <%= star.get('age') %></li>
+        <li>Classification: <%= star.get('classification') %></li>
+        <li>Luminosity: <%= star.get('lumninosity') %></li>
+        <li>Color: <%= star.get('color') %></li>
+      </ul>
+    </script>
+  </head>
+  <body>
+    <h1>Celestials</h1>
+    <div id='container'>
+      <form id='celestial_body' action='#'>
+        <input type='radio' id='planet' name='body_type' value='planet'>Planet<br>
+        <input type='radio' id='star' name='body_type' value='star'>Star<br>
+        <input id='name' placeholder='Name' name='name' />
+        <input id='galaxy' placeholder='Galaxy' name='galaxy' />
+        <input id='star' placeholder='Star it orbits (NAS)' name='star' />
+        <input id='mass' placeholder='Mass' name='mass' />
+        <input type='number' min='0' step='1' id='moons' placeholder='Number of moons (NAS)' name='moon' />
+        <input id='classification' placeholder='Classification (NAP)' name='classification' />
+        <input id='lumninosity' placeholder='Luminosity (NAP)' name='luminosity' />
+        <input id='color' placeholder='Color (NAP)' name='color' />
+        <input id='age' placeholder='Age' name='moon' />
+        <input type='submit' />
+      </form>
+      <div id='body_container'>
+        <ul id='bodies'>
+        </ul>
+      </div>
+  </body>
+</html>
