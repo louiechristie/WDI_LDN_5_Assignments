@@ -2,6 +2,7 @@ var People = People || {
   Models: {},
   Collections: {},
   Views: {},
+  Routers: {},
   setup: function () {}
 };
 
@@ -11,6 +12,7 @@ People.Collections.PersonCollection = Backbone.Collection.extend({
   url: '/people'
 });
 
+// show a single person
 People.Views.PersonView = Backbone.View.extend({
   tagName: 'div',
   template: _.template($('#tmpl_person').html()),
@@ -23,6 +25,7 @@ People.Views.PersonView = Backbone.View.extend({
   }
 });
 
+// Show all people
 People.Views.PersonCollectionView = Backbone.View.extend({
   el: '#container',
   render: function() {
@@ -36,13 +39,51 @@ People.Views.PersonCollectionView = Backbone.View.extend({
   } // End render function.
 });
 
-People.setup = function() {
-  var allPeople = new People.Collections.PersonCollection();
-  allPeople.fetch({ success: function() { 
-    var collectionView = new People.Views.PersonCollectionView({collection: allPeople});
+// Show the form for a new person.
+People.Views.PersonCreationView = Backbone.View.extend({
+  el: '#container',
+  events: {'submit form': 'createNewPerson'},
+  template: _.template($('#tmpl_newperson').html()),
+
+  render: function() {
+    this.$el.html(this.template());
+    return this;
+  },
+
+  createNewPerson: function(ev) {
+    ev.preventDefault();
+    var title = $('input[name="title"]').val();
+    var body = $('textarea[name="body"]').val();
+    var person = new People.Models.Person({title: title, body: body});
+    People.allPeople.add(person);
+    person.save();
+    People.router.navigate("", {trigger: true});
+  }
+});
+
+People.Routers.AppRouter = Backbone.Router.extend({
+  routes: {
+    "": "showIndex",
+    "new": "createNewPerson"
+  },
+
+  showIndex: function() {
+    var collectionView = new People.Views.PersonCollectionView({collection: People.allPeople});
     collectionView.render();
-  }});
-  
+  },
+
+  createNewPerson: function() {
+    new People.Views.PersonCreationView().render();
+  }
+});
+
+People.setup = function() {
+  People.router = new People.Routers.AppRouter();
+  People.allPeople = new People.Collections.PersonCollection();
+  People.allPeople.fetch({ success: 
+    People.router.showIndex
+  });
+  Backbone.history.start();
 };
 
 $(People.setup);
