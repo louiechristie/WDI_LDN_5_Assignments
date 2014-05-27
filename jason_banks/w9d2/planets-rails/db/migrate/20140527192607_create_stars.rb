@@ -3,6 +3,7 @@ class CreateStars < ActiveRecord::Migration
     create_table :stars do |t|
       t.string :name
       t.string :mass
+      t.string :age
       t.string :classification
       t.string :luminosity
 

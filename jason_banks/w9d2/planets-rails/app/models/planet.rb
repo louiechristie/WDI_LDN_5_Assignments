@@ -1,3 +1,3 @@
 class Planet < ActiveRecord::Base
-  attr_accessible :mass, :moons, :name
+  attr_accessible :mass, :moons, :name, :age
 end
