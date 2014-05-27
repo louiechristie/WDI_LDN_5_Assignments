@@ -62,8 +62,24 @@ celestialsApp.view.BodyCollectionView = Backbone.View.extend({
     this.collection.bind('add', this.render, this);
   },
 
-  add: function() {
-    
+  add: function(type, name, galaxy, mass, age) {
+    var body = new celestialsApp.model.Body ({type: type, name: name, galaxy: galaxy, mass: mass, age: age });
+    this.collection.add(body);
+  },
+
+  addBodyFromForm: function(ev){
+    ev.preventDefault();
+    var $type = $('#type');
+    var $name = $('#name');
+    var $galaxy = $('#galaxy');
+    var $mass = $('#mass');
+    var $age = $('#age');
+    this.add($type.val(), $name.val(), $galaxy.val(), $mass.val(), $age.val());
+    $type.val('');
+    $name.val('');
+    $galaxy.val('');
+    $mass.val('');
+    $age.val('');
   }
 })
 
