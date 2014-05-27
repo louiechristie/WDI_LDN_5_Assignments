@@ -64,10 +64,7 @@ Notes.Routers.AppRouter = Backbone.Router.extend({
 Notes.setup = function() {
   Notes.router = new Notes.Routers.AppRouter();
   Notes.allNotes = new Notes.Collections.NoteCollection();
-  Notes.allNotes.fetch({ success: function() {
-    var collectionView = new Notes.Views.NoteCollectionView({collection: Notes.allNotes});
-    collectionView.render();
-  }});
+  Notes.allNotes.fetch({ success: Notes.router.showIndex });
   Backbone.history.start();
 };
 
