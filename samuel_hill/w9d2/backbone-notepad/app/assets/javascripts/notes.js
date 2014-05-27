@@ -16,6 +16,7 @@ Notes.Views.NoteView = Backbone.View.extend({
   template: _.template($('#tmpl_note').html()),
   render: function() {
     this.$el.html(this.template({ note: this.model}));
+    return this;
   }
 });
 
@@ -34,9 +35,10 @@ Notes.Views.NoteCollectionView = Backbone.View.extend({
 
 Notes.setup = function() {
   var allNotes = new Notes.Collections.NoteCollection();
-  allNotes.fetch()
-  var collectionView = new Notes.Views.NoteCollectionView({collection: allNotes});
-  collectionView.render();
+  allNotes.fetch({ success: function() {
+    var collectionView = new Notes.Views.NoteCollectionView({collection: allNotes});
+    collectionView.render();
+  }});
 };
 
 $(Notes.setup);
