@@ -106,7 +106,6 @@ Planets.Views.PlanetCreationView = Backbone.View.extend({
 });
 
 Planets.setup = function() {
-  console.log('Something!');
   Planets.router = new Planets.Routers.AppRouter();
   Planets.allPlanets = new Planets.Collections.PlanetCollection();
   Planets.allPlanets.fetch({ success: Planets.router.showIndex });

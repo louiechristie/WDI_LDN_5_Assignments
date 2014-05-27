@@ -30,6 +30,18 @@
       <li id='luminosity'>Luminosity: <span><%%= star.get('luminosity') %></span></li>
     </ul>
   </script>
+  <script type="text/templates" id="template_newstar">
+    <form>
+      <input name='name' placeholder='Name' /><br />
+      <input name='age' placeholder='Age' /><br />
+      <input name='mass' placeholder='Mass' /><br />
+      <input name='classification' placeholder='Classification' /><br />
+      <input name='luminosity' placeholder='Luminosity' /><br />
+      <input name='image' placeholder='Image URL...' /><br />
+      <input type='submit', value='Add' />
+    </form>
+    <a href='#'><button>Back</button></a>
+  </script>
 
 <% end %>
 
@@ -37,7 +49,12 @@
 <h1>Celestial Bodies</h1>
 <br />
 <div id="container">
-  <div id="planets-container"></div>
-  <div id="stars-container"></div>
-  <p>Please wait, loading addresses&hellip;</p>
+  <a href="#new"><button>Add Planet</button></a>
+  <div id="planets-container">
+    <p>Please wait, loading planets&hellip;</p>
+  </div>
+  <a href="#new"><button>Add Star</button></a>
+  <div id="stars-container">
+    <p>Please wait, loading stars&hellip;</p>
+  </div>
 </div>
