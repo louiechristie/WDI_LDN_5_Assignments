@@ -1,0 +1,7 @@
+<h3> Goodies made with <%=@ingredient.name%></h3>
+
+  <% @ingredient.recipes.each do |recipe| %>
+    <div><%= link_to recipe.name, recipe %></div>
+
+
+  <% end %>

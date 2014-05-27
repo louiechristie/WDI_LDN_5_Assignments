@@ -1,0 +1,34 @@
+<h2>Home</h2>
+
+<% if can? :update, @recipe %>
+<h3><%= link_to "Add a recipe", new_recipe_path%></h3></br>
+<% end %>
+<% if can? :update, @category %>
+<h3><%= link_to "Add a category", new_category_path%></h3></br>
+<% end %>
+<% @categories.each do |category| %>
+<div>
+  <%=link_to category.name, category%>
+</div>
+<%end%>
+
+<div id = 'ingredient'>
+  <h3>Ingredients</h3>
+
+  <% if can? :update, @ingredient %>
+  <h4><%= link_to "Add a new ingredient", new_ingredient_path%></br>
+    <%end%>
+  <% @ingredients.each do |ingredient|%>
+      <%=ingredient.name%></br>
+    <%end%>
+</div>
+
+
+
+
+
+
+
+
+
+

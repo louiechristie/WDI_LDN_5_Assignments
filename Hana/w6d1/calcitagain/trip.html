@@ -1,7 +1,7 @@
 <html>
 <head>
   <title> Calculator</title>
-  <script src = "trip.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>  Trip Calculator </h1>
@@ -19,10 +19,10 @@
   Fuel efficiency: <input type='text' placeholder='miles per gallon'id='efficiency'></br> 
   Cost of gas per gallon:<input type='text' placeholder='$ per gallon' id='gas'></br> 
   Speed:<input type='text' placeholder='mi per hour' id='speed'></br> 
-  <button onclick="trip()">Calculate!</button>
+  <button onclick="myApp.trip()">Calculate!</button>
 
 
   <p id = "answer"></p>
-  
+  <script src = "trip.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlanetsApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "All planets", planets_path, class: active_menu_item(planets_path)%>
+<%= link_to "Create a new planet", new_planet_path, class: active_menu_item(new_planet_path)%>
+
+<%= yield %>
+
+</body>
+</html>

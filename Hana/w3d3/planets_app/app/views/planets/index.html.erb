@@ -1,0 +1,6 @@
+<% @planets.each do |planet| %>
+<p><%= link_to planet.name, planet_path(planet)%> has <%=pluralize(planet.moons, 'moon')%>. <%= button_to 'Delete Planet', planet_delete_path(planet), method: 'delete', confirm: 'Are you sure?'%></p>
+<%end%>
+
+
+<%=hana_helper%>

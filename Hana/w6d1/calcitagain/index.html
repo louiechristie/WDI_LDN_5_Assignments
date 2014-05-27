@@ -1,8 +1,7 @@
 <html>
 <head>
   <title> Calculator</title>
-  <script src = "main.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>  Calculator </h1>
@@ -16,10 +15,10 @@
   </nav>
 
 
+<div class = "calculator">
+  <input type = "number"  id = "firstNumber" />
 
-  <input type = "text" placeholder= "Number" id = "firstNumber" />
-
-<select id="operations">
+<select id="operations" >
   <option>+</option>
   <option>-</option>  
   <option>*</option>
@@ -27,11 +26,16 @@
   <option>Square</option>
 </select>
 
-  <input type = "text" placeholder= "Number" id = "secondNumber" />
+  <input type = "number"  id = "secondNumber" />
 
-  <button onclick="maths()">Click!</button></br>
+  <button id = "basicbutton">Click!</button></br>
+
+</div>
+<div class = "answer">
 
   <p id = "answer"></p>
   
+</div>  
+<script src = "main.js"></script>
 </body>
 </html>

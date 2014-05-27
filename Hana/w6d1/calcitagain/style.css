@@ -2,6 +2,18 @@ body{
   text-align: center;
 }
 
-nav a{
+nav{
+  margin-bottom: 15px;
+}
+
+nav li{
   display: inline;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+.calculator{
+  padding-top: 25px;
 }
