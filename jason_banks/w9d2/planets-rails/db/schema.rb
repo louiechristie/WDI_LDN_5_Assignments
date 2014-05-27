@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140527192607) do
+ActiveRecord::Schema.define(:version => 20140527200640) do
 
   create_table "planets", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20140527192607) do
     t.integer  "moons"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
   create_table "stars", :force => true do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20140527192607) do
     t.string   "luminosity"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "image"
   end
 
 end
