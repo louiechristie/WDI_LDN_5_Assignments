@@ -1,9 +1,9 @@
 PlanetsRails::Application.routes.draw do
-  get "stars/index"
-
-  get "planets/index"
 
   root to: "static#index"
+
+  resources :planets, defaults: {format: :json}
+  resources :stars, defaults: {format: :json}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
