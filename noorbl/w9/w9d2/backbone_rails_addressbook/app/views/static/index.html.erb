@@ -9,9 +9,20 @@
       <p><em>No email provided</em></p>
     <%% } %>
   </script>
+
+  <script type="text/template" id="tmpl_newperson">
+    <form>
+      <input name="name" placeholder="Contact name" /><br />
+      <input name="email" placeholder="Contact email"/><br />
+      <input type="submit" value="Save contact" />
+    </form>
+    <a href ="#">Back all to all contacts</a>
+  </script>
+
 <% end %>
 
 <h1>My Contacts</h1>
+<a href="#new">Create new contact</a>
 <div id="container">
   <p>Please wait, application loading...</p>
 </div>
