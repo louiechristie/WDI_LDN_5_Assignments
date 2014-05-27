@@ -2,6 +2,7 @@ var Notes = Notes || {
   Models: {},
   Collections: {},
   Views: {},
+  Routers: {},
   setup: function() {}
 };
 
@@ -33,12 +34,41 @@ Notes.Views.NoteCollectionView = Backbone.View.extend({
   }
 });
 
+// show the form for a new note
+Notes.Views.NoteCreationView = Backbone.View.extend({
+  el: '#container',
+  events: {'click .close' : 'closeNote'},
+  template: _.template($('#tmpl_newnote').html()),
+  render: function() {
+    this.$el.html(this.template());
+    return this;
+  }
+});
+
+Notes.Routers.AppRouter = Backbone.Router.extend({
+  routes: {
+    "": "showIndex",
+    "new": "createNewNote"
+  },
+
+  showIndex: function() {
+    var collectionView = new Notes.Views.NoteCollectionView({collection: Notes.allNotes});
+    collectionView.render();
+  },
+
+  createNewNote: function() {
+    new Notes.Views.NoteCreationView().render();
+  }
+});
+
 Notes.setup = function() {
-  var allNotes = new Notes.Collections.NoteCollection();
-  allNotes.fetch({ success: function() {
-    var collectionView = new Notes.Views.NoteCollectionView({collection: allNotes});
+  Notes.router = new Notes.Routers.AppRouter();
+  Notes.allNotes = new Notes.Collections.NoteCollection();
+  Notes.allNotes.fetch({ success: function() {
+    var collectionView = new Notes.Views.NoteCollectionView({collection: Notes.allNotes});
     collectionView.render();
   }});
+  Backbone.history.start();
 };
 
 $(Notes.setup);
