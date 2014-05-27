@@ -1,6 +1,6 @@
 AddressbookApp::Application.routes.draw do
   root to: "static#index"
-  resources :persons, defaults: {format: :json}
+  resources :people, defaults: {format: :json}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

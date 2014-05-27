@@ -1,44 +1,44 @@
-var Notes = Notes || {
+var People = People || {
   Models: {},
   Collections: {},
   Views: {},
   setup: function () {}
 };
 
-Notes.Models.Note = Backbone.Model.extend({});
-Notes.Collections.NoteCollection = Backbone.Collection.extend({
-  model: Notes.Models.Note,
-  url: '/notes'
+People.Models.Person = Backbone.Model.extend({});
+People.Collections.PersonCollection = Backbone.Collection.extend({
+  model: People.Models.Person,
+  url: '/people'
 });
 
-Notes.Views.NoteView = Backbone.View.extend({
+People.Views.PersonView = Backbone.View.extend({
   tagName: 'div',
-  template: _.template($('#tmpl_note').html()),
+  template: _.template($('#tmpl_person').html()),
   render: function() {
-    this.$el.html(this.template({note: this.model}));
+    this.$el.html(this.template({person: this.model}));
     return this;
   }
 });
 
-Notes.Views.NoteCollectionView = Backbone.View.extend({
+People.Views.PersonCollectionView = Backbone.View.extend({
   el: '#container',
   render: function() {
     var that = this;
     this.$el.empty();
-    this.collection.each(function(noteModel) {
-      var noteView = new Notes.Views.NoteView({model: noteModel});
-      that.$el.append(noteView.render().el);
+    this.collection.each(function(personModel) {
+      var personView = new People.Views.PersonView({model: personModel});
+      that.$el.append(personView.render().el);
     });
     return this;
   } // End render function.
 });
 
-Notes.setup = function() {
-  var allNotes = new Notes.Collections.NoteCollection();
-  allNotes.fetch({ success: function() { 
-    var collectionView = new Notes.Views.NoteCollectionView({collection: allNotes});
+People.setup = function() {
+  var allPeople = new People.Collections.PersonCollection();
+  allPeople.fetch({ success: function() { 
+    var collectionView = new People.Views.PersonCollectionView({collection: allPeople});
     collectionView.render();
   }});
 };
 
-$(Notes.setup);
+$(People.setup);
