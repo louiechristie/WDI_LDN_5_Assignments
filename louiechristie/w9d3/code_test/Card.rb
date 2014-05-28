@@ -1,8 +1,8 @@
 class Card
 
   def initialize(card_number)
-    @card_number = card_number
-    #strip out white space
+    @card_number = card_number.gsub(/\s+/, "")     #strip out white space
+    @card_type = "Unknown"
   end
 
 
@@ -43,6 +43,7 @@ class Card
 
   def check_is_amex?
     if (@card_number[0..1] == "34" || @card_number[0..1] == "37") && @card_number.length == 15
+      @card_type = "AMEX"
       return true
     else
       return false
@@ -51,6 +52,7 @@ class Card
 
   def check_is_visa?
     if @card_number.length == 13 || @card_number.length == 16
+      @card_type = "VISA"
       return true
     else
       return false
@@ -59,6 +61,7 @@ class Card
 
   def check_is_mastercard?
     if @card_number.length == 16
+      @card_type = "MasterCard"
       return true
     else
       return false
@@ -66,7 +69,8 @@ class Card
   end
 
   def check_is_discover?
-    if @card_number[0..3] == "6011" && @card_number.length == 16      
+    if @card_number[0..3] == "6011" && @card_number.length == 16
+      @card_type = "Discover"    
       return true
     else
       return false
@@ -83,14 +87,16 @@ class Card
       if i % 2 == 0
         array << @card_number[i].to_i
       else
-        array << double_and_sum_digits(@card_number[i])
+        array << double_and_sum_digits(@card_number[i].to_i)
       end
     end
+
+    array.reverse!
 
     puts "array"
     puts array.inspect
 
-    number = array.reduce{ |sum, x| sum.to_i + x.to_i }
+    number = array.reduce{ |sum, x| sum + x }
 
     puts "number"
     puts number
@@ -106,7 +112,7 @@ class Card
   def double_and_sum_digits(num)
     double = num * 2
     string = double.to_s
-    result = string.split('').reduce{ |sum, x| sum.to_i + x.to_i }
+    result = string.split('').reduce{ |sum, x| sum.to_i + x.to_i }.to_i
   end
 
 end
