@@ -19,15 +19,18 @@ People.Views.PersonView = Backbone.View.extend({
   render: function() {
     this.$el.addClass('person');
     this.$el.html(this.template({person: this.model}));
-
-
     return this;
+  },
+
+  initialize: function() {
+    this.listenTo(this.model, "change", this.render);
   }
 });
 
 // Show all people
 People.Views.PersonCollectionView = Backbone.View.extend({
-  el: '#container',
+  el: '#all_people',
+
   render: function() {
     var that = this;
     this.$el.empty();
@@ -38,6 +41,17 @@ People.Views.PersonCollectionView = Backbone.View.extend({
     return this;
   } // End render function.
 });
+
+// Show list of people
+
+People.Views.PersonIndexView = Backbone.View.extend({
+  tagName: 'li',
+  template: _.template($('#tmpl_person_link').html()),
+  render: function() {
+    this.$el.html(this.template({note: this.model}));
+    return this;
+  }
+})
 
 // Show the form for a new person.
 People.Views.PersonCreationView = Backbone.View.extend({
@@ -79,7 +93,8 @@ People.Routers.AppRouter = Backbone.Router.extend({
 });
 
 People.setup = function(data) {
-  People.router = new People.Routers.AppRouter();
-  People.allPeople = new People.Collections.PersonCollection(data  
+  
+  People.allPeople = new People.Collections.PersonCollection(data)
+  People.router = new People.Routers.AppRouter(); 
   Backbone.history.start();
 };
