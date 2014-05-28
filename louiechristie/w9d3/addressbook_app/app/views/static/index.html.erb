@@ -14,14 +14,25 @@
       <br />
       <input type="submit" value="Save note" />
     </form>
-    <a href="#">Back to all notes</a>
+    <a href="#">Back to all addresses</a>
   </script>
 
+  <script type="text/template" id="tmpl_person_link">
+    <a href="#people/<%%= person.id %>"><%%=person.get('name') %> </a>
+  </script>
 <% end %>
+
 <header>
   <h1>Address Book</h1>
 </header>
+
 <a href="#new">Create new entry</a>
+
 <div id="container">
-  <p>Please wait, application loading...</p>
+
+  <ul id="all_people">
+
+  <div id="main_pane">
+    <p>Please wait, application loading...</p>
+  </div>
 </div>

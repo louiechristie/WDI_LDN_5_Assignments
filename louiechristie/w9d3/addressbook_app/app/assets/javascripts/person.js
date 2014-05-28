@@ -78,11 +78,8 @@ People.Routers.AppRouter = Backbone.Router.extend({
   }
 });
 
-People.setup = function() {
+People.setup = function(data) {
   People.router = new People.Routers.AppRouter();
-  People.allPeople = new People.Collections.PersonCollection();
-  People.allPeople.fetch({ success: 
-    People.router.showIndex
-  });
+  People.allPeople = new People.Collections.PersonCollection(data  
   Backbone.history.start();
 };
