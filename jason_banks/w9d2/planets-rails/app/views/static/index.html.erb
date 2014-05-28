@@ -1,0 +1,66 @@
+<% content_for :templates do %>
+  <script type="text/templates" id="template_planet">
+    <img src="<%%= planet.get('image') %>" alt="<%%= planet.get('name') %>" />
+    <h2 class='name'><span><%%= planet.get('name') %></span></h2>
+    <ul>
+      <li class='age'>Age: <span><%%= planet.get('age') %></span></li>
+      <li class='mass'>Mass: <span><%%= planet.get('mass') %></span></li>
+      <li class='moons'>Moons: <span><%%= planet.get('moons') %></span></li>
+      <br>
+      <li><button>Zzzap!</button></li>
+    </ul>
+  </script>
+  <script type="text/templates" id="template_newplanet">
+    <form id='planet_form'>
+      <input name='name' placeholder='Name' /><br />
+      <input name='age' placeholder='Age' /><br />
+      <input name='mass' placeholder='Mass' /><br />
+      <input type='number' name='moons' placeholder='Number of moons' /><br />
+      <input name='image' placeholder='Image URL...' /><br />
+      <input type='submit', value='Save' />
+    </form>
+    <a href='#'><button>Back</button></a>
+  </script>
+
+  <script type="text/templates" id="template_star">
+    <img src="<%%= star.get('image') %>" alt="<%%= star.get('name') %>" />
+    <h2 class='name'><span><%%= star.get('name') %></span></h2>
+    <ul>
+      <li class='age'>Age: <span><%%= star.get('age') %></span></li>
+      <li class='mass'>Mass: <span><%%= star.get('mass') %></span></li>
+      <li class='classification'>Classification: <span><%%= star.get('classification') %></span></li>
+      <li class='luminosity'>Luminosity: <span><%%= star.get('luminosity') %></span></li>
+      <br>
+      <li><button>Zzzap!</button></li>
+    </ul>
+  </script>
+  <script type="text/templates" id="template_newstar">
+    <form id='star_form'>
+      <input name='name' placeholder='Name' /><br />
+      <input name='age' placeholder='Age' /><br />
+      <input name='mass' placeholder='Mass' /><br />
+      <input name='classification' placeholder='Classification' /><br />
+      <input name='luminosity' placeholder='Luminosity' /><br />
+      <input name='image' placeholder='Image URL...' /><br />
+      <input type='submit', value='Save' />
+    </form>
+    <a href='#'><button>Back</button></a>
+  </script>
+
+<% end %>
+
+
+<h1>Celestial Bodies</h1>
+<br />
+<div id="container">
+  <a href="#planet/new"><button>Add Planet</button></a>
+  <div id="planets-container">
+    <p>Please wait, loading planets&hellip;</p>
+  </div>
+  <br />
+  <br />
+  <a href="#star/new"><button>Add Star</button></a>
+  <div id="stars-container">
+    <p>Please wait, loading stars&hellip;</p>
+  </div>
+</div>
