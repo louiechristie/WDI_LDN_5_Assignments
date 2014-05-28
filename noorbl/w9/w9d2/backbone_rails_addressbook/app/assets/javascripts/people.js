@@ -19,7 +19,8 @@ People.Views.PersonView = Backbone.View.extend({
     'click h2': 'makeEditable',
     'blur input': 'saveChanges',
     'keyup input': 'keyboardSaveChanges',
-    'click h3': 'makeEditable'
+    'click h3': 'makeEditable',
+    'click .close': 'remove'
   },
   template: _.template($('#tmpl_person').html()),
 
@@ -30,6 +31,11 @@ People.Views.PersonView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template({person: this.model}));
     return this;
+  },
+
+  remove: function() {
+    this.model.destroy();
+    this.$el.remove();
   },
 
   makeEditable: function(ev) {

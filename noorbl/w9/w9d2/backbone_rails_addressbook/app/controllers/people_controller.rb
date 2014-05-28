@@ -26,9 +26,14 @@ class PeopleController < ApplicationController
   end
 
 
-
-
-
+  def destroy
+    @person = Person.find(params[:id])
+    if @person.destroy params[:person]
+      respond_with @person, status: :no_content
+    else
+      respond_with @person, status: :unprocessable_entity
+    end
+  end
 
 
 
