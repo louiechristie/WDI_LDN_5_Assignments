@@ -1,0 +1,46 @@
+body {
+  background: url('http://fc07.deviantart.net/fs70/i/2013/037/d/a/starry_sky_by_zachshoemakr-d5u3g38.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 960px;
+  margin: auto auto;
+  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+}
+
+header {
+  background-color: black;
+  color: yellow;
+}
+
+li {
+  float: left;
+  margin: 10px;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+  border: 5px solid gray;
+}
+
+.close {
+  color: gray;
+  font-weight: bold;
+}
+
+#info-button {
+  color: green;
+}
+
+p {
+  color: yellow;
+}
+
+h2 {
+  color: orange;
+}
+
+h1 {
+  color: pink;
+}
