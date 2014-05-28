@@ -36,7 +36,7 @@ planetsApp.views.PlanetView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(template({planet: this.model}));
+    this.$el.html(this.template({planet: this.model}));
     return this;
   },
 
