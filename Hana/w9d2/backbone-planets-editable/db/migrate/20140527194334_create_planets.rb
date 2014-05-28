@@ -4,8 +4,8 @@ class CreatePlanets < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.integer :moons
-      t.float :diameter
-      t.float :temp
+      t.string :diameter
+      t.string :temp
 
       t.timestamps
     end

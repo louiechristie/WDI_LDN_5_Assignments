@@ -82,7 +82,6 @@ render: function(){
 
 starsApp.setup = function(){
 var stars = new starsApp.views.StarCollectionView();
-stars.add('Proxima Centauri', 'http://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg', 'Alpha Centauri', '4.365');
 };
 
 $(starsApp.setup);

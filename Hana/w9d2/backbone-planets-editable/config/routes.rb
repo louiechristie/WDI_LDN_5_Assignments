@@ -1,9 +1,13 @@
 BackbonePlanetsEditable::Application.routes.draw do
+  
+
   root to: "static#index"
-  resources :planets, defaults: {format: :json}
-  resources :stars, defaults: {format: :json}
+  resources :planets, :stars, defaults: {format: :json}
+
 
   get "planets/index"
+
+  get "stars/index"
 
   get "static/index"
 

@@ -1,88 +1,129 @@
 var planetsApp = planetsApp || {
   models: {},
   views: {},
-  collections: {}
+  collections: {},
+  routers: {},
+  setup: function(){}
 };
 
+//Creates Planet model
 planetsApp.models.Planet = Backbone.Model.extend({
-  defaults: {
-    name: "",
-    url: "",
-    numberofmoons: "",
-    gravityratio: ""
-  }
 });
 
+//Creates Planet collection
 planetsApp.collections.PlanetCollection = Backbone.Collection.extend({
-  model: planetsApp.models.Planet
+  model: planetsApp.models.Planet,
+  url: '/planets'
 });
 
+//Shows single planet
 planetsApp.views.PlanetView = Backbone.View.extend({
-  tagName: 'li',
-  events: {'click .remove': 'remove'},
+  tagName: 'div',
+  events: {'click .remove': 'remove', 'click h2': 'makeTextEditable', 'click .input': 'makeTextEditable'},
+  template: _.template($('#tmpl_planet').html()),
+
+  initialize: function(){
+    this.listenTo(this.model, 'change', this.render);
+  },
+
+  render: function(){
+    this.$el.html(this.template({planet: this.model
+    }));
+    return this;
+  },
 
   remove: function(){
     this.model.destroy();
   },
 
+  makeTextEditable: function(ev){
+    var $target = $(ev.currentTarget);
+    var content = $target.text();
+    var newInput = $('<input>');
+    newInput.val(content);
+    $target.replaceWith(newInput);
+    newInput.focus();
+  },
+
+  keyboardSaveChanges: function(ev){
+    if (13 == ev.keyCode)
+      this.saveChanges(ev);
+    else if (27 == ev.keyCode)
+      this.render();
+  },
+
+  saveChanges: function(ev){
+    var $target = $(ev.currentTarget);
+    var newHeadline = $target.val();
+    this.model.set('title', newHeadline);
+    this.model.save();
+    this.render();
+  }
+});
+
+//Shows all planets
+planetsApp.views.PlanetCollectionView = Backbone.View.extend({
+  el: '#planets_container',
+ 
   render: function(){
-    var templateContents = $('#tmpl_planet').html();
-    var template = _.template(templateContents);
-    this.$el.html(template({
-      planet: this.model
-    }));
+    var that = this;
+    this.$el.empty();
+    this.collection.each(function(planetModel){
+      var planetView = new planetsApp.views.PlanetView({
+        model: planetModel
+      });
+      that.$el.append(planetView.render().el);
+    });
     return this;
   }
 });
 
-planetsApp.views.PlanetCollectionView = Backbone.View.extend({
-  el: '#planet_containers',
-  events: {'submit form#add_planet': 'addPlanetFromEvent'},
+//Shows the form for a new planet
+planetsApp.views.PlanetCreationView = Backbone.View.extend({
+  el: "#planets_container",
+  events: {'submit form': 'createNewPlanet'},
+  template: _.template($('#tmpl_newplanet').html()),
 
-  initialize: function(){
-    this.collection = new planetsApp.collections.PlanetCollection();
-    this.collection.bind('add', this.render, this);
-    this.collection.bind('remove', this.render, this);
+  render: function(){
+    this.$el.html(this.template());
+    return this;
   },
 
-  add: function(name, url, numberofmoons, gravityratio){
-    var planet = new planetsApp.models.Planet({name: name, url: url, numberofmoons: numberofmoons, gravityratio: gravityratio});
-    this.collection.add(planet)
-  },
-
-addPlanetFromEvent: function(ev){
-  ev.preventDefault();
-  var $name = $('#name');
-  var $url = $('#url');
-  var $numberofmoons = $('#numberofmoons');
-  var $gravityratio = $('#gravityratio');
-
-  this.add($name.val(), $url.val(), $numberofmoons.val(), $gravityratio.val());
-
-  $name.val('');
-  $url.val('');
-  $numberofmoons.val('');
-  $gravityratio.val('');
-},
-
-render: function(){
-  $('#show_planets').empty();
-  this.collection.each(
-    function(el){
-    var planetView = new planetsApp.views.PlanetView({
-      model: el
-    });
-
-    $('#show_planets').append(planetView.render().el);
-  });
-}
-
+  createNewPlanet: function(ev){
+    ev.preventDefault();
+    var namev = $('input[name="name"').val();
+    var urlv = $('input[name="url"').val();
+    var moonsv = $('input[name="moons"').val();
+    var diameterv = $('input[name="diameter"').val();
+    var tempv = $('input[name="temp"').val();
+    var planet = new planetsApp.models.Planet({name: namev, url: urlv, moons: moonsv, diameter: diameterv, temp: tempv});
+    planetsApp.allPlanets.add(planet);
+    planet.save();
+    planetsApp.router.navigate("",{trigger: true});
+  }
 });
 
+//Creating routes for planets
+planetsApp.routers.AppRouter = Backbone.Router.extend({
+  routes: {
+    "":"showIndex",
+    "new":"createNewPlanet"
+  },
+  showIndex: function(){
+    var collectionView = new planetsApp.views.PlanetCollectionView({collection: planetsApp.allPlanets});
+    collectionView.render();
+  },
+  createNewPlanet: function(){
+    new planetsApp.views.PlanetCreationView().render();
+  }
+}) 
 
+//Planets Setup
 planetsApp.setup = function(){
-var planets = new planetsApp.views.PlanetCollectionView();
-planets.add('Mercury', 'http://upload.wikimedia.org/wikipedia/commons/3/30/Mercury_in_color_-_Prockter07_centered.jpg', '0', '0.378');
+  planetsApp.router = new planetsApp.routers.AppRouter();
+  planetsApp.allPlanets = new planetsApp.collections.PlanetCollection();
+  planetsApp.allPlanets.fetch({success: planetsApp.router.showIndex});
+  Backbone.history.start();
 };
 
 $(planetsApp.setup);

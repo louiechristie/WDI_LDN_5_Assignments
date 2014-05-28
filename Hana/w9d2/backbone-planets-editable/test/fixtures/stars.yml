@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  distance: 1.5
+  luminosity: 1.5
+
+two:
+  name: MyString
+  url: MyString
+  distance: 1.5
+  luminosity: 1.5
