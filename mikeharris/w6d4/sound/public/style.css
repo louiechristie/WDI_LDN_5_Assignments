@@ -1,0 +1,30 @@
+
+h1 {
+  text-align: center;
+}
+.musicbutton {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 3px solid black;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 55px;
+  background: #F2B996;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+}
+.flash {
+  background: red;
+}
+#player{
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#random {
+  border: 1px solid black;
+  width: 100px;
+}
