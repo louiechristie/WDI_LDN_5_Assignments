@@ -13,7 +13,7 @@ class TestCard < MiniTest::Unit::TestCase
   end
   
   def test_valid_visa
-    skip
+    
     card = Card.new("4111111111111111")
     assert_equal "valid", card.check
   end
