@@ -1,10 +1,16 @@
 require 'minitest/autorun'
+require 'fileutils'
 require_relative 'card'
+require_relative 'cardfile'
+
 
 class TestCard < MiniTest::Unit::TestCase
   
   def setup
     @card = Card.new("4408041234567893")
+    @input_file = File.new("input.txt", "r")
+    @expected_output_file = File.new("expected_output.txt", "r")
+    @output_file = File.new("output.txt", "w")
   end
 
   def test_double_1
@@ -101,6 +107,16 @@ class TestCard < MiniTest::Unit::TestCase
   def test_invalid_card_type
     card = Card.new("9111111111111111")
     assert_equal "invalid", card.check
+  end
+
+  def test_input_same_as_input
+    assert(FileUtils.compare_file(@input_file, @input_file)) 
+  end
+
+  def test_output_same_as_expected_output
+    CardFile.process(@input_file, @output_file)
+
+    assert(FileUtils.compare_file(@output_file, @expected_output_file))
   end
 
 end

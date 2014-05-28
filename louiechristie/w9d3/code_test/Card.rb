@@ -1,5 +1,9 @@
 class Card
 
+  attr_accessor :card_number
+  attr_accessor :card_type
+
+
   def initialize(card_number)
     @card_number = card_number.gsub(/\s+/, "")     #strip out white space
     @card_type = "Unknown"
