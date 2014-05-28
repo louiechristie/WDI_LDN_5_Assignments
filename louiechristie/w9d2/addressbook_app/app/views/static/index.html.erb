@@ -1,0 +1,27 @@
+<% content_for :templates do %>
+  <script type="text/template" id="tmpl_person">
+      <h1><%%= person.get('name') %></h1>
+      <h2><%%= person.get('email') %></h2>
+      <img src="<%%= person.get('url') %>" alt="<%%= person.get('title') %>">
+    </script>
+
+    <script type="text/template" id="tmpl_newperson">
+    <form>
+      <input name="name" placeholder="Person name" value="Test name"><br />
+      <input name="email" placeholder="example@example.com" value="test@email.com">
+      <br />
+      <input name="url" placeholder="Image Url" value="http://37.media.tumblr.com/ea5ccf338787681c7f4e1290069d669e/tumblr_mv8fij4kg21s7aky5o1_1280.jpg">
+      <br />
+      <input type="submit" value="Save note" />
+    </form>
+    <a href="#">Back to all notes</a>
+  </script>
+
+<% end %>
+<header>
+  <h1>Address Book</h1>
+</header>
+<a href="#new">Create new entry</a>
+<div id="container">
+  <p>Please wait, application loading...</p>
+</div>

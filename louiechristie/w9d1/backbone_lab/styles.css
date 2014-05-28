@@ -21,14 +21,14 @@ header h1 {
   margin: 0;
 }
 
-li {
+p {
   display: inline-block;
   border: 1px solid black;
   margin-right: 5px;
   vertical-align: top;
 }
 
-li h1 {
+p h1 {
   font-size: 120%;
   text-align: center;
 }

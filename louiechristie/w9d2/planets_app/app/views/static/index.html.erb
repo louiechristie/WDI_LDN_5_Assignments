@@ -1,0 +1,33 @@
+<% content_for :templates do %>
+  <script type="text/template" id="tmpl_planet">
+      <div class="planet">
+        <p class="close">X</p>
+        <h1><%%= planet.get('name') %></h1>
+        <p>Volume: <%%= planet.get('volume') %> Earths</p>
+        <img src="<%%= planet.get('url') %>" alt="<%%= planet.get('title') %>" width="100" />
+      </div>
+    </script>
+<% end %>
+
+<h1>Rails Backbone Planets App</h1>
+
+<div id="container">
+  <form id="add_planet" action="#">
+    <h2>Add Planet</h2>
+    <label for="name">Name:</label>
+    <input id="name" placeholder="name" name="name" />
+    <br />
+    <label for="volume">Volume:</label>
+    <input id="volume" placeholder="1" name="volume" />
+    <br />
+    <label for="url">Picture URL:</label>
+    <input id="url" placeholder="http://example.com/..." name="url" />
+    <br />
+    <input type="submit" value="Add Planet" />
+  </form>
+
+  <p>Please wait, application loading...</p>
+
+  <ul id="solar_system"></ul>
+
+</div>
