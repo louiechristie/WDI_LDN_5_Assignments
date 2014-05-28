@@ -1,27 +1,17 @@
-
-
 class Card
-
 
   def initialize(card_number)
     @card_number = card_number
-    @type
+    #strip out white space
   end
 
 
   def check()
-    
-    
-
-    if is_a_number?() && valid_type_of_card?() && valid_luhn_number?()
-      return "valid"
+    if is_a_number? && valid_type_of_card? && valid_luhn_number?
+      "valid"
     else
-      return "invalid"
+      "invalid"
     end
-    // check is a valid type of card
-
-    // check Luhn alogrithm
-
   end
 
 
@@ -34,47 +24,67 @@ class Card
   end
 
   def valid_type_of_card?
-    case @card_number[0]
-    when 1..2
-      return false
-      break
-    when 3
-      return check_is_amex?
-    when 4
-      return check_is_visa?
-    when 5
-      return check_is_mastercard?
-    when 6 
-      return check_is_discover?
-    when 7..9
-      return false
-      break
+    print "type: "
+    puts @card_number[0]
+
+    case @card_number[0].to_i
+      when 3
+        return check_is_amex?
+      when 4
+        return check_is_visa?
+      when 5
+        return check_is_mastercard?
+      when 6 
+        return check_is_discover?
+      else
+        return false
+    end
   end
 
   def check_is_amex?
-    if 
-    (
-      @cardnumber[0] == 3
-      && (@card_number[1] == 4 || @card_number[1] == 7) 
-      && @cardnumber.length == 15
-    )
+    puts "check_is_amex"
+    if (@card_number[0..1] == "34" || @card_number[0..1] == "37") && @card_number.length == 15
+      puts "cardnumber length:"
+      puts @card_number.length
       return true
     else
       return false
     end
-
   end
 
   def check_is_visa?
-    return false
+    puts "check_is_visa"
+    if @card_number.length == 13 || @card_number.length == 16
+      puts "cardnumber length:"
+      puts @card_number.length
+      return true
+    else
+      return false
+    end
   end
 
   def check_is_mastercard?
-    return false
+    if @card_number.length == 16
+      puts "cardnumber length:"
+      puts @card_number.length
+      return true
+    else
+      return false
+    end
   end
 
   def check_is_discover?
-    return false
+    puts "check_is_discover"
+    if @card_number[0..3] == "6011" && @card_number.length == 16
+      puts "cardnumber length:"
+      puts @card_number.length
+      return true
+    else
+      return false
+    end
   end
 
+  def valid_luhn_number?
+    return true
+  end
 end
