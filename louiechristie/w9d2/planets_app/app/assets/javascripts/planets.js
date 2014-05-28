@@ -42,6 +42,7 @@ planetsApp.views.PlanetView = Backbone.View.extend({
 
   remove: function () {
     this.model.destroy();
+    this.$el.remove();
   }
 });
 

@@ -18,7 +18,17 @@ class PlanetsController < ApplicationController
   def update
     @planet = Planet.find params[:id]
     if @planet.update_attributes params[:planet]
-      respond_with @planet, status: :accepted
+      respond_with @planet, status: :created
+    else
+      respond_with @planet, status: :unprocessible_entity
+    end
+  end
+
+  def destroy
+    @planet = Planet.find(params[:id])
+    
+    if @planet.destroy
+      respond_with @planet, status: :no_content
     else
       respond_with @planet, status: :unprocessible_entity
     end
