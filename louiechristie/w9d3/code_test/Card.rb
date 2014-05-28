@@ -75,22 +75,26 @@ class Card
 
   def valid_luhn_number?
 
-    puts "@card_number[-2]"
-    puts @card_number[-2]
-
     @card_number.reverse!
 
     array = []
 
-    for (i in 0..@card_number.length-1)
-      if i % 2 != 0
-        array << @card_number[i]
+    for i in 0..(@card_number.length-1)
+      if i % 2 == 0
+        array << @card_number[i].to_i
       else
-        array << double_and_sum_digits(card_number[i])
+        array << double_and_sum_digits(@card_number[i])
       end
     end
 
+    puts "array"
+    puts array.inspect
+
     number = array.reduce{ |sum, x| sum.to_i + x.to_i }
+
+    puts "number"
+    puts number
+
     if number % 10 == 0
       return true
     else

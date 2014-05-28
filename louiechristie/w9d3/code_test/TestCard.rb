@@ -6,6 +6,28 @@ class TestCard < MiniTest::Unit::TestCase
   def setup
   end
 
+  def test_is_valid
+    card = Card.new("4408041234567893")
+    assert_equal "valid", card.check 
+  end
+
+  def test_is_not_valid
+    card = Card.new("4417123456789112")
+    assert_equal "invalid", card.check 
+  end
+
+  def test_is_valid_with_spaces
+    skip
+    card = Card.new("4408 0412 3456 7893")
+    assert_equal "valid", card.check 
+  end
+
+  def test_is_valid_without_spaces
+    skip
+    card = Card.new("4417 1234 5678 9112")
+    assert_equal "invalid", card.check 
+  end
+
   def test_is_a_number
     skip
     card = Card.new("not a number")
@@ -13,7 +35,7 @@ class TestCard < MiniTest::Unit::TestCase
   end
   
   def test_valid_visa
-    
+    skip
     card = Card.new("4111111111111111")
     assert_equal "valid", card.check
   end
