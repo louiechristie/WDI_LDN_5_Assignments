@@ -40,7 +40,7 @@ Planets.Views.PlanetView = Backbone.View.extend({
   saveChanges: function(ev) {
     var $target = $(ev.currentTarget);
     var elementText = $target.val();
-    var modelAttribute = $target.parent().attr('id');
+    var modelAttribute = $target.parent().attr('class');
     this.model.set(modelAttribute, elementText);
     this.model.save();
     this.render();

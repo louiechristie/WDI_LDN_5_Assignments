@@ -1,11 +1,11 @@
 <% content_for :templates do %>
   <script type="text/templates" id="template_planet">
     <img src="<%%= planet.get('image') %>" alt="<%%= planet.get('name') %>" />
-    <h2 id='name'><span><%%= planet.get('name') %></span></h2>
+    <h2 class='name'><span><%%= planet.get('name') %></span></h2>
     <ul>
-      <li id='age'>Age: <span><%%= planet.get('age') %></span></li>
-      <li id='mass'>Mass: <span><%%= planet.get('mass') %></span></li>
-      <li id='moons'>Moons: <span><%%= planet.get('moons') %></span></li>
+      <li class='age'>Age: <span><%%= planet.get('age') %></span></li>
+      <li class='mass'>Mass: <span><%%= planet.get('mass') %></span></li>
+      <li class='moons'>Moons: <span><%%= planet.get('moons') %></span></li>
       <br>
       <li><button>Zzzap!</button></li>
     </ul>
@@ -24,12 +24,12 @@
 
   <script type="text/templates" id="template_star">
     <img src="<%%= star.get('image') %>" alt="<%%= star.get('name') %>" />
-    <h2 id='name'><span><%%= star.get('name') %></span></h2>
+    <h2 class='name'><span><%%= star.get('name') %></span></h2>
     <ul>
-      <li id='age'>Age: <span><%%= star.get('age') %></span></li>
-      <li id='mass'>Mass: <span><%%= star.get('mass') %></span></li>
-      <li id='classification'>Classification: <span><%%= star.get('classification') %></span></li>
-      <li id='luminosity'>Luminosity: <span><%%= star.get('luminosity') %></span></li>
+      <li class='age'>Age: <span><%%= star.get('age') %></span></li>
+      <li class='mass'>Mass: <span><%%= star.get('mass') %></span></li>
+      <li class='classification'>Classification: <span><%%= star.get('classification') %></span></li>
+      <li class='luminosity'>Luminosity: <span><%%= star.get('luminosity') %></span></li>
       <br>
       <li><button>Zzzap!</button></li>
     </ul>
