@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+    background-color: #eee;
+    margin: 0;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #004;
+    color: #eee;
+    min-height: 80px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+header h1 {
+    margin-top: 0;
+    padding: 10px;
+}
+
+header a {
+  color: #eee;
+}
+
+#add_planet {
+    text-align: center;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px;
+}
+
+p {
+    float: right;
+    margin-top: 0;
+}
+
+p:hover {
+    color: #ccf;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input {
+  font-size: 16px;
+  background-color: #004;
+  margin: 5px;
+  color: #eee;
+  padding: 10px;
+}
+
+.planets_list {
+    display: inline-block;
+    position: relative;
+}
+
+.planets_list img {
+    width: 150px;
+    border-radius: 100%;
+}
+
+li {
+    display: inline-block;
+    background-color: #004;
+    height: 300px;
+    color: #eee;
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 20px;
+    vertical-align: top;
+}
+
+li h1 {
+    font-size: 120%;
+    text-align: center;
+}
+
+
+
