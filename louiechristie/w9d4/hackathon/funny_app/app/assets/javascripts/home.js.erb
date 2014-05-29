@@ -22,7 +22,7 @@ FunnyPictures.setup = function() {
     layer.add(background_k);
     stage.add(layer);
   };
-  background.src = 'silhouette.png';
+  background.src = '<%= asset_path('silhouette.png') %>';
 
   var mustache = new Image();
   mustache.onload = function() {
@@ -45,9 +45,22 @@ FunnyPictures.setup = function() {
     mustache_k.moveToTop();
     layer.draw();
   };
-  mustache.src = 'mustache.png';
+  mustache.src = '<%= asset_path('mustache.png') %>';
 
+  $('#save').on('click', function() {
 
+    stage.toDataURL({
+      callback: function(dataUrl) {
+        /*
+         * here you can do anything you like with the data url.
+         * In this tutorial we'll just open the url with the browser
+         * so that you can see the result as an image
+         */
+        window.open(dataUrl);
+      }
+    });
+
+  });
   
 };
 
