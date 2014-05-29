@@ -5,37 +5,49 @@ FunnyPictures.setup = function() {
   var stage = new Kinetic.Stage({
     container: 'container',
     width: 480,
-    height: 480
+    height: 960
   });
+  
+  var mustache_k
   var layer = new Kinetic.Layer();
+  var background = new Image();
+  background.onload = function() {
+    var background_k = new Kinetic.Image({
+      x: 0,
+      y: 0,
+      image: background,
+      width: 480,
+      height:480,
+    });
+    layer.add(background_k);
+    stage.add(layer);
+    mustache_k.moveToTop();
+    layer.draw();  
+  };
+  background.src = 'dan.png';
 
-  var imageObj = new Image();
-
-  imageObj.onload = function() {
-    var yoda = new Kinetic.Image({
-      x: 200,
-      y: 50,
-      image: imageObj,
-      width: 106,
-      height: 118,
+  var mustache = new Image();
+  mustache.onload = function() {
+    mustache_k = new Kinetic.Image({
+      x: 240,
+      y: 240,
+      image: mustache,
+      width: 100,
+      height: 38,
       draggable: true
     });
-
-    // add cursor styling
-    yoda.on('mouseover', function() {
+    mustache_k.on('mouseover', function() {
       document.body.style.cursor = 'pointer';
     });
-    yoda.on('mouseout', function() {
+    mustache_k.on('mouseout', function() {
       document.body.style.cursor = 'default';
     });
-
-    // add the shape to the layer
-    layer.add(yoda);
-
-    // add the layer to the stage
+    layer.add(mustache_k);
     stage.add(layer);
+    mustache_k.moveToTop();
+    layer.draw();
   };
-  imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
+  mustache.src = 'mustache.png';
   
 };
 
