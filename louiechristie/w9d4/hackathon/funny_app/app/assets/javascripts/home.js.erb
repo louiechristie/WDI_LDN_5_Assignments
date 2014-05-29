@@ -1,16 +1,9 @@
 var FunnyPictures = FunnyPictures || {};
 
-FunnyPictures.setup = function() {
-
-  var stage = new Kinetic.Stage({
-    container: 'container',
-    width: 480,
-    height: 480
-  });
-  
-  var mustache_k
-  var layer = new Kinetic.Layer();
+FunnyPictures.showBackground = function(layer, stage, url) {
   var background = new Image();
+  background.src = url;
+
   background.onload = function() {
     var background_k = new Kinetic.Image({
       x: 0,
@@ -22,11 +15,12 @@ FunnyPictures.setup = function() {
     layer.add(background_k);
     stage.add(layer);
   };
-  background.src = '<%= asset_path('silhouette.png') %>';
+};
 
+FunnyPictures.showMustache = function(layer, stage) {
   var mustache = new Image();
   mustache.onload = function() {
-    mustache_k = new Kinetic.Image({
+    var mustache_k = new Kinetic.Image({
       x: 240-(100/2),
       y: 240-(38/2),
       image: mustache,
@@ -46,20 +40,32 @@ FunnyPictures.setup = function() {
     layer.draw();
   };
   mustache.src = '<%= asset_path('mustache.png') %>';
+};
+
+FunnyPictures.setup = function() {
+
+  var stage = new Kinetic.Stage({
+    container: 'container',
+    width: 480,
+    height: 480
+  });
+  
+  var layer = new Kinetic.Layer();
+  url = '/assets/silhouette.png'
+  FunnyPictures.showBackground(layer, stage, url);
+
+  FunnyPictures.showMustache(layer, stage);
 
   $('#save').on('click', function() {
-
     stage.toDataURL({
       callback: function(dataUrl) {
-        /*
-         * here you can do anything you like with the data url.
-         * In this tutorial we'll just open the url with the browser
-         * so that you can see the result as an image
-         */
-        window.open(dataUrl);
-      }
+        document.getElementById('canvasImg').src = dataUrl;      }
     });
+  });
 
+  $('#add_image').on('click', function() {
+    url = '/assets/dan.png'
+    FunnyPictures.showBackground(layer, stage, url);
   });
   
 };
