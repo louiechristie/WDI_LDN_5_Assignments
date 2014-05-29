@@ -5,7 +5,7 @@ FunnyPictures.setup = function() {
   var stage = new Kinetic.Stage({
     container: 'container',
     width: 480,
-    height: 960
+    height: 480
   });
   
   var mustache_k
@@ -21,16 +21,14 @@ FunnyPictures.setup = function() {
     });
     layer.add(background_k);
     stage.add(layer);
-    mustache_k.moveToTop();
-    layer.draw();  
   };
-  background.src = 'dan.png';
+  background.src = 'silhouette.png';
 
   var mustache = new Image();
   mustache.onload = function() {
     mustache_k = new Kinetic.Image({
-      x: 240,
-      y: 240,
+      x: 240-(100/2),
+      y: 240-(38/2),
       image: mustache,
       width: 100,
       height: 38,
@@ -48,6 +46,8 @@ FunnyPictures.setup = function() {
     layer.draw();
   };
   mustache.src = 'mustache.png';
+
+
   
 };
 
