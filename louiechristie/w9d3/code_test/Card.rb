@@ -11,11 +11,11 @@ class Card
 
 
   def check()
-    if is_a_number? && valid_type_of_card? && valid_luhn_number?
-      "valid"
-    else
-      "invalid"
-    end
+    valid? ? "valid" : "invalid"
+  end
+
+  def valid?
+    is_a_number? && valid_type_of_card? && valid_luhn_number?
   end
 
 
@@ -33,15 +33,15 @@ class Card
 
     case @card_number[0].to_i
       when 3
-        return check_is_amex?
+        check_is_amex?
       when 4
-        return check_is_visa?
+        check_is_visa?
       when 5
-        return check_is_mastercard?
+        check_is_mastercard?
       when 6 
-        return check_is_discover?
+        check_is_discover?
       else
-        return false
+        false
     end
   end
 
@@ -105,11 +105,8 @@ class Card
     puts "number"
     puts number
 
-    if number % 10 == 0
-      return true
-    else
-      return false
-    end
+    number % 10 == 0
+    
   end
 
 

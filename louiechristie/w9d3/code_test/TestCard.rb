@@ -11,7 +11,7 @@ class TestCard < MiniTest::Unit::TestCase
     @input_file = File.new("input.txt", "r")
     @input_file_copy = File.new("input_copy.txt", "r")
     @expected_output_file = File.new("expected_output.txt", "r")
-    @output_file = File.new("output.txt", "w")
+    @output_file = File.new("output.txt", "w+")
   end
 
   def test_double_1
@@ -65,7 +65,7 @@ class TestCard < MiniTest::Unit::TestCase
     assert_equal "valid", card.check 
   end
 
-  def test_is_valid_without_spaces
+  def test_is_invalid_with_spaces
     card = Card.new("4417 1234 5678 9112")
     assert_equal "invalid", card.check 
   end
@@ -120,7 +120,7 @@ class TestCard < MiniTest::Unit::TestCase
 
   def test_output_same_as_expected_output
     CardFile.process(@input_file, @output_file)
-
+    @output_file.rewind
     assert(FileUtils.compare_file(@output_file, @expected_output_file))
   end
 
