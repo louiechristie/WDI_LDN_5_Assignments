@@ -1,14 +1,12 @@
 var FunnyPictures = FunnyPictures || {
 
   backgroundLayer: new Kinetic.Layer(),
-  
   pavlingLayer: new Kinetic.Layer(),
   danLayer: new Kinetic.Layer(),
   hanaLayer: new Kinetic.Layer(),
   paulLayer: new Kinetic.Layer(),
   samLayer: new Kinetic.Layer(),
   alexLayer: new Kinetic.Layer(),
-
   mustacheLayer: new Kinetic.Layer(),
   hatLayer: new Kinetic.Layer()
 };
@@ -39,16 +37,17 @@ FunnyPictures.createLayer = function(layer, stage, url) {
   };
 };
 
-FunnyPictures.createMustache = function(layer, stage) {
+FunnyPictures.createForegroundLayer = function(layer, stage, url, width, height) {
   var mustache = new Image();
-  mustache.src = '<%= asset_path('mustache.png') %>';
+  mustache.src = url;
+
   mustache.onload = function() {
     var mustache_k = new Kinetic.Image({
-      x: 240-(100/2),
-      y: 240-(38/2),
+      x: 240-(width/2),
+      y: 240-(height/2),
       image: mustache,
-      width: 100,
-      height: 38,
+      width: width,
+      height: height,
       draggable: true
     });
     mustache_k.on('mouseover', function() {
@@ -64,30 +63,6 @@ FunnyPictures.createMustache = function(layer, stage) {
   };
 };
 
-FunnyPictures.createHat = function(layer, stage) {
-  var hat = new Image();
-  hat.src = '<%= asset_path('top_hat.png') %>';
-  hat.onload = function() {
-    var hat_k = new Kinetic.Image({
-      x: 120-(190/2),
-      y: 120-(162/2),
-      image: hat,
-      width: 190,
-      height: 162,
-      draggable: true
-    });
-    hat_k.on('mouseover', function() {
-      document.body.style.cursor = 'pointer';
-    });
-    hat_k.on('mouseout', function() {
-      document.body.style.cursor = 'default';
-    });
-    layer.add(hat_k);
-    stage.add(layer);
-    hat_k.moveToTop();
-    layer.hide();
-  };
-};
 
 
 FunnyPictures.setup = function() {
@@ -107,8 +82,9 @@ FunnyPictures.setup = function() {
   FunnyPictures.createLayer(FunnyPictures.pavlingLayer, stage, '/assets/pavling.png');
   FunnyPictures.createLayer(FunnyPictures.alexLayer, stage, '/assets/alex.png');
   FunnyPictures.createLayer(FunnyPictures.backgroundLayer, stage, '/assets/silhouette.png');
-  FunnyPictures.createMustache(FunnyPictures.mustacheLayer, stage);
-  FunnyPictures.createHat(FunnyPictures.hatLayer, stage)
+
+  FunnyPictures.createForegroundLayer(FunnyPictures.mustacheLayer, stage, '/assets/mustache.png', 100, 38);
+  FunnyPictures.createForegroundLayer(FunnyPictures.hatLayer, stage, '/assets/top_hat.png', 190, 162)
 
   FunnyPictures.hideAll();
   FunnyPictures.backgroundLayer.show();
@@ -185,10 +161,11 @@ FunnyPictures.setup = function() {
 
 
   // Save button
-  $('#save').on('click', function() {
+  $('#generate').on('click', function() {
     stage.toDataURL({
       callback: function(dataUrl) {
-        document.getElementById('canvasImg').src = dataUrl;      }
+        document.getElementById('canvasImg').src = dataUrl;
+            }
     });
   });
 
