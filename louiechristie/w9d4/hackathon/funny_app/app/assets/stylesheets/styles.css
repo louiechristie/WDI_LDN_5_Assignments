@@ -18,3 +18,8 @@ header, #container, #main, img {
   min-height: 480px;
   display: inline-block;
 }
+
+#people {
+  display: inline-block;
+  vertical-align: top;
+}

@@ -1,8 +1,12 @@
 var FunnyPictures = FunnyPictures || {};
 
-FunnyPictures.createBackground = function(layer, stage, url) {
+FunnyPictures.hideAll = function() {
+  
+}
+
+FunnyPictures.createBackground = function(layer, stage, url, show) {
   var background = new Image();
-  background.src = '/assets/silhouette.png';
+  background.src = url;
   background.onload = function() {
     var background_k = new Kinetic.Image({
       x: 0,
@@ -13,6 +17,9 @@ FunnyPictures.createBackground = function(layer, stage, url) {
     });
     layer.add(background_k);
     stage.add(layer);
+    if (show === false) {
+      layer.hide();
+    }
   };
 };
 
@@ -69,6 +76,7 @@ FunnyPictures.createHat = function(layer, stage) {
 
 FunnyPictures.setup = function() {
 
+  // Setup layers
   var stage = new Kinetic.Stage({
     container: 'container',
     width: 480,
@@ -78,10 +86,15 @@ FunnyPictures.setup = function() {
   var mustache_layer = new Kinetic.Layer();
   var hat_layer = new Kinetic.Layer();
 
-  FunnyPictures.createBackground(background_layer, stage);
+  var pavling_layer = new Kinetic.Layer();
+
+  FunnyPictures.createBackground(pavling_layer, stage, '/assets/pavling.png', false);
+  FunnyPictures.createBackground(background_layer, stage, '/assets/silhouette.png', true);
   FunnyPictures.createMustache(mustache_layer, stage);
   FunnyPictures.createHat(hat_layer, stage)
 
+  background_layer.show();
+  var show_pavling_toggle = false;
   var show_mustache_toggle = false;
   var show_hat_toggle = false;
 
@@ -96,7 +109,6 @@ FunnyPictures.setup = function() {
       mustache_layer.draw();
       show_mustache_toggle = false;
     };
-    
   }, false);
 
   document.getElementById('hat').addEventListener('click', function() {
@@ -108,6 +120,18 @@ FunnyPictures.setup = function() {
       hat_layer.hide();
       hat_layer.draw();
       show_hat_toggle = false;
+    };
+  }, false);
+
+  document.getElementById('pavling').addEventListener('click', function() {
+    if (show_pavling_toggle === false) {
+      pavling_layer.show();
+      pavling_layer.draw();
+      show_pavling_toggle = true;
+    } else {
+      pavling_layer.hide();
+      pavling_layer.draw();
+      show_pavling_toggle = false;
     };
     
   }, false);
