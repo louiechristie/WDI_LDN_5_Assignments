@@ -1,10 +1,29 @@
-var FunnyPictures = FunnyPictures || {};
+var FunnyPictures = FunnyPictures || {
+
+  backgroundLayer: new Kinetic.Layer(),
+  
+  pavlingLayer: new Kinetic.Layer(),
+  danLayer: new Kinetic.Layer(),
+  hanaLayer: new Kinetic.Layer(),
+  paulLayer: new Kinetic.Layer(),
+  samLayer: new Kinetic.Layer(),
+  alexLayer: new Kinetic.Layer(),
+
+  mustacheLayer: new Kinetic.Layer(),
+  hatLayer: new Kinetic.Layer()
+};
 
 FunnyPictures.hideAll = function() {
-  
+  FunnyPictures.pavlingLayer.hide();
+  FunnyPictures.danLayer.hide();
+  FunnyPictures.hanaLayer.hide();
+  FunnyPictures.paulLayer.hide();
+  FunnyPictures.samLayer.hide();
+  FunnyPictures.alexLayer.hide();
+  FunnyPictures.backgroundLayer.show();
 }
 
-FunnyPictures.createBackground = function(layer, stage, url, show) {
+FunnyPictures.createLayer = function(layer, stage, url) {
   var background = new Image();
   background.src = url;
   background.onload = function() {
@@ -17,9 +36,6 @@ FunnyPictures.createBackground = function(layer, stage, url, show) {
     });
     layer.add(background_k);
     stage.add(layer);
-    if (show === false) {
-      layer.hide();
-    }
   };
 };
 
@@ -82,59 +98,91 @@ FunnyPictures.setup = function() {
     width: 480,
     height: 480
   });
-  var background_layer = new Kinetic.Layer();
-  var mustache_layer = new Kinetic.Layer();
-  var hat_layer = new Kinetic.Layer();
+  
 
-  var pavling_layer = new Kinetic.Layer();
+  FunnyPictures.createLayer(FunnyPictures.danLayer, stage, '/assets/dan.png');
+  FunnyPictures.createLayer(FunnyPictures.hanaLayer, stage, '/assets/hana.png');
+  FunnyPictures.createLayer(FunnyPictures.paulLayer, stage, '/assets/paul.png');
+  FunnyPictures.createLayer(FunnyPictures.samLayer, stage, '/assets/sam.png');
+  FunnyPictures.createLayer(FunnyPictures.pavlingLayer, stage, '/assets/pavling.png');
+  FunnyPictures.createLayer(FunnyPictures.alexLayer, stage, '/assets/alex.png');
+  FunnyPictures.createLayer(FunnyPictures.backgroundLayer, stage, '/assets/silhouette.png');
+  FunnyPictures.createMustache(FunnyPictures.mustacheLayer, stage);
+  FunnyPictures.createHat(FunnyPictures.hatLayer, stage)
 
-  FunnyPictures.createBackground(pavling_layer, stage, '/assets/pavling.png', false);
-  FunnyPictures.createBackground(background_layer, stage, '/assets/silhouette.png', true);
-  FunnyPictures.createMustache(mustache_layer, stage);
-  FunnyPictures.createHat(hat_layer, stage)
-
-  background_layer.show();
-  var show_pavling_toggle = false;
+  FunnyPictures.hideAll();
+  FunnyPictures.backgroundLayer.show();
   var show_mustache_toggle = false;
   var show_hat_toggle = false;
+
 
   // add button event bindings
   document.getElementById('mustache').addEventListener('click', function() {
     if (show_mustache_toggle === false) {
-      mustache_layer.show();
-      mustache_layer.draw();
+      FunnyPictures.mustacheLayer.show();
+      FunnyPictures.mustacheLayer.draw();
       show_mustache_toggle = true;
     } else {
-      mustache_layer.hide();
-      mustache_layer.draw();
+      FunnyPictures.mustacheLayer.hide();
+      FunnyPictures.mustacheLayer.draw();
       show_mustache_toggle = false;
     };
   }, false);
 
   document.getElementById('hat').addEventListener('click', function() {
     if (show_hat_toggle === false) {
-      hat_layer.show();
-      hat_layer.draw();
+      FunnyPictures.hatLayer.show();
+      FunnyPictures.hatLayer.draw();
       show_hat_toggle = true;
     } else {
-      hat_layer.hide();
-      hat_layer.draw();
+      FunnyPictures.hatLayer.hide();
+      FunnyPictures.hatLayer.draw();
       show_hat_toggle = false;
     };
   }, false);
 
+  document.getElementById('background').addEventListener('click', function() {
+        FunnyPictures.hideAll();
+        FunnyPictures.backgroundLayer.show();
+        FunnyPictures.backgroundLayer.draw();
+    }, false);
+
   document.getElementById('pavling').addEventListener('click', function() {
-    if (show_pavling_toggle === false) {
-      pavling_layer.show();
-      pavling_layer.draw();
-      show_pavling_toggle = true;
-    } else {
-      pavling_layer.hide();
-      pavling_layer.draw();
-      show_pavling_toggle = false;
-    };
-    
+      FunnyPictures.hideAll();
+      FunnyPictures.pavlingLayer.show();
+      FunnyPictures.pavlingLayer.draw();
   }, false);
+
+  document.getElementById('dan').addEventListener('click', function() {
+      FunnyPictures.hideAll();
+      FunnyPictures.danLayer.show();
+      FunnyPictures.danLayer.draw();
+  }, false);
+
+  document.getElementById('hana').addEventListener('click', function() {
+      FunnyPictures.hideAll();
+      FunnyPictures.hanaLayer.show();
+      FunnyPictures.hanaLayer.draw();
+  }, false);
+
+  document.getElementById('paul').addEventListener('click', function() {
+      FunnyPictures.hideAll();
+      FunnyPictures.paulLayer.show();
+      FunnyPictures.paulLayer.draw();
+  }, false);
+
+  document.getElementById('sam').addEventListener('click', function() {
+      FunnyPictures.hideAll();
+      FunnyPictures.samLayer.show();
+      FunnyPictures.samLayer.draw();
+  }, false);
+
+  document.getElementById('alex').addEventListener('click', function() {
+      FunnyPictures.hideAll();
+      FunnyPictures.alexLayer.show();
+      FunnyPictures.alexLayer.draw();
+  }, false);
+
 
   // Save button
   $('#save').on('click', function() {
@@ -144,11 +192,6 @@ FunnyPictures.setup = function() {
     });
   });
 
-  // Change background
-  $('#add_image').on('click', function() {
-    url = '/assets/dan.png'
-    FunnyPictures.showBackground(layer, stage, url);
-  });
   
 };
 
