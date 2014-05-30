@@ -1,9 +1,8 @@
 var FunnyPictures = FunnyPictures || {};
 
-FunnyPictures.showBackground = function(layer, stage, url) {
+FunnyPictures.createBackground = function(layer, stage, url) {
   var background = new Image();
-  background.src = url;
-
+  background.src = '/assets/silhouette.png';
   background.onload = function() {
     var background_k = new Kinetic.Image({
       x: 0,
@@ -17,8 +16,9 @@ FunnyPictures.showBackground = function(layer, stage, url) {
   };
 };
 
-FunnyPictures.showMustache = function(layer, stage) {
+FunnyPictures.createMustache = function(layer, stage) {
   var mustache = new Image();
+  mustache.src = '<%= asset_path('mustache.png') %>';
   mustache.onload = function() {
     var mustache_k = new Kinetic.Image({
       x: 240-(100/2),
@@ -37,10 +37,35 @@ FunnyPictures.showMustache = function(layer, stage) {
     layer.add(mustache_k);
     stage.add(layer);
     mustache_k.moveToTop();
-    layer.draw();
+    layer.hide();
   };
-  mustache.src = '<%= asset_path('mustache.png') %>';
 };
+
+FunnyPictures.createHat = function(layer, stage) {
+  var hat = new Image();
+  hat.src = '<%= asset_path('top_hat.png') %>';
+  hat.onload = function() {
+    var hat_k = new Kinetic.Image({
+      x: 120-(190/2),
+      y: 120-(162/2),
+      image: hat,
+      width: 190,
+      height: 162,
+      draggable: true
+    });
+    hat_k.on('mouseover', function() {
+      document.body.style.cursor = 'pointer';
+    });
+    hat_k.on('mouseout', function() {
+      document.body.style.cursor = 'default';
+    });
+    layer.add(hat_k);
+    stage.add(layer);
+    hat_k.moveToTop();
+    layer.hide();
+  };
+};
+
 
 FunnyPictures.setup = function() {
 
@@ -49,13 +74,45 @@ FunnyPictures.setup = function() {
     width: 480,
     height: 480
   });
-  
-  var layer = new Kinetic.Layer();
-  url = '/assets/silhouette.png'
-  FunnyPictures.showBackground(layer, stage, url);
+  var background_layer = new Kinetic.Layer();
+  var mustache_layer = new Kinetic.Layer();
+  var hat_layer = new Kinetic.Layer();
 
-  FunnyPictures.showMustache(layer, stage);
+  FunnyPictures.createBackground(background_layer, stage);
+  FunnyPictures.createMustache(mustache_layer, stage);
+  FunnyPictures.createHat(hat_layer, stage)
 
+  var show_mustache_toggle = false;
+  var show_hat_toggle = false;
+
+  // add button event bindings
+  document.getElementById('mustache').addEventListener('click', function() {
+    if (show_mustache_toggle === false) {
+      mustache_layer.show();
+      mustache_layer.draw();
+      show_mustache_toggle = true;
+    } else {
+      mustache_layer.hide();
+      mustache_layer.draw();
+      show_mustache_toggle = false;
+    };
+    
+  }, false);
+
+  document.getElementById('hat').addEventListener('click', function() {
+    if (show_hat_toggle === false) {
+      hat_layer.show();
+      hat_layer.draw();
+      show_hat_toggle = true;
+    } else {
+      hat_layer.hide();
+      hat_layer.draw();
+      show_hat_toggle = false;
+    };
+    
+  }, false);
+
+  // Save button
   $('#save').on('click', function() {
     stage.toDataURL({
       callback: function(dataUrl) {
@@ -63,6 +120,7 @@ FunnyPictures.setup = function() {
     });
   });
 
+  // Change background
   $('#add_image').on('click', function() {
     url = '/assets/dan.png'
     FunnyPictures.showBackground(layer, stage, url);
