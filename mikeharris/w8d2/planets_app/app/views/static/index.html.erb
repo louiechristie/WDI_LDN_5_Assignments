@@ -1,0 +1,30 @@
+<% content_for :templates do %>
+  <script type="text/template" id="tmpl_planet">
+    <p><%%= planet.get('name') %></p>
+    <p><%%= planet.get('moons') %></p>
+    <p><%%= planet.get('size') %></p>
+    <p><%%= planet.get('dist_from_sun') %></p>
+    <a href="#delete">delete</a>
+  </script>
+
+  <script type="text/template" id="tmpl_newplanet">
+    <form>
+      <input name="name" />
+      <input name="moons" />
+      <input name="size"/>
+      <input name="dist_from_sun"/>
+      <input type="submit" />
+    </form>
+    <a href="#">Back</a>
+  </script>
+<% end %>
+
+
+
+<h1>List of planets</h1>
+<a href="#new">Add a planet</a>
+<div id="total_moons">
+</div>
+<div id="container">
+  <p>Lodaing app...</p>
+</div>

@@ -1,0 +1,14 @@
+<h3>Ingredients</h3>
+
+<% if can? :update, @recipe %>
+  <h4 id='add_a_new_ingredient'>
+    <%=link_to 'Add a new ingredient', new_ingredient_path%>
+  </h4>
+<%end%>
+
+<% @ingredients.each do |ingredient| %>
+
+<div>
+  <%=link_to ingredient.name, ingredient%></br>
+ </div>
+ <%end%>

@@ -1,7 +1,7 @@
 <html>
 <head>
   <title> Calculator</title>
-  <script src = "bmi.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>  BMI Calculator </h1>
@@ -16,16 +16,17 @@
 
 
 
-    Units: <select id="units">
+    Units: <select id="units", onchange = "myApp.unitplaceholder()">
+      <option></option>
       <option value="imperial">Imperial</option> 
       <option value="metric">Metric</option>
     </select> </br>
-    <input type='text' placeholder='Weight' id='weight'></br> 
-    <input type='text' placeholder='Height' id='height'></br> 
+    Weight: <input type='text' placeholder='' id='weight'></br> 
+    Height: <input type='text' placeholder='' id='height'></br> 
     <button onclick="bmi()">Click!</button>
  
 
-
+  <script src = "bmi.js"></script>
   <p id = "answer"></p>
   
 </body>

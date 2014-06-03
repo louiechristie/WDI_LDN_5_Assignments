@@ -1,0 +1,28 @@
+body {
+  background-color: #eee;
+  max-width: 960px;
+  margin: auto auto;
+  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+}
+
+header {
+  background-color: gray;
+  color: white;
+}
+
+li {
+  float: left;
+  margin: 10px;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+  border: 5px solid gray;
+}
+
+.close {
+  color: gray;
+  font-weight: bold;
+}

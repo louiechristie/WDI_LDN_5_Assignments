@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Backbone Planets App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+    <script type="text/template" id="tmpl_planet">
+        <p class ="close">X</p>
+        <h2><%= planet.get('name') %></h2>
+        <h2>Moons: <%= planet.get('moons') %></h2>
+        <img src="<%= planet.get('url') %>" alt="<%= planet.get('name') %>" />
+    </script>
+
+    <script type="text/template" id="tmpl_star">
+        <p class ="close">X</p>
+        <h2><%= star.get('name') %></h2>
+        <h3>Mass: <%= star.get('mass') %></h3>
+        <h3>Age: <%= star.get('stage') %></h3>
+        <h3>Planets: <%= star.get('planets') %></h3>
+    </script>
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/planets.js"></script>
+    <script src="js/stars.js"></script>
+    
+  </head>
+
+  <body>
+    <header>
+      <h1>Backbone Planets</h1>
+    </header>
+
+    <div id="container">
+
+      <div id="input">
+        <form id="add_planet" action="#">
+          Name: <input id="name" placeholder="Name" name="name" />
+          Moons: <select id="moons" name="moons"></select>
+          Image URL: <input id="url" placeholder="http://example.com/..." name="url" />
+          <input type="submit" value="Add planet" />
+        </form>
+      </div>
+
+      <div id="output">
+        <ul id="planets_list"></ul>
+      </div>
+    </div>
+
+    <div id="block">
+
+      <div id="input">
+        <form id="add_star" action="#">
+          Name: <input id="star_name" placeholder="Name" name="star_name" />
+          Mass (kg): <input id="mass" placeholder="Mass (kg)" name="mass" />
+          Age: <input id="Stage" placeholder="Age" name="stage" />
+          Planets: <select id="planets" name="planets"></select>
+          <input type="submit" value="Add planet" />
+        </form>
+      </div>
+
+      <div id="output">
+        <ul id="stars_list"></ul>
+      </div>
+    </div>
+
+  </body>
+
+</html>

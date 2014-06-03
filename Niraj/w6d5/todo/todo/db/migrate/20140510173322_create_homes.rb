@@ -1,0 +1,10 @@
+class CreateHomes < ActiveRecord::Migration
+  def change
+    create_table :homes do |t|
+      t.string :email
+      t.string :password_digest
+
+      t.timestamps
+    end
+  end
+end

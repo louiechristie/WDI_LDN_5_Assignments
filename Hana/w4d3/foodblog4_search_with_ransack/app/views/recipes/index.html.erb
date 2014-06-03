@@ -1,0 +1,17 @@
+<% if can? :update, @recipe %>
+  <div id='add_a_new_recipe'/div>
+    <%=link_to 'Add a new recipe', new_recipe_path%>
+  </div>
+<%end%>
+
+<% @recipes.each do |recipe| %>
+
+<div>
+  <%=link_to recipe.name, recipe%></br>
+  <% if can? :update, @recipe %>
+    <%= link_to 'Delete', delete_recipe_path(recipe), method: 'delete'%>
+  <%end%>
+ </div>
+
+
+ <%end%>

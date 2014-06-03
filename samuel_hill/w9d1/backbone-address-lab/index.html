@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Backbone Address Book</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="js/jquery-1.11.1.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/address.js"></script>
+
+  <script type="text/template" id="tmpl_address">
+      <h2><%= address.get('first_name') %> <%= address.get('last_name')%></h2>
+      <p class="close">Remove</p>
+      <p><%= address.get('email') %></p>
+      <img src="<%=address.get('image')%>"/>
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Address Book</h1>
+  </header>
+  <div id="container">
+    <form id="add_address" action="#">
+        <input id="first-name" placeholder="First Name" name="first-name" />
+        <input id="last-name" placeholder="Last Name" name="last-name" />
+        <input id="email" placeholder="Email Address" name="email" />
+        <input id="url" placeholder="image url..." name="url" />
+        <input type="submit" value="Add Contact" />
+      </form>
+    <ul id="address_container"></ul>
+  </div>
+</body>
+</html>

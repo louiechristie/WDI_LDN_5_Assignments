@@ -1,0 +1,11 @@
+<%= content_for :templates do %>
+  <script type="text/template" id="tmpl_person">
+    <h2><%%= person.get('name') %></h2>
+    <p><%%= person.get('email') %></p>
+  </script>
+<% end %>
+
+<h1>My Address Book</h1>
+<div id="container">
+  <p>Please wait, application loading...</p>
+</div>

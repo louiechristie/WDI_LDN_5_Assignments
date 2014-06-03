@@ -1,0 +1,34 @@
+<%content_for :templates do %>
+
+  <script type="text/template" id="tmpl_planet">
+    <h2><%%= planet.get('name')%></h1>
+    <p class="remove">X</p>
+    <img src="<%%= planet.get('url')%>" alt="<%%=planet.get('title')%>" style="max-width: 100px;"/>
+    <h3>Number of moons</h3> 
+    <p class = "input"><%%=planet.get('moons')%></p>
+    <h3>Diameter</h3> 
+    <p class = "input"><%%=planet.get('diameter')%></p>
+    <h3>Mean Temperature</h3> 
+    <p class="input"><%%=planet.get('temp')%></p>
+  </script>
+
+  <script type="text/template" id="tmpl_newplanet">
+    <form>
+    <input name = "name" placeholder="Planet Name"/><br />
+    <input name = "url" placeholder= "Image URL" /><br />
+    <input name = "moons" placeholder= "# of moons" /><br />
+    <input name = "diameter" placeholder= "Diameter (km)" /><br />
+    <input name = "temp" placeholder= "Temp (C)" /><br />
+    <input type="submit" value="Save note" />
+    </form>
+    <a href="#"> Back to all notes</a>
+  </script>
+
+<% end %>
+
+<h1>Planets</h1>
+<a href="#new">Create a new planet.</a>
+<div id="planets_container">
+  <p>Please wait, application loading...</p>
+</div>
+

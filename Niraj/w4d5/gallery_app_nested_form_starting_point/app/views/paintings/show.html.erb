@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @painting.title %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @painting.artist %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @painting.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @painting.price %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @painting.image.sepia_preview.url %>
+</p>
+
+<p>
+  <b>Gallery:</b>
+  <%= @painting.gallery.try :name %>
+</p>
+
+
+<%= link_to 'Edit', edit_gallery.painting_path(@gallery, @painting) %> |
+<%= link_to "Back to Gallery", @painting.gallery %>

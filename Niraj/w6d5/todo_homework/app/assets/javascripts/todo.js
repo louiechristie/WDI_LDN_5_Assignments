@@ -1,4 +1,3 @@
-window.onload = function(){ 
 
     function updateItem() {
       var cbId = this.id.replace("cb_", "");
@@ -64,5 +63,4 @@ window.onload = function(){
       }
     };
 
-};
 

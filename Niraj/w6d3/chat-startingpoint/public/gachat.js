@@ -9,7 +9,7 @@ myApp.updatePage = function(data){
   });
 };
 
-
+ 
 
 $(document).ready(function(){
   $("button").click(function(){

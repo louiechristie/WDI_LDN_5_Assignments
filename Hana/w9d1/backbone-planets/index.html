@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Planets App</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="js/jquery-1.11.1.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/planets.js"></script>
+  <script src="js/stars.js"></script>
+
+ 
+
+  <script type="text/template" id="tmpl_planet">
+    <h1><%= planet.get('name')%></h1>
+    <p class="remove">X</p>
+    <img src="<%= planet.get('url')%>" alt="<%=planet.get('title')%>" style="max-width: 100px;"/>
+    <p>Number of moons: <%=planet.get('numberofmoons')%></p>
+    <p>Ration to Earths gravity: <%=planet.get('gravityratio')%></p>
+  </script>
+
+  <script type="text/template" id="tmpl_star">
+    <h1><%= star.get('name')%></h1>
+    <p class="remove">X</p>
+    <img src="<%= star.get('url')%>" alt="<%=star.get('name')%>" style="max-width: 100px;"/>
+    <p>Distance from Earth (Lightyears): <%=planet.get('numberofmoons')%></p>
+    <p>Solar System: <%=planet.get('gravityratio')%></p>
+  </script>
+
+</head>
+<body>
+
+</body>
+  <header>
+    <h1>Backbone Planets</h1>
+  </header>
+  <div id="planets_container">
+    <form id="add_planet" action="#">
+      <input id="name" placeholder="Planet name" name="name"/>
+      <input id ="url" placeholder="Image URL" name="url"/>
+      <input id ="numberofmoons" placeholder="# of moons" name="numberofmoons"/>
+      <input id ="gravityratio" placeholder="Gravity ratio from Earth" name="gravityratio"/>
+      <input type="submit" value="Add a planet!" />
+    </form>
+    <ul id="show_planets"></ul>
+  </div>
+
+  <div id="stars_container">
+    <form id="add_star" action="#">
+      <input id="name" placeholder="Star name" name="name"/>
+      <input id ="url" placeholder="Image URL" name="url"/>
+      <input id ="solarsystem" placeholder="Solar System" name="solarsystem"/>
+      <input id ="distance" placeholder="Distance from Earth (Lightyears" name="distance"/>
+      <input type="submit" value="Add a star!" />
+    </form>
+    <ul id="show_stars"></ul>
+  </div>
+</html>

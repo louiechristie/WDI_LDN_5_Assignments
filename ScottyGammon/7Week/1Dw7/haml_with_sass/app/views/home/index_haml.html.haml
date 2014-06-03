@@ -1,0 +1,21 @@
+%div#div_1
+  %p DIV 1
+
+  %div#div_2
+    DIV 2
+    %form{method: :post, action: '/result'}
+      %input{type: :text, placeholder: 'Username'}
+      %input{type: :submit, value: 'Send'}
+
+  %div#div_3
+    DIV 3
+    %p.main_body_text
+      = @text
+
+      - if [0,1].sample == 1
+        here i am JH
+      - else
+        these are not the droids you are looking for.
+
+%div#div_4
+  DIV 4

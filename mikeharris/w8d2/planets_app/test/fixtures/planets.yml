@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  moons: 1
+  size: 1
+  dist_from_sun: 1
+
+two:
+  name: MyString
+  moons: 1
+  size: 1
+  dist_from_sun: 1
