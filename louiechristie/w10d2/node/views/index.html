@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>GAChat</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/static/jquery-1.11.1.js"></script>
+  <script src="/static/chat.js"></script>
+
+</head>
+<body>
+  <h1>GAChat! <span id="name"></span></h1>
+  <p class="connecting">Connecting to server, please wait...</p>
+
+  <form action="#">
+    <ul class="chatlines">
+    </ul>
+    <input id="chattext" type="text" placeholder="Enter text here..." disabled="disabled" />
+    <input type="submit" value="Speak!" disabled="disabled" />
+  </form>
+</body>
+</html>
