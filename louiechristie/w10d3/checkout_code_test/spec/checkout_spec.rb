@@ -53,7 +53,7 @@ describe Checkout do
       checkout.scan('SR1')
       checkout.scan('SR1')
       checkout.scan('FR1')
-      checkout.scan('SF1')
+      checkout.scan('SR1')
       expect(checkout.total).to eq 16.61
     end
 

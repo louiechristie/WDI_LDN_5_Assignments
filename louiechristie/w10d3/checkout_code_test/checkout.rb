@@ -40,18 +40,24 @@ class Checkout
     case offers[item] 
     when "BOGOF"
       return calculate_BOGOFF_total(item, quantity)
+    when "3_OR_MORE_DISC0.50"
+      return calculate_3_or_more_disc_50_total(item, quantity)
     else
-      return quantity*prices[item]
+      return quantity*@prices[item]
     end
 
   end
 
   def calculate_BOGOFF_total(item, quantity)
-      (quantity / 2).floor*prices[item] + (quantity % 2)*prices[item]
+    (quantity / 2).floor*@prices[item] + (quantity % 2)*@prices[item]
   end
 
-  def calculate_discount_total(item, quantity)
-
+  def calculate_3_or_more_disc_50_total(item, quantity)
+    if quantity >= 3
+      return quantity*(@prices[item]-0.50)
+    else
+      return quantity*@prices[item]
+    end
   end
 
 end
