@@ -3,7 +3,9 @@ require_relative '../checkout'
 
 describe Checkout do
 
-  let(:checkout) {Checkout.new("FR1: BOGOF, SR1: 3_OR_MORE @4.50")}
+  let(:checkout) do
+    Checkout.new("FR1: BOGOF, SR1: 3_OR_MORE @4.50")
+  end
 
   describe ".new" do
     it "creates a Checkout object" do
