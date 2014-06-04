@@ -20,8 +20,8 @@ class Checkout
       case offer.split(" ").first
         when "BOGOF"
           @offers[item] = "BOGOFF"
-        when "3_OR_MORE"
-          @offers[item] = "3_OR_MORE"
+        when "3_OR_MORE_DISC0.50"
+          @offers[item] = "3_OR_MORE_DISC0.50"
       end
         
     end
@@ -37,24 +37,30 @@ class Checkout
 
   def total
     @basket.each do |item, quantity|
-      case item
-      when "FR1"
-        if @offers[item] == "BOGOFF"
-          @total += (quantity / 2).floor*3.11 + (quantity % 2)*3.11
-        else
-          @total += quantity*3.11
-        end
-      when "SR1"
-        @total += quantity*5.00
-      when "CF1"
-        @total += quantity*11.23
-      end
+      @total += calculate_item_total(item, quantity)
     end
     return @total
   end
 
-  def calculate_price(item, quantity)
+  def calculate_item_total(item, quantity)
 
+    case item
+      when "FR1"
+        calculate_BOGOFF_total(item, quantity)
+      when "SR1"
+        return quantity*5.00
+      when "CF1"
+        return quantity*11.23
+      end
+
+  end
+
+  def calculate_BOGOFF_total(item, quantity)
+    if @offers[item] == "BOGOFF"
+          return ((quantity / 2).floor*3.11 + (quantity % 2)*3.11)
+        else
+          return quantity*3.11
+        end
   end
 
 end
