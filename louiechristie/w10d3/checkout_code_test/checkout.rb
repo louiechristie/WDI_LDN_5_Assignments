@@ -6,7 +6,6 @@ class Checkout
   attr_writer :total    #reader method defined below
 
   def initialize(pricing_rules)
-    @total = 0
     @basket = {}
     @offers = {}
     @prices = { "FR1" => 3.11, "SR1" => 5, "CF1" => 11.23 }
@@ -21,22 +20,20 @@ class Checkout
   end
 
   def scan(item)
-    if @basket[item] != nil
-      @basket[item] += 1
-    else
-      @basket[item] = 1
-    end
+    @basket[item] == nil ? @basket[item] = 1 : @basket[item] += 1
   end
 
   def total
+    total = 0
+
     @basket.each do |item, quantity|
-      @total += calculate_item_total(item, quantity)
+      total += calculate_item_total(item, quantity)
     end
-    return @total
+    
+    return total
   end
 
   def calculate_item_total(item, quantity)
-
     case offers[item] 
     when "BOGOF"
       return calculate_BOGOFF_total(item, quantity)
@@ -45,7 +42,6 @@ class Checkout
     else
       return quantity*@prices[item]
     end
-
   end
 
   def calculate_BOGOFF_total(item, quantity)
@@ -53,11 +49,7 @@ class Checkout
   end
 
   def calculate_3_or_more_disc_50_total(item, quantity)
-    if quantity >= 3
-      return quantity*(@prices[item]-0.50)
-    else
-      return quantity*@prices[item]
-    end
+    quantity >= 3 ? quantity*(@prices[item]-0.50) : quantity*@prices[item]
   end
 
 end
